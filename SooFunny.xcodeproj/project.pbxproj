@@ -8,16 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		1473025B25947BEFEA333BBF /* PixelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59978513D52D04636E58744 /* PixelImage.swift */; };
+		18B08508BA62463E54122F15 /* LabBenchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F470044E7A9E244F3ECD27B /* LabBenchmarks.swift */; };
 		1B83D75811CED3250488C1D5 /* SooFunnyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */; };
+		36CD6C263D66578D9FD66F3B /* WordDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1B508B5B080938C275F7C9 /* WordDictionaryTests.swift */; };
 		5149BF198CE3A2CA08EC2E4C /* ImageSegmenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315F4710AFD81E24B28D5E /* ImageSegmenter.swift */; };
 		58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */; };
 		5F3C3F1F4AB379F5F0A1C7FC /* SampleArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F436C7749E9A81E0D9181F /* SampleArt.swift */; };
 		6868463DF6452ECEC73EAAC3 /* LabImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19600E0B79BE6842A58FD33 /* LabImage.swift */; };
+		69BD41182DC2CD4BF9FE2C7D /* WordDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95A7679F156F76B5BC1D12A /* WordDictionary.swift */; };
 		6A8B6EC76C9D0C1ECB91EA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C1FD222E8DD1C055662505 /* Assets.xcassets */; };
+		6CEE697D1F841EF3A62B672E /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8462174F5150FE42C0236 /* Speech.swift */; };
 		769F13091CED154B63E7CD50 /* SubjectMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0717D3143512F14844EB12 /* SubjectMask.swift */; };
+		8542E82C7CEC9E8589D927D0 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE868EB0E550524D0C4FC75 /* WordsView.swift */; };
+		A4A323EFAA1737590E298238 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AFD63ED38CCBB814C236F0 /* SettingsView.swift */; };
 		BF10AE69D0AB0BA1681E1054 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782398F3A9B62A005EF9C4BA /* HomeView.swift */; };
 		C09877B5299329138FE8633A /* ColoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FE6F3202A726D2DC1A594 /* ColoringView.swift */; };
 		E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */; };
+		F5653C9DD2741E7ABC8827B2 /* kids_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 727EE69E437092C0D601AB16 /* kids_words.txt */; };
+		F9A69C22CD61ABC49F46030B /* ResearchLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A0750E58E9B4EC1DD954B /* ResearchLabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,27 +39,47 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06B8462174F5150FE42C0236 /* Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speech.swift; sourceTree = "<group>"; };
 		216FE6F3202A726D2DC1A594 /* ColoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringView.swift; sourceTree = "<group>"; };
 		2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SooFunnyApp.swift; sourceTree = "<group>"; };
+		330A0750E58E9B4EC1DD954B /* ResearchLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchLabView.swift; sourceTree = "<group>"; };
 		463E4098E7EE04CAE5EE537B /* SooFunny.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SooFunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47AFD63ED38CCBB814C236F0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C315F4710AFD81E24B28D5E /* ImageSegmenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmenter.swift; sourceTree = "<group>"; };
 		5E0717D3143512F14844EB12 /* SubjectMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMask.swift; sourceTree = "<group>"; };
+		5F470044E7A9E244F3ECD27B /* LabBenchmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBenchmarks.swift; sourceTree = "<group>"; };
+		6E1B508B5B080938C275F7C9 /* WordDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionaryTests.swift; sourceTree = "<group>"; };
 		6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmenterTests.swift; sourceTree = "<group>"; };
+		727EE69E437092C0D601AB16 /* kids_words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kids_words.txt; sourceTree = "<group>"; };
 		782398F3A9B62A005EF9C4BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9CE868EB0E550524D0C4FC75 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
 		A8C1FD222E8DD1C055662505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringSession.swift; sourceTree = "<group>"; };
 		B19600E0B79BE6842A58FD33 /* LabImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabImage.swift; sourceTree = "<group>"; };
 		C3F436C7749E9A81E0D9181F /* SampleArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleArt.swift; sourceTree = "<group>"; };
 		C59978513D52D04636E58744 /* PixelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelImage.swift; sourceTree = "<group>"; };
 		DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SooFunnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95A7679F156F76B5BC1D12A /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		29E51010CB1C51C8C4251C99 /* Words */ = {
+			isa = PBXGroup;
+			children = (
+				727EE69E437092C0D601AB16 /* kids_words.txt */,
+				06B8462174F5150FE42C0236 /* Speech.swift */,
+				F95A7679F156F76B5BC1D12A /* WordDictionary.swift */,
+				9CE868EB0E550524D0C4FC75 /* WordsView.swift */,
+			);
+			path = Words;
+			sourceTree = "<group>";
+		};
 		2EBBB759C90F9D8B932F5E74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				216FE6F3202A726D2DC1A594 /* ColoringView.swift */,
 				782398F3A9B62A005EF9C4BA /* HomeView.swift */,
+				47AFD63ED38CCBB814C236F0 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -60,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
+				6E1B508B5B080938C275F7C9 /* WordDictionaryTests.swift */,
 			);
 			path = SooFunnyTests;
 			sourceTree = "<group>";
@@ -80,6 +109,15 @@
 				DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		93A51FF0D00EDEBDE81975D6 /* Lab */ = {
+			isa = PBXGroup;
+			children = (
+				5F470044E7A9E244F3ECD27B /* LabBenchmarks.swift */,
+				330A0750E58E9B4EC1DD954B /* ResearchLabView.swift */,
+			);
+			path = Lab;
 			sourceTree = "<group>";
 		};
 		E1FBDAF36C721E09304F665B /* Engine */ = {
@@ -116,8 +154,10 @@
 				A8C1FD222E8DD1C055662505 /* Assets.xcassets */,
 				EFC91BEFD7EB0A0C8FE284E0 /* App */,
 				E1FBDAF36C721E09304F665B /* Engine */,
+				93A51FF0D00EDEBDE81975D6 /* Lab */,
 				EC54371A8FFE2A0CABE432C2 /* Samples */,
 				2EBBB759C90F9D8B932F5E74 /* Views */,
+				29E51010CB1C51C8C4251C99 /* Words */,
 			);
 			path = SooFunny;
 			sourceTree = "<group>";
@@ -201,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A8B6EC76C9D0C1ECB91EA90 /* Assets.xcassets in Resources */,
+				F5653C9DD2741E7ABC8827B2 /* kids_words.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,11 +256,17 @@
 				C09877B5299329138FE8633A /* ColoringView.swift in Sources */,
 				BF10AE69D0AB0BA1681E1054 /* HomeView.swift in Sources */,
 				5149BF198CE3A2CA08EC2E4C /* ImageSegmenter.swift in Sources */,
+				18B08508BA62463E54122F15 /* LabBenchmarks.swift in Sources */,
 				6868463DF6452ECEC73EAAC3 /* LabImage.swift in Sources */,
 				1473025B25947BEFEA333BBF /* PixelImage.swift in Sources */,
+				F9A69C22CD61ABC49F46030B /* ResearchLabView.swift in Sources */,
 				5F3C3F1F4AB379F5F0A1C7FC /* SampleArt.swift in Sources */,
+				A4A323EFAA1737590E298238 /* SettingsView.swift in Sources */,
 				1B83D75811CED3250488C1D5 /* SooFunnyApp.swift in Sources */,
+				6CEE697D1F841EF3A62B672E /* Speech.swift in Sources */,
 				769F13091CED154B63E7CD50 /* SubjectMask.swift in Sources */,
+				69BD41182DC2CD4BF9FE2C7D /* WordDictionary.swift in Sources */,
+				8542E82C7CEC9E8589D927D0 /* WordsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
+				36CD6C263D66578D9FD66F3B /* WordDictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

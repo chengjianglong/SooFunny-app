@@ -1,0 +1,817 @@
+Category: Animals | 🐾
+dog | 🐶
+cat | 🐱
+mouse | 🐭
+rabbit | 🐰
+fox | 🦊
+bear | 🐻
+panda | 🐼
+koala | 🐨
+tiger | 🐯
+lion | 🦁
+monkey | 🐒
+gorilla | 🦍
+elephant | 🐘
+giraffe | 🦒
+zebra | 🦓
+hippo | 🦛
+rhino | 🦏
+camel | 🐫
+kangaroo | 🦘
+deer | 🦌
+wolf | 🐺
+squirrel | 🐿️
+hedgehog | 🦔
+bat | 🦇
+sloth | 🦥
+otter | 🦦
+raccoon | 🦝
+skunk | 🦨
+beaver | 🦫
+moose | 🫎
+
+Category: Farm | 🚜
+cow | 🐄
+pig | 🐖
+sheep | 🐑
+goat | 🐐
+horse | 🐎
+donkey | 🫏
+chicken | 🐔
+rooster | 🐓
+chick | 🐤
+duck | 🦆
+turkey | 🦃
+llama | 🦙
+farmer | 🧑‍🌾
+tractor | 🚜
+barn | 🛖
+hay
+fence
+egg | 🥚
+milk | 🥛
+corn | 🌽
+wheat | 🌾
+apple tree | 🌳
+pumpkin | 🎃
+scarecrow
+puppy | 🐶
+kitten | 🐱
+bucket | 🪣
+honey | 🍯
+
+Category: Sea Creatures | 🌊
+fish | 🐟
+tropical fish | 🐠
+pufferfish | 🐡
+shark | 🦈
+whale | 🐳
+dolphin | 🐬
+seal | 🦭
+octopus | 🐙
+squid | 🦑
+crab | 🦀
+lobster | 🦞
+shrimp | 🦐
+oyster | 🦪
+jellyfish | 🪼
+coral | 🪸
+shell | 🐚
+turtle | 🐢
+starfish
+seahorse
+sea lion
+penguin | 🐧
+walrus
+eel
+stingray
+seaweed
+
+Category: Bugs | 🐞
+ladybug | 🐞
+bee | 🐝
+ant | 🐜
+butterfly | 🦋
+caterpillar | 🐛
+beetle | 🪲
+cricket | 🦗
+cockroach | 🪳
+fly | 🪰
+mosquito | 🦟
+worm | 🪱
+spider | 🕷️
+spider web | 🕸️
+snail | 🐌
+scorpion | 🦂
+dragonfly
+grasshopper
+firefly
+moth
+centipede
+
+Category: Birds | 🐦
+bird | 🐦
+eagle | 🦅
+owl | 🦉
+parrot | 🦜
+flamingo | 🦩
+peacock | 🦚
+swan | 🦢
+dove | 🕊️
+goose | 🪿
+penguin | 🐧
+chick | 🐥
+dodo | 🦤
+robin
+crow
+sparrow
+woodpecker
+hummingbird
+ostrich
+pelican
+seagull
+feather | 🪶
+nest | 🪺
+wing
+
+Category: Fruit | 🍎
+apple | 🍎
+green apple | 🍏
+pear | 🍐
+orange | 🍊
+lemon | 🍋
+lime | 🍋‍🟩
+banana | 🍌
+watermelon | 🍉
+grapes | 🍇
+strawberry | 🍓
+blueberries | 🫐
+melon | 🍈
+cherries | 🍒
+peach | 🍑
+mango | 🥭
+pineapple | 🍍
+coconut | 🥥
+kiwi | 🥝
+tomato | 🍅
+olive | 🫒
+avocado | 🥑
+plum
+raspberry
+papaya
+grapefruit
+
+Category: Vegetables | 🥕
+carrot | 🥕
+corn | 🌽
+broccoli | 🥦
+lettuce | 🥬
+cucumber | 🥒
+potato | 🥔
+sweet potato | 🍠
+eggplant | 🍆
+pepper | 🫑
+chili | 🌶️
+onion | 🧅
+garlic | 🧄
+mushroom | 🍄‍🟫
+peas | 🫛
+beans | 🫘
+ginger | 🫚
+pumpkin | 🎃
+cabbage
+celery
+spinach
+radish
+zucchini
+cauliflower
+beet
+
+Category: Food | 🍕
+bread | 🍞
+cheese | 🧀
+pizza | 🍕
+burger | 🍔
+fries | 🍟
+hot dog | 🌭
+sandwich | 🥪
+taco | 🌮
+burrito | 🌯
+pasta | 🍝
+rice | 🍚
+noodles | 🍜
+soup | 🍲
+salad | 🥗
+egg | 🥚
+pancakes | 🥞
+waffle | 🧇
+bacon | 🥓
+sushi | 🍣
+dumpling | 🥟
+popcorn | 🍿
+pretzel | 🥨
+bagel | 🥯
+croissant | 🥐
+butter | 🧈
+
+Category: Sweets | 🍰
+cake | 🍰
+birthday cake | 🎂
+cupcake | 🧁
+cookie | 🍪
+donut | 🍩
+ice cream | 🍨
+ice pop | 🍧
+candy | 🍬
+lollipop | 🍭
+chocolate | 🍫
+pie | 🥧
+pudding | 🍮
+honey | 🍯
+cotton candy
+jelly
+muffin
+brownie
+marshmallow
+gum
+sprinkles
+
+Category: Drinks | 🥤
+water | 💧
+milk | 🥛
+juice | 🧃
+tea | 🍵
+hot cocoa | ☕
+smoothie | 🥤
+lemonade | 🍋
+bubble tea | 🧋
+cup | 🥤
+glass
+bottle | 🍼
+straw
+ice | 🧊
+mug | ☕
+pitcher | 🫗
+
+Category: Colors | 🎨
+red | 🔴
+orange | 🟠
+yellow | 🟡
+green | 🟢
+blue | 🔵
+purple | 🟣
+brown | 🟤
+black | ⚫
+white | ⚪
+pink | 🩷
+gray | 🩶
+gold | 🥇
+silver | 🥈
+light blue | 🩵
+rainbow | 🌈
+dark
+light
+bright
+
+Category: Shapes | 🔷
+circle | ⭕
+square | 🟥
+triangle | 🔺
+diamond | 🔷
+star | ⭐
+heart | ❤️
+oval | 🥚
+rectangle
+cross | ✖️
+arrow | ➡️
+cube | 🧊
+ball | ⚽
+cone | 🍦
+line
+dot
+curve
+corner
+side
+
+Category: Numbers | 🔢
+zero | 0️⃣
+one | 1️⃣
+two | 2️⃣
+three | 3️⃣
+four | 4️⃣
+five | 5️⃣
+six | 6️⃣
+seven | 7️⃣
+eight | 8️⃣
+nine | 9️⃣
+ten | 🔟
+eleven
+twelve
+twenty
+fifty
+hundred | 💯
+first | 🥇
+second | 🥈
+third | 🥉
+half
+plus | ➕
+minus | ➖
+equals | 🟰
+count
+
+Category: My Body | 🖐️
+head
+face | 🙂
+eye | 👁️
+eyes | 👀
+ear | 👂
+nose | 👃
+mouth | 👄
+tongue | 👅
+tooth | 🦷
+hair | 💇
+hand | ✋
+finger | 👆
+thumb | 👍
+arm | 💪
+leg | 🦵
+foot | 🦶
+knee
+elbow
+shoulder
+tummy
+back
+heart | ❤️
+brain | 🧠
+bone | 🦴
+skin
+
+Category: Clothes | 👕
+shirt | 👕
+pants | 👖
+dress | 👗
+skirt
+shorts | 🩳
+socks | 🧦
+shoes | 👟
+boots | 👢
+sandals | 🩴
+hat | 🧢
+cap | 🧢
+coat | 🧥
+scarf | 🧣
+gloves | 🧤
+pajamas
+swimsuit | 🩱
+jacket | 🧥
+sweater
+belt
+glasses | 👓
+sunglasses | 🕶️
+crown | 👑
+backpack | 🎒
+button | 🔘
+
+Category: At Home | 🏠
+house | 🏠
+door | 🚪
+window | 🪟
+bed | 🛏️
+chair | 🪑
+sofa | 🛋️
+table
+lamp | 💡
+clock | 🕰️
+mirror | 🪞
+bath | 🛁
+shower | 🚿
+toilet | 🚽
+soap | 🧼
+toothbrush | 🪥
+towel
+pillow
+blanket
+key | 🔑
+stairs
+roof
+garden | 🏡
+television | 📺
+phone | 📱
+basket | 🧺
+
+Category: Kitchen | 🍳
+pan | 🍳
+pot | 🍲
+spoon | 🥄
+fork | 🍴
+knife | 🔪
+plate | 🍽️
+bowl | 🥣
+cup | ☕
+oven
+fridge
+sink
+kettle
+cutting board
+whisk
+apron
+salt | 🧂
+napkin
+jar | 🫙
+lunchbox | 🍱
+chopsticks | 🥢
+
+Category: School | 🏫
+school | 🏫
+teacher | 🧑‍🏫
+student | 🧑‍🎓
+book | 📕
+books | 📚
+notebook | 📓
+pencil | ✏️
+pen | 🖊️
+crayon | 🖍️
+paintbrush | 🖌️
+scissors | ✂️
+ruler | 📏
+glue
+paper | 📄
+backpack | 🎒
+desk
+board
+map | 🗺️
+globe | 🌍
+calculator | 🧮
+computer | 💻
+bus | 🚌
+bell | 🔔
+lunch
+recess
+
+Category: Toys and Games | 🧸
+teddy bear | 🧸
+doll | 🪆
+ball | ⚽
+blocks | 🧱
+puzzle | 🧩
+kite | 🪁
+yo-yo | 🪀
+balloon | 🎈
+robot | 🤖
+dice | 🎲
+cards | 🃏
+chess | ♟️
+video game | 🎮
+toy car | 🚗
+train set | 🚂
+top
+jump rope
+bubbles | 🫧
+slide
+swing
+sandbox
+crayons | 🖍️
+magic wand | 🪄
+hide and seek
+tag
+
+Category: Sports | ⚽
+soccer | ⚽
+basketball | 🏀
+baseball | ⚾
+football | 🏈
+tennis | 🎾
+volleyball | 🏐
+golf | ⛳
+bowling | 🎳
+hockey | 🏒
+ping pong | 🏓
+badminton | 🏸
+skiing | ⛷️
+skating | ⛸️
+swimming | 🏊
+running | 🏃
+biking | 🚴
+surfing | 🏄
+karate | 🥋
+boxing | 🥊
+gymnastics | 🤸
+medal | 🏅
+trophy | 🏆
+team
+goal | 🥅
+whistle
+
+Category: Music | 🎵
+music | 🎵
+song | 🎶
+piano | 🎹
+guitar | 🎸
+drum | 🥁
+violin | 🎻
+trumpet | 🎺
+saxophone | 🎷
+flute | 🪈
+banjo | 🪕
+accordion | 🪗
+maracas | 🪇
+microphone | 🎤
+headphones | 🎧
+radio | 📻
+bell | 🔔
+sing
+dance | 💃
+loud | 🔊
+quiet | 🔈
+band
+concert
+
+Category: Going Places | 🚗
+car | 🚗
+bus | 🚌
+train | 🚆
+plane | ✈️
+boat | ⛵
+ship | 🚢
+bike | 🚲
+scooter | 🛴
+truck | 🚚
+fire truck | 🚒
+ambulance | 🚑
+police car | 🚓
+taxi | 🚕
+tractor | 🚜
+helicopter | 🚁
+rocket | 🚀
+motorcycle | 🏍️
+subway | 🚇
+canoe | 🛶
+hot air balloon | 🎈
+road | 🛣️
+traffic light | 🚦
+bridge | 🌉
+map | 🗺️
+ticket | 🎫
+
+Category: Weather | ☁️
+sun | ☀️
+cloud | ☁️
+rain | 🌧️
+snow | ❄️
+wind | 🌬️
+storm | ⛈️
+lightning | ⚡
+rainbow | 🌈
+fog | 🌫️
+tornado | 🌪️
+umbrella | ☔
+snowman | ⛄
+hot | 🥵
+cold | 🥶
+warm
+cool
+sunny | 🌞
+cloudy | 🌥️
+rainy | 🌦️
+windy
+puddle
+thermometer | 🌡️
+
+Category: Seasons and Time | 📅
+spring | 🌷
+summer | 🏖️
+fall | 🍂
+winter | ❄️
+day | 🏙️
+night | 🌃
+morning | 🌅
+noon
+evening | 🌆
+today
+tomorrow
+yesterday
+week
+month
+year
+birthday | 🎂
+clock | ⏰
+hour | ⏳
+minute | ⏱️
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+
+Category: Nature | 🌳
+tree | 🌳
+pine tree | 🌲
+palm tree | 🌴
+flower | 🌸
+rose | 🌹
+tulip | 🌷
+sunflower | 🌻
+leaf | 🍃
+grass | 🌱
+mushroom | 🍄
+cactus | 🌵
+rock | 🪨
+mountain | ⛰️
+volcano | 🌋
+river
+lake
+ocean | 🌊
+beach | 🏖️
+island | 🏝️
+desert | 🏜️
+forest | 🌲
+cave
+waterfall
+hill
+sand
+
+Category: Space | 🚀
+sun | ☀️
+moon | 🌙
+full moon | 🌕
+star | ⭐
+planet | 🪐
+Earth | 🌎
+comet | ☄️
+rocket | 🚀
+astronaut | 🧑‍🚀
+satellite | 🛰️
+telescope | 🔭
+alien | 👽
+UFO | 🛸
+galaxy | 🌌
+shooting star | 🌠
+sky
+Mars
+Saturn
+orbit
+meteor
+
+Category: Jobs | 👩‍🚒
+doctor | 🧑‍⚕️
+nurse | 🧑‍⚕️
+teacher | 🧑‍🏫
+firefighter | 🧑‍🚒
+police officer | 👮
+farmer | 🧑‍🌾
+cook | 🧑‍🍳
+pilot | 🧑‍✈️
+astronaut | 🧑‍🚀
+artist | 🧑‍🎨
+singer | 🧑‍🎤
+scientist | 🧑‍🔬
+builder | 👷
+mechanic | 🧑‍🔧
+mail carrier | 📬
+judge | 🧑‍⚖️
+dentist | 🦷
+vet
+baker
+librarian
+coach
+driver
+gardener
+
+Category: People | 👨‍👩‍👧
+baby | 👶
+boy | 👦
+girl | 👧
+man | 👨
+woman | 👩
+mom | 👩
+dad | 👨
+grandma | 👵
+grandpa | 👴
+sister
+brother
+family | 👨‍👩‍👧
+friend | 🧑‍🤝‍🧑
+neighbor
+aunt
+uncle
+cousin
+twins
+king | 🤴
+queen | 👸
+prince
+princess | 👸
+
+Category: Feelings | 😊
+happy | 😊
+sad | 😢
+angry | 😠
+scared | 😨
+surprised | 😮
+excited | 🤩
+silly | 🤪
+sleepy | 😴
+tired | 🥱
+proud | 😌
+shy | 😳
+worried | 😟
+calm | 😌
+bored | 😐
+grumpy | 😤
+loving | 🥰
+brave | 🦸
+sick | 🤒
+hungry | 😋
+thirsty
+lonely
+kind | 🤗
+
+Category: Action Words | 🏃
+run | 🏃
+walk | 🚶
+jump
+hop
+skip
+climb | 🧗
+swim | 🏊
+fly | 🕊️
+dance | 💃
+sing | 🎤
+clap | 👏
+wave | 👋
+read | 📖
+write | ✍️
+draw | 🖍️
+paint | 🎨
+eat | 🍽️
+drink | 🥤
+sleep | 😴
+laugh | 😂
+cry | 😢
+hug | 🤗
+kick
+throw
+catch
+push
+pull
+build | 🏗️
+cook | 🍳
+play
+
+Category: Opposites | ↔️
+big
+small
+tall
+short
+hot | 🔥
+cold | 🧊
+fast | 🐇
+slow | 🐢
+up | ⬆️
+down | ⬇️
+in
+out
+open
+closed
+day | ☀️
+night | 🌙
+happy | 😀
+sad | 😢
+full
+empty
+loud | 🔊
+quiet | 🤫
+wet
+dry
+old
+new | 🆕
+left | ⬅️
+right | ➡️
+
+Category: Around Town | 🏙️
+park | 🏞️
+school | 🏫
+hospital | 🏥
+library
+store | 🏪
+bakery
+bank | 🏦
+post office | 🏤
+fire station | 🚒
+police station | 🚓
+zoo | 🦁
+museum | 🏛️
+playground | 🛝
+pool | 🏊
+restaurant | 🍽️
+farm | 🚜
+airport | ✈️
+train station | 🚉
+hotel | 🏨
+church | ⛪
+stadium | 🏟️
+castle | 🏰
+office | 🏢
+street
+sidewalk

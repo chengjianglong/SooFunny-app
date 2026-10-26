@@ -21,6 +21,14 @@ network requests and needs no Wi‑Fi, account or download.
 - **Fun tools**: Undo, **Magic** (random colors everywhere), **Real** (each block in its photo
   color), **Peek** (see the original underneath), Clear, Eraser, and a custom color picker.
 - **Share / save** the finished picture through the system share sheet.
+- **Words tab**: an English word browser for kids. Tap a category to see its words, tap a
+  word to see it big, hear it, and tap its letters one by one; use Back to return to the
+  categories. 32 categories and 754 words, written for SooFunny, each with an emoji picture
+  where one fits. Words are read aloud with the iPhone/iPad's built-in voices (offline).
+- **Settings**: reading voice and speed, plus **Research Lab** (for grown-ups) with on-device
+  benchmarks: the coloring-page pipeline, Apple's Vision subject model, and Apple's on-device
+  language model (Apple Intelligence, iOS 26+) with a prompt playground. Results are kept on
+  the device and export as JSON/CSV.
 - Universal layout: a scrolling crayon row on iPhone and a wrapping crayon box on iPad. In iPad
   landscape, the tools move to a sidebar so the picture stays big. Every orientation is supported.
 
@@ -47,6 +55,18 @@ area is a block, and the lines stay anti-aliased.
 5. **Smooth.** Block borders are rounded off, then redrawn at 1024px with Gaussian-weighted
    contour smoothing, so lines look hand-drawn instead of pixelated.
 6. **Outline.** A distance transform draws an even, anti-aliased ~3px line along every border.
+
+## Words and Research Lab
+
+The word list lives in `SooFunny/Words/kids_words.txt`: blank-line-separated sections, each
+starting with `Category: <name>`, one word per line, with an optional `| <emoji>` picture.
+Edit it and rebuild to change the vocabulary; `WordDictionaryTests` checks the format.
+
+The Words tab and Research Lab follow the design of the Android app
+[frankdu/hack_android_base](https://github.com/frankdu/hack_android_base) (category browser,
+Back navigation, Settings → Research Lab). No code, word list or images were copied from it.
+Its Gemma/LiteRT and image-generation tools are Android-specific and need multi-GB downloads,
+so the iOS Research Lab uses models built into iOS instead and stays fully offline.
 
 ## Building
 
