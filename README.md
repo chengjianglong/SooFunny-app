@@ -89,6 +89,11 @@ A yearly auto-renewing subscription: **$19.99/year with a 7-day free trial**, Fa
 - Purchases and links that leave the app sit behind a grown-up check (a two-digit
   multiplication question), as the App Store requires for kids' apps.
 - StoreKit keeps the purchase on the device, so Premium keeps working offline.
+- **Developer unlock:** Debug builds (installed from Xcode) turn Premium on so you can try every
+  feature on your own devices; Settings shows an orange "Developer unlock" note. It comes from
+  the `DEV_UNLOCK` flag, set only for the Debug configuration in `project.yml`. App Store and
+  TestFlight builds are Release, which doesn't have it, and `Premium.swift` refuses to compile
+  if the flag is ever added outside Debug.
 - `SooFunny/Store/SooFunny.storekit` lets Xcode test purchases locally (the scheme uses it when
   you press Run). Listing text, review notes and the submission checklist are in
   [AppStore/LISTING.md](AppStore/LISTING.md); the privacy policy is [PRIVACY.md](PRIVACY.md).

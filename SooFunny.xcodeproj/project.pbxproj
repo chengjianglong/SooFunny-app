@@ -632,6 +632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chengjianglong.soofunny;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEV_UNLOCK";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

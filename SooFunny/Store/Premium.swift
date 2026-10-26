@@ -2,6 +2,12 @@ import Observation
 import StoreKit
 import SwiftUI
 
+// The developer unlock exists only in Debug builds (DEV_UNLOCK is set for the Debug
+// configuration in project.yml). App Store and TestFlight builds are always Release.
+#if DEV_UNLOCK && !DEBUG
+#error("DEV_UNLOCK must never be enabled outside Debug builds")
+#endif
+
 /// SooFunny Premium: a yearly auto-renewing subscription ($19.99/year, 7-day free trial),
 /// sold through the App Store. StoreKit keeps the purchase on the device, so the app keeps
 /// working offline after subscribing.
@@ -20,9 +26,23 @@ final class Premium {
     private(set) var expirationDate: Date?
     private(set) var willRenew = true
 
+    /// Debug builds installed from Xcode unlock everything, so the developer can try Premium
+    /// features on their own devices. Always false in Release (App Store) builds.
+    nonisolated static var isDeveloperUnlockBuild: Bool {
+        #if DEV_UNLOCK
+        return true
+        #else
+        return false
+        #endif
+    }
+
+    /// True when this build unlocks Premium without a purchase.
+    let developerUnlock: Bool
+
     @ObservationIgnored private var updates: Task<Void, Never>?
 
-    init() {
+    init(developerUnlock: Bool = Premium.isDeveloperUnlockBuild) {
+        self.developerUnlock = developerUnlock
         // Purchases made elsewhere (Family Sharing, another device, renewals) arrive here.
         updates = Task { [weak self] in
             for await result in Transaction.updates {
@@ -45,7 +65,7 @@ final class Premium {
             active = true
             expiration = transaction.expirationDate
         }
-        isActive = active
+        isActive = active || developerUnlock
         expirationDate = expiration
         if active, let status = try? await Product.products(for: [Self.yearlyID]).first?.subscription?.status.first,
            case .verified(let info) = status.renewalInfo {

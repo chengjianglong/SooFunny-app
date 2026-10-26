@@ -48,7 +48,7 @@ final class PremiumTests: XCTestCase {
     }
 
     func testPurchaseUnlocksAndCancelledSubscriptionLocksWhenItEnds() async throws {
-        let premium = Premium()
+        let premium = Premium(developerUnlock: false)
         await premium.refresh()
         XCTAssertFalse(premium.isActive)
 
@@ -67,7 +67,7 @@ final class PremiumTests: XCTestCase {
     }
 
     func testRefundLocks() async throws {
-        let premium = Premium()
+        let premium = Premium(developerUnlock: false)
         let result = try await product().purchase()
         guard case .success(.verified(let transaction)) = result else { return XCTFail("purchase failed") }
         await transaction.finish()
@@ -77,6 +77,20 @@ final class PremiumTests: XCTestCase {
         try session.refundTransaction(identifier: UInt(transaction.id))
         let locked = await waitUntilLocked(premium)
         XCTAssertTrue(locked, "refunded subscription should lock Premium")
+    }
+}
+
+final class DeveloperUnlockTests: XCTestCase {
+    @MainActor
+    func testUnlockOnlyInDebugBuilds() async {
+        #if DEBUG
+        XCTAssertTrue(Premium.isDeveloperUnlockBuild, "Debug builds unlock Premium for the developer")
+        let premium = Premium()
+        await premium.refresh()
+        XCTAssertTrue(premium.isActive)
+        #else
+        XCTAssertFalse(Premium.isDeveloperUnlockBuild, "Release builds must never unlock Premium")
+        #endif
     }
 }
 

@@ -24,6 +24,14 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                #if DEV_UNLOCK
+                Section {
+                    Label("Developer unlock: Premium is on in this Debug build. App Store builds don't include it.",
+                          systemImage: "hammer.fill")
+                        .font(.footnote)
+                        .foregroundStyle(.orange)
+                }
+                #endif
                 Section {
                     if premium.isActive {
                         LabeledContent("SooFunny Premium", value: "Active")
