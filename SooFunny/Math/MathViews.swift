@@ -322,7 +322,13 @@ struct MathPlayView: View {
                 }
             }
         }
-        .onAppear(perform: readQuestion)
+        .onAppear {
+            readQuestion()
+            // Prepare every question's words now, so each is read the moment it appears.
+            if settings.readAloud {
+                NaturalVoiceEngine.shared.prefetch(session.questions.dropFirst().map { "\($0.spokenText) equals?" })
+            }
+        }
         .onChange(of: session.index) { readQuestion() }
     }
 

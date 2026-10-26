@@ -37,7 +37,8 @@ final class KokoroTTS {
         styles = data.withUnsafeBytes { Array($0.bindMemory(to: Float.self)) }
         env = try ORTEnv(loggingLevel: .warning)
         let options = try ORTSessionOptions()
-        // Leave cores free for the talking buddy and the UI.
+        // Measured on iPhone 16: more threads aren't faster and Core ML is slower, so use two
+        // and leave cores free for the talking buddy and the UI.
         try options.setIntraOpNumThreads(2)
         try options.setGraphOptimizationLevel(.all)
         session = try ORTSession(env: env, modelPath: model.path, sessionOptions: options)
@@ -67,5 +68,14 @@ final class KokoroTTS {
         guard let waveform = outputs["waveform"] else { throw TTSError.badOutput }
         let out = try waveform.tensorData() as Data
         return out.withUnsafeBytes { Array($0.bindMemory(to: Float.self)) }
+    }
+
+    /// Removes the silence Kokoro puts around each clip (about 0.35 s before and 0.5 s
+    /// after), keeping a few milliseconds so words don't start or end abruptly.
+    static func trimmingSilence(_ samples: [Float], threshold: Float = 0.008) -> [Float] {
+        guard let first = samples.firstIndex(where: { abs($0) > threshold }),
+              let last = samples.lastIndex(where: { abs($0) > threshold }) else { return [] }
+        let lead = Int(sampleRate * 0.03), tail = Int(sampleRate * 0.06)
+        return Array(samples[max(0, first - lead)...min(samples.count - 1, last + tail)])
     }
 }

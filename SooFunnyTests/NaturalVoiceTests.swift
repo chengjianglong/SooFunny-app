@@ -83,3 +83,32 @@ final class KokoroTTSTests: XCTestCase {
         XCTAssertGreaterThan(slow.count, normal.count)
     }
 }
+
+final class NaturalVoicePhraseTests: XCTestCase {
+    func testShortSentencesStayWholeWithAPauseAfter() {
+        let phrases = NaturalVoice.phrases(in: "Lions eat meat.")
+        XCTAssertEqual(phrases.map(\.text), ["Lions eat meat."])
+        XCTAssertEqual(phrases.last?.gap ?? 0, 0.22, accuracy: 0.001)
+    }
+
+    func testLongSentencesSplitAtCommasIntoNaturalPhrases() {
+        let sentence = "A lion is a big wild cat, with a fluffy mane, and it lives in Africa."
+        let phrases = NaturalVoice.phrases(in: sentence)
+        XCTAssertEqual(phrases.map(\.text), ["A lion is a big wild cat,", "with a fluffy mane,", "and it lives in Africa."])
+        XCTAssertEqual(phrases.map(\.gap), [0.12, 0.12, 0.22])
+        for phrase in phrases { XCTAssertTrue(sentence.contains(phrase.text), "highlighting finds \(phrase.text)") }
+    }
+
+    func testTinyLastPhraseJoinsThePreviousOne() {
+        let phrases = NaturalVoice.phrases(in: "They like to eat zebras and other big animals, too.")
+        XCTAssertEqual(phrases.map(\.text), ["They like to eat zebras and other big animals, too."])
+    }
+
+    func testTrimmingRemovesSilenceButKeepsTheSound() {
+        let silence = [Float](repeating: 0, count: 9_000)
+        let sound = (0..<2_400).map { sin(Float($0) / 5) * 0.3 }
+        let trimmed = KokoroTTS.trimmingSilence(silence + sound + silence + silence)
+        XCTAssertLessThan(trimmed.count, sound.count + 2_400, "at most 0.1 s of padding is kept")
+        XCTAssertGreaterThanOrEqual(trimmed.count, sound.count - 20)
+    }
+}

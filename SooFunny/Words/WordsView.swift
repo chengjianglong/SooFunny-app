@@ -81,6 +81,8 @@ private struct CategoryGrid: View {
             .frame(maxWidth: .infinity)
         }
         .background(Color(.systemGroupedBackground))
+        // Prepare the group names so the speaker buttons answer instantly.
+        .onAppear { NaturalVoiceEngine.shared.prefetch(categories.map(\.name)) }
     }
 
     private func row(_ category: WordCategory, index: Int, locked: Bool) -> some View {
@@ -145,6 +147,7 @@ private struct WordList: View {
         }
         .background(Color(.systemGroupedBackground))
         .navigationTitle(category.name)
+        .onAppear { NaturalVoiceEngine.shared.prefetch(category.words.map(\.text)) }
         .navigationBarTitleDisplayMode(.large)
     }
 }
@@ -257,12 +260,23 @@ private struct WordDetail: View {
         .background(Color(.systemGroupedBackground))
         .navigationTitle(route.category.name)
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear { Speech.shared.speak(word.text) }
+        .onAppear {
+            Speech.shared.speak(word.text)
+            prefetchAround()
+        }
     }
 
     private func move(_ step: Int) {
         index = min(max(0, index + step), words.count - 1)
         Speech.shared.speak(word.text)
+        prefetchAround()
+    }
+
+    /// Prepares this word's letters and the words next to it, so taps answer instantly.
+    private func prefetchAround() {
+        let letters = Set(word.text.filter(\.isLetter).map { String($0).lowercased() })
+        let neighbors = [index + 1, index - 1].filter(words.indices.contains).map { words[$0].text }
+        NaturalVoiceEngine.shared.prefetch(neighbors + letters.sorted())
     }
 }
 
