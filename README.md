@@ -36,6 +36,16 @@ network requests and needs no Wi‑Fi, account or download.
   turn: **Talk**, **Done** (while listening), **Cancel** (while thinking), **Stop speaking**.
   Powered by Google's **Gemma 3 1B** (4-bit) running on the device with llama.cpp, plus Apple's
   on-device speech recognition and voices. No internet needed; nothing is recorded or saved.
+- **Math tab** (fully offline), modeled on "Best Math App for Kids":
+  - **Flashcard Game**: choose operations (+ − × ÷), the numbers 0–12 to focus on, 10/20/30
+    questions, and whether to mark questions. Cards show the problem stacked the school way;
+    tap to see the answer, then "Got it!" / "Not yet" (or Next).
+  - **Quiz**: "5 − 1 = ?" with a big number pad, a ✓ or ✗ with the right answer, a timer, and
+    a results screen with stars, confetti and "Practice missed ones".
+  - **Progress Reports**: rounds, questions, day streak, accuracy per operation, and the
+    trickiest facts to practice again. Saved only on the device.
+  - Questions can be read aloud. Subtraction never goes below zero and division always comes
+    out even.
 - **Settings**: reading voice and speed, plus **Research Lab** (for grown-ups) with on-device
   benchmarks: the coloring-page pipeline, Apple's Vision subject model, and Apple's on-device
   language model (Apple Intelligence, iOS 26+) with a prompt playground. Results are kept on

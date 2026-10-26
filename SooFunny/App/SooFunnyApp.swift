@@ -9,7 +9,7 @@ struct SooFunnyApp: App {
     }
 }
 
-/// Two tabs: Color (pictures to color) and Words (the word browser). Settings is in the top bar.
+/// Three tabs: Color (pictures to color), Words (the word browser) and Math. Settings is in the top bar.
 struct ContentView: View {
     @State private var session: ColoringSession?
     @State private var showSettings = false
@@ -31,6 +31,9 @@ struct ContentView: View {
 
             WordsView()
                 .tabItem { Label("Words", systemImage: "textformat.abc") }
+
+            MathView()
+                .tabItem { Label("Math", systemImage: "plus.forwardslash.minus") }
         }
         .fullScreenCover(item: $session) { session in
             ColoringView(session: session)
