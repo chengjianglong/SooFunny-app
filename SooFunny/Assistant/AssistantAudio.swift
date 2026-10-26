@@ -109,7 +109,11 @@ final class SystemChildListener: ChildListener {
     func start(onPartial: @escaping (String) -> Void, onFinish: @escaping (String?) -> Void) throws {
         guard SFSpeechRecognizer.authorizationStatus() == .authorized else { throw ListenError.speechNotAllowed }
         guard AVAudioApplication.shared.recordPermission == .granted else { throw ListenError.microphoneNotAllowed }
-        guard let recognizer, recognizer.isAvailable else { throw ListenError.unavailable }
+        // Only listen when speech can be recognized on the device: a child's voice is never
+        // sent to a server (see PRIVACY.md).
+        guard let recognizer, recognizer.isAvailable, recognizer.supportsOnDeviceRecognition else {
+            throw ListenError.unavailable
+        }
         cancel()
         self.onFinish = onFinish
         heard = ""
@@ -119,7 +123,7 @@ final class SystemChildListener: ChildListener {
         try AssistantAudioSession.activateForListening()
         let request = SFSpeechAudioBufferRecognitionRequest()
         request.shouldReportPartialResults = true
-        if recognizer.supportsOnDeviceRecognition { request.requiresOnDeviceRecognition = true }
+        request.requiresOnDeviceRecognition = true
         request.taskHint = .search
         self.request = request
 
