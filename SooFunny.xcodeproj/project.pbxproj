@@ -31,7 +31,7 @@
 /* Begin PBXFileReference section */
 		216FE6F3202A726D2DC1A594 /* ColoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringView.swift; sourceTree = "<group>"; };
 		2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SooFunnyApp.swift; sourceTree = "<group>"; };
-		463E4098E7EE04CAE5EE537B /* SooFunny.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SooFunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		463E4098E7EE04CAE5EE537B /* SooFunny.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SooFunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C315F4710AFD81E24B28D5E /* ImageSegmenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmenter.swift; sourceTree = "<group>"; };
 		6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmenterTests.swift; sourceTree = "<group>"; };
 		782398F3A9B62A005EF9C4BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringSession.swift; sourceTree = "<group>"; };
 		C3F436C7749E9A81E0D9181F /* SampleArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleArt.swift; sourceTree = "<group>"; };
 		C59978513D52D04636E58744 /* PixelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelImage.swift; sourceTree = "<group>"; };
-		DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SooFunnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SooFunnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -162,7 +162,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					2D751E10734B51405A840FA0 = {
 						ProvisioningStyle = Automatic;
@@ -241,6 +241,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 228JYK7A2M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
 				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
@@ -298,6 +299,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -319,6 +321,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -332,6 +335,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 228JYK7A2M;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
 				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
@@ -390,6 +394,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -404,6 +409,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
