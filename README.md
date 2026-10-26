@@ -144,3 +144,11 @@ SooFunnyTests/                   Segmentation unit tests
 design/soo-icon.png              Source artwork for the app icon
 scripts/make_icon.py             Crops the artwork into the 1024px app icon
 ```
+
+## About
+
+SooFunny version 0.1, developed by [Chengjiang Long](https://www.chengjianglong.com/).
+
+© 2026 Soo Intelligence Inc. All rights reserved. Bundled third-party parts keep their own
+licenses: the gallery photos (CC0, see `SooFunny/Showcase/credits.json`), llama.cpp (MIT) and
+Gemma (Gemma Terms of Use).

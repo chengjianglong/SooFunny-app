@@ -61,6 +61,17 @@ struct SettingsView: View {
                         speechRate = SettingsKey.defaultSpeechRate
                     }
                 }
+
+                Section("About") {
+                    LabeledContent("Version", value: AppInfo.version)
+                    LabeledContent("Developer", value: AppInfo.developer)
+                    Link(destination: AppInfo.developerURL) {
+                        Label("chengjianglong.com", systemImage: "globe")
+                    }
+                    Text(AppInfo.copyright)
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
             }
             .navigationTitle("Settings")
             .navigationBarTitleDisplayMode(.inline)
@@ -105,5 +116,21 @@ private struct PhotoCreditsView: View {
         }
         .navigationTitle("Photo credits")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+/// Who makes SooFunny, and its version.
+enum AppInfo {
+    static let developer = "Chengjiang Long"
+    static let developerURL = URL(string: "https://www.chengjianglong.com/")!
+    static let company = "Soo Intelligence Inc."
+    static let copyright = "© 2026 Soo Intelligence Inc. All rights reserved."
+
+    /// From the app's Info.plist (MARKETING_VERSION in project.yml).
+    static var version: String {
+        let info = Bundle.main.infoDictionary
+        let short = info?["CFBundleShortVersionString"] as? String ?? "0.1"
+        let build = info?["CFBundleVersion"] as? String ?? "1"
+        return "\(short) (\(build))"
     }
 }
