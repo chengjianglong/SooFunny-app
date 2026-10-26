@@ -5,3 +5,6 @@ DerivedData/
 *.xcuserstate
 xcuserdata/
 *.xcscmblueprint
+Vendor/
+Models/*.gguf
+Models/*.part

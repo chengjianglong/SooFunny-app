@@ -25,6 +25,14 @@ network requests and needs no Wi‑Fi, account or download.
   word to see it big, hear it, and tap its letters one by one; use Back to return to the
   categories. 32 categories and 754 words, written for SooFunny, each with an emoji picture
   where one fits. Words are read aloud with the iPhone/iPad's built-in voices (offline).
+- **Talk about a word** (sparkle button on every word): a spoken conversation with an on-device
+  buddy, like the [Wonder Words Agent demo](https://www.youtube.com/shorts/ZAaAPILTohk). It
+  explains the word in a sentence or two and asks "What would you like to know about …?", then
+  listens. Kids ask out loud (or type); the buddy answers in a few simple sentences, read aloud
+  with each word highlighted as it's spoken, then listens again. The big button changes with the
+  turn: **Talk**, **Done** (while listening), **Cancel** (while thinking), **Stop speaking**.
+  Powered by Google's **Gemma 3 1B** (4-bit) running on the device with llama.cpp, plus Apple's
+  on-device speech recognition and voices. No internet needed; nothing is recorded or saved.
 - **Settings**: reading voice and speed, plus **Research Lab** (for grown-ups) with on-device
   benchmarks: the coloring-page pipeline, Apple's Vision subject model, and Apple's on-device
   language model (Apple Intelligence, iOS 26+) with a prompt playground. Results are kept on
@@ -70,7 +78,23 @@ so the iOS Research Lab uses models built into iOS instead and stays fully offli
 
 ## Building
 
-Requirements: Xcode 16+ and iOS 17+.
+Requirements: Xcode 16+, iOS 17+, and [CMake](https://cmake.org) (`brew install cmake`).
+
+The talking buddy needs two large pieces that aren't stored in git. Fetch them once:
+
+```bash
+./scripts/build_llama.sh
+```
+
+```bash
+./scripts/fetch_model.sh
+```
+
+The first builds llama.cpp (tag `b11577`) as an XCFramework for iOS devices and the Simulator
+into `Vendor/`. The second downloads Gemma 3 1B (`gemma-3-1b-it-Q4_K_M.gguf`, 806 MB, checked
+against its SHA-256) into `Models/`. The model is bundled into the app, so the app is about
+830 MB and works offline from first launch. Gemma is provided under the
+[Gemma Terms of Use](https://ai.google.dev/gemma/terms).
 
 ```bash
 open SooFunny.xcodeproj
@@ -100,6 +124,7 @@ SooFunny/
   Engine/PixelImage.swift        RGBA bitmap helpers
   Engine/ImageSegmenter.swift    Picture → blocks, plus the renderer
   Engine/ColoringSession.swift   Fill colors, undo, Magic/Real/Clear
+  Assistant/                     Talk-about-a-word buddy: Gemma via llama.cpp, speech in and out
   Samples/SampleArt.swift        Built-in drawings, drawn in code
   Views/                         SwiftUI screens
 SooFunnyTests/                   Segmentation unit tests

@@ -5,9 +5,10 @@ struct WordsView: View {
     @State private var categories: [WordCategory] = []
     @State private var loadFailed = false
     @State private var showSettings = false
+    @State private var path = NavigationPath()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             Group {
                 if loadFailed {
                     ContentUnavailableView("Couldn't open the words", systemImage: "book.closed",
@@ -17,8 +18,11 @@ struct WordsView: View {
                 }
             }
             .navigationTitle("Words")
-            .navigationDestination(for: WordCategory.self) { WordList(category: $0) }
-            .navigationDestination(for: WordDetailRoute.self) { WordDetail(route: $0) }
+            .navigationDestination(for: WordCategory.self) { WordList(category: $0, path: $path) }
+            .navigationDestination(for: WordDetailRoute.self) { WordDetail(route: $0, path: $path) }
+            .navigationDestination(for: AssistantRoute.self) {
+                WordAssistantView(word: $0.category.words[$0.index], category: $0.category)
+            }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: { Label("Settings", systemImage: "gearshape") }
@@ -72,6 +76,7 @@ private struct CategoryGrid: View {
 
 private struct WordList: View {
     let category: WordCategory
+    @Binding var path: NavigationPath
 
     var body: some View {
         ScrollView {
@@ -89,6 +94,7 @@ private struct WordList: View {
                                 .foregroundStyle(.primary)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             SpeakButton(text: word.text)
+                            TalkButton { path.append(AssistantRoute(category: category, index: index)) }
                         }
                         .padding(10)
                         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 16))
@@ -111,13 +117,38 @@ struct WordDetailRoute: Hashable {
     let index: Int
 }
 
+/// Opens a spoken conversation about one word.
+struct AssistantRoute: Hashable {
+    let category: WordCategory
+    let index: Int
+}
+
+/// Sparkle button that starts a conversation about a word.
+private struct TalkButton: View {
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "sparkles")
+                .font(.system(size: 20, weight: .bold))
+                .foregroundStyle(.white)
+                .frame(width: 44, height: 44)
+                .background(Color.accentColor.gradient, in: Circle())
+        }
+        .buttonStyle(.borderless)
+        .accessibilityLabel("Talk about it")
+    }
+}
+
 /// One word, big: its picture, the word to hear, and its letters to tap one by one.
 private struct WordDetail: View {
     let route: WordDetailRoute
+    @Binding var path: NavigationPath
     @State private var index: Int
 
-    init(route: WordDetailRoute) {
+    init(route: WordDetailRoute, path: Binding<NavigationPath>) {
         self.route = route
+        _path = path
         _index = State(initialValue: route.index)
     }
 
@@ -140,6 +171,14 @@ private struct WordDetail: View {
                 }
                 // Each letter can be heard on its own.
                 FlowLetters(text: word.text)
+                Button {
+                    path.append(AssistantRoute(category: route.category, index: index))
+                } label: {
+                    Label("Talk about \(word.text)", systemImage: "sparkles")
+                        .font(.title3.weight(.bold))
+                        .frame(maxWidth: 480, minHeight: 56)
+                }
+                .buttonStyle(.borderedProminent)
                 HStack(spacing: 16) {
                     Button { move(-1) } label: {
                         Label("Previous", systemImage: "arrow.left").frame(maxWidth: .infinity, minHeight: 44)
