@@ -133,3 +133,15 @@ final class VoiceChoiceTests: XCTestCase {
         defaults.removePersistentDomain(forName: "VoiceChoiceTests")
     }
 }
+
+final class VoiceSpeedTests: XCTestCase {
+    func testDefaultSpeedIsLivelyNotDragging() throws {
+        let defaults = UserDefaults.standard
+        let saved = defaults.object(forKey: SettingsKey.speechRate)
+        defer { defaults.set(saved, forKey: SettingsKey.speechRate) }
+        defaults.removeObject(forKey: SettingsKey.speechRate)
+        XCTAssertEqual(NaturalVoiceEngine.speed, 1.05, accuracy: 0.01, "the default reads at about 1.05x")
+        defaults.set(0.5262573778629303, forKey: SettingsKey.speechRate)
+        XCTAssertEqual(NaturalVoiceEngine.speed, 1.047, accuracy: 0.01, "a saved choice is kept as it was")
+    }
+}

@@ -35,7 +35,7 @@ final class NaturalVoiceEngine {
         KokoroTTS.isBundled && (UserDefaults.standard.string(forKey: SettingsKey.voice) ?? "").isEmpty
     }
 
-    /// Kokoro speed for the Settings speed slider (0.2...0.7, default 0.42 → about 0.96).
+    /// Kokoro speed for the Settings speed slider (0.2...0.7, default 0.53 → about 1.05).
     static var speed: Float {
         let rate = UserDefaults.standard.object(forKey: SettingsKey.speechRate) as? Double ?? SettingsKey.defaultSpeechRate
         return Float(0.6 + rate * 0.85)

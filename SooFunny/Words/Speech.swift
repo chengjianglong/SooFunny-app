@@ -82,8 +82,9 @@ enum SettingsKey {
     /// An Apple voice identifier, or empty for the natural (Kokoro) voice.
     static let voice = "speechVoiceIdentifier"
     static let speechRate = "speechRate"
-    /// 0 is slowest, 1 fastest. A little slower than normal speech, for young listeners.
-    static let defaultSpeechRate = 0.42
+    /// 0 is slowest, 1 fastest. Matches what sounded best on the natural voice (about 1.05×);
+    /// slower settings made it drag.
+    static let defaultSpeechRate = 0.53
 }
 
 /// Speaker button that pulses while its text is being read.
