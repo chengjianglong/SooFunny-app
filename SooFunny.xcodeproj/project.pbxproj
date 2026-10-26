@@ -34,6 +34,7 @@
 		6CEE697D1F841EF3A62B672E /* Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8462174F5150FE42C0236 /* Speech.swift */; };
 		7198FA6D7FB02BC5695AE5C6 /* animals-macaw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 924CE6EB9B80B632A897EB08 /* animals-macaw.jpg */; };
 		769F13091CED154B63E7CD50 /* SubjectMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0717D3143512F14844EB12 /* SubjectMask.swift */; };
+		815831B0887A88F5015FB9D4 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FA58C84779259475B9FB09B9 /* PrivacyInfo.xcprivacy */; };
 		8542E82C7CEC9E8589D927D0 /* WordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE868EB0E550524D0C4FC75 /* WordsView.swift */; };
 		931970F0030781719E62903D /* animals-bulldog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 467DB2FF20328DAEC83323E6 /* animals-bulldog.jpg */; };
 		94E0E51669AAA84A033A2002 /* gemma-3-1b-it-Q4_K_M.gguf in Resources */ = {isa = PBXBuildFile; fileRef = 25C32DACB2EE7BA847B666DE /* gemma-3-1b-it-Q4_K_M.gguf */; };
@@ -45,13 +46,16 @@
 		C09877B5299329138FE8633A /* ColoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FE6F3202A726D2DC1A594 /* ColoringView.swift */; };
 		D089C2954A085BD345838F2F /* outdoors-barn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 504270FC86902FDA6EAF63F3 /* outdoors-barn.jpg */; };
 		D7EFD44C84233B158BFB6763 /* WordAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB2506ADDDC774ECA854899 /* WordAssistant.swift */; };
+		E15AEE39624E9049765D032C /* SooFunny.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 9DE9FD10A32A01E6C1C30288 /* SooFunny.storekit */; };
 		E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */; };
 		E7162886E96ACCBD644F6F4E /* portraits-bunny-girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9891C2D4F1285045CF117AFC /* portraits-bunny-girl.jpg */; };
 		E7C07D6FB1D873EAC09CE0CC /* animals-giraffe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E1781547A14DA115DB499EB /* animals-giraffe.jpg */; };
 		E8453D0F45370308669B71EB /* animals-elephants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCD6F1033B84D8F75DF3B400 /* animals-elephants.jpg */; };
 		EA86E58DA135911526ABBC04 /* MathViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C02E7E59297909FBA14367 /* MathViews.swift */; };
 		EBFF033293237809F00B9915 /* people-football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FCCCDC81CB087641935EF9A /* people-football.jpg */; };
+		F2F55D6CC7DE2C95471A69DE /* PremiumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14143B9928E0E0F91632DE /* PremiumTests.swift */; };
 		F5653C9DD2741E7ABC8827B2 /* kids_words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 727EE69E437092C0D601AB16 /* kids_words.txt */; };
+		F9047A1C04BE2F85F09BB3BF /* Premium.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC207B80EACB80B034B55DC /* Premium.swift */; };
 		F9A69C22CD61ABC49F46030B /* ResearchLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A0750E58E9B4EC1DD954B /* ResearchLabView.swift */; };
 		FD5DCB868A2CB9557CDB3E4A /* ShowcaseGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CD64AF62DA9D5DCD134E4D /* ShowcaseGallery.swift */; };
 		FFF55365C35D6B54C505CF5F /* GemmaEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218249F1EABE63758F058A3 /* GemmaEngine.swift */; };
@@ -113,6 +117,7 @@
 		924CE6EB9B80B632A897EB08 /* animals-macaw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "animals-macaw.jpg"; sourceTree = "<group>"; };
 		9891C2D4F1285045CF117AFC /* portraits-bunny-girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "portraits-bunny-girl.jpg"; sourceTree = "<group>"; };
 		9CE868EB0E550524D0C4FC75 /* WordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsView.swift; sourceTree = "<group>"; };
+		9DE9FD10A32A01E6C1C30288 /* SooFunny.storekit */ = {isa = PBXFileReference; path = SooFunny.storekit; sourceTree = "<group>"; };
 		9E1781547A14DA115DB499EB /* animals-giraffe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "animals-giraffe.jpg"; sourceTree = "<group>"; };
 		9FCCCDC81CB087641935EF9A /* people-football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-football.jpg"; sourceTree = "<group>"; };
 		A3299B604A4276C1909AFA34 /* credits.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credits.json; sourceTree = "<group>"; };
@@ -129,7 +134,10 @@
 		DBB2506ADDDC774ECA854899 /* WordAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordAssistant.swift; sourceTree = "<group>"; };
 		DCD6F1033B84D8F75DF3B400 /* animals-elephants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "animals-elephants.jpg"; sourceTree = "<group>"; };
 		EC194CBC0E51344498813105 /* portraits-fishmonger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "portraits-fishmonger.jpg"; sourceTree = "<group>"; };
+		ED14143B9928E0E0F91632DE /* PremiumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumTests.swift; sourceTree = "<group>"; };
 		F95A7679F156F76B5BC1D12A /* WordDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDictionary.swift; sourceTree = "<group>"; };
+		FA58C84779259475B9FB09B9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FCC207B80EACB80B034B55DC /* Premium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Premium.swift; sourceTree = "<group>"; };
 		FFBDB7E82BC4A2343CB22F5B /* AssistantAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantAudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,7 @@
 			children = (
 				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
 				1D2CC50E46E9436EE783856B /* MathTests.swift */,
+				ED14143B9928E0E0F91632DE /* PremiumTests.swift */,
 				CC4A54479B366CCACF874D03 /* WordAssistantTests.swift */,
 				6E1B508B5B080938C275F7C9 /* WordDictionaryTests.swift */,
 			);
@@ -203,6 +212,15 @@
 				DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		81524C71828CB316A70F09A3 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				FCC207B80EACB80B034B55DC /* Premium.swift */,
+				9DE9FD10A32A01E6C1C30288 /* SooFunny.storekit */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		8F82F3047D554DEB990087C0 /* Frameworks */ = {
@@ -299,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C1FD222E8DD1C055662505 /* Assets.xcassets */,
+				FA58C84779259475B9FB09B9 /* PrivacyInfo.xcprivacy */,
 				EFC91BEFD7EB0A0C8FE284E0 /* App */,
 				B44CADB33781E7239282AB01 /* Assistant */,
 				E1FBDAF36C721E09304F665B /* Engine */,
@@ -306,6 +325,7 @@
 				93C2B2F555B23A1DA1AECF27 /* Math */,
 				EC54371A8FFE2A0CABE432C2 /* Samples */,
 				C16697E3566893AA883628C5 /* Showcase */,
+				81524C71828CB316A70F09A3 /* Store */,
 				2EBBB759C90F9D8B932F5E74 /* Views */,
 				29E51010CB1C51C8C4251C99 /* Words */,
 			);
@@ -340,6 +360,7 @@
 			buildConfigurationList = C6C7D14F3D4BD63C942ED1B1 /* Build configuration list for PBXNativeTarget "SooFunnyTests" */;
 			buildPhases = (
 				8852E3790B0199808F401A49 /* Sources */,
+				964A3479A61B93D1078238F3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -388,11 +409,20 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		964A3479A61B93D1078238F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E15AEE39624E9049765D032C /* SooFunny.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E08C0673D44BFC24BB6A1724 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6A8B6EC76C9D0C1ECB91EA90 /* Assets.xcassets in Resources */,
+				815831B0887A88F5015FB9D4 /* PrivacyInfo.xcprivacy in Resources */,
 				931970F0030781719E62903D /* animals-bulldog.jpg in Resources */,
 				356604908DE80198ABE51F58 /* animals-cat.jpg in Resources */,
 				E8453D0F45370308669B71EB /* animals-elephants.jpg in Resources */,
@@ -433,6 +463,7 @@
 				A90745F1EDB5F1C152EF374C /* MathModel.swift in Sources */,
 				EA86E58DA135911526ABBC04 /* MathViews.swift in Sources */,
 				1473025B25947BEFEA333BBF /* PixelImage.swift in Sources */,
+				F9047A1C04BE2F85F09BB3BF /* Premium.swift in Sources */,
 				F9A69C22CD61ABC49F46030B /* ResearchLabView.swift in Sources */,
 				5F3C3F1F4AB379F5F0A1C7FC /* SampleArt.swift in Sources */,
 				A4A323EFAA1737590E298238 /* SettingsView.swift in Sources */,
@@ -453,6 +484,7 @@
 			files = (
 				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
 				3075E1CC8136FB91D1697EA7 /* MathTests.swift in Sources */,
+				F2F55D6CC7DE2C95471A69DE /* PremiumTests.swift in Sources */,
 				B4A3FF1F0E365ECF582DD680 /* WordAssistantTests.swift in Sources */,
 				36CD6C263D66578D9FD66F3B /* WordDictionaryTests.swift in Sources */,
 			);
@@ -482,6 +514,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo Intelligence Inc. All rights reserved.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SooFunny listens when you tap Talk, so you can ask questions about a word.";
@@ -580,6 +614,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo Intelligence Inc. All rights reserved.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SooFunny listens when you tap Talk, so you can ask questions about a word.";

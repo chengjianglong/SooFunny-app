@@ -77,6 +77,22 @@ area is a block, and the lines stay anti-aliased.
    contour smoothing, so lines look hand-drawn instead of pixelated.
 6. **Outline.** A distance transform draws an even, anti-aliased ~3px line along every border.
 
+## SooFunny Premium
+
+A yearly auto-renewing subscription: **$19.99/year with a 7-day free trial**, Family Sharing on
+(product ID `com.chengjianglong.soofunny.premium.yearly`, StoreKit 2 in
+`SooFunny/Store/Premium.swift`).
+
+- **Free:** the 4 drawings; the Animals, Colors and Numbers word groups; + and − in Math.
+- **Premium:** every gallery photo and your own photos/camera, all 32 word groups, the talking
+  buddy, and × ÷ in Math.
+- Purchases and links that leave the app sit behind a grown-up check (a two-digit
+  multiplication question), as the App Store requires for kids' apps.
+- StoreKit keeps the purchase on the device, so Premium keeps working offline.
+- `SooFunny/Store/SooFunny.storekit` lets Xcode test purchases locally (the scheme uses it when
+  you press Run). Listing text, review notes and the submission checklist are in
+  [AppStore/LISTING.md](AppStore/LISTING.md); the privacy policy is [PRIVACY.md](PRIVACY.md).
+
 ## Words and Research Lab
 
 The word list lives in `SooFunny/Words/kids_words.txt`: blank-line-separated sections, each

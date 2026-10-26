@@ -68,7 +68,10 @@ struct MathView: View {
     }
 
     private func start(_ mode: MathMode) {
-        session = MathSession(mode: mode, questions: MathQuestionMaker.questions(for: settings),
+        var round = settings
+        if !Premium.shared.isActive { round.operations.formIntersection(FreeTier.mathOperations) }
+        guard round.isReady else { return }
+        session = MathSession(mode: mode, questions: MathQuestionMaker.questions(for: round),
                               markQuestions: settings.markQuestions)
     }
 }
@@ -164,6 +167,15 @@ struct MathSetupView: View {
     let mode: MathMode
     @Binding var settings: MathSettings
     let onStart: () -> Void
+    @State private var showPaywall = false
+    private let premium = Premium.shared
+
+    private func isLocked(_ op: MathOperation) -> Bool {
+        !premium.isActive && !FreeTier.mathOperations.contains(op)
+    }
+
+    /// The operations this round will really use.
+    private var usable: Set<MathOperation> { settings.operations.filter { !isLocked($0) } }
 
     var body: some View {
         ScrollView {
@@ -171,9 +183,9 @@ struct MathSetupView: View {
                 section("Choose operations") {
                     HStack(spacing: 14) {
                         ForEach(MathOperation.allCases) { op in
-                            let on = settings.operations.contains(op)
+                            let on = usable.contains(op)
                             Button {
-                                toggle(op)
+                                if isLocked(op) { showPaywall = true } else { toggle(op) }
                             } label: {
                                 Text(op.symbol)
                                     .font(.system(size: 40, weight: .heavy, design: .rounded))
@@ -182,6 +194,9 @@ struct MathSetupView: View {
                                     .background(on ? AnyShapeStyle(op.color.gradient) : AnyShapeStyle(Color(.secondarySystemGroupedBackground)),
                                                 in: Circle())
                                     .overlay(Circle().stroke(op.color, lineWidth: 3))
+                                    .overlay(alignment: .topTrailing) {
+                                        if isLocked(op) { PremiumBadge().offset(x: 6, y: -6) }
+                                    }
                             }
                             .buttonStyle(PressableStyle())
                             .accessibilityLabel(op.name)
@@ -235,7 +250,7 @@ struct MathSetupView: View {
                     }
                 }
 
-                if !settings.isReady {
+                if usable.isEmpty || settings.focusNumbers.isEmpty {
                     Text("Pick at least one operation and one number.")
                         .font(.headline)
                         .foregroundStyle(.red)
@@ -246,13 +261,14 @@ struct MathSetupView: View {
                         .frame(maxWidth: .infinity, minHeight: 60)
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(!settings.isReady)
+                .disabled(usable.isEmpty || settings.focusNumbers.isEmpty)
             }
             .padding(20)
             .frame(maxWidth: 640)
             .frame(maxWidth: .infinity)
         }
         .background(Color(.systemGroupedBackground))
+        .sheet(isPresented: $showPaywall) { PaywallView() }
         .navigationTitle(mode == .flashcards ? "Flashcard Game" : "Quiz")
         .navigationBarTitleDisplayMode(.inline)
     }

@@ -6,6 +6,7 @@ struct WordsView: View {
     @State private var loadFailed = false
     @State private var showSettings = false
     @State private var path = NavigationPath()
+    @State private var showPaywall = false
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -14,12 +15,16 @@ struct WordsView: View {
                     ContentUnavailableView("Couldn't open the words", systemImage: "book.closed",
                                            description: Text("Please reopen the app to try again."))
                 } else {
-                    CategoryGrid(categories: categories)
+                    CategoryGrid(categories: categories) { showPaywall = true }
                 }
             }
             .navigationTitle("Words")
-            .navigationDestination(for: WordCategory.self) { WordList(category: $0, path: $path) }
-            .navigationDestination(for: WordDetailRoute.self) { WordDetail(route: $0, path: $path) }
+            .navigationDestination(for: WordCategory.self) {
+                WordList(category: $0, path: $path) { showPaywall = true }
+            }
+            .navigationDestination(for: WordDetailRoute.self) {
+                WordDetail(route: $0, path: $path) { showPaywall = true }
+            }
             .navigationDestination(for: AssistantRoute.self) {
                 WordAssistantView(word: $0.category.words[$0.index], category: $0.category)
             }
@@ -29,6 +34,7 @@ struct WordsView: View {
                 }
             }
             .sheet(isPresented: $showSettings) { SettingsView() }
+            .sheet(isPresented: $showPaywall) { PaywallView() }
         }
         .task {
             guard categories.isEmpty else { return }
@@ -40,6 +46,9 @@ struct WordsView: View {
 
 private struct CategoryGrid: View {
     let categories: [WordCategory]
+    /// Called when a locked group is tapped.
+    let onLocked: () -> Void
+    private let premium = Premium.shared
 
     var body: some View {
         ScrollView {
@@ -48,21 +57,14 @@ private struct CategoryGrid: View {
                     .foregroundStyle(.secondary)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 260), spacing: 12)], spacing: 12) {
                     ForEach(Array(categories.enumerated()), id: \.element.id) { index, category in
-                        NavigationLink(value: category) {
-                            HStack(spacing: 14) {
-                                Picture(emoji: category.emoji, word: category.name, size: 56, tint: tileColor(index))
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(category.name).font(.title3.weight(.bold)).foregroundStyle(.primary)
-                                    Text("\(category.words.count) words").font(.subheadline).foregroundStyle(.secondary)
-                                }
-                                Spacer(minLength: 0)
-                                SpeakButton(text: category.name, size: 18)
-                                Image(systemName: "chevron.right").foregroundStyle(.tertiary)
-                            }
-                            .padding(12)
-                            .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 18))
+                        if premium.isActive || FreeTier.allows(category) {
+                            NavigationLink(value: category) { row(category, index: index, locked: false) }
+                                .buttonStyle(.plain)
+                        } else {
+                            Button(action: onLocked) { row(category, index: index, locked: true) }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel("\(category.name), Premium")
                         }
-                        .buttonStyle(.plain)
                     }
                 }
             }
@@ -72,11 +74,32 @@ private struct CategoryGrid: View {
         }
         .background(Color(.systemGroupedBackground))
     }
+
+    private func row(_ category: WordCategory, index: Int, locked: Bool) -> some View {
+        HStack(spacing: 14) {
+            Picture(emoji: category.emoji, word: category.name, size: 56, tint: tileColor(index))
+                .overlay(alignment: .topTrailing) {
+                    if locked { PremiumBadge().offset(x: 8, y: -8) }
+                }
+            VStack(alignment: .leading, spacing: 2) {
+                Text(category.name).font(.title3.weight(.bold)).foregroundStyle(.primary)
+                Text(locked ? "Premium" : "\(category.words.count) words").font(.subheadline).foregroundStyle(.secondary)
+            }
+            Spacer(minLength: 0)
+            SpeakButton(text: category.name, size: 18)
+            Image(systemName: locked ? "lock.fill" : "chevron.right").foregroundStyle(.tertiary)
+        }
+        .padding(12)
+        .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 18))
+        .opacity(locked ? 0.85 : 1)
+    }
 }
 
 private struct WordList: View {
     let category: WordCategory
     @Binding var path: NavigationPath
+    let onLocked: () -> Void
+    private let premium = Premium.shared
 
     var body: some View {
         ScrollView {
@@ -94,7 +117,13 @@ private struct WordList: View {
                                 .foregroundStyle(.primary)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             SpeakButton(text: word.text)
-                            TalkButton { path.append(AssistantRoute(category: category, index: index)) }
+                            TalkButton(locked: !premium.isActive) {
+                                if premium.isActive {
+                                    path.append(AssistantRoute(category: category, index: index))
+                                } else {
+                                    onLocked()
+                                }
+                            }
                         }
                         .padding(10)
                         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 16))
@@ -125,6 +154,7 @@ struct AssistantRoute: Hashable {
 
 /// Sparkle button that starts a conversation about a word.
 private struct TalkButton: View {
+    var locked = false
     let action: () -> Void
 
     var body: some View {
@@ -134,6 +164,16 @@ private struct TalkButton: View {
                 .foregroundStyle(.white)
                 .frame(width: 44, height: 44)
                 .background(Color.accentColor.gradient, in: Circle())
+                .overlay(alignment: .bottomTrailing) {
+                    if locked {
+                        Image(systemName: "lock.fill")
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundStyle(.white)
+                            .padding(4)
+                            .background(Color.black.opacity(0.6), in: Circle())
+                            .offset(x: 4, y: 4)
+                    }
+                }
         }
         .buttonStyle(.borderless)
         .accessibilityLabel("Talk about it")
@@ -144,11 +184,14 @@ private struct TalkButton: View {
 private struct WordDetail: View {
     let route: WordDetailRoute
     @Binding var path: NavigationPath
+    let onLocked: () -> Void
     @State private var index: Int
+    private let premium = Premium.shared
 
-    init(route: WordDetailRoute, path: Binding<NavigationPath>) {
+    init(route: WordDetailRoute, path: Binding<NavigationPath>, onLocked: @escaping () -> Void) {
         self.route = route
         _path = path
+        self.onLocked = onLocked
         _index = State(initialValue: route.index)
     }
 
@@ -172,9 +215,13 @@ private struct WordDetail: View {
                 // Each letter can be heard on its own.
                 FlowLetters(text: word.text)
                 Button {
-                    path.append(AssistantRoute(category: route.category, index: index))
+                    if premium.isActive {
+                        path.append(AssistantRoute(category: route.category, index: index))
+                    } else {
+                        onLocked()
+                    }
                 } label: {
-                    Label("Talk about \(word.text)", systemImage: "sparkles")
+                    Label("Talk about \(word.text)", systemImage: premium.isActive ? "sparkles" : "lock.fill")
                         .font(.title3.weight(.bold))
                         .frame(maxWidth: 480, minHeight: 56)
                 }

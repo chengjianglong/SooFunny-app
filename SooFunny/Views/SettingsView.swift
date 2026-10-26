@@ -7,10 +7,54 @@ struct SettingsView: View {
     @AppStorage(SettingsKey.voice) private var voiceIdentifier = ""
     @AppStorage(SettingsKey.speechRate) private var speechRate = SettingsKey.defaultSpeechRate
     @State private var voices = Speech.englishVoices
+    @State private var showPaywall = false
+    @State private var showManage = false
+    @State private var restoreMessage: String?
+    @State private var gate: GateTarget?
+    @State private var showResearchLab = false
+    @Environment(\.openURL) private var openURL
+    private let premium = Premium.shared
+
+    /// Things behind the grown-up check.
+    private enum GateTarget: Identifiable {
+        case researchLab, website
+        var id: Self { self }
+    }
 
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    if premium.isActive {
+                        LabeledContent("SooFunny Premium", value: "Active")
+                        if let date = premium.expirationDate {
+                            LabeledContent(premium.willRenew ? "Renews" : "Ends",
+                                           value: date.formatted(date: .abbreviated, time: .omitted))
+                        }
+                        Button("Manage subscription") { showManage = true }
+                    } else {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            Label("Get SooFunny Premium", systemImage: "star.fill")
+                        }
+                    }
+                    Button("Restore purchases") {
+                        Task {
+                            do {
+                                try await premium.restore()
+                                restoreMessage = premium.isActive ? "Premium is active." : "No subscription found for this Apple Account."
+                            } catch {
+                                restoreMessage = "Couldn't reach the App Store. Please try again when online."
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Premium")
+                } footer: {
+                    Text("Free for 7 days, then $19.99 a year. Unlocks every picture, your own photos, all word groups, the talking buddy and × ÷ math. Cancel anytime.")
+                }
+
                 Section {
                     Picker("Voice", selection: $voiceIdentifier) {
                         Text("Automatic").tag("")
@@ -38,8 +82,8 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    NavigationLink {
-                        ResearchLabView()
+                    Button {
+                        gate = .researchLab
                     } label: {
                         Label("Research Lab", systemImage: "flask")
                     }
@@ -65,7 +109,9 @@ struct SettingsView: View {
                 Section("About") {
                     LabeledContent("Version", value: AppInfo.version)
                     LabeledContent("Developer", value: AppInfo.developer)
-                    Link(destination: AppInfo.developerURL) {
+                    Button {
+                        gate = .website
+                    } label: {
                         Label("chengjianglong.com", systemImage: "globe")
                     }
                     Text(AppInfo.copyright)
@@ -81,6 +127,29 @@ struct SettingsView: View {
                 }
             }
             .onAppear { voices = Speech.englishVoices }
+            .navigationDestination(isPresented: $showResearchLab) { ResearchLabView() }
+            .sheet(isPresented: $showPaywall) { PaywallView() }
+            .sheet(item: $gate) { target in
+                NavigationStack {
+                    ParentalGate(reason: target == .website ? "This opens a website." : "The Research Lab is for grown-ups.") {
+                        gate = nil
+                        switch target {
+                        case .researchLab: showResearchLab = true
+                        case .website: openURL(AppInfo.developerURL)
+                        }
+                    }
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) { Button("Close") { gate = nil } }
+                    }
+                }
+            }
+            .manageSubscriptionsSheet(isPresented: $showManage)
+            .alert("Restore purchases", isPresented: Binding(get: { restoreMessage != nil },
+                                                             set: { if !$0 { restoreMessage = nil } })) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text(restoreMessage ?? "")
+            }
         }
     }
 
@@ -104,10 +173,11 @@ private struct PhotoCreditsView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         Text(credit.title).font(.headline)
                         Text("\(credit.author) · \(credit.license)").font(.subheadline).foregroundStyle(.secondary)
-                        if let url = URL(string: credit.url) {
-                            Link(credit.source.replacingOccurrences(of: "File:", with: ""), destination: url)
-                                .font(.caption)
-                        }
+                        // Plain text, not a link: kids shouldn't leave the app from here.
+                        Text("Wikimedia Commons: " + credit.source.replacingOccurrences(of: "File:", with: ""))
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                            .textSelection(.enabled)
                     }
                 }
             } footer: {

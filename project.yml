@@ -14,7 +14,9 @@ targets:
     type: application
     platform: iOS
     sources:
-      - SooFunny
+      - path: SooFunny
+        excludes:
+          - "Store/SooFunny.storekit"
       # The on-device Gemma model (806 MB). Not in git: run scripts/fetch_model.sh.
       - path: Models/gemma-3-1b-it-Q4_K_M.gguf
         buildPhase: resources
@@ -29,6 +31,8 @@ targets:
         TARGETED_DEVICE_FAMILY: "1,2"
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: SooFunny
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.education
+        INFOPLIST_KEY_ITSAppUsesNonExemptEncryption: NO
         INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Soo Intelligence Inc. All rights reserved."
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
@@ -49,7 +53,11 @@ targets:
   SooFunnyTests:
     type: bundle.unit-test
     platform: iOS
-    sources: [SooFunnyTests]
+    sources:
+      - SooFunnyTests
+      # Lets StoreKitTest run real purchase flows in unit tests.
+      - path: SooFunny/Store/SooFunny.storekit
+        buildPhase: resources
     dependencies:
       - target: SooFunny
     settings:
@@ -61,5 +69,8 @@ schemes:
     build:
       targets:
         SooFunny: all
+    run:
+      # Test purchases in the Simulator when running from Xcode.
+      storeKitConfiguration: SooFunny/Store/SooFunny.storekit
     test:
       targets: [SooFunnyTests]
