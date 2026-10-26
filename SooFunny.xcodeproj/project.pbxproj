@@ -44,6 +44,7 @@
 		B4A3FF1F0E365ECF582DD680 /* WordAssistantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC4A54479B366CCACF874D03 /* WordAssistantTests.swift */; };
 		BF10AE69D0AB0BA1681E1054 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782398F3A9B62A005EF9C4BA /* HomeView.swift */; };
 		C09877B5299329138FE8633A /* ColoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FE6F3202A726D2DC1A594 /* ColoringView.swift */; };
+		CCAFB2AB46206C8B7ECE872D /* BouncyTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E04C1ED5308F4539EB32DC /* BouncyTitle.swift */; };
 		D089C2954A085BD345838F2F /* outdoors-barn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 504270FC86902FDA6EAF63F3 /* outdoors-barn.jpg */; };
 		D7EFD44C84233B158BFB6763 /* WordAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB2506ADDDC774ECA854899 /* WordAssistant.swift */; };
 		E15AEE39624E9049765D032C /* SooFunny.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 9DE9FD10A32A01E6C1C30288 /* SooFunny.storekit */; };
@@ -124,6 +125,7 @@
 		A8C1FD222E8DD1C055662505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringSession.swift; sourceTree = "<group>"; };
 		B19600E0B79BE6842A58FD33 /* LabImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabImage.swift; sourceTree = "<group>"; };
+		B1E04C1ED5308F4539EB32DC /* BouncyTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyTitle.swift; sourceTree = "<group>"; };
 		C3F436C7749E9A81E0D9181F /* SampleArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleArt.swift; sourceTree = "<group>"; };
 		C59978513D52D04636E58744 /* PixelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelImage.swift; sourceTree = "<group>"; };
 		C70FE2F78C5D3838DCCE30BB /* outdoors-tulips.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "outdoors-tulips.jpg"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		2EBBB759C90F9D8B932F5E74 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B1E04C1ED5308F4539EB32DC /* BouncyTitle.swift */,
 				216FE6F3202A726D2DC1A594 /* ColoringView.swift */,
 				782398F3A9B62A005EF9C4BA /* HomeView.swift */,
 				47AFD63ED38CCBB814C236F0 /* SettingsView.swift */,
@@ -453,6 +456,7 @@
 			files = (
 				41C54196309E402EBCE7BE29 /* AssistantAudio.swift in Sources */,
 				40B1357F82AA79A66FFDD490 /* AssistantText.swift in Sources */,
+				CCAFB2AB46206C8B7ECE872D /* BouncyTitle.swift in Sources */,
 				58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */,
 				C09877B5299329138FE8633A /* ColoringView.swift in Sources */,
 				FFF55365C35D6B54C505CF5F /* GemmaEngine.swift in Sources */,

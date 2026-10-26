@@ -18,7 +18,7 @@ struct WordsView: View {
                     CategoryGrid(categories: categories) { showPaywall = true }
                 }
             }
-            .navigationTitle("Words")
+            // No bar title: the big SooFunny title sits at the top, as on the Color tab.
             .navigationDestination(for: WordCategory.self) {
                 WordList(category: $0, path: $path) { showPaywall = true }
             }
@@ -53,8 +53,16 @@ private struct CategoryGrid: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text("Pick a group of words to explore. Tap the speaker to hear it.")
-                    .foregroundStyle(.secondary)
+                VStack(spacing: 6) {
+                    BouncyTitle()
+                    Text("Pick a group of words to explore!")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
+                .padding(.bottom, 8)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 260), spacing: 12)], spacing: 12) {
                     ForEach(Array(categories.enumerated()), id: \.element.id) { index, category in
                         if premium.isActive || FreeTier.allows(category) {
@@ -68,7 +76,7 @@ private struct CategoryGrid: View {
                     }
                 }
             }
-            .padding(16)
+            .padding([.horizontal, .bottom], 16)
             .frame(maxWidth: 1000)
             .frame(maxWidth: .infinity)
         }

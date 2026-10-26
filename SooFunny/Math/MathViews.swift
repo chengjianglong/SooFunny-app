@@ -19,8 +19,9 @@ struct MathView: View {
         NavigationStack(path: $path) {
             ScrollView {
                 VStack(spacing: 18) {
-                    MathTitle()
+                    BouncyTitle()
                         .padding(.top, 8)
+                    MathTitle()
                     if store.streak() > 0 {
                         Text("🔥 \(store.streak())-day streak! Keep it up!")
                             .font(.headline)
@@ -35,13 +36,12 @@ struct MathView: View {
                     MenuButton(title: "Math Settings", subtitle: "Voice and timer",
                                emoji: "⚙️", colors: [.purple, .indigo]) { showSettings = true }
                 }
-                .padding(16)
+                .padding([.horizontal, .bottom], 16)
                 .frame(maxWidth: 640)
                 .frame(maxWidth: .infinity)
             }
             .background(MathBackground())
-            .navigationTitle("Math")
-            .navigationBarTitleDisplayMode(.inline)
+            // No bar title: the big SooFunny title sits at the top, as on the Color tab.
             .navigationDestination(for: MathRoute.self) { route in
                 switch route {
                 case .setup(let mode):
@@ -96,7 +96,7 @@ private struct MathTitle: View {
                 }
             }
             Text("Math Fun")
-                .font(.system(size: 44, weight: .black, design: .rounded))
+                .font(.system(size: 32, weight: .black, design: .rounded))
                 .foregroundStyle(LinearGradient(colors: [.green, .orange, .blue, .purple], startPoint: .leading, endPoint: .trailing))
         }
         .accessibilityElement()
