@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1473025B25947BEFEA333BBF /* PixelImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59978513D52D04636E58744 /* PixelImage.swift */; };
+		1B83D75811CED3250488C1D5 /* SooFunnyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */; };
+		5149BF198CE3A2CA08EC2E4C /* ImageSegmenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C315F4710AFD81E24B28D5E /* ImageSegmenter.swift */; };
+		58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */; };
+		5F3C3F1F4AB379F5F0A1C7FC /* SampleArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F436C7749E9A81E0D9181F /* SampleArt.swift */; };
+		6A8B6EC76C9D0C1ECB91EA90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8C1FD222E8DD1C055662505 /* Assets.xcassets */; };
+		BF10AE69D0AB0BA1681E1054 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782398F3A9B62A005EF9C4BA /* HomeView.swift */; };
+		C09877B5299329138FE8633A /* ColoringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216FE6F3202A726D2DC1A594 /* ColoringView.swift */; };
+		E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DAF31F3CB0C0CDF0F991AA1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A64B57BCB0C5F5D97B34070E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D751E10734B51405A840FA0;
+			remoteInfo = SooFunny;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		216FE6F3202A726D2DC1A594 /* ColoringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringView.swift; sourceTree = "<group>"; };
+		2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SooFunnyApp.swift; sourceTree = "<group>"; };
+		463E4098E7EE04CAE5EE537B /* SooFunny.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SooFunny.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C315F4710AFD81E24B28D5E /* ImageSegmenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmenter.swift; sourceTree = "<group>"; };
+		6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSegmenterTests.swift; sourceTree = "<group>"; };
+		782398F3A9B62A005EF9C4BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A8C1FD222E8DD1C055662505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringSession.swift; sourceTree = "<group>"; };
+		C3F436C7749E9A81E0D9181F /* SampleArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleArt.swift; sourceTree = "<group>"; };
+		C59978513D52D04636E58744 /* PixelImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelImage.swift; sourceTree = "<group>"; };
+		DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SooFunnyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		2EBBB759C90F9D8B932F5E74 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				216FE6F3202A726D2DC1A594 /* ColoringView.swift */,
+				782398F3A9B62A005EF9C4BA /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32DD38256FDB4B124AB931F7 /* SooFunnyTests */ = {
+			isa = PBXGroup;
+			children = (
+				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
+			);
+			path = SooFunnyTests;
+			sourceTree = "<group>";
+		};
+		5965B6B77DFE2B54B7B231C6 = {
+			isa = PBXGroup;
+			children = (
+				F8A138DB6DC25EE478C512BC /* SooFunny */,
+				32DD38256FDB4B124AB931F7 /* SooFunnyTests */,
+				6921AE2586B85EEEF671B1F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6921AE2586B85EEEF671B1F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				463E4098E7EE04CAE5EE537B /* SooFunny.app */,
+				DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E1FBDAF36C721E09304F665B /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				B0F38E397E9DA1441A0AC8DD /* ColoringSession.swift */,
+				4C315F4710AFD81E24B28D5E /* ImageSegmenter.swift */,
+				C59978513D52D04636E58744 /* PixelImage.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		EC54371A8FFE2A0CABE432C2 /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				C3F436C7749E9A81E0D9181F /* SampleArt.swift */,
+			);
+			path = Samples;
+			sourceTree = "<group>";
+		};
+		EFC91BEFD7EB0A0C8FE284E0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F8A138DB6DC25EE478C512BC /* SooFunny */ = {
+			isa = PBXGroup;
+			children = (
+				A8C1FD222E8DD1C055662505 /* Assets.xcassets */,
+				EFC91BEFD7EB0A0C8FE284E0 /* App */,
+				E1FBDAF36C721E09304F665B /* Engine */,
+				EC54371A8FFE2A0CABE432C2 /* Samples */,
+				2EBBB759C90F9D8B932F5E74 /* Views */,
+			);
+			path = SooFunny;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D751E10734B51405A840FA0 /* SooFunny */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26C425A0619298680A4965D0 /* Build configuration list for PBXNativeTarget "SooFunny" */;
+			buildPhases = (
+				24E89B0D7968802A69B0C477 /* Sources */,
+				E08C0673D44BFC24BB6A1724 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SooFunny;
+			packageProductDependencies = (
+			);
+			productName = SooFunny;
+			productReference = 463E4098E7EE04CAE5EE537B /* SooFunny.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8069B2D8E4D4C7A508BF66B4 /* SooFunnyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6C7D14F3D4BD63C942ED1B1 /* Build configuration list for PBXNativeTarget "SooFunnyTests" */;
+			buildPhases = (
+				8852E3790B0199808F401A49 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D422C511114330DCEB3ADD45 /* PBXTargetDependency */,
+			);
+			name = SooFunnyTests;
+			packageProductDependencies = (
+			);
+			productName = SooFunnyTests;
+			productReference = DB2245BD6F945B52F6C9EC2D /* SooFunnyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A64B57BCB0C5F5D97B34070E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2D751E10734B51405A840FA0 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8A10B4F260BD2A88E610457D /* Build configuration list for PBXProject "SooFunny" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5965B6B77DFE2B54B7B231C6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6921AE2586B85EEEF671B1F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D751E10734B51405A840FA0 /* SooFunny */,
+				8069B2D8E4D4C7A508BF66B4 /* SooFunnyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E08C0673D44BFC24BB6A1724 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A8B6EC76C9D0C1ECB91EA90 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24E89B0D7968802A69B0C477 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */,
+				C09877B5299329138FE8633A /* ColoringView.swift in Sources */,
+				BF10AE69D0AB0BA1681E1054 /* HomeView.swift in Sources */,
+				5149BF198CE3A2CA08EC2E4C /* ImageSegmenter.swift in Sources */,
+				1473025B25947BEFEA333BBF /* PixelImage.swift in Sources */,
+				5F3C3F1F4AB379F5F0A1C7FC /* SampleArt.swift in Sources */,
+				1B83D75811CED3250488C1D5 /* SooFunnyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8852E3790B0199808F401A49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D422C511114330DCEB3ADD45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D751E10734B51405A840FA0 /* SooFunny */;
+			targetProxy = DAF31F3CB0C0CDF0F991AA1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2EEC675D58D857DD1D9ABEA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
+				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SooFunny saves your colored pictures to your photo library.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chengjianglong.soofunny;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		395229428F81C93D8F544F79 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		50306B5B49ED2D647E884DBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
+				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SooFunny saves your colored pictures to your photo library.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chengjianglong.soofunny;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C17201DE25678FA15ACC1823 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C879DC672D2C743C1EFEDAE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chengjianglong.soofunny.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SooFunny.app/SooFunny";
+			};
+			name = Release;
+		};
+		F7AB9BCB6559E813876B4D77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chengjianglong.soofunny.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SooFunny.app/SooFunny";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26C425A0619298680A4965D0 /* Build configuration list for PBXNativeTarget "SooFunny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50306B5B49ED2D647E884DBA /* Debug */,
+				2EEC675D58D857DD1D9ABEA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8A10B4F260BD2A88E610457D /* Build configuration list for PBXProject "SooFunny" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				395229428F81C93D8F544F79 /* Debug */,
+				C17201DE25678FA15ACC1823 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C6C7D14F3D4BD63C942ED1B1 /* Build configuration list for PBXNativeTarget "SooFunnyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7AB9BCB6559E813876B4D77 /* Debug */,
+				C879DC672D2C743C1EFEDAE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A64B57BCB0C5F5D97B34070E /* Project object */;
+}
