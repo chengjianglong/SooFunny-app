@@ -1,3 +1,4 @@
+import AVFoundation
 import XCTest
 @testable import SooFunny
 
@@ -110,5 +111,25 @@ final class NaturalVoicePhraseTests: XCTestCase {
         let trimmed = KokoroTTS.trimmingSilence(silence + sound + silence + silence)
         XCTAssertLessThan(trimmed.count, sound.count + 2_400, "at most 0.1 s of padding is kept")
         XCTAssertGreaterThanOrEqual(trimmed.count, sound.count - 20)
+    }
+}
+
+final class VoiceChoiceTests: XCTestCase {
+    func testNoveltyVoicesAreHiddenAndResetToTheNaturalVoice() throws {
+        let novelty = AVSpeechSynthesisVoice.speechVoices().first { $0.voiceTraits.contains(.isNoveltyVoice) }
+        try XCTSkipIf(novelty == nil, "No novelty voices installed here")
+        XCTAssertFalse(Speech.englishVoices.contains { $0.voiceTraits.contains(.isNoveltyVoice) })
+
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: "VoiceChoiceTests"))
+        defaults.set(novelty!.identifier, forKey: SettingsKey.voice)
+        Speech.resetUnsuitableVoice(defaults)
+        XCTAssertNil(defaults.string(forKey: SettingsKey.voice), "a novelty voice goes back to the natural voice")
+
+        if let normal = Speech.englishVoices.first {
+            defaults.set(normal.identifier, forKey: SettingsKey.voice)
+            Speech.resetUnsuitableVoice(defaults)
+            XCTAssertEqual(defaults.string(forKey: SettingsKey.voice), normal.identifier, "a normal voice choice is kept")
+        }
+        defaults.removePersistentDomain(forName: "VoiceChoiceTests")
     }
 }

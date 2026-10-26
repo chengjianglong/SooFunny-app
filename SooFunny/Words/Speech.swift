@@ -19,11 +19,22 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
         synthesizer.delegate = self
     }
 
-    /// English voices installed on this device, best quality first.
+    /// English voices installed on this device, best quality first. Novelty voices such as
+    /// "Boing" and "Bubbles" are left out: they're hard for children to understand.
     static var englishVoices: [AVSpeechSynthesisVoice] {
         AVSpeechSynthesisVoice.speechVoices()
-            .filter { $0.language.hasPrefix("en") }
+            .filter { $0.language.hasPrefix("en") && !$0.voiceTraits.contains(.isNoveltyVoice) }
             .sorted { ($0.quality.rawValue, $0.language == "en-US" ? 1 : 0, $0.name) > ($1.quality.rawValue, $1.language == "en-US" ? 1 : 0, $1.name) }
+    }
+
+    /// If a novelty voice (or one no longer on this device) was saved, go back to the
+    /// natural voice. Runs at launch.
+    static func resetUnsuitableVoice(_ defaults: UserDefaults = .standard) {
+        guard let identifier = defaults.string(forKey: SettingsKey.voice), !identifier.isEmpty else { return }
+        let voice = AVSpeechSynthesisVoice(identifier: identifier)
+        if voice == nil || voice!.voiceTraits.contains(.isNoveltyVoice) {
+            defaults.removeObject(forKey: SettingsKey.voice)
+        }
     }
 
     func speak(_ text: String) {

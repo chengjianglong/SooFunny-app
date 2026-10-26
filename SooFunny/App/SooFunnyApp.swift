@@ -3,6 +3,8 @@ import SwiftUI
 @main
 struct SooFunnyApp: App {
     init() {
+        // Novelty voices like "Boing" aren't offered any more; switch back to the natural voice.
+        Speech.resetUnsuitableVoice()
         // Load the natural voice in the background so the first word plays quickly.
         NaturalVoiceEngine.shared.preload()
     }
