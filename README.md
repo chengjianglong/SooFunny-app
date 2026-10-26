@@ -73,5 +73,6 @@ SooFunny/
   Samples/SampleArt.swift        Built-in drawings, drawn in code
   Views/                         SwiftUI screens
 SooFunnyTests/                   Segmentation unit tests
-scripts/make_icon.swift          Regenerates the app icon
+design/soo-icon.png              Source artwork for the app icon
+scripts/make_icon.py             Crops the artwork into the 1024px app icon
 ```
