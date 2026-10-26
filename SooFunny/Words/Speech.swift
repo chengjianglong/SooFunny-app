@@ -2,7 +2,8 @@ import AVFoundation
 import Observation
 import SwiftUI
 
-/// Reads words aloud with the voices built into iOS, so it works offline.
+/// Reads words aloud, offline: in the natural Kokoro voice by default, or a voice built
+/// into iOS chosen in Settings.
 @Observable
 final class Speech: NSObject, AVSpeechSynthesizerDelegate {
     static let shared = Speech()
@@ -11,6 +12,7 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
     private(set) var speaking: String?
 
     @ObservationIgnored private let synthesizer = AVSpeechSynthesizer()
+    @ObservationIgnored private var natural: NaturalVoice?
 
     override init() {
         super.init()
@@ -26,6 +28,17 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
 
     func speak(_ text: String) {
         if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
+        natural?.stop()
+        if NaturalVoiceEngine.isSelected {
+            let voice = natural ?? NaturalVoice()
+            natural = voice
+            voice.onFinished = { [weak self] in
+                if self?.speaking == text { self?.speaking = nil }
+            }
+            speaking = text
+            voice.enqueue(text)
+            return
+        }
         let utterance = AVSpeechUtterance(string: text)
         let settings = UserDefaults.standard
         let identifier = settings.string(forKey: SettingsKey.voice) ?? ""
@@ -41,6 +54,7 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
 
     func stop() {
         synthesizer.stopSpeaking(at: .immediate)
+        natural?.stop()
         speaking = nil
     }
 
@@ -54,6 +68,7 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
 }
 
 enum SettingsKey {
+    /// An Apple voice identifier, or empty for the natural (Kokoro) voice.
     static let voice = "speechVoiceIdentifier"
     static let speechRate = "speechRate"
     /// 0 is slowest, 1 fastest. A little slower than normal speech, for young listeners.

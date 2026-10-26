@@ -11,3 +11,4 @@ Models/*.part
 build-dev-*/
 build-iphone/
 build-release-check/
+Models/*.onnx

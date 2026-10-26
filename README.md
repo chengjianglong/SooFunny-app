@@ -46,6 +46,11 @@ network requests and needs no Wi‑Fi, account or download.
     trickiest facts to practice again. Saved only on the device.
   - Questions can be read aloud. Subtraction never goes below zero and division always comes
     out even.
+- **Natural voice**: words, letters, math and the talking buddy are read by **Kokoro-82M**, a
+  neural voice ("Heart", a warm American female voice) that runs on the device with ONNX
+  Runtime. Text is turned into sounds with a Swift port of misaki's dictionary rules
+  (`SooFunny/Voice/`). Apple's built-in voices remain available in Settings and are used
+  automatically if the natural voice can't load.
 - **Settings**: reading voice and speed, plus **Research Lab** (for grown-ups) with on-device
   benchmarks: the coloring-page pipeline, Apple's Vision subject model, and Apple's on-device
   language model (Apple Intelligence, iOS 26+) with a prompt playground. Results are kept on
@@ -125,8 +130,9 @@ The talking buddy needs two large pieces that aren't stored in git. Fetch them o
 ```
 
 The first builds llama.cpp (tag `b11577`) as an XCFramework for iOS devices and the Simulator
-into `Vendor/`. The second downloads Gemma 3 1B (`gemma-3-1b-it-Q4_K_M.gguf`, 806 MB, checked
-against its SHA-256) into `Models/`. The model is bundled into the app, so the app is about
+into `Vendor/`. The second downloads Gemma 3 1B (`gemma-3-1b-it-Q4_K_M.gguf`, 806 MB) and the
+Kokoro-82M voice (`kokoro-82m-q8.onnx`, 92 MB), both checked against their SHA-256, into
+`Models/`. The model is bundled into the app, so the app is about
 830 MB and works offline from first launch. Gemma is provided under the
 [Gemma Terms of Use](https://ai.google.dev/gemma/terms).
 
@@ -171,5 +177,7 @@ scripts/make_icon.py             Crops the artwork into the 1024px app icon
 SooFunny version 0.1, developed by [Chengjiang Long](https://www.chengjianglong.com/).
 
 © 2026 Soo Intelligence Inc. All rights reserved. Bundled third-party parts keep their own
-licenses: the gallery photos (CC0, see `SooFunny/Showcase/credits.json`), llama.cpp (MIT) and
-Gemma (Gemma Terms of Use).
+licenses: the gallery photos (CC0, see `SooFunny/Showcase/credits.json`), llama.cpp (MIT),
+Gemma (Gemma Terms of Use), Kokoro-82M and its "Heart" voice (Apache-2.0, hexgrad),
+the misaki pronunciation dictionaries (Apache-2.0, hexgrad; rebuilt with
+`scripts/build_voice_lexicon.py`) and ONNX Runtime (MIT, Microsoft).

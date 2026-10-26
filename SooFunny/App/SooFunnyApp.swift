@@ -2,6 +2,11 @@ import SwiftUI
 
 @main
 struct SooFunnyApp: App {
+    init() {
+        // Load the natural voice in the background so the first word plays quickly.
+        NaturalVoiceEngine.shared.preload()
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -65,7 +65,7 @@ struct SettingsView: View {
 
                 Section {
                     Picker("Voice", selection: $voiceIdentifier) {
-                        Text("Automatic").tag("")
+                        Text(KokoroTTS.isBundled ? "Natural · Heart (recommended)" : "Automatic").tag("")
                         ForEach(voices, id: \.identifier) { voice in
                             Text(label(voice)).tag(voice.identifier)
                         }
@@ -86,7 +86,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Reading voice")
                 } footer: {
-                    Text("Voices come with iOS and work offline. Add more under iPhone or iPad Settings → Accessibility → Spoken Content → Voices.")
+                    Text("The natural voice runs on this device and works offline. Other voices come with iOS; add more under iPhone or iPad Settings → Accessibility → Spoken Content → Voices.")
                 }
 
                 Section {

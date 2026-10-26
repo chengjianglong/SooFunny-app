@@ -49,7 +49,7 @@ final class WordAssistant {
 
     init(word: String, category: String,
          makeEngine: @escaping () throws -> LanguageEngine = { try WordAssistant.loadSharedEngine() },
-         speaker: SentenceSpeaker = SystemSentenceSpeaker(),
+         speaker: SentenceSpeaker = NaturalVoice(),
          listener: ChildListener = SystemChildListener()) {
         self.word = word
         self.category = category

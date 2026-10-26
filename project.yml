@@ -1,4 +1,9 @@
 name: SooFunny
+packages:
+  # ONNX Runtime (MIT) runs the natural Kokoro voice on the device.
+  onnxruntime:
+    url: https://github.com/microsoft/onnxruntime-swift-package-manager
+    exactVersion: 1.24.2
 options:
   bundleIdPrefix: com.chengjianglong
   deploymentTarget:
@@ -21,7 +26,13 @@ targets:
       - path: Models/gemma-3-1b-it-Q4_K_M.gguf
         buildPhase: resources
         optional: true
+      # The natural Kokoro voice (92 MB). Not in git: run scripts/fetch_model.sh.
+      - path: Models/kokoro-82m-q8.onnx
+        buildPhase: resources
+        optional: true
     dependencies:
+      - package: onnxruntime
+        product: onnxruntime
       # llama.cpp built for iOS. Not in git: run scripts/build_llama.sh.
       - framework: Vendor/llama.cpp-src/build-apple/llama.xcframework
         embed: true
