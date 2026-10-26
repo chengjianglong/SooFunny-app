@@ -75,3 +75,22 @@ final class LabTests: XCTestCase {
         XCTAssertTrue(lines[1].contains(",15.0,10.0,20.0,"))
     }
 }
+
+final class ShowcaseTests: XCTestCase {
+    func testEveryGalleryPhotoIsBundledAndCredited() throws {
+        let bundle = Bundle(for: ColoringSession.self)
+        let url = try XCTUnwrap(bundle.url(forResource: "credits", withExtension: "json"))
+        let credits = try JSONDecoder().decode([PictureCredit].self, from: Data(contentsOf: url))
+        XCTAssertGreaterThanOrEqual(credits.count, 12)
+        for kind in [PictureKind.animals, .portraits, .people, .outdoors] {
+            XCTAssertGreaterThanOrEqual(credits.filter { $0.category == kind.rawValue }.count, 3, kind.title)
+        }
+        for credit in credits {
+            XCTAssertEqual(credit.license, "CC0", credit.file)
+            XCTAssertFalse(credit.author.contains("<"), credit.file)
+            let name = (credit.file as NSString).deletingPathExtension
+            let file = try XCTUnwrap(bundle.url(forResource: name, withExtension: "jpg"), credit.file)
+            XCTAssertNotNil(UIImage(contentsOfFile: file.path), credit.file)
+        }
+    }
+}

@@ -48,6 +48,14 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    NavigationLink {
+                        PhotoCreditsView()
+                    } label: {
+                        Label("Photo credits", systemImage: "photo.stack")
+                    }
+                }
+
+                Section {
                     Button("Reset defaults", role: .destructive) {
                         voiceIdentifier = ""
                         speechRate = SettingsKey.defaultSpeechRate
@@ -73,5 +81,29 @@ struct SettingsView: View {
         default: quality = ""
         }
         return "\(voice.name) · \(voice.language)\(quality)"
+    }
+}
+
+/// Who took the gallery photos. All are CC0 (free to use), from Wikimedia Commons.
+private struct PhotoCreditsView: View {
+    var body: some View {
+        List {
+            Section {
+                ForEach(Showcase.credits) { credit in
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(credit.title).font(.headline)
+                        Text("\(credit.author) · \(credit.license)").font(.subheadline).foregroundStyle(.secondary)
+                        if let url = URL(string: credit.url) {
+                            Link(credit.source.replacingOccurrences(of: "File:", with: ""), destination: url)
+                                .font(.caption)
+                        }
+                    }
+                }
+            } footer: {
+                Text("Thank you to these photographers for sharing their photos freely (CC0) on Wikimedia Commons.")
+            }
+        }
+        .navigationTitle("Photo credits")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }

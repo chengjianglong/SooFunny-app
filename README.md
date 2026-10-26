@@ -10,8 +10,11 @@ network requests and needs no Wi‑Fi, account or download.
 
 ## Features
 
-- **Any picture**: choose a photo, snap one with the camera, or start from a built-in drawing
-  (House, Fish, Flower, Rocket).
+- **A fun gallery to color**: bouncy rainbow title, a **Surprise me!** button, and picture
+  stickers in five groups: **Animals**, **Faces**, **People**, **Outdoors** and **Drawings**
+  (House, Fish, Flower, Rocket). Or use your own picture with **Photos** or **Camera** at the
+  bottom. The gallery photos are free CC0 photos from Wikimedia Commons, credited in
+  Settings → Photo credits (`SooFunny/Showcase/credits.json`).
 - **Automatic blocks**:
   - *Drawings / coloring pages*: every area enclosed by lines becomes a block.
   - *Photos*: colors are grouped, and each connected area becomes a block. Choose **Big**,
