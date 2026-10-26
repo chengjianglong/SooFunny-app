@@ -26,17 +26,27 @@ network requests and needs no Wi‑Fi, account or download.
 
 ## How the blocks are made
 
-`SooFunny/Engine/ImageSegmenter.swift` runs entirely on the device with no ML models or network:
+Every picture becomes a clean coloring page: smooth black outlines on white, like a printed
+coloring book. Everything runs on the device; nothing is downloaded.
 
-1. Scale the picture down (1024px for drawings, 512px for photos) and flatten transparency.
-2. Detect line art: mostly gray pixels on a mostly white background.
-3. **Line art**: dark pixels are lines; each 4-connected light area is a block, and specks are dropped.
-4. **Photos**:
-   - Box blur, then k-means color quantization (seeded, so results repeat), then a 3×3 majority
-     filter to smooth edges.
-   - Each connected area becomes a block. Tiny blocks and thin slivers merge into the neighbor
-     they share the longest border with, until the block count fits the chosen size.
-5. Draw each block with its fill color and dark outlines.
+**Drawings and coloring pages** (mostly black lines on white) keep their own lines. Each enclosed
+area is a block, and the lines stay anti-aliased.
+
+**Photos** go through a sketch pipeline in `SooFunny/Engine/`:
+
+1. **Flatten.** Repeated Kuwahara filtering in CIE Lab color removes texture and shading but keeps
+   real edges sharp (`LabImage.swift`).
+2. **Find the subject.** Apple's built-in Vision model separates people, pets and objects from the
+   background (`SubjectMask.swift`). The subject gets more detail and the background stays
+   simple, and a block never mixes the two. Photos with no clear subject skip this step.
+3. **Group colors.** k-means in Lab color (seeded, so results repeat), separately for subject and
+   background, then a majority filter.
+4. **Merge.** Neighboring blocks that look alike (small ΔE) join, so gradients such as a sky stay
+   one block. Tiny pieces and slivers merge into the neighbor they share the longest border with,
+   until the block count fits the chosen Big / Medium / Small size.
+5. **Smooth.** Block borders are rounded off, then redrawn at 1024px with Gaussian-weighted
+   contour smoothing, so lines look hand-drawn instead of pixelated.
+6. **Outline.** A distance transform draws an even, anti-aliased ~3px line along every border.
 
 ## Building
 
