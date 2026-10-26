@@ -54,9 +54,11 @@ MADE FOR FAMILIES
 • Grown-up check before purchases and links
 
 SOOFUNNY PREMIUM
-Try it free: drawings, three word groups, and adding and taking away are free forever.
-Premium unlocks every picture and your own photos, all 32 word groups, the talking buddy, and
-times and sharing. Start with a 7-day free trial, then $19.99 a year. Family Sharing is
+Try every feature free: color 14 gallery pictures, the drawings and 15 of your own photos;
+explore three word groups and talk with the buddy about every animal; and practice all four
+operations (times and sharing with the numbers 1 to 5). Premium unlocks every picture and
+unlimited own photos, all 32 word groups, the talking buddy for every word, and times and
+sharing with every number. Start with a 7-day free trial, then $19.99 a year. Family Sharing is
 included.
 
 Payment is charged to your Apple Account when the trial ends. The subscription renews
@@ -99,8 +101,9 @@ voice, model conversations and progress never leave the device. Purchases are ha
 SooFunny works fully offline. The talking buddy (Words → sparkle button) runs Google's
 Gemma 3 1B model on the device with llama.cpp; nothing is sent to a server.
 
-Premium features (locked items show a lock): photo gallery and own photos/camera, word groups
-beyond Animals, Colors and Numbers, the talking buddy, and × ÷ in Math. Purchases and outside
+Premium features (locked items show a lock): the sixth Animals photo, own photos/camera after
+15 free pictures, word groups beyond Animals, Colors and Numbers, the talking buddy outside
+Animals, and × ÷ with focus numbers above 5 in Math. Purchases and outside
 links are behind a parental gate that asks a two-digit multiplication question (for example
 "What is 14 × 7?").
 

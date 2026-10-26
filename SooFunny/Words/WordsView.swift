@@ -110,6 +110,7 @@ private struct WordList: View {
     @Binding var path: NavigationPath
     let onLocked: () -> Void
     private let premium = Premium.shared
+    private var canTalk: Bool { premium.isActive || FreeTier.allowsBuddy(category) }
 
     var body: some View {
         ScrollView {
@@ -127,8 +128,8 @@ private struct WordList: View {
                                 .foregroundStyle(.primary)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             SpeakButton(text: word.text)
-                            TalkButton(locked: !premium.isActive) {
-                                if premium.isActive {
+                            TalkButton(locked: !canTalk) {
+                                if canTalk {
                                     path.append(AssistantRoute(category: category, index: index))
                                 } else {
                                     onLocked()
@@ -198,6 +199,7 @@ private struct WordDetail: View {
     let onLocked: () -> Void
     @State private var index: Int
     private let premium = Premium.shared
+    private var canTalk: Bool { premium.isActive || FreeTier.allowsBuddy(route.category) }
 
     init(route: WordDetailRoute, path: Binding<NavigationPath>, onLocked: @escaping () -> Void) {
         self.route = route
@@ -226,13 +228,13 @@ private struct WordDetail: View {
                 // Each letter can be heard on its own.
                 FlowLetters(text: word.text)
                 Button {
-                    if premium.isActive {
+                    if canTalk {
                         path.append(AssistantRoute(category: route.category, index: index))
                     } else {
                         onLocked()
                     }
                 } label: {
-                    Label("Talk about \(word.text)", systemImage: premium.isActive ? "sparkles" : "lock.fill")
+                    Label("Talk about \(word.text)", systemImage: canTalk ? "sparkles" : "lock.fill")
                         .font(.title3.weight(.bold))
                         .frame(maxWidth: 480, minHeight: 56)
                 }

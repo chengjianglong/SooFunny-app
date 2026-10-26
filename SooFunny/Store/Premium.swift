@@ -84,11 +84,34 @@ final class Premium {
 enum FreeTier {
     /// Word groups anyone can open.
     static let wordCategories: Set<String> = ["Animals", "Colors", "Numbers"]
-    /// Math operations anyone can practice.
+    /// The word group where anyone can talk with the buddy, about every word in it.
+    static let buddyCategories: Set<String> = ["Animals"]
+    /// Math operations anyone can practice with any numbers.
     static let mathOperations: Set<MathOperation> = [.add, .subtract]
+    /// Times and sharing (× ÷) are free with these focus numbers.
+    static let mathTimesNumbers = 1...5
+    /// Gallery photos anyone can color in each group (drawings are all free).
+    static let photosPerGroup = 5
+    /// How many of their own pictures (Photos or Camera) anyone can color.
+    static let ownPictures = 15
+    /// UserDefaults key counting own pictures colored without Premium.
+    static let ownPicturesUsedKey = "freeOwnPicturesUsed"
 
-    static func allows(_ picture: ShowcasePicture) -> Bool { picture.kind == .drawings }
+    static func allows(_ picture: ShowcasePicture) -> Bool {
+        picture.kind == .drawings
+            || (Showcase.pictures(picture.kind).firstIndex { $0.id == picture.id } ?? .max) < photosPerGroup
+    }
     static func allows(_ category: WordCategory) -> Bool { wordCategories.contains(category.name) }
+    static func allowsBuddy(_ category: WordCategory) -> Bool { buddyCategories.contains(category.name) }
+
+    /// Focus numbers each operation may use without Premium.
+    static var mathFocusLimits: [MathOperation: ClosedRange<Int>] {
+        [.multiply: mathTimesNumbers, .divide: mathTimesNumbers]
+    }
+
+    static func ownPicturesLeft(_ defaults: UserDefaults = .standard) -> Int {
+        max(0, ownPictures - defaults.integer(forKey: ownPicturesUsedKey))
+    }
 }
 
 // MARK: - Paywall
@@ -127,10 +150,10 @@ struct PaywallView: View {
                     .font(.system(size: 36, weight: .black, design: .rounded))
                     .foregroundStyle(LinearGradient(colors: [.pink, .orange, .purple], startPoint: .leading, endPoint: .trailing))
                 VStack(alignment: .leading, spacing: 10) {
-                    perk("🖼️", "Color every photo, plus your own photos and camera")
+                    perk("🖼️", "Color every photo, and as many of your own pictures as you like")
                     perk("📚", "All 32 word groups, 754 words")
-                    perk("✨", "The talking buddy, running on your device")
-                    perk("✖️", "Times and sharing (× ÷) in Math")
+                    perk("✨", "Talk with the buddy about every word, on your device")
+                    perk("✖️", "Times and sharing (× ÷) with every number in Math")
                     perk("📴", "Works offline, no ads, nothing leaves your device")
                 }
                 .font(.headline)

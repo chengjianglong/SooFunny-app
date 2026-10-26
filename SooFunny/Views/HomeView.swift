@@ -14,7 +14,18 @@ struct HomeView: View {
     @State private var loadFailed = false
     @State private var diceSpin = 0.0
     @State private var showPaywall = false
+    @AppStorage(FreeTier.ownPicturesUsedKey) private var ownPicturesUsed = 0
     private let premium = Premium.shared
+
+    /// Own pictures (Photos or Camera) left in the free tier.
+    private var ownPicturesLeft: Int { max(0, FreeTier.ownPictures - ownPicturesUsed) }
+    private var canUseOwnPictures: Bool { premium.isActive || ownPicturesLeft > 0 }
+
+    /// Colors one of the child's own pictures, counting it against the free tier.
+    private func pickOwn(_ image: UIImage) {
+        if !premium.isActive { ownPicturesUsed += 1 }
+        onPick(image)
+    }
 
     private let cameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
 
@@ -50,7 +61,7 @@ struct HomeView: View {
             guard let item else { return }
             Task {
                 if let data = try? await item.loadTransferable(type: Data.self), let image = UIImage(data: data) {
-                    onPick(image)
+                    pickOwn(image)
                 } else {
                     loadFailed = true
                 }
@@ -60,7 +71,7 @@ struct HomeView: View {
         .fullScreenCover(isPresented: $showCamera, onDismiss: {
             if let cameraImage {
                 self.cameraImage = nil
-                onPick(cameraImage)
+                pickOwn(cameraImage)
             }
         }) {
             CameraPicker { image in
@@ -165,23 +176,35 @@ struct HomeView: View {
     }
 
     private var bottomBar: some View {
-        HStack(spacing: 12) {
-            if premium.isActive {
-                PhotosPicker(selection: $photoItem, matching: .images) {
-                    BarButtonLabel(title: "Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
+        VStack(spacing: 6) {
+            HStack(spacing: 12) {
+                if canUseOwnPictures {
+                    PhotosPicker(selection: $photoItem, matching: .images) {
+                        BarButtonLabel(title: "Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
+                    }
+                    .buttonStyle(SquishButtonStyle())
+                } else {
+                    Button { showPaywall = true } label: {
+                        BarButtonLabel(title: "Photos", systemImage: "lock.fill", color: .pink)
+                    }
+                    .buttonStyle(SquishButtonStyle())
                 }
-                .buttonStyle(SquishButtonStyle())
-            } else {
-                Button { showPaywall = true } label: {
-                    BarButtonLabel(title: "Photos", systemImage: "lock.fill", color: .pink)
+                if cameraAvailable {
+                    Button { if canUseOwnPictures { showCamera = true } else { showPaywall = true } } label: {
+                        BarButtonLabel(title: "Camera", systemImage: canUseOwnPictures ? "camera.fill" : "lock.fill", color: .blue)
+                    }
+                    .buttonStyle(SquishButtonStyle())
                 }
-                .buttonStyle(SquishButtonStyle())
             }
-            if cameraAvailable {
-                Button { if premium.isActive { showCamera = true } else { showPaywall = true } } label: {
-                    BarButtonLabel(title: "Camera", systemImage: premium.isActive ? "camera.fill" : "lock.fill", color: .blue)
+            if !premium.isActive {
+                Button { showPaywall = true } label: {
+                    Text(ownPicturesLeft == 1 ? "1 free picture of your own left"
+                         : ownPicturesLeft > 0 ? "\(ownPicturesLeft) free pictures of your own left"
+                         : "Get Premium to color more of your own pictures")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
-                .buttonStyle(SquishButtonStyle())
+                .buttonStyle(.plain)
             }
         }
         .frame(maxWidth: 560)

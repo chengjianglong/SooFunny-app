@@ -102,27 +102,34 @@ struct MathSettings: Codable, Equatable {
 /// Makes practice questions that suit young children.
 enum MathQuestionMaker {
     /// `count` questions using the chosen operations and focus numbers, without the
-    /// same question twice in a row.
-    static func questions<R: RandomNumberGenerator>(for settings: MathSettings, using rng: inout R) -> [MathQuestion] {
-        let operations = settings.operations.sorted()
-        let focus = settings.focusNumbers.sorted()
-        guard !operations.isEmpty, !focus.isEmpty else { return [] }
+    /// same question twice in a row. `focusLimits` keeps an operation to some focus numbers;
+    /// an operation left with none isn't used.
+    static func questions<R: RandomNumberGenerator>(for settings: MathSettings,
+                                                    focusLimits: [MathOperation: ClosedRange<Int>] = [:],
+                                                    using rng: inout R) -> [MathQuestion] {
+        let choices: [(op: MathOperation, focus: [Int])] = settings.operations.sorted().compactMap { op in
+            let focus = settings.focusNumbers.sorted().filter { focusLimits[op]?.contains($0) ?? true }
+            return focus.isEmpty ? nil : (op, focus)
+        }
+        guard !choices.isEmpty else { return [] }
+        let possible = choices.reduce(0) { $0 + $1.focus.count }
         var questions: [MathQuestion] = []
         while questions.count < settings.questionCount {
-            let op = operations.randomElement(using: &rng)!
-            let f = focus.randomElement(using: &rng)!
+            let choice = choices.randomElement(using: &rng)!
+            let f = choice.focus.randomElement(using: &rng)!
             let other = Int.random(in: 0...12, using: &rng)
-            let question = make(op, focus: f, other: other, flip: Bool.random(using: &rng))
+            let question = make(choice.op, focus: f, other: other, flip: Bool.random(using: &rng))
             // Try again on an immediate repeat, unless only one question is possible.
-            if question == questions.last, operations.count * focus.count > 1, Int.random(in: 0..<10, using: &rng) > 0 { continue }
+            if question == questions.last, possible > 1, Int.random(in: 0..<10, using: &rng) > 0 { continue }
             questions.append(question)
         }
         return questions
     }
 
-    static func questions(for settings: MathSettings) -> [MathQuestion] {
+    static func questions(for settings: MathSettings,
+                          focusLimits: [MathOperation: ClosedRange<Int>] = [:]) -> [MathQuestion] {
         var rng = SystemRandomNumberGenerator()
-        return questions(for: settings, using: &rng)
+        return questions(for: settings, focusLimits: focusLimits, using: &rng)
     }
 
     /// One question where the focus number appears. Subtraction never goes below zero and

@@ -194,10 +194,14 @@ Sharing. It uses StoreKit 2 (`SooFunny/Store/Premium.swift`); product ID
 
 | Free | Premium |
 |---|---|
-| The 4 drawings | All 15 gallery photos, plus your own photos and the camera |
+| The 4 drawings, and the first 5 photos in each group (14 of 15) | Every gallery photo |
+| 15 of your own pictures (Photos or Camera) | As many of your own pictures as you like |
 | Animals, Colors and Numbers words | All 32 word groups |
-| | The talking buddy |
-| + and − in Math | × and ÷ in Math |
+| The talking buddy for every Animals word | The talking buddy for every word |
+| + and − in Math with any number; × and ÷ with the numbers 1 to 5 | × and ÷ with every number |
+
+The free amounts live in `FreeTier` (`SooFunny/Store/Premium.swift`). Own pictures are
+counted on the device; a 🔒 appears when they run out.
 
 - **Locks:** locked items show a 🔒. Tapping one asks a grown-up question (a two-digit
   multiplication) before showing Apple's subscription screen.

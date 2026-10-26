@@ -104,4 +104,52 @@ final class FreeTierTests: XCTestCase {
         XCTAssertTrue(Showcase.all.contains { FreeTier.allows($0) }, "some pictures are free")
         XCTAssertTrue(Showcase.all.contains { !FreeTier.allows($0) }, "some pictures need Premium")
     }
+
+    func testFirstFivePhotosInEachGroupAreFree() {
+        for kind in PictureKind.allCases where kind != .all && kind != .drawings {
+            for (index, picture) in Showcase.pictures(kind).enumerated() {
+                XCTAssertEqual(FreeTier.allows(picture), index < 5, "\(kind) photo \(index)")
+            }
+        }
+        XCTAssertTrue(Showcase.pictures(.drawings).allSatisfy(FreeTier.allows))
+    }
+
+    func testBuddyIsFreeForEveryAnimal() throws {
+        let categories = try WordDictionary.loadBundled(Bundle(for: ColoringSession.self))
+        let animals = try XCTUnwrap(categories.first { $0.name == "Animals" })
+        XCTAssertTrue(FreeTier.allowsBuddy(animals))
+        XCTAssertFalse(categories.filter { $0.name != "Animals" }.contains(where: FreeTier.allowsBuddy))
+    }
+
+    func testFifteenOwnPicturesAreFree() throws {
+        let defaults = try XCTUnwrap(UserDefaults(suiteName: "FreeTierTests"))
+        defer { defaults.removePersistentDomain(forName: "FreeTierTests") }
+        XCTAssertEqual(FreeTier.ownPicturesLeft(defaults), 15)
+        defaults.set(14, forKey: FreeTier.ownPicturesUsedKey)
+        XCTAssertEqual(FreeTier.ownPicturesLeft(defaults), 1)
+        defaults.set(20, forKey: FreeTier.ownPicturesUsedKey)
+        XCTAssertEqual(FreeTier.ownPicturesLeft(defaults), 0)
+    }
+
+    func testFreeTimesAndSharingUseNumbersOneToFive() {
+        var settings = MathSettings()
+        settings.operations = [.add, .multiply, .divide]
+        settings.focusNumbers = Set(0...12)
+        settings.questionCount = 30
+        var rng = SystemRandomNumberGenerator()
+        for _ in 0..<20 {
+            let questions = MathQuestionMaker.questions(for: settings, focusLimits: FreeTier.mathFocusLimits, using: &rng)
+            XCTAssertEqual(questions.count, 30)
+            for q in questions where q.operation == .multiply {
+                XCTAssertTrue(FreeTier.mathTimesNumbers.contains(q.left) || FreeTier.mathTimesNumbers.contains(q.right), "\(q)")
+            }
+            for q in questions where q.operation == .divide {
+                XCTAssertTrue(FreeTier.mathTimesNumbers.contains(q.right), "\(q)")
+            }
+        }
+        settings.operations = [.multiply]
+        settings.focusNumbers = [8, 9]
+        XCTAssertTrue(MathQuestionMaker.questions(for: settings, focusLimits: FreeTier.mathFocusLimits).isEmpty,
+                      "× with only big numbers needs Premium")
+    }
 }
