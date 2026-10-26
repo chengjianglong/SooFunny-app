@@ -4,6 +4,7 @@ import SwiftUI
 /// Start screen: pick a photo, snap one with the camera, or choose a built-in drawing.
 struct HomeView: View {
     let onPick: (UIImage) -> Void
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     @State private var photoItem: PhotosPickerItem?
     @State private var showCamera = false
@@ -44,7 +45,7 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Or try one of these")
                         .font(.title2.weight(.bold))
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 16)], spacing: 16) {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: sizeClass == .regular ? 220 : 150), spacing: 16)], spacing: 16) {
                         ForEach(SampleArt.all) { sample in
                             Button { onPick(sample.image) } label: {
                                 VStack(spacing: 8) {

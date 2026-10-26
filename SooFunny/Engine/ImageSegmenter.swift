@@ -110,7 +110,7 @@ struct Segmentation {
 /// and tiny areas are merged into their neighbors until the block count is kid-sized.
 struct ImageSegmenter {
     /// Drawings keep their thin lines at a higher resolution; photos only need coarse blocks.
-    var lineArtMaxDimension = 1024
+    var lineArtMaxDimension = 2048
     var photoMaxDimension = 512
 
     func segment(_ image: UIImage, detail: SegmentDetail) -> Segmentation? {

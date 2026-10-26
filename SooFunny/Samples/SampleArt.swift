@@ -17,7 +17,7 @@ struct SampleArt: Identifiable {
 
     private static func draw(_ body: (CGContext) -> Void) -> UIImage {
         let format = UIGraphicsImageRendererFormat()
-        format.scale = 1
+        format.scale = 2 // 1600px, so lines stay smooth on a big iPad screen
         format.opaque = true
         return UIGraphicsImageRenderer(size: canvas, format: format).image { ctx in
             UIColor.white.setFill()

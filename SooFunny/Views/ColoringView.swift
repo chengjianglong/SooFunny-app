@@ -8,23 +8,34 @@ struct ColoringView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 12) {
-                if session.segmentation?.isLineArt == false {
-                    Picker("Block size", selection: $session.detail) {
-                        ForEach(SegmentDetail.allCases) { Text("\($0.title) blocks").tag($0) }
+            GeometryReader { geo in
+                // iPad in landscape: tools beside the picture so the picture stays big.
+                if sizeClass == .regular && geo.size.width > geo.size.height {
+                    HStack(spacing: 16) {
+                        CanvasView(session: session)
+                        VStack(spacing: 16) {
+                            detailPicker
+                            ToolBar(session: session, columns: 2)
+                            PaletteView(selected: $session.selectedColor, large: true)
+                            Spacer(minLength: 0)
+                        }
+                        .frame(width: 320)
                     }
-                    .pickerStyle(.segmented)
-                    .frame(maxWidth: 480)
-                    .padding(.horizontal)
+                    .padding(16)
+                } else {
+                    VStack(spacing: 12) {
+                        detailPicker
+                            .frame(maxWidth: 480)
+                            .padding(.horizontal)
+                        CanvasView(session: session)
+                            .padding(.horizontal, 12)
+                        ToolBar(session: session, columns: 5)
+                            .padding(.horizontal, 12)
+                        PaletteView(selected: $session.selectedColor, large: sizeClass == .regular)
+                    }
+                    .padding(.bottom, 8)
                 }
-
-                CanvasView(session: session)
-                    .padding(.horizontal, 12)
-
-                ToolBar(session: session)
-                PaletteView(selected: $session.selectedColor, large: sizeClass == .regular)
             }
-            .padding(.bottom, 8)
             .background(Color(.systemGroupedBackground))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -49,6 +60,17 @@ struct ColoringView: View {
         .task { await session.prepare() }
         .onChange(of: session.detail) {
             Task { await session.prepare() }
+        }
+    }
+
+    /// Block size choice, shown only for photos.
+    @ViewBuilder
+    private var detailPicker: some View {
+        if session.segmentation?.isLineArt == false {
+            Picker("Block size", selection: $session.detail) {
+                ForEach(SegmentDetail.allCases) { Text("\($0.title) blocks").tag($0) }
+            }
+            .pickerStyle(.segmented)
         }
     }
 }
@@ -113,9 +135,10 @@ private struct CanvasView: View {
 
 private struct ToolBar: View {
     @Bindable var session: ColoringSession
+    let columns: Int
 
     var body: some View {
-        HStack(spacing: 10) {
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: columns), spacing: 10) {
             ToolButton(title: "Undo", systemImage: "arrow.uturn.backward", tint: .blue) { session.undo() }
                 .disabled(!session.canUndo)
             ToolButton(title: "Magic", systemImage: "wand.and.stars", tint: .purple) { session.surprise() }
@@ -124,7 +147,6 @@ private struct ToolBar: View {
                        tint: .teal) { session.peek.toggle() }
             ToolButton(title: "Clear", systemImage: "trash", tint: .red) { session.clear() }
         }
-        .padding(.horizontal, 12)
         .disabled(session.segmentation == nil)
     }
 }
@@ -141,8 +163,7 @@ private struct ToolButton: View {
                 Image(systemName: systemImage).font(.title3.weight(.bold))
                 Text(title).font(.caption.weight(.bold))
             }
-            .frame(maxWidth: 90, minHeight: 52)
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, minHeight: 52)
         }
         .buttonStyle(.bordered)
         .tint(tint)

@@ -21,8 +21,8 @@ network requests and needs no Wi‑Fi, account or download.
 - **Fun tools**: Undo, **Magic** (random colors everywhere), **Real** (each block in its photo
   color), **Peek** (see the original underneath), Clear, Eraser, and a custom color picker.
 - **Share / save** the finished picture through the system share sheet.
-- Universal layout: a scrolling crayon row on iPhone, a wrapping crayon box on iPad, and every
-  orientation supported.
+- Universal layout: a scrolling crayon row on iPhone and a wrapping crayon box on iPad. In iPad
+  landscape, the tools move to a sidebar so the picture stays big. Every orientation is supported.
 
 ## How the blocks are made
 
