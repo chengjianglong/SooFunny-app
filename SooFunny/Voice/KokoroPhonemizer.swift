@@ -15,6 +15,9 @@ final class KokoroPhonemizer {
     private static let vowels: Set<Character> = Set("AIOQWYaiuæɑɒɔəɛɜɪʊʌᵻ")
     private static let taus: Set<Character> = Set("AIOWYiuæɑəɛɪɹʊʌ")
     private static let punctuation: Set<Character> = Set(";:,.!?—…\"()“”")
+    /// Words the dictionary doesn't have that should be said, not spelled: the app's name is
+    /// "Soo Funny" ("Soo" rhymes with "zoo").
+    private static let extraWords = ["soo": "sˈu", "soofunny": "sˈu fˈʌni"]
 
     init(lexiconURL: URL, vocabURL: URL) throws {
         var lexicon: [String: String] = [:]
@@ -30,6 +33,7 @@ final class KokoroPhonemizer {
             guard parts.count == 2, let symbol = parts[0].first, let id = Int64(parts[1]) else { continue }
             vocab[symbol] = id
         }
+        lexicon.merge(Self.extraWords) { dictionary, _ in dictionary }
         self.lexicon = lexicon
         self.vocab = vocab
     }

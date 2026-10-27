@@ -37,6 +37,8 @@ final class KokoroPhonemizerTests: XCTestCase {
         XCTAssertEqual(p.phonemize("a"), "ˈA", "the letter a alone is 'ay', not 'uh'")
         XCTAssertFalse(p.phonemize("zxqv").isEmpty, "unknown words are spelled out")
         XCTAssertTrue(p.phonemize("I can").hasPrefix("ˌI"))
+        XCTAssertEqual(p.phonemize("SooFunny"), "sˈu fˈʌni", "the app's name is said, not spelled")
+        XCTAssertEqual(p.phonemize("Soo Funny"), "sˈu fˈʌni")
     }
 
     func testEveryWordInTheWordListCanBeSaid() throws {
