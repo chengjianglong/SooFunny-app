@@ -10,8 +10,11 @@ photographs ever leaves the device.
 <p align="center"><img src="SooFunny/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="140" alt="SooFunny app icon"></p>
 
 <p align="center">
-  <a href="marketing/SooFunny-demo.mp4"><img src="docs/images/demo-video.jpg" width="270" alt="Play the 74-second SooFunny demo video"></a><br>
-  <b>▶️ <a href="marketing/SooFunny-demo.mp4">Watch the 74-second demo</a></b>: coloring, words with real photos, the talking buddy and math
+  <a href="marketing/SooFunny-demo-iPhone16.mp4"><img src="docs/images/demo-iphone16.jpg" width="250" alt="Play the SooFunny demo video for iPhone 16"></a>
+  &nbsp;
+  <a href="marketing/SooFunny-demo-iPad.mp4"><img src="docs/images/demo-ipad.jpg" width="250" alt="Play the SooFunny demo video for iPad"></a><br>
+  <b>▶️ Watch the demo: <a href="marketing/SooFunny-demo-iPhone16.mp4">iPhone 16</a> (79 s) · <a href="marketing/SooFunny-demo-iPad.mp4">iPad</a> (80 s)</b><br>
+  Coloring, words with real photos, the talking buddy and math
 </p>
 
 <p align="center">
