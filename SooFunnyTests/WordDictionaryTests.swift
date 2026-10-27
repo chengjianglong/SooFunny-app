@@ -112,15 +112,21 @@ final class WordPhotoTests: XCTestCase {
                           "\(credit.file): \(credit.license)")
             XCTAssertTrue(credit.url.hasPrefix("https://commons.wikimedia.org/"), credit.file)
         }
-        var withPhoto = 0
+        var withPhoto = 0, extras = 0
         for category in categories {
             for word in category.words where WordPhotos.image(category: category.name, word: word.text, bundle: bundle) != nil {
                 withPhoto += 1
-                let file = WordPhotos.fileName(category: category.name, word: word.text) + ".jpg"
-                XCTAssertTrue(credits.contains { $0.file == file }, "\(file) has a credit")
+                let base = WordPhotos.fileName(category: category.name, word: word.text)
+                XCTAssertTrue(credits.contains { $0.file == base + ".jpg" }, "\(base) has a credit")
+                let more = WordPhotos.extraImages(category: category.name, word: word.text, bundle: bundle).count
+                for n in 0..<more {
+                    XCTAssertTrue(credits.contains { $0.file == "\(base)-\(n + 2).jpg" }, "\(base)-\(n + 2) has a credit")
+                }
+                extras += more
             }
         }
-        XCTAssertEqual(withPhoto, credits.count, "every credit is for a word in the list")
+        XCTAssertEqual(withPhoto + extras, credits.count, "every credit is for a bundled photo of a word in the list")
         XCTAssertGreaterThan(withPhoto, categories.flatMap(\.words).count / 2)
+        XCTAssertGreaterThan(extras, withPhoto, "most words with a photo have more for the buddy screen")
     }
 }

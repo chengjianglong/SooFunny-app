@@ -71,7 +71,7 @@ photographs ever leaves the device.
   Time, Nature, Space, Jobs, People, Feelings, Action Words, Opposites and Around Town.
 - Every word has an emoji picture (or a colorful letter tile) and a **speaker** button.
   516 of the 754 words also show a **real photo**, with the emoji stuck on its corner like a
-  sticker. Words that can't be photographed well (numbers, feelings, time words) keep just the
+  sticker. On the talking buddy screen, most of them show one or two more photos beside it. Words that can't be photographed well (numbers, feelings, time words) keep just the
   emoji.
 - A word page shows the word big, reads it aloud, lets kids tap each **letter** to hear it, and
   has Previous / Next.
@@ -387,7 +387,8 @@ project.yml                        XcodeGen project definition
 - **Word photos:** `python3 scripts/find_word_photos.py <folder>` searches Wikimedia Commons
   for CC0 and public-domain photos for every word, and `--sheets` makes contact sheets to
   review them. Record the chosen photo (or `null`) for each word in
-  `scripts/word_photo_picks.json`, then run `python3 scripts/bundle_word_photos.py`. Check
+  `scripts/word_photo_picks.json`, and up to two more for the buddy screen in
+  `scripts/word_photo_extras.json`, then run `python3 scripts/bundle_word_photos.py`. Check
   every photo by eye: search results include unsuitable pictures.
 - **App icon:** replace `design/soo-icon.png`, then run `python3 scripts/make_icon.py`.
 - **Pronunciation dictionary:** to rebuild it from newer misaki data, run

@@ -2,7 +2,9 @@ import SwiftUI
 import UIKit
 
 /// Real photos for the words, bundled as `word-<group>-<word>.jpg` (free to use, from Wikimedia
-/// Commons; see `word_photo_credits.json`). Words without a good photo just show their emoji.
+/// Commons; see `word_photo_credits.json`). Many words have one or two more photos,
+/// `-2.jpg` and `-3.jpg`, shown on the talking buddy screen. Words without a good photo just
+/// show their emoji.
 enum WordPhotos {
     private static let cache = NSCache<NSString, UIImage>()
 
@@ -19,7 +21,16 @@ enum WordPhotos {
     }
 
     static func image(category: String, word: String, bundle: Bundle = .main) -> UIImage? {
-        let name = fileName(category: category, word: word)
+        load(fileName(category: category, word: word), bundle: bundle)
+    }
+
+    /// The word's other photos (up to two), for the talking buddy screen.
+    static func extraImages(category: String, word: String, bundle: Bundle = .main) -> [UIImage] {
+        let base = fileName(category: category, word: word)
+        return (2...3).compactMap { load("\(base)-\($0)", bundle: bundle) }
+    }
+
+    private static func load(_ name: String, bundle: Bundle) -> UIImage? {
         if let cached = cache.object(forKey: name as NSString) { return cached }
         guard let url = bundle.url(forResource: name, withExtension: "jpg"),
               let image = UIImage(contentsOfFile: url.path) else { return nil }
@@ -65,6 +76,32 @@ struct WordPicture: View {
                 .accessibilityHidden(true)
         } else {
             Picture(emoji: word.emoji, word: word.text, size: size, tint: tint)
+        }
+    }
+}
+
+/// The word's photo with its emoji sticker, then its other photos, side by side like snapshots.
+struct WordPhotoRow: View {
+    let category: WordCategory
+    let word: WordEntry
+    let size: CGFloat
+    let tint: Color
+
+    var body: some View {
+        let extras = WordPhotos.extraImages(category: category.name, word: word.text)
+        HStack(alignment: .center, spacing: size * 0.12) {
+            WordPicture(category: category, word: word, size: extras.isEmpty ? size * 1.15 : size, tint: tint)
+            ForEach(Array(extras.enumerated()), id: \.offset) { index, photo in
+                Image(uiImage: photo)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: size * 0.82, height: size * 0.82)
+                    .clipShape(RoundedRectangle(cornerRadius: size * 0.16))
+                    .overlay(RoundedRectangle(cornerRadius: size * 0.16).stroke(.white, lineWidth: max(2, size * 0.03)))
+                    .shadow(color: .black.opacity(0.15), radius: size * 0.04, y: size * 0.02)
+                    .rotationEffect(.degrees(index.isMultiple(of: 2) ? 4 : -4))
+                    .accessibilityHidden(true)
+            }
         }
     }
 }

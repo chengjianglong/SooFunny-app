@@ -9,6 +9,7 @@ struct WordAssistantView: View {
     @State private var typed = ""
     @State private var permissionAsked = false
     @FocusState private var typing: Bool
+    @Environment(\.horizontalSizeClass) private var sizeClass
 
     init(word: WordEntry, category: WordCategory) {
         self.word = word
@@ -59,7 +60,7 @@ struct WordAssistantView: View {
 
     private var header: some View {
         VStack(spacing: 8) {
-            WordPicture(category: category, word: word, size: 170, tint: .orange)
+            WordPhotoRow(category: category, word: word, size: sizeClass == .regular ? 190 : 118, tint: .orange)
             Text(word.text)
                 .font(.system(size: 40, weight: .heavy, design: .rounded))
         }
