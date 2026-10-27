@@ -29,7 +29,7 @@ photographs ever leaves the device.
 | **Version** | 0.1 (build 1) |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
-| **Copyright** | © 2026 Soo Intelligence Inc. All rights reserved. |
+| **Copyright** | © 2026 Soo X Intelligence Inc. All rights reserved. |
 
 ---
 
@@ -459,7 +459,7 @@ right away.
 
 ## Credits and licenses
 
-SooFunny's own code, word list, artwork and text: © 2026 Soo Intelligence Inc. All rights
+SooFunny's own code, word list, artwork and text: © 2026 Soo X Intelligence Inc. All rights
 reserved. Bundled third-party parts keep their own licenses:
 
 | Component | Use | License |
@@ -482,4 +482,4 @@ images were copied from it.
 
 ---
 
-<p align="center">Made with ❤️ for curious kids by <a href="https://www.chengjianglong.com/">Chengjiang Long</a> · © 2026 Soo Intelligence Inc.</p>
+<p align="center">Made with ❤️ for curious kids by <a href="https://www.chengjianglong.com/">Chengjiang Long</a> · © 2026 Soo X Intelligence Inc.</p>

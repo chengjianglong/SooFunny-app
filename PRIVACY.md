@@ -3,7 +3,7 @@
 _Last updated: October 26, 2026_
 
 SooFunny is a learning and coloring app for children, made by Chengjiang Long
-(https://www.chengjianglong.com/). © 2026 Soo Intelligence Inc. All rights reserved.
+(https://www.chengjianglong.com/). © 2026 Soo X Intelligence Inc. All rights reserved.
 
 ## The short version
 
