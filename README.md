@@ -10,6 +10,11 @@ photographs ever leaves the device.
 <p align="center"><img src="SooFunny/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="140" alt="SooFunny app icon"></p>
 
 <p align="center">
+  <a href="marketing/SooFunny-demo.mp4"><img src="docs/images/demo-video.jpg" width="270" alt="Play the 74-second SooFunny demo video"></a><br>
+  <b>▶️ <a href="marketing/SooFunny-demo.mp4">Watch the 74-second demo</a></b>: coloring, words with real photos, the talking buddy and math
+</p>
+
+<p align="center">
   <img src="docs/images/iphone-color.jpg" width="230" alt="Color tab on iPhone: picture gallery with a Surprise me! button">
   &nbsp;
   <img src="docs/images/ipad-words.jpg" width="300" alt="Words tab on iPad: 32 word groups">
