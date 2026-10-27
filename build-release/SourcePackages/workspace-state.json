@@ -1,0 +1,69 @@
+{
+  "object" : {
+    "artifacts" : [
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "onnxruntime-swift-package-manager",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/microsoft/onnxruntime-swift-package-manager",
+          "name" : "onnxruntime-swift-package-manager"
+        },
+        "path" : "/Users/clong1/Projects/soofunny-app/build-release/SourcePackages/artifacts/onnxruntime-swift-package-manager/onnxruntime/onnxruntime.xcframework",
+        "source" : {
+          "checksum" : "f7100a992d2a8135168c8afd831e6a58b465349101982aa58b3e11d36e600b54",
+          "type" : "remote",
+          "url" : "https://download.onnxruntime.ai/pod-archive-onnxruntime-c-1.24.2.zip"
+        },
+        "targetName" : "onnxruntime"
+      },
+      {
+        "kind" : {
+          "xcframework" : {
+
+          }
+        },
+        "packageRef" : {
+          "identity" : "onnxruntime-swift-package-manager",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/microsoft/onnxruntime-swift-package-manager",
+          "name" : "onnxruntime-swift-package-manager"
+        },
+        "path" : "/Users/clong1/Projects/soofunny-app/build-release/SourcePackages/artifacts/onnxruntime-swift-package-manager/onnxruntime_extensions/onnxruntime_extensions.xcframework",
+        "source" : {
+          "checksum" : "346522d1171d4c99cb0908fa8e4e9330a4a6aad39cd83ce36eb654437b33e6b5",
+          "type" : "remote",
+          "url" : "https://download.onnxruntime.ai/pod-archive-onnxruntime-extensions-c-0.13.0.zip"
+        },
+        "targetName" : "onnxruntime_extensions"
+      }
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "onnxruntime-swift-package-manager",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/microsoft/onnxruntime-swift-package-manager",
+          "name" : "onnxruntime-swift-package-manager"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "b7fb7f7dea8a2469e6335d95a61b8f36d0dc83b2",
+            "version" : "1.24.2"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "onnxruntime-swift-package-manager"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

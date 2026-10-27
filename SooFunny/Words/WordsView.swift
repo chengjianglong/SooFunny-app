@@ -126,6 +126,10 @@ private struct WordList: View {
                             Text(word.text)
                                 .font(.title2.weight(.semibold))
                                 .foregroundStyle(.primary)
+                                // Shrink long words a little rather than break them ("beave / r")
+                                // in narrow columns, as on a 13-inch iPad's three-column list.
+                                .lineLimit(1)
+                                .minimumScaleFactor(0.6)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                             SpeakButton(text: word.text)
                             TalkButton(locked: !canTalk) {
