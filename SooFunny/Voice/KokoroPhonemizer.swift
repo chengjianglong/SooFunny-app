@@ -16,8 +16,9 @@ final class KokoroPhonemizer {
     private static let taus: Set<Character> = Set("AIOWYiuæɑəɛɪɹʊʌ")
     private static let punctuation: Set<Character> = Set(";:,.!?—…\"()“”")
     /// Words the dictionary doesn't have that should be said, not spelled: the app's name is
-    /// "Soo Funny" ("Soo" rhymes with "zoo").
-    private static let extraWords = ["soo": "sˈu", "soofunny": "sˈu fˈʌni"]
+    /// "Soo Funny" ("Soo" rhymes with "zoo"), and "iPhone" and "iPad" are "eye phone" and "eye pad".
+    private static let extraWords = ["soo": "sˈu", "soofunny": "sˈu fˈʌni",
+                                     "iphone": "ˈI fˈOn", "ipad": "ˈI pˈæd"]
 
     init(lexiconURL: URL, vocabURL: URL) throws {
         var lexicon: [String: String] = [:]

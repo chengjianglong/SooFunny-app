@@ -39,6 +39,7 @@ final class KokoroPhonemizerTests: XCTestCase {
         XCTAssertTrue(p.phonemize("I can").hasPrefix("ˌI"))
         XCTAssertEqual(p.phonemize("SooFunny"), "sˈu fˈʌni", "the app's name is said, not spelled")
         XCTAssertEqual(p.phonemize("Soo Funny"), "sˈu fˈʌni")
+        XCTAssertEqual(p.phonemize("iPhone and iPad"), "ˈI fˈOn ænd ˈI pˈæd", "said as eye phone and eye pad")
     }
 
     func testEveryWordInTheWordListCanBeSaid() throws {
