@@ -207,8 +207,8 @@ private struct PhotoCreditsView: View {
 enum AppInfo {
     static let developer = "Chengjiang Long"
     static let developerURL = URL(string: "https://www.chengjianglong.com/")!
-    static let company = "Soo X Intelligence Inc."
-    static let copyright = "© 2026 Soo X Intelligence Inc. All rights reserved."
+    static let company = "Soo X Intelligence LLC"
+    static let copyright = "© 2026 Soo X Intelligence LLC. All rights reserved."
 
     /// From the app's Info.plist (MARKETING_VERSION in project.yml).
     static var version: String {

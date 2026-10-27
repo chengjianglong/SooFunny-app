@@ -14,7 +14,7 @@ holder can do.
 | Primary category | Education |
 | Secondary category | Entertainment |
 | Age rating | 4+ (answer "None" to every content question; no unrestricted web access) |
-| Copyright | © 2026 Soo X Intelligence Inc. All rights reserved. |
+| Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
 | Version | 0.1 (build 1) |

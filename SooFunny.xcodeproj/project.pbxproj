@@ -5887,7 +5887,7 @@
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo X Intelligence Inc. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo X Intelligence LLC. All rights reserved.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SooFunny listens when you tap Talk, so you can ask questions about a word.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SooFunny saves your colored pictures to your photo library.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "SooFunny turns what you say into words on this device, so the buddy can answer your questions.";
@@ -5987,7 +5987,7 @@
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo X Intelligence Inc. All rights reserved.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo X Intelligence LLC. All rights reserved.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SooFunny listens when you tap Talk, so you can ask questions about a word.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SooFunny saves your colored pictures to your photo library.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "SooFunny turns what you say into words on this device, so the buddy can answer your questions.";
