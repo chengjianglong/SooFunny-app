@@ -122,7 +122,7 @@ private struct WordList: View {
                                 .font(.callout.weight(.semibold).monospacedDigit())
                                 .foregroundStyle(.tint)
                                 .frame(minWidth: 26)
-                            Picture(emoji: word.emoji, word: word.text, size: 52, tint: tileColor(index))
+                            WordPicture(category: category, word: word, size: 60, tint: tileColor(index))
                             Text(word.text)
                                 .font(.title2.weight(.semibold))
                                 .foregroundStyle(.primary)
@@ -214,7 +214,9 @@ private struct WordDetail: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 28) {
-                Picture(emoji: word.emoji, word: word.text, size: 200, tint: tileColor(index))
+                WordPicture(category: route.category, word: word, size: 240, tint: tileColor(index))
+                    .id(word.id)
+                    .transition(.scale(scale: 0.85).combined(with: .opacity))
                     .onTapGesture { Speech.shared.speak(word.text) }
                     .accessibilityAddTraits(.isButton)
                 HStack(spacing: 8) {
@@ -269,7 +271,7 @@ private struct WordDetail: View {
     }
 
     private func move(_ step: Int) {
-        index = min(max(0, index + step), words.count - 1)
+        withAnimation(.spring(duration: 0.35)) { index = min(max(0, index + step), words.count - 1) }
         Speech.shared.speak(word.text)
         prefetchAround()
     }

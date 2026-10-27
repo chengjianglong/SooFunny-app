@@ -1,0 +1,4646 @@
+[
+ {
+  "file": "word-animals-dog.jpg",
+  "category": "Animals",
+  "title": "dog",
+  "source": "File:Dog at Nørre Vorupør Strand.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Dog_at_N%C3%B8rre_Vorup%C3%B8r_Strand.jpg"
+ },
+ {
+  "file": "word-animals-cat.jpg",
+  "category": "Animals",
+  "title": "cat",
+  "source": "File:Tabby cat with blue eyes-3336579.jpg",
+  "license": "CC0",
+  "author": "AdinaVoicu",
+  "url": "https://commons.wikimedia.org/wiki/File:Tabby_cat_with_blue_eyes-3336579.jpg"
+ },
+ {
+  "file": "word-animals-mouse.jpg",
+  "category": "Animals",
+  "title": "mouse",
+  "source": "File:Mouse in snow.jpg",
+  "license": "CC0",
+  "author": "Alex Kard",
+  "url": "https://commons.wikimedia.org/wiki/File:Mouse_in_snow.jpg"
+ },
+ {
+  "file": "word-animals-rabbit.jpg",
+  "category": "Animals",
+  "title": "rabbit",
+  "source": "File:Rabbit - wild rabbit leaping.jpg",
+  "license": "CC0",
+  "author": "Yu-Chan Chen",
+  "url": "https://commons.wikimedia.org/wiki/File:Rabbit_-_wild_rabbit_leaping.jpg"
+ },
+ {
+  "file": "word-animals-fox.jpg",
+  "category": "Animals",
+  "title": "fox",
+  "source": "File:Red fox in yard, Charlton MA 2025-12-26.jpg",
+  "license": "CC0",
+  "author": "Peter Cooper Jr.",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_fox_in_yard,_Charlton_MA_2025-12-26.jpg"
+ },
+ {
+  "file": "word-animals-bear.jpg",
+  "category": "Animals",
+  "title": "bear",
+  "source": "File:Bear unsplash.jpg",
+  "license": "CC0",
+  "author": "Jessica Weiller",
+  "url": "https://commons.wikimedia.org/wiki/File:Bear_unsplash.jpg"
+ },
+ {
+  "file": "word-animals-panda.jpg",
+  "category": "Animals",
+  "title": "panda",
+  "source": "File:Chengdu Panda Breeding Research Center, Chengdu, China (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Chester Ho chesterho",
+  "url": "https://commons.wikimedia.org/wiki/File:Chengdu_Panda_Breeding_Research_Center,_Chengdu,_China_(Unsplash).jpg"
+ },
+ {
+  "file": "word-animals-koala.jpg",
+  "category": "Animals",
+  "title": "koala",
+  "source": "File:Koala-bear-sunlight (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Les Anderson lesanderson",
+  "url": "https://commons.wikimedia.org/wiki/File:Koala-bear-sunlight_(Unsplash).jpg"
+ },
+ {
+  "file": "word-animals-tiger.jpg",
+  "category": "Animals",
+  "title": "tiger",
+  "source": "File:Tiger (Panthera tigris) in Disney's Animal Kingdom.jpg",
+  "license": "CC0",
+  "author": "Kaldari",
+  "url": "https://commons.wikimedia.org/wiki/File:Tiger_(Panthera_tigris)_in_Disney%27s_Animal_Kingdom.jpg"
+ },
+ {
+  "file": "word-animals-lion.jpg",
+  "category": "Animals",
+  "title": "lion",
+  "source": "File:African Lion (40307117333).jpg",
+  "license": "CC0",
+  "author": "Mathias Appel",
+  "url": "https://commons.wikimedia.org/wiki/File:African_Lion_(40307117333).jpg"
+ },
+ {
+  "file": "word-animals-monkey.jpg",
+  "category": "Animals",
+  "title": "monkey",
+  "source": "File:Monkey looking away.jpg",
+  "license": "CC0",
+  "author": "Rebeccananonof",
+  "url": "https://commons.wikimedia.org/wiki/File:Monkey_looking_away.jpg"
+ },
+ {
+  "file": "word-animals-gorilla.jpg",
+  "category": "Animals",
+  "title": "gorilla",
+  "source": "File:SILVERBACK GORILLA 04.jpg",
+  "license": "CC0",
+  "author": "Adesolive",
+  "url": "https://commons.wikimedia.org/wiki/File:SILVERBACK_GORILLA_04.jpg"
+ },
+ {
+  "file": "word-animals-elephant.jpg",
+  "category": "Animals",
+  "title": "elephant",
+  "source": "File:Elephant In Mudhumalai Tiger reserve forest.jpg",
+  "license": "CC0",
+  "author": "Aswini Nagarajan",
+  "url": "https://commons.wikimedia.org/wiki/File:Elephant_In_Mudhumalai_Tiger_reserve_forest.jpg"
+ },
+ {
+  "file": "word-animals-giraffe.jpg",
+  "category": "Animals",
+  "title": "giraffe",
+  "source": "File:Giraffe posing in the grass.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Giraffe_posing_in_the_grass.jpg"
+ },
+ {
+  "file": "word-animals-zebra.jpg",
+  "category": "Animals",
+  "title": "zebra",
+  "source": "File:Zebra squared (Unsplash).jpg",
+  "license": "CC0",
+  "author": "George Brits georgebrits_cableandgrain",
+  "url": "https://commons.wikimedia.org/wiki/File:Zebra_squared_(Unsplash).jpg"
+ },
+ {
+  "file": "word-animals-hippo.jpg",
+  "category": "Animals",
+  "title": "hippo",
+  "source": "File:Group of hippos resting closely together i.jpg",
+  "license": "CC0",
+  "author": "Stanislav Stelmakhovich",
+  "url": "https://commons.wikimedia.org/wiki/File:Group_of_hippos_resting_closely_together_i.jpg"
+ },
+ {
+  "file": "word-animals-rhino.jpg",
+  "category": "Animals",
+  "title": "rhino",
+  "source": "File:The Rhino In Its Habitat.jpg",
+  "license": "CC0",
+  "author": "Aidashhk",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Rhino_In_Its_Habitat.jpg"
+ },
+ {
+  "file": "word-animals-camel.jpg",
+  "category": "Animals",
+  "title": "camel",
+  "source": "File:Camel in Gobi Desert 01.jpg",
+  "license": "CC0",
+  "author": "Bernard Gagnon",
+  "url": "https://commons.wikimedia.org/wiki/File:Camel_in_Gobi_Desert_01.jpg"
+ },
+ {
+  "file": "word-animals-kangaroo.jpg",
+  "category": "Animals",
+  "title": "kangaroo",
+  "source": "File:Eastern gray kangaroo Macropus giganteus.jpg",
+  "license": "CC0",
+  "author": "Sklmsta",
+  "url": "https://commons.wikimedia.org/wiki/File:Eastern_gray_kangaroo_Macropus_giganteus.jpg"
+ },
+ {
+  "file": "word-animals-deer.jpg",
+  "category": "Animals",
+  "title": "deer",
+  "source": "File:The Barking deer.jpg",
+  "license": "CC0",
+  "author": "Sangyam adventurer",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Barking_deer.jpg"
+ },
+ {
+  "file": "word-animals-wolf.jpg",
+  "category": "Animals",
+  "title": "wolf",
+  "source": "File:Wolf unsplash.jpg",
+  "license": "CC0",
+  "author": "Josh Felise",
+  "url": "https://commons.wikimedia.org/wiki/File:Wolf_unsplash.jpg"
+ },
+ {
+  "file": "word-animals-squirrel.jpg",
+  "category": "Animals",
+  "title": "squirrel",
+  "source": "File:Squirrel on a Branch.jpg",
+  "license": "CC0",
+  "author": "Tfbybyhf",
+  "url": "https://commons.wikimedia.org/wiki/File:Squirrel_on_a_Branch.jpg"
+ },
+ {
+  "file": "word-animals-hedgehog.jpg",
+  "category": "Animals",
+  "title": "hedgehog",
+  "source": "File:Hedgehog on grass in the morning.jpg",
+  "license": "CC0",
+  "author": "byapryl",
+  "url": "https://commons.wikimedia.org/wiki/File:Hedgehog_on_grass_in_the_morning.jpg"
+ },
+ {
+  "file": "word-animals-bat.jpg",
+  "category": "Animals",
+  "title": "bat",
+  "source": "File:Atlantic Forest Fringe-lipped Bat.jpg",
+  "license": "CC0",
+  "author": "Guilherme Garbino",
+  "url": "https://commons.wikimedia.org/wiki/File:Atlantic_Forest_Fringe-lipped_Bat.jpg"
+ },
+ {
+  "file": "word-animals-sloth.jpg",
+  "category": "Animals",
+  "title": "sloth",
+  "source": "File:Linne's two-toed sloth in Drusillas Park 2024-12-18.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Linne%27s_two-toed_sloth_in_Drusillas_Park_2024-12-18.jpg"
+ },
+ {
+  "file": "word-animals-otter.jpg",
+  "category": "Animals",
+  "title": "otter",
+  "source": "File:OTTER SEA (enhydra lutris) (11-18-09) morro bay estuary, slo co, ca -02 (4116200770).jpg",
+  "license": "CC0",
+  "author": "ALAN SCHMIERER",
+  "url": "https://commons.wikimedia.org/wiki/File:OTTER_SEA_(enhydra_lutris)_(11-18-09)_morro_bay_estuary,_slo_co,_ca_-02_(4116200770).jpg"
+ },
+ {
+  "file": "word-animals-raccoon.jpg",
+  "category": "Animals",
+  "title": "raccoon",
+  "source": "File:Raccoon on Log.jpg",
+  "license": "CC0",
+  "author": "Alexas_Fotos",
+  "url": "https://commons.wikimedia.org/wiki/File:Raccoon_on_Log.jpg"
+ },
+ {
+  "file": "word-animals-skunk.jpg",
+  "category": "Animals",
+  "title": "skunk",
+  "source": "File:Skunk about to spray.jpg",
+  "license": "Public domain",
+  "author": "Wallace Keck",
+  "url": "https://commons.wikimedia.org/wiki/File:Skunk_about_to_spray.jpg"
+ },
+ {
+  "file": "word-animals-beaver.jpg",
+  "category": "Animals",
+  "title": "beaver",
+  "source": "File:North American beaver Castor canadensis.jpg",
+  "license": "CC0",
+  "author": "ImagePerson",
+  "url": "https://commons.wikimedia.org/wiki/File:North_American_beaver_Castor_canadensis.jpg"
+ },
+ {
+  "file": "word-animals-moose.jpg",
+  "category": "Animals",
+  "title": "moose",
+  "source": "File:Moose bull.jpg",
+  "license": "Public domain",
+  "author": "Alaska Region U.S. Fish &amp; Wildlife Service",
+  "url": "https://commons.wikimedia.org/wiki/File:Moose_bull.jpg"
+ },
+ {
+  "file": "word-farm-cow.jpg",
+  "category": "Farm",
+  "title": "cow",
+  "source": "File:Cow in Field image.jpg",
+  "license": "CC0",
+  "author": "Kanimozhi Vennila",
+  "url": "https://commons.wikimedia.org/wiki/File:Cow_in_Field_image.jpg"
+ },
+ {
+  "file": "word-farm-pig.jpg",
+  "category": "Farm",
+  "title": "pig",
+  "source": "File:Sus scrofa domesticus, miniature pig, juvenile.jpg",
+  "license": "CC0",
+  "author": "Johan Spaedtke",
+  "url": "https://commons.wikimedia.org/wiki/File:Sus_scrofa_domesticus,_miniature_pig,_juvenile.jpg"
+ },
+ {
+  "file": "word-farm-sheep.jpg",
+  "category": "Farm",
+  "title": "sheep",
+  "source": "File:Sheep lounging in the shade of a tree at Röe Castle.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Sheep_lounging_in_the_shade_of_a_tree_at_R%C3%B6e_Castle.jpg"
+ },
+ {
+  "file": "word-farm-goat.jpg",
+  "category": "Farm",
+  "title": "goat",
+  "source": "File:Goat of Margarita.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Goat_of_Margarita.jpg"
+ },
+ {
+  "file": "word-farm-horse.jpg",
+  "category": "Farm",
+  "title": "horse",
+  "source": "File:Horse (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Henry Chuy henrysca",
+  "url": "https://commons.wikimedia.org/wiki/File:Horse_(Unsplash).jpg"
+ },
+ {
+  "file": "word-farm-donkey.jpg",
+  "category": "Farm",
+  "title": "donkey",
+  "source": "File:Pennywell Farm - Donkeys and Girl In Miniature Donkey Paddock.jpg",
+  "license": "CC0",
+  "author": "AngusMurray1989",
+  "url": "https://commons.wikimedia.org/wiki/File:Pennywell_Farm_-_Donkeys_and_Girl_In_Miniature_Donkey_Paddock.jpg"
+ },
+ {
+  "file": "word-farm-chicken.jpg",
+  "category": "Farm",
+  "title": "chicken",
+  "source": "File:Dominique chicken.JPG",
+  "license": "CC0",
+  "author": "gunthercox",
+  "url": "https://commons.wikimedia.org/wiki/File:Dominique_chicken.JPG"
+ },
+ {
+  "file": "word-farm-rooster.jpg",
+  "category": "Farm",
+  "title": "rooster",
+  "source": "File:Rooster Preening in Key West, Florida.jpg",
+  "license": "CC0",
+  "author": "Julian Lupyan",
+  "url": "https://commons.wikimedia.org/wiki/File:Rooster_Preening_in_Key_West,_Florida.jpg"
+ },
+ {
+  "file": "word-farm-chick.jpg",
+  "category": "Farm",
+  "title": "chick",
+  "source": "File:Chicks Group.jpg",
+  "license": "CC0",
+  "author": "Kanimozhi Vennila",
+  "url": "https://commons.wikimedia.org/wiki/File:Chicks_Group.jpg"
+ },
+ {
+  "file": "word-farm-duck.jpg",
+  "category": "Farm",
+  "title": "duck",
+  "source": "File:Sleeping duck on the grass.jpg",
+  "license": "CC0",
+  "author": "PxHere",
+  "url": "https://commons.wikimedia.org/wiki/File:Sleeping_duck_on_the_grass.jpg"
+ },
+ {
+  "file": "word-farm-turkey.jpg",
+  "category": "Farm",
+  "title": "turkey",
+  "source": "File:Merriams turkey - Meleagris gallopavo merriami.jpg",
+  "license": "Public domain",
+  "author": "U.S. Fish and Wildlife Service",
+  "url": "https://commons.wikimedia.org/wiki/File:Merriams_turkey_-_Meleagris_gallopavo_merriami.jpg"
+ },
+ {
+  "file": "word-farm-llama.jpg",
+  "category": "Farm",
+  "title": "llama",
+  "source": "File:Cabeza de llama.jpg",
+  "license": "CC0",
+  "author": "Álvaro de la Paz Franco",
+  "url": "https://commons.wikimedia.org/wiki/File:Cabeza_de_llama.jpg"
+ },
+ {
+  "file": "word-farm-tractor.jpg",
+  "category": "Farm",
+  "title": "tractor",
+  "source": "File:Farmall 560 tractor VA1.jpg",
+  "license": "CC0",
+  "author": "Acroterion",
+  "url": "https://commons.wikimedia.org/wiki/File:Farmall_560_tractor_VA1.jpg"
+ },
+ {
+  "file": "word-farm-barn.jpg",
+  "category": "Farm",
+  "title": "barn",
+  "source": "File:Capen Hill Barn & picnic area after snowfall, January 2025.jpg",
+  "license": "CC0",
+  "author": "Peter Cooper Jr.",
+  "url": "https://commons.wikimedia.org/wiki/File:Capen_Hill_Barn_%26_picnic_area_after_snowfall,_January_2025.jpg"
+ },
+ {
+  "file": "word-farm-hay.jpg",
+  "category": "Farm",
+  "title": "hay",
+  "source": "File:Hay Bales (48404818546).jpg",
+  "license": "Public domain",
+  "author": "U.S. Fish and Wildlife Service - Midwest Region",
+  "url": "https://commons.wikimedia.org/wiki/File:Hay_Bales_(48404818546).jpg"
+ },
+ {
+  "file": "word-farm-fence.jpg",
+  "category": "Farm",
+  "title": "fence",
+  "source": "File:Fence Pursitie Oulu 20170305.jpg",
+  "license": "CC0",
+  "author": "Estormiz",
+  "url": "https://commons.wikimedia.org/wiki/File:Fence_Pursitie_Oulu_20170305.jpg"
+ },
+ {
+  "file": "word-farm-egg.jpg",
+  "category": "Farm",
+  "title": "egg",
+  "source": "File:Boiled egg holder.jpg",
+  "license": "CC0",
+  "author": "Szombat78",
+  "url": "https://commons.wikimedia.org/wiki/File:Boiled_egg_holder.jpg"
+ },
+ {
+  "file": "word-farm-milk.jpg",
+  "category": "Farm",
+  "title": "milk",
+  "source": "File:Flax milk 2.jpg",
+  "license": "CC0",
+  "author": "Mx. Granger",
+  "url": "https://commons.wikimedia.org/wiki/File:Flax_milk_2.jpg"
+ },
+ {
+  "file": "word-farm-corn.jpg",
+  "category": "Farm",
+  "title": "corn",
+  "source": "File:Ears of corn in a bin.jpg",
+  "license": "CC0",
+  "author": "Jeffery Martin",
+  "url": "https://commons.wikimedia.org/wiki/File:Ears_of_corn_in_a_bin.jpg"
+ },
+ {
+  "file": "word-farm-wheat.jpg",
+  "category": "Farm",
+  "title": "wheat",
+  "source": "File:WHEAT is a group of herbaceous plants.jpg",
+  "license": "CC0",
+  "author": "J.Doniyorovich",
+  "url": "https://commons.wikimedia.org/wiki/File:WHEAT_is_a_group_of_herbaceous_plants.jpg"
+ },
+ {
+  "file": "word-farm-apple-tree.jpg",
+  "category": "Farm",
+  "title": "apple tree",
+  "source": "File:Apple tree, Ehrenbach.jpg",
+  "license": "CC0",
+  "author": "Gerda Arendt",
+  "url": "https://commons.wikimedia.org/wiki/File:Apple_tree,_Ehrenbach.jpg"
+ },
+ {
+  "file": "word-farm-pumpkin.jpg",
+  "category": "Farm",
+  "title": "pumpkin",
+  "source": "File:Mini yellow pumpkins.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Mini_yellow_pumpkins.jpg"
+ },
+ {
+  "file": "word-farm-scarecrow.jpg",
+  "category": "Farm",
+  "title": "scarecrow",
+  "source": "File:Scarecrow in farm.jpg",
+  "license": "CC0",
+  "author": "Mohsen H.Rahimi",
+  "url": "https://commons.wikimedia.org/wiki/File:Scarecrow_in_farm.jpg"
+ },
+ {
+  "file": "word-farm-puppy.jpg",
+  "category": "Farm",
+  "title": "puppy",
+  "source": "File:Puppy filtered.jpg",
+  "license": "CC0",
+  "author": "no name provided",
+  "url": "https://commons.wikimedia.org/wiki/File:Puppy_filtered.jpg"
+ },
+ {
+  "file": "word-farm-kitten.jpg",
+  "category": "Farm",
+  "title": "kitten",
+  "source": "File:A curious kitten (Pixabay).jpg",
+  "license": "CC0",
+  "author": "Dimitri Houtteman",
+  "url": "https://commons.wikimedia.org/wiki/File:A_curious_kitten_(Pixabay).jpg"
+ },
+ {
+  "file": "word-farm-bucket.jpg",
+  "category": "Farm",
+  "title": "bucket",
+  "source": "File:A bucket for collecting water to water plants.jpg",
+  "license": "CC0",
+  "author": "Chandapiwa Malema",
+  "url": "https://commons.wikimedia.org/wiki/File:A_bucket_for_collecting_water_to_water_plants.jpg"
+ },
+ {
+  "file": "word-farm-honey.jpg",
+  "category": "Farm",
+  "title": "honey",
+  "source": "File:A walk to the Abby Honey Shack - Saint Joseph Abbey, Louisiana 2 July 2025 - 2.jpg",
+  "license": "Public domain",
+  "author": "abbeyprivate",
+  "url": "https://commons.wikimedia.org/wiki/File:A_walk_to_the_Abby_Honey_Shack_-_Saint_Joseph_Abbey,_Louisiana_2_July_2025_-_2.jpg"
+ },
+ {
+  "file": "word-sea-creatures-fish.jpg",
+  "category": "Sea Creatures",
+  "title": "fish",
+  "source": "File:Fish at Kamogawa Sea World 9.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Fish_at_Kamogawa_Sea_World_9.jpg"
+ },
+ {
+  "file": "word-sea-creatures-tropical-fish.jpg",
+  "category": "Sea Creatures",
+  "title": "tropical fish",
+  "source": "File:Orange Storm Clownfish left.jpg",
+  "license": "CC0",
+  "author": "Bruxton",
+  "url": "https://commons.wikimedia.org/wiki/File:Orange_Storm_Clownfish_left.jpg"
+ },
+ {
+  "file": "word-sea-creatures-pufferfish.jpg",
+  "category": "Sea Creatures",
+  "title": "pufferfish",
+  "source": "File:Pufferfish (Shedd Aquarium, Chicago) 1.jpg",
+  "license": "CC0",
+  "author": "Bildflut",
+  "url": "https://commons.wikimedia.org/wiki/File:Pufferfish_(Shedd_Aquarium,_Chicago)_1.jpg"
+ },
+ {
+  "file": "word-sea-creatures-shark.jpg",
+  "category": "Sea Creatures",
+  "title": "shark",
+  "source": "File:Oahu Sharks (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Jakob Owens jakobowens1",
+  "url": "https://commons.wikimedia.org/wiki/File:Oahu_Sharks_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sea-creatures-whale.jpg",
+  "category": "Sea Creatures",
+  "title": "whale",
+  "source": "File:A massive humpback whale glides directly beneath the camera.jpg",
+  "license": "CC0",
+  "author": "Stanislav Stelmakhovich",
+  "url": "https://commons.wikimedia.org/wiki/File:A_massive_humpback_whale_glides_directly_beneath_the_camera.jpg"
+ },
+ {
+  "file": "word-sea-creatures-dolphin.jpg",
+  "category": "Sea Creatures",
+  "title": "dolphin",
+  "source": "File:Sardine run spectacle along the Wild Coast as dolphin pods leap through powerful waves.jpg",
+  "license": "CC0",
+  "author": "Stanislav Stelmakhovich",
+  "url": "https://commons.wikimedia.org/wiki/File:Sardine_run_spectacle_along_the_Wild_Coast_as_dolphin_pods_leap_through_powerful_waves.jpg"
+ },
+ {
+  "file": "word-sea-creatures-seal.jpg",
+  "category": "Sea Creatures",
+  "title": "seal",
+  "source": "File:Harbor seal fur turn dark when wet. (2675fe1c-1dd8-b71c-07b1-b4bf241bf8a9).jpg",
+  "license": "Public domain",
+  "author": "NPS",
+  "url": "https://commons.wikimedia.org/wiki/File:Harbor_seal_fur_turn_dark_when_wet._(2675fe1c-1dd8-b71c-07b1-b4bf241bf8a9).jpg"
+ },
+ {
+  "file": "word-sea-creatures-octopus.jpg",
+  "category": "Sea Creatures",
+  "title": "octopus",
+  "source": "File:Enteroctopus dolfeini.jpg",
+  "license": "Public domain",
+  "author": "NOAA/R. N. Lea [1]",
+  "url": "https://commons.wikimedia.org/wiki/File:Enteroctopus_dolfeini.jpg"
+ },
+ {
+  "file": "word-sea-creatures-squid.jpg",
+  "category": "Sea Creatures",
+  "title": "squid",
+  "source": "File:20190415 Yehliu fish market squid-1.jpg",
+  "license": "CC0",
+  "author": "Balon Greyjoy",
+  "url": "https://commons.wikimedia.org/wiki/File:20190415_Yehliu_fish_market_squid-1.jpg"
+ },
+ {
+  "file": "word-sea-creatures-crab.jpg",
+  "category": "Sea Creatures",
+  "title": "crab",
+  "source": "File:Brown crab.jpg",
+  "license": "CC0",
+  "author": "Swethasakthivel",
+  "url": "https://commons.wikimedia.org/wiki/File:Brown_crab.jpg"
+ },
+ {
+  "file": "word-sea-creatures-lobster.jpg",
+  "category": "Sea Creatures",
+  "title": "lobster",
+  "source": "File:Homarus americanus eggs.jpg",
+  "license": "Public domain",
+  "author": "National Oceanic and Atmospheric Administration (NOAA)",
+  "url": "https://commons.wikimedia.org/wiki/File:Homarus_americanus_eggs.jpg"
+ },
+ {
+  "file": "word-sea-creatures-shrimp.jpg",
+  "category": "Sea Creatures",
+  "title": "shrimp",
+  "source": "File:Shrimp head served at Japanese food restaurant in Shinbashi.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Shrimp_head_served_at_Japanese_food_restaurant_in_Shinbashi.jpg"
+ },
+ {
+  "file": "word-sea-creatures-oyster.jpg",
+  "category": "Sea Creatures",
+  "title": "oyster",
+  "source": "File:Oysters sold in supermarkets.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Oysters_sold_in_supermarkets.jpg"
+ },
+ {
+  "file": "word-sea-creatures-jellyfish.jpg",
+  "category": "Sea Creatures",
+  "title": "jellyfish",
+  "source": "File:Jellyfish from Corpus Christi.jpg",
+  "license": "CC0",
+  "author": "Miguel Angel Omaña Rojas",
+  "url": "https://commons.wikimedia.org/wiki/File:Jellyfish_from_Corpus_Christi.jpg"
+ },
+ {
+  "file": "word-sea-creatures-coral.jpg",
+  "category": "Sea Creatures",
+  "title": "coral",
+  "source": "File:Corals Conch Reef 20230713.jpg",
+  "license": "CC0",
+  "author": "Jstuby",
+  "url": "https://commons.wikimedia.org/wiki/File:Corals_Conch_Reef_20230713.jpg"
+ },
+ {
+  "file": "word-sea-creatures-shell.jpg",
+  "category": "Sea Creatures",
+  "title": "shell",
+  "source": "File:Close-up of beach shells (3069909f-1dd8-b71b-0be3-16d050b299bd).JPG",
+  "license": "Public domain",
+  "author": "NPS Photo",
+  "url": "https://commons.wikimedia.org/wiki/File:Close-up_of_beach_shells_(3069909f-1dd8-b71b-0be3-16d050b299bd).JPG"
+ },
+ {
+  "file": "word-sea-creatures-turtle.jpg",
+  "category": "Sea Creatures",
+  "title": "turtle",
+  "source": "File:Green sea turtle. (14167623264).jpg",
+  "license": "CC0",
+  "author": "Bernard Spragg. NZ from Christchurch, New Zealand",
+  "url": "https://commons.wikimedia.org/wiki/File:Green_sea_turtle._(14167623264).jpg"
+ },
+ {
+  "file": "word-sea-creatures-starfish.jpg",
+  "category": "Sea Creatures",
+  "title": "starfish",
+  "source": "File:Asterias rubens 307854603.jpg",
+  "license": "CC0",
+  "author": "Rob Wallace",
+  "url": "https://commons.wikimedia.org/wiki/File:Asterias_rubens_307854603.jpg"
+ },
+ {
+  "file": "word-sea-creatures-seahorse.jpg",
+  "category": "Sea Creatures",
+  "title": "seahorse",
+  "source": "File:Hippocampus.jpg",
+  "license": "Public domain",
+  "author": "Unknown",
+  "url": "https://commons.wikimedia.org/wiki/File:Hippocampus.jpg"
+ },
+ {
+  "file": "word-sea-creatures-sea-lion.jpg",
+  "category": "Sea Creatures",
+  "title": "sea lion",
+  "source": "File:Sea lion sunbathing.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Sea_lion_sunbathing.jpg"
+ },
+ {
+  "file": "word-sea-creatures-penguin.jpg",
+  "category": "Sea Creatures",
+  "title": "penguin",
+  "source": "File:Portrait of an African penguin walking fast.jpg",
+  "license": "CC0",
+  "author": "Stanislav Stelmakhovich",
+  "url": "https://commons.wikimedia.org/wiki/File:Portrait_of_an_African_penguin_walking_fast.jpg"
+ },
+ {
+  "file": "word-sea-creatures-walrus.jpg",
+  "category": "Sea Creatures",
+  "title": "walrus",
+  "source": "File:Atlantic walrus (Odobenus rosmarus rosmarus) NOAA Photo Library.jpg",
+  "license": "Public domain",
+  "author": "Mike Dunn, NC State Museum of Natural Sciences.",
+  "url": "https://commons.wikimedia.org/wiki/File:Atlantic_walrus_(Odobenus_rosmarus_rosmarus)_NOAA_Photo_Library.jpg"
+ },
+ {
+  "file": "word-sea-creatures-eel.jpg",
+  "category": "Sea Creatures",
+  "title": "eel",
+  "source": "File:European eel in Gullmarn fjord 1.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:European_eel_in_Gullmarn_fjord_1.jpg"
+ },
+ {
+  "file": "word-sea-creatures-stingray.jpg",
+  "category": "Sea Creatures",
+  "title": "stingray",
+  "source": "File:Stingray (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Jakob Owens jakobowens1",
+  "url": "https://commons.wikimedia.org/wiki/File:Stingray_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sea-creatures-seaweed.jpg",
+  "category": "Sea Creatures",
+  "title": "seaweed",
+  "source": "File:Seaweed dish.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Seaweed_dish.jpg"
+ },
+ {
+  "file": "word-bugs-ladybug.jpg",
+  "category": "Bugs",
+  "title": "ladybug",
+  "source": "File:Mating Ladybug.jpg",
+  "license": "CC0",
+  "author": "Drummyfish",
+  "url": "https://commons.wikimedia.org/wiki/File:Mating_Ladybug.jpg"
+ },
+ {
+  "file": "word-bugs-bee.jpg",
+  "category": "Bugs",
+  "title": "bee",
+  "source": "File:Apis mellifera - Western Honey Bee.jpg",
+  "license": "CC0",
+  "author": "Jasper Shide",
+  "url": "https://commons.wikimedia.org/wiki/File:Apis_mellifera_-_Western_Honey_Bee.jpg"
+ },
+ {
+  "file": "word-bugs-ant.jpg",
+  "category": "Bugs",
+  "title": "ant",
+  "source": "File:Linepithema humile - Argentine ant.jpg",
+  "license": "CC0",
+  "author": "R1bonpnk",
+  "url": "https://commons.wikimedia.org/wiki/File:Linepithema_humile_-_Argentine_ant.jpg"
+ },
+ {
+  "file": "word-bugs-butterfly.jpg",
+  "category": "Bugs",
+  "title": "butterfly",
+  "source": "File:Swallowtail butterfly up close.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Swallowtail_butterfly_up_close.jpg"
+ },
+ {
+  "file": "word-bugs-caterpillar.jpg",
+  "category": "Bugs",
+  "title": "caterpillar",
+  "source": "File:Catocala caterpillar (41255444121).jpg",
+  "license": "CC0",
+  "author": "Insects Unlocked from USA",
+  "url": "https://commons.wikimedia.org/wiki/File:Catocala_caterpillar_(41255444121).jpg"
+ },
+ {
+  "file": "word-bugs-beetle.jpg",
+  "category": "Bugs",
+  "title": "beetle",
+  "source": "File:Stag beetle loggery.jpg",
+  "license": "CC0",
+  "author": "Dinkum",
+  "url": "https://commons.wikimedia.org/wiki/File:Stag_beetle_loggery.jpg"
+ },
+ {
+  "file": "word-bugs-cricket.jpg",
+  "category": "Bugs",
+  "title": "cricket",
+  "source": "File:African armored ground cricket - Mount Cameroon National Park.jpg",
+  "license": "CC0",
+  "author": "Adesolive",
+  "url": "https://commons.wikimedia.org/wiki/File:African_armored_ground_cricket_-_Mount_Cameroon_National_Park.jpg"
+ },
+ {
+  "file": "word-bugs-cockroach.jpg",
+  "category": "Bugs",
+  "title": "cockroach",
+  "source": "File:Periplaneta americana - American cockroach (25859665686) (cropped).jpg",
+  "license": "CC0",
+  "author": "Insects Unlocked",
+  "url": "https://commons.wikimedia.org/wiki/File:Periplaneta_americana_-_American_cockroach_(25859665686)_(cropped).jpg"
+ },
+ {
+  "file": "word-bugs-fly.jpg",
+  "category": "Bugs",
+  "title": "fly",
+  "source": "File:A hover fly insect.jpg",
+  "license": "CC0",
+  "author": "iurie.ph",
+  "url": "https://commons.wikimedia.org/wiki/File:A_hover_fly_insect.jpg"
+ },
+ {
+  "file": "word-bugs-mosquito.jpg",
+  "category": "Bugs",
+  "title": "mosquito",
+  "source": "File:Mosquito on human skin.jpg",
+  "license": "CC0",
+  "author": "James Gathany, USCDCP",
+  "url": "https://commons.wikimedia.org/wiki/File:Mosquito_on_human_skin.jpg"
+ },
+ {
+  "file": "word-bugs-worm.jpg",
+  "category": "Bugs",
+  "title": "worm",
+  "source": "File:Piršenbreg Earthworm 01.jpg",
+  "license": "CC0",
+  "author": "Janezdrilc",
+  "url": "https://commons.wikimedia.org/wiki/File:Pir%C5%A1enbreg_Earthworm_01.jpg"
+ },
+ {
+  "file": "word-bugs-spider.jpg",
+  "category": "Bugs",
+  "title": "spider",
+  "source": "File:September 2007, spider catching an insect in Guingamp.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:September_2007,_spider_catching_an_insect_in_Guingamp.jpg"
+ },
+ {
+  "file": "word-bugs-spider-web.jpg",
+  "category": "Bugs",
+  "title": "spider web",
+  "source": "File:Spider web with rain drops.jpg",
+  "license": "CC0",
+  "author": "Iurie Nistor",
+  "url": "https://commons.wikimedia.org/wiki/File:Spider_web_with_rain_drops.jpg"
+ },
+ {
+  "file": "word-bugs-snail.jpg",
+  "category": "Bugs",
+  "title": "snail",
+  "source": "File:Snail (17075535367).jpg",
+  "license": "CC0",
+  "author": "Rob Mitchell",
+  "url": "https://commons.wikimedia.org/wiki/File:Snail_(17075535367).jpg"
+ },
+ {
+  "file": "word-bugs-scorpion.jpg",
+  "category": "Bugs",
+  "title": "scorpion",
+  "source": "File:Striped Bark Scorpion (Buthidae, Centruroides vittatus (Say)) (36906272405).jpg",
+  "license": "CC0",
+  "author": "Insects Unlocked from USA",
+  "url": "https://commons.wikimedia.org/wiki/File:Striped_Bark_Scorpion_(Buthidae,_Centruroides_vittatus_(Say))_(36906272405).jpg"
+ },
+ {
+  "file": "word-bugs-dragonfly.jpg",
+  "category": "Bugs",
+  "title": "dragonfly",
+  "source": "File:Dragonfly landing (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Boris  Smokrovic borisworkshop",
+  "url": "https://commons.wikimedia.org/wiki/File:Dragonfly_landing_(Unsplash).jpg"
+ },
+ {
+  "file": "word-bugs-grasshopper.jpg",
+  "category": "Bugs",
+  "title": "grasshopper",
+  "source": "File:Big Grasshopper 2025.jpg",
+  "license": "CC0",
+  "author": "L1GH7MA5T3R",
+  "url": "https://commons.wikimedia.org/wiki/File:Big_Grasshopper_2025.jpg"
+ },
+ {
+  "file": "word-bugs-firefly.jpg",
+  "category": "Bugs",
+  "title": "firefly",
+  "source": "File:Lampyris Noctiluca Female Firefly 1.jpg",
+  "license": "CC0",
+  "author": "Tero Keski-Valkama",
+  "url": "https://commons.wikimedia.org/wiki/File:Lampyris_Noctiluca_Female_Firefly_1.jpg"
+ },
+ {
+  "file": "word-bugs-moth.jpg",
+  "category": "Bugs",
+  "title": "moth",
+  "source": "File:Moth David Raju.jpg",
+  "license": "CC0",
+  "author": "Davidvraju",
+  "url": "https://commons.wikimedia.org/wiki/File:Moth_David_Raju.jpg"
+ },
+ {
+  "file": "word-bugs-centipede.jpg",
+  "category": "Bugs",
+  "title": "centipede",
+  "source": "File:Giant Redhead Centipede (Scolopendridae, Scolopendra heros) (30247704795).jpg",
+  "license": "CC0",
+  "author": "Insects Unlocked",
+  "url": "https://commons.wikimedia.org/wiki/File:Giant_Redhead_Centipede_(Scolopendridae,_Scolopendra_heros)_(30247704795).jpg"
+ },
+ {
+  "file": "word-birds-bird.jpg",
+  "category": "Birds",
+  "title": "bird",
+  "source": "File:Bird in Izola.jpg",
+  "license": "CC0",
+  "author": "Janko Ferlic",
+  "url": "https://commons.wikimedia.org/wiki/File:Bird_in_Izola.jpg"
+ },
+ {
+  "file": "word-birds-eagle.jpg",
+  "category": "Birds",
+  "title": "eagle",
+  "source": "File:Portrait of a golden eagle.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Portrait_of_a_golden_eagle.jpg"
+ },
+ {
+  "file": "word-birds-owl.jpg",
+  "category": "Birds",
+  "title": "owl",
+  "source": "File:Barn Owl, Manchester area, UK, by Andy Chilton 2016-07-06 (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Andy Chilton andyc",
+  "url": "https://commons.wikimedia.org/wiki/File:Barn_Owl,_Manchester_area,_UK,_by_Andy_Chilton_2016-07-06_(Unsplash).jpg"
+ },
+ {
+  "file": "word-birds-parrot.jpg",
+  "category": "Birds",
+  "title": "parrot",
+  "source": "File:(1218241) \"Parrot bird\" Psittaciformes - Amazon, Brazil.jpg",
+  "license": "CC0",
+  "author": "Christian Matos",
+  "url": "https://commons.wikimedia.org/wiki/File:(1218241)_%22Parrot_bird%22_Psittaciformes_-_Amazon,_Brazil.jpg"
+ },
+ {
+  "file": "word-birds-flamingo.jpg",
+  "category": "Birds",
+  "title": "flamingo",
+  "source": "File:Flamingo, Las Salinas Natural Park, Ibiza.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Flamingo,_Las_Salinas_Natural_Park,_Ibiza.jpg"
+ },
+ {
+  "file": "word-birds-peacock.jpg",
+  "category": "Birds",
+  "title": "peacock",
+  "source": "File:Male Peafowl (Peacock) at China National GeneBank, Shenzhen.jpg",
+  "license": "CC0",
+  "author": "Scotted400",
+  "url": "https://commons.wikimedia.org/wiki/File:Male_Peafowl_(Peacock)_at_China_National_GeneBank,_Shenzhen.jpg"
+ },
+ {
+  "file": "word-birds-swan.jpg",
+  "category": "Birds",
+  "title": "swan",
+  "source": "File:Mute Swan (Gyeongju Bird Park).jpg",
+  "license": "CC0",
+  "author": "Drcbrothephotographer",
+  "url": "https://commons.wikimedia.org/wiki/File:Mute_Swan_(Gyeongju_Bird_Park).jpg"
+ },
+ {
+  "file": "word-birds-dove.jpg",
+  "category": "Birds",
+  "title": "dove",
+  "source": "File:Dove bird*.jpg",
+  "license": "CC0",
+  "author": "Lakshmipriya Pugal",
+  "url": "https://commons.wikimedia.org/wiki/File:Dove_bird*.jpg"
+ },
+ {
+  "file": "word-birds-goose.jpg",
+  "category": "Birds",
+  "title": "goose",
+  "source": "File:Domesticated goose head, Chaguaramal, Venezuela.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Domesticated_goose_head,_Chaguaramal,_Venezuela.jpg"
+ },
+ {
+  "file": "word-birds-penguin.jpg",
+  "category": "Birds",
+  "title": "penguin",
+  "source": "File:Yellow Eyed Penguin. (Megadyptes antipodes) (9868019174).jpg",
+  "license": "CC0",
+  "author": "Bernard Spragg. NZ from Christchurch, New Zealand",
+  "url": "https://commons.wikimedia.org/wiki/File:Yellow_Eyed_Penguin._(Megadyptes_antipodes)_(9868019174).jpg"
+ },
+ {
+  "file": "word-birds-chick.jpg",
+  "category": "Birds",
+  "title": "chick",
+  "source": "File:Chicks Group.jpg",
+  "license": "CC0",
+  "author": "Kanimozhi Vennila",
+  "url": "https://commons.wikimedia.org/wiki/File:Chicks_Group.jpg"
+ },
+ {
+  "file": "word-birds-dodo.jpg",
+  "category": "Birds",
+  "title": "dodo",
+  "source": "File:Dronte dodo Raphus cucullatus (1).jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Dronte_dodo_Raphus_cucullatus_(1).jpg"
+ },
+ {
+  "file": "word-birds-robin.jpg",
+  "category": "Birds",
+  "title": "robin",
+  "source": "File:Robin Bird Portrait Photo.jpg",
+  "license": "CC0",
+  "author": "Andrea Stöckel",
+  "url": "https://commons.wikimedia.org/wiki/File:Robin_Bird_Portrait_Photo.jpg"
+ },
+ {
+  "file": "word-birds-crow.jpg",
+  "category": "Birds",
+  "title": "crow",
+  "source": "File:Crow bird and beach 37.jpg",
+  "license": "CC0",
+  "author": "Golamrob",
+  "url": "https://commons.wikimedia.org/wiki/File:Crow_bird_and_beach_37.jpg"
+ },
+ {
+  "file": "word-birds-sparrow.jpg",
+  "category": "Birds",
+  "title": "sparrow",
+  "source": "File:House sparrow (Passer domesticus), Amrum.jpg",
+  "license": "CC0",
+  "author": "Hobbyfotowiki",
+  "url": "https://commons.wikimedia.org/wiki/File:House_sparrow_(Passer_domesticus),_Amrum.jpg"
+ },
+ {
+  "file": "word-birds-woodpecker.jpg",
+  "category": "Birds",
+  "title": "woodpecker",
+  "source": "File:LLneated woodpecker (Dryocopus lineatus).jpg",
+  "license": "CC0",
+  "author": "Hobbyfotowiki",
+  "url": "https://commons.wikimedia.org/wiki/File:LLneated_woodpecker_(Dryocopus_lineatus).jpg"
+ },
+ {
+  "file": "word-birds-hummingbird.jpg",
+  "category": "Birds",
+  "title": "hummingbird",
+  "source": "File:HUMMINGBIRD, BROAD-BILLED (7-19-10) male, yard, patagonia, az -02 (4812587386).jpg",
+  "license": "CC0",
+  "author": "ALAN SCHMIERER",
+  "url": "https://commons.wikimedia.org/wiki/File:HUMMINGBIRD,_BROAD-BILLED_(7-19-10)_male,_yard,_patagonia,_az_-02_(4812587386).jpg"
+ },
+ {
+  "file": "word-birds-ostrich.jpg",
+  "category": "Birds",
+  "title": "ostrich",
+  "source": "File:South african ostrich (S. c. australis) cock bird (1).jpg",
+  "license": "CC0",
+  "author": "Drcbrothephotographer",
+  "url": "https://commons.wikimedia.org/wiki/File:South_african_ostrich_(S._c._australis)_cock_bird_(1).jpg"
+ },
+ {
+  "file": "word-birds-pelican.jpg",
+  "category": "Birds",
+  "title": "pelican",
+  "source": "File:Brown pelican (Pelecanus occidentalis) in flight, Costa Rica.jpg",
+  "license": "CC0",
+  "author": "Hobbyfotowiki",
+  "url": "https://commons.wikimedia.org/wiki/File:Brown_pelican_(Pelecanus_occidentalis)_in_flight,_Costa_Rica.jpg"
+ },
+ {
+  "file": "word-birds-seagull.jpg",
+  "category": "Birds",
+  "title": "seagull",
+  "source": "File:Young seagull flying with its wings open.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Young_seagull_flying_with_its_wings_open.jpg"
+ },
+ {
+  "file": "word-birds-feather.jpg",
+  "category": "Birds",
+  "title": "feather",
+  "source": "File:Grass feather.jpg",
+  "license": "CC0",
+  "author": "TheUltimateGrass",
+  "url": "https://commons.wikimedia.org/wiki/File:Grass_feather.jpg"
+ },
+ {
+  "file": "word-birds-nest.jpg",
+  "category": "Birds",
+  "title": "nest",
+  "source": "File:NEST WITH EGG.jpg",
+  "license": "CC0",
+  "author": "Divya Chinnasamy",
+  "url": "https://commons.wikimedia.org/wiki/File:NEST_WITH_EGG.jpg"
+ },
+ {
+  "file": "word-birds-wing.jpg",
+  "category": "Birds",
+  "title": "wing",
+  "source": "File:Kea wing colours. (13842965643).jpg",
+  "license": "CC0",
+  "author": "Bernard Spragg. NZ from Christchurch, New Zealand",
+  "url": "https://commons.wikimedia.org/wiki/File:Kea_wing_colours._(13842965643).jpg"
+ },
+ {
+  "file": "word-fruit-apple.jpg",
+  "category": "Fruit",
+  "title": "apple",
+  "source": "File:Apple fruit in illorin.jpg",
+  "license": "CC0",
+  "author": "Eunice Ameh",
+  "url": "https://commons.wikimedia.org/wiki/File:Apple_fruit_in_illorin.jpg"
+ },
+ {
+  "file": "word-fruit-green-apple.jpg",
+  "category": "Fruit",
+  "title": "green apple",
+  "source": "File:HK SKD TKO 寶琳 Po Lam MCP three mall 惠康超市 Wellcome Supermarket 生果 fruit May 2024 R12S green apple 49.jpg",
+  "license": "CC0",
+  "author": "Chayquo Shumo",
+  "url": "https://commons.wikimedia.org/wiki/File:HK_SKD_TKO_%E5%AF%B6%E7%90%B3_Po_Lam_MCP_three_mall_%E6%83%A0%E5%BA%B7%E8%B6%85%E5%B8%82_Wellcome_Supermarket_%E7%94%9F%E6%9E%9C_fruit_May_2024_R12S_green_apple_49.jpg"
+ },
+ {
+  "file": "word-fruit-pear.jpg",
+  "category": "Fruit",
+  "title": "pear",
+  "source": "File:Pear (Nashpati).JPG",
+  "license": "CC0",
+  "author": "Miansari66",
+  "url": "https://commons.wikimedia.org/wiki/File:Pear_(Nashpati).JPG"
+ },
+ {
+  "file": "word-fruit-orange.jpg",
+  "category": "Fruit",
+  "title": "orange",
+  "source": "File:Sliced orange whitescreen.jpg",
+  "license": "CC0",
+  "author": "AGermanBeck",
+  "url": "https://commons.wikimedia.org/wiki/File:Sliced_orange_whitescreen.jpg"
+ },
+ {
+  "file": "word-fruit-lemon.jpg",
+  "category": "Fruit",
+  "title": "lemon",
+  "source": "File:Citrus x limon, lemon on tree, Coín, Spain.jpg",
+  "license": "CC0",
+  "author": "Bj.schoenmakers",
+  "url": "https://commons.wikimedia.org/wiki/File:Citrus_x_limon,_lemon_on_tree,_Co%C3%ADn,_Spain.jpg"
+ },
+ {
+  "file": "word-fruit-lime.jpg",
+  "category": "Fruit",
+  "title": "lime",
+  "source": "File:Lime Tree (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Rohit Tandon rohittandon",
+  "url": "https://commons.wikimedia.org/wiki/File:Lime_Tree_(Unsplash).jpg"
+ },
+ {
+  "file": "word-fruit-banana.jpg",
+  "category": "Fruit",
+  "title": "banana",
+  "source": "File:Bunch of bananas on sale.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Bunch_of_bananas_on_sale.jpg"
+ },
+ {
+  "file": "word-fruit-watermelon.jpg",
+  "category": "Fruit",
+  "title": "watermelon",
+  "source": "File:Watermelon Fruit at Bobonong Farms.jpg",
+  "license": "CC0",
+  "author": "MmaBaggio",
+  "url": "https://commons.wikimedia.org/wiki/File:Watermelon_Fruit_at_Bobonong_Farms.jpg"
+ },
+ {
+  "file": "word-fruit-grapes.jpg",
+  "category": "Fruit",
+  "title": "grapes",
+  "source": "File:Grapes-3550742 960 720.jpg",
+  "license": "CC0",
+  "author": "Bru-nO",
+  "url": "https://commons.wikimedia.org/wiki/File:Grapes-3550742_960_720.jpg"
+ },
+ {
+  "file": "word-fruit-strawberry.jpg",
+  "category": "Fruit",
+  "title": "strawberry",
+  "source": "File:Strawberry on white background.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Strawberry_on_white_background.jpg"
+ },
+ {
+  "file": "word-fruit-blueberries.jpg",
+  "category": "Fruit",
+  "title": "blueberries",
+  "source": "File:Blueberries-In-Pack.jpg",
+  "license": "CC0",
+  "author": "Evan-Amos",
+  "url": "https://commons.wikimedia.org/wiki/File:Blueberries-In-Pack.jpg"
+ },
+ {
+  "file": "word-fruit-melon.jpg",
+  "category": "Fruit",
+  "title": "melon",
+  "source": "File:Les melons 01.jpg",
+  "license": "CC0",
+  "author": "Adewi97",
+  "url": "https://commons.wikimedia.org/wiki/File:Les_melons_01.jpg"
+ },
+ {
+  "file": "word-fruit-cherries.jpg",
+  "category": "Fruit",
+  "title": "cherries",
+  "source": "File:Cherries cherry branch fruit red 826113.jpg",
+  "license": "CC0",
+  "author": "Schueler-Design",
+  "url": "https://commons.wikimedia.org/wiki/File:Cherries_cherry_branch_fruit_red_826113.jpg"
+ },
+ {
+  "file": "word-fruit-peach.jpg",
+  "category": "Fruit",
+  "title": "peach",
+  "source": "File:Hillview Farms peaches on a peach tree.jpg",
+  "license": "CC0",
+  "author": "Tomwsulcer",
+  "url": "https://commons.wikimedia.org/wiki/File:Hillview_Farms_peaches_on_a_peach_tree.jpg"
+ },
+ {
+  "file": "word-fruit-mango.jpg",
+  "category": "Fruit",
+  "title": "mango",
+  "source": "File:Mango fruit in illorin.jpg",
+  "license": "CC0",
+  "author": "Eunice Ameh",
+  "url": "https://commons.wikimedia.org/wiki/File:Mango_fruit_in_illorin.jpg"
+ },
+ {
+  "file": "word-fruit-pineapple.jpg",
+  "category": "Fruit",
+  "title": "pineapple",
+  "source": "File:Pineapple fruit 2.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Pineapple_fruit_2.jpg"
+ },
+ {
+  "file": "word-fruit-coconut.jpg",
+  "category": "Fruit",
+  "title": "coconut",
+  "source": "File:SZ 深圳 Shenzhen 龍華區 Longhua 高爾夫大道 Gao'Erfu Road 豐盛福 Feng Sheng Fu 商場 Shopping Mall 潤達超市 Run Da Supermarket fruit coconut January 2024 R12S.jpg",
+  "license": "CC0",
+  "author": "Singkabee Liam H Tonga",
+  "url": "https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E9%BE%8D%E8%8F%AF%E5%8D%80_Longhua_%E9%AB%98%E7%88%BE%E5%A4%AB%E5%A4%A7%E9%81%93_Gao%27Erfu_Road_%E8%B1%90%E7%9B%9B%E7%A6%8F_Feng_Sheng_Fu_%E5%95%86%E5%A0%B4_Shopping_Mall_%E6%BD%A4%E9%81%94%E8%B6%85%E5%B8%82_Run_Da_Supermarket_fruit_coconut_January_2024_R12S.jpg"
+ },
+ {
+  "file": "word-fruit-kiwi.jpg",
+  "category": "Fruit",
+  "title": "kiwi",
+  "source": "File:Kiwis in a pile.jpg",
+  "license": "CC0",
+  "author": "Apinanaivot",
+  "url": "https://commons.wikimedia.org/wiki/File:Kiwis_in_a_pile.jpg"
+ },
+ {
+  "file": "word-fruit-tomato.jpg",
+  "category": "Fruit",
+  "title": "tomato",
+  "source": "File:Tomato a fruit?.jpg",
+  "license": "CC0",
+  "author": "Clariter1990",
+  "url": "https://commons.wikimedia.org/wiki/File:Tomato_a_fruit%3F.jpg"
+ },
+ {
+  "file": "word-fruit-olive.jpg",
+  "category": "Fruit",
+  "title": "olive",
+  "source": "File:Grèce véraison olives.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Gr%C3%A8ce_v%C3%A9raison_olives.jpg"
+ },
+ {
+  "file": "word-fruit-avocado.jpg",
+  "category": "Fruit",
+  "title": "avocado",
+  "source": "File:Avocados sold in supermarkets.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Avocados_sold_in_supermarkets.jpg"
+ },
+ {
+  "file": "word-fruit-plum.jpg",
+  "category": "Fruit",
+  "title": "plum",
+  "source": "File:Red-Plums.jpg",
+  "license": "CC0",
+  "author": "Evan-Amos",
+  "url": "https://commons.wikimedia.org/wiki/File:Red-Plums.jpg"
+ },
+ {
+  "file": "word-fruit-raspberry.jpg",
+  "category": "Fruit",
+  "title": "raspberry",
+  "source": "File:Wild raspberry.JPG",
+  "license": "CC0",
+  "author": "PookieFugglestein",
+  "url": "https://commons.wikimedia.org/wiki/File:Wild_raspberry.JPG"
+ },
+ {
+  "file": "word-fruit-papaya.jpg",
+  "category": "Fruit",
+  "title": "papaya",
+  "source": "File:Papaya (Carica papaya) Lasiodiplodia fruit rot (39219698451).jpg",
+  "license": "CC0",
+  "author": "Scot Nelson from USA",
+  "url": "https://commons.wikimedia.org/wiki/File:Papaya_(Carica_papaya)_Lasiodiplodia_fruit_rot_(39219698451).jpg"
+ },
+ {
+  "file": "word-fruit-grapefruit.jpg",
+  "category": "Fruit",
+  "title": "grapefruit",
+  "source": "File:Grapefruit free.jpg",
+  "license": "CC0",
+  "author": "Photos Public Domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Grapefruit_free.jpg"
+ },
+ {
+  "file": "word-vegetables-carrot.jpg",
+  "category": "Vegetables",
+  "title": "carrot",
+  "source": "File:Cracked carrot 2017 B.jpg",
+  "license": "CC0",
+  "author": "Fructibus",
+  "url": "https://commons.wikimedia.org/wiki/File:Cracked_carrot_2017_B.jpg"
+ },
+ {
+  "file": "word-vegetables-corn.jpg",
+  "category": "Vegetables",
+  "title": "corn",
+  "source": "File:Corn on the cob - Massachusetts.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Corn_on_the_cob_-_Massachusetts.jpg"
+ },
+ {
+  "file": "word-vegetables-broccoli.jpg",
+  "category": "Vegetables",
+  "title": "broccoli",
+  "source": "File:Cutting Broccoli.jpg",
+  "license": "CC0",
+  "author": "Alabama Extension",
+  "url": "https://commons.wikimedia.org/wiki/File:Cutting_Broccoli.jpg"
+ },
+ {
+  "file": "word-vegetables-lettuce.jpg",
+  "category": "Vegetables",
+  "title": "lettuce",
+  "source": "File:Red butter lettuce.jpg",
+  "license": "CC0",
+  "author": "Jeffery Martin",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_butter_lettuce.jpg"
+ },
+ {
+  "file": "word-vegetables-cucumber.jpg",
+  "category": "Vegetables",
+  "title": "cucumber",
+  "source": "File:Cucumbers (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Harshal Hirve harshalhirve",
+  "url": "https://commons.wikimedia.org/wiki/File:Cucumbers_(Unsplash).jpg"
+ },
+ {
+  "file": "word-vegetables-potato.jpg",
+  "category": "Vegetables",
+  "title": "potato",
+  "source": "File:Irish Potato Kenya.jpg",
+  "license": "CC0",
+  "author": "safaritravelplus",
+  "url": "https://commons.wikimedia.org/wiki/File:Irish_Potato_Kenya.jpg"
+ },
+ {
+  "file": "word-vegetables-sweet-potato.jpg",
+  "category": "Vegetables",
+  "title": "sweet potato",
+  "source": "File:Curved sweet potato 2017 A.jpg",
+  "license": "CC0",
+  "author": "Fructibus",
+  "url": "https://commons.wikimedia.org/wiki/File:Curved_sweet_potato_2017_A.jpg"
+ },
+ {
+  "file": "word-vegetables-eggplant.jpg",
+  "category": "Vegetables",
+  "title": "eggplant",
+  "source": "File:Small eggplant and cross section 2017 C.jpg",
+  "license": "CC0",
+  "author": "Fructibus",
+  "url": "https://commons.wikimedia.org/wiki/File:Small_eggplant_and_cross_section_2017_C.jpg"
+ },
+ {
+  "file": "word-vegetables-pepper.jpg",
+  "category": "Vegetables",
+  "title": "pepper",
+  "source": "File:Red, Yellow, and Green bell peppers.jpg",
+  "license": "CC0",
+  "author": "Jiafei Slay Queen",
+  "url": "https://commons.wikimedia.org/wiki/File:Red,_Yellow,_and_Green_bell_peppers.jpg"
+ },
+ {
+  "file": "word-vegetables-chili.jpg",
+  "category": "Vegetables",
+  "title": "chili",
+  "source": "File:Peppers in Vientiane.jpg",
+  "license": "CC0",
+  "author": "Mx. Granger",
+  "url": "https://commons.wikimedia.org/wiki/File:Peppers_in_Vientiane.jpg"
+ },
+ {
+  "file": "word-vegetables-onion.jpg",
+  "category": "Vegetables",
+  "title": "onion",
+  "source": "File:Onion and a group of vegetables on a cutting board.jpg",
+  "license": "CC0",
+  "author": "Webvilla on Unsplash",
+  "url": "https://commons.wikimedia.org/wiki/File:Onion_and_a_group_of_vegetables_on_a_cutting_board.jpg"
+ },
+ {
+  "file": "word-vegetables-garlic.jpg",
+  "category": "Vegetables",
+  "title": "garlic",
+  "source": "File:Garlic Bulbs (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Matthew Pilachowski matthewpilachowski",
+  "url": "https://commons.wikimedia.org/wiki/File:Garlic_Bulbs_(Unsplash).jpg"
+ },
+ {
+  "file": "word-vegetables-mushroom.jpg",
+  "category": "Vegetables",
+  "title": "mushroom",
+  "source": "File:Bowl of Mushrooms (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Joanna Kosinska joannakosinska",
+  "url": "https://commons.wikimedia.org/wiki/File:Bowl_of_Mushrooms_(Unsplash).jpg"
+ },
+ {
+  "file": "word-vegetables-peas.jpg",
+  "category": "Vegetables",
+  "title": "peas",
+  "source": "File:Peas and potatoes - Massachusetts.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Peas_and_potatoes_-_Massachusetts.jpg"
+ },
+ {
+  "file": "word-vegetables-beans.jpg",
+  "category": "Vegetables",
+  "title": "beans",
+  "source": "File:Broad beans - Wellington, New Zealand.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Broad_beans_-_Wellington,_New_Zealand.jpg"
+ },
+ {
+  "file": "word-vegetables-ginger.jpg",
+  "category": "Vegetables",
+  "title": "ginger",
+  "source": "File:Ginger Root (Zingiber officinale).jpg",
+  "license": "CC0",
+  "author": "Rubel Das",
+  "url": "https://commons.wikimedia.org/wiki/File:Ginger_Root_(Zingiber_officinale).jpg"
+ },
+ {
+  "file": "word-vegetables-pumpkin.jpg",
+  "category": "Vegetables",
+  "title": "pumpkin",
+  "source": "File:Traditional pumpkin variety growing in Uganda.jpg",
+  "license": "CC0",
+  "author": "Oliversamson1",
+  "url": "https://commons.wikimedia.org/wiki/File:Traditional_pumpkin_variety_growing_in_Uganda.jpg"
+ },
+ {
+  "file": "word-vegetables-cabbage.jpg",
+  "category": "Vegetables",
+  "title": "cabbage",
+  "source": "File:A cabbage vegetables.jpg",
+  "license": "CC0",
+  "author": "Salma kyari",
+  "url": "https://commons.wikimedia.org/wiki/File:A_cabbage_vegetables.jpg"
+ },
+ {
+  "file": "word-vegetables-celery.jpg",
+  "category": "Vegetables",
+  "title": "celery",
+  "source": "File:Bundles of celery for sale in supermarket.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Bundles_of_celery_for_sale_in_supermarket.jpg"
+ },
+ {
+  "file": "word-vegetables-spinach.jpg",
+  "category": "Vegetables",
+  "title": "spinach",
+  "source": "File:Water spinach.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Water_spinach.jpg"
+ },
+ {
+  "file": "word-vegetables-radish.jpg",
+  "category": "Vegetables",
+  "title": "radish",
+  "source": "File:Radish bunches.jpg",
+  "license": "CC0",
+  "author": "Jeffery Martin",
+  "url": "https://commons.wikimedia.org/wiki/File:Radish_bunches.jpg"
+ },
+ {
+  "file": "word-vegetables-zucchini.jpg",
+  "category": "Vegetables",
+  "title": "zucchini",
+  "source": "File:Zucchini vegetable closeup 1637435.jpg",
+  "license": "CC0",
+  "author": "Alexei Hulsov (alex80)",
+  "url": "https://commons.wikimedia.org/wiki/File:Zucchini_vegetable_closeup_1637435.jpg"
+ },
+ {
+  "file": "word-vegetables-cauliflower.jpg",
+  "category": "Vegetables",
+  "title": "cauliflower",
+  "source": "File:Cauliflower (20240611).jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:Cauliflower_(20240611).jpg"
+ },
+ {
+  "file": "word-vegetables-beet.jpg",
+  "category": "Vegetables",
+  "title": "beet",
+  "source": "File:Beet root before bolting.jpg",
+  "license": "CC0",
+  "author": "Downtowngal",
+  "url": "https://commons.wikimedia.org/wiki/File:Beet_root_before_bolting.jpg"
+ },
+ {
+  "file": "word-food-bread.jpg",
+  "category": "Food",
+  "title": "bread",
+  "source": "File:Man holding bread (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Kate Remmer studioktr",
+  "url": "https://commons.wikimedia.org/wiki/File:Man_holding_bread_(Unsplash).jpg"
+ },
+ {
+  "file": "word-food-cheese.jpg",
+  "category": "Food",
+  "title": "cheese",
+  "source": "File:Auchan-branded cheese ball (Бобровский сырзавод).jpg",
+  "license": "CC0",
+  "author": "Retired electrician",
+  "url": "https://commons.wikimedia.org/wiki/File:Auchan-branded_cheese_ball_(%D0%91%D0%BE%D0%B1%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D1%8B%D1%80%D0%B7%D0%B0%D0%B2%D0%BE%D0%B4).jpg"
+ },
+ {
+  "file": "word-food-pizza.jpg",
+  "category": "Food",
+  "title": "pizza",
+  "source": "File:Pizza pan and pizza.jpg",
+  "license": "CC0",
+  "author": "Rajalakshmi duraikathiresan",
+  "url": "https://commons.wikimedia.org/wiki/File:Pizza_pan_and_pizza.jpg"
+ },
+ {
+  "file": "word-food-burger.jpg",
+  "category": "Food",
+  "title": "burger",
+  "source": "File:Classic Burger - Joe's Burger House 2024-07-07.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Classic_Burger_-_Joe%27s_Burger_House_2024-07-07.jpg"
+ },
+ {
+  "file": "word-food-fries.jpg",
+  "category": "Food",
+  "title": "fries",
+  "source": "File:French fries 🍟.jpg",
+  "license": "CC0",
+  "author": "Fumikas Sagisavas",
+  "url": "https://commons.wikimedia.org/wiki/File:French_fries_%F0%9F%8D%9F.jpg"
+ },
+ {
+  "file": "word-food-hot-dog.jpg",
+  "category": "Food",
+  "title": "hot dog",
+  "source": "File:Swedish Special Hot Dog - Ikea Croydon 2025-06-13.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Swedish_Special_Hot_Dog_-_Ikea_Croydon_2025-06-13.jpg"
+ },
+ {
+  "file": "word-food-sandwich.jpg",
+  "category": "Food",
+  "title": "sandwich",
+  "source": "File:California Sunrise sandwich - T @ The Dials.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:California_Sunrise_sandwich_-_T_@_The_Dials.jpg"
+ },
+ {
+  "file": "word-food-taco.jpg",
+  "category": "Food",
+  "title": "taco",
+  "source": "File:Valentines's Day is for Shrimp Tacos!.jpg",
+  "license": "CC0",
+  "author": "Alan Levine",
+  "url": "https://commons.wikimedia.org/wiki/File:Valentines%27s_Day_is_for_Shrimp_Tacos!.jpg"
+ },
+ {
+  "file": "word-food-burrito.jpg",
+  "category": "Food",
+  "title": "burrito",
+  "source": "File:Burrito.JPG",
+  "license": "CC0",
+  "author": "samuelfernandezrivera",
+  "url": "https://commons.wikimedia.org/wiki/File:Burrito.JPG"
+ },
+ {
+  "file": "word-food-pasta.jpg",
+  "category": "Food",
+  "title": "pasta",
+  "source": "File:Smoked salmon pasta - Figaros, Brighton 2024-04-19.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Smoked_salmon_pasta_-_Figaros,_Brighton_2024-04-19.jpg"
+ },
+ {
+  "file": "word-food-rice.jpg",
+  "category": "Food",
+  "title": "rice",
+  "source": "File:Rice In A Bowl.jpg",
+  "license": "CC0",
+  "author": "safaritravelplus",
+  "url": "https://commons.wikimedia.org/wiki/File:Rice_In_A_Bowl.jpg"
+ },
+ {
+  "file": "word-food-noodles.jpg",
+  "category": "Food",
+  "title": "noodles",
+  "source": "File:Noodles and eggs20170520 1035.jpg",
+  "license": "CC0",
+  "author": "Nature42",
+  "url": "https://commons.wikimedia.org/wiki/File:Noodles_and_eggs20170520_1035.jpg"
+ },
+ {
+  "file": "word-food-soup.jpg",
+  "category": "Food",
+  "title": "soup",
+  "source": "File:Autumn Soup (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Cala cala_maffia",
+  "url": "https://commons.wikimedia.org/wiki/File:Autumn_Soup_(Unsplash).jpg"
+ },
+ {
+  "file": "word-food-salad.jpg",
+  "category": "Food",
+  "title": "salad",
+  "source": "File:Tomato, Pesto & Bocconcini Salad - Fatto a Mano.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Tomato,_Pesto_%26_Bocconcini_Salad_-_Fatto_a_Mano.jpg"
+ },
+ {
+  "file": "word-food-egg.jpg",
+  "category": "Food",
+  "title": "egg",
+  "source": "File:Boiled egg holder.jpg",
+  "license": "CC0",
+  "author": "Szombat78",
+  "url": "https://commons.wikimedia.org/wiki/File:Boiled_egg_holder.jpg"
+ },
+ {
+  "file": "word-food-pancakes.jpg",
+  "category": "Food",
+  "title": "pancakes",
+  "source": "File:Foodiesfeed.com pouring-honey-on-pancakes-with-walnuts.jpg",
+  "license": "CC0",
+  "author": "Mae Mu",
+  "url": "https://commons.wikimedia.org/wiki/File:Foodiesfeed.com_pouring-honey-on-pancakes-with-walnuts.jpg"
+ },
+ {
+  "file": "word-food-waffle.jpg",
+  "category": "Food",
+  "title": "waffle",
+  "source": "File:Surreal waffles (NOT AI).jpg",
+  "license": "CC0",
+  "author": "PigeonSoupOfficial",
+  "url": "https://commons.wikimedia.org/wiki/File:Surreal_waffles_(NOT_AI).jpg"
+ },
+ {
+  "file": "word-food-bacon.jpg",
+  "category": "Food",
+  "title": "bacon",
+  "source": "File:Bacon and eggs 001.jpg",
+  "license": "CC0",
+  "author": "Ocdp",
+  "url": "https://commons.wikimedia.org/wiki/File:Bacon_and_eggs_001.jpg"
+ },
+ {
+  "file": "word-food-sushi.jpg",
+  "category": "Food",
+  "title": "sushi",
+  "source": "File:Sushi, Mazatlán, 14 de junio de 2023 02.jpg",
+  "license": "CC0",
+  "author": "El Nuevo Doge",
+  "url": "https://commons.wikimedia.org/wiki/File:Sushi,_Mazatl%C3%A1n,_14_de_junio_de_2023_02.jpg"
+ },
+ {
+  "file": "word-food-dumpling.jpg",
+  "category": "Food",
+  "title": "dumpling",
+  "source": "File:Dumplings at Chinese restaurant in Tokyo Midtown 2.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Dumplings_at_Chinese_restaurant_in_Tokyo_Midtown_2.jpg"
+ },
+ {
+  "file": "word-food-popcorn.jpg",
+  "category": "Food",
+  "title": "popcorn",
+  "source": "File:Bowl of Popcorn (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Alex Munsell alexmunsell",
+  "url": "https://commons.wikimedia.org/wiki/File:Bowl_of_Popcorn_(Unsplash).jpg"
+ },
+ {
+  "file": "word-food-pretzel.jpg",
+  "category": "Food",
+  "title": "pretzel",
+  "source": "File:Pretzel pole (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Kristina Balić daisyk9",
+  "url": "https://commons.wikimedia.org/wiki/File:Pretzel_pole_(Unsplash).jpg"
+ },
+ {
+  "file": "word-food-bagel.jpg",
+  "category": "Food",
+  "title": "bagel",
+  "source": "File:Montreal bagel with lox.jpg",
+  "license": "CC0",
+  "author": "Funknendai",
+  "url": "https://commons.wikimedia.org/wiki/File:Montreal_bagel_with_lox.jpg"
+ },
+ {
+  "file": "word-food-croissant.jpg",
+  "category": "Food",
+  "title": "croissant",
+  "source": "File:Croissants au beurre (18953292873).jpg",
+  "license": "CC0",
+  "author": "Herry Wibisono (herryway)",
+  "url": "https://commons.wikimedia.org/wiki/File:Croissants_au_beurre_(18953292873).jpg"
+ },
+ {
+  "file": "word-food-butter.jpg",
+  "category": "Food",
+  "title": "butter",
+  "source": "File:Butter and Knive.jpg",
+  "license": "CC0",
+  "author": "Julikalucky",
+  "url": "https://commons.wikimedia.org/wiki/File:Butter_and_Knive.jpg"
+ },
+ {
+  "file": "word-sweets-cake.jpg",
+  "category": "Sweets",
+  "title": "cake",
+  "source": "File:Birthday Cake Bloomsburg, Pennsylvania.jpg",
+  "license": "CC0",
+  "author": "Tim-desser",
+  "url": "https://commons.wikimedia.org/wiki/File:Birthday_Cake_Bloomsburg,_Pennsylvania.jpg"
+ },
+ {
+  "file": "word-sweets-birthday-cake.jpg",
+  "category": "Sweets",
+  "title": "birthday cake",
+  "source": "File:Birthday cake..red.jpg",
+  "license": "CC0",
+  "author": "JAYASHREESATHIYAMOORTHY",
+  "url": "https://commons.wikimedia.org/wiki/File:Birthday_cake..red.jpg"
+ },
+ {
+  "file": "word-sweets-cupcake.jpg",
+  "category": "Sweets",
+  "title": "cupcake",
+  "source": "File:The Perfect Cupcake (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Brooke Lark brookelark",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Perfect_Cupcake_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sweets-cookie.jpg",
+  "category": "Sweets",
+  "title": "cookie",
+  "source": "File:Cookie stack.jpg",
+  "license": "CC0",
+  "author": "Lisa Fotios",
+  "url": "https://commons.wikimedia.org/wiki/File:Cookie_stack.jpg"
+ },
+ {
+  "file": "word-sweets-donut.jpg",
+  "category": "Sweets",
+  "title": "donut",
+  "source": "File:Biscoff Crème Donut - Stone Ground Donuts 2025-07-07.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Biscoff_Cr%C3%A8me_Donut_-_Stone_Ground_Donuts_2025-07-07.jpg"
+ },
+ {
+  "file": "word-sweets-ice-cream.jpg",
+  "category": "Sweets",
+  "title": "ice cream",
+  "source": "File:Melting Ice Cream (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Evan  Kirby evankirby2",
+  "url": "https://commons.wikimedia.org/wiki/File:Melting_Ice_Cream_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sweets-ice-pop.jpg",
+  "category": "Sweets",
+  "title": "ice pop",
+  "source": "File:Blue and red popsicle (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Nick Torontali nicktorontali",
+  "url": "https://commons.wikimedia.org/wiki/File:Blue_and_red_popsicle_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sweets-candy.jpg",
+  "category": "Sweets",
+  "title": "candy",
+  "source": "File:Easter eggs and Swedish candy - 725 (3002x1996).jpg",
+  "license": "CC0",
+  "author": "Grizzlybear.se",
+  "url": "https://commons.wikimedia.org/wiki/File:Easter_eggs_and_Swedish_candy_-_725_(3002x1996).jpg"
+ },
+ {
+  "file": "word-sweets-lollipop.jpg",
+  "category": "Sweets",
+  "title": "lollipop",
+  "source": "File:Transparent film wrapped swirl lollipop.jpg",
+  "license": "CC0",
+  "author": "VartamanVarta",
+  "url": "https://commons.wikimedia.org/wiki/File:Transparent_film_wrapped_swirl_lollipop.jpg"
+ },
+ {
+  "file": "word-sweets-chocolate.jpg",
+  "category": "Sweets",
+  "title": "chocolate",
+  "source": "File:Rocky Mountain chocolates.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Rocky_Mountain_chocolates.jpg"
+ },
+ {
+  "file": "word-sweets-pie.jpg",
+  "category": "Sweets",
+  "title": "pie",
+  "source": "File:Buko pie (Coconut custard pie) - Philippines 01.jpg",
+  "license": "CC0",
+  "author": "Obsidian Soul",
+  "url": "https://commons.wikimedia.org/wiki/File:Buko_pie_(Coconut_custard_pie)_-_Philippines_01.jpg"
+ },
+ {
+  "file": "word-sweets-pudding.jpg",
+  "category": "Sweets",
+  "title": "pudding",
+  "source": "File:Vanilla pudding with raspberries.jpg",
+  "license": "CC0",
+  "author": "RitaE",
+  "url": "https://commons.wikimedia.org/wiki/File:Vanilla_pudding_with_raspberries.jpg"
+ },
+ {
+  "file": "word-sweets-honey.jpg",
+  "category": "Sweets",
+  "title": "honey",
+  "source": "File:A walk to the Abby Honey Shack - Saint Joseph Abbey, Louisiana 2 July 2025 - 2.jpg",
+  "license": "Public domain",
+  "author": "abbeyprivate",
+  "url": "https://commons.wikimedia.org/wiki/File:A_walk_to_the_Abby_Honey_Shack_-_Saint_Joseph_Abbey,_Louisiana_2_July_2025_-_2.jpg"
+ },
+ {
+  "file": "word-sweets-cotton-candy.jpg",
+  "category": "Sweets",
+  "title": "cotton candy",
+  "source": "File:Cotton candy lemon flavour.jpg",
+  "license": "CC0",
+  "author": "Tokumeigakarinoaoshima",
+  "url": "https://commons.wikimedia.org/wiki/File:Cotton_candy_lemon_flavour.jpg"
+ },
+ {
+  "file": "word-sweets-jelly.jpg",
+  "category": "Sweets",
+  "title": "jelly",
+  "source": "File:Jelly and conserve samples.jpg",
+  "license": "CC0",
+  "author": "Nutrition, Food Safety &amp; Health",
+  "url": "https://commons.wikimedia.org/wiki/File:Jelly_and_conserve_samples.jpg"
+ },
+ {
+  "file": "word-sweets-muffin.jpg",
+  "category": "Sweets",
+  "title": "muffin",
+  "source": "File:Muffin (23699389073).jpg",
+  "license": "CC0",
+  "author": "www.Pixel.la Free Stock Photos",
+  "url": "https://commons.wikimedia.org/wiki/File:Muffin_(23699389073).jpg"
+ },
+ {
+  "file": "word-sweets-brownie.jpg",
+  "category": "Sweets",
+  "title": "brownie",
+  "source": "File:Oreo brownie - Cafe Coho 2024-05-30.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Oreo_brownie_-_Cafe_Coho_2024-05-30.jpg"
+ },
+ {
+  "file": "word-sweets-marshmallow.jpg",
+  "category": "Sweets",
+  "title": "marshmallow",
+  "source": "File:Roasting marshmallows with gas stove, camping.jpg",
+  "license": "CC0",
+  "author": "Eden Aviv",
+  "url": "https://commons.wikimedia.org/wiki/File:Roasting_marshmallows_with_gas_stove,_camping.jpg"
+ },
+ {
+  "file": "word-sweets-sprinkles.jpg",
+  "category": "Sweets",
+  "title": "sprinkles",
+  "source": "File:Chocolate Donut With Sprinkles on it.jpg",
+  "license": "CC0",
+  "author": "Bango Renders",
+  "url": "https://commons.wikimedia.org/wiki/File:Chocolate_Donut_With_Sprinkles_on_it.jpg"
+ },
+ {
+  "file": "word-drinks-water.jpg",
+  "category": "Drinks",
+  "title": "water",
+  "source": "File:Drinking Water at Wiki Student Summit.jpg",
+  "license": "CC0",
+  "author": "Jacobgijjah",
+  "url": "https://commons.wikimedia.org/wiki/File:Drinking_Water_at_Wiki_Student_Summit.jpg"
+ },
+ {
+  "file": "word-drinks-milk.jpg",
+  "category": "Drinks",
+  "title": "milk",
+  "source": "File:Flax milk 2.jpg",
+  "license": "CC0",
+  "author": "Mx. Granger",
+  "url": "https://commons.wikimedia.org/wiki/File:Flax_milk_2.jpg"
+ },
+ {
+  "file": "word-drinks-juice.jpg",
+  "category": "Drinks",
+  "title": "juice",
+  "source": "File:Pineapple Juice fruits-465832.jpg",
+  "license": "CC0",
+  "author": "public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Pineapple_Juice_fruits-465832.jpg"
+ },
+ {
+  "file": "word-drinks-tea.jpg",
+  "category": "Drinks",
+  "title": "tea",
+  "source": "File:Tea at French restaurant in Tokyo.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Tea_at_French_restaurant_in_Tokyo.jpg"
+ },
+ {
+  "file": "word-drinks-hot-cocoa.jpg",
+  "category": "Drinks",
+  "title": "hot cocoa",
+  "source": "File:Luxury Hot Cocoa - Hoogly Tea Lodge 2024-03-24.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Luxury_Hot_Cocoa_-_Hoogly_Tea_Lodge_2024-03-24.jpg"
+ },
+ {
+  "file": "word-drinks-smoothie.jpg",
+  "category": "Drinks",
+  "title": "smoothie",
+  "source": "File:Kiwi Smoothie.jpg",
+  "license": "CC0",
+  "author": "rawpixel.com",
+  "url": "https://commons.wikimedia.org/wiki/File:Kiwi_Smoothie.jpg"
+ },
+ {
+  "file": "word-drinks-lemonade.jpg",
+  "category": "Drinks",
+  "title": "lemonade",
+  "source": "File:Home made Lemonade - Potatoast 2026-03-03.jpg",
+  "license": "CC0",
+  "author": "Andy Li",
+  "url": "https://commons.wikimedia.org/wiki/File:Home_made_Lemonade_-_Potatoast_2026-03-03.jpg"
+ },
+ {
+  "file": "word-drinks-bubble-tea.jpg",
+  "category": "Drinks",
+  "title": "bubble tea",
+  "source": "File:Pearl Milk Tea in Chun Shui Tang.jpg",
+  "license": "CC0",
+  "author": "Battlesnake1",
+  "url": "https://commons.wikimedia.org/wiki/File:Pearl_Milk_Tea_in_Chun_Shui_Tang.jpg"
+ },
+ {
+  "file": "word-drinks-cup.jpg",
+  "category": "Drinks",
+  "title": "cup",
+  "source": "File:Chashka.jpg",
+  "license": "CC0",
+  "author": "J.Doniyorovich",
+  "url": "https://commons.wikimedia.org/wiki/File:Chashka.jpg"
+ },
+ {
+  "file": "word-drinks-glass.jpg",
+  "category": "Drinks",
+  "title": "glass",
+  "source": "File:Glass of water ouside.jpg",
+  "license": "CC0",
+  "author": "Kurt Kaiser",
+  "url": "https://commons.wikimedia.org/wiki/File:Glass_of_water_ouside.jpg"
+ },
+ {
+  "file": "word-drinks-bottle.jpg",
+  "category": "Drinks",
+  "title": "bottle",
+  "source": "File:Bottle of Water.jpg",
+  "license": "CC0",
+  "author": "Jiafei Slay Queen",
+  "url": "https://commons.wikimedia.org/wiki/File:Bottle_of_Water.jpg"
+ },
+ {
+  "file": "word-drinks-straw.jpg",
+  "category": "Drinks",
+  "title": "straw",
+  "source": "File:Metal straw.jpg",
+  "license": "CC0",
+  "author": "Mx. Granger",
+  "url": "https://commons.wikimedia.org/wiki/File:Metal_straw.jpg"
+ },
+ {
+  "file": "word-drinks-ice.jpg",
+  "category": "Drinks",
+  "title": "ice",
+  "source": "File:Ice Texture.jpg",
+  "license": "CC0",
+  "author": "Jenn Richardson",
+  "url": "https://commons.wikimedia.org/wiki/File:Ice_Texture.jpg"
+ },
+ {
+  "file": "word-drinks-mug.jpg",
+  "category": "Drinks",
+  "title": "mug",
+  "source": "File:William Shakespeare mug, c. 1769-1770, Worcester Porcelain Manufactory, soapstone soft-paste porcelain, overglaze printed in black enamel - Gardiner Museum, Toronto - DSC01062.JPG",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:William_Shakespeare_mug,_c._1769-1770,_Worcester_Porcelain_Manufactory,_soapstone_soft-paste_porcelain,_overglaze_printed_in_black_enamel_-_Gardiner_Museum,_Toronto_-_DSC01062.JPG"
+ },
+ {
+  "file": "word-colors-red.jpg",
+  "category": "Colors",
+  "title": "red",
+  "source": "File:Red color rose*.jpg",
+  "license": "CC0",
+  "author": "Boopathi Raja123",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_color_rose*.jpg"
+ },
+ {
+  "file": "word-colors-orange.jpg",
+  "category": "Colors",
+  "title": "orange",
+  "source": "File:Orange Fruit (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Keilidh Ewan keilidhewan",
+  "url": "https://commons.wikimedia.org/wiki/File:Orange_Fruit_(Unsplash).jpg"
+ },
+ {
+  "file": "word-colors-yellow.jpg",
+  "category": "Colors",
+  "title": "yellow",
+  "source": "File:Snow on a yellow flower.jpg",
+  "license": "CC0",
+  "author": "AdvaitaMakaranda",
+  "url": "https://commons.wikimedia.org/wiki/File:Snow_on_a_yellow_flower.jpg"
+ },
+ {
+  "file": "word-colors-green.jpg",
+  "category": "Colors",
+  "title": "green",
+  "source": "File:The Green and Golden Bell Frog.jpg",
+  "license": "CC0",
+  "author": "Bernard Spragg. NZ",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Green_and_Golden_Bell_Frog.jpg"
+ },
+ {
+  "file": "word-colors-blue.jpg",
+  "category": "Colors",
+  "title": "blue",
+  "source": "File:Two light blue flax.jpg",
+  "license": "CC0",
+  "author": "AdvaitaMakaranda",
+  "url": "https://commons.wikimedia.org/wiki/File:Two_light_blue_flax.jpg"
+ },
+ {
+  "file": "word-colors-purple.jpg",
+  "category": "Colors",
+  "title": "purple",
+  "source": "File:Purple Orchid from Costa Rica.jpg",
+  "license": "CC0",
+  "author": "The LEAF Project",
+  "url": "https://commons.wikimedia.org/wiki/File:Purple_Orchid_from_Costa_Rica.jpg"
+ },
+ {
+  "file": "word-colors-brown.jpg",
+  "category": "Colors",
+  "title": "brown",
+  "source": "File:Happy brown bears.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Happy_brown_bears.jpg"
+ },
+ {
+  "file": "word-colors-black.jpg",
+  "category": "Colors",
+  "title": "black",
+  "source": "File:Black Sheep Closeup.jpg",
+  "license": "CC0",
+  "author": "Fermion",
+  "url": "https://commons.wikimedia.org/wiki/File:Black_Sheep_Closeup.jpg"
+ },
+ {
+  "file": "word-colors-pink.jpg",
+  "category": "Colors",
+  "title": "pink",
+  "source": "File:Pink Cupcakes.jpg",
+  "license": "CC0",
+  "author": "Jess Watters",
+  "url": "https://commons.wikimedia.org/wiki/File:Pink_Cupcakes.jpg"
+ },
+ {
+  "file": "word-colors-gold.jpg",
+  "category": "Colors",
+  "title": "gold",
+  "source": "File:Gold ring-shaped pendant.jpg",
+  "license": "CC0",
+  "author": "Unknown authorUnknown author",
+  "url": "https://commons.wikimedia.org/wiki/File:Gold_ring-shaped_pendant.jpg"
+ },
+ {
+  "file": "word-colors-silver.jpg",
+  "category": "Colors",
+  "title": "silver",
+  "source": "File:Peugeot 406 facelift silver in West Java 40192 02.jpg",
+  "license": "CC0",
+  "author": "MoCars",
+  "url": "https://commons.wikimedia.org/wiki/File:Peugeot_406_facelift_silver_in_West_Java_40192_02.jpg"
+ },
+ {
+  "file": "word-colors-light-blue.jpg",
+  "category": "Colors",
+  "title": "light blue",
+  "source": "File:Light blue Smithsonite.jpg",
+  "license": "CC0",
+  "author": "TheUltimateGrass",
+  "url": "https://commons.wikimedia.org/wiki/File:Light_blue_Smithsonite.jpg"
+ },
+ {
+  "file": "word-colors-rainbow.jpg",
+  "category": "Colors",
+  "title": "rainbow",
+  "source": "File:Rainbow over Whitchurch.jpg",
+  "license": "CC0",
+  "author": "Micheal1evans",
+  "url": "https://commons.wikimedia.org/wiki/File:Rainbow_over_Whitchurch.jpg"
+ },
+ {
+  "file": "word-colors-light.jpg",
+  "category": "Colors",
+  "title": "light",
+  "source": "File:Light behind shadow.jpg",
+  "license": "CC0",
+  "author": "Saral Shots",
+  "url": "https://commons.wikimedia.org/wiki/File:Light_behind_shadow.jpg"
+ },
+ {
+  "file": "word-colors-bright.jpg",
+  "category": "Colors",
+  "title": "bright",
+  "source": "File:Bright sun by the clouds.jpg",
+  "license": "CC0",
+  "author": "Jiafei Slay Queen",
+  "url": "https://commons.wikimedia.org/wiki/File:Bright_sun_by_the_clouds.jpg"
+ },
+ {
+  "file": "word-shapes-heart.jpg",
+  "category": "Shapes",
+  "title": "heart",
+  "source": "File:Rainbow bead necklace - heart shaped.jpg",
+  "license": "CC0",
+  "author": "Brainy J",
+  "url": "https://commons.wikimedia.org/wiki/File:Rainbow_bead_necklace_-_heart_shaped.jpg"
+ },
+ {
+  "file": "word-shapes-arrow.jpg",
+  "category": "Shapes",
+  "title": "arrow",
+  "source": "File:Arrow at Pilchuck Park.jpg",
+  "license": "CC0",
+  "author": "PinchyCC",
+  "url": "https://commons.wikimedia.org/wiki/File:Arrow_at_Pilchuck_Park.jpg"
+ },
+ {
+  "file": "word-shapes-cube.jpg",
+  "category": "Shapes",
+  "title": "cube",
+  "source": "File:Rubik's cube image.jpg",
+  "license": "CC0",
+  "author": "Darakshanehaluddin",
+  "url": "https://commons.wikimedia.org/wiki/File:Rubik%27s_cube_image.jpg"
+ },
+ {
+  "file": "word-shapes-ball.jpg",
+  "category": "Shapes",
+  "title": "ball",
+  "source": "File:Foot ball image.jpg",
+  "license": "CC0",
+  "author": "Darakshanehaluddin",
+  "url": "https://commons.wikimedia.org/wiki/File:Foot_ball_image.jpg"
+ },
+ {
+  "file": "word-shapes-cone.jpg",
+  "category": "Shapes",
+  "title": "cone",
+  "source": "File:Ice cream cone with spoon.jpg",
+  "license": "CC0",
+  "author": "Thegreatmutata",
+  "url": "https://commons.wikimedia.org/wiki/File:Ice_cream_cone_with_spoon.jpg"
+ },
+ {
+  "file": "word-numbers-half.jpg",
+  "category": "Numbers",
+  "title": "half",
+  "source": "File:Ripe lemon, sliced in half, on a marble table.jpg",
+  "license": "CC0",
+  "author": "GiftedGirI",
+  "url": "https://commons.wikimedia.org/wiki/File:Ripe_lemon,_sliced_in_half,_on_a_marble_table.jpg"
+ },
+ {
+  "file": "word-my-body-face.jpg",
+  "category": "My Body",
+  "title": "face",
+  "source": "File:Boy Face from Venezuela.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Boy_Face_from_Venezuela.jpg"
+ },
+ {
+  "file": "word-my-body-eye.jpg",
+  "category": "My Body",
+  "title": "eye",
+  "source": "File:Tabby cat with blue eyes-3336579.jpg",
+  "license": "CC0",
+  "author": "AdinaVoicu",
+  "url": "https://commons.wikimedia.org/wiki/File:Tabby_cat_with_blue_eyes-3336579.jpg"
+ },
+ {
+  "file": "word-my-body-eyes.jpg",
+  "category": "My Body",
+  "title": "eyes",
+  "source": "File:Tabby cat with blue eyes-3336579.jpg",
+  "license": "CC0",
+  "author": "AdinaVoicu",
+  "url": "https://commons.wikimedia.org/wiki/File:Tabby_cat_with_blue_eyes-3336579.jpg"
+ },
+ {
+  "file": "word-my-body-hand.jpg",
+  "category": "My Body",
+  "title": "hand",
+  "source": "File:Human hand.jpg",
+  "license": "CC0",
+  "author": "FrognerSvart",
+  "url": "https://commons.wikimedia.org/wiki/File:Human_hand.jpg"
+ },
+ {
+  "file": "word-my-body-thumb.jpg",
+  "category": "My Body",
+  "title": "thumb",
+  "source": "File:Liam Thumb.jpg",
+  "license": "CC0",
+  "author": "Bwyell80",
+  "url": "https://commons.wikimedia.org/wiki/File:Liam_Thumb.jpg"
+ },
+ {
+  "file": "word-clothes-shorts.jpg",
+  "category": "Clothes",
+  "title": "shorts",
+  "source": "File:Cargo shorts.jpg",
+  "license": "CC0",
+  "author": "Punker1999",
+  "url": "https://commons.wikimedia.org/wiki/File:Cargo_shorts.jpg"
+ },
+ {
+  "file": "word-clothes-socks.jpg",
+  "category": "Clothes",
+  "title": "socks",
+  "source": "File:Socks for sale in Tokyo.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Socks_for_sale_in_Tokyo.jpg"
+ },
+ {
+  "file": "word-clothes-shoes.jpg",
+  "category": "Clothes",
+  "title": "shoes",
+  "source": "File:Shoes and slipper.jpg",
+  "license": "CC0",
+  "author": "Knites",
+  "url": "https://commons.wikimedia.org/wiki/File:Shoes_and_slipper.jpg"
+ },
+ {
+  "file": "word-clothes-hat.jpg",
+  "category": "Clothes",
+  "title": "hat",
+  "source": "File:Hat-59647 - Hans Braxmeier.jpg",
+  "license": "CC0",
+  "author": "Hans Braxmeier",
+  "url": "https://commons.wikimedia.org/wiki/File:Hat-59647_-_Hans_Braxmeier.jpg"
+ },
+ {
+  "file": "word-clothes-scarf.jpg",
+  "category": "Clothes",
+  "title": "scarf",
+  "source": "File:Crochet scarf in two shades of blue.jpg",
+  "license": "CC0",
+  "author": "999real",
+  "url": "https://commons.wikimedia.org/wiki/File:Crochet_scarf_in_two_shades_of_blue.jpg"
+ },
+ {
+  "file": "word-clothes-gloves.jpg",
+  "category": "Clothes",
+  "title": "gloves",
+  "source": "File:230513-F-AV821-001 - USS Oscar Austin (DDG 79) perform a general quarters drill during Formidable Shield 2023.jpg",
+  "license": "Public domain",
+  "author": "Senior Airman Jan Valle",
+  "url": "https://commons.wikimedia.org/wiki/File:230513-F-AV821-001_-_USS_Oscar_Austin_(DDG_79)_perform_a_general_quarters_drill_during_Formidable_Shield_2023.jpg"
+ },
+ {
+  "file": "word-clothes-jacket.jpg",
+  "category": "Clothes",
+  "title": "jacket",
+  "source": "File:Suede jacket on a chair.jpg",
+  "license": "CC0",
+  "author": "Ірина Бучнєва",
+  "url": "https://commons.wikimedia.org/wiki/File:Suede_jacket_on_a_chair.jpg"
+ },
+ {
+  "file": "word-clothes-sweater.jpg",
+  "category": "Clothes",
+  "title": "sweater",
+  "source": "File:Sweater (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Victoria Bilsborough vicbils",
+  "url": "https://commons.wikimedia.org/wiki/File:Sweater_(Unsplash).jpg"
+ },
+ {
+  "file": "word-clothes-belt.jpg",
+  "category": "Clothes",
+  "title": "belt",
+  "source": "File:Black stretch woven polyester belt with brown chape.jpg",
+  "license": "CC0",
+  "author": "Fructibus",
+  "url": "https://commons.wikimedia.org/wiki/File:Black_stretch_woven_polyester_belt_with_brown_chape.jpg"
+ },
+ {
+  "file": "word-clothes-glasses.jpg",
+  "category": "Clothes",
+  "title": "glasses",
+  "source": "File:Tortoise glasses (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Keilidh Ewan keilidhewan",
+  "url": "https://commons.wikimedia.org/wiki/File:Tortoise_glasses_(Unsplash).jpg"
+ },
+ {
+  "file": "word-clothes-sunglasses.jpg",
+  "category": "Clothes",
+  "title": "sunglasses",
+  "source": "File:Reflection in sunglasses (Unsplash).jpg",
+  "license": "CC0",
+  "author": "GianCarlo Greco giancarlo",
+  "url": "https://commons.wikimedia.org/wiki/File:Reflection_in_sunglasses_(Unsplash).jpg"
+ },
+ {
+  "file": "word-clothes-crown.jpg",
+  "category": "Clothes",
+  "title": "crown",
+  "source": "File:Mahkota Kesultanan Bima.jpg",
+  "license": "CC0",
+  "author": "BayuAjisaka",
+  "url": "https://commons.wikimedia.org/wiki/File:Mahkota_Kesultanan_Bima.jpg"
+ },
+ {
+  "file": "word-clothes-backpack.jpg",
+  "category": "Clothes",
+  "title": "backpack",
+  "source": "File:Red and blue champion backpack.jpg",
+  "license": "CC0",
+  "author": "I AM GOING TO DRINK OCEAN WATER",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_and_blue_champion_backpack.jpg"
+ },
+ {
+  "file": "word-clothes-button.jpg",
+  "category": "Clothes",
+  "title": "button",
+  "source": "File:Button Kyaal-Tee.jpg",
+  "license": "CC0",
+  "author": "စာကလေး SarKaLay",
+  "url": "https://commons.wikimedia.org/wiki/File:Button_Kyaal-Tee.jpg"
+ },
+ {
+  "file": "word-at-home-house.jpg",
+  "category": "At Home",
+  "title": "house",
+  "source": "File:Poor house of Isla Margarita.JPG",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Poor_house_of_Isla_Margarita.JPG"
+ },
+ {
+  "file": "word-at-home-door.jpg",
+  "category": "At Home",
+  "title": "door",
+  "source": "File:Casa de los picos door Segovia.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Casa_de_los_picos_door_Segovia.jpg"
+ },
+ {
+  "file": "word-at-home-window.jpg",
+  "category": "At Home",
+  "title": "window",
+  "source": "File:Window on a barn in Färlev.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Window_on_a_barn_in_F%C3%A4rlev.jpg"
+ },
+ {
+  "file": "word-at-home-bed.jpg",
+  "category": "At Home",
+  "title": "bed",
+  "source": "File:Bed in hotel room 4.jpg",
+  "license": "CC0",
+  "author": "Kurt Kaiser",
+  "url": "https://commons.wikimedia.org/wiki/File:Bed_in_hotel_room_4.jpg"
+ },
+ {
+  "file": "word-at-home-chair.jpg",
+  "category": "At Home",
+  "title": "chair",
+  "source": "File:Exquisite handcrafted chair made by Nomads.jpg",
+  "license": "CC0",
+  "author": "LordVadrt",
+  "url": "https://commons.wikimedia.org/wiki/File:Exquisite_handcrafted_chair_made_by_Nomads.jpg"
+ },
+ {
+  "file": "word-at-home-sofa.jpg",
+  "category": "At Home",
+  "title": "sofa",
+  "source": "File:Relax time in sofa.jpg",
+  "license": "CC0",
+  "author": "ReshmaNazeerhussain",
+  "url": "https://commons.wikimedia.org/wiki/File:Relax_time_in_sofa.jpg"
+ },
+ {
+  "file": "word-at-home-table.jpg",
+  "category": "At Home",
+  "title": "table",
+  "source": "File:Outdoor table 01.jpg",
+  "license": "CC0",
+  "author": "IanVG",
+  "url": "https://commons.wikimedia.org/wiki/File:Outdoor_table_01.jpg"
+ },
+ {
+  "file": "word-at-home-lamp.jpg",
+  "category": "At Home",
+  "title": "lamp",
+  "source": "File:Electric table lamp.jpg",
+  "license": "CC0",
+  "author": "Kryesmin",
+  "url": "https://commons.wikimedia.org/wiki/File:Electric_table_lamp.jpg"
+ },
+ {
+  "file": "word-at-home-clock.jpg",
+  "category": "At Home",
+  "title": "clock",
+  "source": "File:A clock in Tlokweng.jpg",
+  "license": "CC0",
+  "author": "Chandapiwa Malema",
+  "url": "https://commons.wikimedia.org/wiki/File:A_clock_in_Tlokweng.jpg"
+ },
+ {
+  "file": "word-at-home-bath.jpg",
+  "category": "At Home",
+  "title": "bath",
+  "source": "File:Moss Mansion, Bathtub, 2025.jpg",
+  "license": "CC0",
+  "author": "Chevsapher",
+  "url": "https://commons.wikimedia.org/wiki/File:Moss_Mansion,_Bathtub,_2025.jpg"
+ },
+ {
+  "file": "word-at-home-shower.jpg",
+  "category": "At Home",
+  "title": "shower",
+  "source": "File:Italian Shower tap.JPG",
+  "license": "CC0",
+  "author": "Miguel Andrade",
+  "url": "https://commons.wikimedia.org/wiki/File:Italian_Shower_tap.JPG"
+ },
+ {
+  "file": "word-at-home-toilet.jpg",
+  "category": "At Home",
+  "title": "toilet",
+  "source": "File:Toilet @ Nuriootpa Library 20240603-121519.jpg",
+  "license": "CC0",
+  "author": "RegionVisitor90",
+  "url": "https://commons.wikimedia.org/wiki/File:Toilet_@_Nuriootpa_Library_20240603-121519.jpg"
+ },
+ {
+  "file": "word-at-home-soap.jpg",
+  "category": "At Home",
+  "title": "soap",
+  "source": "File:Bars of pure Marseille and Aleppo soap, 2024.jpg",
+  "license": "CC0",
+  "author": "DimiTalen",
+  "url": "https://commons.wikimedia.org/wiki/File:Bars_of_pure_Marseille_and_Aleppo_soap,_2024.jpg"
+ },
+ {
+  "file": "word-at-home-toothbrush.jpg",
+  "category": "At Home",
+  "title": "toothbrush",
+  "source": "File:Toothbrush, Toothpaste, Dental Care (571741).jpg",
+  "license": "CC0",
+  "author": "Steve Buissinne, South Africa",
+  "url": "https://commons.wikimedia.org/wiki/File:Toothbrush,_Toothpaste,_Dental_Care_(571741).jpg"
+ },
+ {
+  "file": "word-at-home-towel.jpg",
+  "category": "At Home",
+  "title": "towel",
+  "source": "File:Towels on shelves 02.jpg",
+  "license": "CC0",
+  "author": "Ата",
+  "url": "https://commons.wikimedia.org/wiki/File:Towels_on_shelves_02.jpg"
+ },
+ {
+  "file": "word-at-home-pillow.jpg",
+  "category": "At Home",
+  "title": "pillow",
+  "source": "File:Crochet pillow.jpg",
+  "license": "CC0",
+  "author": "Thisicek",
+  "url": "https://commons.wikimedia.org/wiki/File:Crochet_pillow.jpg"
+ },
+ {
+  "file": "word-at-home-blanket.jpg",
+  "category": "At Home",
+  "title": "blanket",
+  "source": "File:Pug snugged in a blanket (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Matthew Henry matthewhenry",
+  "url": "https://commons.wikimedia.org/wiki/File:Pug_snugged_in_a_blanket_(Unsplash).jpg"
+ },
+ {
+  "file": "word-at-home-key.jpg",
+  "category": "At Home",
+  "title": "key",
+  "source": "File:Queensland Rail Station Key 1940s.jpg",
+  "license": "CC0",
+  "author": "John Robert McPherson",
+  "url": "https://commons.wikimedia.org/wiki/File:Queensland_Rail_Station_Key_1940s.jpg"
+ },
+ {
+  "file": "word-at-home-stairs.jpg",
+  "category": "At Home",
+  "title": "stairs",
+  "source": "File:Stairs Château de Beynac Dordogne 12.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Stairs_Ch%C3%A2teau_de_Beynac_Dordogne_12.jpg"
+ },
+ {
+  "file": "word-at-home-roof.jpg",
+  "category": "At Home",
+  "title": "roof",
+  "source": "File:Børsen dragon spire roofs Copenhagen Denmark.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:B%C3%B8rsen_dragon_spire_roofs_Copenhagen_Denmark.jpg"
+ },
+ {
+  "file": "word-at-home-garden.jpg",
+  "category": "At Home",
+  "title": "garden",
+  "source": "File:Sand and Stone Garden - Portland Japanese Garden - Portland, Oregon - DSC08222.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Sand_and_Stone_Garden_-_Portland_Japanese_Garden_-_Portland,_Oregon_-_DSC08222.jpg"
+ },
+ {
+  "file": "word-at-home-television.jpg",
+  "category": "At Home",
+  "title": "television",
+  "source": "File:Mitsubishi television set 2022-12-25.jpg",
+  "license": "CC0",
+  "author": "Asanagi",
+  "url": "https://commons.wikimedia.org/wiki/File:Mitsubishi_television_set_2022-12-25.jpg"
+ },
+ {
+  "file": "word-at-home-phone.jpg",
+  "category": "At Home",
+  "title": "phone",
+  "source": "File:Antique Rotary Phone.jpg",
+  "license": "CC0",
+  "author": "Amitbalani",
+  "url": "https://commons.wikimedia.org/wiki/File:Antique_Rotary_Phone.jpg"
+ },
+ {
+  "file": "word-at-home-basket.jpg",
+  "category": "At Home",
+  "title": "basket",
+  "source": "File:Wicker Basket Containing Clay Coins (10112682876).jpg",
+  "license": "CC0",
+  "author": "Gary Todd from Xinzheng, China",
+  "url": "https://commons.wikimedia.org/wiki/File:Wicker_Basket_Containing_Clay_Coins_(10112682876).jpg"
+ },
+ {
+  "file": "word-kitchen-pot.jpg",
+  "category": "Kitchen",
+  "title": "pot",
+  "source": "File:Food-pot-kitchen-cooking (23957429659).jpg",
+  "license": "CC0",
+  "author": "www.Pixel.la Free Stock Photos",
+  "url": "https://commons.wikimedia.org/wiki/File:Food-pot-kitchen-cooking_(23957429659).jpg"
+ },
+ {
+  "file": "word-kitchen-spoon.jpg",
+  "category": "Kitchen",
+  "title": "spoon",
+  "source": "File:Baby feeding - spoon and bowl.jpg",
+  "license": "CC0",
+  "author": "MAKY.OREL",
+  "url": "https://commons.wikimedia.org/wiki/File:Baby_feeding_-_spoon_and_bowl.jpg"
+ },
+ {
+  "file": "word-kitchen-fork.jpg",
+  "category": "Kitchen",
+  "title": "fork",
+  "source": "File:Fork (all alone).jpg",
+  "license": "CC0",
+  "author": "GarethBaloney",
+  "url": "https://commons.wikimedia.org/wiki/File:Fork_(all_alone).jpg"
+ },
+ {
+  "file": "word-kitchen-knife.jpg",
+  "category": "Kitchen",
+  "title": "knife",
+  "source": "File:Knife in a table.jpg",
+  "license": "CC0",
+  "author": "Knites",
+  "url": "https://commons.wikimedia.org/wiki/File:Knife_in_a_table.jpg"
+ },
+ {
+  "file": "word-kitchen-bowl.jpg",
+  "category": "Kitchen",
+  "title": "bowl",
+  "source": "File:Unwashed bowl of potatoes.jpg",
+  "license": "CC0",
+  "author": "Nightgane",
+  "url": "https://commons.wikimedia.org/wiki/File:Unwashed_bowl_of_potatoes.jpg"
+ },
+ {
+  "file": "word-kitchen-cup.jpg",
+  "category": "Kitchen",
+  "title": "cup",
+  "source": "File:Chashka.jpg",
+  "license": "CC0",
+  "author": "J.Doniyorovich",
+  "url": "https://commons.wikimedia.org/wiki/File:Chashka.jpg"
+ },
+ {
+  "file": "word-kitchen-oven.jpg",
+  "category": "Kitchen",
+  "title": "oven",
+  "source": "File:Brick-oven-thumbnail.jpg",
+  "license": "CC0",
+  "author": "Beboplu",
+  "url": "https://commons.wikimedia.org/wiki/File:Brick-oven-thumbnail.jpg"
+ },
+ {
+  "file": "word-kitchen-fridge.jpg",
+  "category": "Kitchen",
+  "title": "fridge",
+  "source": "File:Food into a refrigerator - 20111002.jpg",
+  "license": "CC0",
+  "author": "Bretwa",
+  "url": "https://commons.wikimedia.org/wiki/File:Food_into_a_refrigerator_-_20111002.jpg"
+ },
+ {
+  "file": "word-kitchen-sink.jpg",
+  "category": "Kitchen",
+  "title": "sink",
+  "source": "File:Bathroom vanity cabinet including sink and drawers.jpg",
+  "license": "CC0",
+  "author": "Tomwsulcer",
+  "url": "https://commons.wikimedia.org/wiki/File:Bathroom_vanity_cabinet_including_sink_and_drawers.jpg"
+ },
+ {
+  "file": "word-kitchen-kettle.jpg",
+  "category": "Kitchen",
+  "title": "kettle",
+  "source": "File:Steaming Kettle - Boston, MA.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Steaming_Kettle_-_Boston,_MA.jpg"
+ },
+ {
+  "file": "word-kitchen-cutting-board.jpg",
+  "category": "Kitchen",
+  "title": "cutting board",
+  "source": "File:11. place vegetables on cutting board.jpg",
+  "license": "CC0",
+  "author": "Datariumrex",
+  "url": "https://commons.wikimedia.org/wiki/File:11._place_vegetables_on_cutting_board.jpg"
+ },
+ {
+  "file": "word-kitchen-whisk.jpg",
+  "category": "Kitchen",
+  "title": "whisk",
+  "source": "File:Caseificazione della ricotta.jpg",
+  "license": "CC0",
+  "author": "8w9d",
+  "url": "https://commons.wikimedia.org/wiki/File:Caseificazione_della_ricotta.jpg"
+ },
+ {
+  "file": "word-kitchen-apron.jpg",
+  "category": "Kitchen",
+  "title": "apron",
+  "source": "File:Girl's apron - Portugal.jpg",
+  "license": "CC0",
+  "author": "Downtowngal",
+  "url": "https://commons.wikimedia.org/wiki/File:Girl%27s_apron_-_Portugal.jpg"
+ },
+ {
+  "file": "word-kitchen-salt.jpg",
+  "category": "Kitchen",
+  "title": "salt",
+  "source": "File:Salt-crystals.jpg",
+  "license": "CC0",
+  "author": "Nate Steiner",
+  "url": "https://commons.wikimedia.org/wiki/File:Salt-crystals.jpg"
+ },
+ {
+  "file": "word-kitchen-jar.jpg",
+  "category": "Kitchen",
+  "title": "jar",
+  "source": "File:Jar with lid, baked clay - Museo Egizio, Turin S 13049 p03.jpg",
+  "license": "CC0",
+  "author": "Unknown",
+  "url": "https://commons.wikimedia.org/wiki/File:Jar_with_lid,_baked_clay_-_Museo_Egizio,_Turin_S_13049_p03.jpg"
+ },
+ {
+  "file": "word-kitchen-lunchbox.jpg",
+  "category": "Kitchen",
+  "title": "lunchbox",
+  "source": "File:Box-veggies-and-two-apples.jpg",
+  "license": "CC0",
+  "author": "Hay Kranen",
+  "url": "https://commons.wikimedia.org/wiki/File:Box-veggies-and-two-apples.jpg"
+ },
+ {
+  "file": "word-kitchen-chopsticks.jpg",
+  "category": "Kitchen",
+  "title": "chopsticks",
+  "source": "File:Eating with Chopsticks (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Lily Lvnatikk lvnatikk",
+  "url": "https://commons.wikimedia.org/wiki/File:Eating_with_Chopsticks_(Unsplash).jpg"
+ },
+ {
+  "file": "word-school-school.jpg",
+  "category": "School",
+  "title": "school",
+  "source": "File:Yangju Elementary School 2.jpg",
+  "license": "CC0",
+  "author": "Nt",
+  "url": "https://commons.wikimedia.org/wiki/File:Yangju_Elementary_School_2.jpg"
+ },
+ {
+  "file": "word-school-book.jpg",
+  "category": "School",
+  "title": "book",
+  "source": "File:Open book (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Ben White benwhitephotography",
+  "url": "https://commons.wikimedia.org/wiki/File:Open_book_(Unsplash).jpg"
+ },
+ {
+  "file": "word-school-books.jpg",
+  "category": "School",
+  "title": "books",
+  "source": "File:A rich collection of books showcasing Adivasi culture, heritage, and voices from Jharkhand.jpg",
+  "license": "CC0",
+  "author": "Rohitmahali01",
+  "url": "https://commons.wikimedia.org/wiki/File:A_rich_collection_of_books_showcasing_Adivasi_culture,_heritage,_and_voices_from_Jharkhand.jpg"
+ },
+ {
+  "file": "word-school-notebook.jpg",
+  "category": "School",
+  "title": "notebook",
+  "source": "File:Stickers on a notebook (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Ian Schneider goian",
+  "url": "https://commons.wikimedia.org/wiki/File:Stickers_on_a_notebook_(Unsplash).jpg"
+ },
+ {
+  "file": "word-school-pencil.jpg",
+  "category": "School",
+  "title": "pencil",
+  "source": "File:Entalhe em lápis 2 (Carved pencil).jpg",
+  "license": "CC0",
+  "author": "WVBRASIL",
+  "url": "https://commons.wikimedia.org/wiki/File:Entalhe_em_l%C3%A1pis_2_(Carved_pencil).jpg"
+ },
+ {
+  "file": "word-school-pen.jpg",
+  "category": "School",
+  "title": "pen",
+  "source": "File:Niceday pen.jpg",
+  "license": "Public domain",
+  "author": "Warszawska róg Szerokiej w Tomaszowie Mazowieckim, w województwie łódzkim, PL, EU",
+  "url": "https://commons.wikimedia.org/wiki/File:Niceday_pen.jpg"
+ },
+ {
+  "file": "word-school-crayon.jpg",
+  "category": "School",
+  "title": "crayon",
+  "source": "File:Crayola crayons.jpg",
+  "license": "CC0",
+  "author": "Conrad 7",
+  "url": "https://commons.wikimedia.org/wiki/File:Crayola_crayons.jpg"
+ },
+ {
+  "file": "word-school-paintbrush.jpg",
+  "category": "School",
+  "title": "paintbrush",
+  "source": "File:Big and small paintbrush (Unsplash).jpg",
+  "license": "CC0",
+  "author": "William Felker weftech",
+  "url": "https://commons.wikimedia.org/wiki/File:Big_and_small_paintbrush_(Unsplash).jpg"
+ },
+ {
+  "file": "word-school-scissors.jpg",
+  "category": "School",
+  "title": "scissors",
+  "source": "File:Safety scissors blue.jpg",
+  "license": "CC0",
+  "author": "Karen Arnold",
+  "url": "https://commons.wikimedia.org/wiki/File:Safety_scissors_blue.jpg"
+ },
+ {
+  "file": "word-school-ruler.jpg",
+  "category": "School",
+  "title": "ruler",
+  "source": "File:Hoar Frost in Port Edward, with ruler for scale.jpg",
+  "license": "CC0",
+  "author": "WindBorneListener",
+  "url": "https://commons.wikimedia.org/wiki/File:Hoar_Frost_in_Port_Edward,_with_ruler_for_scale.jpg"
+ },
+ {
+  "file": "word-school-paper.jpg",
+  "category": "School",
+  "title": "paper",
+  "source": "File:Scattered white paper (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Brandi Redd brandi1",
+  "url": "https://commons.wikimedia.org/wiki/File:Scattered_white_paper_(Unsplash).jpg"
+ },
+ {
+  "file": "word-school-backpack.jpg",
+  "category": "School",
+  "title": "backpack",
+  "source": "File:Red and blue champion backpack.jpg",
+  "license": "CC0",
+  "author": "I AM GOING TO DRINK OCEAN WATER",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_and_blue_champion_backpack.jpg"
+ },
+ {
+  "file": "word-school-map.jpg",
+  "category": "School",
+  "title": "map",
+  "source": "File:South america tr.jpg",
+  "license": "Public domain",
+  "author": "Unknown authorUnknown author",
+  "url": "https://commons.wikimedia.org/wiki/File:South_america_tr.jpg"
+ },
+ {
+  "file": "word-school-globe.jpg",
+  "category": "School",
+  "title": "globe",
+  "source": "File:Camel in front of a globe.jpg",
+  "license": "CC0",
+  "author": "I AM GOING TO DRINK OCEAN WATER",
+  "url": "https://commons.wikimedia.org/wiki/File:Camel_in_front_of_a_globe.jpg"
+ },
+ {
+  "file": "word-school-calculator.jpg",
+  "category": "School",
+  "title": "calculator",
+  "source": "File:Casio FN-20 electronic calculator.JPG",
+  "license": "CC0",
+  "author": "MihailJP",
+  "url": "https://commons.wikimedia.org/wiki/File:Casio_FN-20_electronic_calculator.JPG"
+ },
+ {
+  "file": "word-school-computer.jpg",
+  "category": "School",
+  "title": "computer",
+  "source": "File:Computer litaracy.jpg",
+  "license": "CC0",
+  "author": "Benitta2025",
+  "url": "https://commons.wikimedia.org/wiki/File:Computer_litaracy.jpg"
+ },
+ {
+  "file": "word-school-bus.jpg",
+  "category": "School",
+  "title": "bus",
+  "source": "File:Bus touristes Louvre Paris.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Bus_touristes_Louvre_Paris.jpg"
+ },
+ {
+  "file": "word-school-bell.jpg",
+  "category": "School",
+  "title": "bell",
+  "source": "File:Liberty Bell - Civic Center Park, Denver - DSC01228.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Liberty_Bell_-_Civic_Center_Park,_Denver_-_DSC01228.jpg"
+ },
+ {
+  "file": "word-school-lunch.jpg",
+  "category": "School",
+  "title": "lunch",
+  "source": "File:Residencia Franciscana, Teresina, lunch.jpg",
+  "license": "CC0",
+  "author": "Gerda Arendt",
+  "url": "https://commons.wikimedia.org/wiki/File:Residencia_Franciscana,_Teresina,_lunch.jpg"
+ },
+ {
+  "file": "word-toys-and-games-teddy-bear.jpg",
+  "category": "Toys and Games",
+  "title": "teddy bear",
+  "source": "File:Teddy bear..blue.jpg",
+  "license": "CC0",
+  "author": "JAYASHREESATHIYAMOORTHY",
+  "url": "https://commons.wikimedia.org/wiki/File:Teddy_bear..blue.jpg"
+ },
+ {
+  "file": "word-toys-and-games-doll.jpg",
+  "category": "Toys and Games",
+  "title": "doll",
+  "source": "File:Kanyaputri Doll in Bihar.jpg",
+  "license": "CC0",
+  "author": "Creativeinds",
+  "url": "https://commons.wikimedia.org/wiki/File:Kanyaputri_Doll_in_Bihar.jpg"
+ },
+ {
+  "file": "word-toys-and-games-ball.jpg",
+  "category": "Toys and Games",
+  "title": "ball",
+  "source": "File:Foot ball image.jpg",
+  "license": "CC0",
+  "author": "Darakshanehaluddin",
+  "url": "https://commons.wikimedia.org/wiki/File:Foot_ball_image.jpg"
+ },
+ {
+  "file": "word-toys-and-games-blocks.jpg",
+  "category": "Toys and Games",
+  "title": "blocks",
+  "source": "File:Builing blocks design-1.jpg",
+  "license": "CC0",
+  "author": "SAHAYA RAJAN S",
+  "url": "https://commons.wikimedia.org/wiki/File:Builing_blocks_design-1.jpg"
+ },
+ {
+  "file": "word-toys-and-games-puzzle.jpg",
+  "category": "Toys and Games",
+  "title": "puzzle",
+  "source": "File:Pareidolia in a puzzle piece.jpg",
+  "license": "CC0",
+  "author": "Dentsinhere43",
+  "url": "https://commons.wikimedia.org/wiki/File:Pareidolia_in_a_puzzle_piece.jpg"
+ },
+ {
+  "file": "word-toys-and-games-kite.jpg",
+  "category": "Toys and Games",
+  "title": "kite",
+  "source": "File:Kite over North Georgia.jpg",
+  "license": "CC0",
+  "author": "Huntsmanleader",
+  "url": "https://commons.wikimedia.org/wiki/File:Kite_over_North_Georgia.jpg"
+ },
+ {
+  "file": "word-toys-and-games-balloon.jpg",
+  "category": "Toys and Games",
+  "title": "balloon",
+  "source": "File:Hot Air Balloon Glow.JPG",
+  "license": "CC0",
+  "author": "NoTalkMan",
+  "url": "https://commons.wikimedia.org/wiki/File:Hot_Air_Balloon_Glow.JPG"
+ },
+ {
+  "file": "word-toys-and-games-robot.jpg",
+  "category": "Toys and Games",
+  "title": "robot",
+  "source": "File:Hello, Robot exhibition Vitra 2023 02.jpg",
+  "license": "CC0",
+  "author": "Gryffindor",
+  "url": "https://commons.wikimedia.org/wiki/File:Hello,_Robot_exhibition_Vitra_2023_02.jpg"
+ },
+ {
+  "file": "word-toys-and-games-dice.jpg",
+  "category": "Toys and Games",
+  "title": "dice",
+  "source": "File:Dice-one-snake-eyes-double-roll.jpg",
+  "license": "CC0",
+  "author": "Winter_Orion",
+  "url": "https://commons.wikimedia.org/wiki/File:Dice-one-snake-eyes-double-roll.jpg"
+ },
+ {
+  "file": "word-toys-and-games-chess.jpg",
+  "category": "Toys and Games",
+  "title": "chess",
+  "source": "File:Chess game Staunton No. 6 perfil view 8.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Chess_game_Staunton_No._6_perfil_view_8.jpg"
+ },
+ {
+  "file": "word-toys-and-games-toy-car.jpg",
+  "category": "Toys and Games",
+  "title": "toy car",
+  "source": "File:Yellow toy car.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Yellow_toy_car.jpg"
+ },
+ {
+  "file": "word-toys-and-games-jump-rope.jpg",
+  "category": "Toys and Games",
+  "title": "jump rope",
+  "source": "File:Child about to jump rope (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Caleb Woods caleb_woods",
+  "url": "https://commons.wikimedia.org/wiki/File:Child_about_to_jump_rope_(Unsplash).jpg"
+ },
+ {
+  "file": "word-toys-and-games-bubbles.jpg",
+  "category": "Toys and Games",
+  "title": "bubbles",
+  "source": "File:Frutiger Aero Bubbles And Grass.jpg",
+  "license": "CC0",
+  "author": "ThePixelman on Pixabay",
+  "url": "https://commons.wikimedia.org/wiki/File:Frutiger_Aero_Bubbles_And_Grass.jpg"
+ },
+ {
+  "file": "word-toys-and-games-slide.jpg",
+  "category": "Toys and Games",
+  "title": "slide",
+  "source": "File:Red slide, Charlton Elementary School playground.jpg",
+  "license": "CC0",
+  "author": "Peter Cooper Jr.",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_slide,_Charlton_Elementary_School_playground.jpg"
+ },
+ {
+  "file": "word-toys-and-games-swing.jpg",
+  "category": "Toys and Games",
+  "title": "swing",
+  "source": "File:Swing set at Sunset Park.jpg",
+  "license": "CC0",
+  "author": "Anne Mundy",
+  "url": "https://commons.wikimedia.org/wiki/File:Swing_set_at_Sunset_Park.jpg"
+ },
+ {
+  "file": "word-toys-and-games-sandbox.jpg",
+  "category": "Toys and Games",
+  "title": "sandbox",
+  "source": "File:Sandbox with toys on Röe gård 1.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Sandbox_with_toys_on_R%C3%B6e_g%C3%A5rd_1.jpg"
+ },
+ {
+  "file": "word-toys-and-games-crayons.jpg",
+  "category": "Toys and Games",
+  "title": "crayons",
+  "source": "File:Crayons beside child coloring (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Aaron Burden aaronburden",
+  "url": "https://commons.wikimedia.org/wiki/File:Crayons_beside_child_coloring_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sports-soccer.jpg",
+  "category": "Sports",
+  "title": "soccer",
+  "source": "File:Boy Kicking Soccer Ball at Adirondack Camp in NY.jpg",
+  "license": "CC0",
+  "author": "ADKPhoto",
+  "url": "https://commons.wikimedia.org/wiki/File:Boy_Kicking_Soccer_Ball_at_Adirondack_Camp_in_NY.jpg"
+ },
+ {
+  "file": "word-sports-basketball.jpg",
+  "category": "Sports",
+  "title": "basketball",
+  "source": "File:Freestanding basketball net (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Andy Hu humadethis",
+  "url": "https://commons.wikimedia.org/wiki/File:Freestanding_basketball_net_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sports-baseball.jpg",
+  "category": "Sports",
+  "title": "baseball",
+  "source": "File:070403-N-7981E-090 (24026792357).jpg",
+  "license": "Public domain",
+  "author": "National Museum of the U.S. Navy",
+  "url": "https://commons.wikimedia.org/wiki/File:070403-N-7981E-090_(24026792357).jpg"
+ },
+ {
+  "file": "word-sports-football.jpg",
+  "category": "Sports",
+  "title": "football",
+  "source": "File:Whitmire vs Mid-Carolina High School Football Game Sept. 4, 2026.jpg",
+  "license": "CC0",
+  "author": "Thomas Kirchel",
+  "url": "https://commons.wikimedia.org/wiki/File:Whitmire_vs_Mid-Carolina_High_School_Football_Game_Sept._4,_2026.jpg"
+ },
+ {
+  "file": "word-sports-tennis.jpg",
+  "category": "Sports",
+  "title": "tennis",
+  "source": "File:A type of tennis ball.jpg",
+  "license": "CC0",
+  "author": "Bertoka",
+  "url": "https://commons.wikimedia.org/wiki/File:A_type_of_tennis_ball.jpg"
+ },
+ {
+  "file": "word-sports-volleyball.jpg",
+  "category": "Sports",
+  "title": "volleyball",
+  "source": "File:2017 Nuevo Laredo volleyball player for Irish Institute.jpg",
+  "license": "CC0",
+  "author": "Miguel Angel Omaña Rojas",
+  "url": "https://commons.wikimedia.org/wiki/File:2017_Nuevo_Laredo_volleyball_player_for_Irish_Institute.jpg"
+ },
+ {
+  "file": "word-sports-golf.jpg",
+  "category": "Sports",
+  "title": "golf",
+  "source": "File:Indoor golf in Japan 3.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Indoor_golf_in_Japan_3.jpg"
+ },
+ {
+  "file": "word-sports-bowling.jpg",
+  "category": "Sports",
+  "title": "bowling",
+  "source": "File:Bowling with red ball.jpg",
+  "license": "CC0",
+  "author": "Unknown (publicdomainarchive.com)",
+  "url": "https://commons.wikimedia.org/wiki/File:Bowling_with_red_ball.jpg"
+ },
+ {
+  "file": "word-sports-hockey.jpg",
+  "category": "Sports",
+  "title": "hockey",
+  "source": "File:Partido de hockey hierba en San Vicente del Raspeig 1.jpg",
+  "license": "CC0",
+  "author": "Laborinquen",
+  "url": "https://commons.wikimedia.org/wiki/File:Partido_de_hockey_hierba_en_San_Vicente_del_Raspeig_1.jpg"
+ },
+ {
+  "file": "word-sports-ping-pong.jpg",
+  "category": "Sports",
+  "title": "ping pong",
+  "source": "File:Outdoor ping pong table.jpg",
+  "license": "CC0",
+  "author": "Bezprezdivky",
+  "url": "https://commons.wikimedia.org/wiki/File:Outdoor_ping_pong_table.jpg"
+ },
+ {
+  "file": "word-sports-badminton.jpg",
+  "category": "Sports",
+  "title": "badminton",
+  "source": "File:Badminton-1428046.jpg",
+  "license": "CC0",
+  "author": "annca",
+  "url": "https://commons.wikimedia.org/wiki/File:Badminton-1428046.jpg"
+ },
+ {
+  "file": "word-sports-skiing.jpg",
+  "category": "Sports",
+  "title": "skiing",
+  "source": "File:Branäs skiing (3403036968).jpg",
+  "license": "CC0",
+  "author": "svensmail from Stockholm, Sweden",
+  "url": "https://commons.wikimedia.org/wiki/File:Bran%C3%A4s_skiing_(3403036968).jpg"
+ },
+ {
+  "file": "word-sports-skating.jpg",
+  "category": "Sports",
+  "title": "skating",
+  "source": "File:Christmas skating at Olympic Plaza.jpg",
+  "license": "CC0",
+  "author": "Alberta Authentic",
+  "url": "https://commons.wikimedia.org/wiki/File:Christmas_skating_at_Olympic_Plaza.jpg"
+ },
+ {
+  "file": "word-sports-swimming.jpg",
+  "category": "Sports",
+  "title": "swimming",
+  "source": "File:Two French bulldogs swimming in life jackets.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Two_French_bulldogs_swimming_in_life_jackets.jpg"
+ },
+ {
+  "file": "word-sports-running.jpg",
+  "category": "Sports",
+  "title": "running",
+  "source": "File:Moscow, 2025-07-13 running event 08.jpg",
+  "license": "CC0",
+  "author": "Retired electrician",
+  "url": "https://commons.wikimedia.org/wiki/File:Moscow,_2025-07-13_running_event_08.jpg"
+ },
+ {
+  "file": "word-sports-biking.jpg",
+  "category": "Sports",
+  "title": "biking",
+  "source": "File:Man biking on Recife city.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Man_biking_on_Recife_city.jpg"
+ },
+ {
+  "file": "word-sports-surfing.jpg",
+  "category": "Sports",
+  "title": "surfing",
+  "source": "File:Surfing trickster (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Mohamed Nohassi coopery",
+  "url": "https://commons.wikimedia.org/wiki/File:Surfing_trickster_(Unsplash).jpg"
+ },
+ {
+  "file": "word-sports-karate.jpg",
+  "category": "Sports",
+  "title": "karate",
+  "source": "File:Karate International tournament.jpg",
+  "license": "CC0",
+  "author": "Miguel Angel Omaña Rojas",
+  "url": "https://commons.wikimedia.org/wiki/File:Karate_International_tournament.jpg"
+ },
+ {
+  "file": "word-sports-gymnastics.jpg",
+  "category": "Sports",
+  "title": "gymnastics",
+  "source": "File:Rhythmic gymnastics apparatus 1.jpg",
+  "license": "CC0",
+  "author": "Гимнасто4ка",
+  "url": "https://commons.wikimedia.org/wiki/File:Rhythmic_gymnastics_apparatus_1.jpg"
+ },
+ {
+  "file": "word-sports-medal.jpg",
+  "category": "Sports",
+  "title": "medal",
+  "source": "File:Medal awers.jpg",
+  "license": "CC0",
+  "author": "Ledowiczka",
+  "url": "https://commons.wikimedia.org/wiki/File:Medal_awers.jpg"
+ },
+ {
+  "file": "word-sports-trophy.jpg",
+  "category": "Sports",
+  "title": "trophy",
+  "source": "File:VEX Robotics Level Up 2nd Place School 2023 trophy.jpg",
+  "license": "CC0",
+  "author": "Some helpful person",
+  "url": "https://commons.wikimedia.org/wiki/File:VEX_Robotics_Level_Up_2nd_Place_School_2023_trophy.jpg"
+ },
+ {
+  "file": "word-sports-goal.jpg",
+  "category": "Sports",
+  "title": "goal",
+  "source": "File:Fence and soccer goal in the north field in Brastad 2.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Fence_and_soccer_goal_in_the_north_field_in_Brastad_2.jpg"
+ },
+ {
+  "file": "word-sports-whistle.jpg",
+  "category": "Sports",
+  "title": "whistle",
+  "source": "File:Whistle-5855 - Hans Braxmeier.jpg",
+  "license": "CC0",
+  "author": "Hans Braxmeier",
+  "url": "https://commons.wikimedia.org/wiki/File:Whistle-5855_-_Hans_Braxmeier.jpg"
+ },
+ {
+  "file": "word-music-music.jpg",
+  "category": "Music",
+  "title": "music",
+  "source": "File:\"A Girl Like You\" sheet music - DPLA - 86135367b4ae6eb9578249b288c3c31d (page 4).jpg",
+  "license": "Public domain",
+  "author": "Unknown",
+  "url": "https://commons.wikimedia.org/wiki/File:%22A_Girl_Like_You%22_sheet_music_-_DPLA_-_86135367b4ae6eb9578249b288c3c31d_(page_4).jpg"
+ },
+ {
+  "file": "word-music-piano.jpg",
+  "category": "Music",
+  "title": "piano",
+  "source": "File:Hupfeld piano played (2018-10-04 @pxhere 1546039).jpg",
+  "license": "CC0",
+  "author": "Unknown authorUnknown author",
+  "url": "https://commons.wikimedia.org/wiki/File:Hupfeld_piano_played_(2018-10-04_@pxhere_1546039).jpg"
+ },
+ {
+  "file": "word-music-guitar.jpg",
+  "category": "Music",
+  "title": "guitar",
+  "source": "File:Ovation guitar detail.JPG",
+  "license": "CC0",
+  "author": "Mavila2",
+  "url": "https://commons.wikimedia.org/wiki/File:Ovation_guitar_detail.JPG"
+ },
+ {
+  "file": "word-music-drum.jpg",
+  "category": "Music",
+  "title": "drum",
+  "source": "File:Electronic drum kit.jpg",
+  "license": "CC0",
+  "author": "Pxhere.com",
+  "url": "https://commons.wikimedia.org/wiki/File:Electronic_drum_kit.jpg"
+ },
+ {
+  "file": "word-music-violin.jpg",
+  "category": "Music",
+  "title": "violin",
+  "source": "File:Dusty violin (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Dan Gold danielcgold",
+  "url": "https://commons.wikimedia.org/wiki/File:Dusty_violin_(Unsplash).jpg"
+ },
+ {
+  "file": "word-music-trumpet.jpg",
+  "category": "Music",
+  "title": "trumpet",
+  "source": "File:Holton Trumpet Model 48.jpg",
+  "license": "CC0",
+  "author": "Jimmy0871",
+  "url": "https://commons.wikimedia.org/wiki/File:Holton_Trumpet_Model_48.jpg"
+ },
+ {
+  "file": "word-music-saxophone.jpg",
+  "category": "Music",
+  "title": "saxophone",
+  "source": "File:Saxofon v Expediční klubovně.jpg",
+  "license": "CC0",
+  "author": "Ladabohac",
+  "url": "https://commons.wikimedia.org/wiki/File:Saxofon_v_Expedi%C4%8Dn%C3%AD_klubovn%C4%9B.jpg"
+ },
+ {
+  "file": "word-music-flute.jpg",
+  "category": "Music",
+  "title": "flute",
+  "source": "File:Antique flute pieces, from the William S. Haynes Company.jpg",
+  "license": "CC0",
+  "author": "Eden Aviv",
+  "url": "https://commons.wikimedia.org/wiki/File:Antique_flute_pieces,_from_the_William_S._Haynes_Company.jpg"
+ },
+ {
+  "file": "word-music-banjo.jpg",
+  "category": "Music",
+  "title": "banjo",
+  "source": "File:Ozark banjo ukulele.jpg",
+  "license": "CC0",
+  "author": "AlphaZeta",
+  "url": "https://commons.wikimedia.org/wiki/File:Ozark_banjo_ukulele.jpg"
+ },
+ {
+  "file": "word-music-accordion.jpg",
+  "category": "Music",
+  "title": "accordion",
+  "source": "File:Hero toy accordion.jpg",
+  "license": "CC0",
+  "author": "Petey21",
+  "url": "https://commons.wikimedia.org/wiki/File:Hero_toy_accordion.jpg"
+ },
+ {
+  "file": "word-music-microphone.jpg",
+  "category": "Music",
+  "title": "microphone",
+  "source": "File:Blue condenser microphone (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Kelly Sikkema kelsikkema",
+  "url": "https://commons.wikimedia.org/wiki/File:Blue_condenser_microphone_(Unsplash).jpg"
+ },
+ {
+  "file": "word-music-headphones.jpg",
+  "category": "Music",
+  "title": "headphones",
+  "source": "File:Headphones on a loudspeaker (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Alphacolor 13 duck58cth",
+  "url": "https://commons.wikimedia.org/wiki/File:Headphones_on_a_loudspeaker_(Unsplash).jpg"
+ },
+ {
+  "file": "word-music-radio.jpg",
+  "category": "Music",
+  "title": "radio",
+  "source": "File:G.E.C. AM radio with bass & treble, encased in wood.jpg",
+  "license": "CC0",
+  "author": "Amitbalani",
+  "url": "https://commons.wikimedia.org/wiki/File:G.E.C._AM_radio_with_bass_%26_treble,_encased_in_wood.jpg"
+ },
+ {
+  "file": "word-music-bell.jpg",
+  "category": "Music",
+  "title": "bell",
+  "source": "File:Liberty Bell - Civic Center Park, Denver - DSC01228.jpg",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Liberty_Bell_-_Civic_Center_Park,_Denver_-_DSC01228.jpg"
+ },
+ {
+  "file": "word-music-dance.jpg",
+  "category": "Music",
+  "title": "dance",
+  "source": "File:2008, community dance performance in Paris 4.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:2008,_community_dance_performance_in_Paris_4.jpg"
+ },
+ {
+  "file": "word-music-band.jpg",
+  "category": "Music",
+  "title": "band",
+  "source": "File:Band playing for the day Jesus of Mercy 03.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Band_playing_for_the_day_Jesus_of_Mercy_03.jpg"
+ },
+ {
+  "file": "word-music-concert.jpg",
+  "category": "Music",
+  "title": "concert",
+  "source": "File:Concert inter-ENIS le 6 mai 2004 à Trémaïdic.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Concert_inter-ENIS_le_6_mai_2004_%C3%A0_Tr%C3%A9ma%C3%AFdic.jpg"
+ },
+ {
+  "file": "word-going-places-car.jpg",
+  "category": "Going Places",
+  "title": "car",
+  "source": "File:Avenue Roosevelt à Bruxelles, Zen Car en recharge.jpg",
+  "license": "CC0",
+  "author": "Benoît Prieur",
+  "url": "https://commons.wikimedia.org/wiki/File:Avenue_Roosevelt_%C3%A0_Bruxelles,_Zen_Car_en_recharge.jpg"
+ },
+ {
+  "file": "word-going-places-bus.jpg",
+  "category": "Going Places",
+  "title": "bus",
+  "source": "File:Bus touristes Louvre Paris.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Bus_touristes_Louvre_Paris.jpg"
+ },
+ {
+  "file": "word-going-places-train.jpg",
+  "category": "Going Places",
+  "title": "train",
+  "source": "File:A train at East Croydon.jpg",
+  "license": "CC0",
+  "author": "Robert-brook",
+  "url": "https://commons.wikimedia.org/wiki/File:A_train_at_East_Croydon.jpg"
+ },
+ {
+  "file": "word-going-places-plane.jpg",
+  "category": "Going Places",
+  "title": "plane",
+  "source": "File:ANA plane just arrived at Narita airport during COVID-19 pandemic 2.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:ANA_plane_just_arrived_at_Narita_airport_during_COVID-19_pandemic_2.jpg"
+ },
+ {
+  "file": "word-going-places-boat.jpg",
+  "category": "Going Places",
+  "title": "boat",
+  "source": "File:Fishing boats, morning, Beach, Rincon de la Victoria, Andalusia, Spain.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Fishing_boats,_morning,_Beach,_Rincon_de_la_Victoria,_Andalusia,_Spain.jpg"
+ },
+ {
+  "file": "word-going-places-ship.jpg",
+  "category": "Going Places",
+  "title": "ship",
+  "source": "File:Ship at the entrance of Tokyo port 7.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Ship_at_the_entrance_of_Tokyo_port_7.jpg"
+ },
+ {
+  "file": "word-going-places-bike.jpg",
+  "category": "Going Places",
+  "title": "bike",
+  "source": "File:Idyllic bike scene in intramuros.jpg",
+  "license": "CC0",
+  "author": "Red marquis (talk)",
+  "url": "https://commons.wikimedia.org/wiki/File:Idyllic_bike_scene_in_intramuros.jpg"
+ },
+ {
+  "file": "word-going-places-scooter.jpg",
+  "category": "Going Places",
+  "title": "scooter",
+  "source": "File:Bosozoku-style sissy bar on green scooter.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Bosozoku-style_sissy_bar_on_green_scooter.jpg"
+ },
+ {
+  "file": "word-going-places-truck.jpg",
+  "category": "Going Places",
+  "title": "truck",
+  "source": "File:20141025 Shockwave Truck Alliance Air Show 2014-3.jpg",
+  "license": "CC0",
+  "author": "Balon Greyjoy",
+  "url": "https://commons.wikimedia.org/wiki/File:20141025_Shockwave_Truck_Alliance_Air_Show_2014-3.jpg"
+ },
+ {
+  "file": "word-going-places-fire-truck.jpg",
+  "category": "Going Places",
+  "title": "fire truck",
+  "source": "File:KME fire truck in Ukraine.jpg",
+  "license": "CC0",
+  "author": "Novoklimov",
+  "url": "https://commons.wikimedia.org/wiki/File:KME_fire_truck_in_Ukraine.jpg"
+ },
+ {
+  "file": "word-going-places-ambulance.jpg",
+  "category": "Going Places",
+  "title": "ambulance",
+  "source": "File:Parked Ambulance.jpg",
+  "license": "CC0",
+  "author": "Beendy234",
+  "url": "https://commons.wikimedia.org/wiki/File:Parked_Ambulance.jpg"
+ },
+ {
+  "file": "word-going-places-police-car.jpg",
+  "category": "Going Places",
+  "title": "police car",
+  "source": "File:Alfa Romeo Police Car in Trapani.jpg",
+  "license": "CC0",
+  "author": "Julian Lupyan",
+  "url": "https://commons.wikimedia.org/wiki/File:Alfa_Romeo_Police_Car_in_Trapani.jpg"
+ },
+ {
+  "file": "word-going-places-taxi.jpg",
+  "category": "Going Places",
+  "title": "taxi",
+  "source": "File:Taxi en Mazatlán, 4 de mayo de 2023.jpg",
+  "license": "CC0",
+  "author": "El Nuevo Doge",
+  "url": "https://commons.wikimedia.org/wiki/File:Taxi_en_Mazatl%C3%A1n,_4_de_mayo_de_2023.jpg"
+ },
+ {
+  "file": "word-going-places-tractor.jpg",
+  "category": "Going Places",
+  "title": "tractor",
+  "source": "File:Farmall 560 tractor VA1.jpg",
+  "license": "CC0",
+  "author": "Acroterion",
+  "url": "https://commons.wikimedia.org/wiki/File:Farmall_560_tractor_VA1.jpg"
+ },
+ {
+  "file": "word-going-places-helicopter.jpg",
+  "category": "Going Places",
+  "title": "helicopter",
+  "source": "File:JA36MP 1号 police helicopter with photography equipment landing at Tokyo Heliport.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:JA36MP_1%E5%8F%B7_police_helicopter_with_photography_equipment_landing_at_Tokyo_Heliport.jpg"
+ },
+ {
+  "file": "word-going-places-rocket.jpg",
+  "category": "Going Places",
+  "title": "rocket",
+  "source": "File:SES-10 Launch - world's first reflight of an orbital class rocket (33361035200).jpg",
+  "license": "CC0",
+  "author": "SpaceX",
+  "url": "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg"
+ },
+ {
+  "file": "word-going-places-motorcycle.jpg",
+  "category": "Going Places",
+  "title": "motorcycle",
+  "source": "File:Moscow, Suzuki motorcycle September 2024 01.jpg",
+  "license": "CC0",
+  "author": "Retired electrician",
+  "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Suzuki_motorcycle_September_2024_01.jpg"
+ },
+ {
+  "file": "word-going-places-subway.jpg",
+  "category": "Going Places",
+  "title": "subway",
+  "source": "File:Prospect Park Subway Station during 2020 COVID Pandemic.jpg",
+  "license": "CC0",
+  "author": "Bonnachoven",
+  "url": "https://commons.wikimedia.org/wiki/File:Prospect_Park_Subway_Station_during_2020_COVID_Pandemic.jpg"
+ },
+ {
+  "file": "word-going-places-canoe.jpg",
+  "category": "Going Places",
+  "title": "canoe",
+  "source": "File:Canoe (125764667).jpeg",
+  "license": "CC0",
+  "author": "Michael Tighe",
+  "url": "https://commons.wikimedia.org/wiki/File:Canoe_(125764667).jpeg"
+ },
+ {
+  "file": "word-going-places-hot-air-balloon.jpg",
+  "category": "Going Places",
+  "title": "hot air balloon",
+  "source": "File:Hot Air Balloon Ride (Unsplash).jpg",
+  "license": "CC0",
+  "author": "ellehem ellehem",
+  "url": "https://commons.wikimedia.org/wiki/File:Hot_Air_Balloon_Ride_(Unsplash).jpg"
+ },
+ {
+  "file": "word-going-places-road.jpg",
+  "category": "Going Places",
+  "title": "road",
+  "source": "File:A dip in the road in Färlev.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:A_dip_in_the_road_in_F%C3%A4rlev.jpg"
+ },
+ {
+  "file": "word-going-places-traffic-light.jpg",
+  "category": "Going Places",
+  "title": "traffic light",
+  "source": "File:Traffic light red and yellow Drammen (3).jpg",
+  "license": "CC0",
+  "author": "Peulle",
+  "url": "https://commons.wikimedia.org/wiki/File:Traffic_light_red_and_yellow_Drammen_(3).jpg"
+ },
+ {
+  "file": "word-going-places-bridge.jpg",
+  "category": "Going Places",
+  "title": "bridge",
+  "source": "File:General Rafael Urdaneta Bridge view from the lake to Cabimas side.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:General_Rafael_Urdaneta_Bridge_view_from_the_lake_to_Cabimas_side.jpg"
+ },
+ {
+  "file": "word-going-places-map.jpg",
+  "category": "Going Places",
+  "title": "map",
+  "source": "File:South america tr.jpg",
+  "license": "Public domain",
+  "author": "Unknown authorUnknown author",
+  "url": "https://commons.wikimedia.org/wiki/File:South_america_tr.jpg"
+ },
+ {
+  "file": "word-weather-sun.jpg",
+  "category": "Weather",
+  "title": "sun",
+  "source": "File:Sun in H-alpha – Solar Activity from Prishtina Observatory.jpg",
+  "license": "CC0",
+  "author": "Astroclubkosova",
+  "url": "https://commons.wikimedia.org/wiki/File:Sun_in_H-alpha_%E2%80%93_Solar_Activity_from_Prishtina_Observatory.jpg"
+ },
+ {
+  "file": "word-weather-cloud.jpg",
+  "category": "Weather",
+  "title": "cloud",
+  "source": "File:Cloud (83099).jpg",
+  "license": "CC0",
+  "author": "Eloquenttheory",
+  "url": "https://commons.wikimedia.org/wiki/File:Cloud_(83099).jpg"
+ },
+ {
+  "file": "word-weather-rain.jpg",
+  "category": "Weather",
+  "title": "rain",
+  "source": "File:Rain over Holma marina.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Rain_over_Holma_marina.jpg"
+ },
+ {
+  "file": "word-weather-snow.jpg",
+  "category": "Weather",
+  "title": "snow",
+  "source": "File:Dog in snow jacket.jpg",
+  "license": "CC0",
+  "author": "Magda K from Opole, Poland",
+  "url": "https://commons.wikimedia.org/wiki/File:Dog_in_snow_jacket.jpg"
+ },
+ {
+  "file": "word-weather-wind.jpg",
+  "category": "Weather",
+  "title": "wind",
+  "source": "File:Vierwies wind farm, seen from a hot air balloon, Zele, 2026.jpg",
+  "license": "CC0",
+  "author": "DimiTalen",
+  "url": "https://commons.wikimedia.org/wiki/File:Vierwies_wind_farm,_seen_from_a_hot_air_balloon,_Zele,_2026.jpg"
+ },
+ {
+  "file": "word-weather-storm.jpg",
+  "category": "Weather",
+  "title": "storm",
+  "source": "File:Storm Ciaran, Eastbourne.jpg",
+  "license": "CC0",
+  "author": "Poliphilo",
+  "url": "https://commons.wikimedia.org/wiki/File:Storm_Ciaran,_Eastbourne.jpg"
+ },
+ {
+  "file": "word-weather-lightning.jpg",
+  "category": "Weather",
+  "title": "lightning",
+  "source": "File:Lightning In Sky.jpg",
+  "license": "CC0",
+  "author": "Felix Mittermeier",
+  "url": "https://commons.wikimedia.org/wiki/File:Lightning_In_Sky.jpg"
+ },
+ {
+  "file": "word-weather-rainbow.jpg",
+  "category": "Weather",
+  "title": "rainbow",
+  "source": "File:Rainbow 🌈🌞.jpg",
+  "license": "CC0",
+  "author": "Pavithra thangavel",
+  "url": "https://commons.wikimedia.org/wiki/File:Rainbow_%F0%9F%8C%88%F0%9F%8C%9E.jpg"
+ },
+ {
+  "file": "word-weather-fog.jpg",
+  "category": "Weather",
+  "title": "fog",
+  "source": "File:Jetty in fog at Holländaröd 1.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Jetty_in_fog_at_Holl%C3%A4ndar%C3%B6d_1.jpg"
+ },
+ {
+  "file": "word-weather-tornado.jpg",
+  "category": "Weather",
+  "title": "tornado",
+  "source": "File:Trunk tornado in Colorado.jpg",
+  "license": "CC0",
+  "author": "BusyWikipedian",
+  "url": "https://commons.wikimedia.org/wiki/File:Trunk_tornado_in_Colorado.jpg"
+ },
+ {
+  "file": "word-weather-umbrella.jpg",
+  "category": "Weather",
+  "title": "umbrella",
+  "source": "File:Big Wagasa Umbrella at Furukawabashi.jpg",
+  "license": "CC0",
+  "author": "Mr.ちゅらさん",
+  "url": "https://commons.wikimedia.org/wiki/File:Big_Wagasa_Umbrella_at_Furukawabashi.jpg"
+ },
+ {
+  "file": "word-weather-snowman.jpg",
+  "category": "Weather",
+  "title": "snowman",
+  "source": "File:Frozen Snowman.jpg",
+  "license": "CC0",
+  "author": "Northern-Virginia-Photographer",
+  "url": "https://commons.wikimedia.org/wiki/File:Frozen_Snowman.jpg"
+ },
+ {
+  "file": "word-weather-cold.jpg",
+  "category": "Weather",
+  "title": "cold",
+  "source": "File:The Cold Seat - Flickr - Mustang Joe.jpg",
+  "license": "CC0",
+  "author": "Joe deSousa",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Cold_Seat_-_Flickr_-_Mustang_Joe.jpg"
+ },
+ {
+  "file": "word-weather-sunny.jpg",
+  "category": "Weather",
+  "title": "sunny",
+  "source": "File:The Sunny Beach.jpg",
+  "license": "CC0",
+  "author": "Ivano Giambattista",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Sunny_Beach.jpg"
+ },
+ {
+  "file": "word-weather-cloudy.jpg",
+  "category": "Weather",
+  "title": "cloudy",
+  "source": "File:Cloudy after noon.jpg",
+  "license": "CC0",
+  "author": "Rammya kannan",
+  "url": "https://commons.wikimedia.org/wiki/File:Cloudy_after_noon.jpg"
+ },
+ {
+  "file": "word-weather-rainy.jpg",
+  "category": "Weather",
+  "title": "rainy",
+  "source": "File:The street of Tashkent. It was a rainy day.jpg",
+  "license": "CC0",
+  "author": "Thexolidashka",
+  "url": "https://commons.wikimedia.org/wiki/File:The_street_of_Tashkent._It_was_a_rainy_day.jpg"
+ },
+ {
+  "file": "word-weather-puddle.jpg",
+  "category": "Weather",
+  "title": "puddle",
+  "source": "File:Puddle in Loddebo.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Puddle_in_Loddebo.jpg"
+ },
+ {
+  "file": "word-weather-thermometer.jpg",
+  "category": "Weather",
+  "title": "thermometer",
+  "source": "File:Galileo-Thermometer HDR.jpg",
+  "license": "CC0",
+  "author": "5snake5",
+  "url": "https://commons.wikimedia.org/wiki/File:Galileo-Thermometer_HDR.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-spring.jpg",
+  "category": "Seasons and Time",
+  "title": "spring",
+  "source": "File:A water spring with vegetation from the order Montio-Cardaminetalia.jpg",
+  "license": "CC0",
+  "author": "Lendskaip",
+  "url": "https://commons.wikimedia.org/wiki/File:A_water_spring_with_vegetation_from_the_order_Montio-Cardaminetalia.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-summer.jpg",
+  "category": "Seasons and Time",
+  "title": "summer",
+  "source": "File:Île d'Orléans 009.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:%C3%8Ele_d%27Orl%C3%A9ans_009.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-fall.jpg",
+  "category": "Seasons and Time",
+  "title": "fall",
+  "source": "File:Leafy Fall Sunset.jpg",
+  "license": "CC0",
+  "author": "Mcmorrl",
+  "url": "https://commons.wikimedia.org/wiki/File:Leafy_Fall_Sunset.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-winter.jpg",
+  "category": "Seasons and Time",
+  "title": "winter",
+  "source": "File:Winter birch.jpg",
+  "license": "CC0",
+  "author": "5snake5",
+  "url": "https://commons.wikimedia.org/wiki/File:Winter_birch.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-night.jpg",
+  "category": "Seasons and Time",
+  "title": "night",
+  "source": "File:Price Building illuminated at night in Quebec City.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Price_Building_illuminated_at_night_in_Quebec_City.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-morning.jpg",
+  "category": "Seasons and Time",
+  "title": "morning",
+  "source": "File:Good Morning (155561977).jpeg",
+  "license": "CC0",
+  "author": "Daniel Probst",
+  "url": "https://commons.wikimedia.org/wiki/File:Good_Morning_(155561977).jpeg"
+ },
+ {
+  "file": "word-seasons-and-time-evening.jpg",
+  "category": "Seasons and Time",
+  "title": "evening",
+  "source": "File:The evening vibe.jpg",
+  "license": "CC0",
+  "author": "Omina006",
+  "url": "https://commons.wikimedia.org/wiki/File:The_evening_vibe.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-birthday.jpg",
+  "category": "Seasons and Time",
+  "title": "birthday",
+  "source": "File:Birthday party cake.jpg",
+  "license": "CC0",
+  "author": "Abinayasekar357",
+  "url": "https://commons.wikimedia.org/wiki/File:Birthday_party_cake.jpg"
+ },
+ {
+  "file": "word-seasons-and-time-clock.jpg",
+  "category": "Seasons and Time",
+  "title": "clock",
+  "source": "File:A clock in Tlokweng.jpg",
+  "license": "CC0",
+  "author": "Chandapiwa Malema",
+  "url": "https://commons.wikimedia.org/wiki/File:A_clock_in_Tlokweng.jpg"
+ },
+ {
+  "file": "word-nature-tree.jpg",
+  "category": "Nature",
+  "title": "tree",
+  "source": "File:Tree with red apples in Barkedal 4.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Tree_with_red_apples_in_Barkedal_4.jpg"
+ },
+ {
+  "file": "word-nature-pine-tree.jpg",
+  "category": "Nature",
+  "title": "pine tree",
+  "source": "File:Pine tree in Ani, Gyumri.jpg",
+  "license": "CC0",
+  "author": "Maximden",
+  "url": "https://commons.wikimedia.org/wiki/File:Pine_tree_in_Ani,_Gyumri.jpg"
+ },
+ {
+  "file": "word-nature-palm-tree.jpg",
+  "category": "Nature",
+  "title": "palm tree",
+  "source": "File:Palm Tree in Key West, Florida.jpg",
+  "license": "CC0",
+  "author": "Julian Lupyan",
+  "url": "https://commons.wikimedia.org/wiki/File:Palm_Tree_in_Key_West,_Florida.jpg"
+ },
+ {
+  "file": "word-nature-flower.jpg",
+  "category": "Nature",
+  "title": "flower",
+  "source": "File:Lotus flower (978659).jpg",
+  "license": "CC0",
+  "author": "Hong Zhang (jennyzhh2008)",
+  "url": "https://commons.wikimedia.org/wiki/File:Lotus_flower_(978659).jpg"
+ },
+ {
+  "file": "word-nature-rose.jpg",
+  "category": "Nature",
+  "title": "rose",
+  "source": "File:Pink Rose flower-.jpg",
+  "license": "CC0",
+  "author": "Boopathi Raja123",
+  "url": "https://commons.wikimedia.org/wiki/File:Pink_Rose_flower-.jpg"
+ },
+ {
+  "file": "word-nature-tulip.jpg",
+  "category": "Nature",
+  "title": "tulip",
+  "source": "File:Tulip-bouquet-vienna (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Gábor Juhász juhg",
+  "url": "https://commons.wikimedia.org/wiki/File:Tulip-bouquet-vienna_(Unsplash).jpg"
+ },
+ {
+  "file": "word-nature-sunflower.jpg",
+  "category": "Nature",
+  "title": "sunflower",
+  "source": "File:Sončnica - Sunflower - Helianthus annuus (1).JPG",
+  "license": "CC0",
+  "author": "Jonson22",
+  "url": "https://commons.wikimedia.org/wiki/File:Son%C4%8Dnica_-_Sunflower_-_Helianthus_annuus_(1).JPG"
+ },
+ {
+  "file": "word-nature-leaf.jpg",
+  "category": "Nature",
+  "title": "leaf",
+  "source": "File:Beautiful leaf.jpg",
+  "license": "CC0",
+  "author": "Darakshanehaluddin",
+  "url": "https://commons.wikimedia.org/wiki/File:Beautiful_leaf.jpg"
+ },
+ {
+  "file": "word-nature-grass.jpg",
+  "category": "Nature",
+  "title": "grass",
+  "source": "File:Sensitive Grass Plant.jpg",
+  "license": "CC0",
+  "author": "စာကလေး",
+  "url": "https://commons.wikimedia.org/wiki/File:Sensitive_Grass_Plant.jpg"
+ },
+ {
+  "file": "word-nature-mushroom.jpg",
+  "category": "Nature",
+  "title": "mushroom",
+  "source": "File:Mango Tree Mushroom 2.jpg",
+  "license": "CC0",
+  "author": "Bajinra",
+  "url": "https://commons.wikimedia.org/wiki/File:Mango_Tree_Mushroom_2.jpg"
+ },
+ {
+  "file": "word-nature-cactus.jpg",
+  "category": "Nature",
+  "title": "cactus",
+  "source": "File:Nopal Cactus with flower.jpg",
+  "license": "CC0",
+  "author": "Miguel Angel Omaña Rojas",
+  "url": "https://commons.wikimedia.org/wiki/File:Nopal_Cactus_with_flower.jpg"
+ },
+ {
+  "file": "word-nature-rock.jpg",
+  "category": "Nature",
+  "title": "rock",
+  "source": "File:Rock formations in JTNP.jpg",
+  "license": "CC0",
+  "author": "E bailey",
+  "url": "https://commons.wikimedia.org/wiki/File:Rock_formations_in_JTNP.jpg"
+ },
+ {
+  "file": "word-nature-mountain.jpg",
+  "category": "Nature",
+  "title": "mountain",
+  "source": "File:Wright Mountain, San Gabriel Mountain Range, California.jpg",
+  "license": "CC0",
+  "author": "Mojavellama",
+  "url": "https://commons.wikimedia.org/wiki/File:Wright_Mountain,_San_Gabriel_Mountain_Range,_California.jpg"
+ },
+ {
+  "file": "word-nature-river.jpg",
+  "category": "Nature",
+  "title": "river",
+  "source": "File:Kayaker on the Speed River in Riverside Park 1.jpg",
+  "license": "CC0",
+  "author": "Terry.grignon",
+  "url": "https://commons.wikimedia.org/wiki/File:Kayaker_on_the_Speed_River_in_Riverside_Park_1.jpg"
+ },
+ {
+  "file": "word-nature-lake.jpg",
+  "category": "Nature",
+  "title": "lake",
+  "source": "File:A boat on the Emre Lake in Afyonkarahisar, wide-view.jpg",
+  "license": "CC0",
+  "author": "Raicem",
+  "url": "https://commons.wikimedia.org/wiki/File:A_boat_on_the_Emre_Lake_in_Afyonkarahisar,_wide-view.jpg"
+ },
+ {
+  "file": "word-nature-ocean.jpg",
+  "category": "Nature",
+  "title": "ocean",
+  "source": "File:A view of the ocean with two large rocks sticking out of the water. Twelve apostles australia sea.jpg",
+  "license": "CC0",
+  "author": "Unknown authorUnknown author",
+  "url": "https://commons.wikimedia.org/wiki/File:A_view_of_the_ocean_with_two_large_rocks_sticking_out_of_the_water._Twelve_apostles_australia_sea.jpg"
+ },
+ {
+  "file": "word-nature-beach.jpg",
+  "category": "Nature",
+  "title": "beach",
+  "source": "File:Parasols, Evening, Beach, Rincon de la Victoria, Andalusia, Spain.jpg",
+  "license": "CC0",
+  "author": "Jebulon",
+  "url": "https://commons.wikimedia.org/wiki/File:Parasols,_Evening,_Beach,_Rincon_de_la_Victoria,_Andalusia,_Spain.jpg"
+ },
+ {
+  "file": "word-nature-island.jpg",
+  "category": "Nature",
+  "title": "island",
+  "source": "File:Uncatena Island, Massachusetts.jpg",
+  "license": "CC0",
+  "author": "Arwcheek",
+  "url": "https://commons.wikimedia.org/wiki/File:Uncatena_Island,_Massachusetts.jpg"
+ },
+ {
+  "file": "word-nature-desert.jpg",
+  "category": "Nature",
+  "title": "desert",
+  "source": "File:Landmannalaugar desert road.jpg",
+  "license": "CC0",
+  "author": "Syony",
+  "url": "https://commons.wikimedia.org/wiki/File:Landmannalaugar_desert_road.jpg"
+ },
+ {
+  "file": "word-nature-forest.jpg",
+  "category": "Nature",
+  "title": "forest",
+  "source": "File:Spruce forest at Holma.jpg",
+  "license": "CC0",
+  "author": "W.carter",
+  "url": "https://commons.wikimedia.org/wiki/File:Spruce_forest_at_Holma.jpg"
+ },
+ {
+  "file": "word-nature-cave.jpg",
+  "category": "Nature",
+  "title": "cave",
+  "source": "File:Cave in Ha Long 31.jpg",
+  "license": "CC0",
+  "author": "Syced",
+  "url": "https://commons.wikimedia.org/wiki/File:Cave_in_Ha_Long_31.jpg"
+ },
+ {
+  "file": "word-nature-waterfall.jpg",
+  "category": "Nature",
+  "title": "waterfall",
+  "source": "File:Peaceful waterfall (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Jeffrey  Workman jeffreyp",
+  "url": "https://commons.wikimedia.org/wiki/File:Peaceful_waterfall_(Unsplash).jpg"
+ },
+ {
+  "file": "word-nature-hill.jpg",
+  "category": "Nature",
+  "title": "hill",
+  "source": "File:Heslington Hill May25.jpg",
+  "license": "CC0",
+  "author": "Malcolmxl5",
+  "url": "https://commons.wikimedia.org/wiki/File:Heslington_Hill_May25.jpg"
+ },
+ {
+  "file": "word-nature-sand.jpg",
+  "category": "Nature",
+  "title": "sand",
+  "source": "File:Footprints in the sand at Dinosaur State Park, Texas.jpg",
+  "license": "CC0",
+  "author": "Hu Nhu",
+  "url": "https://commons.wikimedia.org/wiki/File:Footprints_in_the_sand_at_Dinosaur_State_Park,_Texas.jpg"
+ },
+ {
+  "file": "word-space-sun.jpg",
+  "category": "Space",
+  "title": "sun",
+  "source": "File:Sun in H-alpha – Solar Activity from Prishtina Observatory.jpg",
+  "license": "CC0",
+  "author": "Astroclubkosova",
+  "url": "https://commons.wikimedia.org/wiki/File:Sun_in_H-alpha_%E2%80%93_Solar_Activity_from_Prishtina_Observatory.jpg"
+ },
+ {
+  "file": "word-space-moon.jpg",
+  "category": "Space",
+  "title": "moon",
+  "source": "File:The Moon!.jpg",
+  "license": "CC0",
+  "author": "Jiafei Slay Queen",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Moon!.jpg"
+ },
+ {
+  "file": "word-space-full-moon.jpg",
+  "category": "Space",
+  "title": "full moon",
+  "source": "File:Full moon in Sagittarius.jpg",
+  "license": "CC0",
+  "author": "Joselodos",
+  "url": "https://commons.wikimedia.org/wiki/File:Full_moon_in_Sagittarius.jpg"
+ },
+ {
+  "file": "word-space-star.jpg",
+  "category": "Space",
+  "title": "star",
+  "source": "File:Ranching under the Stars (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Alex Bertha alexbertha",
+  "url": "https://commons.wikimedia.org/wiki/File:Ranching_under_the_Stars_(Unsplash).jpg"
+ },
+ {
+  "file": "word-space-earth.jpg",
+  "category": "Space",
+  "title": "Earth",
+  "source": "File:Earth Model.jpg",
+  "license": "CC0",
+  "author": "Saral Shots",
+  "url": "https://commons.wikimedia.org/wiki/File:Earth_Model.jpg"
+ },
+ {
+  "file": "word-space-comet.jpg",
+  "category": "Space",
+  "title": "comet",
+  "source": "File:Neowise Comet Wisconsin1.jpg",
+  "license": "CC0",
+  "author": "WI-Photos",
+  "url": "https://commons.wikimedia.org/wiki/File:Neowise_Comet_Wisconsin1.jpg"
+ },
+ {
+  "file": "word-space-rocket.jpg",
+  "category": "Space",
+  "title": "rocket",
+  "source": "File:SES-10 Launch - world's first reflight of an orbital class rocket (33361035200).jpg",
+  "license": "CC0",
+  "author": "SpaceX",
+  "url": "https://commons.wikimedia.org/wiki/File:SES-10_Launch_-_world%27s_first_reflight_of_an_orbital_class_rocket_(33361035200).jpg"
+ },
+ {
+  "file": "word-space-astronaut.jpg",
+  "category": "Space",
+  "title": "astronaut",
+  "source": "File:Astronaut-1849401.jpg",
+  "license": "CC0",
+  "author": "PIRO4D on Pixabay",
+  "url": "https://commons.wikimedia.org/wiki/File:Astronaut-1849401.jpg"
+ },
+ {
+  "file": "word-space-satellite.jpg",
+  "category": "Space",
+  "title": "satellite",
+  "source": "File:O3b mPower Satellite Model.jpg",
+  "license": "CC0",
+  "author": "Blervis",
+  "url": "https://commons.wikimedia.org/wiki/File:O3b_mPower_Satellite_Model.jpg"
+ },
+ {
+  "file": "word-space-telescope.jpg",
+  "category": "Space",
+  "title": "telescope",
+  "source": "File:Telescope and Venus. Amateur astronomers (Astrofili Frentani group) in Lanciano, Italy.jpg",
+  "license": "CC0",
+  "author": "Cats' photos",
+  "url": "https://commons.wikimedia.org/wiki/File:Telescope_and_Venus._Amateur_astronomers_(Astrofili_Frentani_group)_in_Lanciano,_Italy.jpg"
+ },
+ {
+  "file": "word-space-galaxy.jpg",
+  "category": "Space",
+  "title": "galaxy",
+  "source": "File:Andromeda galaxy 2023.jpg",
+  "license": "CC0",
+  "author": "Taavi Niittee",
+  "url": "https://commons.wikimedia.org/wiki/File:Andromeda_galaxy_2023.jpg"
+ },
+ {
+  "file": "word-space-sky.jpg",
+  "category": "Space",
+  "title": "sky",
+  "source": "File:Beautiful Sky image.jpg",
+  "license": "CC0",
+  "author": "Maina Tudu",
+  "url": "https://commons.wikimedia.org/wiki/File:Beautiful_Sky_image.jpg"
+ },
+ {
+  "file": "word-space-mars.jpg",
+  "category": "Space",
+  "title": "Mars",
+  "source": "File:Planet MARS.jpg",
+  "license": "Public domain",
+  "author": "NASA (National Aeronautics and Space Administration)",
+  "url": "https://commons.wikimedia.org/wiki/File:Planet_MARS.jpg"
+ },
+ {
+  "file": "word-space-saturn.jpg",
+  "category": "Space",
+  "title": "Saturn",
+  "source": "File:Saturn 2021 suuremalt.jpg",
+  "license": "CC0",
+  "author": "Taavi Niittee",
+  "url": "https://commons.wikimedia.org/wiki/File:Saturn_2021_suuremalt.jpg"
+ },
+ {
+  "file": "word-space-meteor.jpg",
+  "category": "Space",
+  "title": "meteor",
+  "source": "File:Sprites in stack of images from Global meteor network camera.jpg",
+  "license": "CC0",
+  "author": "Nikola",
+  "url": "https://commons.wikimedia.org/wiki/File:Sprites_in_stack_of_images_from_Global_meteor_network_camera.jpg"
+ },
+ {
+  "file": "word-jobs-firefighter.jpg",
+  "category": "Jobs",
+  "title": "firefighter",
+  "source": "File:Firefighter 2.jpg",
+  "license": "CC0",
+  "author": "Jm Verastigue",
+  "url": "https://commons.wikimedia.org/wiki/File:Firefighter_2.jpg"
+ },
+ {
+  "file": "word-jobs-astronaut.jpg",
+  "category": "Jobs",
+  "title": "astronaut",
+  "source": "File:Astronaut-1849401.jpg",
+  "license": "CC0",
+  "author": "PIRO4D on Pixabay",
+  "url": "https://commons.wikimedia.org/wiki/File:Astronaut-1849401.jpg"
+ },
+ {
+  "file": "word-jobs-builder.jpg",
+  "category": "Jobs",
+  "title": "builder",
+  "source": "File:Moscow, Builder ZL28 loader, Feb 2026 02.jpg",
+  "license": "CC0",
+  "author": "Retired electrician",
+  "url": "https://commons.wikimedia.org/wiki/File:Moscow,_Builder_ZL28_loader,_Feb_2026_02.jpg"
+ },
+ {
+  "file": "word-jobs-dentist.jpg",
+  "category": "Jobs",
+  "title": "dentist",
+  "source": "File:Dentist (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Daniel Frank fr3nks",
+  "url": "https://commons.wikimedia.org/wiki/File:Dentist_(Unsplash).jpg"
+ },
+ {
+  "file": "word-people-baby.jpg",
+  "category": "People",
+  "title": "baby",
+  "source": "File:Baby wearing hat and babygrow.jpg",
+  "license": "CC0",
+  "author": "Victoria Borodinova (Виктория Бородинова)\n\nhttps://pixabay.com/users/victoria_borodinova-6314823/",
+  "url": "https://commons.wikimedia.org/wiki/File:Baby_wearing_hat_and_babygrow.jpg"
+ },
+ {
+  "file": "word-feelings-excited.jpg",
+  "category": "Feelings",
+  "title": "excited",
+  "source": "File:Excited people green rollercoaster (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Aaron Burden aaronburden",
+  "url": "https://commons.wikimedia.org/wiki/File:Excited_people_green_rollercoaster_(Unsplash).jpg"
+ },
+ {
+  "file": "word-action-words-write.jpg",
+  "category": "Action Words",
+  "title": "write",
+  "source": "File:Person writing in cursive.jpg",
+  "license": "CC0",
+  "author": "Jiafei Slay Queen",
+  "url": "https://commons.wikimedia.org/wiki/File:Person_writing_in_cursive.jpg"
+ },
+ {
+  "file": "word-action-words-paint.jpg",
+  "category": "Action Words",
+  "title": "paint",
+  "source": "File:Paint bucket and brush.jpg",
+  "license": "CC0",
+  "author": "Ionenlaser",
+  "url": "https://commons.wikimedia.org/wiki/File:Paint_bucket_and_brush.jpg"
+ },
+ {
+  "file": "word-action-words-sleep.jpg",
+  "category": "Action Words",
+  "title": "sleep",
+  "source": "File:Newborn baby sleeps in a basket.jpg",
+  "license": "CC0",
+  "author": "Elizabeth",
+  "url": "https://commons.wikimedia.org/wiki/File:Newborn_baby_sleeps_in_a_basket.jpg"
+ },
+ {
+  "file": "word-opposites-cold.jpg",
+  "category": "Opposites",
+  "title": "cold",
+  "source": "File:The Cold Seat - Flickr - Mustang Joe.jpg",
+  "license": "CC0",
+  "author": "Joe deSousa",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Cold_Seat_-_Flickr_-_Mustang_Joe.jpg"
+ },
+ {
+  "file": "word-opposites-slow.jpg",
+  "category": "Opposites",
+  "title": "slow",
+  "source": "File:Slow Snap (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Nick Abrams nbabrams",
+  "url": "https://commons.wikimedia.org/wiki/File:Slow_Snap_(Unsplash).jpg"
+ },
+ {
+  "file": "word-opposites-night.jpg",
+  "category": "Opposites",
+  "title": "night",
+  "source": "File:Chateau Frontenac illuminated at night in Quebec City.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Chateau_Frontenac_illuminated_at_night_in_Quebec_City.jpg"
+ },
+ {
+  "file": "word-opposites-full.jpg",
+  "category": "Opposites",
+  "title": "full",
+  "source": "File:Full moon. 010226.jpg",
+  "license": "CC0",
+  "author": "Tumeiyo1",
+  "url": "https://commons.wikimedia.org/wiki/File:Full_moon._010226.jpg"
+ },
+ {
+  "file": "word-opposites-empty.jpg",
+  "category": "Opposites",
+  "title": "empty",
+  "source": "File:Empty class room.jpg",
+  "license": "CC0",
+  "author": "Saral Shots",
+  "url": "https://commons.wikimedia.org/wiki/File:Empty_class_room.jpg"
+ },
+ {
+  "file": "word-around-town-park.jpg",
+  "category": "Around Town",
+  "title": "park",
+  "source": "File:Titus Railroad Park in Kent, Washington - 1.jpg",
+  "license": "CC0",
+  "author": "Roc0ast3r",
+  "url": "https://commons.wikimedia.org/wiki/File:Titus_Railroad_Park_in_Kent,_Washington_-_1.jpg"
+ },
+ {
+  "file": "word-around-town-school.jpg",
+  "category": "Around Town",
+  "title": "school",
+  "source": "File:Yangju Elementary School 2.jpg",
+  "license": "CC0",
+  "author": "Nt",
+  "url": "https://commons.wikimedia.org/wiki/File:Yangju_Elementary_School_2.jpg"
+ },
+ {
+  "file": "word-around-town-hospital.jpg",
+  "category": "Around Town",
+  "title": "hospital",
+  "source": "File:Mugda Medical College Hospital Building.jpg",
+  "license": "CC0",
+  "author": "MdAbeerHussain",
+  "url": "https://commons.wikimedia.org/wiki/File:Mugda_Medical_College_Hospital_Building.jpg"
+ },
+ {
+  "file": "word-around-town-library.jpg",
+  "category": "Around Town",
+  "title": "library",
+  "source": "File:Library bookshelf.jpg",
+  "license": "CC0",
+  "author": "Mshuang2",
+  "url": "https://commons.wikimedia.org/wiki/File:Library_bookshelf.jpg"
+ },
+ {
+  "file": "word-around-town-store.jpg",
+  "category": "Around Town",
+  "title": "store",
+  "source": "File:Farmers Dunedin department store, 19 May 2026.jpg",
+  "license": "CC0",
+  "author": "Andykatib",
+  "url": "https://commons.wikimedia.org/wiki/File:Farmers_Dunedin_department_store,_19_May_2026.jpg"
+ },
+ {
+  "file": "word-around-town-bakery.jpg",
+  "category": "Around Town",
+  "title": "bakery",
+  "source": "File:Bakery food display area.jpg",
+  "license": "CC0",
+  "author": "Kurt Kaiser",
+  "url": "https://commons.wikimedia.org/wiki/File:Bakery_food_display_area.jpg"
+ },
+ {
+  "file": "word-around-town-post-office.jpg",
+  "category": "Around Town",
+  "title": "post office",
+  "source": "File:Micklegate Post Office York Jun26.jpg",
+  "license": "CC0",
+  "author": "Malcolmxl5",
+  "url": "https://commons.wikimedia.org/wiki/File:Micklegate_Post_Office_York_Jun26.jpg"
+ },
+ {
+  "file": "word-around-town-fire-station.jpg",
+  "category": "Around Town",
+  "title": "fire station",
+  "source": "File:Inverness Fire Station 2 in Downtown Inverness, Florida.jpg",
+  "license": "CC0",
+  "author": "The Eloquent Peasant",
+  "url": "https://commons.wikimedia.org/wiki/File:Inverness_Fire_Station_2_in_Downtown_Inverness,_Florida.jpg"
+ },
+ {
+  "file": "word-around-town-police-station.jpg",
+  "category": "Around Town",
+  "title": "police station",
+  "source": "File:Staines Police Station, Kingston Road.jpg",
+  "license": "CC0",
+  "author": "Mertbiol",
+  "url": "https://commons.wikimedia.org/wiki/File:Staines_Police_Station,_Kingston_Road.jpg"
+ },
+ {
+  "file": "word-around-town-zoo.jpg",
+  "category": "Around Town",
+  "title": "zoo",
+  "source": "File:Giraffes - Copenhagen Zoo - DSC09012.JPG",
+  "license": "CC0",
+  "author": "Daderot",
+  "url": "https://commons.wikimedia.org/wiki/File:Giraffes_-_Copenhagen_Zoo_-_DSC09012.JPG"
+ },
+ {
+  "file": "word-around-town-museum.jpg",
+  "category": "Around Town",
+  "title": "museum",
+  "source": "File:Sonoma County Museum, Sept 6 2025.jpg",
+  "license": "CC0",
+  "author": "E bailey",
+  "url": "https://commons.wikimedia.org/wiki/File:Sonoma_County_Museum,_Sept_6_2025.jpg"
+ },
+ {
+  "file": "word-around-town-playground.jpg",
+  "category": "Around Town",
+  "title": "playground",
+  "source": "File:Playground at William Henry Harrison Park.jpg",
+  "license": "CC0",
+  "author": "SnugPancake",
+  "url": "https://commons.wikimedia.org/wiki/File:Playground_at_William_Henry_Harrison_Park.jpg"
+ },
+ {
+  "file": "word-around-town-pool.jpg",
+  "category": "Around Town",
+  "title": "pool",
+  "source": "File:Red water swimming pool (Unsplash).jpg",
+  "license": "CC0",
+  "author": "Caroline Bertolini caroline_bertolini",
+  "url": "https://commons.wikimedia.org/wiki/File:Red_water_swimming_pool_(Unsplash).jpg"
+ },
+ {
+  "file": "word-around-town-restaurant.jpg",
+  "category": "Around Town",
+  "title": "restaurant",
+  "source": "File:Restaurant in Place D'Youville, Quebec City.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Restaurant_in_Place_D%27Youville,_Quebec_City.jpg"
+ },
+ {
+  "file": "word-around-town-farm.jpg",
+  "category": "Around Town",
+  "title": "farm",
+  "source": "File:Amish farm, Holmes County Ohio.jpg",
+  "license": "CC0",
+  "author": "Valereee",
+  "url": "https://commons.wikimedia.org/wiki/File:Amish_farm,_Holmes_County_Ohio.jpg"
+ },
+ {
+  "file": "word-around-town-airport.jpg",
+  "category": "Around Town",
+  "title": "airport",
+  "source": "File:Tallinn airport 2024.jpg",
+  "license": "CC0",
+  "author": "Haokang chen",
+  "url": "https://commons.wikimedia.org/wiki/File:Tallinn_airport_2024.jpg"
+ },
+ {
+  "file": "word-around-town-train-station.jpg",
+  "category": "Around Town",
+  "title": "train station",
+  "source": "File:Train station Trnava, Slovakia.jpg",
+  "license": "CC0",
+  "author": "Szombat78",
+  "url": "https://commons.wikimedia.org/wiki/File:Train_station_Trnava,_Slovakia.jpg"
+ },
+ {
+  "file": "word-around-town-hotel.jpg",
+  "category": "Around Town",
+  "title": "hotel",
+  "source": "File:Hotel La Rose, Santa Rosa, CA Sept 6 2025.jpg",
+  "license": "CC0",
+  "author": "E bailey",
+  "url": "https://commons.wikimedia.org/wiki/File:Hotel_La_Rose,_Santa_Rosa,_CA_Sept_6_2025.jpg"
+ },
+ {
+  "file": "word-around-town-stadium.jpg",
+  "category": "Around Town",
+  "title": "stadium",
+  "source": "File:Bình Phước Stadium 2024.jpg",
+  "license": "CC0",
+  "author": "AxitTDTbenzoic",
+  "url": "https://commons.wikimedia.org/wiki/File:B%C3%ACnh_Ph%C6%B0%E1%BB%9Bc_Stadium_2024.jpg"
+ },
+ {
+  "file": "word-around-town-castle.jpg",
+  "category": "Around Town",
+  "title": "castle",
+  "source": "File:Neuschwanstein Castle 2024-02.jpg",
+  "license": "CC0",
+  "author": "Wilfredor",
+  "url": "https://commons.wikimedia.org/wiki/File:Neuschwanstein_Castle_2024-02.jpg"
+ },
+ {
+  "file": "word-around-town-office.jpg",
+  "category": "Around Town",
+  "title": "office",
+  "source": "File:Office Furniture.jpg",
+  "license": "CC0",
+  "author": "MonarchErgoIndia",
+  "url": "https://commons.wikimedia.org/wiki/File:Office_Furniture.jpg"
+ },
+ {
+  "file": "word-around-town-street.jpg",
+  "category": "Around Town",
+  "title": "street",
+  "source": "File:Street city.jpg",
+  "license": "CC0",
+  "author": "Omina006",
+  "url": "https://commons.wikimedia.org/wiki/File:Street_city.jpg"
+ },
+ {
+  "file": "word-around-town-sidewalk.jpg",
+  "category": "Around Town",
+  "title": "sidewalk",
+  "source": "File:Main Street sidewalk, Purcell, Oklahoma.jpg",
+  "license": "CC0",
+  "author": "OKJaguar",
+  "url": "https://commons.wikimedia.org/wiki/File:Main_Street_sidewalk,_Purcell,_Oklahoma.jpg"
+ }
+]

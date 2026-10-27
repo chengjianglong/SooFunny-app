@@ -172,28 +172,34 @@ struct SettingsView: View {
     }
 }
 
-/// Who took the gallery photos. All are CC0 (free to use), from Wikimedia Commons.
+/// Who took the gallery and word photos. All are CC0 or public domain (free to use), from Wikimedia Commons.
 private struct PhotoCreditsView: View {
     var body: some View {
         List {
-            Section {
-                ForEach(Showcase.credits) { credit in
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text(credit.title).font(.headline)
-                        Text("\(credit.author) · \(credit.license)").font(.subheadline).foregroundStyle(.secondary)
-                        // Plain text, not a link: kids shouldn't leave the app from here.
-                        Text("Wikimedia Commons: " + credit.source.replacingOccurrences(of: "File:", with: ""))
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                            .textSelection(.enabled)
-                    }
-                }
-            } footer: {
-                Text("Thank you to these photographers for sharing their photos freely (CC0) on Wikimedia Commons.")
+            section("Gallery photos", Showcase.credits)
+            section("Word photos", WordPhotos.credits)
+            Section {} footer: {
+                Text("Thank you to these photographers for sharing their photos freely (CC0 or public domain) on Wikimedia Commons.")
             }
         }
         .navigationTitle("Photo credits")
         .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func section(_ title: String, _ credits: [PictureCredit]) -> some View {
+        Section(title) {
+            ForEach(credits) { credit in
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(credit.title).font(.headline)
+                    Text("\(credit.author) · \(credit.license)").font(.subheadline).foregroundStyle(.secondary)
+                    // Plain text, not a link: kids shouldn't leave the app from here.
+                    Text("Wikimedia Commons: " + credit.source.replacingOccurrences(of: "File:", with: ""))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+                }
+            }
+        }
     }
 }
 

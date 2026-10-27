@@ -70,6 +70,9 @@ photographs ever leaves the device.
   At Home, Kitchen, School, Toys and Games, Sports, Music, Going Places, Weather, Seasons and
   Time, Nature, Space, Jobs, People, Feelings, Action Words, Opposites and Around Town.
 - Every word has an emoji picture (or a colorful letter tile) and a **speaker** button.
+  516 of the 754 words also show a **real photo**, with the emoji stuck on its corner like a
+  sticker. Words that can't be photographed well (numbers, feelings, time words) keep just the
+  emoji.
 - A word page shows the word big, reads it aloud, lets kids tap each **letter** to hear it, and
   has Previous / Next.
 - Tap a group to see its words; **Back** returns to the groups.
@@ -320,7 +323,7 @@ xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platf
 | File | What it checks |
 |---|---|
 | `ImageSegmenterTests` | Blocks and outlines for photos and drawings, gradients, subjects, block limits, rendering |
-| `WordDictionaryTests` | Word list format and contents, Research Lab statistics and export, bundled gallery photos and credits |
+| `WordDictionaryTests` | Word list format and contents, Research Lab statistics and export, bundled gallery and word photos and their credits |
 | `WordAssistantTests` | Prompts, sentence streaming and the buddy's turn flow (with fakes), plus real Gemma runs |
 | `NaturalVoiceTests` | Pronunciations, Swift audio vs. the reference pipeline, speed, phrases, silence trimming, voice choices |
 | `MathTests` | Question rules, flashcard and quiz sessions, scoring, progress and streaks |
@@ -348,6 +351,7 @@ SooFunny/
   Showcase/                        Gallery photos (CC0), credits.json and the gallery model
   Samples/SampleArt.swift          Built-in drawings, drawn in code
   Words/                           Word list (kids_words.txt), word browser, Speech
+  Words/Photos/                    Word photos (CC0 / public domain) and word_photo_credits.json
   Assistant/                       Talking buddy: Gemma via llama.cpp, listening, prompts
   Voice/                           Natural voice: phonemizer, Kokoro via ONNX Runtime, player
     Resources/                       Pronunciation dictionary, phoneme table, Heart voice
@@ -380,6 +384,11 @@ project.yml                        XcodeGen project definition
   `<group>-<name>.jpg`, and add an entry with title, author, license and source URL to
   `credits.json`. Use only photos you're allowed to bundle (the current set is all CC0). Check
   how it looks as a coloring page; busy photos make busy pages.
+- **Word photos:** `python3 scripts/find_word_photos.py <folder>` searches Wikimedia Commons
+  for CC0 and public-domain photos for every word, and `--sheets` makes contact sheets to
+  review them. Record the chosen photo (or `null`) for each word in
+  `scripts/word_photo_picks.json`, then run `python3 scripts/bundle_word_photos.py`. Check
+  every photo by eye: search results include unsuitable pictures.
 - **App icon:** replace `design/soo-icon.png`, then run `python3 scripts/make_icon.py`.
 - **Pronunciation dictionary:** to rebuild it from newer misaki data, run
   `python3 scripts/build_voice_lexicon.py <folder with us_gold.json, us_silver.json, tokenizer.json>`.
@@ -455,6 +464,7 @@ reserved. Bundled third-party parts keep their own licenses:
 | [misaki](https://github.com/hexgrad/misaki) dictionaries | Pronunciation | Apache-2.0 |
 | [ONNX Runtime](https://github.com/microsoft/onnxruntime-swift-package-manager) | Runs Kokoro | MIT |
 | Gallery photos from [Wikimedia Commons](https://commons.wikimedia.org/) | Color tab | CC0; photographers listed in Settings → Photo credits and `credits.json` |
+| Word photos from [Wikimedia Commons](https://commons.wikimedia.org/) | Words tab | CC0 or public domain; listed in Settings → Photo credits and `word_photo_credits.json` |
 | App icon "Soo" artwork | Icon | Provided by the developer |
 
 Apple frameworks used: SwiftUI, StoreKit 2, Vision, Speech, AVFoundation, PhotosUI and, in the

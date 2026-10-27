@@ -94,3 +94,33 @@ final class ShowcaseTests: XCTestCase {
         }
     }
 }
+
+final class WordPhotoTests: XCTestCase {
+    private let bundle = Bundle(for: ColoringSession.self)
+
+    func testSlugsMatchTheBundleScript() {
+        XCTAssertEqual(WordPhotos.fileName(category: "Toys and Games", word: "teddy bear"), "word-toys-and-games-teddy-bear")
+        XCTAssertEqual(WordPhotos.slug("Ice-cream  cone!"), "ice-cream-cone")
+    }
+
+    func testMostWordsHaveAFreeToUsePhoto() throws {
+        let categories = try WordDictionary.loadBundled(bundle)
+        let url = try XCTUnwrap(bundle.url(forResource: "word_photo_credits", withExtension: "json"))
+        let credits = try JSONDecoder().decode([PictureCredit].self, from: Data(contentsOf: url))
+        for credit in credits {
+            XCTAssertTrue(credit.license == "CC0" || credit.license.localizedCaseInsensitiveContains("public domain"),
+                          "\(credit.file): \(credit.license)")
+            XCTAssertTrue(credit.url.hasPrefix("https://commons.wikimedia.org/"), credit.file)
+        }
+        var withPhoto = 0
+        for category in categories {
+            for word in category.words where WordPhotos.image(category: category.name, word: word.text, bundle: bundle) != nil {
+                withPhoto += 1
+                let file = WordPhotos.fileName(category: category.name, word: word.text) + ".jpg"
+                XCTAssertTrue(credits.contains { $0.file == file }, "\(file) has a credit")
+            }
+        }
+        XCTAssertEqual(withPhoto, credits.count, "every credit is for a word in the list")
+        XCTAssertGreaterThan(withPhoto, categories.flatMap(\.words).count / 2)
+    }
+}
