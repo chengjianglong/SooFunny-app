@@ -59,7 +59,7 @@ struct WordAssistantView: View {
 
     private var header: some View {
         VStack(spacing: 8) {
-            Picture(emoji: word.emoji, word: word.text, size: 150, tint: .orange)
+            WordPicture(category: category, word: word, size: 170, tint: .orange)
             Text(word.text)
                 .font(.system(size: 40, weight: .heavy, design: .rounded))
         }
