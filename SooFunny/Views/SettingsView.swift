@@ -60,7 +60,7 @@ struct SettingsView: View {
                 } header: {
                     Text("Premium")
                 } footer: {
-                    Text("Free for 7 days, then $19.99 a year. Unlocks every picture, your own photos, all word groups, the talking buddy and × ÷ math. Cancel anytime.")
+                    Text("Free for 3 days, then $19.99 a year. Unlocks every picture, your own photos, all word groups, the talking buddy and × ÷ math. Cancel anytime.")
                 }
 
                 Section {

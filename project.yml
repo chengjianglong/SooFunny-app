@@ -13,7 +13,7 @@ settings:
   base:
     SWIFT_VERSION: "5.0"
     MARKETING_VERSION: "0.1"
-    CURRENT_PROJECT_VERSION: "1"
+    CURRENT_PROJECT_VERSION: "2"
 targets:
   SooFunny:
     type: application
@@ -36,6 +36,19 @@ targets:
       # llama.cpp built for iOS. Not in git: run scripts/build_llama.sh.
       - framework: Vendor/llama.cpp-src/build-apple/llama.xcframework
         embed: true
+    postBuildScripts:
+      # ONNX Runtime's framework says it needs iOS 15.1 in its Info.plist, but its binary is built
+      # for iOS 17.0. App Store Connect rejects that mismatch (error 90208), so make the plist match
+      # the app's minimum and re-sign the framework.
+      - name: Fix ONNX Runtime minimum iOS version
+        basedOnDependencyAnalysis: false
+        script: |
+          FW="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/onnxruntime.framework"
+          [ -f "$FW/Info.plist" ] || exit 0
+          /usr/libexec/PlistBuddy -c "Set :MinimumOSVersion ${IPHONEOS_DEPLOYMENT_TARGET}" "$FW/Info.plist"
+          if [ "${CODE_SIGNING_ALLOWED}" = "YES" ] && [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" ]; then
+            codesign --force --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements "$FW"
+          fi
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.chengjianglong.soofunny

@@ -4374,6 +4374,7 @@
 				E08C0673D44BFC24BB6A1724 /* Resources */,
 				65268D15EA3BE0975BEE0DCF /* Frameworks */,
 				9C099401B3736D2DC3EA73A0 /* Embed Frameworks */,
+				7A435F9082C5134E6B26E696 /* Fix ONNX Runtime minimum iOS version */,
 			);
 			buildRules = (
 			);
@@ -5810,6 +5811,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7A435F9082C5134E6B26E696 /* Fix ONNX Runtime minimum iOS version */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Fix ONNX Runtime minimum iOS version";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FW=\"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/onnxruntime.framework\"\n[ -f \"$FW/Info.plist\" ] || exit 0\n/usr/libexec/PlistBuddy -c \"Set :MinimumOSVersion ${IPHONEOS_DEPLOYMENT_TARGET}\" \"$FW/Info.plist\"\nif [ \"${CODE_SIGNING_ALLOWED}\" = \"YES\" ] && [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" ]; then\n  codesign --force --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" --preserve-metadata=identifier,entitlements \"$FW\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24E89B0D7968802A69B0C477 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -5940,7 +5963,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -6042,7 +6065,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

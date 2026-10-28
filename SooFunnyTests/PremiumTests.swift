@@ -43,8 +43,8 @@ final class PremiumTests: XCTestCase {
         XCTAssertEqual(product.subscription?.subscriptionPeriod.value, 1)
         let trial = try XCTUnwrap(product.subscription?.introductoryOffer)
         XCTAssertEqual(trial.paymentMode, .freeTrial)
-        XCTAssertEqual(trial.period.unit, .week)
-        XCTAssertEqual(trial.period.value, 1)
+        XCTAssertEqual(trial.period.unit, .day)
+        XCTAssertEqual(trial.period.value, 3)
     }
 
     func testPurchaseUnlocksAndCancelledSubscriptionLocksWhenItEnds() async throws {

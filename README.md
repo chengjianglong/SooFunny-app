@@ -199,7 +199,7 @@ block.
 
 ## SooFunny Premium
 
-A yearly auto-renewing subscription: **$19.99 a year with a 7-day free trial**, with Family
+A yearly auto-renewing subscription: **$19.99 a year with a 3-day free trial**, with Family
 Sharing. It uses StoreKit 2 (`SooFunny/Store/Premium.swift`); product ID
 `com.chengjianglong.soofunny.premium.yearly`.
 

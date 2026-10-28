@@ -8,7 +8,7 @@ import SwiftUI
 #error("DEV_UNLOCK must never be enabled outside Debug builds")
 #endif
 
-/// SooFunny Premium: a yearly auto-renewing subscription ($19.99/year, 7-day free trial),
+/// SooFunny Premium: a yearly auto-renewing subscription ($19.99/year, 3-day free trial),
 /// sold through the App Store. StoreKit keeps the purchase on the device, so the app keeps
 /// working offline after subscribing.
 @MainActor
@@ -157,7 +157,7 @@ struct PaywallView: View {
                     perk("📴", "Works offline, no ads, nothing leaves your device")
                 }
                 .font(.headline)
-                Text("Free for 7 days, then $19.99 a year. Cancel anytime in Settings.")
+                Text("Free for 3 days, then $19.99 a year. Cancel anytime in Settings.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

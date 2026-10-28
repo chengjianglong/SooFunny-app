@@ -58,7 +58,7 @@ Try every feature free: color 14 gallery pictures, the drawings and 15 of your o
 explore three word groups and talk with the buddy about every animal; and practice all four
 operations (times and sharing with the numbers 1 to 5). Premium unlocks every picture and
 unlimited own photos, all 32 word groups, the talking buddy for every word, and times and
-sharing with every number. Start with a 7-day free trial, then $19.99 a year. Family Sharing is
+sharing with every number. Start with a 3-day free trial, then $19.99 a year. Family Sharing is
 included.
 
 Payment is charged to your Apple Account when the trial ends. The subscription renews
@@ -85,7 +85,7 @@ First release: coloring gallery, word explorer with a talking buddy, and Math Fu
 | Product ID | com.chengjianglong.soofunny.premium.yearly (must match the app exactly) |
 | Duration | 1 year |
 | Price | $19.99 (USA); let Apple set equivalents for other countries |
-| Introductory offer | Free trial, 1 week, new subscribers |
+| Introductory offer | Free trial, 3 days, new subscribers |
 | Family Sharing | On |
 | Display name | SooFunny Premium |
 | Description | Every picture, all words, the talking buddy and × ÷ math. |
