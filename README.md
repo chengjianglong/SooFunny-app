@@ -13,8 +13,8 @@ photographs ever leaves the device.
   <a href="marketing/SooFunny-demo-iPhone16.mp4"><img src="docs/images/demo-iphone16.jpg" width="250" alt="Play the SooFunny demo video for iPhone 16"></a>
   &nbsp;
   <a href="marketing/SooFunny-demo-iPad.mp4"><img src="docs/images/demo-ipad.jpg" width="250" alt="Play the SooFunny demo video for iPad"></a><br>
-  <b>▶️ Watch the demo: <a href="marketing/SooFunny-demo-iPhone16.mp4">iPhone 16</a> (79 s) · <a href="marketing/SooFunny-demo-iPad.mp4">iPad</a> (80 s)</b><br>
-  Coloring, words with real photos, the talking buddy and math
+  <b>▶️ Watch the demo: <a href="marketing/SooFunny-demo-iPhone16.mp4">iPhone 16</a> (104 s) · <a href="marketing/SooFunny-demo-iPad.mp4">iPad</a> (104 s)</b><br>
+  Coloring, words with real photos, the talking buddy, books read aloud, and math
 </p>
 
 <p align="center">
