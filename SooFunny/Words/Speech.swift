@@ -37,6 +37,13 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
         }
     }
 
+    /// AVSpeechUtterance rate for the speed chosen in Settings.
+    static var appleRate: Float {
+        let rate = UserDefaults.standard.object(forKey: SettingsKey.speechRate) as? Double ?? SettingsKey.defaultSpeechRate
+        return Float(rate) * (AVSpeechUtteranceMaximumSpeechRate - AVSpeechUtteranceMinimumSpeechRate)
+            + AVSpeechUtteranceMinimumSpeechRate
+    }
+
     func speak(_ text: String) {
         if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
         natural?.stop()

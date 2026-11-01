@@ -114,6 +114,7 @@
 		1183656B794DA26CB27DB7E8 /* word-animals-squirrel-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E511265208A7E0CFD10B3796 /* word-animals-squirrel-3.jpg */; };
 		11C7B1B9C8A981CF07064E37 /* word-sea-creatures-coral-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D060C4AF4C126FAA5B191FE2 /* word-sea-creatures-coral-3.jpg */; };
 		11C8A6B014FC8EF1EA793574 /* word-drinks-tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BAFA83E0BAF053AB0316BDD /* word-drinks-tea.jpg */; };
+		123F1E2654F177065D179268 /* ScannedBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDEB509E4984C4EA9165A0F /* ScannedBooks.swift */; };
 		127FA2C94B854D6311EFF097 /* word-farm-turkey-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2A13DAA0EA07D8DD0C73B8E6 /* word-farm-turkey-3.jpg */; };
 		12A7C07B00E466FEFA9BB8D9 /* word-going-places-bus-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD9817CAED570F41B0E1A8F3 /* word-going-places-bus-2.jpg */; };
 		13094EADC2B6FA806E3D4D94 /* word-nature-leaf.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 77A71EF4CDDB862B456F6114 /* word-nature-leaf.jpg */; };
@@ -309,6 +310,7 @@
 		32CA711D14C72F972E6F24B1 /* word-music-guitar-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9729F3C736A5C38514805ECB /* word-music-guitar-3.jpg */; };
 		330C76291B2CAFDF0EF5DB53 /* word-farm-fence-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DA305068E42297C92AD12FAF /* word-farm-fence-2.jpg */; };
 		335783725AA88402A6A48729 /* word-at-home-shower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B26F57740A6E60F14DB85FF9 /* word-at-home-shower.jpg */; };
+		3373FA98EE207421AFADF3B3 /* BookReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2221E1CDE90A94224C13F09A /* BookReader.swift */; };
 		339B44E725347D44CACBD1EE /* word-food-bread.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 132C19BC72972B8209E88FB5 /* word-food-bread.jpg */; };
 		33E4515522788D6832FCB7DB /* word-sea-creatures-pufferfish-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 399BDEBA797177184C778406 /* word-sea-creatures-pufferfish-2.jpg */; };
 		33FA4DA8D19F76BDD98D9591 /* word-animals-rhino-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B977983B8E2E3DD3C5BBDCA8 /* word-animals-rhino-2.jpg */; };
@@ -620,6 +622,7 @@
 		6E15C6ACFB1D92EB09DB23B0 /* word-birds-feather-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9CF9BA964933758363B211B /* word-birds-feather-2.jpg */; };
 		6E2BFD2BC8FEAD220CAA47F3 /* word-farm-goat-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1B5706B5A12D49D125BAD38F /* word-farm-goat-2.jpg */; };
 		6E65D1EE0CBF95A8B0193D64 /* word-going-places-road.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 47EABAB581F91A0BE2B72F5F /* word-going-places-road.jpg */; };
+		6E7678E935A2266B5F394652 /* StoryBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901201650B8F3F664CB5F8F /* StoryBooks.swift */; };
 		6E7BBD1EC0935BCEA733F217 /* word-nature-river.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29694BF76A5E4791982DD1C8 /* word-nature-river.jpg */; };
 		6EC02C81718A5201FEB0CAED /* word-vegetables-spinach-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6B3DC4A24D38748C483E56E /* word-vegetables-spinach-2.jpg */; };
 		6EC82E2FC78267CAD2CD1C5A /* word-sweets-brownie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84EB1565AE40A6ED8A11A11E /* word-sweets-brownie.jpg */; };
@@ -1060,6 +1063,7 @@
 		BBEEE0D26C97CC64FBED1815 /* word-food-soup.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B3119B104E95860A67617D85 /* word-food-soup.jpg */; };
 		BC00929E1A502A0D65953953 /* word-going-places-scooter-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CCDA4504FE3511A0241A788 /* word-going-places-scooter-3.jpg */; };
 		BC094C678F8F36019FCBD196 /* word-colors-silver.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A2532A86ADC5F0A32814D99 /* word-colors-silver.jpg */; };
+		BC157EB01393E3324F781BB7 /* BooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A75BBFF06E5BB5477DAFCE /* BooksTests.swift */; };
 		BC62F580B407F285F662EB8E /* word-around-town-bakery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7402B5768CAF4A857C32480 /* word-around-town-bakery.jpg */; };
 		BC836D5550AD86A5E6622F45 /* word-vegetables-celery-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D8A93A7D70A08184D7DA8237 /* word-vegetables-celery-2.jpg */; };
 		BC9CA6D854563BDB13B5A292 /* word-weather-rainy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D4BB29D188A9E7032BF65F1A /* word-weather-rainy.jpg */; };
@@ -1094,6 +1098,7 @@
 		C12FFB60ABC4817FDF8D54E7 /* word-sea-creatures-fish-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F6A7AE68DA705716286EB4B5 /* word-sea-creatures-fish-2.jpg */; };
 		C14D401C2BF70945BFFCCF44 /* word-weather-cloud-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FC37800B046F8EC02D9131 /* word-weather-cloud-2.jpg */; };
 		C15607D2D10AFF32C0CB4B2F /* word-fruit-pear.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E0731119A04EF045D69A1911 /* word-fruit-pear.jpg */; };
+		C1A135CFA94770C044F14E54 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800563E62107C7A6115EF57F /* BooksView.swift */; };
 		C206C5D27C8FF9ECD007482E /* word-my-body-eye.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 19E9A9938554E9521DE33302 /* word-my-body-eye.jpg */; };
 		C24C190D7D2A8FC3255CEAEF /* word-sea-creatures-fish.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02F0D56538884D073E7AD0FD /* word-sea-creatures-fish.jpg */; };
 		C253ED59BBEECE396A39001E /* word-seasons-and-time-morning-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E721826B5223B36124C03557 /* word-seasons-and-time-morning-2.jpg */; };
@@ -1603,6 +1608,7 @@
 		21C268AC59817DE6FF45FE8E /* word-nature-pine-tree.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-pine-tree.jpg"; sourceTree = "<group>"; };
 		21D46189CC241DE3E143C861 /* word-nature-beach-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-beach-3.jpg"; sourceTree = "<group>"; };
 		21DDAB7B6FA3CA8E09ABAFF5 /* word-animals-gorilla-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-gorilla-3.jpg"; sourceTree = "<group>"; };
+		2221E1CDE90A94224C13F09A /* BookReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookReader.swift; sourceTree = "<group>"; };
 		2227F051414B7C0A4E943515 /* word-food-noodles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-food-noodles.jpg"; sourceTree = "<group>"; };
 		225D4C4336A55AF648A7E8FF /* word-shapes-cube-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-shapes-cube-2.jpg"; sourceTree = "<group>"; };
 		22DD0C527BE184008C371874 /* word-going-places-plane-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-plane-2.jpg"; sourceTree = "<group>"; };
@@ -1781,6 +1787,7 @@
 		40D89B3C248203D98BDEFE23 /* word-sports-volleyball-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sports-volleyball-2.jpg"; sourceTree = "<group>"; };
 		411643DEA5DBD454370B1B49 /* word-around-town-street-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-street-3.jpg"; sourceTree = "<group>"; };
 		411CF194D8B0F8328990384A /* word-toys-and-games-jump-rope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-toys-and-games-jump-rope.jpg"; sourceTree = "<group>"; };
+		41A75BBFF06E5BB5477DAFCE /* BooksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTests.swift; sourceTree = "<group>"; };
 		41A7AF1E068AD2D8F0177276 /* word-farm-scarecrow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-scarecrow-2.jpg"; sourceTree = "<group>"; };
 		41D7DFA27E3E19428FBB179C /* word-sports-trophy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sports-trophy.jpg"; sourceTree = "<group>"; };
 		41E057F65B9391B224B8CB8B /* word-seasons-and-time-summer-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-seasons-and-time-summer-3.jpg"; sourceTree = "<group>"; };
@@ -1811,6 +1818,7 @@
 		485EEC96E23CE51C507961E2 /* word-farm-puppy-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-puppy-3.jpg"; sourceTree = "<group>"; };
 		48A8A70C518A588636B284C5 /* word-bugs-grasshopper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-bugs-grasshopper.jpg"; sourceTree = "<group>"; };
 		48EDDEEF62B66478CD2AA96D /* word-around-town-store-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-store-2.jpg"; sourceTree = "<group>"; };
+		4901201650B8F3F664CB5F8F /* StoryBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBooks.swift; sourceTree = "<group>"; };
 		49248CAF5255ED53064DD1F4 /* word-weather-storm.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-weather-storm.jpg"; sourceTree = "<group>"; };
 		49613EC8AB0D1A5F9AF2A344 /* word-vegetables-radish.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-vegetables-radish.jpg"; sourceTree = "<group>"; };
 		496D1852976BCF44458DB611 /* word-weather-rainy-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-weather-rainy-3.jpg"; sourceTree = "<group>"; };
@@ -2100,11 +2108,13 @@
 		7E72C1EE1C0D5006D476D6C5 /* word-vegetables-peas-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-vegetables-peas-3.jpg"; sourceTree = "<group>"; };
 		7EAC3C5FC1DD6642B3187FBC /* word-going-places-motorcycle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-motorcycle.jpg"; sourceTree = "<group>"; };
 		7EB421F341203B3397CC1D6F /* word-sports-volleyball-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sports-volleyball-3.jpg"; sourceTree = "<group>"; };
+		7EDEB509E4984C4EA9165A0F /* ScannedBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedBooks.swift; sourceTree = "<group>"; };
 		7EEB6AA0B922AE9FDBFF97D9 /* word-animals-dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-dog.jpg"; sourceTree = "<group>"; };
 		7F06109A2D5E19D9D464BF76 /* word-colors-purple-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-colors-purple-3.jpg"; sourceTree = "<group>"; };
 		7F2BACA07A7F390F81FC1E1D /* word-going-places-helicopter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-helicopter.jpg"; sourceTree = "<group>"; };
 		7F319B4415CEF46A840A1FD5 /* word-toys-and-games-swing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-toys-and-games-swing.jpg"; sourceTree = "<group>"; };
 		7FB3D895597D2327215D4A3D /* word-colors-yellow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-colors-yellow-2.jpg"; sourceTree = "<group>"; };
+		800563E62107C7A6115EF57F /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		801E411A5A1B77502DEB9455 /* word-fruit-plum.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-fruit-plum.jpg"; sourceTree = "<group>"; };
 		804888CAEA21C9002BA388F6 /* word-fruit-kiwi-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-fruit-kiwi-2.jpg"; sourceTree = "<group>"; };
 		80F2C27442DA20CB44F37776 /* word-toys-and-games-kite-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-toys-and-games-kite-3.jpg"; sourceTree = "<group>"; };
@@ -2863,6 +2873,7 @@
 		32DD38256FDB4B124AB931F7 /* SooFunnyTests */ = {
 			isa = PBXGroup;
 			children = (
+				41A75BBFF06E5BB5477DAFCE /* BooksTests.swift */,
 				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
 				1D2CC50E46E9436EE783856B /* MathTests.swift */,
 				2945ED3D69153689914B5C22 /* NaturalVoiceTests.swift */,
@@ -2935,6 +2946,17 @@
 				34C02E7E59297909FBA14367 /* MathViews.swift */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		AD6EA0BF7740F32A531BABDA /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				2221E1CDE90A94224C13F09A /* BookReader.swift */,
+				800563E62107C7A6115EF57F /* BooksView.swift */,
+				7EDEB509E4984C4EA9165A0F /* ScannedBooks.swift */,
+				4901201650B8F3F664CB5F8F /* StoryBooks.swift */,
+			);
+			path = Books;
 			sourceTree = "<group>";
 		};
 		B44CADB33781E7239282AB01 /* Assistant */ = {
@@ -4350,6 +4372,7 @@
 				FA58C84779259475B9FB09B9 /* PrivacyInfo.xcprivacy */,
 				EFC91BEFD7EB0A0C8FE284E0 /* App */,
 				B44CADB33781E7239282AB01 /* Assistant */,
+				AD6EA0BF7740F32A531BABDA /* Books */,
 				E1FBDAF36C721E09304F665B /* Engine */,
 				93A51FF0D00EDEBDE81975D6 /* Lab */,
 				93C2B2F555B23A1DA1AECF27 /* Math */,
@@ -5840,6 +5863,8 @@
 			files = (
 				41C54196309E402EBCE7BE29 /* AssistantAudio.swift in Sources */,
 				40B1357F82AA79A66FFDD490 /* AssistantText.swift in Sources */,
+				3373FA98EE207421AFADF3B3 /* BookReader.swift in Sources */,
+				C1A135CFA94770C044F14E54 /* BooksView.swift in Sources */,
 				CCAFB2AB46206C8B7ECE872D /* BouncyTitle.swift in Sources */,
 				58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */,
 				C09877B5299329138FE8633A /* ColoringView.swift in Sources */,
@@ -5857,10 +5882,12 @@
 				F9047A1C04BE2F85F09BB3BF /* Premium.swift in Sources */,
 				F9A69C22CD61ABC49F46030B /* ResearchLabView.swift in Sources */,
 				5F3C3F1F4AB379F5F0A1C7FC /* SampleArt.swift in Sources */,
+				123F1E2654F177065D179268 /* ScannedBooks.swift in Sources */,
 				A4A323EFAA1737590E298238 /* SettingsView.swift in Sources */,
 				FD5DCB868A2CB9557CDB3E4A /* ShowcaseGallery.swift in Sources */,
 				1B83D75811CED3250488C1D5 /* SooFunnyApp.swift in Sources */,
 				6CEE697D1F841EF3A62B672E /* Speech.swift in Sources */,
+				6E7678E935A2266B5F394652 /* StoryBooks.swift in Sources */,
 				769F13091CED154B63E7CD50 /* SubjectMask.swift in Sources */,
 				D7EFD44C84233B158BFB6763 /* WordAssistant.swift in Sources */,
 				97277E32CF78CC3A40291EA3 /* WordAssistantView.swift in Sources */,
@@ -5874,6 +5901,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC157EB01393E3324F781BB7 /* BooksTests.swift in Sources */,
 				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
 				3075E1CC8136FB91D1697EA7 /* MathTests.swift in Sources */,
 				80E4D96F39035FF53CFA6674 /* NaturalVoiceTests.swift in Sources */,
@@ -5909,7 +5937,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture to color in, or scan the pages of a book to read along.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo X Intelligence LLC. All rights reserved.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SooFunny listens when you tap Talk, so you can ask questions about a word.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SooFunny saves your colored pictures to your photo library.";
@@ -6009,7 +6037,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = SooFunny;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture and color it in.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "SooFunny uses the camera so you can snap a picture to color in, or scan the pages of a book to read along.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Soo X Intelligence LLC. All rights reserved.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "SooFunny listens when you tap Talk, so you can ask questions about a word.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "SooFunny saves your colored pictures to your photo library.";

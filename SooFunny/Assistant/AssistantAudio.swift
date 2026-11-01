@@ -26,6 +26,8 @@ protocol ChildListener: AnyObject {
 final class SystemSentenceSpeaker: NSObject, SentenceSpeaker, AVSpeechSynthesizerDelegate {
     var onWord: ((String, NSRange) -> Void)?
     var onFinished: (() -> Void)?
+    /// A voice to use instead of the one chosen in Settings (Chinese books).
+    var voice: AVSpeechSynthesisVoice?
     private let synthesizer = AVSpeechSynthesizer()
     private var queued = 0
 
@@ -40,7 +42,8 @@ final class SystemSentenceSpeaker: NSObject, SentenceSpeaker, AVSpeechSynthesize
         AssistantAudioSession.activateForSpeaking()
         let utterance = AVSpeechUtterance(string: sentence)
         let settings = UserDefaults.standard
-        utterance.voice = AVSpeechSynthesisVoice(identifier: settings.string(forKey: SettingsKey.voice) ?? "")
+        utterance.voice = voice
+            ?? AVSpeechSynthesisVoice(identifier: settings.string(forKey: SettingsKey.voice) ?? "")
             ?? Speech.englishVoices.first
         let rate = settings.object(forKey: SettingsKey.speechRate) as? Double ?? SettingsKey.defaultSpeechRate
         utterance.rate = Float(rate) * (AVSpeechUtteranceMaximumSpeechRate - AVSpeechUtteranceMinimumSpeechRate)

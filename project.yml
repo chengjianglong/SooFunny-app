@@ -63,7 +63,7 @@ targets:
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
-        INFOPLIST_KEY_NSCameraUsageDescription: "SooFunny uses the camera so you can snap a picture and color it in."
+        INFOPLIST_KEY_NSCameraUsageDescription: "SooFunny uses the camera so you can snap a picture to color in, or scan the pages of a book to read along."
         INFOPLIST_KEY_NSMicrophoneUsageDescription: "SooFunny listens when you tap Talk, so you can ask questions about a word."
         INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "SooFunny turns what you say into words on this device, so the buddy can answer your questions."
         INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription: "SooFunny saves your colored pictures to your photo library."

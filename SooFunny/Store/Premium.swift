@@ -94,12 +94,20 @@ enum FreeTier {
     static let photosPerGroup = 5
     /// How many of their own pictures (Photos or Camera) anyone can color.
     static let ownPictures = 15
+    /// Story books anyone can read: the first English ones on the shelf, and the Tang poems.
+    static let storyBooks = 3
+    static let freeChineseBook = "tang-poems"
+    /// How many of their own books anyone can scan and keep.
+    static let scannedBooks = 2
     /// UserDefaults key counting own pictures colored without Premium.
     static let ownPicturesUsedKey = "freeOwnPicturesUsed"
 
     static func allows(_ picture: ShowcasePicture) -> Bool {
         picture.kind == .drawings
             || (Showcase.pictures(picture.kind).firstIndex { $0.id == picture.id } ?? .max) < photosPerGroup
+    }
+    static func allows(_ book: StoryBook) -> Bool {
+        book.id == freeChineseBook || (StoryLibrary.books.firstIndex { $0.id == book.id } ?? .max) < storyBooks
     }
     static func allows(_ category: WordCategory) -> Bool { wordCategories.contains(category.name) }
     static func allowsBuddy(_ category: WordCategory) -> Bool { buddyCategories.contains(category.name) }
@@ -153,6 +161,7 @@ struct PaywallView: View {
                     perk("🖼️", "Color every photo, and as many of your own pictures as you like")
                     perk("📚", "All 32 word groups, 754 words")
                     perk("✨", "Talk with the buddy about every word, on your device")
+                    perk("📖", "Every read-along story book, and scan as many of your own books as you like")
                     perk("✖️", "Times and sharing (× ÷) with every number in Math")
                     perk("📴", "Works offline, no ads, nothing leaves your device")
                 }

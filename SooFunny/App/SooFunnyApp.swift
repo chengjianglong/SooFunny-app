@@ -16,7 +16,7 @@ struct SooFunnyApp: App {
     }
 }
 
-/// Three tabs: Color (pictures to color), Words (the word browser) and Math. Settings is in the top bar.
+/// Four tabs: Color (pictures to color), Words (the word browser), Books (read-along books) and Math. Settings is in the top bar.
 struct ContentView: View {
     @State private var session: ColoringSession?
     @State private var showSettings = false
@@ -38,6 +38,9 @@ struct ContentView: View {
 
             WordsView()
                 .tabItem { Label("Words", systemImage: "textformat.abc") }
+
+            BooksView()
+                .tabItem { Label("Books", systemImage: "books.vertical.fill") }
 
             MathView()
                 .tabItem { Label("Math", systemImage: "plus.forwardslash.minus") }
