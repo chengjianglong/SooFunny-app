@@ -1,9 +1,10 @@
 # SooFunny 🖍️
 
-**Color, words and math for kids, on iPhone and iPad, completely offline.**
+**Color, words, books and math for kids, on iPhone and iPad, completely offline.**
 
 SooFunny turns any picture into a coloring page, lets kids explore 754 English words with a
-talking buddy that answers their questions out loud, and makes math practice feel like a game.
+talking buddy that answers their questions out loud, reads picture books aloud (including the
+family's own books, scanned in English, Chinese or both), and makes math practice feel like a game.
 Everything runs on the device: no Wi‑Fi, no accounts, no ads, and nothing a child says, draws or
 photographs ever leaves the device.
 
@@ -14,7 +15,8 @@ photographs ever leaves the device.
   &nbsp;
   <a href="marketing/SooFunny-demo-iPad.mp4"><img src="docs/images/demo-ipad.jpg" width="250" alt="Play the SooFunny demo video for iPad"></a><br>
   <b>▶️ Watch the demo: <a href="marketing/SooFunny-demo-iPhone16.mp4">iPhone 16</a> (104 s) · <a href="marketing/SooFunny-demo-iPad.mp4">iPad</a> (104 s)</b><br>
-  Coloring, words with real photos, the talking buddy, books read aloud, and math
+  Coloring, words with real photos, the talking buddy, books read aloud, and math<br>
+  📑 <a href="marketing/SooFunny-slides.pdf">Introduction slides</a> (PDF, 12 slides)
 </p>
 
 <p align="center">
@@ -29,7 +31,7 @@ photographs ever leaves the device.
 
 | | |
 |---|---|
-| **Version** | 0.1 (build 1) |
+| **Version** | 0.1 (build 2), in App Review |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
@@ -100,6 +102,21 @@ The big button follows the turn: **Talk**, **Done** (while listening), **Cancel*
 thinking) and **Stop speaking**. The answers come from Google's **Gemma 3 1B**, running on the
 device.
 
+### 📖 Books
+
+- **Story books**: 10 books written or retold for SooFunny, including The Three Little Pigs,
+  Goldilocks, The Gingerbread Man, nursery rhymes, and two in Chinese (唐诗五首 Tang Poems and
+  龟兔赛跑 The Tortoise and the Hare).
+- **Read aloud**: tap **Read to me** (读给我听 in Chinese books) and each page is read with the
+  current word lit up, turning pages by itself. Swipe or tap the arrows to turn pages by hand.
+- **My books**: **Scan a book** with the camera (one or many pages) or pick pages **From
+  Photos**. The text is read from each page on the device, in English, Chinese or a mix of both.
+  Before saving, grown-ups can fix the words, remove pages and **Change page order** by dragging.
+- **Mixed languages**: English parts are read in the natural voice and Chinese parts in Apple's
+  Chinese voice, one after another. Pinyin printed above the characters is skipped.
+- **Audiobooks**: **Make audiobook** records the whole book into an `.m4a` file to listen to
+  anytime or share.
+
 ### ➕ Math
 
 Inspired by [Best Math App for Kids](https://www.youtube.com/watch?v=hVBYZOaC5iw):
@@ -117,8 +134,9 @@ Inspired by [Best Math App for Kids](https://www.youtube.com/watch?v=hVBYZOaC5iw
 
 ### 🗣️ Natural voice
 
-Words, letters, math and the talking buddy are read by **Kokoro-82M**, a neural voice
-("Heart", a warm American female voice) that runs on the device. Apple's built-in voices are
+Words, letters, books, math and the talking buddy are read by **Kokoro-82M**, a neural voice
+("Heart", a warm American female voice) that runs on the device. Chinese text is read by
+Apple's built-in Chinese voice. Apple's built-in voices are
 still available in Settings, minus novelty voices like "Boing". If the natural voice can't load,
 the app uses an Apple voice automatically.
 
@@ -176,6 +194,20 @@ block.
 - **Speaking:** answers stream sentence by sentence into the voice, so speech starts before the
   whole answer is written.
 
+### Books (`SooFunny/Books/`)
+
+- **Scanning:** VisionKit's document camera finds and flattens each page; Vision's text
+  recognizer reads it on the device (English, Simplified and Traditional Chinese). Lines are
+  joined back into sentences, hyphens are rejoined, and page numbers are dropped.
+- **Languages:** text is split into runs by script: Han characters are Chinese, other letters
+  English. Pinyin (words with tone marks such as ā or ǎ) is removed before reading.
+- **Reading:** each run goes to the voice for its language, and runs play one after another.
+- **Audiobooks:** `AudiobookMaker` renders every page to audio, with short pauses between
+  phrases and longer ones between sentences, and writes an AAC `.m4a`. Phrases that can't be
+  spoken are skipped instead of failing the whole book.
+- **Storage:** scanned books (page images, text and audiobook) are kept in the app's own
+  Application Support folder.
+
 ### Natural voice (`SooFunny/Voice/`)
 
 - **The voice:** [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) (8-bit, 92 MB) with the
@@ -209,6 +241,8 @@ Sharing. It uses StoreKit 2 (`SooFunny/Store/Premium.swift`); product ID
 | 15 of your own pictures (Photos or Camera) | As many of your own pictures as you like |
 | Animals, Colors and Numbers words | All 32 word groups |
 | The talking buddy for every Animals word | The talking buddy for every word |
+| 4 story books (the first 3 English ones and the Tang poems) | All 10 story books |
+| 2 of your own scanned books | As many of your own books as you like |
 | + and − in Math with any number; × and ÷ with the numbers 1 to 5 | × and ÷ with every number |
 
 The free amounts live in `FreeTier` (`SooFunny/Store/Premium.swift`). Own pictures are
@@ -233,6 +267,8 @@ counted on the device; a 🔒 appears when they run out.
 - **No data collected.** No analytics, ads, tracking, accounts or servers. The privacy manifest
   (`SooFunny/PrivacyInfo.xcprivacy`) declares no tracking and no collected data.
 - **Photos** are turned into coloring pages on the device and are never uploaded.
+- **Scanned books** are read and stored on the device only; their pages and audiobooks leave it
+  only if a grown-up shares them.
 - **Voice** is recognized on the device only and never recorded or saved. If a device can't
   recognize speech on the device, the buddy doesn't listen; children can type instead.
 - **The buddy and the voice** run entirely on the device. Conversations are forgotten when you
@@ -326,7 +362,7 @@ xcrun devicectl device install app --device <device UDID> build-device/Build/Pro
 xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platform=iOS Simulator,name=<simulator>' -scmProvider system
 ```
 
-56 unit tests in `SooFunnyTests/`:
+75 unit tests in `SooFunnyTests/`:
 
 | File | What it checks |
 |---|---|
@@ -334,6 +370,7 @@ xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platf
 | `WordDictionaryTests` | Word list format and contents, Research Lab statistics and export, bundled gallery and word photos and their credits |
 | `WordAssistantTests` | Prompts, sentence streaming and the buddy's turn flow (with fakes), plus real Gemma runs |
 | `NaturalVoiceTests` | Pronunciations, Swift audio vs. the reference pipeline, speed, phrases, silence trimming, voice choices |
+| `BooksTests` | Story library, text recognition in English and Chinese, line joining, mixed-language splitting and pinyin, saving, reordering, and audiobooks |
 | `MathTests` | Question rules, flashcard and quiz sessions, scoring, progress and streaks |
 | `PremiumTests` | Price and free trial, purchase, refund, lapse, the free tier and the Debug-only unlock |
 
@@ -348,7 +385,7 @@ simulator); they pass on the iPhone simulator and from Xcode.
 
 ```
 SooFunny/
-  App/SooFunnyApp.swift            App entry point and the Color / Words / Math tabs
+  App/SooFunnyApp.swift            App entry point and the Color / Words / Books / Math tabs
   Engine/                          Coloring pages
     PixelImage.swift                 RGBA bitmaps
     LabImage.swift                   Lab color and Kuwahara smoothing
@@ -363,6 +400,7 @@ SooFunny/
   Assistant/                       Talking buddy: Gemma via llama.cpp, listening, prompts
   Voice/                           Natural voice: phonemizer, Kokoro via ONNX Runtime, player
     Resources/                       Pronunciation dictionary, phoneme table, Heart voice
+  Books/                           Story books, scanning and text recognition, the reader, audiobooks
   Math/                            Question maker, sessions, progress, and the Math screens
   Store/                           Premium subscription, paywall, grown-up check, .storekit
   Lab/                             Research Lab benchmarks and screen
@@ -375,6 +413,7 @@ scripts/
   make_icon.py                     Makes the app icon from design/soo-icon.png
 design/soo-icon.png                App icon artwork
 docs/images/                       README screenshots
+marketing/                         Demo videos (iPhone 16, iPad) and the introduction slides (PDF)
 AppStore/LISTING.md                App Store listing, review notes, submission checklist
 PRIVACY.md                         Privacy policy
 project.yml                        XcodeGen project definition
@@ -454,6 +493,8 @@ right away.
   estimate.
 - **Coloring pages:** very busy photos (crowds, rocks, foliage) make busy pages; **Big blocks**
   helps. Subject detection needs a real device; the Simulator doesn't run it.
+- **Scanned books:** text recognition can misread handwriting, stylized fonts or busy pages;
+  grown-ups can fix the words before saving. Chinese uses Apple's voice, not the natural one.
 - **Research Lab:** Apple's on-device language model needs Apple Intelligence (iOS 26+,
   supported devices only).
 - **Not yet on the App Store:** see [Releasing on the App Store](#releasing-on-the-app-store).
@@ -476,7 +517,7 @@ reserved. Bundled third-party parts keep their own licenses:
 | Word photos from [Wikimedia Commons](https://commons.wikimedia.org/) | Words tab | CC0 or public domain; listed in Settings → Photo credits and `word_photo_credits.json` |
 | App icon "Soo" artwork | Icon | Provided by the developer |
 
-Apple frameworks used: SwiftUI, StoreKit 2, Vision, Speech, AVFoundation, PhotosUI and, in the
+Apple frameworks used: SwiftUI, StoreKit 2, Vision, VisionKit, Speech, AVFoundation, PhotosUI and, in the
 Research Lab, FoundationModels.
 
 Design references: the Words tab and Research Lab follow the design of the Android app
