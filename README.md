@@ -20,11 +20,13 @@ photographs ever leaves the device.
 </p>
 
 <p align="center">
-  <img src="docs/images/iphone-color.jpg" width="230" alt="Color tab on iPhone: picture gallery with a Surprise me! button">
+  <img src="docs/images/iphone-color.jpg" width="190" alt="Color tab on iPhone: picture gallery with a Surprise me! button">
   &nbsp;
-  <img src="docs/images/ipad-words.jpg" width="300" alt="Words tab on iPad: 32 word groups">
+  <img src="docs/images/ipad-words.jpg" width="250" alt="Words tab on iPad: 32 word groups">
   &nbsp;
-  <img src="docs/images/iphone-math.jpg" width="230" alt="Math tab on iPhone: flashcards, quiz and progress reports">
+  <img src="docs/images/iphone-books.jpg" width="190" alt="Books on iPhone: The Three Little Pigs read aloud, one word highlighted">
+  &nbsp;
+  <img src="docs/images/iphone-math.jpg" width="190" alt="Math tab on iPhone: flashcards, quiz and progress reports">
 </p>
 
 <p align="center"><img src="docs/images/photo-to-page.jpg" width="900" alt="Photos of a goldfish, a parrot and a lighthouse next to the coloring pages SooFunny makes from them"></p>
@@ -104,7 +106,7 @@ device.
 
 ### 📖 Books
 
-- **Story books**: 10 books written or retold for SooFunny, including The Three Little Pigs,
+- **Story books**: 10 books, SooFunny's own short retellings of public-domain tales and rhymes, including The Three Little Pigs,
   Goldilocks, The Gingerbread Man, nursery rhymes, and two in Chinese (唐诗五首 Tang Poems and
   龟兔赛跑 The Tortoise and the Hare).
 - **Read aloud**: tap **Read to me** (读给我听 in Chinese books) and each page is read with the
@@ -344,6 +346,10 @@ builds fail to resolve them, add `-scmProvider system` to `xcodebuild`.
   With a free Apple ID, device installs expire after 7 days; with the paid Developer Program they
   last a year.
 
+  If a build fails with **"No Accounts"** or **"No profiles for 'com.chengjianglong.soofunny'"**,
+  Xcode has lost its sign-in or the development profile has expired: sign in again under
+  *Xcode → Settings → Accounts* and build again; Xcode makes a new profile automatically.
+
 From the command line:
 
 ```bash
@@ -437,6 +443,9 @@ project.yml                        XcodeGen project definition
   `scripts/word_photo_picks.json`, and up to two more for the buddy screen in
   `scripts/word_photo_extras.json`, then run `python3 scripts/bundle_word_photos.py`. Check
   every photo by eye: search results include unsuitable pictures.
+- **Story books:** edit `StoryLibrary` in `SooFunny/Books/StoryBooks.swift`. Each book has an
+  id, title, cover emoji, color and pages (an emoji scene and the text); set `language: .chinese`
+  for a Chinese book. Use only text you're allowed to share. The free books are set in `FreeTier`.
 - **App icon:** replace `design/soo-icon.png`, then run `python3 scripts/make_icon.py`.
 - **Pronunciation dictionary:** to rebuild it from newer misaki data, run
   `python3 scripts/build_voice_lexicon.py <folder with us_gold.json, us_silver.json, tokenizer.json>`.
@@ -459,6 +468,9 @@ In short:
 4. **Archive a Release build** with your Team ID and upload it.
 5. **Test on TestFlight** with a Sandbox account.
 6. **Submit** for review.
+
+**Status:** version 0.1 (build 2) and the yearly subscription were submitted on October 29, 2026,
+and are waiting for App Review.
 
 ---
 
@@ -497,7 +509,8 @@ right away.
   grown-ups can fix the words before saving. Chinese uses Apple's voice, not the natural one.
 - **Research Lab:** Apple's on-device language model needs Apple Intelligence (iOS 26+,
   supported devices only).
-- **Not yet on the App Store:** see [Releasing on the App Store](#releasing-on-the-app-store).
+- **Not on the App Store yet:** version 0.1 (build 2) and the Premium subscription have been in
+  App Review since October 29, 2026.
 
 ---
 
