@@ -1,6 +1,6 @@
 # SooFunny: App Store listing and submission checklist
 
-Everything to enter in App Store Connect for version 0.1, plus the steps only the account
+Everything to enter in App Store Connect for version 0.2, plus the steps only the account
 holder can do.
 
 ## App information
@@ -8,7 +8,7 @@ holder can do.
 | Field | Value |
 |---|---|
 | Name | SooFunny |
-| Subtitle (30) | Color, words & math for kids |
+| Subtitle (30) | Color, words, books & math |
 | Bundle ID | com.chengjianglong.soofunny |
 | SKU | soofunny-ios-001 |
 | Primary category | Education |
@@ -17,7 +17,7 @@ holder can do.
 | Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
-| Version | 0.1 (build 1) |
+| Version | 0.2 (build 3). It replaces 0.1 (build 2), which was taken out of review before release |
 
 Kids Category: optional. SooFunny already follows its rules (parental gate before purchases and
 outside links, no ads, no analytics, no data collection). Joining it puts the app in the Kids
@@ -25,8 +25,8 @@ section but asks you to pick an age band (5 and Under, or 6–8) and triggers st
 
 ## Promotional text (170)
 
-Color any photo, explore 754 words with a friendly talking buddy, and practice math, all
-offline and ad-free.
+Color any photo, explore 754 words with a talking buddy, hear books read aloud in English or
+Chinese, and practice math, all offline and ad-free.
 
 ## Description
 
@@ -43,6 +43,12 @@ letters, then ask the talking buddy anything: "What does a lion eat?" The buddy 
 loud with each word highlighted as it's read, using an AI model that runs right on your
 device.
 
+BOOKS READ ALOUD
+Ten picture books, from The Three Little Pigs to Tang poems, read aloud with each word lighting
+up as it's read. Scan your own books with the camera or pick pages from Photos: SooFunny reads
+the words on the page, in English, Chinese or both, and can turn the whole book into an
+audiobook to listen to anytime.
+
 MATH FUN
 Flashcards and quizzes for adding, taking away, times and sharing. Choose the numbers to
 practice, beat the clock, collect stars, and watch your progress grow.
@@ -55,10 +61,11 @@ MADE FOR FAMILIES
 
 SOOFUNNY PREMIUM
 Try every feature free: color 14 gallery pictures, the drawings and 15 of your own photos;
-explore three word groups and talk with the buddy about every animal; and practice all four
-operations (times and sharing with the numbers 1 to 5). Premium unlocks every picture and
-unlimited own photos, all 32 word groups, the talking buddy for every word, and times and
-sharing with every number. Start with a 3-day free trial, then $19.99 a year. Family Sharing is
+explore three word groups and talk with the buddy about every animal; read four story books and
+scan two of your own; and practice all four operations (times and sharing with the numbers 1 to
+5). Premium unlocks every picture and unlimited own photos, all 32 word groups, the talking
+buddy for every word, all 10 story books and unlimited own books, and times and sharing with
+every number. Start with a 3-day free trial, then $19.99 a year. Family Sharing is
 included.
 
 Payment is charged to your Apple Account when the trial ends. The subscription renews
@@ -70,11 +77,13 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 ## Keywords (100)
 
-kids,coloring,color by tap,learn english,vocabulary,math facts,flashcards,preschool,offline,AI
+kids,coloring,learn english,vocabulary,read aloud,story books,chinese,math facts,flashcards,offline
 
-## What's New (0.1)
+## What's New (0.2)
 
-First release: coloring gallery, word explorer with a talking buddy, and Math Fun.
+Not shown for a first release, but keep for reference: adds the Books tab (story books read
+aloud, and your own scanned books in English, Chinese or both, with audiobooks), on top of the
+coloring gallery, the word explorer with its talking buddy, and Math Fun.
 
 ## Subscription (In-App Purchases → Subscriptions)
 
@@ -88,22 +97,27 @@ First release: coloring gallery, word explorer with a talking buddy, and Math Fu
 | Introductory offer | Free trial, 3 days, new subscribers |
 | Family Sharing | On |
 | Display name | SooFunny Premium |
-| Description | Every picture, all words, the talking buddy and × ÷ math. |
+| Description | Every picture, word, book, the talking buddy and × ÷ math. |
 | Review screenshot | The subscription screen (after the grown-up check) |
 
 ## App Privacy ("nutrition label")
 
 Choose **Data Not Collected**. The app has no analytics, ads, accounts or servers; photos,
-voice, model conversations and progress never leave the device. Purchases are handled by Apple.
+scanned book pages, voice, model conversations and progress never leave the device. Purchases are handled by Apple.
 
 ## Notes for App Review
 
 SooFunny works fully offline. The talking buddy (Words → sparkle button) runs Google's
 Gemma 3 1B model on the device with llama.cpp; nothing is sent to a server.
 
+The Books tab reads story books aloud. "Scan a book" uses the camera (VisionKit document
+scanner), and the text on each page is recognized on the device with Apple's Vision framework;
+English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in voice.
+
 Premium features (locked items show a lock): the sixth Animals photo, own photos/camera after
 15 free pictures, word groups beyond Animals, Colors and Numbers, the talking buddy outside
-Animals, and × ÷ with focus numbers above 5 in Math. Purchases and outside
+Animals, story books beyond the first four, more than two scanned books, and × ÷ with focus
+numbers above 5 in Math. Purchases and outside
 links are behind a parental gate that asks a two-digit multiplication question (for example
 "What is 14 × 7?").
 
@@ -116,7 +130,8 @@ Restore Purchases is in Settings and on the subscription screen.
 - iPad 13" display (2064 × 2752 or 2048 × 2732): 3 to 10
 
 Suggested shots: Color gallery, a photo turned into a coloring page and half colored, Words
-category grid, the talking buddy conversation, Math quiz with a ✓, Progress Reports.
+category grid, the talking buddy conversation, a story book being read aloud, Math quiz with a
+✓, Progress Reports.
 
 ## Checklist: account holder only
 

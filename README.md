@@ -33,7 +33,7 @@ photographs ever leaves the device.
 
 | | |
 |---|---|
-| **Version** | 0.1 (build 2), in App Review |
+| **Version** | 0.2 (build 3), in App Review |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
@@ -469,7 +469,7 @@ In short:
 5. **Test on TestFlight** with a Sandbox account.
 6. **Submit** for review.
 
-**Status:** version 0.1 (build 2) and the yearly subscription were submitted on October 29, 2026,
+**Status:** version 0.2 (build 3), with the Books tab, and the yearly subscription were submitted on November 3, 2026,
 and are waiting for App Review.
 
 ---
@@ -509,8 +509,8 @@ right away.
   grown-ups can fix the words before saving. Chinese uses Apple's voice, not the natural one.
 - **Research Lab:** Apple's on-device language model needs Apple Intelligence (iOS 26+,
   supported devices only).
-- **Not on the App Store yet:** version 0.1 (build 2) and the Premium subscription have been in
-  App Review since October 29, 2026.
+- **Not on the App Store yet:** version 0.2 (build 3) and the Premium subscription have been in
+  App Review since November 3, 2026.
 
 ---
 
