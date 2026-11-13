@@ -12,18 +12,15 @@ photographs ever leaves the device.
 <p align="center"><img src="SooFunny/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="140" alt="SooFunny app icon"></p>
 
 <p align="center">
-  <a href="marketing/SooFunny-presentation.mp4"><img src="docs/images/presentation-poster.jpg" width="640" alt="Play the 2-minute SooFunny presentation video"></a><br>
-  <b>▶️ <a href="marketing/SooFunny-presentation.mp4">Watch the 2-minute presentation</a></b>: every feature, narrated in the app's own voice
+  <a href="marketing/SooFunny-demo.mp4"><img src="docs/images/demo-poster.jpg" width="640" alt="Play the 2-minute SooFunny demo video"></a><br>
+  <b>▶️ <a href="marketing/SooFunny-demo.mp4">Watch the 2-minute demo</a></b>: the app in action, narrated in its own voice<br>
+  Coloring, words with real photos, the talking buddy, books read aloud, sports, math, and free for everyone
 </p>
 
 <p align="center">
-  <a href="marketing/SooFunny-demo-iPhone16.mp4"><img src="docs/images/demo-iphone16.jpg" width="250" alt="Play the SooFunny demo video for iPhone 16"></a>
-  &nbsp;
-  <a href="marketing/SooFunny-demo-iPad.mp4"><img src="docs/images/demo-ipad.jpg" width="250" alt="Play the SooFunny demo video for iPad"></a><br>
-  <b>▶️ Watch the demo: <a href="marketing/SooFunny-demo-iPhone16.mp4">iPhone 16</a> (104 s) · <a href="marketing/SooFunny-demo-iPad.mp4">iPad</a> (104 s)</b><br>
-  Coloring, words with real photos, the talking buddy, books read aloud, and math<br>
-  🏅 <a href="marketing/SooFunny-sports.mp4">Sports animations</a> (36 s, 12 sports, new in 0.3)<br>
-  📑 <a href="marketing/SooFunny-slides.pdf">Introduction slides</a> (PDF, 12 slides)
+  🎬 <a href="marketing/SooFunny-presentation.mp4">2-minute presentation</a> (the slides, narrated) ·
+  🏅 <a href="marketing/SooFunny-sports.mp4">Sports animations</a> (36 s, 12 sports) ·
+  📑 <a href="marketing/SooFunny-slides.pdf">Introduction slides</a> (PDF)
 </p>
 
 <p align="center">
@@ -446,7 +443,7 @@ scripts/
   make_icon.py                     Makes the app icon from design/soo-icon.png
 design/soo-icon.png                App icon artwork
 docs/images/                       README screenshots and the Sports animation GIF
-marketing/                         The 2-minute presentation, demo videos (iPhone 16, iPad), the Sports animations clip and the introduction slides (PDF)
+marketing/                         The 2-minute demo and presentation, the Sports animations clip, the introduction slides (PDF) and older vertical demos
 AppStore/LISTING.md                App Store listing, review notes, submission checklist
 PRIVACY.md                         Privacy policy
 project.yml                        XcodeGen project definition
