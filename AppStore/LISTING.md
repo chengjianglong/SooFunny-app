@@ -114,7 +114,7 @@ The Books tab reads story books aloud. "Scan a book" uses the camera (VisionKit 
 scanner), and the text on each page is recognized on the device with Apple's Vision framework;
 English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in voice.
 
-Premium features (locked items show a lock): the sixth Animals photo, own photos/camera after
+Premium features (locked items show a lock): gallery photos after the fifth in a group (Animals, People), own photos/camera after
 15 free pictures, word groups beyond Animals, Colors and Numbers, the talking buddy outside
 Animals, story books beyond the first four, more than two scanned books, and × ÷ with focus
 numbers above 5 in Math. Purchases and outside

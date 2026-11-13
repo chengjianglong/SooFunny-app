@@ -270,7 +270,7 @@ private struct PictureCard: View {
 }
 
 /// Buttons squish a little when pressed.
-private struct SquishButtonStyle: ButtonStyle {
+struct SquishButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.93 : 1)

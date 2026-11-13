@@ -488,6 +488,12 @@
 		522DB0192FA84B81731B181E /* word-weather-umbrella-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C51ACE0FFC3976C27943FBE /* word-weather-umbrella-2.jpg */; };
 		5294911444DC810152711366 /* word-at-home-door-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CED6720EA641835B5EE547F /* word-at-home-door-2.jpg */; };
 		5344444C1CC4BB72547AED51 /* people-team.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31DB818D82DEA9A1E51A2F86 /* people-team.jpg */; };
+		85F90D4067F61CE7A8CFBF19 /* people-picnic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 75AF9265D00CC424DD235942 /* people-picnic.jpg */; };
+		38402D49AE360579F9E20A27 /* people-flower-friends.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E904BA94A689068830729B1 /* people-flower-friends.jpg */; };
+		1D95C46FBEAC55A231F0A2AE /* people-bridge-run.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90C0A92E5CB3A3C7314FA26C /* people-bridge-run.jpg */; };
+		B53271EACB436523E97FB32B /* people-pinwheel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3366C308023AEB6C004275A9 /* people-pinwheel.jpg */; };
+		B2C3B393FE804A2E0FA12B97 /* people-skateboards.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 046F67217F26121B5CF271B9 /* people-skateboards.jpg */; };
+		7EA2548F53B74B444FCD5CC5 /* people-baby-books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48BBA1A97DEB73082106AA6D /* people-baby-books.jpg */; };
 		534AF428EFB7A3177303FE67 /* word-bugs-cricket-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A522F6AA7173A82793EDA5A5 /* word-bugs-cricket-3.jpg */; };
 		5385B82E7AD56CC109167A40 /* word-bugs-fly-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B4D73FB1719F7DE9BC58F02 /* word-bugs-fly-2.jpg */; };
 		542CD3610D120841E14E8509 /* word-animals-otter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 329F92C17193BF2819CF84D1 /* word-animals-otter.jpg */; };
@@ -954,6 +960,12 @@
 		A8F24A8FB815399DAF3AE5AB /* word-food-pancakes-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2A67991B76F2AB19158D44F /* word-food-pancakes-3.jpg */; };
 		A906FF5B7A1B12876092C9B2 /* word-weather-wind-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DAB4B0C78B54A4E0DB5930E /* word-weather-wind-2.jpg */; };
 		A90745F1EDB5F1C152EF374C /* MathModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCDB7651B2AF8B5F3BF004E /* MathModel.swift */; };
+		7D01A6BF7D9B47EDBC2340CB /* OlympicSports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931352B5AF3E530F22E12786 /* OlympicSports.swift */; };
+		8E05234625B326BF145F470D /* SportDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517D4A0E89109181C2EF53D1 /* SportDemos.swift */; };
+		68121E21BBD932B3786D5BB6 /* DemoScenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43316C350BA80ADA50F696CF /* DemoScenes.swift */; };
+		32EBFDE4AECC538202F3EB0A /* SportDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51DA79EC2DC8ADF33BC4873 /* SportDemo.swift */; };
+		31E791D189BDD2C7BE67C248 /* SportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EBE9C757785194A1CADA36 /* SportsView.swift */; };
+		EEEE90DBE16C7FDBFB4AF88F /* SportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E534FE7D146E1282C37B4BC /* SportsTests.swift */; };
 		A9249D79A3D861DFE1148A35 /* word-nature-flower-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78FE5E0BEF69EB426ADE1DD3 /* word-nature-flower-3.jpg */; };
 		A949C497E8F1DF70C30D2436 /* word-sports-swimming-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4D92891F295081D0D4F67B77 /* word-sports-swimming-3.jpg */; };
 		A99EC8A22C7F5723480A6C1A /* word-bugs-beetle-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76E9F01E96530C31AE19F2C2 /* word-bugs-beetle-2.jpg */; };
@@ -1697,6 +1709,12 @@
 		3192D5A3C639521312CDABAC /* word-school-bell.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-school-bell.jpg"; sourceTree = "<group>"; };
 		31AA1F7BF9C24A8CAB6CAA70 /* word-weather-rainbow-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-weather-rainbow-3.jpg"; sourceTree = "<group>"; };
 		31DB818D82DEA9A1E51A2F86 /* people-team.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-team.jpg"; sourceTree = "<group>"; };
+		75AF9265D00CC424DD235942 /* people-picnic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-picnic.jpg"; sourceTree = "<group>"; };
+		6E904BA94A689068830729B1 /* people-flower-friends.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-flower-friends.jpg"; sourceTree = "<group>"; };
+		90C0A92E5CB3A3C7314FA26C /* people-bridge-run.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-bridge-run.jpg"; sourceTree = "<group>"; };
+		3366C308023AEB6C004275A9 /* people-pinwheel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-pinwheel.jpg"; sourceTree = "<group>"; };
+		046F67217F26121B5CF271B9 /* people-skateboards.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-skateboards.jpg"; sourceTree = "<group>"; };
+		48BBA1A97DEB73082106AA6D /* people-baby-books.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "people-baby-books.jpg"; sourceTree = "<group>"; };
 		31DE5F00690064A46FA9074B /* word-shapes-arrow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-shapes-arrow.jpg"; sourceTree = "<group>"; };
 		322FF9466051165D1DFB01D0 /* word-sports-football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sports-football.jpg"; sourceTree = "<group>"; };
 		32314AFAD416D3364F7B3155 /* word-colors-yellow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-colors-yellow.jpg"; sourceTree = "<group>"; };
@@ -2187,6 +2205,12 @@
 		8C12239D3535E423C8BE325C /* word-birds-penguin-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-birds-penguin-3.jpg"; sourceTree = "<group>"; };
 		8C7ABD075E2009B64FFC17E1 /* word-music-bell-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-music-bell-3.jpg"; sourceTree = "<group>"; };
 		8CCDB7651B2AF8B5F3BF004E /* MathModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathModel.swift; sourceTree = "<group>"; };
+		931352B5AF3E530F22E12786 /* OlympicSports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OlympicSports.swift; sourceTree = "<group>"; };
+		517D4A0E89109181C2EF53D1 /* SportDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDemos.swift; sourceTree = "<group>"; };
+		43316C350BA80ADA50F696CF /* DemoScenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScenes.swift; sourceTree = "<group>"; };
+		C51DA79EC2DC8ADF33BC4873 /* SportDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDemo.swift; sourceTree = "<group>"; };
+		D7EBE9C757785194A1CADA36 /* SportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsView.swift; sourceTree = "<group>"; };
+		2E534FE7D146E1282C37B4BC /* SportsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsTests.swift; sourceTree = "<group>"; };
 		8D147E1BEF4A5A6A2FF2CB68 /* word-around-town-stadium-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-stadium-2.jpg"; sourceTree = "<group>"; };
 		8D2CB146DE212FC30DCEF5AF /* word-sports-baseball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sports-baseball.jpg"; sourceTree = "<group>"; };
 		8D40147C05343A04EF3C27DF /* word-sea-creatures-starfish-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sea-creatures-starfish-2.jpg"; sourceTree = "<group>"; };
@@ -2876,6 +2900,7 @@
 				41A75BBFF06E5BB5477DAFCE /* BooksTests.swift */,
 				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
 				1D2CC50E46E9436EE783856B /* MathTests.swift */,
+				2E534FE7D146E1282C37B4BC /* SportsTests.swift */,
 				2945ED3D69153689914B5C22 /* NaturalVoiceTests.swift */,
 				ED14143B9928E0E0F91632DE /* PremiumTests.swift */,
 				CC4A54479B366CCACF874D03 /* WordAssistantTests.swift */,
@@ -2939,6 +2964,18 @@
 			path = Lab;
 			sourceTree = "<group>";
 		};
+		C2239BDFB8585AE47D2B1CEE /* Sports */ = {
+			isa = PBXGroup;
+			children = (
+				931352B5AF3E530F22E12786 /* OlympicSports.swift */,
+				517D4A0E89109181C2EF53D1 /* SportDemos.swift */,
+				43316C350BA80ADA50F696CF /* DemoScenes.swift */,
+				C51DA79EC2DC8ADF33BC4873 /* SportDemo.swift */,
+				D7EBE9C757785194A1CADA36 /* SportsView.swift */,
+			);
+			path = Sports;
+			sourceTree = "<group>";
+		};
 		93C2B2F555B23A1DA1AECF27 /* Math */ = {
 			isa = PBXGroup;
 			children = (
@@ -2987,6 +3024,12 @@
 				6F63E23ED6205432458774AF /* people-beach-family.jpg */,
 				9FCCCDC81CB087641935EF9A /* people-football.jpg */,
 				31DB818D82DEA9A1E51A2F86 /* people-team.jpg */,
+				75AF9265D00CC424DD235942 /* people-picnic.jpg */,
+				6E904BA94A689068830729B1 /* people-flower-friends.jpg */,
+				90C0A92E5CB3A3C7314FA26C /* people-bridge-run.jpg */,
+				3366C308023AEB6C004275A9 /* people-pinwheel.jpg */,
+				046F67217F26121B5CF271B9 /* people-skateboards.jpg */,
+				48BBA1A97DEB73082106AA6D /* people-baby-books.jpg */,
 				9891C2D4F1285045CF117AFC /* portraits-bunny-girl.jpg */,
 				EC194CBC0E51344498813105 /* portraits-fishmonger.jpg */,
 				D42AC44B0C04E58729D023F8 /* portraits-smiling-girl.jpg */,
@@ -4378,6 +4421,7 @@
 				93C2B2F555B23A1DA1AECF27 /* Math */,
 				EC54371A8FFE2A0CABE432C2 /* Samples */,
 				C16697E3566893AA883628C5 /* Showcase */,
+				C2239BDFB8585AE47D2B1CEE /* Sports */,
 				81524C71828CB316A70F09A3 /* Store */,
 				2EBBB759C90F9D8B932F5E74 /* Views */,
 				322C77793952213027A7B087 /* Voice */,
@@ -4501,6 +4545,12 @@
 				000D4293F603F5AE0412309F /* people-beach-family.jpg in Resources */,
 				EBFF033293237809F00B9915 /* people-football.jpg in Resources */,
 				5344444C1CC4BB72547AED51 /* people-team.jpg in Resources */,
+				85F90D4067F61CE7A8CFBF19 /* people-picnic.jpg in Resources */,
+				38402D49AE360579F9E20A27 /* people-flower-friends.jpg in Resources */,
+				1D95C46FBEAC55A231F0A2AE /* people-bridge-run.jpg in Resources */,
+				B53271EACB436523E97FB32B /* people-pinwheel.jpg in Resources */,
+				B2C3B393FE804A2E0FA12B97 /* people-skateboards.jpg in Resources */,
+				7EA2548F53B74B444FCD5CC5 /* people-baby-books.jpg in Resources */,
 				E7162886E96ACCBD644F6F4E /* portraits-bunny-girl.jpg in Resources */,
 				393511E4699F486F6FE1F939 /* portraits-fishmonger.jpg in Resources */,
 				2FF0710A48FF90CFE0B8F3B7 /* portraits-smiling-girl.jpg in Resources */,
@@ -5876,6 +5926,11 @@
 				18B08508BA62463E54122F15 /* LabBenchmarks.swift in Sources */,
 				6868463DF6452ECEC73EAAC3 /* LabImage.swift in Sources */,
 				A90745F1EDB5F1C152EF374C /* MathModel.swift in Sources */,
+				7D01A6BF7D9B47EDBC2340CB /* OlympicSports.swift in Sources */,
+				8E05234625B326BF145F470D /* SportDemos.swift in Sources */,
+				68121E21BBD932B3786D5BB6 /* DemoScenes.swift in Sources */,
+				32EBFDE4AECC538202F3EB0A /* SportDemo.swift in Sources */,
+				31E791D189BDD2C7BE67C248 /* SportsView.swift in Sources */,
 				EA86E58DA135911526ABBC04 /* MathViews.swift in Sources */,
 				A3542DE7668F0A1836D36792 /* NaturalVoice.swift in Sources */,
 				1473025B25947BEFEA333BBF /* PixelImage.swift in Sources */,
@@ -5904,6 +5959,7 @@
 				BC157EB01393E3324F781BB7 /* BooksTests.swift in Sources */,
 				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
 				3075E1CC8136FB91D1697EA7 /* MathTests.swift in Sources */,
+				EEEE90DBE16C7FDBFB4AF88F /* SportsTests.swift in Sources */,
 				80E4D96F39035FF53CFA6674 /* NaturalVoiceTests.swift in Sources */,
 				F2F55D6CC7DE2C95471A69DE /* PremiumTests.swift in Sources */,
 				B4A3FF1F0E365ECF582DD680 /* WordAssistantTests.swift in Sources */,
