@@ -12,8 +12,8 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "0.3"
-    CURRENT_PROJECT_VERSION: "4"
+    MARKETING_VERSION: "0.4"
+    CURRENT_PROJECT_VERSION: "5"
 targets:
   SooFunny:
     type: application
@@ -74,8 +74,6 @@ targets:
         Debug:
           # Image processing is ~100x slower unoptimized; keep it snappy when run from Xcode.
           SWIFT_OPTIMIZATION_LEVEL: "-O"
-          # Developer unlock: Premium is on in Debug builds only. Never add this to Release.
-          SWIFT_ACTIVE_COMPILATION_CONDITIONS: "$(inherited) DEV_UNLOCK"
   SooFunnyTests:
     type: bundle.unit-test
     platform: iOS

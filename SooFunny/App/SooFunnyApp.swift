@@ -7,6 +7,8 @@ struct SooFunnyApp: App {
         Speech.resetUnsuitableVoice()
         // Load the natural voice in the background so the first word plays quickly.
         NaturalVoiceEngine.shared.preload()
+        // Finish tips that complete while the app is closed or on another device.
+        _ = TipJar.shared
     }
 
     var body: some Scene {

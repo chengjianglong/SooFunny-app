@@ -23,10 +23,8 @@ final class BooksTests: XCTestCase {
         }
     }
 
-    func testFreeTierOpensTheFirstThreeBooks() {
-        let books = StoryLibrary.books
-        XCTAssertEqual(books.filter(FreeTier.allows).map(\.id), books.prefix(FreeTier.storyBooks).map(\.id) + ["tang-poems"])
-        XCTAssertEqual(books.filter { $0.language == .chinese }.count, 2)
+    func testLibraryHasTwoChineseBooks() {
+        XCTAssertEqual(StoryLibrary.books.filter { $0.language == .chinese }.count, 2)
     }
 
     func testReflowJoinsLinesAndHyphensAndDropsPageNumbers() {

@@ -7,13 +7,12 @@ struct SettingsView: View {
     @AppStorage(SettingsKey.voice) private var voiceIdentifier = ""
     @AppStorage(SettingsKey.speechRate) private var speechRate = SettingsKey.defaultSpeechRate
     @State private var voices = Speech.englishVoices
-    @State private var showPaywall = false
+    @State private var showSupport = false
     @State private var showManage = false
-    @State private var restoreMessage: String?
     @State private var gate: GateTarget?
     @State private var showResearchLab = false
     @Environment(\.openURL) private var openURL
-    private let premium = Premium.shared
+    private let tipJar = TipJar.shared
 
     /// Things behind the grown-up check.
     private enum GateTarget: Identifiable {
@@ -24,43 +23,21 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                #if DEV_UNLOCK
                 Section {
-                    Label("Developer unlock: Premium is on in this Debug build. App Store builds don't include it.",
-                          systemImage: "hammer.fill")
-                        .font(.footnote)
-                        .foregroundStyle(.orange)
-                }
-                #endif
-                Section {
-                    if premium.isActive {
-                        LabeledContent("SooFunny Premium", value: "Active")
-                        if let date = premium.expirationDate {
-                            LabeledContent(premium.willRenew ? "Renews" : "Ends",
-                                           value: date.formatted(date: .abbreviated, time: .omitted))
-                        }
-                        Button("Manage subscription") { showManage = true }
-                    } else {
-                        Button {
-                            showPaywall = true
-                        } label: {
-                            Label("Get SooFunny Premium", systemImage: "star.fill")
-                        }
+                    Button {
+                        showSupport = true
+                    } label: {
+                        Label("Leave a tip", systemImage: "heart.fill")
                     }
-                    Button("Restore purchases") {
-                        Task {
-                            do {
-                                try await premium.restore()
-                                restoreMessage = premium.isActive ? "Premium is active." : "No subscription found for this Apple Account."
-                            } catch {
-                                restoreMessage = "Couldn't reach the App Store. Please try again when online."
-                            }
-                        }
+                    if tipJar.hasLegacySubscription {
+                        Text("SooFunny is now free for everyone, so your SooFunny Premium subscription is no longer needed. You can cancel it so it doesn't renew.")
+                            .font(.footnote)
+                        Button("Manage subscription") { showManage = true }
                     }
                 } header: {
-                    Text("Premium")
+                    Text("Support SooFunny")
                 } footer: {
-                    Text("Free for 3 days, then $19.99 a year. Unlocks every picture, your own photos, all word groups, the talking buddy and × ÷ math. Cancel anytime.")
+                    Text("SooFunny is free, with every feature for everyone. Tips are optional and help keep it maintained and updated.")
                 }
 
                 Section {
@@ -136,7 +113,7 @@ struct SettingsView: View {
             }
             .onAppear { voices = Speech.englishVoices }
             .navigationDestination(isPresented: $showResearchLab) { ResearchLabView() }
-            .sheet(isPresented: $showPaywall) { PaywallView() }
+            .sheet(isPresented: $showSupport) { SupportView() }
             .sheet(item: $gate) { target in
                 NavigationStack {
                     ParentalGate(reason: target == .website ? "This opens a website." : "The Research Lab is for grown-ups.") {
@@ -152,12 +129,7 @@ struct SettingsView: View {
                 }
             }
             .manageSubscriptionsSheet(isPresented: $showManage)
-            .alert("Restore purchases", isPresented: Binding(get: { restoreMessage != nil },
-                                                             set: { if !$0 { restoreMessage = nil } })) {
-                Button("OK", role: .cancel) {}
-            } message: {
-                Text(restoreMessage ?? "")
-            }
+            .task { await tipJar.refresh() }
         }
     }
 

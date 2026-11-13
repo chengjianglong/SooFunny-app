@@ -1,6 +1,6 @@
 # SooFunny Privacy Policy
 
-_Last updated: October 26, 2026_
+_Last updated: November 13, 2026_
 
 SooFunny is a learning and coloring app for children, made by Chengjiang Long
 (https://www.chengjianglong.com/). © 2026 Soo X Intelligence LLC. All rights reserved.
@@ -26,16 +26,17 @@ There are no accounts, no ads, no analytics, no tracking, and no servers that re
 
 ## Purchases
 
-SooFunny Premium is an auto-renewing subscription sold by Apple through the App Store. Payment
-and billing are handled entirely by Apple; we never see your payment details. Apple tells the
-app only whether the subscription is active. See Apple's privacy policy at
-https://www.apple.com/legal/privacy/.
+SooFunny is free. Grown-ups can choose to leave an optional, one-time tip, sold by Apple through
+the App Store. Payment and billing are handled entirely by Apple; we never see your payment
+details. Tips unlock nothing, and the app keeps no record of them. Former subscribers to
+SooFunny Premium can see in the app whether their old subscription is still set to renew. See
+Apple's privacy policy at https://www.apple.com/legal/privacy/.
 
 ## Children
 
 SooFunny is designed for children and complies with the App Store's rules for kids' apps. It
 does not collect personal information from anyone, including children. Purchases and links that
-leave the app are behind a grown-up check.
+leave the app, including tips, are behind a grown-up check.
 
 ## Permissions
 

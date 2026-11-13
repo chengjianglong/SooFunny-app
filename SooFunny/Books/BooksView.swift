@@ -8,17 +8,14 @@ import VisionKit
 struct BooksView: View {
     @Environment(\.horizontalSizeClass) private var sizeClass
     @State private var showSettings = false
-    @State private var showPaywall = false
     @State private var openStory: StoryBook?
     @State private var scanning = false
     @State private var choosingPhotos = false
     @State private var scannedPages: ScannedPages?
     @State private var path = NavigationPath()
-    private let premium = Premium.shared
     private let store = ScannedBookStore.shared
 
     private let scannerAvailable = VNDocumentCameraViewController.isSupported
-    private var canAddBook: Bool { premium.isActive || store.books.count < FreeTier.scannedBooks }
 
     var body: some View {
         NavigationStack(path: $path) {
@@ -37,14 +34,13 @@ struct BooksView: View {
                     sectionTitle("📚", "Story time")
                     LazyVGrid(columns: columns, spacing: 18) {
                         ForEach(Array(StoryLibrary.books.enumerated()), id: \.element.id) { index, book in
-                            let locked = !premium.isActive && !FreeTier.allows(book)
                             Button {
-                                if locked { showPaywall = true } else { openStory = book }
+                                openStory = book
                             } label: {
-                                StoryCover(book: book, locked: locked, tilt: index.isMultiple(of: 2) ? -2 : 2)
+                                StoryCover(book: book, tilt: index.isMultiple(of: 2) ? -2 : 2)
                             }
                             .buttonStyle(.plain)
-                            .accessibilityLabel(locked ? "\(book.title), Premium" : "Read \(book.title)")
+                            .accessibilityLabel("Read \(book.title)")
                         }
                     }
 
@@ -75,7 +71,6 @@ struct BooksView: View {
                 }
             }
             .sheet(isPresented: $showSettings) { SettingsView() }
-            .sheet(isPresented: $showPaywall) { PaywallView() }
             .sheet(item: $scannedPages) { pages in
                 ScanReviewView(pages: pages.pages) { book in
                     path.append(book)
@@ -105,26 +100,17 @@ struct BooksView: View {
     }
 
     private var scanButtons: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(spacing: 12) {
-                if scannerAvailable {
-                    Button { canAddBook ? (scanning = true) : (showPaywall = true) } label: {
-                        ScanButtonLabel(title: "Scan a book", systemImage: canAddBook ? "doc.viewfinder" : "lock.fill", color: .orange)
-                    }
-                }
-                Button { canAddBook ? (choosingPhotos = true) : (showPaywall = true) } label: {
-                    ScanButtonLabel(title: "From Photos", systemImage: canAddBook ? "photo.on.rectangle.angled" : "lock.fill", color: .pink)
+        HStack(spacing: 12) {
+            if scannerAvailable {
+                Button { scanning = true } label: {
+                    ScanButtonLabel(title: "Scan a book", systemImage: "doc.viewfinder", color: .orange)
                 }
             }
-            .frame(maxWidth: 560)
-            if !premium.isActive {
-                let left = max(0, FreeTier.scannedBooks - store.books.count)
-                Text(left == 1 ? "1 free book of your own left" : left > 0 ? "\(left) free books of your own left"
-                     : "Get Premium to add more of your own books")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(.secondary)
+            Button { choosingPhotos = true } label: {
+                ScanButtonLabel(title: "From Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
             }
         }
+        .frame(maxWidth: 560)
     }
 }
 
@@ -138,7 +124,6 @@ struct ScannedPages: Identifiable {
 
 private struct StoryCover: View {
     let book: StoryBook
-    let locked: Bool
     let tilt: Double
 
     var body: some View {
@@ -148,9 +133,6 @@ private struct StoryCover: View {
                 .frame(maxWidth: .infinity, minHeight: 140)
                 .background(LinearGradient(colors: [book.color.opacity(0.45), book.color.opacity(0.15)],
                                            startPoint: .top, endPoint: .bottom))
-                .overlay(alignment: .topTrailing) {
-                    if locked { PremiumBadge().padding(8) }
-                }
             Text(book.title)
                 .font(.headline)
                 .foregroundStyle(.white)

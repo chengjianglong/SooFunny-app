@@ -102,15 +102,11 @@ struct MathSettings: Codable, Equatable {
 /// Makes practice questions that suit young children.
 enum MathQuestionMaker {
     /// `count` questions using the chosen operations and focus numbers, without the
-    /// same question twice in a row. `focusLimits` keeps an operation to some focus numbers;
-    /// an operation left with none isn't used.
+    /// same question twice in a row.
     static func questions<R: RandomNumberGenerator>(for settings: MathSettings,
-                                                    focusLimits: [MathOperation: ClosedRange<Int>] = [:],
                                                     using rng: inout R) -> [MathQuestion] {
-        let choices: [(op: MathOperation, focus: [Int])] = settings.operations.sorted().compactMap { op in
-            let focus = settings.focusNumbers.sorted().filter { focusLimits[op]?.contains($0) ?? true }
-            return focus.isEmpty ? nil : (op, focus)
-        }
+        let focus = settings.focusNumbers.sorted()
+        let choices: [(op: MathOperation, focus: [Int])] = focus.isEmpty ? [] : settings.operations.sorted().map { ($0, focus) }
         guard !choices.isEmpty else { return [] }
         let possible = choices.reduce(0) { $0 + $1.focus.count }
         var questions: [MathQuestion] = []
@@ -126,10 +122,9 @@ enum MathQuestionMaker {
         return questions
     }
 
-    static func questions(for settings: MathSettings,
-                          focusLimits: [MathOperation: ClosedRange<Int>] = [:]) -> [MathQuestion] {
+    static func questions(for settings: MathSettings) -> [MathQuestion] {
         var rng = SystemRandomNumberGenerator()
-        return questions(for: settings, focusLimits: focusLimits, using: &rng)
+        return questions(for: settings, using: &rng)
     }
 
     /// One question where the focus number appears. Subtraction never goes below zero and

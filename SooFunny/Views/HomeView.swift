@@ -13,19 +13,6 @@ struct HomeView: View {
     @State private var cameraImage: UIImage?
     @State private var loadFailed = false
     @State private var diceSpin = 0.0
-    @State private var showPaywall = false
-    @AppStorage(FreeTier.ownPicturesUsedKey) private var ownPicturesUsed = 0
-    private let premium = Premium.shared
-
-    /// Own pictures (Photos or Camera) left in the free tier.
-    private var ownPicturesLeft: Int { max(0, FreeTier.ownPictures - ownPicturesUsed) }
-    private var canUseOwnPictures: Bool { premium.isActive || ownPicturesLeft > 0 }
-
-    /// Colors one of the child's own pictures, counting it against the free tier.
-    private func pickOwn(_ image: UIImage) {
-        if !premium.isActive { ownPicturesUsed += 1 }
-        onPick(image)
-    }
 
     private let cameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
 
@@ -61,7 +48,7 @@ struct HomeView: View {
             guard let item else { return }
             Task {
                 if let data = try? await item.loadTransferable(type: Data.self), let image = UIImage(data: data) {
-                    pickOwn(image)
+                    onPick(image)
                 } else {
                     loadFailed = true
                 }
@@ -71,7 +58,7 @@ struct HomeView: View {
         .fullScreenCover(isPresented: $showCamera, onDismiss: {
             if let cameraImage {
                 self.cameraImage = nil
-                pickOwn(cameraImage)
+                onPick(cameraImage)
             }
         }) {
             CameraPicker { image in
@@ -79,7 +66,6 @@ struct HomeView: View {
             }
             .ignoresSafeArea()
         }
-        .sheet(isPresented: $showPaywall) { PaywallView() }
         .alert("Couldn't open that picture", isPresented: $loadFailed) {
             Button("OK", role: .cancel) {}
         } message: {
@@ -92,8 +78,7 @@ struct HomeView: View {
     private var surpriseButton: some View {
         Button {
             withAnimation(.spring(duration: 0.6, bounce: 0.5)) { diceSpin += 360 }
-            let choices = Showcase.pictures(kind).filter { premium.isActive || FreeTier.allows($0) }
-            if let picture = (choices.isEmpty ? Showcase.pictures(.drawings) : choices).randomElement(),
+            if let picture = Showcase.pictures(kind).randomElement(),
                let image = picture.image() {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) { onPick(image) }
             }
@@ -162,13 +147,8 @@ struct HomeView: View {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: sizeClass == .regular ? 200 : 150), spacing: 16)],
                       spacing: 18) {
                 ForEach(Array(Showcase.pictures(section).enumerated()), id: \.element.id) { index, picture in
-                    let locked = !premium.isActive && !FreeTier.allows(picture)
-                    PictureCard(picture: picture, tilt: index.isMultiple(of: 2) ? -2 : 2, locked: locked) {
-                        if locked {
-                            showPaywall = true
-                        } else if let image = picture.image() {
-                            onPick(image)
-                        }
+                    PictureCard(picture: picture, tilt: index.isMultiple(of: 2) ? -2 : 2) {
+                        if let image = picture.image() { onPick(image) }
                     }
                 }
             }
@@ -176,35 +156,16 @@ struct HomeView: View {
     }
 
     private var bottomBar: some View {
-        VStack(spacing: 6) {
-            HStack(spacing: 12) {
-                if canUseOwnPictures {
-                    PhotosPicker(selection: $photoItem, matching: .images) {
-                        BarButtonLabel(title: "Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
-                    }
-                    .buttonStyle(SquishButtonStyle())
-                } else {
-                    Button { showPaywall = true } label: {
-                        BarButtonLabel(title: "Photos", systemImage: "lock.fill", color: .pink)
-                    }
-                    .buttonStyle(SquishButtonStyle())
-                }
-                if cameraAvailable {
-                    Button { if canUseOwnPictures { showCamera = true } else { showPaywall = true } } label: {
-                        BarButtonLabel(title: "Camera", systemImage: canUseOwnPictures ? "camera.fill" : "lock.fill", color: .blue)
-                    }
-                    .buttonStyle(SquishButtonStyle())
-                }
+        HStack(spacing: 12) {
+            PhotosPicker(selection: $photoItem, matching: .images) {
+                BarButtonLabel(title: "Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
             }
-            if !premium.isActive {
-                Button { showPaywall = true } label: {
-                    Text(ownPicturesLeft == 1 ? "1 free picture of your own left"
-                         : ownPicturesLeft > 0 ? "\(ownPicturesLeft) free pictures of your own left"
-                         : "Get Premium to color more of your own pictures")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+            .buttonStyle(SquishButtonStyle())
+            if cameraAvailable {
+                Button { showCamera = true } label: {
+                    BarButtonLabel(title: "Camera", systemImage: "camera.fill", color: .blue)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(SquishButtonStyle())
             }
         }
         .frame(maxWidth: 560)
@@ -221,7 +182,6 @@ struct HomeView: View {
 private struct PictureCard: View {
     let picture: ShowcasePicture
     let tilt: Double
-    let locked: Bool
     let action: () -> Void
 
     @State private var thumbnail: UIImage?
@@ -242,9 +202,6 @@ private struct PictureCard: View {
                 .frame(height: 150)
                 .frame(maxWidth: .infinity)
                 .clipped()
-                .overlay(alignment: .topTrailing) {
-                    if locked { PremiumBadge().padding(8) }
-                }
                 HStack(spacing: 6) {
                     Text(picture.kind.emoji)
                     Text(picture.title)
@@ -262,7 +219,7 @@ private struct PictureCard: View {
             .rotationEffect(.degrees(tilt))
         }
         .buttonStyle(SquishButtonStyle())
-        .accessibilityLabel(locked ? "\(picture.title), Premium" : "Color \(picture.title)")
+        .accessibilityLabel("Color \(picture.title)")
         .task {
             thumbnail = await ThumbnailCache.shared.thumbnail(for: picture)
         }

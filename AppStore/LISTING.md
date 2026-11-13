@@ -1,6 +1,6 @@
 # SooFunny: App Store listing and submission checklist
 
-Everything to enter in App Store Connect for version 0.3, plus the steps only the account
+Everything to enter in App Store Connect for version 0.4, plus the steps only the account
 holder can do.
 
 ## App information
@@ -17,7 +17,7 @@ holder can do.
 | Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
-| Version | 0.3 (build 4). 0.2 (build 3) was released on November 6, 2026 |
+| Version | 0.4 (build 5): everything free, with optional tips. 0.3 (build 4) went to App Review on November 13, 2026 |
 
 Kids Category: optional. SooFunny already follows its rules (parental gate before purchases and
 outside links, no ads, no analytics, no data collection). Joining it puts the app in the Kids
@@ -25,8 +25,8 @@ section but asks you to pick an age band (5 and Under, or 6–8) and triggers st
 
 ## Promotional text (170)
 
-Color any photo, explore 754 words with a talking buddy, hear books read aloud, practice math,
-and discover 51 sports in English and Chinese, all offline and ad-free.
+Now completely free! Color any photo, explore 754 words with a talking buddy, hear books read
+aloud, practice math and discover 51 sports, all offline and ad-free.
 
 ## Description
 
@@ -62,20 +62,12 @@ MADE FOR FAMILIES
 • Works offline: perfect for car rides and flights
 • No ads, no tracking, no accounts
 • Nothing leaves your device
-• Grown-up check before purchases and links
+• Grown-up check before tips and links
 
-SOOFUNNY PREMIUM
-Try every feature free: color 16 gallery pictures, the drawings and 15 of your own photos;
-explore three word groups and talk with the buddy about every animal; read four story books and
-scan two of your own; and practice all four operations (times and sharing with the numbers 1 to
-5). Premium unlocks every picture and unlimited own photos, all 32 word groups, the talking
-buddy for every word, all 10 story books and unlimited own books, and times and sharing with
-every number. The Sports tab is free for everyone. Start with a 3-day free trial, then $19.99 a year. Family Sharing is
-included.
-
-Payment is charged to your Apple Account when the trial ends. The subscription renews
-automatically each year unless it's turned off at least 24 hours before the end of the
-current period. Manage or cancel anytime in your Apple Account settings.
+FREE FOR EVERY FAMILY
+Every picture, word, book, sport and math game is free, with no locks, no subscriptions and no
+ads. If your family enjoys SooFunny, you can leave an optional tip in Settings to help keep it
+maintained and add new things to learn. Tips are one-time and unlock nothing.
 
 Privacy Policy: https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md
 Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
@@ -84,7 +76,13 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 kids,coloring,learn english,vocabulary,read aloud,story books,chinese,math facts,flashcards,offline
 
-## What's New (0.3)
+## What's New (0.4)
+
+SooFunny is now completely free! Every picture, word, book, sport and math game is open to
+everyone, with no subscription. If you'd like to help keep SooFunny growing, you can leave an
+optional tip in Settings. Already subscribed? There's a note in Settings showing how to cancel.
+
+## What's New (0.3, for reference)
 
 New Sports tab: discover 51 summer and winter sports in English and Chinese, each with a short
 introduction read aloud and a playful animation. The whole tab is free.
@@ -93,25 +91,27 @@ Six new People pictures to color.
 0.2 added the Books tab: story books read aloud, and your own scanned books in English, Chinese
 or both, with audiobooks.
 
-## Subscription (In-App Purchases → Subscriptions)
+## Tips (In-App Purchases → Consumables)
 
-| Field | Value |
-|---|---|
-| Subscription group | SooFunny Premium |
-| Reference name | SooFunny Premium Yearly |
-| Product ID | com.chengjianglong.soofunny.premium.yearly (must match the app exactly) |
-| Duration | 1 year |
-| Price | $19.99 (USA); let Apple set equivalents for other countries |
-| Introductory offer | Free trial, 3 days, new subscribers |
-| Family Sharing | On |
-| Display name | SooFunny Premium |
-| Description | Every picture, word, book, the talking buddy and × ÷ math. |
-| Review screenshot | The subscription screen (after the grown-up check) |
+Create three consumables (they must match the app exactly). Each needs a review screenshot:
+the Support SooFunny screen, after the grown-up check.
+
+| Reference name | Product ID | Price (USA) | Display name | Description |
+|---|---|---|---|---|
+| Tip Small | com.chengjianglong.soofunny.tip.small | $1.99 | Small tip | A small thank-you that helps keep SooFunny going. |
+| Tip Medium | com.chengjianglong.soofunny.tip.medium | $4.99 | Medium tip | A thank-you that helps add new things to learn. |
+| Tip Large | com.chengjianglong.soofunny.tip.large | $9.99 | Large tip | A big thank-you that helps keep SooFunny free for everyone. |
+
+Let Apple set equivalents for other countries.
+
+**The old subscription** (`com.chengjianglong.soofunny.premium.yearly`, $19.99 a year): once 0.4
+is out, remove it from sale in Subscriptions → SooFunny Premium Yearly → Availability, so nobody
+new can subscribe. Existing subscribers keep it until they cancel; the app shows them how.
 
 ## App Privacy ("nutrition label")
 
 Choose **Data Not Collected**. The app has no analytics, ads, accounts or servers; photos,
-scanned book pages, voice, model conversations and progress never leave the device. Purchases are handled by Apple.
+scanned book pages, voice, model conversations and progress never leave the device. Tips are handled by Apple.
 
 ## Notes for App Review
 
@@ -125,15 +125,11 @@ English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in v
 The Sports tab (free) introduces 51 summer and winter sports in English and Chinese, each with
 a looping animation drawn in code.
 
-Premium features (locked items show a lock): gallery photos after the fifth in a group (Animals, People), own photos/camera after
-15 free pictures, word groups beyond Animals, Colors and Numbers, the talking buddy outside
-Animals, story books beyond the first four, more than two scanned books, and × ÷ with focus
-numbers above 5 in Math. Purchases and outside
-links are behind a parental gate that asks a two-digit multiplication question (for example
-"What is 14 × 7?").
-
-Subscribe: Settings (gear) → Get SooFunny Premium → answer the gate → choose the plan.
-Restore Purchases is in Settings and on the subscription screen.
+New in 0.4: every feature is free; nothing is locked. The three In-App Purchases are optional
+tips (consumables) that unlock nothing: Settings (gear) → Support SooFunny → Leave a tip →
+answer the grown-up check. Tips and outside links are behind a parental gate that asks a
+two-digit multiplication question (for example "What is 14 × 7?"). Former subscribers see a
+"Manage subscription" button in Settings to cancel the old subscription.
 
 ## Screenshots needed
 
@@ -154,11 +150,11 @@ These need your Apple Account, identity, bank and tax details, so they can't be 
 1. Enroll in the Apple Developer Program as an individual ($99/year):
    https://developer.apple.com/programs/enroll/ (use the Apple Account that will own the app).
 2. In App Store Connect → Business: accept the **Paid Apps Agreement**, add **bank account** and
-   **tax forms** (W-9 for the US). Subscriptions can't be sold until these are active.
+   **tax forms** (W-9 for the US). In-App Purchases can't be sold until these are active.
 3. In Xcode → Settings → Accounts, sign in with that Apple Account so builds can be signed for
    distribution. Note your Team ID (Membership page).
 4. In App Store Connect → Apps → "+": create **SooFunny** with the bundle ID above.
-5. Create the subscription exactly as in the table above, and submit it with the first build.
+5. Create the tips exactly as in the table above, and submit them with the build.
 
 ## Checklist: build and upload
 
@@ -166,5 +162,5 @@ These need your Apple Account, identity, bank and tax details, so they can't be 
    about 830 MB, well under the 4 GB limit).
 2. Archive with your Team ID: Product → Archive in Xcode (or `xcodebuild archive` with
    `DEVELOPMENT_TEAM=<Team ID>`), then Distribute App → App Store Connect.
-3. Test with TestFlight on a real device: subscribe with a Sandbox account, restore, cancel.
-4. Fill in the listing above, attach the build and the subscription, and submit for review.
+3. Test with TestFlight on a real device: leave a tip with a Sandbox account.
+4. Fill in the listing above, attach the build and the tips, and submit for review.

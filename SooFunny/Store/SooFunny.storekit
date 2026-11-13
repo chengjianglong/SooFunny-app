@@ -1,65 +1,97 @@
 {
-  "identifier" : "5F0C2A1E",
-  "nonRenewingSubscriptions" : [
-
-  ],
-  "products" : [
-
-  ],
-  "settings" : {
-    "_failTransactionsEnabled" : false,
-    "_locale" : "en_US",
-    "_storefront" : "USA",
-    "_storeKitErrors" : [
-
-    ]
-  },
-  "subscriptionGroups" : [
+  "identifier": "5F0C2A1E",
+  "nonRenewingSubscriptions": [],
+  "products": [
     {
-      "id" : "21500001",
-      "localizations" : [
-
-      ],
-      "name" : "SooFunny Premium",
-      "subscriptions" : [
+      "displayPrice": "1.99",
+      "familyShareable": false,
+      "internalID": "6739000101",
+      "localizations": [
         {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
-          "displayPrice" : "19.99",
-          "familyShareable" : true,
-          "groupNumber" : 1,
-          "internalID" : "6739000001",
-          "introductoryOffer" : {
-            "internalID" : "6739000002",
-            "numberOfPeriods" : 1,
-            "paymentMode" : "free",
-            "subscriptionPeriod" : "P3D"
+          "description": "A small thank-you that helps keep SooFunny going.",
+          "displayName": "Small tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.chengjianglong.soofunny.tip.small",
+      "referenceName": "Tip Small",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "4.99",
+      "familyShareable": false,
+      "internalID": "6739000102",
+      "localizations": [
+        {
+          "description": "A thank-you that helps add new things to learn.",
+          "displayName": "Medium tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.chengjianglong.soofunny.tip.medium",
+      "referenceName": "Tip Medium",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "9.99",
+      "familyShareable": false,
+      "internalID": "6739000103",
+      "localizations": [
+        {
+          "description": "A big thank-you that helps keep SooFunny free for everyone.",
+          "displayName": "Large tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "com.chengjianglong.soofunny.tip.large",
+      "referenceName": "Tip Large",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500001",
+      "localizations": [],
+      "name": "SooFunny Premium",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "19.99",
+          "familyShareable": true,
+          "groupNumber": 1,
+          "internalID": "6739000001",
+          "introductoryOffer": {
+            "internalID": "6739000002",
+            "numberOfPeriods": 1,
+            "paymentMode": "free",
+            "subscriptionPeriod": "P3D"
           },
-          "localizations" : [
+          "localizations": [
             {
-              "description" : "All pictures, words, the talking buddy and × ÷ math.",
-              "displayName" : "SooFunny Premium",
-              "locale" : "en_US"
+              "description": "All pictures, words, the talking buddy and × ÷ math.",
+              "displayName": "SooFunny Premium",
+              "locale": "en_US"
             }
           ],
-          "productID" : "com.chengjianglong.soofunny.premium.yearly",
-          "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "SooFunny Premium Yearly",
-          "subscriptionGroupID" : "21500001",
-          "type" : "RecurringSubscription",
-          "winbackOffers" : [
-
-          ]
+          "productID": "com.chengjianglong.soofunny.premium.yearly",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "SooFunny Premium Yearly",
+          "subscriptionGroupID": "21500001",
+          "type": "RecurringSubscription",
+          "winbackOffers": []
         }
       ]
     }
   ],
-  "version" : {
-    "major" : 4,
-    "minor" : 0
+  "version": {
+    "major": 4,
+    "minor": 0
   }
 }

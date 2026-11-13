@@ -53,7 +53,7 @@ photographs ever leaves the device.
 
 - [Features](#features)
 - [How it works](#how-it-works)
-- [SooFunny Premium](#soofunny-premium)
+- [Free, with optional tips](#free-with-optional-tips)
 - [Privacy and child safety](#privacy-and-child-safety)
 - [Building and running](#building-and-running)
 - [Tests](#tests)
@@ -177,7 +177,7 @@ the app uses an Apple voice automatically.
 
 ### ⚙️ Settings
 
-- **Premium**: status, **Restore purchases** and **Manage subscription**.
+- **Support SooFunny**: **Leave a tip**, behind the grown-up check.
 - **Reading voice**: the voice, its speed (default about 1.05×) and a **Try the voice** button.
 - **Research Lab** (for grown-ups): device info and on-device benchmarks of the coloring
   pipeline, Apple's Vision subject model and Apple's on-device language model (Apple
@@ -264,36 +264,28 @@ block.
 
 ---
 
-## SooFunny Premium
+## Free, with optional tips
 
-A yearly auto-renewing subscription: **$19.99 a year with a 3-day free trial**, with Family
-Sharing. It uses StoreKit 2 (`SooFunny/Store/Premium.swift`); product ID
-`com.chengjianglong.soofunny.premium.yearly`.
+**Every feature is free for everyone**, with no locks, limits, ads or accounts, from version 0.4.
+Grown-ups who'd like to help keep SooFunny maintained and updated can leave a tip in
+**Settings → Support SooFunny**, behind the grown-up check.
 
-| Free | Premium |
-|---|---|
-| The 4 drawings, and the first 5 photos in each group (16 of 21) | Every gallery photo |
-| 15 of your own pictures (Photos or Camera) | As many of your own pictures as you like |
-| Animals, Colors and Numbers words | All 32 word groups |
-| The talking buddy for every Animals word | The talking buddy for every word |
-| 4 story books (the first 3 English ones and the Tang poems) | All 10 story books |
-| 2 of your own scanned books | As many of your own books as you like |
-| + and − in Math with any number; × and ÷ with the numbers 1 to 5 | × and ÷ with every number |
+| Tip | Price (US) | Product ID |
+|---|---|---|
+| ☕️ Small | $1.99 | `com.chengjianglong.soofunny.tip.small` |
+| 🍰 Medium | $4.99 | `com.chengjianglong.soofunny.tip.medium` |
+| 🎁 Large | $9.99 | `com.chengjianglong.soofunny.tip.large` |
 
-The free amounts live in `FreeTier` (`SooFunny/Store/Premium.swift`). Own pictures are
-counted on the device; a 🔒 appears when they run out.
-
-- **Locks:** locked items show a 🔒. Tapping one asks a grown-up question (a two-digit
-  multiplication) before showing Apple's subscription screen.
-- **Offline:** StoreKit keeps the purchase on the device, so Premium keeps working without
-  internet.
-- **Testing purchases:** `SooFunny/Store/SooFunny.storekit` lets you test them in Xcode; the
-  scheme uses it when you press **Run**.
-- **Developer unlock:** Debug builds (installed from Xcode) turn Premium on, so you can try every
-  feature on your own devices; Settings shows an orange note. It comes from the `DEV_UNLOCK`
-  flag, set only for the Debug configuration in `project.yml`. App Store and TestFlight builds
-  are Release builds, which don't have it, and `Premium.swift` refuses to compile if the flag
-  is ever enabled outside Debug.
+- **How:** tips are consumable In-App Purchases (StoreKit 2, `SooFunny/Store/TipJar.swift`) that
+  unlock nothing. Apple requires In-App Purchase for tips to a developer that isn't a registered
+  nonprofit, so there's no outside donation link in the app.
+- **Offline:** the tip screen needs the App Store; offline it says so. Everything else works
+  offline as before.
+- **Former subscribers:** versions 0.1 to 0.3 sold a yearly subscription
+  (`com.chengjianglong.soofunny.premium.yearly`). Anyone whose subscription is still set to renew
+  sees a note in Settings with a **Manage subscription** button to cancel it.
+- **Testing purchases:** `SooFunny/Store/SooFunny.storekit` holds the three tips and the old
+  subscription, so both can be tried in Xcode; the scheme uses it when you press **Run**.
 
 ---
 
@@ -412,7 +404,7 @@ xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platf
 | `BooksTests` | Story library, text recognition in English and Chinese, line joining, mixed-language splitting and pinyin, saving, reordering, and audiobooks |
 | `MathTests` | Question rules, flashcard and quiz sessions, scoring, progress and streaks |
 | `SportsTests` | Every sport has unique English and Chinese names, introductions in each language, a bundled photo where it reuses one, a working animation, and no trademarked Games names. With `TEST_RUNNER_SPORT_DEMO_SHEETS=<folder>`, it also draws frames of every animation into that folder for checking by eye |
-| `PremiumTests` | Price and free trial, purchase, refund, lapse, the free tier and the Debug-only unlock |
+| `TipJarTests` | The three tips and their prices, a tip unlocks nothing, and former subscribers are shown how to cancel |
 
 Tests that need a bundled model skip when it's missing. The 3 Gemma tests take about 40 s, so
 add `-skip-testing:SooFunnyTests/GemmaEngineTests` for a quick run. The StoreKit purchase tests
@@ -443,7 +435,7 @@ SooFunny/
   Books/                           Story books, scanning and text recognition, the reader, audiobooks
   Math/                            Question maker, sessions, progress, and the Math screens
   Sports/                          Summer and winter sports in English and Chinese, and the Sports screens
-  Store/                           Premium subscription, paywall, grown-up check, .storekit
+  Store/                           Tip jar, Support screen, grown-up check, .storekit
   Lab/                             Research Lab benchmarks and screen
   PrivacyInfo.xcprivacy            Privacy manifest
 SooFunnyTests/                     Unit tests
@@ -467,7 +459,7 @@ project.yml                        XcodeGen project definition
 - **Words:** edit `SooFunny/Words/kids_words.txt`. It has blank-line-separated sections, each
   starting with `Category: <name> | <emoji>`, then one word per line with an optional
   `| <emoji>`. Run the tests afterwards; they check the format and that every word can be
-  spoken. The free groups are listed in `FreeTier` (`Store/Premium.swift`).
+  spoken.
 - **Gallery photos:** add a JPEG (about 1024 px) to `SooFunny/Showcase/` named
   `<group>-<name>.jpg`, and add an entry with title, author, license and source URL to
   `credits.json`. Use only photos you're allowed to bundle (the current set is all CC0). Check
@@ -480,7 +472,7 @@ project.yml                        XcodeGen project definition
   every photo by eye: search results include unsuitable pictures.
 - **Story books:** edit `StoryLibrary` in `SooFunny/Books/StoryBooks.swift`. Each book has an
   id, title, cover emoji, color and pages (an emoji scene and the text); set `language: .chinese`
-  for a Chinese book. Use only text you're allowed to share. The free books are set in `FreeTier`.
+  for a Chinese book. Use only text you're allowed to share.
 - **App icon:** replace `design/soo-icon.png`, then run `python3 scripts/make_icon.py`.
 - **Pronunciation dictionary:** to rebuild it from newer misaki data, run
   `python3 scripts/build_voice_lexicon.py <folder with us_gold.json, us_silver.json, tokenizer.json>`.
@@ -491,7 +483,7 @@ project.yml                        XcodeGen project definition
 ## Releasing on the App Store
 
 Everything needed is in **[AppStore/LISTING.md](AppStore/LISTING.md)**: name, subtitle,
-description, keywords, age rating, the subscription setup, App Privacy answers ("Data Not
+description, keywords, age rating, the tip setup, App Privacy answers ("Data Not
 Collected"), notes for App Review, screenshot sizes, and a step-by-step checklist.
 
 In short:
@@ -499,7 +491,7 @@ In short:
 1. **Developer Program:** join it.
 2. **App Store Connect agreements:** accept the Paid Apps Agreement and add banking and tax
    details.
-3. **Create the app and subscription** with the IDs above.
+3. **Create the app and the tips** with the IDs above.
 4. **Archive a Release build** with your Team ID and upload it.
 5. **Test on TestFlight** with a Sandbox account.
 6. **Submit** for review.
@@ -507,6 +499,7 @@ In short:
 **Status:** version 0.2 (build 3), with the Books tab, and the yearly subscription were approved and
 [released on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) on November 6, 2026.
 Version 0.3 (build 4), with the Sports tab, was submitted to App Review on November 13, 2026.
+Version 0.4 (build 5) makes everything free, with optional tips; it follows once 0.3 is out.
 
 ---
 

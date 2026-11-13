@@ -68,8 +68,7 @@ struct MathView: View {
     }
 
     private func start(_ mode: MathMode) {
-        let limits = Premium.shared.isActive ? [:] : FreeTier.mathFocusLimits
-        let questions = MathQuestionMaker.questions(for: settings, focusLimits: limits)
+        let questions = MathQuestionMaker.questions(for: settings)
         guard !questions.isEmpty else { return }
         session = MathSession(mode: mode, questions: questions, markQuestions: settings.markQuestions)
     }
@@ -166,21 +165,6 @@ struct MathSetupView: View {
     let mode: MathMode
     @Binding var settings: MathSettings
     let onStart: () -> Void
-    @State private var showPaywall = false
-    private let premium = Premium.shared
-
-    /// True when × or ÷ is chosen but only some numbers are free for it.
-    private var showsFreeNote: Bool {
-        !premium.isActive && !settings.operations.isSubset(of: FreeTier.mathOperations)
-    }
-
-    /// The operations this round will really use.
-    private var usable: Set<MathOperation> {
-        guard !premium.isActive else { return settings.operations }
-        return settings.operations.filter { op in
-            FreeTier.mathOperations.contains(op) || settings.focusNumbers.contains { FreeTier.mathTimesNumbers.contains($0) }
-        }
-    }
 
     var body: some View {
         ScrollView {
@@ -252,17 +236,7 @@ struct MathSetupView: View {
                     }
                 }
 
-                if showsFreeNote {
-                    Button { showPaywall = true } label: {
-                        Label("× and ÷ use the numbers 1 to 5 for free. Premium unlocks every number.",
-                              systemImage: "star.circle.fill")
-                            .font(.subheadline.weight(.semibold))
-                            .multilineTextAlignment(.leading)
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundStyle(.orange)
-                }
-                if usable.isEmpty || settings.focusNumbers.isEmpty {
+                if settings.operations.isEmpty || settings.focusNumbers.isEmpty {
                     Text("Pick at least one operation and one number.")
                         .font(.headline)
                         .foregroundStyle(.red)
@@ -273,14 +247,13 @@ struct MathSetupView: View {
                         .frame(maxWidth: .infinity, minHeight: 60)
                 }
                 .buttonStyle(.borderedProminent)
-                .disabled(usable.isEmpty || settings.focusNumbers.isEmpty)
+                .disabled(settings.operations.isEmpty || settings.focusNumbers.isEmpty)
             }
             .padding(20)
             .frame(maxWidth: 640)
             .frame(maxWidth: .infinity)
         }
         .background(Color(.systemGroupedBackground))
-        .sheet(isPresented: $showPaywall) { PaywallView() }
         .navigationTitle(mode == .flashcards ? "Flashcard Game" : "Quiz")
         .navigationBarTitleDisplayMode(.inline)
     }
