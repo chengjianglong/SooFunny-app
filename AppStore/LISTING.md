@@ -1,6 +1,6 @@
 # SooFunny: App Store listing and submission checklist
 
-Everything to enter in App Store Connect for version 0.2, plus the steps only the account
+Everything to enter in App Store Connect for version 0.3, plus the steps only the account
 holder can do.
 
 ## App information
@@ -8,7 +8,7 @@ holder can do.
 | Field | Value |
 |---|---|
 | Name | SooFunny |
-| Subtitle (30) | Color, words, books & math |
+| Subtitle (30) | Color, words, books & more |
 | Bundle ID | com.chengjianglong.soofunny |
 | SKU | soofunny-ios-001 |
 | Primary category | Education |
@@ -17,7 +17,7 @@ holder can do.
 | Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
-| Version | 0.2 (build 3). It replaces 0.1 (build 2), which was taken out of review before release |
+| Version | 0.3 (build 4). 0.2 (build 3) was released on November 6, 2026 |
 
 Kids Category: optional. SooFunny already follows its rules (parental gate before purchases and
 outside links, no ads, no analytics, no data collection). Joining it puts the app in the Kids
@@ -25,8 +25,8 @@ section but asks you to pick an age band (5 and Under, or 6–8) and triggers st
 
 ## Promotional text (170)
 
-Color any photo, explore 754 words with a talking buddy, hear books read aloud in English or
-Chinese, and practice math, all offline and ad-free.
+Color any photo, explore 754 words with a talking buddy, hear books read aloud, practice math,
+and discover 51 sports in English and Chinese, all offline and ad-free.
 
 ## Description
 
@@ -53,6 +53,11 @@ MATH FUN
 Flashcards and quizzes for adding, taking away, times and sharing. Choose the numbers to
 practice, beat the clock, collect stars, and watch your progress grow.
 
+SPORTS IN TWO LANGUAGES
+Discover 51 summer and winter sports, from swimming to snowboarding. Each one has its English
+and Chinese name, a short introduction read aloud in both languages, and a playful animation to
+watch.
+
 MADE FOR FAMILIES
 • Works offline: perfect for car rides and flights
 • No ads, no tracking, no accounts
@@ -60,12 +65,12 @@ MADE FOR FAMILIES
 • Grown-up check before purchases and links
 
 SOOFUNNY PREMIUM
-Try every feature free: color 14 gallery pictures, the drawings and 15 of your own photos;
+Try every feature free: color 16 gallery pictures, the drawings and 15 of your own photos;
 explore three word groups and talk with the buddy about every animal; read four story books and
 scan two of your own; and practice all four operations (times and sharing with the numbers 1 to
 5). Premium unlocks every picture and unlimited own photos, all 32 word groups, the talking
 buddy for every word, all 10 story books and unlimited own books, and times and sharing with
-every number. Start with a 3-day free trial, then $19.99 a year. Family Sharing is
+every number. The Sports tab is free for everyone. Start with a 3-day free trial, then $19.99 a year. Family Sharing is
 included.
 
 Payment is charged to your Apple Account when the trial ends. The subscription renews
@@ -79,11 +84,14 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 kids,coloring,learn english,vocabulary,read aloud,story books,chinese,math facts,flashcards,offline
 
-## What's New (0.2)
+## What's New (0.3)
 
-Not shown for a first release, but keep for reference: adds the Books tab (story books read
-aloud, and your own scanned books in English, Chinese or both, with audiobooks), on top of the
-coloring gallery, the word explorer with its talking buddy, and Math Fun.
+New Sports tab: discover 51 summer and winter sports in English and Chinese, each with a short
+introduction read aloud and a playful animation. The whole tab is free.
+Six new People pictures to color.
+
+0.2 added the Books tab: story books read aloud, and your own scanned books in English, Chinese
+or both, with audiobooks.
 
 ## Subscription (In-App Purchases → Subscriptions)
 
@@ -114,6 +122,9 @@ The Books tab reads story books aloud. "Scan a book" uses the camera (VisionKit 
 scanner), and the text on each page is recognized on the device with Apple's Vision framework;
 English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in voice.
 
+The Sports tab (free) introduces 51 summer and winter sports in English and Chinese, each with
+a looping animation drawn in code.
+
 Premium features (locked items show a lock): gallery photos after the fifth in a group (Animals, People), own photos/camera after
 15 free pictures, word groups beyond Animals, Colors and Numbers, the talking buddy outside
 Animals, story books beyond the first four, more than two scanned books, and × ÷ with focus
@@ -129,7 +140,7 @@ Restore Purchases is in Settings and on the subscription screen.
 - iPhone 6.9" display (1320 × 2868 or 1290 × 2796): 3 to 10
 - iPad 13" display (2064 × 2752 or 2048 × 2732): 3 to 10
 
-Suggested shots: Color gallery, a photo turned into a coloring page and half colored, Words
+Suggested shots: Sports (a sport's animation and introduction), Color gallery, a photo turned into a coloring page and half colored, Words
 category grid, the talking buddy conversation, a story book being read aloud, Math quiz with a
 ✓, Progress Reports.
 

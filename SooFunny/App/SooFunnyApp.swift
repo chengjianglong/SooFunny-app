@@ -16,8 +16,8 @@ struct SooFunnyApp: App {
     }
 }
 
-/// Five tabs: Color (pictures to color), Words (the word browser), Books (read-along books), Math
-/// and Sports (the Olympic sports in English and Chinese). Settings is in the top bar.
+/// Five tabs: Color (pictures to color), Words (the word browser), Books (read-along books),
+/// Sports (summer and winter sports in English and Chinese) and Math. Settings is in the top bar.
 struct ContentView: View {
     @State private var session: ColoringSession?
     @State private var showSettings = false
@@ -43,11 +43,11 @@ struct ContentView: View {
             BooksView()
                 .tabItem { Label("Books", systemImage: "books.vertical.fill") }
 
-            MathView()
-                .tabItem { Label("Math", systemImage: "plus.forwardslash.minus") }
-
             SportsView()
                 .tabItem { Label("Sports", systemImage: "figure.run") }
+
+            MathView()
+                .tabItem { Label("Math", systemImage: "plus.forwardslash.minus") }
         }
         .fullScreenCover(item: $session) { session in
             ColoringView(session: session)

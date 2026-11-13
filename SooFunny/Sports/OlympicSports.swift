@@ -10,7 +10,7 @@ enum SportSeason: String, CaseIterable, Identifiable {
     var emoji: String { self == .summer ? "☀️" : "❄️" }
 }
 
-/// One sport (or discipline) on the Olympic programme, introduced for children in English and
+/// One summer or winter sport (or discipline), introduced for children in English and
 /// Chinese. Written for SooFunny. `photo` names a bundled word photo (group, word) to reuse.
 struct OlympicSport: Identifiable, Hashable {
     let id: String
@@ -38,7 +38,8 @@ enum OlympicSports {
                      photo: photo.map { .init(category: "Sports", word: $0) })
     }
 
-    /// Summer sports follow the Paris 2024 programme, winter sports Milano Cortina 2026.
+    /// Summer sports follow the 2024 Summer Games programme, winter sports the 2026 Winter Games.
+    /// On-screen text avoids the trademarked Games names (see SportsTests).
     static let all: [OlympicSport] = [
         // MARK: Summer
         s("swimming", .summer, "🏊", "Swimming", "游泳",
@@ -72,8 +73,8 @@ enum OlympicSports {
           "Two boxers wearing padded gloves try to land punches in a ring. Judges score who boxed better in each round. Boxers must be fast, strong and quick to dodge.",
           "两名戴着厚手套的拳击手在擂台上比赛出拳。裁判为每一回合打分，看谁打得更好。拳击手要又快又有力气，还要会躲闪。"),
         s("breaking", .summer, "🕺", "Breaking", "霹雳舞",
-          "Breaking is a street dance that was part of the Paris 2024 Olympics. Dancers called B-Boys and B-Girls battle one on one with spins, freezes and power moves to the music.",
-          "霹雳舞是一种街舞，曾出现在2024年巴黎奥运会上。舞者们一对一斗舞，随着音乐做旋转、定格和高难度动作。"),
+          "Breaking is a street dance from New York. Dancers called B-Boys and B-Girls battle one on one with spins, freezes and power moves to the music.",
+          "霹雳舞是一种来自纽约的街舞。舞者们一对一斗舞，随着音乐做旋转、定格和高难度动作。"),
         s("canoeing", .summer, "🛶", "Canoeing", "皮划艇",
           "Paddlers race small boats called canoes and kayaks. Some race on calm water. Others rush down a wild, splashy course and go through gates, which is called slalom.",
           "运动员划着叫作划艇和皮艇的小船比赛。有的在平静的水面上比速度，有的在湍急的水道中穿过一个个水门，这叫激流回旋。"),
@@ -124,8 +125,8 @@ enum OlympicSports {
           "Shooters aim very carefully and score points for hitting the middle of the target. Some aim at paper targets and others at flying clay discs. Staying very still is the secret.",
           "射击运动员非常仔细地瞄准，打中靶子中心就能得高分。有的打纸靶，有的打飞起来的飞碟。保持身体一动不动是秘诀。"),
         s("skateboarding", .summer, "🛹", "Skateboarding", "滑板",
-          "Skaters ride boards on wheels and do tricks on ramps, rails and stairs. Judges score how hard, smooth and creative the tricks are. It joined the Olympics in 2021.",
-          "滑板运动员踩着带轮子的滑板，在坡道、栏杆和台阶上做各种花样动作。裁判根据动作的难度、流畅和创意打分。滑板在2021年进入奥运会。"),
+          "Skaters ride boards on wheels and do tricks on ramps, rails and stairs. Judges score how hard, smooth and creative the tricks are.",
+          "滑板运动员踩着带轮子的滑板，在坡道、栏杆和台阶上做各种花样动作。裁判根据动作的难度、流畅和创意打分。"),
         s("sport-climbing", .summer, "🧗", "Sport Climbing", "竞技攀岩",
           "Climbers go up tall walls covered with colorful holds. In speed climbing they race to the top in just a few seconds. In other events they work out tricky routes like puzzles.",
           "攀岩运动员在布满彩色岩点的高墙上攀爬。速度攀岩只要几秒钟就能爬到顶，其他项目则要像解谜一样找出难爬的路线。"),
@@ -155,8 +156,8 @@ enum OlympicSports {
           "Weightlifters lift a heavy bar with weights on it from the floor up over their heads. The person who lifts the most wins. It takes strength and good technique.",
           "举重运动员把装着杠铃片的沉重杠铃从地上举过头顶。举起最重的人获胜。举重既需要力量，也需要好的技术。"),
         s("wrestling", .summer, "🤼", "Wrestling", "摔跤",
-          "Two wrestlers grab, push and pull, trying to hold the other's shoulders down on the mat. Wrestling was already part of the ancient Olympic Games thousands of years ago.",
-          "两名摔跤手互相抓、推、拉，想把对方的双肩压在垫子上。几千年前的古代奥运会上就已经有摔跤比赛了。"),
+          "Two wrestlers grab, push and pull, trying to hold the other's shoulders down on the mat. Wrestling is one of the oldest sports in the world, thousands of years old.",
+          "两名摔跤手互相抓、推、拉，想把对方的双肩压在垫子上。摔跤是世界上最古老的运动之一，已经有几千年的历史了。"),
 
         // MARK: Winter
         s("alpine-skiing", .winter, "⛷️", "Alpine Skiing", "高山滑雪",
@@ -200,8 +201,8 @@ enum OlympicSports {
           "Ski jumpers speed down a huge ramp and fly through the air like birds. They score points for how far they fly and how well they land.",
           "跳台滑雪运动员从巨大的跳台上滑下，像小鸟一样在空中飞行。他们根据飞行的距离和落地的姿势得分。"),
         s("ski-mountaineering", .winter, "🏔️", "Ski Mountaineering", "滑雪登山",
-          "Ski mountaineers climb up a snowy mountain on skis, sometimes carrying them on their backs, and then ski down fast. It joined the Winter Olympics in 2026.",
-          "滑雪登山运动员穿着滑雪板爬上雪山，有时还要把雪板背在背上走，然后再快速滑下来。它在2026年第一次进入冬奥会。"),
+          "Ski mountaineers climb up a snowy mountain on skis, sometimes carrying them on their backs, and then ski down fast.",
+          "滑雪登山运动员穿着滑雪板爬上雪山，有时还要把雪板背在背上走，然后再快速滑下来。"),
         s("snowboarding", .winter, "🏂", "Snowboarding", "单板滑雪",
           "Snowboarders ride down the snow on one wide board. Some race, and others do big tricks in the halfpipe and off jumps.",
           "单板滑雪运动员站在一块宽宽的滑雪板上从雪坡滑下。有的比赛速度，有的在U型场地和跳台上做高难度动作。"),

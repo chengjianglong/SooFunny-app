@@ -19,6 +19,15 @@ final class SportsTests: XCTestCase {
         }
     }
 
+    func testTextAvoidsTrademarkedGamesNames() {
+        // App Review rejects unlicensed use of the IOC's marks (guideline 5.2.1).
+        let banned = ["olympi", "奥运", "奥林匹克", "冬奥", "paris", "巴黎", "milano", "cortina"]
+        for sport in OlympicSports.all {
+            let text = [sport.english, sport.chinese, sport.aboutEnglish, sport.aboutChinese].joined(separator: " ").lowercased()
+            for word in banned { XCTAssertFalse(text.contains(word), "\(sport.id) mentions \(word)") }
+        }
+    }
+
     func testReusedWordPhotosAreBundled() {
         let bundle = Bundle(for: ColoringSession.self)
         let withPhotos = OlympicSports.all.filter { $0.photo != nil }

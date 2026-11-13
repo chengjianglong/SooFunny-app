@@ -1,11 +1,11 @@
 # SooFunny 🖍️
 
-**Color, words, books, math and sports for kids, on iPhone and iPad, completely offline.**
+**Color, words, books, sports and math for kids, on iPhone and iPad, completely offline.**
 
 SooFunny turns any picture into a coloring page, lets kids explore 754 English words with a
 talking buddy that answers their questions out loud, reads picture books aloud (including the
 family's own books, scanned in English, Chinese or both), makes math practice feel like a game,
-and introduces every Olympic sport in English and Chinese.
+and introduces 51 summer and winter sports in English and Chinese.
 Everything runs on the device: no Wi‑Fi, no accounts, no ads, and nothing a child says, draws or
 photographs ever leaves the device.
 
@@ -17,6 +17,7 @@ photographs ever leaves the device.
   <a href="marketing/SooFunny-demo-iPad.mp4"><img src="docs/images/demo-ipad.jpg" width="250" alt="Play the SooFunny demo video for iPad"></a><br>
   <b>▶️ Watch the demo: <a href="marketing/SooFunny-demo-iPhone16.mp4">iPhone 16</a> (104 s) · <a href="marketing/SooFunny-demo-iPad.mp4">iPad</a> (104 s)</b><br>
   Coloring, words with real photos, the talking buddy, books read aloud, and math<br>
+  🏅 <a href="marketing/SooFunny-sports.mp4">Sports animations</a> (36 s, 12 sports, new in 0.3)<br>
   📑 <a href="marketing/SooFunny-slides.pdf">Introduction slides</a> (PDF, 12 slides)
 </p>
 
@@ -27,6 +28,8 @@ photographs ever leaves the device.
   &nbsp;
   <img src="docs/images/iphone-books.jpg" width="190" alt="Books on iPhone: The Three Little Pigs read aloud, one word highlighted">
   &nbsp;
+  <img src="docs/images/iphone-sports.jpg" width="190" alt="Sports on iPhone: Swimming in English and Chinese, with swimmers racing down their lanes">
+  &nbsp;
   <img src="docs/images/iphone-math.jpg" width="190" alt="Math tab on iPhone: flashcards, quiz and progress reports">
 </p>
 
@@ -34,7 +37,7 @@ photographs ever leaves the device.
 
 | | |
 |---|---|
-| **Version** | 0.2 (build 3), [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
+| **Version** | 0.3 (build 4) uploaded for App Review; 0.2 (build 3) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
@@ -120,6 +123,30 @@ device.
 - **Audiobooks**: **Make audiobook** records the whole book into an `.m4a` file to listen to
   anytime or share.
 
+### 🏅 Sports
+
+<p align="center">
+  <img src="docs/images/sports-animations.gif" width="400" alt="Animations from the Sports tab: swimming, archery, gymnastics, figure skating, bobsleigh and ski jumping">
+  &nbsp;
+  <img src="docs/images/ipad-sports.jpg" width="276" alt="Sports tab on iPad: Summer and Winter buttons above a grid of sports with English and Chinese names">
+</p>
+
+- **51 sports**: the 35 summer and 16 winter sports on the 2024 and 2026 Games programmes,
+  switched with the **Summer 夏季** and **Winter 冬季** buttons. On-screen text and the store
+  listing don't name the Games, since App Review rejects unlicensed use of those trademarks;
+  `SportsTests` checks for them.
+- Each sport has an emoji (and a real photo for 12 of them, shared with the Words tab), its
+  English and Chinese names, and a short introduction written for children in **both languages**.
+- **Watch it! 看一看！** plays a looping animation of each sport: swimmers racing down their
+  lanes, a diver flipping into the pool, an arrow flying into the target, a bobsled racing down the
+  ice chute, and so on. Tap pause to stop it; it starts paused when Reduce Motion is on.
+- Under **What is it?**, **Read to me** reads the English in the natural voice, and under
+  **这是什么运动？**, **读给我听** reads the Chinese in Apple's Chinese voice, each word lighting up
+  as it's read. Tap a name to hear it, and Previous / Next move through the sports.
+- The sports are in `SooFunny/Sports/OlympicSports.swift` and their animations in `SportDemos.swift`
+  (a scene from `DemoScenes.swift` plus emoji and balls moving along keyframed paths, drawn by
+  `SportDemo.swift`). The whole tab is free.
+
 ### ➕ Math
 
 Inspired by [Best Math App for Kids](https://www.youtube.com/watch?v=hVBYZOaC5iw):
@@ -134,22 +161,6 @@ Inspired by [Best Math App for Kids](https://www.youtube.com/watch?v=hVBYZOaC5iw
   trickiest facts to practice again.
 - **Rules**: every question includes a chosen focus number, subtraction never goes below zero,
   and division always comes out even (never ÷ 0).
-
-### 🏅 Sports
-
-- **Every Olympic sport**: 35 from the Summer Games (the Paris 2024 programme) and 16 from the
-  Winter Games (Milano Cortina 2026), switched with the **Summer 夏季** and **Winter 冬季** buttons.
-- Each sport has an emoji (and a real photo for 12 of them, shared with the Words tab), its
-  English and Chinese names, and a short introduction written for children in **both languages**.
-- **Watch it! 看一看！** plays a looping animation of each sport: swimmers racing down their
-  lanes, a diver flipping into the pool, an arrow flying into the target, a bobsled racing down the
-  ice chute, and so on. Tap pause to stop it; it starts paused when Reduce Motion is on.
-- **What is it?** reads the English in the natural voice and **这是什么运动？** reads the Chinese in
-  Apple's Chinese voice, each word lighting up as it's read. Tap a name to hear it, and
-  Previous / Next move through the sports.
-- The sports are in `SooFunny/Sports/OlympicSports.swift` and their animations in `SportDemos.swift`
-  (a scene from `DemoScenes.swift` plus emoji and balls moving along keyframed paths, drawn by
-  `SportDemo.swift`). The whole tab is free.
 
 ### 🗣️ Natural voice
 
@@ -385,7 +396,7 @@ xcrun devicectl device install app --device <device UDID> build-device/Build/Pro
 xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platform=iOS Simulator,name=<simulator>' -scmProvider system
 ```
 
-80 unit tests in `SooFunnyTests/`:
+81 unit tests in `SooFunnyTests/`:
 
 | File | What it checks |
 |---|---|
@@ -395,7 +406,7 @@ xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platf
 | `NaturalVoiceTests` | Pronunciations, Swift audio vs. the reference pipeline, speed, phrases, silence trimming, voice choices |
 | `BooksTests` | Story library, text recognition in English and Chinese, line joining, mixed-language splitting and pinyin, saving, reordering, and audiobooks |
 | `MathTests` | Question rules, flashcard and quiz sessions, scoring, progress and streaks |
-| `SportsTests` | Every sport has unique English and Chinese names, introductions in each language, a bundled photo where it reuses one, and a working animation. With `TEST_RUNNER_SPORT_DEMO_SHEETS=<folder>`, it also draws frames of every animation into that folder for checking by eye |
+| `SportsTests` | Every sport has unique English and Chinese names, introductions in each language, a bundled photo where it reuses one, a working animation, and no trademarked Games names. With `TEST_RUNNER_SPORT_DEMO_SHEETS=<folder>`, it also draws frames of every animation into that folder for checking by eye |
 | `PremiumTests` | Price and free trial, purchase, refund, lapse, the free tier and the Debug-only unlock |
 
 Tests that need a bundled model skip when it's missing. The 3 Gemma tests take about 40 s, so
@@ -426,7 +437,7 @@ SooFunny/
     Resources/                       Pronunciation dictionary, phoneme table, Heart voice
   Books/                           Story books, scanning and text recognition, the reader, audiobooks
   Math/                            Question maker, sessions, progress, and the Math screens
-  Sports/                          Olympic sports in English and Chinese, and the Sports screens
+  Sports/                          Summer and winter sports in English and Chinese, and the Sports screens
   Store/                           Premium subscription, paywall, grown-up check, .storekit
   Lab/                             Research Lab benchmarks and screen
   PrivacyInfo.xcprivacy            Privacy manifest
@@ -437,8 +448,8 @@ scripts/
   build_voice_lexicon.py           Rebuilds the pronunciation dictionary from misaki
   make_icon.py                     Makes the app icon from design/soo-icon.png
 design/soo-icon.png                App icon artwork
-docs/images/                       README screenshots
-marketing/                         Demo videos (iPhone 16, iPad) and the introduction slides (PDF)
+docs/images/                       README screenshots and the Sports animation GIF
+marketing/                         Demo videos (iPhone 16, iPad), the Sports animations clip and the introduction slides (PDF)
 AppStore/LISTING.md                App Store listing, review notes, submission checklist
 PRIVACY.md                         Privacy policy
 project.yml                        XcodeGen project definition
@@ -490,6 +501,7 @@ In short:
 
 **Status:** version 0.2 (build 3), with the Books tab, and the yearly subscription were approved and
 [released on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) on November 6, 2026.
+Version 0.3 (build 4), with the Sports tab, was uploaded on November 13, 2026.
 
 ---
 

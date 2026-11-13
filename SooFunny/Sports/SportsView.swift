@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The Sports tab: every sport of the Summer and Winter Olympic Games, each introduced in
+/// The Sports tab: 51 summer and winter sports, each introduced in
 /// English and Chinese and read aloud in both languages.
 struct SportsView: View {
     @State private var season: SportSeason = .summer
@@ -12,9 +12,9 @@ struct SportsView: View {
                 VStack(spacing: 16) {
                     VStack(spacing: 6) {
                         BouncyTitle()
-                        Text("Discover the Olympic sports!")
+                        Text("Discover summer and winter sports!")
                             .font(.title3.weight(.semibold))
-                        Text("认识奥运会的运动项目！")
+                        Text("认识夏季和冬季运动项目！")
                             .font(.title3.weight(.semibold))
                     }
                     .foregroundStyle(.secondary)
@@ -67,7 +67,7 @@ struct SportsView: View {
                     .overlay(Capsule().stroke(color.opacity(selected ? 0 : 0.5), lineWidth: 2))
                 }
                 .buttonStyle(SquishButtonStyle())
-                .accessibilityLabel("\(option.english) Games, \(option.chinese)")
+                .accessibilityLabel("\(option.english) sports, \(option.chinese)运动")
                 .accessibilityAddTraits(selected ? .isSelected : [])
             }
         }
@@ -199,7 +199,7 @@ private struct SportDetail: View {
                 .buttonStyle(.bordered)
                 .font(.headline)
                 .frame(maxWidth: 520)
-                Text("\(index + 1) of \(sports.count) · \(season.english) Games \(season.chinese)奥运会")
+                Text("\(index + 1) of \(sports.count) · \(season.english) sports \(season.chinese)运动")
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
