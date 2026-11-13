@@ -37,7 +37,7 @@ photographs ever leaves the device.
 
 | | |
 |---|---|
-| **Version** | 0.3 (build 4) uploaded for App Review; 0.2 (build 3) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
+| **Version** | 0.3 (build 4) in App Review; 0.2 (build 3) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
@@ -501,7 +501,7 @@ In short:
 
 **Status:** version 0.2 (build 3), with the Books tab, and the yearly subscription were approved and
 [released on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) on November 6, 2026.
-Version 0.3 (build 4), with the Sports tab, was uploaded on November 13, 2026.
+Version 0.3 (build 4), with the Sports tab, was submitted to App Review on November 13, 2026.
 
 ---
 

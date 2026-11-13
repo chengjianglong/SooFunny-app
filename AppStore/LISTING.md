@@ -140,6 +140,9 @@ Restore Purchases is in Settings and on the subscription screen.
 - iPhone 6.9" display (1320 × 2868 or 1290 × 2796): 3 to 10
 - iPad 13" display (2064 × 2752 or 2048 × 2732): 3 to 10
 
+In App Store Connect only the iPhone 6.3" (1206 × 2622, `screenshots/iphone-6.3/`) and iPad 13"
+sets are used; 0.3 has 10 of each, ending with the Sports grid and a sport's page.
+
 Suggested shots: Sports (a sport's animation and introduction), Color gallery, a photo turned into a coloring page and half colored, Words
 category grid, the talking buddy conversation, a story book being read aloud, Math quiz with a
 ✓, Progress Reports.
