@@ -42,7 +42,7 @@ photographs ever leaves the device.
 
 | | |
 |---|---|
-| **Version** | 0.3 (build 4) in App Review; 0.2 (build 3) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
+| **Version** | 0.3 (build 5) in App Review; 0.2 (build 3) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
@@ -266,7 +266,7 @@ block.
 
 ## Free, with optional tips
 
-**Every feature is free for everyone**, with no locks, limits, ads or accounts, from version 0.4.
+**Every feature is free for everyone**, with no locks, limits, ads or accounts, from version 0.3.
 Grown-ups who'd like to help keep SooFunny maintained and updated can leave a tip in
 **Settings → Support SooFunny**, behind the grown-up check.
 
@@ -281,7 +281,7 @@ Grown-ups who'd like to help keep SooFunny maintained and updated can leave a ti
   nonprofit, so there's no outside donation link in the app.
 - **Offline:** the tip screen needs the App Store; offline it says so. Everything else works
   offline as before.
-- **Former subscribers:** versions 0.1 to 0.3 sold a yearly subscription
+- **Former subscribers:** versions 0.1 and 0.2 sold a yearly subscription
   (`com.chengjianglong.soofunny.premium.yearly`). Anyone whose subscription is still set to renew
   sees a note in Settings with a **Manage subscription** button to cancel it.
 - **Testing purchases:** `SooFunny/Store/SooFunny.storekit` holds the three tips and the old
@@ -498,8 +498,8 @@ In short:
 
 **Status:** version 0.2 (build 3), with the Books tab, and the yearly subscription were approved and
 [released on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) on November 6, 2026.
-Version 0.3 (build 4), with the Sports tab, was submitted to App Review on November 13, 2026.
-Version 0.4 (build 5) makes everything free, with optional tips; it follows once 0.3 is out.
+Version 0.3 (build 5), with the Sports tab and everything free with optional tips, was submitted
+to App Review on November 13, 2026, with the three tips.
 
 ---
 

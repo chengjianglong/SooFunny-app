@@ -1,6 +1,6 @@
 # SooFunny: App Store listing and submission checklist
 
-Everything to enter in App Store Connect for version 0.4, plus the steps only the account
+Everything to enter in App Store Connect for version 0.3, plus the steps only the account
 holder can do.
 
 ## App information
@@ -17,7 +17,7 @@ holder can do.
 | Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
-| Version | 0.4 (build 5): everything free, with optional tips. 0.3 (build 4) went to App Review on November 13, 2026 |
+| Version | 0.3 (build 5): the Sports tab, and everything free with optional tips. Build 4 (Sports only) was taken out of review before release |
 
 Kids Category: optional. SooFunny already follows its rules (parental gate before purchases and
 outside links, no ads, no analytics, no data collection). Joining it puts the app in the Kids
@@ -76,16 +76,15 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 kids,coloring,learn english,vocabulary,read aloud,story books,chinese,math facts,flashcards,offline
 
-## What's New (0.4)
+## What's New (0.3)
 
-SooFunny is now completely free! Every picture, word, book, sport and math game is open to
-everyone, with no subscription. If you'd like to help keep SooFunny growing, you can leave an
-optional tip in Settings. Already subscribed? There's a note in Settings showing how to cancel.
-
-## What's New (0.3, for reference)
+SooFunny is now completely free! Every picture, word, book and math game is open to everyone,
+with no subscription. If you'd like to help keep SooFunny growing, you can leave an optional tip
+in Settings. Already subscribed? There's a note in Settings showing how to cancel.
 
 New Sports tab: discover 51 summer and winter sports in English and Chinese, each with a short
-introduction read aloud and a playful animation. The whole tab is free.
+introduction read aloud and a playful animation.
+
 Six new People pictures to color.
 
 0.2 added the Books tab: story books read aloud, and your own scanned books in English, Chinese
@@ -94,17 +93,18 @@ or both, with audiobooks.
 ## Tips (In-App Purchases → Consumables)
 
 Create three consumables (they must match the app exactly). Each needs a review screenshot:
-the Support SooFunny screen, after the grown-up check.
+the Support SooFunny screen, after the grown-up check (`screenshots/review-tips.png`, taken from
+an Xcode run, which uses `SooFunny.storekit`; new tips can take a while to reach the sandbox).
 
 | Reference name | Product ID | Price (USA) | Display name | Description |
 |---|---|---|---|---|
 | Tip Small | com.chengjianglong.soofunny.tip.small | $1.99 | Small tip | A small thank-you that helps keep SooFunny going. |
 | Tip Medium | com.chengjianglong.soofunny.tip.medium | $4.99 | Medium tip | A thank-you that helps add new things to learn. |
-| Tip Large | com.chengjianglong.soofunny.tip.large | $9.99 | Large tip | A big thank-you that helps keep SooFunny free for everyone. |
+| Tip Large | com.chengjianglong.soofunny.tip.large | $9.99 | Large tip | A big thank-you that keeps SooFunny free for all. |
 
 Let Apple set equivalents for other countries.
 
-**The old subscription** (`com.chengjianglong.soofunny.premium.yearly`, $19.99 a year): once 0.4
+**The old subscription** (`com.chengjianglong.soofunny.premium.yearly`, $19.99 a year): once 0.3
 is out, remove it from sale in Subscriptions → SooFunny Premium Yearly → Availability, so nobody
 new can subscribe. Existing subscribers keep it until they cancel; the app shows them how.
 
@@ -125,7 +125,7 @@ English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in v
 The Sports tab (free) introduces 51 summer and winter sports in English and Chinese, each with
 a looping animation drawn in code.
 
-New in 0.4: every feature is free; nothing is locked. The three In-App Purchases are optional
+New in 0.3: every feature is free; nothing is locked. The three In-App Purchases are optional
 tips (consumables) that unlock nothing: Settings (gear) → Support SooFunny → Leave a tip →
 answer the grown-up check. Tips and outside links are behind a parental gate that asks a
 two-digit multiplication question (for example "What is 14 × 7?"). Former subscribers see a
