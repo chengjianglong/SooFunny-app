@@ -12,6 +12,11 @@ photographs ever leaves the device.
 <p align="center"><img src="SooFunny/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="140" alt="SooFunny app icon"></p>
 
 <p align="center">
+  <a href="marketing/SooFunny-presentation.mp4"><img src="docs/images/presentation-poster.jpg" width="640" alt="Play the 2-minute SooFunny presentation video"></a><br>
+  <b>▶️ <a href="marketing/SooFunny-presentation.mp4">Watch the 2-minute presentation</a></b>: every feature, narrated in the app's own voice
+</p>
+
+<p align="center">
   <a href="marketing/SooFunny-demo-iPhone16.mp4"><img src="docs/images/demo-iphone16.jpg" width="250" alt="Play the SooFunny demo video for iPhone 16"></a>
   &nbsp;
   <a href="marketing/SooFunny-demo-iPad.mp4"><img src="docs/images/demo-ipad.jpg" width="250" alt="Play the SooFunny demo video for iPad"></a><br>
@@ -449,7 +454,7 @@ scripts/
   make_icon.py                     Makes the app icon from design/soo-icon.png
 design/soo-icon.png                App icon artwork
 docs/images/                       README screenshots and the Sports animation GIF
-marketing/                         Demo videos (iPhone 16, iPad), the Sports animations clip and the introduction slides (PDF)
+marketing/                         The 2-minute presentation, demo videos (iPhone 16, iPad), the Sports animations clip and the introduction slides (PDF)
 AppStore/LISTING.md                App Store listing, review notes, submission checklist
 PRIVACY.md                         Privacy policy
 project.yml                        XcodeGen project definition
