@@ -78,7 +78,7 @@ photographs ever leaves the device.
   on word, sport, quiz, buddy and book pages) or in **Settings → Language 语言**.
 - **English** or **中文** shows and reads everything in that language. **Bilingual 双语** shows the
   English first with the Chinese after it, and reads them aloud in that order: English in the
-  natural voice, Chinese in Apple's Chinese voice.
+  natural voice, Chinese in the natural Chinese voice.
 - Covers the picture names on Color, all 754 words and 32 groups, every built-in book (each one
   is in both languages), the sports, math questions and cheers (numbers read as Chinese words),
   and the talking buddy, which answers and listens in the chosen language.
@@ -194,10 +194,11 @@ Inspired by [Best Math App for Kids](https://www.youtube.com/watch?v=hVBYZOaC5iw
 ### 🗣️ Natural voice
 
 Words, letters, books, math, sports and the talking buddy are read by **Kokoro-82M**, a neural voice
-("Heart", a warm American female voice) that runs on the device. Chinese text is read by
-Apple's built-in Chinese voice. Apple's built-in voices are
-still available in Settings, minus novelty voices like "Boing". If the natural voice can't load,
-the app uses an Apple voice automatically.
+("Heart", a warm American female voice) that runs on the device. Chinese is read by
+**Kokoro-82M v1.1-zh**, its Chinese model, in a choice of five voices (Settings → Chinese voice ·
+中文声音; Voice 1 is the default). Apple's built-in English voices are still available in
+Settings, minus novelty voices like "Boing". If a natural voice can't load, the app uses an
+Apple voice automatically.
 
 ### ⚙️ Settings
 
@@ -205,6 +206,7 @@ the app uses an Apple voice automatically.
 - **Support SooFunny**: **Leave a tip**. The App Store's purchase sheet asks for Face ID or the
   password, so there's no extra grown-up check.
 - **Reading voice**: the voice, its speed (default about 1.05×) and a **Try the voice** button.
+- **Chinese voice · 中文声音**: five natural Chinese voices, with **Try the voice · 试听**.
 - **Research Lab** (for grown-ups): device info and on-device benchmarks of the coloring
   pipeline, Apple's Vision subject model and Apple's on-device language model (Apple
   Intelligence, iOS 26+), plus a prompt playground. Results stay on the device and export as
@@ -283,6 +285,13 @@ block.
   183,561-word US dictionary, rules for small words ("a", "the", "to"…) and for -s, -ed and -ing
   endings, and spells out numbers. Unknown words are spelled letter by letter. The GPL
   espeak-ng phonemizer is deliberately not used.
+- **Chinese:** [Kokoro-82M v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh) (8-bit, 114 MB)
+  with voices zf_001, zf_017, zf_032, zf_049 and zf_094. Chinese text becomes Kokoro's zhuyin-style
+  phonemes with `ChineseG2P`, a Swift port of misaki's Chinese front end (from PaddleSpeech): jieba's
+  dictionary segmentation and part-of-speech HMM, pypinyin's readings (36,000 phrases that read
+  differently from their characters), tone sandhi (一, 不, third tones, neutral tones) and 儿化.
+  `ChineseG2PTests` checks it matches misaki on all 1,133 Chinese strings in the app. English words
+  inside Chinese use the English pronunciations.
 - **No dead air:** the silence Kokoro adds around each clip is trimmed, and short natural pauses
   are added instead (0.22 s after a sentence, 0.12 s after a phrase). Long sentences are split
   at commas so speech starts after the first phrase.
@@ -371,8 +380,9 @@ This downloads into `Models/`, checking each file's SHA-256:
 
 - Qwen 2.5 1.5B Instruct `qwen2.5-1.5b-instruct-q4_k_m.gguf` (1.1 GB)
 - Kokoro-82M `kokoro-82m-q8.onnx` (92 MB)
+- Kokoro-82M v1.1-zh `kokoro-v1.1-zh-q8.onnx` (114 MB)
 
-Both models are bundled into the app (about 1.2 GB in total), so it works offline from the
+All three models are bundled into the app (about 1.3 GB in total), so it works offline from the
 first launch.
 
 ### 2. Generate the Xcode project and open it
@@ -460,7 +470,7 @@ SooFunny/
   Words/                           Word list (kids_words.txt), word browser, Speech
   Words/Photos/                    Word photos (CC0 / public domain) and word_photo_credits.json
   Assistant/                       Talking buddy: Qwen via llama.cpp, listening (Chinese via SpeechAnalyzer), prompts
-  Voice/                           Natural voice: phonemizer, Kokoro via ONNX Runtime, player
+  Voice/                           Natural voices: English phonemizer, Chinese G2P, Kokoro via ONNX Runtime, player
     Resources/                       Pronunciation dictionary, phoneme table, Heart voice
   Books/                           Story books and their translations, scanning and text recognition, the reader, audiobooks
   Math/                            Question maker, sessions, progress, and the Math screens
@@ -586,7 +596,11 @@ reserved. Bundled third-party parts keep their own licenses:
 | [Qwen 2.5 1.5B Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) (official [GGUF](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF)) | Talking buddy | Apache-2.0 |
 | [llama.cpp](https://github.com/ggml-org/llama.cpp) | Runs Qwen | MIT |
 | [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) and the "Heart" voice (ONNX by [onnx-community](https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX)) | Natural voice | Apache-2.0 |
-| [misaki](https://github.com/hexgrad/misaki) dictionaries | Pronunciation | Apache-2.0 |
+| [misaki](https://github.com/hexgrad/misaki) dictionaries and Chinese front end | Pronunciation | Apache-2.0 |
+| [Kokoro-82M v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh) and voices zf_001, zf_017, zf_032, zf_049, zf_094 (ONNX by [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx)) | Natural Chinese voice | Apache-2.0 |
+| [jieba](https://github.com/fxsjy/jieba) dictionary and part-of-speech model | Chinese word segmentation | MIT |
+| [pypinyin](https://github.com/mozillazg/python-pinyin) and [pypinyin-dict](https://github.com/mozillazg/pypinyin-dict) readings | Chinese pronunciation | MIT |
+| [PaddleSpeech](https://github.com/PaddlePaddle/PaddleSpeech) tone sandhi rules (via misaki) | Chinese tones | Apache-2.0 |
 | [ONNX Runtime](https://github.com/microsoft/onnxruntime-swift-package-manager) | Runs Kokoro | MIT |
 | Gallery photos from [Wikimedia Commons](https://commons.wikimedia.org/) | Color tab | CC0; photographers listed in Settings → Photo credits and `credits.json` |
 | Word photos from [Wikimedia Commons](https://commons.wikimedia.org/) | Words tab | CC0 or public domain; listed in Settings → Photo credits and `word_photo_credits.json` |

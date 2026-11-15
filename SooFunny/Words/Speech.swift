@@ -3,7 +3,7 @@ import Observation
 import SwiftUI
 
 /// Reads words aloud, offline: English in the natural Kokoro voice by default, or a voice built
-/// into iOS chosen in Settings; Chinese in Apple's Chinese voice.
+/// into iOS chosen in Settings; Chinese in the natural Chinese voice chosen in Settings.
 @Observable
 final class Speech: NSObject, AVSpeechSynthesizerDelegate {
     static let shared = Speech()
@@ -13,6 +13,7 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
 
     @ObservationIgnored private let synthesizer = AVSpeechSynthesizer()
     @ObservationIgnored private var natural: NaturalVoice?
+    @ObservationIgnored private var naturalChinese: NaturalVoice?
     /// What's left to say of `speaking`, in runs of one language.
     @ObservationIgnored private var parts: [(text: String, language: BookLanguage)] = []
     /// The Apple voice utterance being said now.
@@ -48,7 +49,7 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
             + AVSpeechUtteranceMinimumSpeechRate
     }
 
-    /// Says `text`. English is read in the chosen voice and Chinese in Apple's Chinese voice;
+    /// Says `text`. English is read in the chosen voice and Chinese in the chosen Chinese voice;
     /// text with both ("dog, 狗") switches voice where the language changes.
     func speak(_ text: String) {
         stopVoices()
@@ -67,6 +68,7 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
         utterance = nil
         if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
         natural?.stop()
+        naturalChinese?.stop()
     }
 
     private func speakNextPart(of text: String) {
@@ -79,6 +81,13 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
         if part.language == .english, NaturalVoiceEngine.isSelected {
             let voice = natural ?? NaturalVoice()
             natural = voice
+            voice.onFinished = { [weak self] in self?.speakNextPart(of: text) }
+            voice.enqueue(part.text)
+            return
+        }
+        if part.language == .chinese, NaturalVoiceEngine.isChineseSelected {
+            let voice = naturalChinese ?? NaturalVoice(language: .chinese)
+            naturalChinese = voice
             voice.onFinished = { [weak self] in self?.speakNextPart(of: text) }
             voice.enqueue(part.text)
             return
@@ -114,6 +123,8 @@ enum SettingsKey {
     /// 0 is slowest, 1 fastest. Matches what sounded best on the natural voice (about 1.05×);
     /// slower settings made it drag.
     static let defaultSpeechRate = 0.53
+    /// The natural Chinese voice: one of `KokoroTTS.chineseVoices`.
+    static let chineseVoice = "chineseVoice"
 }
 
 /// Speaker button that pulses while its text is being read.

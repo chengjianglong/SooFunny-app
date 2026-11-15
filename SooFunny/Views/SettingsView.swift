@@ -7,6 +7,7 @@ struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage(SettingsKey.voice) private var voiceIdentifier = ""
     @AppStorage(SettingsKey.speechRate) private var speechRate = SettingsKey.defaultSpeechRate
+    @AppStorage(SettingsKey.chineseVoice) private var chineseVoice = KokoroTTS.chineseVoices[0]
     @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     @State private var voices = Speech.englishVoices
     @State private var showSupport = false
@@ -81,6 +82,27 @@ struct SettingsView: View {
                     Text("The natural voice runs on this device and works offline. Other voices come with iOS; add more under iPhone or iPad Settings → Accessibility → Spoken Content → Voices.")
                 }
 
+                if KokoroTTS.isChineseBundled {
+                    Section {
+                        Picker("Voice · 声音", selection: $chineseVoice) {
+                            ForEach(Array(KokoroTTS.chineseVoices.enumerated()), id: \.element) { i, voice in
+                                Text(i == 0 ? "Voice \(i + 1) · 声音\(i + 1) (recommended)" : "Voice \(i + 1) · 声音\(i + 1)").tag(voice)
+                            }
+                        }
+                        .onChange(of: chineseVoice) { Speech.shared.speak("你好！我们一起来学习吧。") }
+                        Button {
+                            Speech.shared.speak("你好！我们一起来学习吧。")
+                        } label: {
+                            Label("Try the voice · 试听", systemImage: "speaker.wave.2.fill")
+                        }
+                    } header: {
+                        Text("Chinese voice · 中文声音")
+                    } footer: {
+                        Text("Chinese is read in a natural voice that runs on this device and works offline. "
+                             + "中文用自然的声音朗读，在设备上运行，离线可用。")
+                    }
+                }
+
                 Section {
                     Button {
                         gate = .researchLab
@@ -103,6 +125,7 @@ struct SettingsView: View {
                     Button("Reset defaults", role: .destructive) {
                         voiceIdentifier = ""
                         speechRate = SettingsKey.defaultSpeechRate
+                        chineseVoice = KokoroTTS.chineseVoices[0]
                     }
                 }
 

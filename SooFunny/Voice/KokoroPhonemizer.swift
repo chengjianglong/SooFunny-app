@@ -27,13 +27,7 @@ final class KokoroPhonemizer {
             guard let tab = line.firstIndex(of: "\t") else { continue }
             lexicon[String(line[..<tab])] = String(line[line.index(after: tab)...])
         }
-        var vocab: [Character: Int64] = [:]
-        // Don't trim lines: one of the phonemes is the space character.
-        for line in try String(contentsOf: vocabURL, encoding: .utf8).split(separator: "\n", omittingEmptySubsequences: true) {
-            let parts = line.split(separator: "\t", omittingEmptySubsequences: false)
-            guard parts.count == 2, let symbol = parts[0].first, let id = Int64(parts[1]) else { continue }
-            vocab[symbol] = id
-        }
+        let vocab = try Self.loadVocab(vocabURL)
         lexicon.merge(Self.extraWords) { dictionary, _ in dictionary }
         self.lexicon = lexicon
         self.vocab = vocab
@@ -60,6 +54,18 @@ final class KokoroPhonemizer {
     }
 
     /// Token ids for the model: phonemes wrapped in the boundary token 0.
+    /// A Kokoro model's symbols and their token ids, one "symbol<tab>id" per line.
+    static func loadVocab(_ url: URL) throws -> [Character: Int64] {
+        var vocab: [Character: Int64] = [:]
+        // Don't trim lines: one of the phonemes is the space character.
+        for line in try String(contentsOf: url, encoding: .utf8).split(separator: "\n", omittingEmptySubsequences: true) {
+            let parts = line.split(separator: "\t", omittingEmptySubsequences: false)
+            guard parts.count == 2, let symbol = parts[0].first, let id = Int64(parts[1]) else { continue }
+            vocab[symbol] = id
+        }
+        return vocab
+    }
+
     func tokenIDs(for phonemes: String) -> [Int64] {
         [0] + phonemes.compactMap { vocab[$0] } + [0]
     }

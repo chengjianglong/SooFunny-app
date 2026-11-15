@@ -30,6 +30,9 @@ targets:
       - path: Models/kokoro-82m-q8.onnx
         buildPhase: resources
         optional: true
+      - path: Models/kokoro-v1.1-zh-q8.onnx
+        buildPhase: resources
+        optional: true
     dependencies:
       - package: onnxruntime
         product: onnxruntime

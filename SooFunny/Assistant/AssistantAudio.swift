@@ -82,8 +82,8 @@ final class SystemSentenceSpeaker: NSObject, SentenceSpeaker, AVSpeechSynthesize
     }
 }
 
-/// Says sentences that mix English and Chinese: English in the natural voice and Chinese in
-/// Apple's Chinese voice, switching wherever the language changes within a sentence.
+/// Says sentences that mix English and Chinese, each in its natural voice, switching wherever the
+/// language changes within a sentence.
 final class BilingualSentenceSpeaker: SentenceSpeaker {
     var onWord: ((String, NSRange) -> Void)?
     var onFinished: (() -> Void)?
@@ -94,7 +94,7 @@ final class BilingualSentenceSpeaker: SentenceSpeaker {
     /// The sentence being said, and where to look for the next spoken word in it.
     private var current: (sentence: String, cursor: Int)?
 
-    init(english: SentenceSpeaker = NaturalVoice(), chinese: SentenceSpeaker = SystemSentenceSpeaker.chinese()) {
+    init(english: SentenceSpeaker = NaturalVoice(), chinese: SentenceSpeaker = NaturalVoice(language: .chinese)) {
         self.english = english
         self.chinese = chinese
         for speaker in [english, chinese] {

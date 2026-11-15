@@ -2,6 +2,7 @@
 # Downloads the on-device models that ship inside the app (not stored in git):
 #   - Qwen 2.5 1.5B Instruct for the talking buddy (1.1 GB, Apache-2.0), strong in English and Chinese
 #   - Kokoro-82M, the natural reading voice (92 MB, Apache-2.0)
+#   - Kokoro-82M v1.1-zh, the natural Chinese voice (114 MB, Apache-2.0)
 # The app works without them (falling back to simpler features), but ships with both.
 set -eu
 cd "$(dirname "$0")/.."
@@ -29,3 +30,8 @@ fetch "Models/kokoro-82m-q8.onnx" \
     "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX/resolve/main/onnx/model_quantized.onnx" \
     "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478" \
     "Kokoro-82M voice (92 MB)"
+
+fetch "Models/kokoro-v1.1-zh-q8.onnx" \
+    "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.1-zh.int8.onnx" \
+    "11751c087b4bbeed031e2b687b11dda698bd27ba0509472f960b57f835a999f7" \
+    "Kokoro-82M Chinese voice (114 MB)"

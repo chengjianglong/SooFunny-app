@@ -73,7 +73,10 @@ private struct CategoryGrid: View {
         }
         .background(Color(.systemGroupedBackground))
         // Prepare the group names so the speaker buttons answer instantly.
-        .onAppear { if language.speaksEnglish { NaturalVoiceEngine.shared.prefetch(categories.map(\.name)) } }
+        .onAppear {
+            if language.speaksEnglish { NaturalVoiceEngine.shared.prefetch(categories.map(\.name)) }
+            if language != .english { NaturalVoiceEngine.chinese.prefetch(categories.compactMap(\.chinese)) }
+        }
     }
 
     private func row(_ category: WordCategory, index: Int) -> some View {
@@ -137,7 +140,10 @@ private struct WordList: View {
         .background(Color(.systemGroupedBackground))
         .navigationTitle(category.title(in: language))
         .languageSwitch()
-        .onAppear { if language.speaksEnglish { NaturalVoiceEngine.shared.prefetch(category.words.map(\.text)) } }
+        .onAppear {
+            if language.speaksEnglish { NaturalVoiceEngine.shared.prefetch(category.words.map(\.text)) }
+            if language != .english { NaturalVoiceEngine.chinese.prefetch(category.words.compactMap(\.chinese)) }
+        }
         .navigationBarTitleDisplayMode(.large)
     }
 }

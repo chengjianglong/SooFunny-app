@@ -128,7 +128,7 @@ Apple's Mandarin dictation model (no audio or text leaves the device).
 
 The Books tab reads story books aloud. "Scan a book" uses the camera (VisionKit document
 scanner), and the text on each page is recognized on the device with Apple's Vision framework;
-English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in voice.
+English and Chinese are read by on-device natural voices (Kokoro, with a choice of five Chinese voices in Settings).
 
 The Sports tab (free) introduces 51 summer and winter sports in English and Chinese, each with
 a looping animation drawn in code. "Talk about …" on a sport opens the same on-device buddy,

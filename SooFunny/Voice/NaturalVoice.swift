@@ -1,17 +1,20 @@
 import AVFoundation
 import Foundation
 
-/// Loads the Kokoro voice once and makes all speech on one background thread.
+/// Loads a Kokoro voice once and makes all speech on one background thread: `shared` for
+/// English and `chinese` for Chinese, each with its own cache.
 ///
 /// Speech that's needed now always goes before speech prepared in advance, and recent clips
 /// are remembered so repeated words play instantly. Kokoro takes about 0.65 s per word on an
 /// iPhone 16, so preparing likely-next words ahead of time is what makes taps feel instant.
 final class NaturalVoiceEngine {
-    static let shared = NaturalVoiceEngine()
+    static let shared = NaturalVoiceEngine(language: .english)
+    static let chinese = NaturalVoiceEngine(language: .chinese)
 
     enum Priority { case now, prefetch }
 
-    private let queue = DispatchQueue(label: "SooFunny.NaturalVoice", qos: .userInitiated)
+    let language: KokoroTTS.Language
+    private let queue: DispatchQueue
     private let lock = NSLock()
     private var tts: KokoroTTS?
     private var failed = false
@@ -27,13 +30,33 @@ final class NaturalVoiceEngine {
         let key: String
         let text: String
         let speed: Float
+        let voice: String
         let completion: (([Float]?) -> Void)?
+    }
+
+    private init(language: KokoroTTS.Language) {
+        self.language = language
+        queue = DispatchQueue(label: language == .english ? "SooFunny.NaturalVoice" : "SooFunny.NaturalVoice.zh", qos: .userInitiated)
     }
 
     /// True when the natural voice is bundled and chosen in Settings.
     static var isSelected: Bool {
         KokoroTTS.isBundled && (UserDefaults.standard.string(forKey: SettingsKey.voice) ?? "").isEmpty
     }
+
+    /// True when the natural Chinese voice is bundled (otherwise Apple's Chinese voice is used).
+    static var isChineseSelected: Bool { KokoroTTS.isChineseBundled }
+
+    /// The Chinese voice chosen in Settings.
+    static var chineseVoice: String {
+        let saved = UserDefaults.standard.string(forKey: SettingsKey.chineseVoice) ?? ""
+        return KokoroTTS.chineseVoices.contains(saved) ? saved : KokoroTTS.chineseVoices[0]
+    }
+
+    /// Whether this engine's voice can be used.
+    var isAvailable: Bool { language == .english ? Self.isSelected : Self.isChineseSelected }
+
+    private var currentVoice: String { language == .english ? "af_heart" : Self.chineseVoice }
 
     /// Kokoro speed for the Settings speed slider (0.2...0.7, default 0.53 → about 1.05).
     static var speed: Float {
@@ -54,21 +77,22 @@ final class NaturalVoiceEngine {
     /// Speech for `text` (trimmed of silence), from the cache or made now.
     /// `completion` runs on the main thread; nil means the natural voice can't say it.
     func audio(for text: String, completion: @escaping ([Float]?) -> Void) {
-        enqueue(Job(key: Self.key(text), text: text, speed: Self.speed, completion: completion), priority: .now)
+        let voice = currentVoice
+        enqueue(Job(key: key(text, voice), text: text, speed: Self.speed, voice: voice, completion: completion), priority: .now)
     }
 
     /// Prepares speech for texts that will probably be needed soon.
     func prefetch(_ texts: [String]) {
-        guard Self.isSelected else { return }
-        let speed = Self.speed
+        guard isAvailable else { return }
+        let speed = Self.speed, voice = currentVoice
         for text in texts where !text.isEmpty {
-            enqueue(Job(key: Self.key(text), text: text, speed: speed, completion: nil), priority: .prefetch)
+            enqueue(Job(key: key(text, voice), text: text, speed: speed, voice: voice, completion: nil), priority: .prefetch)
         }
     }
 
     // MARK: - Work
 
-    private static func key(_ text: String) -> String { "\(speed)|\(text)" }
+    private func key(_ text: String, _ voice: String) -> String { "\(Self.speed)|\(voice)|\(text)" }
 
     private func enqueue(_ job: Job, priority: Priority) {
         lock.lock()
@@ -110,7 +134,8 @@ final class NaturalVoiceEngine {
             lock.unlock()
 
             var samples = cached
-            if samples == nil, let tts = loaded(), let raw = try? tts.synthesize(job.text, speed: job.speed) {
+            if samples == nil, let tts = loaded(), (try? tts.setVoice(job.voice)) != nil,
+               let raw = try? tts.synthesize(job.text, speed: job.speed) {
                 samples = KokoroTTS.trimmingSilence(raw)
                 remember(job.key, samples!)
             }
@@ -136,7 +161,7 @@ final class NaturalVoiceEngine {
         if let tts { return tts }
         guard !failed else { return nil }
         do {
-            tts = try KokoroTTS()
+            tts = try KokoroTTS(language: language, voice: currentVoice)
             return tts
         } catch {
             failed = true
@@ -145,8 +170,8 @@ final class NaturalVoiceEngine {
     }
 }
 
-/// Speaks sentences one after another in the natural voice, reporting which word is
-/// being said. Falls back to Apple's voices when the natural voice isn't available.
+/// Speaks sentences one after another in the natural voice (English or Chinese), reporting
+/// which word is being said. Falls back to Apple's voices when the natural voice isn't available.
 final class NaturalVoice: SentenceSpeaker {
     var onWord: ((String, NSRange) -> Void)? {
         didSet { fallback.onWord = onWord }
@@ -159,7 +184,7 @@ final class NaturalVoice: SentenceSpeaker {
     private let player = AVAudioPlayerNode()
     private let format = AVAudioFormat(standardFormatWithSampleRate: KokoroTTS.sampleRate, channels: 1)!
     private let fallback = SystemSentenceSpeaker()
-    private let voice = NaturalVoiceEngine.shared
+    private let voice: NaturalVoiceEngine
     private let usesFallback: Bool
 
     /// Bumped by `stop()`; audio made for an older generation is dropped.
@@ -175,8 +200,10 @@ final class NaturalVoice: SentenceSpeaker {
     private var timer: Timer?
     private var lastWord: NSRange?
 
-    init(forceFallback: Bool = false) {
-        usesFallback = forceFallback || !NaturalVoiceEngine.isSelected
+    init(language: KokoroTTS.Language = .english, forceFallback: Bool = false) {
+        voice = language == .english ? NaturalVoiceEngine.shared : NaturalVoiceEngine.chinese
+        usesFallback = forceFallback || !voice.isAvailable
+        if language == .chinese { fallback.voice = BookLanguage.chinese.systemVoice }
         engine.attach(player)
         engine.connect(player, to: engine.mainMixerNode, format: format)
     }
@@ -228,6 +255,7 @@ final class NaturalVoice: SentenceSpeaker {
     static func phrases(in sentence: String) -> [(text: String, gap: Double)] {
         let trimmed = sentence.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return [] }
+        if trimmed.unicodeScalars.contains(where: \.isHan) { return chinesePhrases(in: trimmed) }
         let words = trimmed.split(whereSeparator: \.isWhitespace).count
         let endGap = trimmed.last.map { ".!?".contains($0) } == true ? 0.22 : 0.12
         guard words > 8, trimmed.contains(",") else { return [(trimmed, endGap)] }
@@ -246,6 +274,26 @@ final class NaturalVoice: SentenceSpeaker {
         if phrases.count > 1, phrases[phrases.count - 1].split(whereSeparator: \.isWhitespace).count < 3 {
             let last = phrases.removeLast()
             phrases[phrases.count - 1] += " " + last
+        }
+        return phrases.enumerated().map { ($1, $0 == phrases.count - 1 ? endGap : 0.12) }
+    }
+
+    /// Chinese has no spaces: long sentences split at commas into phrases of at least eight
+    /// characters.
+    static func chinesePhrases(in sentence: String) -> [(text: String, gap: Double)] {
+        let endGap = sentence.last.map { "。！？.!?".contains($0) } == true ? 0.22 : 0.12
+        guard sentence.count > 18 else { return [(sentence, endGap)] }
+        var phrases: [String] = []
+        var current = ""
+        for c in sentence {
+            current.append(c)
+            if "，,；;".contains(c), current.count >= 8 {
+                phrases.append(current)
+                current = ""
+            }
+        }
+        if !current.isEmpty {
+            if current.count < 4, !phrases.isEmpty { phrases[phrases.count - 1] += current } else { phrases.append(current) }
         }
         return phrases.enumerated().map { ($1, $0 == phrases.count - 1 ? endGap : 0.12) }
     }

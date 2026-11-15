@@ -26,7 +26,7 @@ final class ReadAloud {
     /// Where to look for the next spoken word, so repeated words light up in order.
     @ObservationIgnored private var cursor = 0
 
-    /// English is read in the natural voice and Chinese in Apple's Chinese voice; a page with
+    /// English is read in the natural voice and Chinese in the natural Chinese voice; a page with
     /// both switches voice wherever the language changes. `language` is for text with no letters.
     func read(_ text: String, language: BookLanguage = .english) {
         stop()
@@ -58,11 +58,13 @@ final class ReadAloud {
         for speaker in speakers.values { speaker.stop() }
     }
 
-    /// Prepares the natural voice for the English on a page that's coming up.
+    /// Prepares the natural voices for a page that's coming up.
     static func prefetch(_ text: String, language: BookLanguage = .english) {
-        let english = AudiobookMaker.parts(in: text, language: language).filter { $0.language == .english }
-        guard !english.isEmpty else { return }
-        NaturalVoiceEngine.shared.prefetch(english.flatMap { NaturalVoice.phrases(in: $0.text).map(\.text) })
+        let parts = AudiobookMaker.parts(in: text, language: language)
+        for (lang, engine) in [(BookLanguage.english, NaturalVoiceEngine.shared), (.chinese, NaturalVoiceEngine.chinese)] {
+            let these = parts.filter { $0.language == lang }
+            if !these.isEmpty { engine.prefetch(these.flatMap { NaturalVoice.phrases(in: $0.text).map(\.text) }) }
+        }
     }
 
     private func speakNextBatch() {
@@ -90,9 +92,7 @@ final class ReadAloud {
         case .english:
             speaker = NaturalVoice()
         case .chinese:
-            let system = SystemSentenceSpeaker()
-            system.voice = language.systemVoice
-            speaker = system
+            speaker = NaturalVoice(language: .chinese)
         }
         speakers[language] = speaker
         return speaker

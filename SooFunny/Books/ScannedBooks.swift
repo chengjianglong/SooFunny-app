@@ -318,8 +318,9 @@ enum AudiobookMaker {
     }
 
     /// Writes `pages` as one AAC file, with a pause between pages. `progress` gets 0...1.
-    /// English is read in the natural voice; Chinese in Apple's Chinese voice; a page with both
-    /// switches voice wherever the language changes.
+    /// English and Chinese are each read in their natural voice (Chinese falls back to Apple's
+    /// voice if the Chinese model isn't bundled); a page with both switches voice wherever the
+    /// language changes.
     static func make(pages: [String], language: BookLanguage = .english, to url: URL,
                      progress: @escaping @MainActor (Double) -> Void) async throws {
         let pageParts = pages.map { parts(in: $0, language: language) }
@@ -340,8 +341,8 @@ enum AudiobookMaker {
         // English parts are read a phrase at a time, as the natural voice does when speaking.
         let phrases: [[Part]] = pageParts.map { parts in
             parts.flatMap { part -> [Part] in
-                guard part.language == .english else { return [part] }
-                var phrases = NaturalVoice.phrases(in: part.text).map { Part(text: $0.text, language: .english, gap: $0.gap) }
+                guard part.language == .english || NaturalVoiceEngine.isChineseSelected else { return [part] }
+                var phrases = NaturalVoice.phrases(in: part.text).map { Part(text: $0.text, language: part.language, gap: $0.gap) }
                 if !phrases.isEmpty { phrases[phrases.count - 1].gap = min(phrases[phrases.count - 1].gap, part.gap) }
                 return phrases
             }
@@ -360,7 +361,8 @@ enum AudiobookMaker {
                     // Words the natural voice can't say (odd spellings, symbols) go to Apple's English voice.
                     if samples?.isEmpty ?? true { samples = await systemAudio(for: phrase.text, voice: englishVoice) }
                 } else {
-                    samples = await systemAudio(for: phrase.text, voice: voice)
+                    if NaturalVoiceEngine.isChineseSelected { samples = await audio(for: phrase.text, engine: .chinese) }
+                    if samples?.isEmpty ?? true { samples = await systemAudio(for: phrase.text, voice: voice) }
                 }
                 // A scrap of text with nothing to say (a stray mark the camera read) is skipped.
                 if let samples, !samples.isEmpty {
@@ -392,9 +394,9 @@ enum AudiobookMaker {
         return result
     }
 
-    private static func audio(for text: String) async -> [Float]? {
+    private static func audio(for text: String, engine: NaturalVoiceEngine = .shared) async -> [Float]? {
         await withCheckedContinuation { continuation in
-            NaturalVoiceEngine.shared.audio(for: text) { continuation.resume(returning: $0) }
+            engine.audio(for: text) { continuation.resume(returning: $0) }
         }
     }
 

@@ -87,7 +87,7 @@ final class WordAssistant {
     private static func speaker(for language: LearningLanguage) -> SentenceSpeaker {
         switch language {
         case .english: return NaturalVoice()
-        case .chinese: return SystemSentenceSpeaker.chinese()
+        case .chinese: return NaturalVoice(language: .chinese)
         case .both: return BilingualSentenceSpeaker()
         }
     }
