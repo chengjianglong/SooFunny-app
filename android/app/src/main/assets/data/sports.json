@@ -1,0 +1,548 @@
+[
+ {
+  "id": "swimming",
+  "season": "summer",
+  "emoji": "🏊",
+  "english": "Swimming",
+  "chinese": "游泳",
+  "aboutEnglish": "Swimmers race through the water in a pool. They use four strokes: freestyle, backstroke, breaststroke and butterfly. The first swimmer to touch the wall wins!",
+  "aboutChinese": "游泳运动员在泳池里比赛谁游得快。一共有四种泳姿：自由泳、仰泳、蛙泳和蝶泳。最先摸到池边的人获胜！",
+  "photo": null
+ },
+ {
+  "id": "diving",
+  "season": "summer",
+  "emoji": "🌊",
+  "english": "Diving",
+  "chinese": "跳水",
+  "aboutEnglish": "Divers jump from a springboard or a high platform and do flips and twists in the air. Then they try to go into the water with only a tiny splash. Judges give points for every dive.",
+  "aboutChinese": "跳水运动员从跳板或高高的跳台上跳下，在空中翻腾和转体。入水时水花越小越好。裁判会给每一跳打分。",
+  "photo": null
+ },
+ {
+  "id": "artistic-swimming",
+  "season": "summer",
+  "emoji": "🩰",
+  "english": "Artistic Swimming",
+  "chinese": "花样游泳",
+  "aboutEnglish": "Swimmers dance in the water to music, all moving together. They lift teammates out of the water and hold their breath for a long time. It needs strength and lots of teamwork.",
+  "aboutChinese": "花样游泳运动员随着音乐在水中跳舞，动作整齐一致。他们会把队友托出水面，还要憋气很长时间。这项运动需要力量和团队合作。",
+  "photo": null
+ },
+ {
+  "id": "water-polo",
+  "season": "summer",
+  "emoji": "🤽",
+  "english": "Water Polo",
+  "chinese": "水球",
+  "aboutEnglish": "Two teams swim and pass a ball, trying to throw it into the other team's goal. Players can't stand on the bottom of the pool, so they tread water the whole game!",
+  "aboutChinese": "两队在水中游动传球，想把球投进对方的球门。球员不能踩到池底，所以整场比赛都要踩水！",
+  "photo": null
+ },
+ {
+  "id": "athletics",
+  "season": "summer",
+  "emoji": "🏃",
+  "english": "Athletics",
+  "chinese": "田径",
+  "aboutEnglish": "Athletics has running, jumping and throwing. Athletes race on a track, leap over bars and into sand, and throw things like the javelin. It is one of the oldest sports in the world.",
+  "aboutChinese": "田径包括跑、跳和投掷。运动员在跑道上赛跑，跳过横杆或跳进沙坑，还要投掷标枪等器材。这是世界上最古老的运动之一。",
+  "photo": {
+   "category": "Sports",
+   "word": "running"
+  }
+ },
+ {
+  "id": "archery",
+  "season": "summer",
+  "emoji": "🏹",
+  "english": "Archery",
+  "chinese": "射箭",
+  "aboutEnglish": "Archers shoot arrows with a bow at a round target far away. The yellow middle, called the bullseye, scores the most points. Archers need steady hands and a calm mind.",
+  "aboutChinese": "射箭运动员用弓把箭射向远处的圆形靶子。黄色的靶心得分最高。射箭需要稳稳的手和平静的心。",
+  "photo": null
+ },
+ {
+  "id": "badminton",
+  "season": "summer",
+  "emoji": "🏸",
+  "english": "Badminton",
+  "chinese": "羽毛球",
+  "aboutEnglish": "Players hit a light shuttlecock over a high net with a racket. The shuttlecock can fly very, very fast. A player wins a point when it lands on the other side.",
+  "aboutChinese": "运动员用球拍把轻轻的羽毛球打过高高的球网。羽毛球可以飞得非常快。球落在对方场地里就得一分。",
+  "photo": {
+   "category": "Sports",
+   "word": "badminton"
+  }
+ },
+ {
+  "id": "basketball",
+  "season": "summer",
+  "emoji": "🏀",
+  "english": "Basketball",
+  "chinese": "篮球",
+  "aboutEnglish": "Two teams of five bounce and pass the ball, trying to throw it through the other team's hoop. Shots from far away count for three points. In 3x3 basketball, each team has just three players.",
+  "aboutChinese": "两队各五人，运球、传球，想把球投进对方的篮筐。从远处投进的球算三分。三人篮球每队只有三个人。",
+  "photo": {
+   "category": "Sports",
+   "word": "basketball"
+  }
+ },
+ {
+  "id": "boxing",
+  "season": "summer",
+  "emoji": "🥊",
+  "english": "Boxing",
+  "chinese": "拳击",
+  "aboutEnglish": "Two boxers wearing padded gloves try to land punches in a ring. Judges score who boxed better in each round. Boxers must be fast, strong and quick to dodge.",
+  "aboutChinese": "两名戴着厚手套的拳击手在擂台上比赛出拳。裁判为每一回合打分，看谁打得更好。拳击手要又快又有力气，还要会躲闪。",
+  "photo": null
+ },
+ {
+  "id": "breaking",
+  "season": "summer",
+  "emoji": "🕺",
+  "english": "Breaking",
+  "chinese": "霹雳舞",
+  "aboutEnglish": "Breaking is a street dance from New York. Dancers called B-Boys and B-Girls battle one on one with spins, freezes and power moves to the music.",
+  "aboutChinese": "霹雳舞是一种来自纽约的街舞。舞者们一对一斗舞，随着音乐做旋转、定格和高难度动作。",
+  "photo": null
+ },
+ {
+  "id": "canoeing",
+  "season": "summer",
+  "emoji": "🛶",
+  "english": "Canoeing",
+  "chinese": "皮划艇",
+  "aboutEnglish": "Paddlers race small boats called canoes and kayaks. Some race on calm water. Others rush down a wild, splashy course and go through gates, which is called slalom.",
+  "aboutChinese": "运动员划着叫作划艇和皮艇的小船比赛。有的在平静的水面上比速度，有的在湍急的水道中穿过一个个水门，这叫激流回旋。",
+  "photo": null
+ },
+ {
+  "id": "cycling",
+  "season": "summer",
+  "emoji": "🚴",
+  "english": "Cycling",
+  "chinese": "自行车",
+  "aboutEnglish": "Riders race bikes on roads, around a steep indoor track, on bumpy mountain trails and on BMX courses with jumps. Racing bikes can go very fast!",
+  "aboutChinese": "自行车运动员在公路、室内场地赛道、崎岖的山地和有跳坡的小轮车赛道上比赛。赛车可以骑得非常快！",
+  "photo": null
+ },
+ {
+  "id": "equestrian",
+  "season": "summer",
+  "emoji": "🏇",
+  "english": "Equestrian",
+  "chinese": "马术",
+  "aboutEnglish": "In equestrian sports, a rider and a horse compete as a team. They jump over fences, do graceful dance-like moves called dressage, and ride across the countryside.",
+  "aboutChinese": "马术比赛中，骑手和马是一个团队。他们要跳过障碍，表演像跳舞一样优雅的盛装舞步，还要在野外越野骑行。",
+  "photo": null
+ },
+ {
+  "id": "fencing",
+  "season": "summer",
+  "emoji": "🤺",
+  "english": "Fencing",
+  "chinese": "击剑",
+  "aboutEnglish": "Fencers fight with long, thin swords while wearing masks and white suits. They score by touching the other fencer with the sword. Lights flash to show who scored.",
+  "aboutChinese": "击剑运动员戴着面罩、穿着白色击剑服，用细长的剑比赛。用剑碰到对手就能得分。灯会亮起来，显示谁得了分。",
+  "photo": null
+ },
+ {
+  "id": "football",
+  "season": "summer",
+  "emoji": "⚽",
+  "english": "Football (Soccer)",
+  "chinese": "足球",
+  "aboutEnglish": "Two teams of eleven players kick the ball and try to score in the other team's goal. Only the goalkeeper may use their hands. It is the most popular sport in the world.",
+  "aboutChinese": "两队各十一人用脚踢球，想把球踢进对方球门。只有守门员可以用手碰球。足球是世界上最受欢迎的运动。",
+  "photo": {
+   "category": "Sports",
+   "word": "soccer"
+  }
+ },
+ {
+  "id": "golf",
+  "season": "summer",
+  "emoji": "⛳",
+  "english": "Golf",
+  "chinese": "高尔夫球",
+  "aboutEnglish": "Golfers hit a small ball with a club, trying to get it into a hole in as few shots as possible. The course has grass, sand traps and sometimes ponds.",
+  "aboutChinese": "高尔夫球手用球杆击打小球，想用最少的杆数把球打进洞里。球场上有草地、沙坑，有时还有池塘。",
+  "photo": {
+   "category": "Sports",
+   "word": "golf"
+  }
+ },
+ {
+  "id": "gymnastics",
+  "season": "summer",
+  "emoji": "🤸",
+  "english": "Gymnastics",
+  "chinese": "体操",
+  "aboutEnglish": "Gymnasts flip, swing and balance on the floor, the balance beam and the bars. Rhythmic gymnasts dance with ribbons, hoops and balls, and trampoline gymnasts bounce high into the air.",
+  "aboutChinese": "体操运动员在自由体操场地、平衡木和各种杠上翻腾、摆动和保持平衡。艺术体操运动员拿着彩带、圈和球跳舞，蹦床运动员会弹得很高很高。",
+  "photo": {
+   "category": "Sports",
+   "word": "gymnastics"
+  }
+ },
+ {
+  "id": "handball",
+  "season": "summer",
+  "emoji": "🤾",
+  "english": "Handball",
+  "chinese": "手球",
+  "aboutEnglish": "Two teams of seven pass a ball with their hands and throw it into the other team's goal. Players may take only three steps while holding the ball.",
+  "aboutChinese": "两队各七人用手传球，想把球扔进对方的球门。拿着球的时候最多只能走三步。",
+  "photo": null
+ },
+ {
+  "id": "hockey",
+  "season": "summer",
+  "emoji": "🏑",
+  "english": "Hockey",
+  "chinese": "曲棍球",
+  "aboutEnglish": "In field hockey, two teams use curved sticks to hit a small, hard ball into the other team's goal. They play on a smooth field of artificial grass.",
+  "aboutChinese": "曲棍球比赛中，两队用弯弯的球棍击打一个又小又硬的球，想把它打进对方球门。比赛在平平的人造草场上进行。",
+  "photo": {
+   "category": "Sports",
+   "word": "hockey"
+  }
+ },
+ {
+  "id": "judo",
+  "season": "summer",
+  "emoji": "🥋",
+  "english": "Judo",
+  "chinese": "柔道",
+  "aboutEnglish": "Judo comes from Japan. Two players in white or blue suits try to throw each other onto the mat or hold each other down. Judo means \"the gentle way.\"",
+  "aboutChinese": "柔道来自日本。两名穿着白色或蓝色柔道服的选手想办法把对方摔倒在垫子上，或者把对方压住。柔道的意思是“柔和之道”。",
+  "photo": null
+ },
+ {
+  "id": "modern-pentathlon",
+  "season": "summer",
+  "emoji": "🏅",
+  "english": "Modern Pentathlon",
+  "chinese": "现代五项",
+  "aboutEnglish": "Modern pentathlon mixes several sports in one day, like fencing, swimming, and a last race that combines running and laser shooting. Athletes must be good at everything!",
+  "aboutChinese": "现代五项要在一天里完成好几个项目，比如击剑、游泳，还有把跑步和激光射击结合在一起的比赛。运动员必须样样都很棒！",
+  "photo": null
+ },
+ {
+  "id": "rowing",
+  "season": "summer",
+  "emoji": "🚣",
+  "english": "Rowing",
+  "chinese": "赛艇",
+  "aboutEnglish": "Rowers sit in long, thin boats and pull oars to race across calm water. They sit facing backward, so they cross the finish line backward!",
+  "aboutChinese": "赛艇运动员坐在又长又窄的船里，用桨划水比赛。他们是背对着前进方向坐的，所以冲过终点时是倒着的！",
+  "photo": null
+ },
+ {
+  "id": "rugby-sevens",
+  "season": "summer",
+  "emoji": "🏉",
+  "english": "Rugby Sevens",
+  "chinese": "七人制橄榄球",
+  "aboutEnglish": "Two teams of seven run with an oval ball and try to put it down behind the other team's goal line. They may only pass the ball backward or sideways. Each half lasts just seven minutes.",
+  "aboutChinese": "两队各七人抱着椭圆形的球奔跑，想把球放到对方的得分线后面。传球只能往后或往旁边传。每个半场只有七分钟。",
+  "photo": null
+ },
+ {
+  "id": "sailing",
+  "season": "summer",
+  "emoji": "⛵",
+  "english": "Sailing",
+  "chinese": "帆船",
+  "aboutEnglish": "Sailors race boats that are pushed by the wind. They watch the wind and waves to find the fastest way around the course. Some boats even fly above the water on foils!",
+  "aboutChinese": "帆船运动员驾驶靠风推动的船比赛。他们要观察风和浪，找出绕过航线最快的路线。有些船甚至能靠水翼“飞”在水面上！",
+  "photo": null
+ },
+ {
+  "id": "shooting",
+  "season": "summer",
+  "emoji": "🎯",
+  "english": "Shooting",
+  "chinese": "射击",
+  "aboutEnglish": "Shooters aim very carefully and score points for hitting the middle of the target. Some aim at paper targets and others at flying clay discs. Staying very still is the secret.",
+  "aboutChinese": "射击运动员非常仔细地瞄准，打中靶子中心就能得高分。有的打纸靶，有的打飞起来的飞碟。保持身体一动不动是秘诀。",
+  "photo": null
+ },
+ {
+  "id": "skateboarding",
+  "season": "summer",
+  "emoji": "🛹",
+  "english": "Skateboarding",
+  "chinese": "滑板",
+  "aboutEnglish": "Skaters ride boards on wheels and do tricks on ramps, rails and stairs. Judges score how hard, smooth and creative the tricks are.",
+  "aboutChinese": "滑板运动员踩着带轮子的滑板，在坡道、栏杆和台阶上做各种花样动作。裁判根据动作的难度、流畅和创意打分。",
+  "photo": null
+ },
+ {
+  "id": "sport-climbing",
+  "season": "summer",
+  "emoji": "🧗",
+  "english": "Sport Climbing",
+  "chinese": "竞技攀岩",
+  "aboutEnglish": "Climbers go up tall walls covered with colorful holds. In speed climbing they race to the top in just a few seconds. In other events they work out tricky routes like puzzles.",
+  "aboutChinese": "攀岩运动员在布满彩色岩点的高墙上攀爬。速度攀岩只要几秒钟就能爬到顶，其他项目则要像解谜一样找出难爬的路线。",
+  "photo": null
+ },
+ {
+  "id": "surfing",
+  "season": "summer",
+  "emoji": "🏄",
+  "english": "Surfing",
+  "chinese": "冲浪",
+  "aboutEnglish": "Surfers ride ocean waves standing on a board. Judges give points for big turns, speed and style. Surfers have to wait patiently for the right wave.",
+  "aboutChinese": "冲浪运动员站在冲浪板上乘着海浪滑行。裁判根据转弯、速度和动作风格打分。冲浪运动员还要耐心等待合适的海浪。",
+  "photo": {
+   "category": "Sports",
+   "word": "surfing"
+  }
+ },
+ {
+  "id": "table-tennis",
+  "season": "summer",
+  "emoji": "🏓",
+  "english": "Table Tennis",
+  "chinese": "乒乓球",
+  "aboutEnglish": "Players hit a small, light ball back and forth over a low net on a table. The ball spins and flies so fast that players need very quick reactions. It is also called ping pong.",
+  "aboutChinese": "运动员在球台上隔着矮矮的球网来回击打一个又小又轻的球。球又快又会旋转，所以需要非常快的反应。乒乓球在中国非常受欢迎。",
+  "photo": {
+   "category": "Sports",
+   "word": "ping pong"
+  }
+ },
+ {
+  "id": "taekwondo",
+  "season": "summer",
+  "emoji": "🦵",
+  "english": "Taekwondo",
+  "chinese": "跆拳道",
+  "aboutEnglish": "Taekwondo comes from Korea. Players wear padded vests and helmets and score points with fast, high kicks and punches. Spinning kicks score extra points.",
+  "aboutChinese": "跆拳道来自韩国。选手穿着护具、戴着头盔，用又快又高的踢腿和出拳得分。转身踢能得更多分。",
+  "photo": null
+ },
+ {
+  "id": "tennis",
+  "season": "summer",
+  "emoji": "🎾",
+  "english": "Tennis",
+  "chinese": "网球",
+  "aboutEnglish": "Players hit a fuzzy yellow ball over a net with a racket. The ball may bounce only once on each side. Playing alone is called singles, and playing in pairs is called doubles.",
+  "aboutChinese": "运动员用球拍把毛茸茸的黄色小球打过球网。球在每一边最多只能弹一次。一个人打叫单打，两个人一起打叫双打。",
+  "photo": {
+   "category": "Sports",
+   "word": "tennis"
+  }
+ },
+ {
+  "id": "triathlon",
+  "season": "summer",
+  "emoji": "🏊‍♀️",
+  "english": "Triathlon",
+  "chinese": "铁人三项",
+  "aboutEnglish": "Triathletes swim, then ride a bike, then run, all in one race without stopping. Changing quickly from one sport to the next is part of the race.",
+  "aboutChinese": "铁人三项运动员要在一场比赛里连续完成游泳、骑自行车和跑步，中间不能停下来。快速地从一个项目换到下一个项目也是比赛的一部分。",
+  "photo": null
+ },
+ {
+  "id": "volleyball",
+  "season": "summer",
+  "emoji": "🏐",
+  "english": "Volleyball",
+  "chinese": "排球",
+  "aboutEnglish": "Two teams hit a ball over a high net with their hands and arms and try to make it land on the other side. Each team may touch the ball three times. Beach volleyball is played on sand by teams of two.",
+  "aboutChinese": "两队用手和手臂把球击过高高的球网，想让球落在对方场地上。每队最多只能碰球三次。沙滩排球在沙滩上进行，每队两个人。",
+  "photo": {
+   "category": "Sports",
+   "word": "volleyball"
+  }
+ },
+ {
+  "id": "weightlifting",
+  "season": "summer",
+  "emoji": "🏋️",
+  "english": "Weightlifting",
+  "chinese": "举重",
+  "aboutEnglish": "Weightlifters lift a heavy bar with weights on it from the floor up over their heads. The person who lifts the most wins. It takes strength and good technique.",
+  "aboutChinese": "举重运动员把装着杠铃片的沉重杠铃从地上举过头顶。举起最重的人获胜。举重既需要力量，也需要好的技术。",
+  "photo": null
+ },
+ {
+  "id": "wrestling",
+  "season": "summer",
+  "emoji": "🤼",
+  "english": "Wrestling",
+  "chinese": "摔跤",
+  "aboutEnglish": "Two wrestlers grab, push and pull, trying to hold the other's shoulders down on the mat. Wrestling is one of the oldest sports in the world, thousands of years old.",
+  "aboutChinese": "两名摔跤手互相抓、推、拉，想把对方的双肩压在垫子上。摔跤是世界上最古老的运动之一，已经有几千年的历史了。",
+  "photo": null
+ },
+ {
+  "id": "alpine-skiing",
+  "season": "winter",
+  "emoji": "⛷️",
+  "english": "Alpine Skiing",
+  "chinese": "高山滑雪",
+  "aboutEnglish": "Skiers race down snowy mountains, zooming around poles called gates. The fastest racers go as fast as a car on a highway!",
+  "aboutChinese": "高山滑雪运动员从雪山上飞速滑下，绕过叫作旗门的杆子。最快的选手能像高速公路上的汽车一样快！",
+  "photo": {
+   "category": "Sports",
+   "word": "skiing"
+  }
+ },
+ {
+  "id": "biathlon",
+  "season": "winter",
+  "emoji": "🎯",
+  "english": "Biathlon",
+  "chinese": "冬季两项",
+  "aboutEnglish": "Biathletes ski across the snow with a rifle on their backs. They stop to shoot at small targets, and missing usually means extra skiing!",
+  "aboutChinese": "冬季两项运动员背着枪在雪地上滑雪。他们会停下来射击小小的靶子，打偏了通常就要多滑一段路！",
+  "photo": null
+ },
+ {
+  "id": "bobsleigh",
+  "season": "winter",
+  "emoji": "🛷",
+  "english": "Bobsleigh",
+  "chinese": "雪车",
+  "aboutEnglish": "Bobsledders push a sled, jump in and race down a twisting track made of ice. A team can have one, two or four people. Bobsleds can go faster than 140 kilometers an hour!",
+  "aboutChinese": "雪车运动员推动雪车，然后跳上车，沿着弯弯曲曲的冰道冲下去。一队可以是一人、两人或四人。雪车的速度可以超过每小时140公里！",
+  "photo": null
+ },
+ {
+  "id": "cross-country-skiing",
+  "season": "winter",
+  "emoji": "🌲",
+  "english": "Cross-Country Skiing",
+  "chinese": "越野滑雪",
+  "aboutEnglish": "Skiers race long distances over snowy hills and through forests. It is one of the hardest sports for your heart and lungs!",
+  "aboutChinese": "越野滑雪运动员在雪地的山坡和森林里进行长距离比赛。这是对心脏和肺最有挑战的运动之一！",
+  "photo": null
+ },
+ {
+  "id": "curling",
+  "season": "winter",
+  "emoji": "🥌",
+  "english": "Curling",
+  "chinese": "冰壶",
+  "aboutEnglish": "Players slide heavy granite stones across the ice toward a round target called the house. Teammates sweep the ice with brooms to help the stone go farther and straighter.",
+  "aboutChinese": "冰壶运动员把沉重的花岗岩石壶推过冰面，滑向叫作大本营的圆形目标。队友用刷子刷冰，帮助冰壶滑得更远、更直。",
+  "photo": null
+ },
+ {
+  "id": "figure-skating",
+  "season": "winter",
+  "emoji": "⛸️",
+  "english": "Figure Skating",
+  "chinese": "花样滑冰",
+  "aboutEnglish": "Skaters glide, spin and jump on the ice to music. Some skate alone, and others skate in pairs or dance together. Judges score their skill and beauty.",
+  "aboutChinese": "花样滑冰运动员随着音乐在冰上滑行、旋转和跳跃。有单人滑，也有双人滑和冰上舞蹈。裁判根据技术和艺术表现打分。",
+  "photo": null
+ },
+ {
+  "id": "freestyle-skiing",
+  "season": "winter",
+  "emoji": "🌀",
+  "english": "Freestyle Skiing",
+  "chinese": "自由式滑雪",
+  "aboutEnglish": "Freestyle skiers flip and twist in the air off big jumps, race over bumps called moguls, and do tricks in a halfpipe.",
+  "aboutChinese": "自由式滑雪运动员从大跳台上飞起，在空中翻转，在雪包上快速滑行，还在U型场地里做各种技巧动作。",
+  "photo": null
+ },
+ {
+  "id": "ice-hockey",
+  "season": "winter",
+  "emoji": "🏒",
+  "english": "Ice Hockey",
+  "chinese": "冰球",
+  "aboutEnglish": "Two teams skate fast and use sticks to shoot a hard rubber disc, called a puck, into the other team's goal. It is one of the fastest team sports.",
+  "aboutChinese": "两队在冰上快速滑行，用球杆把一个硬橡胶做的冰球打进对方球门。冰球是最快的团体运动之一。",
+  "photo": null
+ },
+ {
+  "id": "luge",
+  "season": "winter",
+  "emoji": "🛷",
+  "english": "Luge",
+  "chinese": "雪橇",
+  "aboutEnglish": "Luge sliders lie on their backs on a small sled and race feet first down an icy track. They steer with their legs and shoulders.",
+  "aboutChinese": "雪橇运动员仰面躺在小雪橇上，脚朝前沿着冰道滑下。他们用腿和肩膀来控制方向。",
+  "photo": null
+ },
+ {
+  "id": "nordic-combined",
+  "season": "winter",
+  "emoji": "🎿",
+  "english": "Nordic Combined",
+  "chinese": "北欧两项",
+  "aboutEnglish": "Nordic combined mixes two sports: ski jumping and cross-country skiing. The best jumpers start the ski race first, and the first to cross the finish line wins.",
+  "aboutChinese": "北欧两项把跳台滑雪和越野滑雪结合在一起。跳得最好的选手先出发滑雪，第一个冲过终点的人获胜。",
+  "photo": null
+ },
+ {
+  "id": "short-track",
+  "season": "winter",
+  "emoji": "⛸️",
+  "english": "Short Track Speed Skating",
+  "chinese": "短道速滑",
+  "aboutEnglish": "Skaters race in a group around a small oval track on the ice. They pass each other a lot, and the turns are very tight.",
+  "aboutChinese": "短道速滑运动员成群地在小小的椭圆形冰道上比赛。比赛中经常超越对手，弯道又急又窄。",
+  "photo": null
+ },
+ {
+  "id": "skeleton",
+  "season": "winter",
+  "emoji": "🛷",
+  "english": "Skeleton",
+  "chinese": "钢架雪车",
+  "aboutEnglish": "Skeleton sliders run, dive head first onto a small sled and race down an icy track. Their chin is just a few centimeters above the ice!",
+  "aboutChinese": "钢架雪车运动员先助跑，然后头朝前趴在小雪车上沿着冰道冲下去。他们的下巴离冰面只有几厘米！",
+  "photo": null
+ },
+ {
+  "id": "ski-jumping",
+  "season": "winter",
+  "emoji": "🕊️",
+  "english": "Ski Jumping",
+  "chinese": "跳台滑雪",
+  "aboutEnglish": "Ski jumpers speed down a huge ramp and fly through the air like birds. They score points for how far they fly and how well they land.",
+  "aboutChinese": "跳台滑雪运动员从巨大的跳台上滑下，像小鸟一样在空中飞行。他们根据飞行的距离和落地的姿势得分。",
+  "photo": null
+ },
+ {
+  "id": "ski-mountaineering",
+  "season": "winter",
+  "emoji": "🏔️",
+  "english": "Ski Mountaineering",
+  "chinese": "滑雪登山",
+  "aboutEnglish": "Ski mountaineers climb up a snowy mountain on skis, sometimes carrying them on their backs, and then ski down fast.",
+  "aboutChinese": "滑雪登山运动员穿着滑雪板爬上雪山，有时还要把雪板背在背上走，然后再快速滑下来。",
+  "photo": null
+ },
+ {
+  "id": "snowboarding",
+  "season": "winter",
+  "emoji": "🏂",
+  "english": "Snowboarding",
+  "chinese": "单板滑雪",
+  "aboutEnglish": "Snowboarders ride down the snow on one wide board. Some race, and others do big tricks in the halfpipe and off jumps.",
+  "aboutChinese": "单板滑雪运动员站在一块宽宽的滑雪板上从雪坡滑下。有的比赛速度，有的在U型场地和跳台上做高难度动作。",
+  "photo": null
+ },
+ {
+  "id": "speed-skating",
+  "season": "winter",
+  "emoji": "⛸️",
+  "english": "Speed Skating",
+  "chinese": "速度滑冰",
+  "aboutEnglish": "Speed skaters race around a big oval track of ice. They bend low and swing their arms to go as fast as they can.",
+  "aboutChinese": "速度滑冰运动员在大大的椭圆形冰道上比赛。他们弯下身子、摆动手臂，尽可能滑得快。",
+  "photo": null
+ }
+]

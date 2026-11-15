@@ -1,0 +1,502 @@
+[
+ {
+  "id": "nursery-rhymes",
+  "title": "Twinkle, Twinkle and Friends",
+  "cover": "⭐️",
+  "color": "purple",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "⭐️🌙✨",
+    "text": "Twinkle, twinkle, little star, how I wonder what you are! Up above the world so high, like a diamond in the sky."
+   },
+   {
+    "scene": "🥚🧱💥",
+    "text": "Humpty Dumpty sat on a wall. Humpty Dumpty had a great fall. All the king's horses and all the king's men couldn't put Humpty together again."
+   },
+   {
+    "scene": "🐱🎻🐄🌙",
+    "text": "Hey diddle diddle, the cat and the fiddle, the cow jumped over the moon. The little dog laughed to see such fun, and the dish ran away with the spoon."
+   },
+   {
+    "scene": "🕷️🌧️☀️",
+    "text": "The itsy bitsy spider climbed up the water spout. Down came the rain and washed the spider out. Out came the sun and dried up all the rain, and the itsy bitsy spider climbed up the spout again."
+   },
+   {
+    "scene": "🐑🧶",
+    "text": "Baa, baa, black sheep, have you any wool? Yes sir, yes sir, three bags full. One for the master, one for the dame, and one for the little boy who lives down the lane."
+   },
+   {
+    "scene": "👦👧⛰️🪣",
+    "text": "Jack and Jill went up the hill to fetch a pail of water. Jack fell down and broke his crown, and Jill came tumbling after."
+   },
+   {
+    "scene": "🐭🕰️",
+    "text": "Hickory, dickory, dock. The mouse ran up the clock. The clock struck one, the mouse ran down. Hickory, dickory, dock."
+   }
+  ],
+  "translation": {
+   "title": "一闪一闪亮晶晶和好朋友们",
+   "pages": [
+    "一闪一闪亮晶晶，满天都是小星星。挂在天上放光明，好像许多小眼睛。",
+    "矮胖子，坐墙头，栽了一个大跟头。国王的马，国王的兵，谁也没法把他拼回去。",
+    "嘿，嘀嗒嘀嗒，小猫拉提琴，奶牛跳过了月亮。小狗看了哈哈笑，盘子和勺子一起逃跑了。",
+    "小小蜘蛛爬上了水管。下起雨来，把蜘蛛冲了下来。太阳出来，晒干了雨水，小小蜘蛛又爬上了水管。",
+    "咩咩小黑羊，你有羊毛吗？有的，有的，满满三大袋。一袋给主人，一袋给夫人，还有一袋给住在小路尽头的小男孩。",
+    "杰克和吉尔上山去打水。杰克摔了一跤，碰破了头，吉尔也跟着滚了下来。",
+    "嘀嗒嘀嗒，小老鼠爬上了大钟。钟敲了一下，小老鼠跑下来。嘀嗒嘀嗒。"
+   ]
+  }
+ },
+ {
+  "id": "three-little-pigs",
+  "title": "The Three Little Pigs",
+  "cover": "🐷",
+  "color": "pink",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "🐷🐷🐷🏡",
+    "text": "Once upon a time, three little pigs left home to build houses of their own."
+   },
+   {
+    "scene": "🐷🌾🏠",
+    "text": "The first little pig built a house of straw. It was quick and easy!"
+   },
+   {
+    "scene": "🐷🪵🏠",
+    "text": "The second little pig built a house of sticks. That was quick too!"
+   },
+   {
+    "scene": "🐷🧱🏠",
+    "text": "The third little pig built a house of bricks. It took a long, long time."
+   },
+   {
+    "scene": "🐺🌾💨",
+    "text": "Along came a big bad wolf. \"Little pig, little pig, let me come in!\" He huffed and he puffed, and he blew the straw house down!"
+   },
+   {
+    "scene": "🐺🪵💨",
+    "text": "The wolf huffed and puffed at the house of sticks. Down it came! The pigs ran to the brick house."
+   },
+   {
+    "scene": "🐺🧱😤",
+    "text": "The wolf huffed and puffed, and puffed and huffed. But the brick house did not fall down."
+   },
+   {
+    "scene": "🐷🐷🐷🎉",
+    "text": "The wolf gave up and ran away. The three little pigs danced and sang, safe and sound in the brick house."
+   }
+  ],
+  "translation": {
+   "title": "三只小猪",
+   "pages": [
+    "从前，有三只小猪离开家，要盖自己的房子。",
+    "第一只小猪用稻草盖了房子。又快又容易！",
+    "第二只小猪用木棍盖了房子。也很快！",
+    "第三只小猪用砖头盖了房子。花了很长很长的时间。",
+    "来了一只大灰狼。“小猪，小猪，让我进去！”他吹呀吹，把稻草房子吹倒了！",
+    "大灰狼对着木棍房子吹呀吹。房子倒了！小猪们跑到了砖头房子里。",
+    "大灰狼吹呀吹，吹了又吹。可是砖头房子一点也没有倒。",
+    "大灰狼没办法，只好跑走了。三只小猪在砖头房子里又唱又跳，平平安安。"
+   ]
+  }
+ },
+ {
+  "id": "good-night-farm",
+  "title": "Good Night, Farm",
+  "cover": "🌙",
+  "color": "indigo",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "🌅🚜",
+    "text": "The sun goes down over the farm. It's time for bed."
+   },
+   {
+    "scene": "🐄💤",
+    "text": "Good night, cow. Moo, moo. Sleep well too."
+   },
+   {
+    "scene": "🐷💤",
+    "text": "Good night, pig, snug in the mud. Oink, oink."
+   },
+   {
+    "scene": "🐑💤",
+    "text": "Good night, sheep, all fluffy and white. Baa, baa, good night."
+   },
+   {
+    "scene": "🐔💤",
+    "text": "Good night, hen, up on the roost. Cluck, cluck, sweet dreams."
+   },
+   {
+    "scene": "🌙⭐️🦉",
+    "text": "The moon comes up. The stars come out. Only the owl is awake. Hoo, hoo."
+   },
+   {
+    "scene": "🧸🛏️😴",
+    "text": "And now it's your turn. Good night, little one. Sleep tight."
+   }
+  ],
+  "translation": {
+   "title": "晚安，农场",
+   "pages": [
+    "太阳在农场上落下了。该睡觉了。",
+    "晚安，奶牛。哞，哞。你也睡个好觉。",
+    "晚安，小猪，舒舒服服躺在泥里。哼，哼。",
+    "晚安，绵羊，毛茸茸白白的。咩，咩，晚安。",
+    "晚安，母鸡，站在鸡窝上。咯咯，咯咯，做个好梦。",
+    "月亮升起来了。星星出来了。只有猫头鹰还醒着。呼，呼。",
+    "现在轮到你了。晚安，小宝贝。好好睡。"
+   ]
+  }
+ },
+ {
+  "id": "goldilocks",
+  "title": "Goldilocks and the Three Bears",
+  "cover": "🐻",
+  "color": "orange",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "🐻🐻🧸🏡🌲",
+    "text": "Once upon a time, three bears lived in a little house in the woods: Papa Bear, Mama Bear and Baby Bear."
+   },
+   {
+    "scene": "🥣🥣🥣🚶",
+    "text": "Their porridge was too hot, so the bears went for a walk while it cooled."
+   },
+   {
+    "scene": "👧🌲🏡",
+    "text": "A girl named Goldilocks found the little house. She knocked, but nobody answered, so she went inside."
+   },
+   {
+    "scene": "👧🥣😋",
+    "text": "She tasted the porridge. This one is too hot! This one is too cold! This one is just right! And she ate it all up."
+   },
+   {
+    "scene": "👧🪑💥",
+    "text": "She sat in the chairs. This one is too big! This one is too big too! This one is just right! But crack, the little chair broke."
+   },
+   {
+    "scene": "👧🛏️😴",
+    "text": "She tried the beds. Too hard! Too soft! Just right! And Goldilocks fell fast asleep."
+   },
+   {
+    "scene": "🐻🐻🧸😮",
+    "text": "The bears came home. \"Someone has been eating my porridge,\" said Baby Bear, \"and they ate it all up!\""
+   },
+   {
+    "scene": "👧🏃‍♀️🌲",
+    "text": "Goldilocks woke up, saw three bears, and ran all the way home. She never went into a stranger's house again."
+   }
+  ],
+  "translation": {
+   "title": "金发姑娘和三只熊",
+   "pages": [
+    "从前，森林里的一座小房子里住着三只熊：熊爸爸、熊妈妈和熊宝宝。",
+    "他们的粥太烫了，所以三只熊出去散步，等粥凉一凉。",
+    "一个叫金发姑娘的女孩发现了这座小房子。她敲了敲门，没有人回答，她就走了进去。",
+    "她尝了尝粥。这碗太烫了！这碗太凉了！这碗刚刚好！她把粥全吃光了。",
+    "她坐了坐椅子。这把太大了！这把也太大了！这把刚刚好！可是咔嚓一声，小椅子坏了。",
+    "她试了试床。太硬了！太软了！刚刚好！金发姑娘很快就睡着了。",
+    "三只熊回家了。“有人吃了我的粥，”熊宝宝说，“还全吃光了！”",
+    "金发姑娘醒来，看见三只熊，一路跑回了家。她再也不随便进陌生人的家了。"
+   ]
+  }
+ },
+ {
+  "id": "little-red-hen",
+  "title": "The Little Red Hen",
+  "cover": "🐔",
+  "color": "red",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "🐔🌾",
+    "text": "The little red hen found some grains of wheat. \"Who will help me plant the wheat?\""
+   },
+   {
+    "scene": "🐶🐱🦆",
+    "text": "\"Not I,\" said the dog. \"Not I,\" said the cat. \"Not I,\" said the duck. \"Then I will do it myself,\" said the little red hen. And she did."
+   },
+   {
+    "scene": "🐔🌾☀️",
+    "text": "The wheat grew tall and golden. \"Who will help me cut the wheat?\" \"Not I,\" said the dog, the cat and the duck. So she did it herself."
+   },
+   {
+    "scene": "🐔🌾🏠",
+    "text": "\"Who will help me take the wheat to the mill?\" \"Not I,\" said everyone. So the little red hen took it herself, and came back with flour."
+   },
+   {
+    "scene": "🐔🍞🔥",
+    "text": "\"Who will help me bake the bread?\" \"Not I,\" said the dog, the cat and the duck. So she baked it herself."
+   },
+   {
+    "scene": "🍞😋",
+    "text": "The bread smelled warm and wonderful. \"Who will help me eat the bread?\" \"I will!\" said the dog, the cat and the duck."
+   },
+   {
+    "scene": "🐔🐣🍞",
+    "text": "\"No,\" said the little red hen. \"I did all the work, so my chicks and I will eat it.\" And they did, every crumb."
+   },
+   {
+    "scene": "🐶🐱🦆🤝",
+    "text": "The next time, the dog, the cat and the duck all helped. And everyone shared the bread."
+   }
+  ],
+  "translation": {
+   "title": "小红母鸡",
+   "pages": [
+    "小红母鸡找到了一些麦粒。“谁来帮我种麦子？”",
+    "“我不帮，”小狗说。“我不帮，”小猫说。“我不帮，”小鸭说。“那我就自己来，”小红母鸡说。她真的自己种了。",
+    "麦子长得又高又金黄。“谁来帮我割麦子？”“我不帮，”小狗、小猫和小鸭说。于是她自己割了。",
+    "“谁来帮我把麦子送到磨坊？”“我不帮，”大家都说。小红母鸡就自己送去，带回了面粉。",
+    "“谁来帮我烤面包？”“我不帮，”小狗、小猫和小鸭说。于是她自己烤了。",
+    "面包闻起来又香又暖。“谁来帮我吃面包？”“我来！”小狗、小猫和小鸭说。",
+    "“不行，”小红母鸡说。“活都是我干的，所以我和我的小鸡们来吃。”她们吃得一点渣也不剩。",
+    "下一次，小狗、小猫和小鸭都来帮忙了。大家一起分享了面包。"
+   ]
+  }
+ },
+ {
+  "id": "gingerbread-man",
+  "title": "The Gingerbread Man",
+  "cover": "🍪",
+  "color": "brown",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "👵🍪🔥",
+    "text": "A little old woman baked a gingerbread man with raisin eyes and a candy smile."
+   },
+   {
+    "scene": "🍪🏃💨",
+    "text": "When she opened the oven, out he jumped and away he ran! \"Run, run, as fast as you can! You can't catch me, I'm the gingerbread man!\""
+   },
+   {
+    "scene": "👵👴🏃",
+    "text": "The old woman ran after him. The old man ran after him. But nobody could catch the gingerbread man."
+   },
+   {
+    "scene": "🐄🐴🏃",
+    "text": "He ran past a cow and a horse. \"Stop!\" they called. \"Run, run, as fast as you can! You can't catch me, I'm the gingerbread man!\""
+   },
+   {
+    "scene": "🍪🌊",
+    "text": "Then he came to a wide river. Oh no! The gingerbread man could not swim."
+   },
+   {
+    "scene": "🦊🍪",
+    "text": "\"Hop on my tail,\" said a clever fox. \"I will carry you across.\" So the gingerbread man hopped on."
+   },
+   {
+    "scene": "🦊🍪😮",
+    "text": "\"The water is deep. Hop onto my nose,\" said the fox. And snap! That was the end of the gingerbread man."
+   },
+   {
+    "scene": "👵🍪🍪🍪",
+    "text": "Back home, the little old woman baked a whole new batch. This time she kept the oven shut until they were ready to eat."
+   }
+  ],
+  "translation": {
+   "title": "姜饼人",
+   "pages": [
+    "一位小老太太烤了一个姜饼人，有葡萄干做的眼睛和糖果做的笑脸。",
+    "她一打开烤箱，姜饼人就跳出来跑走了！“跑呀跑，快快跑！你抓不到我，我是姜饼人！”",
+    "老太太在后面追。老爷爷也在后面追。可是谁也抓不到姜饼人。",
+    "他跑过一头奶牛和一匹马。“站住！”它们喊。“跑呀跑，快快跑！你抓不到我，我是姜饼人！”",
+    "后来他来到一条宽宽的河边。哎呀！姜饼人不会游泳。",
+    "“跳到我的尾巴上来，”一只聪明的狐狸说。“我背你过河。”姜饼人就跳了上去。",
+    "“水很深。跳到我的鼻子上来，”狐狸说。啊呜！姜饼人就这样被吃掉了。",
+    "回到家，小老太太又烤了一整盘。这一次，她一直关着烤箱门，等到可以吃了才打开。"
+   ]
+  }
+ },
+ {
+  "id": "tortoise-and-hare",
+  "title": "The Tortoise and the Hare",
+  "cover": "🐢",
+  "color": "green",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "🐇🗣️",
+    "text": "A hare liked to brag. \"I'm the fastest animal in the forest! Nobody can beat me!\""
+   },
+   {
+    "scene": "🐢🙂",
+    "text": "\"I'll race you,\" said the tortoise, slowly. All the animals laughed."
+   },
+   {
+    "scene": "🏁🐇💨🐢",
+    "text": "Ready, set, go! The hare zoomed off. The tortoise walked, step by step by step."
+   },
+   {
+    "scene": "🐇🌳😴",
+    "text": "The hare was so far ahead that he lay down under a tree for a nap."
+   },
+   {
+    "scene": "🐢👣",
+    "text": "The tortoise did not stop. Step by step, he walked right past the sleeping hare."
+   },
+   {
+    "scene": "🐇😱🏃",
+    "text": "The hare woke up and ran as fast as he could. But it was too late!"
+   },
+   {
+    "scene": "🐢🏁🏆",
+    "text": "The tortoise crossed the finish line first. Slow and steady wins the race!"
+   }
+  ],
+  "translation": {
+   "title": "龟兔赛跑",
+   "pages": [
+    "有一只兔子很爱吹牛。“我是森林里跑得最快的！谁也比不过我！”",
+    "“我来和你比赛，”乌龟慢慢地说。所有的动物都笑了。",
+    "预备，开始！兔子嗖地跑远了。乌龟一步，一步，又一步地走。",
+    "兔子跑得太远了，就躺在一棵树下睡起了午觉。",
+    "乌龟没有停下来。一步一步，他从正在睡觉的兔子身边走了过去。",
+    "兔子醒来，拼命地跑。可是已经太晚了！",
+    "乌龟第一个冲过了终点线。慢慢来，坚持到底就能赢！"
+   ]
+  }
+ },
+ {
+  "id": "billy-goats-gruff",
+  "title": "The Three Billy Goats Gruff",
+  "cover": "🐐",
+  "color": "teal",
+  "language": "english",
+  "pages": [
+   {
+    "scene": "🐐🐐🐐🌿",
+    "text": "Three billy goats named Gruff wanted to eat the sweet green grass on the hill across the river."
+   },
+   {
+    "scene": "🌉👹",
+    "text": "But under the bridge lived a grumpy troll."
+   },
+   {
+    "scene": "🐐🌉",
+    "text": "Trip, trap, trip, trap! The littlest billy goat crossed the bridge. \"Who's that tripping over my bridge?\" roared the troll."
+   },
+   {
+    "scene": "🐐👹",
+    "text": "\"Don't eat me, I'm too small! Wait for my big brother.\" \"Off you go, then,\" said the troll."
+   },
+   {
+    "scene": "🐐🐐🌉",
+    "text": "Trip, trap, trip, trap! The middle billy goat said the same thing. \"Wait for my big brother. He's much bigger!\""
+   },
+   {
+    "scene": "🐐💪👹",
+    "text": "TRIP, TRAP, TRIP, TRAP! The biggest billy goat Gruff came along. He lowered his horns and bumped the troll right off the bridge. Splash!"
+   },
+   {
+    "scene": "🐐🐐🐐🌿😋",
+    "text": "The three billy goats ate sweet green grass on the hill all summer long."
+   }
+  ],
+  "translation": {
+   "title": "三只山羊嘎啦嘎啦",
+   "pages": [
+    "有三只叫嘎啦嘎啦的山羊，想去吃河对面山坡上又甜又绿的青草。",
+    "可是桥下住着一个脾气很坏的怪物。",
+    "嗒嗒，嗒嗒！最小的山羊走过了桥。“是谁在我的桥上走？”怪物大吼。",
+    "“别吃我，我太小了！等我的哥哥来吧。”“那你走吧，”怪物说。",
+    "嗒嗒，嗒嗒！中间的山羊也这么说。“等我的大哥来吧。他大多了！”",
+    "嗒嗒！嗒嗒！最大的山羊嘎啦嘎啦来了。他低下角，一下就把怪物撞下了桥。扑通！",
+    "三只山羊整个夏天都在山坡上吃又甜又绿的青草。"
+   ]
+  }
+ },
+ {
+  "id": "tang-poems",
+  "title": "唐诗五首",
+  "cover": "🏮",
+  "color": "red",
+  "language": "chinese",
+  "pages": [
+   {
+    "scene": "🦢🌊",
+    "text": "《咏鹅》骆宾王。鹅，鹅，鹅，曲项向天歌。白毛浮绿水，红掌拨清波。"
+   },
+   {
+    "scene": "🌙🛏️🏠",
+    "text": "《静夜思》李白。床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+   },
+   {
+    "scene": "🌸🐦🌧️",
+    "text": "《春晓》孟浩然。春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"
+   },
+   {
+    "scene": "🌾☀️🍚",
+    "text": "《悯农》李绅。锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。"
+   },
+   {
+    "scene": "🌄🏯🌊",
+    "text": "《登鹳雀楼》王之涣。白日依山尽，黄河入海流。欲穷千里目，更上一层楼。"
+   }
+  ],
+  "translation": {
+   "title": "Five Tang Poems",
+   "pages": [
+    "Ode to the Goose, by Luo Binwang. Goose, goose, goose! It bends its neck and sings to the sky. White feathers float on green water. Red feet paddle the clear waves.",
+    "Quiet Night Thoughts, by Li Bai. Bright moonlight shines before my bed. I think it is frost on the ground. I lift my head and look at the bright moon. I lower my head and think of home.",
+    "Spring Morning, by Meng Haoran. Sleeping in spring, I don't notice the dawn. Everywhere I hear birds singing. Last night there was the sound of wind and rain. How many flowers have fallen?",
+    "Pity the Farmers, by Li Shen. Hoeing the rice at noon, sweat drips onto the soil. Who knows that the food in our bowls, every single grain, comes from hard work?",
+    "Climbing Stork Tower, by Wang Zhihuan. The white sun sets behind the mountains. The Yellow River flows into the sea. To see a thousand miles away, climb up one more floor."
+   ]
+  }
+ },
+ {
+  "id": "tortoise-and-hare-zh",
+  "title": "龟兔赛跑",
+  "cover": "🐢",
+  "color": "mint",
+  "language": "chinese",
+  "pages": [
+   {
+    "scene": "🐇🗣️",
+    "text": "小兔子跑得很快。它总是说：“我是森林里跑得最快的！谁也比不过我！”"
+   },
+   {
+    "scene": "🐢🙂",
+    "text": "小乌龟慢慢地说：“我们来比一比吧。”小动物们都笑了。"
+   },
+   {
+    "scene": "🏁🐇💨🐢",
+    "text": "预备，开始！小兔子一下子就跑远了。小乌龟一步一步地往前爬。"
+   },
+   {
+    "scene": "🐇🌳😴",
+    "text": "小兔子回头一看，小乌龟还在很远的地方。它想：“我先睡一觉吧。”"
+   },
+   {
+    "scene": "🐢👣",
+    "text": "小乌龟没有停下来。它一步一步，爬过了正在睡觉的小兔子。"
+   },
+   {
+    "scene": "🐇😱🏃",
+    "text": "小兔子醒来，拼命地跑。可是已经太晚了！"
+   },
+   {
+    "scene": "🐢🏁🏆",
+    "text": "小乌龟第一个到了终点。慢慢来，不放弃，也能赢！"
+   }
+  ],
+  "translation": {
+   "title": "The Tortoise and the Hare",
+   "pages": [
+    "The little rabbit runs very fast. He always says, \"I'm the fastest runner in the forest! Nobody can beat me!\"",
+    "The little tortoise said slowly, \"Let's have a race.\" All the little animals laughed.",
+    "Ready, go! The little rabbit ran far away at once. The little tortoise crawled forward step by step.",
+    "The little rabbit looked back. The little tortoise was still far away. He thought, \"I'll have a sleep first.\"",
+    "The little tortoise did not stop. Step by step, he crawled past the sleeping rabbit.",
+    "The little rabbit woke up and ran as fast as he could. But it was too late!",
+    "The little tortoise reached the finish first. Take it slow, never give up, and you can win too!"
+   ]
+  }
+ }
+]

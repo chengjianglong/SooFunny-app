@@ -60,6 +60,7 @@ photographs ever leaves the device.
 - [Free, with optional tips](#free-with-optional-tips)
 - [Privacy and child safety](#privacy-and-child-safety)
 - [Building and running](#building-and-running)
+- [Android (in progress)](#android-in-progress)
 - [Tests](#tests)
 - [Project layout](#project-layout)
 - [Changing content](#changing-content)
@@ -424,6 +425,28 @@ xcodebuild build -project SooFunny.xcodeproj -scheme SooFunny -configuration Deb
 ```bash
 xcrun devicectl device install app --device <device UDID> build-device/Build/Products/Debug-iphoneos/SooFunny.app
 ```
+
+---
+
+## Android (in progress)
+
+An Android version in Kotlin and Jetpack Compose lives in [`android/`](android/README.md). Version
+0.3 has the five tabs (Color, Words, Sports, Books, Math) with the English / 中文 / Bilingual 双语
+switch, the sports animations, Camera and Share/Save on Color, and My books (scan or add pages
+from Photos, read on the device with Google ML Kit), and reads the iOS app's word list, photos,
+sports and books, so content is edited once for both. It reads aloud with the device's own
+text-to-speech voices; the natural Kokoro voices and the talking buddy are later phases (see
+[android/README.md](android/README.md#plan-for-later-versions)).
+
+Requirements: JDK 17 or later and the Android SDK (platform 37). Then:
+
+```bash
+cd android && ./gradlew :app:installDebug
+```
+
+That builds the app and installs it on the running emulator or phone. `./gradlew :app:testDebugUnitTest`
+runs its unit tests. After changing `OlympicSports.swift`, `StoryBooks.swift` or
+`StoryTranslations.swift`, run `python3 android/tools/export_ios_data.py` so Android gets the change.
 
 ---
 
