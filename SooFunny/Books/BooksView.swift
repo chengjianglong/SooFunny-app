@@ -827,7 +827,7 @@ private struct ShareAudiobookView: View {
                     }
                     .padding()
                 } else {
-                    ParentalGate(reason: "Sharing sends the audiobook out of the app.") { gatePassed = true }
+                    ParentalGate(reason: language.pick("Sharing sends the audiobook out of the app.", "分享会把有声书发送到应用外。", separator: "\n")) { gatePassed = true }
                 }
             }
             .toolbar {

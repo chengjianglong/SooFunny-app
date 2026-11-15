@@ -35,36 +35,40 @@ struct SettingsView: View {
                 } header: {
                     Text("Language 语言")
                 } footer: {
-                    Text("Color, Words, Books, Sports and Math are shown and read aloud in English, in Chinese, or in "
-                         + "both. You can also switch with the globe button at the top. 涂色、词语、图书、运动和数学都可以用英文、中文或双语。")
+                    Text(language.pick("Color, Words, Sports, Books and Math are shown and read aloud in English, in Chinese, or in "
+                                       + "both. You can also switch with the globe button at the top.",
+                                       "涂色、词语、运动、图书和数学都可以用英文、中文或双语显示和朗读，也可以用顶部的地球按钮切换。",
+                                       separator: "\n"))
                 }
 
                 Section {
                     Button {
                         showSupport = true
                     } label: {
-                        Label("Leave a tip", systemImage: "heart.fill")
+                        Label(language.pick("Leave a tip", "打赏支持"), systemImage: "heart.fill")
                     }
                     if tipJar.hasLegacySubscription {
-                        Text("SooFunny is now free for everyone, so your SooFunny Premium subscription is no longer needed. You can cancel it so it doesn't renew.")
+                        Text(language.pick("SooFunny is now free for everyone, so your SooFunny Premium subscription is no longer needed. You can cancel it so it doesn't renew.",
+                                           "SooFunny 现在对所有人免费，不再需要 SooFunny Premium 订阅。你可以取消订阅，以免自动续费。", separator: "\n"))
                             .font(.footnote)
-                        Button("Manage subscription") { showManage = true }
+                        Button(language.pick("Manage subscription", "管理订阅")) { showManage = true }
                     }
                 } header: {
-                    Text("Support SooFunny")
+                    Text(language.pick("Support SooFunny", "支持 SooFunny"))
                 } footer: {
-                    Text("SooFunny is free, with every feature for everyone. Tips are optional and help keep it maintained and updated.")
+                    Text(language.pick("SooFunny is free, with every feature for everyone. Tips are optional and help keep it maintained and updated.",
+                                       "SooFunny 免费提供所有功能。打赏是自愿的，可以帮助我们维护和更新。", separator: "\n"))
                 }
 
                 Section {
-                    Picker("Voice", selection: $voiceIdentifier) {
-                        Text(KokoroTTS.isBundled ? "Natural · Heart (recommended)" : "Automatic").tag("")
+                    Picker(language.pick("Voice", "声音"), selection: $voiceIdentifier) {
+                        Text(KokoroTTS.isBundled ? naturalVoiceName : language.pick("Automatic", "自动")).tag("")
                         ForEach(voices, id: \.identifier) { voice in
                             Text(label(voice)).tag(voice.identifier)
                         }
                     }
                     VStack(alignment: .leading) {
-                        Text("Speed")
+                        Text(language.pick("Speed", "语速"))
                         HStack {
                             Image(systemName: "tortoise.fill").foregroundStyle(.secondary)
                             Slider(value: $speechRate, in: 0.2...0.7)
@@ -74,32 +78,35 @@ struct SettingsView: View {
                     Button {
                         Speech.shared.speak("Hello! Let's learn some words.")
                     } label: {
-                        Label("Try the voice", systemImage: "speaker.wave.2.fill")
+                        Label(language.pick("Try the voice", "试听"), systemImage: "speaker.wave.2.fill")
                     }
                 } header: {
-                    Text("Reading voice")
+                    Text(language.pick("English voice", "英文声音"))
                 } footer: {
-                    Text("The natural voice runs on this device and works offline. Other voices come with iOS; add more under iPhone or iPad Settings → Accessibility → Spoken Content → Voices.")
+                    Text(language.pick("The natural voice runs on this device and works offline. Other voices come with iOS; add more under iPhone or iPad Settings → Accessibility → Spoken Content → Voices.",
+                                       "自然的声音在设备上运行，离线可用。其他声音来自 iOS，可以在 iPhone 或 iPad 的“设置 → 辅助功能 → 朗读内容 → 声音”里添加。",
+                                       separator: "\n"))
                 }
 
                 if KokoroTTS.isChineseBundled {
                     Section {
-                        Picker("Voice · 声音", selection: $chineseVoice) {
+                        Picker(language.pick("Voice", "声音"), selection: $chineseVoice) {
                             ForEach(Array(KokoroTTS.chineseVoices.enumerated()), id: \.element) { i, voice in
-                                Text(i == 0 ? "Voice \(i + 1) · 声音\(i + 1) (recommended)" : "Voice \(i + 1) · 声音\(i + 1)").tag(voice)
+                                Text(language.pick("Voice \(i + 1)" + (i == 0 ? " (recommended)" : ""), "声音\(i + 1)" + (i == 0 ? "（推荐）" : "")))
+                                    .tag(voice)
                             }
                         }
                         .onChange(of: chineseVoice) { Speech.shared.speak("你好！我们一起来学习吧。") }
                         Button {
                             Speech.shared.speak("你好！我们一起来学习吧。")
                         } label: {
-                            Label("Try the voice · 试听", systemImage: "speaker.wave.2.fill")
+                            Label(language.pick("Try the voice", "试听"), systemImage: "speaker.wave.2.fill")
                         }
                     } header: {
-                        Text("Chinese voice · 中文声音")
+                        Text(language.pick("Chinese voice", "中文声音"))
                     } footer: {
-                        Text("Chinese is read in a natural voice that runs on this device and works offline. "
-                             + "中文用自然的声音朗读，在设备上运行，离线可用。")
+                        Text(language.pick("Chinese is read in a natural voice that runs on this device and works offline.",
+                                           "中文用自然的声音朗读，在设备上运行，离线可用。", separator: "\n"))
                     }
                 }
 
@@ -107,47 +114,48 @@ struct SettingsView: View {
                     Button {
                         gate = .researchLab
                     } label: {
-                        Label("Research Lab", systemImage: "flask")
+                        Label(language.pick("Research Lab", "研究实验室"), systemImage: "flask")
                     }
                 } footer: {
-                    Text("On-device model and benchmarking tools, for grown-ups.")
+                    Text(language.pick("On-device model and benchmarking tools, for grown-ups.", "设备上的模型和性能测试工具，供家长使用。",
+                                       separator: "\n"))
                 }
 
                 Section {
                     NavigationLink {
                         PhotoCreditsView()
                     } label: {
-                        Label("Photo credits", systemImage: "photo.stack")
+                        Label(language.pick("Photo credits", "照片来源"), systemImage: "photo.stack")
                     }
                 }
 
                 Section {
-                    Button("Reset defaults", role: .destructive) {
+                    Button(language.pick("Reset defaults", "恢复默认设置"), role: .destructive) {
                         voiceIdentifier = ""
                         speechRate = SettingsKey.defaultSpeechRate
                         chineseVoice = KokoroTTS.chineseVoices[0]
                     }
                 }
 
-                Section("About") {
-                    LabeledContent("Version", value: AppInfo.version)
-                    LabeledContent("Developers", value: AppInfo.developers)
+                Section(language.pick("About", "关于")) {
+                    LabeledContent(language.pick("Version", "版本"), value: AppInfo.version)
+                    LabeledContent(language.pick("Developers", "开发者"), value: AppInfo.developers)
                     Button {
                         gate = .email
                     } label: {
                         Label(AppInfo.contactEmail, systemImage: "envelope")
                     }
-                    .accessibilityLabel("Contact: \(AppInfo.contactEmail)")
+                    .accessibilityLabel(language.pick("Contact: ", "联系：") + AppInfo.contactEmail)
                     Text(AppInfo.copyright)
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle(language.pick("Settings", "设置"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") { dismiss() }
+                    Button(language.pick("Done", "完成")) { dismiss() }
                 }
             }
             .onAppear { voices = Speech.englishVoices }
@@ -163,7 +171,7 @@ struct SettingsView: View {
                         }
                     }
                     .toolbar {
-                        ToolbarItem(placement: .cancellationAction) { Button("Close") { gate = nil } }
+                        ToolbarItem(placement: .cancellationAction) { Button(language.pick("Close", "关闭")) { gate = nil } }
                     }
                 }
             }
@@ -182,25 +190,37 @@ struct SettingsView: View {
         return "\(voice.name) · \(voice.language)\(quality)"
     }
 
+    /// The natural English voice's name, kept short enough for one line in Bilingual.
+    private var naturalVoiceName: String {
+        switch language {
+        case .english: return "Natural · Heart (recommended)"
+        case .chinese: return "自然 · Heart（推荐）"
+        case .both: return "Natural · Heart（推荐）"
+        }
+    }
+
     private func gateReason(_ target: GateTarget) -> String {
         switch target {
-        case .researchLab: return "The Research Lab is for grown-ups."
-        case .email: return "This opens an email to the developers."
+        case .researchLab: return language.pick("The Research Lab is for grown-ups.", "研究实验室是给家长用的。", separator: "\n")
+        case .email: return language.pick("This opens an email to the developers.", "这会打开给开发者的邮件。", separator: "\n")
         }
     }
 }
 
 /// Who took the gallery and word photos. All are CC0 or public domain (free to use), from Wikimedia Commons.
 private struct PhotoCreditsView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
+
     var body: some View {
         List {
-            section("Gallery photos", Showcase.credits)
-            section("Word photos", WordPhotos.credits)
+            section(language.pick("Gallery photos", "图库照片"), Showcase.credits)
+            section(language.pick("Word photos", "词语照片"), WordPhotos.credits)
             Section {} footer: {
-                Text("Thank you to these photographers for sharing their photos freely (CC0 or public domain) on Wikimedia Commons.")
+                Text(language.pick("Thank you to these photographers for sharing their photos freely (CC0 or public domain) on Wikimedia Commons.",
+                                   "感谢这些摄影师在 Wikimedia Commons 上免费分享他们的照片（CC0 或公有领域）。", separator: "\n"))
             }
         }
-        .navigationTitle("Photo credits")
+        .navigationTitle(language.pick("Photo credits", "照片来源"))
         .navigationBarTitleDisplayMode(.inline)
     }
 

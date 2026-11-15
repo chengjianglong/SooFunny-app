@@ -58,6 +58,7 @@ final class TipJar {
 /// password before anything is paid, so there's no extra grown-up check.
 struct SupportView: View {
     @Environment(\.dismiss) private var dismiss
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     @State private var thanked = false
     /// True when the App Store couldn't be reached (SooFunny is often used offline).
     @State private var offline = false
@@ -67,7 +68,7 @@ struct SupportView: View {
             tips
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { dismiss() }
+                    Button(language.pick("Close", "关闭")) { dismiss() }
                 }
             }
         }
@@ -77,16 +78,20 @@ struct SupportView: View {
         ScrollView {
             VStack(spacing: 18) {
                 Text(thanked ? "💛" : "💖").font(.system(size: 64))
-                Text(thanked ? "Thank you!" : "Support SooFunny")
+                Text(thanked ? language.pick("Thank you!", "谢谢你！", separator: "\n") : language.pick("Support SooFunny", "支持 SooFunny", separator: "\n"))
                     .font(.system(size: 34, weight: .black, design: .rounded))
                     .foregroundStyle(LinearGradient(colors: [.pink, .orange, .purple], startPoint: .leading, endPoint: .trailing))
                 Text(thanked
-                     ? "Your tip helps keep SooFunny maintained and growing, free for every family."
-                     : "SooFunny is free for everyone, with no ads and no tracking. If your family enjoys it, a tip helps keep it maintained and add new things to learn.")
+                     ? language.pick("Your tip helps keep SooFunny maintained and growing, free for every family.",
+                                     "你的打赏帮助 SooFunny 持续维护和成长，让每个家庭都能免费使用。", separator: "\n\n")
+                     : language.pick("SooFunny is free for everyone, with no ads and no tracking. If your family enjoys it, a tip helps keep it maintained and add new things to learn.",
+                                     "SooFunny 对所有人免费，没有广告，也不追踪。如果你的家人喜欢它，打赏可以帮助我们维护应用、增加新的学习内容。",
+                                     separator: "\n\n"))
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
                 if offline {
-                    Label("Tips need an internet connection. Please try again when you're online.", systemImage: "wifi.slash")
+                    Label(language.pick("Tips need an internet connection. Please try again when you're online.", "打赏需要连接网络，请联网后再试。",
+                                        separator: "\n"), systemImage: "wifi.slash")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.orange)
                         .multilineTextAlignment(.center)
@@ -101,7 +106,8 @@ struct SupportView: View {
                         .background(Color(.secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 18))
                     }
                 }
-                Text("Tips are optional, one-time payments. They don't unlock anything: every feature is already free.")
+                Text(language.pick("Tips are optional, one-time payments. They don't unlock anything: every feature is already free.",
+                                   "打赏是自愿的一次性付款，不会解锁任何内容：所有功能本来就免费。", separator: "\n"))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -131,6 +137,7 @@ struct ParentalGate: View {
     let onPass: () -> Void
 
     @State private var question = ParentalGate.makeQuestion()
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     @State private var answer = ""
     @State private var wrong = false
     @FocusState private var focused: Bool
@@ -140,11 +147,12 @@ struct ParentalGate: View {
     var body: some View {
         VStack(spacing: 18) {
             Text("👨‍👩‍👧").font(.system(size: 64))
-            Text("Ask a grown-up").font(.largeTitle.weight(.heavy))
+            Text(language.pick("Ask a grown-up", "请家长来", separator: "\n")).font(.largeTitle.weight(.heavy)).multilineTextAlignment(.center)
             Text(reason).foregroundStyle(.secondary)
-            Text("What is \(question.0) × \(question.1)?")
+            Text(language.pick("What is \(question.0) × \(question.1)?", "\(question.0) × \(question.1) 等于几？", separator: "\n"))
+                .multilineTextAlignment(.center)
                 .font(.title.weight(.bold).monospacedDigit())
-            TextField("Answer", text: $answer)
+            TextField(language.pick("Answer", "答案"), text: $answer)
                 .keyboardType(.numberPad)
                 .font(.title2.monospacedDigit())
                 .multilineTextAlignment(.center)
@@ -153,9 +161,9 @@ struct ParentalGate: View {
                 .focused($focused)
                 .onSubmit(check)
             if wrong {
-                Text("That's not right. Try this one.").foregroundStyle(.red)
+                Text(language.pick("That's not right. Try this one.", "不对哦，换一题试试。")).foregroundStyle(.red)
             }
-            Button("Continue", action: check)
+            Button(language.pick("Continue", "继续"), action: check)
                 .buttonStyle(.borderedProminent)
                 .font(.headline)
                 .disabled(answer.isEmpty)

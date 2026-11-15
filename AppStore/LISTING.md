@@ -17,7 +17,7 @@ holder can do.
 | Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
-| Version | 0.4 (build 9): English, 中文 or Bilingual on every tab, and the Qwen buddy. 0.3 (build 5, free with tips and the Sports tab) was released on November 14, 2026 |
+| Version | 0.4 (build 11): English, 中文 or Bilingual on every tab, and the Qwen buddy. 0.3 (build 5, free with tips and the Sports tab) was released on November 14, 2026 |
 
 Kids Category: not joined. Apple requires a parental gate before purchases in Kids Category
 apps, and tips no longer have one (the App Store's Face ID or password check is the only step),
@@ -92,6 +92,7 @@ screen and read aloud.
 • The talking buddy is smarter, especially in Chinese, and can talk and listen in Chinese.
 • Talk about any sport with the talking buddy, and sports now read themselves aloud as soon as
   you open one. The Sports tab moves next to Words.
+• A natural new Chinese voice, with five voices to choose from in Settings.
 • Math questions and cheers in Chinese too.
 • Leaving a tip is quicker.
 
