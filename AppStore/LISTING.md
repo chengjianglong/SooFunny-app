@@ -1,6 +1,6 @@
 # SooFunny: App Store listing and submission checklist
 
-Everything to enter in App Store Connect for version 0.3, plus the steps only the account
+Everything to enter in App Store Connect for version 0.4, plus the steps only the account
 holder can do.
 
 ## App information
@@ -17,7 +17,7 @@ holder can do.
 | Copyright | © 2026 Soo X Intelligence LLC. All rights reserved. |
 | Privacy Policy URL | https://github.com/chengjianglong/SooFunny-app/blob/main/PRIVACY.md |
 | Support URL | https://www.chengjianglong.com/ |
-| Version | 0.3 (build 5): the Sports tab, and everything free with optional tips. Build 4 (Sports only) was taken out of review before release |
+| Version | 0.4 (build 9): English, 中文 or Bilingual on every tab, and the Qwen buddy. 0.3 (build 5, free with tips and the Sports tab) was released on November 14, 2026 |
 
 Kids Category: not joined. Apple requires a parental gate before purchases in Kids Category
 apps, and tips no longer have one (the App Store's Face ID or password check is the only step),
@@ -27,8 +27,7 @@ section but asks you to pick an age band (5 and Under, or 6–8) and triggers st
 
 ## Promotional text (170)
 
-Now completely free! Color any photo, explore 754 words with a talking buddy, hear books read
-aloud, practice math and discover 51 sports, all offline and ad-free.
+Learn in English, 中文 or both! Color any photo, explore 754 words with a talking buddy, hear books read aloud, do math and discover 51 sports, offline and ad-free.
 
 ## Description
 
@@ -39,11 +38,16 @@ Pick a picture of animals, faces, people or the great outdoors, or snap your own
 SooFunny turns it into a clean coloring page with smooth outlines. Tap or swipe to fill the
 blocks, try Magic colors, or peek at the real photo.
 
+ENGLISH, 中文 OR BOTH
+Every part of SooFunny works in English, in Chinese, or in both together. Tap the globe button
+to switch at any time. In Bilingual, everything is shown and read aloud in English first and
+then in Chinese, so children can learn the two languages side by side.
+
 WORDS WITH A TALKING BUDDY
-Explore 754 English words in 32 groups, from Animals to Feelings. Hear every word, tap its
+Explore 754 words in 32 groups, from Animals to Feelings, in English and Chinese. Hear every word, tap its
 letters, then ask the talking buddy anything: "What does a lion eat?" The buddy answers out
-loud with each word highlighted as it's read, using an AI model that runs right on your
-device.
+loud with each word highlighted as it's read, in English, Chinese or both, using an AI model
+that runs right on your device.
 
 BOOKS READ ALOUD
 Ten picture books, from The Three Little Pigs to Tang poems, read aloud with each word lighting
@@ -78,19 +82,18 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 kids,coloring,learn english,vocabulary,read aloud,story books,chinese,math facts,flashcards,offline
 
-## What's New (0.3)
+## What's New (0.4)
 
-SooFunny is now completely free! Every picture, word, book and math game is open to everyone,
-with no subscription. If you'd like to help keep SooFunny growing, you can leave an optional tip
-in Settings. Already subscribed? There's a note in Settings showing how to cancel.
+Learn in English, Chinese or both! Tap the new globe button (or go to Settings) to use every
+tab in English, 中文 or Bilingual 双语. In Bilingual, English comes first and then Chinese, on
+screen and read aloud.
 
-New Sports tab: discover 51 summer and winter sports in English and Chinese, each with a short
-introduction read aloud and a playful animation.
-
-Six new People pictures to color.
-
-0.2 added the Books tab: story books read aloud, and your own scanned books in English, Chinese
-or both, with audiobooks.
+• All 754 words now have Chinese, and every story book can be read in either language or both.
+• The talking buddy is smarter, especially in Chinese, and can talk and listen in Chinese.
+• Talk about any sport with the talking buddy, and sports now read themselves aloud as soon as
+  you open one. The Sports tab moves next to Words.
+• Math questions and cheers in Chinese too.
+• Leaving a tip is quicker.
 
 ## Tips (In-App Purchases → Consumables)
 
@@ -119,16 +122,23 @@ scanned book pages, voice, model conversations and progress never leave the devi
 
 SooFunny works fully offline. The talking buddy (Words → sparkle button) runs the
 Qwen 2.5 1.5B Instruct model (Apache-2.0) on the device with llama.cpp; nothing is sent to a
-server. It answers in English, Chinese or both, following the app's language setting.
+server. It answers in English, Chinese or both, following the app's language setting. Chinese
+listening uses SpeechAnalyzer on the device; the first Chinese conversation asks iOS to download
+Apple's Mandarin dictation model (no audio or text leaves the device).
 
 The Books tab reads story books aloud. "Scan a book" uses the camera (VisionKit document
 scanner), and the text on each page is recognized on the device with Apple's Vision framework;
 English is read by an on-device voice (Kokoro) and Chinese by Apple's built-in voice.
 
 The Sports tab (free) introduces 51 summer and winter sports in English and Chinese, each with
-a looping animation drawn in code.
+a looping animation drawn in code. "Talk about …" on a sport opens the same on-device buddy,
+which is given that sport's introduction to keep its answers accurate.
 
-New in 0.3: every feature is free; nothing is locked. The three In-App Purchases are optional
+New in 0.4: a language switch (the globe button at the top of each tab, or Settings → Language)
+shows and reads every tab in English, Chinese, or both. The talking buddy now uses Qwen 2.5 1.5B
+on the device and answers in the chosen language.
+
+Since 0.3, every feature is free; nothing is locked. The three In-App Purchases are optional
 tips (consumables) that unlock nothing: Settings (gear) → Support SooFunny → Leave a tip. The
 App Store's purchase sheet confirms each tip with Face ID or the account password. Outside links
 are behind a parental gate that asks a two-digit multiplication question (for example

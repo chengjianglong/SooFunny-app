@@ -211,3 +211,13 @@ final class BooksAndColorLanguageTests: XCTestCase {
         }
     }
 }
+
+final class SportBuddyTests: XCTestCase {
+    func testSportFactsGoIntoThePrompt() {
+        let sport = OlympicSports.sports(.summer)[0]
+        let prompt = AssistantPrompts.introduction(word: sport.english, category: "Summer sports",
+                                                   facts: sport.aboutEnglish)
+        XCTAssertTrue(prompt.contains("What the child just read about it: \(sport.aboutEnglish)"))
+        XCTAssertFalse(AssistantPrompts.introduction(word: "lion", category: "Animals").contains("just read about it"))
+    }
+}

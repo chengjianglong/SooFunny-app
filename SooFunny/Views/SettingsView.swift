@@ -18,7 +18,7 @@ struct SettingsView: View {
 
     /// Things behind the grown-up check.
     private enum GateTarget: Identifiable {
-        case researchLab, website
+        case researchLab, email
         var id: Self { self }
     }
 
@@ -108,12 +108,13 @@ struct SettingsView: View {
 
                 Section("About") {
                     LabeledContent("Version", value: AppInfo.version)
-                    LabeledContent("Developer", value: AppInfo.developer)
+                    LabeledContent("Developers", value: AppInfo.developers)
                     Button {
-                        gate = .website
+                        gate = .email
                     } label: {
-                        Label("chengjianglong.com", systemImage: "globe")
+                        Label(AppInfo.contactEmail, systemImage: "envelope")
                     }
+                    .accessibilityLabel("Contact: \(AppInfo.contactEmail)")
                     Text(AppInfo.copyright)
                         .font(.footnote)
                         .foregroundStyle(.secondary)
@@ -131,11 +132,11 @@ struct SettingsView: View {
             .sheet(isPresented: $showSupport) { SupportView() }
             .sheet(item: $gate) { target in
                 NavigationStack {
-                    ParentalGate(reason: target == .website ? "This opens a website." : "The Research Lab is for grown-ups.") {
+                    ParentalGate(reason: gateReason(target)) {
                         gate = nil
                         switch target {
                         case .researchLab: showResearchLab = true
-                        case .website: openURL(AppInfo.developerURL)
+                        case .email: openURL(AppInfo.contactURL)
                         }
                     }
                     .toolbar {
@@ -156,6 +157,13 @@ struct SettingsView: View {
         default: quality = ""
         }
         return "\(voice.name) · \(voice.language)\(quality)"
+    }
+
+    private func gateReason(_ target: GateTarget) -> String {
+        switch target {
+        case .researchLab: return "The Research Lab is for grown-ups."
+        case .email: return "This opens an email to the developers."
+        }
     }
 }
 
@@ -192,8 +200,9 @@ private struct PhotoCreditsView: View {
 
 /// Who makes SooFunny, and its version.
 enum AppInfo {
-    static let developer = "Chengjiang Long"
-    static let developerURL = URL(string: "https://www.chengjianglong.com/")!
+    static let developers = "Chengjiang Long and Yao Xu"
+    static let contactEmail = "chengjiang.long@gmail.com"
+    static let contactURL = URL(string: "mailto:chengjiang.long@gmail.com")!
     static let company = "Soo X Intelligence LLC"
     static let copyright = "© 2026 Soo X Intelligence LLC. All rights reserved."
 

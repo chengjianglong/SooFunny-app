@@ -29,8 +29,11 @@ enum AssistantPrompts {
         }
     }
 
-    private static func rules(word: String, category: String, language: LearningLanguage, chinese: String?) -> String {
+    private static func rules(word: String, category: String, language: LearningLanguage, chinese: String?,
+                              facts: String? = nil) -> String {
         let about = topic(word, chinese, language)
+        // What the child has just read about it (a sport's introduction), so answers match it.
+        let background = facts.map { "\nWhat the child just read about it: \($0)" } ?? ""
         let languageRules: String
         switch language {
         case .english:
@@ -57,13 +60,13 @@ enum AssistantPrompts {
         safe for children. If you are not sure about something, say so simply. End by asking one \
         short question the child might enjoy answering, unless the child wants to stop; then say a \
         short friendly goodbye. Never start with "Okay" or a greeting.
-        """
+        """ + background
     }
 
     /// The opening turn: a short explanation of the word. The app adds the question itself,
     /// because a small model doesn't reliably ask it word for word.
     static func introduction(word: String, category: String, language: LearningLanguage = .english,
-                             chinese: String? = nil) -> String {
+                             chinese: String? = nil, facts: String? = nil) -> String {
         let ask: String
         switch language {
         case .english:
@@ -77,7 +80,7 @@ enum AssistantPrompts {
             ask = "In one short English sentence, tell the child what \"\(word)\" is, then say the same "
                 + "sentence in Chinese. Start directly with the word \"\(word)\"."
         }
-        return chat(system: rules(word: word, category: category, language: language, chinese: chinese),
+        return chat(system: rules(word: word, category: category, language: language, chinese: chinese, facts: facts),
                     turns: [(.child, ask + " Do not greet and do not ask a question.")])
     }
 
@@ -94,10 +97,11 @@ enum AssistantPrompts {
 
     /// A follow-up: recent conversation plus the child's new question.
     static func reply(word: String, category: String, history: [ChatMessage], question: String,
-                      language: LearningLanguage = .english, chinese: String? = nil) -> String {
+                      language: LearningLanguage = .english, chinese: String? = nil, facts: String? = nil) -> String {
         let turns = history.suffix(8).map { ($0.speaker, String($0.text.prefix(600))) }
             + [(ChatMessage.Speaker.child, String(question.prefix(400)))]
-        return chat(system: rules(word: word, category: category, language: language, chinese: chinese), turns: turns)
+        return chat(system: rules(word: word, category: category, language: language, chinese: chinese, facts: facts),
+                    turns: turns)
     }
 
     /// The child speaks as the user and the buddy as the assistant; the prompt ends where the

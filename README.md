@@ -39,7 +39,7 @@ photographs ever leaves the device.
 
 | | |
 |---|---|
-| **Version** | 0.3 (build 5) in App Review; 0.2 (build 3) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
+| **Version** | 0.4 (build 9) in App Review; 0.3 (build 5) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
 | **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
@@ -193,7 +193,7 @@ the app uses an Apple voice automatically.
   pipeline, Apple's Vision subject model and Apple's on-device language model (Apple
   Intelligence, iOS 26+), plus a prompt playground. Results stay on the device and export as
   JSON/CSV.
-- **Photo credits**, **Reset defaults**, and **About** (version, developer, copyright).
+- **Photo credits**, **Reset defaults**, and **About** (version, developers, contact email, copyright).
 
 ### 📱 iPhone and iPad
 
@@ -236,7 +236,10 @@ block.
   conversation as context. The app adds the "What would you like to know about …?" question
   itself, because a small model doesn't ask it reliably, and trims replies to a few sentences.
 - **Listening:** Apple's speech recognition, required to run on the device. A turn ends after a
-  1.4 s pause, after 8 s of silence, or after 20 s.
+  1.4 s pause, after 8 s of silence, or after 20 s. Chinese uses Apple's newer `SpeechAnalyzer`
+  (iOS 26 and later): the first time a Chinese or Bilingual conversation opens, the app asks iOS
+  to download Apple's Mandarin dictation model, so families don't need to add a Chinese keyboard.
+  Older iOS versions use the Chinese keyboard's dictation, if it's turned on.
 - **Speaking:** answers stream sentence by sentence into the voice, so speech starts before the
   whole answer is written.
 
@@ -312,7 +315,7 @@ Grown-ups who'd like to help keep SooFunny maintained and updated can leave a ti
 - **The buddy and the voice** run entirely on the device. Conversations are forgotten when you
   leave the screen.
 - **Progress and settings** are stored only on the device.
-- **Grown-up check:** the developer's website and the Research Lab sit behind a grown-up check;
+- **Grown-up check:** the contact email and the Research Lab sit behind a grown-up check;
   tips rely on the App Store's own Face ID or password check. The photo credits are shown as text, not links.
 - **Permissions:** the camera, microphone, speech recognition and saving to Photos are each
   requested only when first used.
@@ -509,8 +512,10 @@ In short:
 
 **Status:** version 0.2 (build 3), with the Books tab, and the yearly subscription were approved and
 [released on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) on November 6, 2026.
-Version 0.3 (build 5), with the Sports tab and everything free with optional tips, was submitted
-to App Review on November 13, 2026, with the three tips.
+Version 0.3 (build 5), with the Sports tab and everything free with optional tips, was released
+on November 14, 2026, in all 175 regions. Version 0.4 (build 9), with English, 中文 or Bilingual on
+every tab, the Qwen buddy (also on Sports) and on-device Chinese listening, was submitted to App
+Review on November 15, 2026, to release automatically in all 175 regions once approved.
 
 ---
 

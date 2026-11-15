@@ -16,7 +16,9 @@ There are no accounts, no ads, no analytics, no tracking, and no servers that re
   They are never uploaded. A colored picture leaves the device only if you choose to share or
   save it with the system Share button.
 - **Voice.** When you tap Talk, the microphone is used to hear your question. Speech is turned
-  into text with Apple's on-device speech recognition and is never recorded or saved.
+  into text with Apple's on-device speech recognition and is never recorded or saved. For
+  Chinese, iOS may download Apple's Mandarin speech model once; only the model is downloaded, and
+  nothing you say is sent anywhere.
 - **The talking buddy.** Answers come from an AI model (Qwen 2.5) that runs entirely on
   the device. Questions and answers are not sent anywhere and are forgotten when you leave the
   conversation.

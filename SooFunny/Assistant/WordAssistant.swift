@@ -20,6 +20,8 @@ final class WordAssistant {
     /// The word and its group in Chinese.
     let chinese: String?
     let chineseCategory: String?
+    /// Background the buddy should keep to, such as a sport's introduction.
+    let facts: String?
 
     /// The language the child speaks in; in Both they can pick either.
     var listeningLanguage: BookLanguage {
@@ -59,7 +61,7 @@ final class WordAssistant {
     @ObservationIgnored private static var sharedEngine: LanguageEngine?
 
     init(word: String, category: String, language: LearningLanguage = .english,
-         chinese: String? = nil, chineseCategory: String? = nil,
+         chinese: String? = nil, chineseCategory: String? = nil, facts: String? = nil,
          makeEngine: @escaping () throws -> LanguageEngine = { try WordAssistant.loadSharedEngine() },
          speaker: SentenceSpeaker? = nil,
          listener: ChildListener? = nil) {
@@ -70,9 +72,10 @@ final class WordAssistant {
         self.language = language
         self.chinese = chinese
         self.chineseCategory = chineseCategory
+        self.facts = facts
         self.makeEngine = makeEngine
         self.speaker = speaker ?? Self.speaker(for: language)
-        self.listener = listener ?? SystemChildListener(language: language == .chinese ? .chinese : .english)
+        self.listener = listener ?? LanguageChildListener(language: language == .chinese ? .chinese : .english)
         let speaker = self.speaker
         speaker.onWord = { [weak self] sentence, range in
             self?.spokenSentence = sentence
@@ -104,7 +107,8 @@ final class WordAssistant {
     /// Starts the conversation with an introduction.
     func start() {
         guard phase == .preparing, messages.isEmpty else { return }
-        generate(prompt: AssistantPrompts.introduction(word: word, category: topicCategory, language: language, chinese: chinese))
+        generate(prompt: AssistantPrompts.introduction(word: word, category: topicCategory, language: language, chinese: chinese,
+                                                       facts: facts))
         followUp = AssistantPrompts.introductionQuestion(word: word, language: language, chinese: chinese)
     }
 
@@ -188,7 +192,7 @@ final class WordAssistant {
         messages.append(ChatMessage(speaker: .child, text: question))
         heard = ""
         generate(prompt: AssistantPrompts.reply(word: word, category: topicCategory, history: history, question: question,
-                                                language: language, chinese: chinese))
+                                                language: language, chinese: chinese, facts: facts))
     }
 
     private func generate(prompt: String) {

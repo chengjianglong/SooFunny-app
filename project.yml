@@ -12,8 +12,8 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "0.3"
-    CURRENT_PROJECT_VERSION: "5"
+    MARKETING_VERSION: "0.4"
+    CURRENT_PROJECT_VERSION: "10"
 targets:
   SooFunny:
     type: application

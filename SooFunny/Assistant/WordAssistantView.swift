@@ -1,9 +1,14 @@
 import SwiftUI
 
-/// Talk about one word with the on-device buddy: picture, conversation, and a big Talk button.
+/// Talk about one word (or a sport) with the on-device buddy: picture, conversation, and a big
+/// Talk button.
 struct WordAssistantView: View {
     let word: WordEntry
     let category: WordCategory
+    /// Background the buddy keeps to (a sport's introduction), and a picture to show instead of
+    /// the word's photos.
+    var facts: String?
+    var picture: AnyView?
 
     @State private var assistant: WordAssistant
     @State private var typed = ""
@@ -14,22 +19,25 @@ struct WordAssistantView: View {
     /// In Bilingual the child can talk in either language.
     @State private var childSpeaksChinese = false
 
-    init(word: WordEntry, category: WordCategory) {
+    init(word: WordEntry, category: WordCategory, facts: String? = nil, picture: AnyView? = nil) {
         self.word = word
         self.category = category
+        self.facts = facts
+        self.picture = picture
         let language = LearningLanguage(rawValue: UserDefaults.standard.string(forKey: LearningLanguage.key) ?? "") ?? .english
-        _assistant = State(initialValue: Self.makeAssistant(word: word, category: category, language: language))
+        _assistant = State(initialValue: Self.makeAssistant(word: word, category: category, facts: facts, language: language))
     }
 
-    private static func makeAssistant(word: WordEntry, category: WordCategory, language: LearningLanguage) -> WordAssistant {
+    private static func makeAssistant(word: WordEntry, category: WordCategory, facts: String?,
+                                      language: LearningLanguage) -> WordAssistant {
         WordAssistant(word: word.text, category: category.name, language: language,
-                      chinese: word.chinese, chineseCategory: category.chinese)
+                      chinese: word.chinese, chineseCategory: category.chinese, facts: facts)
     }
 
     /// Switching language starts the conversation again in the new language.
     private func restart() {
         assistant.end()
-        assistant = Self.makeAssistant(word: word, category: category, language: language)
+        assistant = Self.makeAssistant(word: word, category: category, facts: facts, language: language)
         if assistant.language == .both, childSpeaksChinese { assistant.listeningLanguage = .chinese }
         assistant.start()
     }
@@ -64,7 +72,10 @@ struct WordAssistantView: View {
         .navigationTitle(word.chinese.map { language.pick(word.text, $0) } ?? word.text)
         .navigationBarTitleDisplayMode(.inline)
         .languageSwitch()
-        .onChange(of: language) { restart() }
+        .onChange(of: language) {
+            restart()
+            if language != .english { Task { await LanguageChildListener.prepareChinese() } }
+        }
         .task {
             Speech.shared.stop()
             if !permissionAsked {
@@ -72,6 +83,8 @@ struct WordAssistantView: View {
                 // Ask once up front so the first listening turn isn't interrupted by a prompt.
                 SystemChildListener.requestPermission { _ in assistant.start() }
             }
+            // Fetch Apple's Mandarin listening model in the background, if this device needs it.
+            if language != .english { await LanguageChildListener.prepareChinese() }
         }
         .onDisappear { assistant.end() }
         .onChange(of: assistant.isActive) { _, active in UIApplication.shared.isIdleTimerDisabled = active }
@@ -82,7 +95,11 @@ struct WordAssistantView: View {
 
     private var header: some View {
         VStack(spacing: 8) {
-            WordPhotoRow(category: category, word: word, size: sizeClass == .regular ? 190 : 118, tint: .orange)
+            if let picture {
+                picture
+            } else {
+                WordPhotoRow(category: category, word: word, size: sizeClass == .regular ? 190 : 118, tint: .orange)
+            }
             WordName(english: word.text, chinese: word.chinese, language: language)
                 .font(.system(size: 40, weight: .heavy, design: .rounded))
         }

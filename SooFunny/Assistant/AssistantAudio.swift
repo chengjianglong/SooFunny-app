@@ -171,9 +171,10 @@ final class SystemChildListener: ChildListener {
     }
 
     enum ListenError: LocalizedError {
-        case microphoneNotAllowed, speechNotAllowed, unavailable
+        case microphoneNotAllowed, speechNotAllowed, unavailable, chineseGettingReady
         var errorDescription: String? {
             switch self {
+            case .chineseGettingReady: return "Getting Chinese listening ready. Try again in a moment, or type a question."
             case .microphoneNotAllowed: return "To talk, allow the microphone for SooFunny in Settings → Privacy & Security."
             case .speechNotAllowed: return "To talk, allow speech recognition for SooFunny in Settings → Privacy & Security."
             case .unavailable: return "Listening isn't available on this device right now. You can type a question instead."
@@ -186,7 +187,8 @@ final class SystemChildListener: ChildListener {
             switch self {
             case .microphoneNotAllowed: chinese = "要说话，请在“设置”→“隐私与安全性”里允许 SooFunny 使用麦克风。"
             case .speechNotAllowed: chinese = "要说话，请在“设置”→“隐私与安全性”里允许 SooFunny 使用语音识别。"
-            case .unavailable: chinese = "这台设备现在听不了中文。可以在“设置”→“通用”→“键盘”里打开中文听写，或者直接输入问题。"
+            case .unavailable: chinese = "这台设备现在听不了中文。请连上网络，让 SooFunny 下载中文听写；也可以直接输入问题。"
+            case .chineseGettingReady: chinese = "正在准备中文听写，请稍等一会儿再试，或者直接输入问题。"
             }
             return language.pick(errorDescription ?? "", chinese, separator: "\n")
         }

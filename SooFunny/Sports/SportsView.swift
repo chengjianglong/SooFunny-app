@@ -43,6 +43,7 @@ struct SportsView: View {
             }
             .background(Color(.systemGroupedBackground))
             .navigationDestination(for: SportRoute.self) { SportDetail(route: $0) }
+            .navigationDestination(for: SportTalkRoute.self) { SportTalk(sport: $0.sport) }
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: { Label("Settings", systemImage: "gearshape") }
@@ -93,6 +94,26 @@ struct SportsView: View {
 struct SportRoute: Hashable {
     let season: SportSeason
     let index: Int
+}
+
+/// Opens a conversation with the talking buddy about one sport.
+struct SportTalkRoute: Hashable {
+    let sport: OlympicSport
+}
+
+/// The talking buddy, about a sport: the child can ask anything about it. The buddy knows the
+/// sport's introduction, so its answers match what the child just heard.
+private struct SportTalk: View {
+    let sport: OlympicSport
+
+    var body: some View {
+        let word = WordEntry(text: sport.english, emoji: sport.emoji, chinese: sport.chinese)
+        let group = WordCategory(name: "\(sport.season.english) sports", emoji: sport.season.emoji,
+                                 chinese: "\(sport.season.chinese)运动", words: [word])
+        WordAssistantView(word: word, category: group,
+                          facts: sport.aboutEnglish + " " + sport.aboutChinese,
+                          picture: AnyView(SportPicture(sport: sport, size: 150, tint: .orange)))
+    }
 }
 
 /// A sport in the grid: its picture, English name and Chinese name.
@@ -193,6 +214,15 @@ private struct SportDetail: View {
                     .accessibilityLabel(language.pick("Hear it again", "再听一遍"))
                 }
                 .multilineTextAlignment(.center)
+
+                NavigationLink(value: SportTalkRoute(sport: sport)) {
+                    Label(language.pick("Talk about \(sport.english)", "聊聊\(sport.chinese)"), systemImage: "sparkles")
+                        .font(.title3.weight(.bold))
+                        .lineLimit(2)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: 480, minHeight: 56)
+                }
+                .buttonStyle(.borderedProminent)
 
                 if let demo = SportDemos.demo(for: sport.id) {
                     VStack(alignment: .leading, spacing: 10) {

@@ -581,6 +581,7 @@
 		62D6A58DA0157A88D788BFEF /* people-bridge-run.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E61B7B09F54E68E0F1F6B20 /* people-bridge-run.jpg */; };
 		630D33DD57176E6031E0DC7B /* word-sports-whistle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5F93F1BB66138F95295B2A5F /* word-sports-whistle.jpg */; };
 		637210E01A65191B02D9AD8C /* word-animals-fox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9752386720049EA7F755B401 /* word-animals-fox.jpg */; };
+		637D75975C818F4806305F52 /* ChineseListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89E66EE0DF91DA80B5E852C /* ChineseListener.swift */; };
 		63C1D9FDABB432CFD60261A2 /* word-drinks-milk-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 965EC464C8E69347DD8A58FF /* word-drinks-milk-2.jpg */; };
 		642183A40B8CC5E912658628 /* word-sea-creatures-octopus.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC00AF14AC2EEFC64AB9CF08 /* word-sea-creatures-octopus.jpg */; };
 		64319EF75884BCC59DC9A741 /* word-food-salad-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C76499E7AC87AD09699BB1DD /* word-food-salad-2.jpg */; };
@@ -2370,6 +2371,7 @@
 		A7A3366B916DBC523B9266C3 /* word-vegetables-celery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-vegetables-celery.jpg"; sourceTree = "<group>"; };
 		A82BDB6D026ADEA01AA15D05 /* word-clothes-button.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-clothes-button.jpg"; sourceTree = "<group>"; };
 		A8364BC9E85C1D911D2C83EE /* word-animals-wolf.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-wolf.jpg"; sourceTree = "<group>"; };
+		A89E66EE0DF91DA80B5E852C /* ChineseListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseListener.swift; sourceTree = "<group>"; };
 		A8A637AE4069B129335E0E82 /* word-toys-and-games-ball-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-toys-and-games-ball-2.jpg"; sourceTree = "<group>"; };
 		A8B3B4A13ECA4318F5D258F4 /* word-nature-river-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-river-3.jpg"; sourceTree = "<group>"; };
 		A8C1FD222E8DD1C055662505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -2998,6 +3000,7 @@
 			children = (
 				FFBDB7E82BC4A2343CB22F5B /* AssistantAudio.swift */,
 				7E117DC6C648EFE875B3826B /* AssistantText.swift */,
+				A89E66EE0DF91DA80B5E852C /* ChineseListener.swift */,
 				C242B1D9AF670A7279EC8727 /* LlamaEngine.swift */,
 				DBB2506ADDDC774ECA854899 /* WordAssistant.swift */,
 				55A97F05D44D0369134E2CE7 /* WordAssistantView.swift */,
@@ -5925,6 +5928,7 @@
 				3373FA98EE207421AFADF3B3 /* BookReader.swift in Sources */,
 				C1A135CFA94770C044F14E54 /* BooksView.swift in Sources */,
 				CCAFB2AB46206C8B7ECE872D /* BouncyTitle.swift in Sources */,
+				637D75975C818F4806305F52 /* ChineseListener.swift in Sources */,
 				58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */,
 				C09877B5299329138FE8633A /* ColoringView.swift in Sources */,
 				8901EE6C8D9B029A33B5A9AE /* DemoScenes.swift in Sources */,
@@ -6059,7 +6063,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -6078,7 +6082,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -6160,7 +6164,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -6173,7 +6177,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
