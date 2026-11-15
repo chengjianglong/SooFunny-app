@@ -24,15 +24,19 @@ photographs ever leaves the device.
 </p>
 
 <p align="center">
-  <img src="docs/images/iphone-color.jpg" width="190" alt="Color tab on iPhone: picture gallery with a Surprise me! button">
+  <img src="docs/images/iphone-color.jpg" width="190" alt="Color tab on iPhone in Bilingual: picture gallery with a Surprise me! 给我惊喜！ button">
   &nbsp;
-  <img src="docs/images/ipad-words.jpg" width="250" alt="Words tab on iPad: 32 word groups">
+  <img src="docs/images/ipad-words.jpg" width="250" alt="Words tab on iPad in Chinese: 32 word groups">
   &nbsp;
-  <img src="docs/images/iphone-books.jpg" width="190" alt="Books on iPhone: The Three Little Pigs read aloud, one word highlighted">
+  <img src="docs/images/iphone-sports.jpg" width="190" alt="Sports on iPhone in Bilingual: Swimming 游泳, a Talk about Swimming button, and swimmers racing down their lanes">
   &nbsp;
-  <img src="docs/images/iphone-sports.jpg" width="190" alt="Sports on iPhone: Swimming in English and Chinese, with swimmers racing down their lanes">
+  <img src="docs/images/iphone-buddy.jpg" width="190" alt="The talking buddy on Swimming in Bilingual: an answer in English and then Chinese, one word highlighted as it's read">
+</p>
+
+<p align="center">
+  <img src="docs/images/iphone-books.jpg" width="190" alt="Books on iPhone in Bilingual: The Three Little Pigs in English and Chinese, one word highlighted as it's read">
   &nbsp;
-  <img src="docs/images/iphone-math.jpg" width="190" alt="Math tab on iPhone: flashcards, quiz and progress reports">
+  <img src="docs/images/iphone-math.jpg" width="190" alt="Math tab on iPhone in Chinese: 闪卡游戏, 测验, 学习报告 and 数学设置">
 </p>
 
 <p align="center"><img src="docs/images/photo-to-page.jpg" width="900" alt="Photos of a goldfish, a parrot and a lighthouse next to the coloring pages SooFunny makes from them"></p>
@@ -41,7 +45,8 @@ photographs ever leaves the device.
 |---|---|
 | **Version** | 0.4 (build 9) in App Review; 0.3 (build 5) is [on the App Store](https://apps.apple.com/us/app/soofunny/id6827777441) |
 | **Platforms** | iPhone and iPad, iOS 17 or later, all orientations |
-| **Developer** | [Chengjiang Long](https://www.chengjianglong.com/) |
+| **Developers** | Chengjiang Long and Yao Xu |
+| **Contact** | [chengjiang.long@gmail.com](mailto:chengjiang.long@gmail.com) |
 | **Copyright** | © 2026 Soo X Intelligence LLC. All rights reserved. |
 
 ---
@@ -75,7 +80,7 @@ photographs ever leaves the device.
 - Covers the picture names on Color, all 754 words and 32 groups, every built-in book (each one
   is in both languages), the sports, math questions and cheers (numbers read as Chinese words),
   and the talking buddy, which answers and listens in the chosen language.
-- Sports read themselves aloud as soon as a sport opens: its name, then what it is.
+- The tabs are **Color, Words, Sports, Books and Math**.
 
 ### 🎨 Color
 
@@ -103,14 +108,14 @@ photographs ever leaves the device.
   516 of the 754 words also show a **real photo**, with the emoji stuck on its corner like a
   sticker. On the talking buddy screen, most of them show one or two more photos beside it. Words that can't be photographed well (numbers, feelings, time words) keep just the
   emoji.
-- A word page shows the word big, reads it aloud, lets kids tap each **letter** to hear it, and
-  has Previous / Next.
+- A word page shows the word big (English, Chinese, or English above Chinese), reads it aloud, lets
+  kids tap each **letter** or Chinese **character** to hear it, and has Previous / Next.
 - Tap a group to see its words; **Back** returns to the groups.
 
 ### ✨ Talking buddy
 
-Every word has a sparkle **Talk about it** button that opens a spoken conversation, inspired by
-the [Wonder Words Agent demo](https://www.youtube.com/shorts/ZAaAPILTohk):
+Every word and every sport has a sparkle **Talk about …** button that opens a spoken conversation,
+inspired by the [Wonder Words Agent demo](https://www.youtube.com/shorts/ZAaAPILTohk):
 
 1. The buddy explains the word in a sentence or two, then asks
    *"What would you like to know about lion?"*
@@ -120,29 +125,18 @@ the [Wonder Words Agent demo](https://www.youtube.com/shorts/ZAaAPILTohk):
 
 The big button follows the turn: **Talk**, **Done** (while listening), **Cancel** (while
 thinking) and **Stop speaking**. The answers come from **Qwen 2.5 1.5B**, running on the
-device. It talks in English, Chinese or both, following the language switch.
-
-### 📖 Books
-
-- **Story books**: 10 books, SooFunny's own short retellings of public-domain tales and rhymes, including The Three Little Pigs,
-  Goldilocks, The Gingerbread Man, nursery rhymes, and two in Chinese (唐诗五首 Tang Poems and
-  龟兔赛跑 The Tortoise and the Hare).
-- **Read aloud**: tap **Read to me** (读给我听 in Chinese books) and each page is read with the
-  current word lit up, turning pages by itself. Swipe or tap the arrows to turn pages by hand.
-- **My books**: **Scan a book** with the camera (one or many pages) or pick pages **From
-  Photos**. The text is read from each page on the device, in English, Chinese or a mix of both.
-  Before saving, grown-ups can fix the words, remove pages and **Change page order** by dragging.
-- **Mixed languages**: English parts are read in the natural voice and Chinese parts in Apple's
-  Chinese voice, one after another. Pinyin printed above the characters is skipped.
-- **Audiobooks**: **Make audiobook** records the whole book into an `.m4a` file to listen to
-  anytime or share.
+device. It talks in English, Chinese or both, following the language switch; in Bilingual every
+sentence comes in English and then Chinese, and **I speak English / 我说中文** picks the language it
+listens for. On a sport it's given that sport's introduction, so its answers match what the child
+just heard. Chinese listening needs no Chinese keyboard on iOS 26 and later: the app downloads
+Apple's Mandarin speech model the first time, then listens fully on the device.
 
 ### 🏅 Sports
 
 <p align="center">
   <img src="docs/images/sports-animations.gif" width="400" alt="Animations from the Sports tab: swimming, archery, gymnastics, figure skating, bobsleigh and ski jumping">
   &nbsp;
-  <img src="docs/images/ipad-sports.jpg" width="276" alt="Sports tab on iPad: Summer and Winter buttons above a grid of sports with English and Chinese names">
+  <img src="docs/images/ipad-sports.jpg" width="276" alt="Sports tab on iPad in Bilingual: Summer and Winter buttons above a grid of sports with English and Chinese names">
 </p>
 
 - **51 sports**: the 35 summer and 16 winter sports on the 2024 and 2026 Games programmes,
@@ -150,16 +144,35 @@ device. It talks in English, Chinese or both, following the language switch.
   listing don't name the Games, since App Review rejects unlicensed use of those trademarks;
   `SportsTests` checks for them.
 - Each sport has an emoji (and a real photo for 12 of them, shared with the Words tab), its
-  English and Chinese names, and a short introduction written for children in **both languages**.
+  English and Chinese names, and a short introduction written for children in **both languages**,
+  shown in English, Chinese or both.
 - **Watch it! 看一看！** plays a looping animation of each sport: swimmers racing down their
   lanes, a diver flipping into the pool, an arrow flying into the target, a bobsled racing down the
   ice chute, and so on. Tap pause to stop it; it starts paused when Reduce Motion is on.
-- Under **What is it?**, **Read to me** reads the English in the natural voice, and under
-  **这是什么运动？**, **读给我听** reads the Chinese in Apple's Chinese voice, each word lighting up
-  as it's read. Tap a name to hear it, and Previous / Next move through the sports.
+- **Reads itself aloud**: opening a sport (or Previous / Next) says its name and then reads what
+  it is, with each word lighting up; in Bilingual, English and then Chinese. The speaker button
+  hears it all again.
+- **Talk about …** opens the talking buddy for that sport, so children can ask anything about it.
 - The sports are in `SooFunny/Sports/OlympicSports.swift` and their animations in `SportDemos.swift`
   (a scene from `DemoScenes.swift` plus emoji and balls moving along keyframed paths, drawn by
   `SportDemo.swift`). The whole tab is free.
+
+### 📖 Books
+
+- **Story books**: 10 books, SooFunny's own short retellings of public-domain tales and rhymes, including The Three Little Pigs,
+  Goldilocks, The Gingerbread Man, nursery rhymes, and two first written in Chinese (唐诗五首 Tang
+  Poems and 龟兔赛跑 The Tortoise and the Hare). **Every book is in both languages**, page by page,
+  and follows the language switch (the reader has its own globe button).
+- **Read aloud**: tap **Read to me · 读给我听** and each page is read with the current word lit up,
+  turning pages by itself; in Bilingual, the English and then the Chinese. Swipe or tap the arrows
+  to turn pages by hand.
+- **My books**: **Scan a book** with the camera (one or many pages) or pick pages **From
+  Photos**. The text is read from each page on the device, in English, Chinese or a mix of both.
+  Before saving, grown-ups can fix the words, remove pages and **Change page order** by dragging.
+- **Mixed languages**: English parts are read in the natural voice and Chinese parts in Apple's
+  Chinese voice, one after another. Pinyin printed above the characters is skipped.
+- **Audiobooks**: **Make audiobook** records the whole book into an `.m4a` file to listen to
+  anytime or share.
 
 ### ➕ Math
 
@@ -186,6 +199,7 @@ the app uses an Apple voice automatically.
 
 ### ⚙️ Settings
 
+- **Language 语言**: English, 中文 or Bilingual 双语 for every tab.
 - **Support SooFunny**: **Leave a tip**. The App Store's purchase sheet asks for Face ID or the
   password, so there's no extra grown-up check.
 - **Reading voice**: the voice, its speed (default about 1.05×) and a **Try the voice** button.
@@ -438,15 +452,15 @@ SooFunny/
     SubjectMask.swift                Apple Vision subject detection
     ImageSegmenter.swift             Picture → blocks and outlines, and the renderer
     ColoringSession.swift            Fill colors, undo, Magic / Real / Clear
-  Views/                           Color tab, coloring screen, Settings, shared title
+  Views/                           Color tab, coloring screen, Settings, the language switch, shared title
   Showcase/                        Gallery photos (CC0), credits.json and the gallery model
   Samples/SampleArt.swift          Built-in drawings, drawn in code
   Words/                           Word list (kids_words.txt), word browser, Speech
   Words/Photos/                    Word photos (CC0 / public domain) and word_photo_credits.json
-  Assistant/                       Talking buddy: Qwen via llama.cpp, listening, prompts
+  Assistant/                       Talking buddy: Qwen via llama.cpp, listening (Chinese via SpeechAnalyzer), prompts
   Voice/                           Natural voice: phonemizer, Kokoro via ONNX Runtime, player
     Resources/                       Pronunciation dictionary, phoneme table, Heart voice
-  Books/                           Story books, scanning and text recognition, the reader, audiobooks
+  Books/                           Story books and their translations, scanning and text recognition, the reader, audiobooks
   Math/                            Question maker, sessions, progress, and the Math screens
   Sports/                          Summer and winter sports in English and Chinese, and the Sports screens
   Store/                           Tip jar, Support screen, grown-up check, .storekit
@@ -471,9 +485,10 @@ project.yml                        XcodeGen project definition
 ## Changing content
 
 - **Words:** edit `SooFunny/Words/kids_words.txt`. It has blank-line-separated sections, each
-  starting with `Category: <name> | <emoji>`, then one word per line with an optional
-  `| <emoji>`. Run the tests afterwards; they check the format and that every word can be
-  spoken.
+  starting with `Category: <name> | <emoji> | <Chinese>`, then one word per line as
+  `word | <emoji> | <Chinese>` (leave the emoji empty, `hay |  | 干草`, when there's none). Run the
+  tests afterwards; they check the format, that every word has its Chinese, and that every word
+  can be spoken.
 - **Gallery photos:** add a JPEG (about 1024 px) to `SooFunny/Showcase/` named
   `<group>-<name>.jpg`, and add an entry with title, author, license and source URL to
   `credits.json`. Use only photos you're allowed to bundle (the current set is all CC0). Check
@@ -486,7 +501,9 @@ project.yml                        XcodeGen project definition
   every photo by eye: search results include unsuitable pictures.
 - **Story books:** edit `StoryLibrary` in `SooFunny/Books/StoryBooks.swift`. Each book has an
   id, title, cover emoji, color and pages (an emoji scene and the text); set `language: .chinese`
-  for a Chinese book. Use only text you're allowed to share.
+  for a Chinese book. Add the book's other language, page by page, to
+  `SooFunny/Books/StoryTranslations.swift` (`LanguageTests` checks every page has one). Use only
+  text you're allowed to share.
 - **App icon:** replace `design/soo-icon.png`, then run `python3 scripts/make_icon.py`.
 - **Pronunciation dictionary:** to rebuild it from newer misaki data, run
   `python3 scripts/build_voice_lexicon.py <folder with us_gold.json, us_silver.json, tokenizer.json>`.

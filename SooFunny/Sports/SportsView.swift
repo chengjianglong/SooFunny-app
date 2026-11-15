@@ -216,7 +216,7 @@ private struct SportDetail: View {
                 .multilineTextAlignment(.center)
 
                 NavigationLink(value: SportTalkRoute(sport: sport)) {
-                    Label(language.pick("Talk about \(sport.english)", "聊聊\(sport.chinese)"), systemImage: "sparkles")
+                    Label(language.pick("Talk about \(sport.english)", "聊聊\(sport.chinese)", separator: "\n"), systemImage: "sparkles")
                         .font(.title3.weight(.bold))
                         .lineLimit(2)
                         .multilineTextAlignment(.center)

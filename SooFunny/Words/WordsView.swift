@@ -208,8 +208,10 @@ private struct WordDetail: View {
                 Button {
                     path.append(AssistantRoute(category: route.category, index: index))
                 } label: {
-                    Label(language.pick("Talk about \(word.text)", "聊聊\(word.chinese ?? word.text)"), systemImage: "sparkles")
+                    Label(language.pick("Talk about \(word.text)", "聊聊\(word.chinese ?? word.text)", separator: "\n"),
+                          systemImage: "sparkles")
                         .font(.title3.weight(.bold))
+                        .multilineTextAlignment(.center)
                         .frame(maxWidth: 480, minHeight: 56)
                 }
                 .buttonStyle(.borderedProminent)
