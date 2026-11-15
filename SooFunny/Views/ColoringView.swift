@@ -5,6 +5,7 @@ struct ColoringView: View {
     @Bindable var session: ColoringSession
     @Environment(\.dismiss) private var dismiss
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
 
     var body: some View {
         NavigationStack {
@@ -41,7 +42,7 @@ struct ColoringView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button { dismiss() } label: {
-                        Label("Pictures", systemImage: "chevron.backward")
+                        Label(language.pick("Pictures", "图片"), systemImage: "chevron.backward")
                     }
                 }
                 ToolbarItem(placement: .principal) {
@@ -50,11 +51,13 @@ struct ColoringView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     if let canvas = session.canvas {
                         ShareLink(item: Image(uiImage: canvas),
-                                  preview: SharePreview("My SooFunny picture", image: Image(uiImage: canvas))) {
-                            Label("Share", systemImage: "square.and.arrow.up")
+                                  preview: SharePreview(language.pick("My SooFunny picture", "我的 SooFunny 画"),
+                                                        image: Image(uiImage: canvas))) {
+                            Label(language.pick("Share", "分享"), systemImage: "square.and.arrow.up")
                         }
                     }
                 }
+                ToolbarItem(placement: .topBarTrailing) { LanguageSwitch() }
             }
         }
         .task { await session.prepare() }
@@ -67,8 +70,10 @@ struct ColoringView: View {
     @ViewBuilder
     private var detailPicker: some View {
         if session.segmentation?.isLineArt == false {
-            Picker("Block size", selection: $session.detail) {
-                ForEach(SegmentDetail.allCases) { Text("\($0.title) blocks").tag($0) }
+            Picker(language.pick("Block size", "色块大小"), selection: $session.detail) {
+                ForEach(SegmentDetail.allCases) { detail in
+                    Text(language.pick("\(detail.title) blocks", detail.chineseTitle)).tag(detail)
+                }
             }
             .pickerStyle(.segmented)
         }
@@ -79,6 +84,7 @@ struct ColoringView: View {
 private struct CanvasView: View {
     let session: ColoringSession
     @State private var dragging = false
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
 
     var body: some View {
         GeometryReader { geo in
@@ -115,7 +121,7 @@ private struct CanvasView: View {
             if session.isProcessing {
                 VStack(spacing: 12) {
                     ProgressView().controlSize(.large)
-                    Text("Making blocks…").font(.headline)
+                    Text(language.pick("Making blocks…", "正在分色块……")).font(.headline)
                 }
                 .padding(24)
                 .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
@@ -136,16 +142,22 @@ private struct CanvasView: View {
 private struct ToolBar: View {
     @Bindable var session: ColoringSession
     let columns: Int
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
+
+    /// Tool names are short, so in Bilingual the Chinese goes on a second line.
+    private func name(_ english: String, _ chinese: String) -> String {
+        language.pick(english, chinese, separator: "\n")
+    }
 
     var body: some View {
         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: columns), spacing: 10) {
-            ToolButton(title: "Undo", systemImage: "arrow.uturn.backward", tint: .blue) { session.undo() }
+            ToolButton(title: name("Undo", "撤销"), systemImage: "arrow.uturn.backward", tint: .blue) { session.undo() }
                 .disabled(!session.canUndo)
-            ToolButton(title: "Magic", systemImage: "wand.and.stars", tint: .purple) { session.surprise() }
-            ToolButton(title: "Real", systemImage: "photo", tint: .orange) { session.realColors() }
-            ToolButton(title: session.peek ? "Hide" : "Peek", systemImage: session.peek ? "eye.slash" : "eye",
+            ToolButton(title: name("Magic", "魔法"), systemImage: "wand.and.stars", tint: .purple) { session.surprise() }
+            ToolButton(title: name("Real", "真实"), systemImage: "photo", tint: .orange) { session.realColors() }
+            ToolButton(title: session.peek ? name("Hide", "隐藏") : name("Peek", "偷看"), systemImage: session.peek ? "eye.slash" : "eye",
                        tint: .teal) { session.peek.toggle() }
-            ToolButton(title: "Clear", systemImage: "trash", tint: .red) { session.clear() }
+            ToolButton(title: name("Clear", "清除"), systemImage: "trash", tint: .red) { session.clear() }
         }
         .disabled(session.segmentation == nil)
     }
@@ -161,7 +173,11 @@ private struct ToolButton: View {
         Button(action: action) {
             VStack(spacing: 4) {
                 Image(systemName: systemImage).font(.title3.weight(.bold))
-                Text(title).font(.caption.weight(.bold))
+                Text(title)
+                    .font(.caption.weight(.bold))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
             }
             .frame(maxWidth: .infinity, minHeight: 52)
         }

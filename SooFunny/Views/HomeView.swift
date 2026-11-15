@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var cameraImage: UIImage?
     @State private var loadFailed = false
     @State private var diceSpin = 0.0
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
 
     private let cameraAvailable = UIImagePickerController.isSourceTypeAvailable(.camera)
 
@@ -21,7 +22,7 @@ struct HomeView: View {
             VStack(spacing: 20) {
                 BouncyTitle()
                     .padding(.top, 8)
-                Text("Pick a picture and color it in!")
+                Text(language.pick("Pick a picture and color it in!", "选一张图片来涂色吧！", separator: "\n"))
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -66,10 +67,10 @@ struct HomeView: View {
             }
             .ignoresSafeArea()
         }
-        .alert("Couldn't open that picture", isPresented: $loadFailed) {
-            Button("OK", role: .cancel) {}
+        .alert(language.pick("Couldn't open that picture", "打不开这张图片"), isPresented: $loadFailed) {
+            Button(language.pick("OK", "好"), role: .cancel) {}
         } message: {
-            Text("Try another photo, or pick one from the gallery.")
+            Text(language.pick("Try another photo, or pick one from the gallery.", "换一张照片，或者从图库里选一张。"))
         }
     }
 
@@ -87,8 +88,10 @@ struct HomeView: View {
                 Text("🎲")
                     .font(.system(size: 30))
                     .rotationEffect(.degrees(diceSpin))
-                Text("Surprise me!")
+                Text(language.pick("Surprise me!", "给我惊喜！"))
                     .font(.title2.weight(.heavy))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.6)
             }
             .foregroundStyle(.white)
             .padding(.horizontal, 28)
@@ -100,7 +103,7 @@ struct HomeView: View {
             .shadow(color: .pink.opacity(0.35), radius: 8, y: 4)
         }
         .buttonStyle(SquishButtonStyle())
-        .accessibilityLabel("Surprise me with a random picture")
+        .accessibilityLabel(language.pick("Surprise me with a random picture", "随机给我一张图片"))
     }
 
     private var kindPicker: some View {
@@ -113,7 +116,7 @@ struct HomeView: View {
                     } label: {
                         HStack(spacing: 6) {
                             Text(option.emoji)
-                            Text(option.title).font(.headline)
+                            Text(option.title(in: language)).font(.headline)
                         }
                         .padding(.horizontal, 16)
                         .frame(minHeight: 44)
@@ -137,9 +140,9 @@ struct HomeView: View {
             if kind == .all {
                 HStack(spacing: 8) {
                     Text(section.emoji).font(.title)
-                    Text(section.title).font(.title2.weight(.heavy))
+                    Text(section.title(in: language)).font(.title2.weight(.heavy))
                     Spacer()
-                    Button("See all") { withAnimation(.spring(duration: 0.3)) { kind = section } }
+                    Button(language.pick("See all", "全部")) { withAnimation(.spring(duration: 0.3)) { kind = section } }
                         .font(.subheadline.weight(.semibold))
                         .tint(section.color)
                 }
@@ -147,7 +150,7 @@ struct HomeView: View {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: sizeClass == .regular ? 200 : 150), spacing: 16)],
                       spacing: 18) {
                 ForEach(Array(Showcase.pictures(section).enumerated()), id: \.element.id) { index, picture in
-                    PictureCard(picture: picture, tilt: index.isMultiple(of: 2) ? -2 : 2) {
+                    PictureCard(picture: picture, title: picture.title(in: language), tilt: index.isMultiple(of: 2) ? -2 : 2) {
                         if let image = picture.image() { onPick(image) }
                     }
                 }
@@ -158,12 +161,12 @@ struct HomeView: View {
     private var bottomBar: some View {
         HStack(spacing: 12) {
             PhotosPicker(selection: $photoItem, matching: .images) {
-                BarButtonLabel(title: "Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
+                BarButtonLabel(title: language.pick("Photos", "照片"), systemImage: "photo.on.rectangle.angled", color: .pink)
             }
             .buttonStyle(SquishButtonStyle())
             if cameraAvailable {
                 Button { showCamera = true } label: {
-                    BarButtonLabel(title: "Camera", systemImage: "camera.fill", color: .blue)
+                    BarButtonLabel(title: language.pick("Camera", "相机"), systemImage: "camera.fill", color: .blue)
                 }
                 .buttonStyle(SquishButtonStyle())
             }
@@ -181,6 +184,7 @@ struct HomeView: View {
 /// A picture on a card, like a sticker: slightly tilted, with a colored frame and a label.
 private struct PictureCard: View {
     let picture: ShowcasePicture
+    let title: String
     let tilt: Double
     let action: () -> Void
 
@@ -204,7 +208,7 @@ private struct PictureCard: View {
                 .clipped()
                 HStack(spacing: 6) {
                     Text(picture.kind.emoji)
-                    Text(picture.title)
+                    Text(title)
                         .font(.headline)
                         .lineLimit(1)
                         .minimumScaleFactor(0.7)
@@ -219,7 +223,7 @@ private struct PictureCard: View {
             .rotationEffect(.degrees(tilt))
         }
         .buttonStyle(SquishButtonStyle())
-        .accessibilityLabel("Color \(picture.title)")
+        .accessibilityLabel(title)
         .task {
             thumbnail = await ThumbnailCache.shared.thumbnail(for: picture)
         }

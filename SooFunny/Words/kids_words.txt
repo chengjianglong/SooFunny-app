@@ -1,817 +1,817 @@
-Category: Animals | 🐾
-dog | 🐶
-cat | 🐱
-mouse | 🐭
-rabbit | 🐰
-fox | 🦊
-bear | 🐻
-panda | 🐼
-koala | 🐨
-tiger | 🐯
-lion | 🦁
-monkey | 🐒
-gorilla | 🦍
-elephant | 🐘
-giraffe | 🦒
-zebra | 🦓
-hippo | 🦛
-rhino | 🦏
-camel | 🐫
-kangaroo | 🦘
-deer | 🦌
-wolf | 🐺
-squirrel | 🐿️
-hedgehog | 🦔
-bat | 🦇
-sloth | 🦥
-otter | 🦦
-raccoon | 🦝
-skunk | 🦨
-beaver | 🦫
-moose | 🫎
+Category: Animals | 🐾 | 动物
+dog | 🐶 | 狗
+cat | 🐱 | 猫
+mouse | 🐭 | 老鼠
+rabbit | 🐰 | 兔子
+fox | 🦊 | 狐狸
+bear | 🐻 | 熊
+panda | 🐼 | 熊猫
+koala | 🐨 | 考拉
+tiger | 🐯 | 老虎
+lion | 🦁 | 狮子
+monkey | 🐒 | 猴子
+gorilla | 🦍 | 大猩猩
+elephant | 🐘 | 大象
+giraffe | 🦒 | 长颈鹿
+zebra | 🦓 | 斑马
+hippo | 🦛 | 河马
+rhino | 🦏 | 犀牛
+camel | 🐫 | 骆驼
+kangaroo | 🦘 | 袋鼠
+deer | 🦌 | 鹿
+wolf | 🐺 | 狼
+squirrel | 🐿️ | 松鼠
+hedgehog | 🦔 | 刺猬
+bat | 🦇 | 蝙蝠
+sloth | 🦥 | 树懒
+otter | 🦦 | 水獭
+raccoon | 🦝 | 浣熊
+skunk | 🦨 | 臭鼬
+beaver | 🦫 | 河狸
+moose | 🫎 | 驼鹿
 
-Category: Farm | 🚜
-cow | 🐄
-pig | 🐖
-sheep | 🐑
-goat | 🐐
-horse | 🐎
-donkey | 🫏
-chicken | 🐔
-rooster | 🐓
-chick | 🐤
-duck | 🦆
-turkey | 🦃
-llama | 🦙
-farmer | 🧑‍🌾
-tractor | 🚜
-barn | 🛖
-hay
-fence
-egg | 🥚
-milk | 🥛
-corn | 🌽
-wheat | 🌾
-apple tree | 🌳
-pumpkin | 🎃
-scarecrow
-puppy | 🐶
-kitten | 🐱
-bucket | 🪣
-honey | 🍯
+Category: Farm | 🚜 | 农场
+cow | 🐄 | 奶牛
+pig | 🐖 | 猪
+sheep | 🐑 | 绵羊
+goat | 🐐 | 山羊
+horse | 🐎 | 马
+donkey | 🫏 | 驴
+chicken | 🐔 | 鸡
+rooster | 🐓 | 公鸡
+chick | 🐤 | 小鸡
+duck | 🦆 | 鸭子
+turkey | 🦃 | 火鸡
+llama | 🦙 | 羊驼
+farmer | 🧑‍🌾 | 农民
+tractor | 🚜 | 拖拉机
+barn | 🛖 | 谷仓
+hay |  | 干草
+fence |  | 篱笆
+egg | 🥚 | 鸡蛋
+milk | 🥛 | 牛奶
+corn | 🌽 | 玉米
+wheat | 🌾 | 小麦
+apple tree | 🌳 | 苹果树
+pumpkin | 🎃 | 南瓜
+scarecrow |  | 稻草人
+puppy | 🐶 | 小狗
+kitten | 🐱 | 小猫
+bucket | 🪣 | 水桶
+honey | 🍯 | 蜂蜜
 
-Category: Sea Creatures | 🌊
-fish | 🐟
-tropical fish | 🐠
-pufferfish | 🐡
-shark | 🦈
-whale | 🐳
-dolphin | 🐬
-seal | 🦭
-octopus | 🐙
-squid | 🦑
-crab | 🦀
-lobster | 🦞
-shrimp | 🦐
-oyster | 🦪
-jellyfish | 🪼
-coral | 🪸
-shell | 🐚
-turtle | 🐢
-starfish
-seahorse
-sea lion
-penguin | 🐧
-walrus
-eel
-stingray
-seaweed
+Category: Sea Creatures | 🌊 | 海洋动物
+fish | 🐟 | 鱼
+tropical fish | 🐠 | 热带鱼
+pufferfish | 🐡 | 河豚
+shark | 🦈 | 鲨鱼
+whale | 🐳 | 鲸鱼
+dolphin | 🐬 | 海豚
+seal | 🦭 | 海豹
+octopus | 🐙 | 章鱼
+squid | 🦑 | 鱿鱼
+crab | 🦀 | 螃蟹
+lobster | 🦞 | 龙虾
+shrimp | 🦐 | 虾
+oyster | 🦪 | 牡蛎
+jellyfish | 🪼 | 水母
+coral | 🪸 | 珊瑚
+shell | 🐚 | 贝壳
+turtle | 🐢 | 海龟
+starfish |  | 海星
+seahorse |  | 海马
+sea lion |  | 海狮
+penguin | 🐧 | 企鹅
+walrus |  | 海象
+eel |  | 鳗鱼
+stingray |  | 魟鱼
+seaweed |  | 海草
 
-Category: Bugs | 🐞
-ladybug | 🐞
-bee | 🐝
-ant | 🐜
-butterfly | 🦋
-caterpillar | 🐛
-beetle | 🪲
-cricket | 🦗
-cockroach | 🪳
-fly | 🪰
-mosquito | 🦟
-worm | 🪱
-spider | 🕷️
-spider web | 🕸️
-snail | 🐌
-scorpion | 🦂
-dragonfly
-grasshopper
-firefly
-moth
-centipede
+Category: Bugs | 🐞 | 虫子
+ladybug | 🐞 | 瓢虫
+bee | 🐝 | 蜜蜂
+ant | 🐜 | 蚂蚁
+butterfly | 🦋 | 蝴蝶
+caterpillar | 🐛 | 毛毛虫
+beetle | 🪲 | 甲虫
+cricket | 🦗 | 蟋蟀
+cockroach | 🪳 | 蟑螂
+fly | 🪰 | 苍蝇
+mosquito | 🦟 | 蚊子
+worm | 🪱 | 虫子
+spider | 🕷️ | 蜘蛛
+spider web | 🕸️ | 蜘蛛网
+snail | 🐌 | 蜗牛
+scorpion | 🦂 | 蝎子
+dragonfly |  | 蜻蜓
+grasshopper |  | 蚱蜢
+firefly |  | 萤火虫
+moth |  | 飞蛾
+centipede |  | 蜈蚣
 
-Category: Birds | 🐦
-bird | 🐦
-eagle | 🦅
-owl | 🦉
-parrot | 🦜
-flamingo | 🦩
-peacock | 🦚
-swan | 🦢
-dove | 🕊️
-goose | 🪿
-penguin | 🐧
-chick | 🐥
-dodo | 🦤
-robin
-crow
-sparrow
-woodpecker
-hummingbird
-ostrich
-pelican
-seagull
-feather | 🪶
-nest | 🪺
-wing
+Category: Birds | 🐦 | 鸟
+bird | 🐦 | 鸟
+eagle | 🦅 | 老鹰
+owl | 🦉 | 猫头鹰
+parrot | 🦜 | 鹦鹉
+flamingo | 🦩 | 火烈鸟
+peacock | 🦚 | 孔雀
+swan | 🦢 | 天鹅
+dove | 🕊️ | 鸽子
+goose | 🪿 | 鹅
+penguin | 🐧 | 企鹅
+chick | 🐥 | 小鸡
+dodo | 🦤 | 渡渡鸟
+robin |  | 知更鸟
+crow |  | 乌鸦
+sparrow |  | 麻雀
+woodpecker |  | 啄木鸟
+hummingbird |  | 蜂鸟
+ostrich |  | 鸵鸟
+pelican |  | 鹈鹕
+seagull |  | 海鸥
+feather | 🪶 | 羽毛
+nest | 🪺 | 鸟窝
+wing |  | 翅膀
 
-Category: Fruit | 🍎
-apple | 🍎
-green apple | 🍏
-pear | 🍐
-orange | 🍊
-lemon | 🍋
-lime | 🍋‍🟩
-banana | 🍌
-watermelon | 🍉
-grapes | 🍇
-strawberry | 🍓
-blueberries | 🫐
-melon | 🍈
-cherries | 🍒
-peach | 🍑
-mango | 🥭
-pineapple | 🍍
-coconut | 🥥
-kiwi | 🥝
-tomato | 🍅
-olive | 🫒
-avocado | 🥑
-plum
-raspberry
-papaya
-grapefruit
+Category: Fruit | 🍎 | 水果
+apple | 🍎 | 苹果
+green apple | 🍏 | 青苹果
+pear | 🍐 | 梨
+orange | 🍊 | 橙子
+lemon | 🍋 | 柠檬
+lime | 🍋‍🟩 | 青柠
+banana | 🍌 | 香蕉
+watermelon | 🍉 | 西瓜
+grapes | 🍇 | 葡萄
+strawberry | 🍓 | 草莓
+blueberries | 🫐 | 蓝莓
+melon | 🍈 | 甜瓜
+cherries | 🍒 | 樱桃
+peach | 🍑 | 桃子
+mango | 🥭 | 芒果
+pineapple | 🍍 | 菠萝
+coconut | 🥥 | 椰子
+kiwi | 🥝 | 猕猴桃
+tomato | 🍅 | 西红柿
+olive | 🫒 | 橄榄
+avocado | 🥑 | 牛油果
+plum |  | 李子
+raspberry |  | 树莓
+papaya |  | 木瓜
+grapefruit |  | 西柚
 
-Category: Vegetables | 🥕
-carrot | 🥕
-corn | 🌽
-broccoli | 🥦
-lettuce | 🥬
-cucumber | 🥒
-potato | 🥔
-sweet potato | 🍠
-eggplant | 🍆
-pepper | 🫑
-chili | 🌶️
-onion | 🧅
-garlic | 🧄
-mushroom | 🍄‍🟫
-peas | 🫛
-beans | 🫘
-ginger | 🫚
-pumpkin | 🎃
-cabbage
-celery
-spinach
-radish
-zucchini
-cauliflower
-beet
+Category: Vegetables | 🥕 | 蔬菜
+carrot | 🥕 | 胡萝卜
+corn | 🌽 | 玉米
+broccoli | 🥦 | 西兰花
+lettuce | 🥬 | 生菜
+cucumber | 🥒 | 黄瓜
+potato | 🥔 | 土豆
+sweet potato | 🍠 | 红薯
+eggplant | 🍆 | 茄子
+pepper | 🫑 | 甜椒
+chili | 🌶️ | 辣椒
+onion | 🧅 | 洋葱
+garlic | 🧄 | 大蒜
+mushroom | 🍄‍🟫 | 蘑菇
+peas | 🫛 | 豌豆
+beans | 🫘 | 豆子
+ginger | 🫚 | 姜
+pumpkin | 🎃 | 南瓜
+cabbage |  | 卷心菜
+celery |  | 芹菜
+spinach |  | 菠菜
+radish |  | 萝卜
+zucchini |  | 西葫芦
+cauliflower |  | 菜花
+beet |  | 甜菜
 
-Category: Food | 🍕
-bread | 🍞
-cheese | 🧀
-pizza | 🍕
-burger | 🍔
-fries | 🍟
-hot dog | 🌭
-sandwich | 🥪
-taco | 🌮
-burrito | 🌯
-pasta | 🍝
-rice | 🍚
-noodles | 🍜
-soup | 🍲
-salad | 🥗
-egg | 🥚
-pancakes | 🥞
-waffle | 🧇
-bacon | 🥓
-sushi | 🍣
-dumpling | 🥟
-popcorn | 🍿
-pretzel | 🥨
-bagel | 🥯
-croissant | 🥐
-butter | 🧈
+Category: Food | 🍕 | 食物
+bread | 🍞 | 面包
+cheese | 🧀 | 奶酪
+pizza | 🍕 | 披萨
+burger | 🍔 | 汉堡
+fries | 🍟 | 薯条
+hot dog | 🌭 | 热狗
+sandwich | 🥪 | 三明治
+taco | 🌮 | 塔可
+burrito | 🌯 | 墨西哥卷饼
+pasta | 🍝 | 意大利面
+rice | 🍚 | 米饭
+noodles | 🍜 | 面条
+soup | 🍲 | 汤
+salad | 🥗 | 沙拉
+egg | 🥚 | 鸡蛋
+pancakes | 🥞 | 松饼
+waffle | 🧇 | 华夫饼
+bacon | 🥓 | 培根
+sushi | 🍣 | 寿司
+dumpling | 🥟 | 饺子
+popcorn | 🍿 | 爆米花
+pretzel | 🥨 | 椒盐卷饼
+bagel | 🥯 | 贝果
+croissant | 🥐 | 牛角包
+butter | 🧈 | 黄油
 
-Category: Sweets | 🍰
-cake | 🍰
-birthday cake | 🎂
-cupcake | 🧁
-cookie | 🍪
-donut | 🍩
-ice cream | 🍨
-ice pop | 🍧
-candy | 🍬
-lollipop | 🍭
-chocolate | 🍫
-pie | 🥧
-pudding | 🍮
-honey | 🍯
-cotton candy
-jelly
-muffin
-brownie
-marshmallow
-gum
-sprinkles
+Category: Sweets | 🍰 | 甜点
+cake | 🍰 | 蛋糕
+birthday cake | 🎂 | 生日蛋糕
+cupcake | 🧁 | 纸杯蛋糕
+cookie | 🍪 | 饼干
+donut | 🍩 | 甜甜圈
+ice cream | 🍨 | 冰淇淋
+ice pop | 🍧 | 冰棍
+candy | 🍬 | 糖果
+lollipop | 🍭 | 棒棒糖
+chocolate | 🍫 | 巧克力
+pie | 🥧 | 派
+pudding | 🍮 | 布丁
+honey | 🍯 | 蜂蜜
+cotton candy |  | 棉花糖
+jelly |  | 果冻
+muffin |  | 玛芬
+brownie |  | 布朗尼
+marshmallow |  | 软糖
+gum |  | 口香糖
+sprinkles |  | 彩色糖针
 
-Category: Drinks | 🥤
-water | 💧
-milk | 🥛
-juice | 🧃
-tea | 🍵
-hot cocoa | ☕
-smoothie | 🥤
-lemonade | 🍋
-bubble tea | 🧋
-cup | 🥤
-glass
-bottle | 🍼
-straw
-ice | 🧊
-mug | ☕
-pitcher | 🫗
+Category: Drinks | 🥤 | 饮料
+water | 💧 | 水
+milk | 🥛 | 牛奶
+juice | 🧃 | 果汁
+tea | 🍵 | 茶
+hot cocoa | ☕ | 热可可
+smoothie | 🥤 | 奶昔
+lemonade | 🍋 | 柠檬水
+bubble tea | 🧋 | 珍珠奶茶
+cup | 🥤 | 杯子
+glass |  | 玻璃杯
+bottle | 🍼 | 瓶子
+straw |  | 吸管
+ice | 🧊 | 冰
+mug | ☕ | 马克杯
+pitcher | 🫗 | 水壶
 
-Category: Colors | 🎨
-red | 🔴
-orange | 🟠
-yellow | 🟡
-green | 🟢
-blue | 🔵
-purple | 🟣
-brown | 🟤
-black | ⚫
-white | ⚪
-pink | 🩷
-gray | 🩶
-gold | 🥇
-silver | 🥈
-light blue | 🩵
-rainbow | 🌈
-dark
-light
-bright
+Category: Colors | 🎨 | 颜色
+red | 🔴 | 红色
+orange | 🟠 | 橙色
+yellow | 🟡 | 黄色
+green | 🟢 | 绿色
+blue | 🔵 | 蓝色
+purple | 🟣 | 紫色
+brown | 🟤 | 棕色
+black | ⚫ | 黑色
+white | ⚪ | 白色
+pink | 🩷 | 粉色
+gray | 🩶 | 灰色
+gold | 🥇 | 金色
+silver | 🥈 | 银色
+light blue | 🩵 | 浅蓝色
+rainbow | 🌈 | 彩虹
+dark |  | 深色
+light |  | 浅色
+bright |  | 鲜艳
 
-Category: Shapes | 🔷
-circle | ⭕
-square | 🟥
-triangle | 🔺
-diamond | 🔷
-star | ⭐
-heart | ❤️
-oval | 🥚
-rectangle
-cross | ✖️
-arrow | ➡️
-cube | 🧊
-ball | ⚽
-cone | 🍦
-line
-dot
-curve
-corner
-side
+Category: Shapes | 🔷 | 形状
+circle | ⭕ | 圆形
+square | 🟥 | 正方形
+triangle | 🔺 | 三角形
+diamond | 🔷 | 菱形
+star | ⭐ | 星形
+heart | ❤️ | 心形
+oval | 🥚 | 椭圆形
+rectangle |  | 长方形
+cross | ✖️ | 十字
+arrow | ➡️ | 箭头
+cube | 🧊 | 立方体
+ball | ⚽ | 球
+cone | 🍦 | 圆锥
+line |  | 线
+dot |  | 点
+curve |  | 曲线
+corner |  | 角
+side |  | 边
 
-Category: Numbers | 🔢
-zero | 0️⃣
-one | 1️⃣
-two | 2️⃣
-three | 3️⃣
-four | 4️⃣
-five | 5️⃣
-six | 6️⃣
-seven | 7️⃣
-eight | 8️⃣
-nine | 9️⃣
-ten | 🔟
-eleven
-twelve
-twenty
-fifty
-hundred | 💯
-first | 🥇
-second | 🥈
-third | 🥉
-half
-plus | ➕
-minus | ➖
-equals | 🟰
-count
+Category: Numbers | 🔢 | 数字
+zero | 0️⃣ | 零
+one | 1️⃣ | 一
+two | 2️⃣ | 二
+three | 3️⃣ | 三
+four | 4️⃣ | 四
+five | 5️⃣ | 五
+six | 6️⃣ | 六
+seven | 7️⃣ | 七
+eight | 8️⃣ | 八
+nine | 9️⃣ | 九
+ten | 🔟 | 十
+eleven |  | 十一
+twelve |  | 十二
+twenty |  | 二十
+fifty |  | 五十
+hundred | 💯 | 一百
+first | 🥇 | 第一
+second | 🥈 | 第二
+third | 🥉 | 第三
+half |  | 一半
+plus | ➕ | 加
+minus | ➖ | 减
+equals | 🟰 | 等于
+count |  | 数数
 
-Category: My Body | 🖐️
-head
-face | 🙂
-eye | 👁️
-eyes | 👀
-ear | 👂
-nose | 👃
-mouth | 👄
-tongue | 👅
-tooth | 🦷
-hair | 💇
-hand | ✋
-finger | 👆
-thumb | 👍
-arm | 💪
-leg | 🦵
-foot | 🦶
-knee
-elbow
-shoulder
-tummy
-back
-heart | ❤️
-brain | 🧠
-bone | 🦴
-skin
+Category: My Body | 🖐️ | 我的身体
+head |  | 头
+face | 🙂 | 脸
+eye | 👁️ | 眼睛
+eyes | 👀 | 双眼
+ear | 👂 | 耳朵
+nose | 👃 | 鼻子
+mouth | 👄 | 嘴巴
+tongue | 👅 | 舌头
+tooth | 🦷 | 牙齿
+hair | 💇 | 头发
+hand | ✋ | 手
+finger | 👆 | 手指
+thumb | 👍 | 大拇指
+arm | 💪 | 胳膊
+leg | 🦵 | 腿
+foot | 🦶 | 脚
+knee |  | 膝盖
+elbow |  | 胳膊肘
+shoulder |  | 肩膀
+tummy |  | 肚子
+back |  | 后背
+heart | ❤️ | 心脏
+brain | 🧠 | 大脑
+bone | 🦴 | 骨头
+skin |  | 皮肤
 
-Category: Clothes | 👕
-shirt | 👕
-pants | 👖
-dress | 👗
-skirt
-shorts | 🩳
-socks | 🧦
-shoes | 👟
-boots | 👢
-sandals | 🩴
-hat | 🧢
-cap | 🧢
-coat | 🧥
-scarf | 🧣
-gloves | 🧤
-pajamas
-swimsuit | 🩱
-jacket | 🧥
-sweater
-belt
-glasses | 👓
-sunglasses | 🕶️
-crown | 👑
-backpack | 🎒
-button | 🔘
+Category: Clothes | 👕 | 衣服
+shirt | 👕 | 衬衫
+pants | 👖 | 裤子
+dress | 👗 | 连衣裙
+skirt |  | 裙子
+shorts | 🩳 | 短裤
+socks | 🧦 | 袜子
+shoes | 👟 | 鞋子
+boots | 👢 | 靴子
+sandals | 🩴 | 凉鞋
+hat | 🧢 | 帽子
+cap | 🧢 | 鸭舌帽
+coat | 🧥 | 外套
+scarf | 🧣 | 围巾
+gloves | 🧤 | 手套
+pajamas |  | 睡衣
+swimsuit | 🩱 | 泳衣
+jacket | 🧥 | 夹克
+sweater |  | 毛衣
+belt |  | 腰带
+glasses | 👓 | 眼镜
+sunglasses | 🕶️ | 太阳镜
+crown | 👑 | 王冠
+backpack | 🎒 | 书包
+button | 🔘 | 纽扣
 
-Category: At Home | 🏠
-house | 🏠
-door | 🚪
-window | 🪟
-bed | 🛏️
-chair | 🪑
-sofa | 🛋️
-table
-lamp | 💡
-clock | 🕰️
-mirror | 🪞
-bath | 🛁
-shower | 🚿
-toilet | 🚽
-soap | 🧼
-toothbrush | 🪥
-towel
-pillow
-blanket
-key | 🔑
-stairs
-roof
-garden | 🏡
-television | 📺
-phone | 📱
-basket | 🧺
+Category: At Home | 🏠 | 在家里
+house | 🏠 | 房子
+door | 🚪 | 门
+window | 🪟 | 窗户
+bed | 🛏️ | 床
+chair | 🪑 | 椅子
+sofa | 🛋️ | 沙发
+table |  | 桌子
+lamp | 💡 | 台灯
+clock | 🕰️ | 钟
+mirror | 🪞 | 镜子
+bath | 🛁 | 浴缸
+shower | 🚿 | 淋浴
+toilet | 🚽 | 马桶
+soap | 🧼 | 肥皂
+toothbrush | 🪥 | 牙刷
+towel |  | 毛巾
+pillow |  | 枕头
+blanket |  | 毯子
+key | 🔑 | 钥匙
+stairs |  | 楼梯
+roof |  | 屋顶
+garden | 🏡 | 花园
+television | 📺 | 电视
+phone | 📱 | 电话
+basket | 🧺 | 篮子
 
-Category: Kitchen | 🍳
-pan | 🍳
-pot | 🍲
-spoon | 🥄
-fork | 🍴
-knife | 🔪
-plate | 🍽️
-bowl | 🥣
-cup | ☕
-oven
-fridge
-sink
-kettle
-cutting board
-whisk
-apron
-salt | 🧂
-napkin
-jar | 🫙
-lunchbox | 🍱
-chopsticks | 🥢
+Category: Kitchen | 🍳 | 厨房
+pan | 🍳 | 平底锅
+pot | 🍲 | 锅
+spoon | 🥄 | 勺子
+fork | 🍴 | 叉子
+knife | 🔪 | 刀
+plate | 🍽️ | 盘子
+bowl | 🥣 | 碗
+cup | ☕ | 杯子
+oven |  | 烤箱
+fridge |  | 冰箱
+sink |  | 水槽
+kettle |  | 水壶
+cutting board |  | 砧板
+whisk |  | 打蛋器
+apron |  | 围裙
+salt | 🧂 | 盐
+napkin |  | 餐巾
+jar | 🫙 | 罐子
+lunchbox | 🍱 | 午餐盒
+chopsticks | 🥢 | 筷子
 
-Category: School | 🏫
-school | 🏫
-teacher | 🧑‍🏫
-student | 🧑‍🎓
-book | 📕
-books | 📚
-notebook | 📓
-pencil | ✏️
-pen | 🖊️
-crayon | 🖍️
-paintbrush | 🖌️
-scissors | ✂️
-ruler | 📏
-glue
-paper | 📄
-backpack | 🎒
-desk
-board
-map | 🗺️
-globe | 🌍
-calculator | 🧮
-computer | 💻
-bus | 🚌
-bell | 🔔
-lunch
-recess
+Category: School | 🏫 | 学校
+school | 🏫 | 学校
+teacher | 🧑‍🏫 | 老师
+student | 🧑‍🎓 | 学生
+book | 📕 | 书
+books | 📚 | 书本
+notebook | 📓 | 笔记本
+pencil | ✏️ | 铅笔
+pen | 🖊️ | 钢笔
+crayon | 🖍️ | 蜡笔
+paintbrush | 🖌️ | 画笔
+scissors | ✂️ | 剪刀
+ruler | 📏 | 尺子
+glue |  | 胶水
+paper | 📄 | 纸
+backpack | 🎒 | 书包
+desk |  | 书桌
+board |  | 黑板
+map | 🗺️ | 地图
+globe | 🌍 | 地球仪
+calculator | 🧮 | 计算器
+computer | 💻 | 电脑
+bus | 🚌 | 公交车
+bell | 🔔 | 铃
+lunch |  | 午饭
+recess |  | 课间休息
 
-Category: Toys and Games | 🧸
-teddy bear | 🧸
-doll | 🪆
-ball | ⚽
-blocks | 🧱
-puzzle | 🧩
-kite | 🪁
-yo-yo | 🪀
-balloon | 🎈
-robot | 🤖
-dice | 🎲
-cards | 🃏
-chess | ♟️
-video game | 🎮
-toy car | 🚗
-train set | 🚂
-top
-jump rope
-bubbles | 🫧
-slide
-swing
-sandbox
-crayons | 🖍️
-magic wand | 🪄
-hide and seek
-tag
+Category: Toys and Games | 🧸 | 玩具和游戏
+teddy bear | 🧸 | 泰迪熊
+doll | 🪆 | 娃娃
+ball | ⚽ | 球
+blocks | 🧱 | 积木
+puzzle | 🧩 | 拼图
+kite | 🪁 | 风筝
+yo-yo | 🪀 | 溜溜球
+balloon | 🎈 | 气球
+robot | 🤖 | 机器人
+dice | 🎲 | 骰子
+cards | 🃏 | 卡片
+chess | ♟️ | 国际象棋
+video game | 🎮 | 电子游戏
+toy car | 🚗 | 玩具车
+train set | 🚂 | 火车玩具
+top |  | 陀螺
+jump rope |  | 跳绳
+bubbles | 🫧 | 泡泡
+slide |  | 滑梯
+swing |  | 秋千
+sandbox |  | 沙坑
+crayons | 🖍️ | 蜡笔
+magic wand | 🪄 | 魔法棒
+hide and seek |  | 捉迷藏
+tag |  | 捉人游戏
 
-Category: Sports | ⚽
-soccer | ⚽
-basketball | 🏀
-baseball | ⚾
-football | 🏈
-tennis | 🎾
-volleyball | 🏐
-golf | ⛳
-bowling | 🎳
-hockey | 🏒
-ping pong | 🏓
-badminton | 🏸
-skiing | ⛷️
-skating | ⛸️
-swimming | 🏊
-running | 🏃
-biking | 🚴
-surfing | 🏄
-karate | 🥋
-boxing | 🥊
-gymnastics | 🤸
-medal | 🏅
-trophy | 🏆
-team
-goal | 🥅
-whistle
+Category: Sports | ⚽ | 运动
+soccer | ⚽ | 足球
+basketball | 🏀 | 篮球
+baseball | ⚾ | 棒球
+football | 🏈 | 橄榄球
+tennis | 🎾 | 网球
+volleyball | 🏐 | 排球
+golf | ⛳ | 高尔夫
+bowling | 🎳 | 保龄球
+hockey | 🏒 | 冰球
+ping pong | 🏓 | 乒乓球
+badminton | 🏸 | 羽毛球
+skiing | ⛷️ | 滑雪
+skating | ⛸️ | 滑冰
+swimming | 🏊 | 游泳
+running | 🏃 | 跑步
+biking | 🚴 | 骑自行车
+surfing | 🏄 | 冲浪
+karate | 🥋 | 空手道
+boxing | 🥊 | 拳击
+gymnastics | 🤸 | 体操
+medal | 🏅 | 奖牌
+trophy | 🏆 | 奖杯
+team |  | 队伍
+goal | 🥅 | 球门
+whistle |  | 哨子
 
-Category: Music | 🎵
-music | 🎵
-song | 🎶
-piano | 🎹
-guitar | 🎸
-drum | 🥁
-violin | 🎻
-trumpet | 🎺
-saxophone | 🎷
-flute | 🪈
-banjo | 🪕
-accordion | 🪗
-maracas | 🪇
-microphone | 🎤
-headphones | 🎧
-radio | 📻
-bell | 🔔
-sing
-dance | 💃
-loud | 🔊
-quiet | 🔈
-band
-concert
+Category: Music | 🎵 | 音乐
+music | 🎵 | 音乐
+song | 🎶 | 歌
+piano | 🎹 | 钢琴
+guitar | 🎸 | 吉他
+drum | 🥁 | 鼓
+violin | 🎻 | 小提琴
+trumpet | 🎺 | 小号
+saxophone | 🎷 | 萨克斯
+flute | 🪈 | 长笛
+banjo | 🪕 | 班卓琴
+accordion | 🪗 | 手风琴
+maracas | 🪇 | 沙锤
+microphone | 🎤 | 麦克风
+headphones | 🎧 | 耳机
+radio | 📻 | 收音机
+bell | 🔔 | 铃铛
+sing |  | 唱歌
+dance | 💃 | 跳舞
+loud | 🔊 | 大声
+quiet | 🔈 | 安静
+band |  | 乐队
+concert |  | 音乐会
 
-Category: Going Places | 🚗
-car | 🚗
-bus | 🚌
-train | 🚆
-plane | ✈️
-boat | ⛵
-ship | 🚢
-bike | 🚲
-scooter | 🛴
-truck | 🚚
-fire truck | 🚒
-ambulance | 🚑
-police car | 🚓
-taxi | 🚕
-tractor | 🚜
-helicopter | 🚁
-rocket | 🚀
-motorcycle | 🏍️
-subway | 🚇
-canoe | 🛶
-hot air balloon | 🎈
-road | 🛣️
-traffic light | 🚦
-bridge | 🌉
-map | 🗺️
-ticket | 🎫
+Category: Going Places | 🚗 | 出行
+car | 🚗 | 汽车
+bus | 🚌 | 公交车
+train | 🚆 | 火车
+plane | ✈️ | 飞机
+boat | ⛵ | 小船
+ship | 🚢 | 轮船
+bike | 🚲 | 自行车
+scooter | 🛴 | 滑板车
+truck | 🚚 | 卡车
+fire truck | 🚒 | 消防车
+ambulance | 🚑 | 救护车
+police car | 🚓 | 警车
+taxi | 🚕 | 出租车
+tractor | 🚜 | 拖拉机
+helicopter | 🚁 | 直升机
+rocket | 🚀 | 火箭
+motorcycle | 🏍️ | 摩托车
+subway | 🚇 | 地铁
+canoe | 🛶 | 独木舟
+hot air balloon | 🎈 | 热气球
+road | 🛣️ | 马路
+traffic light | 🚦 | 红绿灯
+bridge | 🌉 | 桥
+map | 🗺️ | 地图
+ticket | 🎫 | 票
 
-Category: Weather | ☁️
-sun | ☀️
-cloud | ☁️
-rain | 🌧️
-snow | ❄️
-wind | 🌬️
-storm | ⛈️
-lightning | ⚡
-rainbow | 🌈
-fog | 🌫️
-tornado | 🌪️
-umbrella | ☔
-snowman | ⛄
-hot | 🥵
-cold | 🥶
-warm
-cool
-sunny | 🌞
-cloudy | 🌥️
-rainy | 🌦️
-windy
-puddle
-thermometer | 🌡️
+Category: Weather | ☁️ | 天气
+sun | ☀️ | 太阳
+cloud | ☁️ | 云
+rain | 🌧️ | 雨
+snow | ❄️ | 雪
+wind | 🌬️ | 风
+storm | ⛈️ | 暴风雨
+lightning | ⚡ | 闪电
+rainbow | 🌈 | 彩虹
+fog | 🌫️ | 雾
+tornado | 🌪️ | 龙卷风
+umbrella | ☔ | 雨伞
+snowman | ⛄ | 雪人
+hot | 🥵 | 热
+cold | 🥶 | 冷
+warm |  | 暖和
+cool |  | 凉快
+sunny | 🌞 | 晴天
+cloudy | 🌥️ | 多云
+rainy | 🌦️ | 下雨
+windy |  | 刮风
+puddle |  | 水坑
+thermometer | 🌡️ | 温度计
 
-Category: Seasons and Time | 📅
-spring | 🌷
-summer | 🏖️
-fall | 🍂
-winter | ❄️
-day | 🏙️
-night | 🌃
-morning | 🌅
-noon
-evening | 🌆
-today
-tomorrow
-yesterday
-week
-month
-year
-birthday | 🎂
-clock | ⏰
-hour | ⏳
-minute | ⏱️
-Monday
-Tuesday
-Wednesday
-Thursday
-Friday
-Saturday
-Sunday
+Category: Seasons and Time | 📅 | 季节和时间
+spring | 🌷 | 春天
+summer | 🏖️ | 夏天
+fall | 🍂 | 秋天
+winter | ❄️ | 冬天
+day | 🏙️ | 白天
+night | 🌃 | 晚上
+morning | 🌅 | 早上
+noon |  | 中午
+evening | 🌆 | 傍晚
+today |  | 今天
+tomorrow |  | 明天
+yesterday |  | 昨天
+week |  | 星期
+month |  | 月
+year |  | 年
+birthday | 🎂 | 生日
+clock | ⏰ | 钟
+hour | ⏳ | 小时
+minute | ⏱️ | 分钟
+Monday |  | 星期一
+Tuesday |  | 星期二
+Wednesday |  | 星期三
+Thursday |  | 星期四
+Friday |  | 星期五
+Saturday |  | 星期六
+Sunday |  | 星期天
 
-Category: Nature | 🌳
-tree | 🌳
-pine tree | 🌲
-palm tree | 🌴
-flower | 🌸
-rose | 🌹
-tulip | 🌷
-sunflower | 🌻
-leaf | 🍃
-grass | 🌱
-mushroom | 🍄
-cactus | 🌵
-rock | 🪨
-mountain | ⛰️
-volcano | 🌋
-river
-lake
-ocean | 🌊
-beach | 🏖️
-island | 🏝️
-desert | 🏜️
-forest | 🌲
-cave
-waterfall
-hill
-sand
+Category: Nature | 🌳 | 大自然
+tree | 🌳 | 树
+pine tree | 🌲 | 松树
+palm tree | 🌴 | 棕榈树
+flower | 🌸 | 花
+rose | 🌹 | 玫瑰
+tulip | 🌷 | 郁金香
+sunflower | 🌻 | 向日葵
+leaf | 🍃 | 叶子
+grass | 🌱 | 草
+mushroom | 🍄 | 蘑菇
+cactus | 🌵 | 仙人掌
+rock | 🪨 | 石头
+mountain | ⛰️ | 山
+volcano | 🌋 | 火山
+river |  | 河
+lake |  | 湖
+ocean | 🌊 | 海洋
+beach | 🏖️ | 海滩
+island | 🏝️ | 岛
+desert | 🏜️ | 沙漠
+forest | 🌲 | 森林
+cave |  | 山洞
+waterfall |  | 瀑布
+hill |  | 小山
+sand |  | 沙子
 
-Category: Space | 🚀
-sun | ☀️
-moon | 🌙
-full moon | 🌕
-star | ⭐
-planet | 🪐
-Earth | 🌎
-comet | ☄️
-rocket | 🚀
-astronaut | 🧑‍🚀
-satellite | 🛰️
-telescope | 🔭
-alien | 👽
-UFO | 🛸
-galaxy | 🌌
-shooting star | 🌠
-sky
-Mars
-Saturn
-orbit
-meteor
+Category: Space | 🚀 | 太空
+sun | ☀️ | 太阳
+moon | 🌙 | 月亮
+full moon | 🌕 | 满月
+star | ⭐ | 星星
+planet | 🪐 | 行星
+Earth | 🌎 | 地球
+comet | ☄️ | 彗星
+rocket | 🚀 | 火箭
+astronaut | 🧑‍🚀 | 宇航员
+satellite | 🛰️ | 卫星
+telescope | 🔭 | 望远镜
+alien | 👽 | 外星人
+UFO | 🛸 | 飞碟
+galaxy | 🌌 | 银河
+shooting star | 🌠 | 流星
+sky |  | 天空
+Mars |  | 火星
+Saturn |  | 土星
+orbit |  | 轨道
+meteor |  | 陨石
 
-Category: Jobs | 👩‍🚒
-doctor | 🧑‍⚕️
-nurse | 🧑‍⚕️
-teacher | 🧑‍🏫
-firefighter | 🧑‍🚒
-police officer | 👮
-farmer | 🧑‍🌾
-cook | 🧑‍🍳
-pilot | 🧑‍✈️
-astronaut | 🧑‍🚀
-artist | 🧑‍🎨
-singer | 🧑‍🎤
-scientist | 🧑‍🔬
-builder | 👷
-mechanic | 🧑‍🔧
-mail carrier | 📬
-judge | 🧑‍⚖️
-dentist | 🦷
-vet
-baker
-librarian
-coach
-driver
-gardener
+Category: Jobs | 👩‍🚒 | 职业
+doctor | 🧑‍⚕️ | 医生
+nurse | 🧑‍⚕️ | 护士
+teacher | 🧑‍🏫 | 老师
+firefighter | 🧑‍🚒 | 消防员
+police officer | 👮 | 警察
+farmer | 🧑‍🌾 | 农民
+cook | 🧑‍🍳 | 厨师
+pilot | 🧑‍✈️ | 飞行员
+astronaut | 🧑‍🚀 | 宇航员
+artist | 🧑‍🎨 | 艺术家
+singer | 🧑‍🎤 | 歌手
+scientist | 🧑‍🔬 | 科学家
+builder | 👷 | 建筑工人
+mechanic | 🧑‍🔧 | 修理工
+mail carrier | 📬 | 邮递员
+judge | 🧑‍⚖️ | 法官
+dentist | 🦷 | 牙医
+vet |  | 兽医
+baker |  | 面包师
+librarian |  | 图书管理员
+coach |  | 教练
+driver |  | 司机
+gardener |  | 园丁
 
-Category: People | 👨‍👩‍👧
-baby | 👶
-boy | 👦
-girl | 👧
-man | 👨
-woman | 👩
-mom | 👩
-dad | 👨
-grandma | 👵
-grandpa | 👴
-sister
-brother
-family | 👨‍👩‍👧
-friend | 🧑‍🤝‍🧑
-neighbor
-aunt
-uncle
-cousin
-twins
-king | 🤴
-queen | 👸
-prince
-princess | 👸
+Category: People | 👨‍👩‍👧 | 人
+baby | 👶 | 宝宝
+boy | 👦 | 男孩
+girl | 👧 | 女孩
+man | 👨 | 男人
+woman | 👩 | 女人
+mom | 👩 | 妈妈
+dad | 👨 | 爸爸
+grandma | 👵 | 奶奶
+grandpa | 👴 | 爷爷
+sister |  | 姐妹
+brother |  | 兄弟
+family | 👨‍👩‍👧 | 家人
+friend | 🧑‍🤝‍🧑 | 朋友
+neighbor |  | 邻居
+aunt |  | 阿姨
+uncle |  | 叔叔
+cousin |  | 表兄妹
+twins |  | 双胞胎
+king | 🤴 | 国王
+queen | 👸 | 王后
+prince |  | 王子
+princess | 👸 | 公主
 
-Category: Feelings | 😊
-happy | 😊
-sad | 😢
-angry | 😠
-scared | 😨
-surprised | 😮
-excited | 🤩
-silly | 🤪
-sleepy | 😴
-tired | 🥱
-proud | 😌
-shy | 😳
-worried | 😟
-calm | 😌
-bored | 😐
-grumpy | 😤
-loving | 🥰
-brave | 🦸
-sick | 🤒
-hungry | 😋
-thirsty
-lonely
-kind | 🤗
+Category: Feelings | 😊 | 感受
+happy | 😊 | 开心
+sad | 😢 | 难过
+angry | 😠 | 生气
+scared | 😨 | 害怕
+surprised | 😮 | 惊讶
+excited | 🤩 | 兴奋
+silly | 🤪 | 调皮
+sleepy | 😴 | 困
+tired | 🥱 | 累
+proud | 😌 | 骄傲
+shy | 😳 | 害羞
+worried | 😟 | 担心
+calm | 😌 | 平静
+bored | 😐 | 无聊
+grumpy | 😤 | 暴躁
+loving | 🥰 | 有爱
+brave | 🦸 | 勇敢
+sick | 🤒 | 生病
+hungry | 😋 | 饿
+thirsty |  | 渴
+lonely |  | 孤单
+kind | 🤗 | 善良
 
-Category: Action Words | 🏃
-run | 🏃
-walk | 🚶
-jump
-hop
-skip
-climb | 🧗
-swim | 🏊
-fly | 🕊️
-dance | 💃
-sing | 🎤
-clap | 👏
-wave | 👋
-read | 📖
-write | ✍️
-draw | 🖍️
-paint | 🎨
-eat | 🍽️
-drink | 🥤
-sleep | 😴
-laugh | 😂
-cry | 😢
-hug | 🤗
-kick
-throw
-catch
-push
-pull
-build | 🏗️
-cook | 🍳
-play
+Category: Action Words | 🏃 | 动作
+run | 🏃 | 跑
+walk | 🚶 | 走
+jump |  | 跳
+hop |  | 单脚跳
+skip |  | 蹦跳
+climb | 🧗 | 爬
+swim | 🏊 | 游泳
+fly | 🕊️ | 飞
+dance | 💃 | 跳舞
+sing | 🎤 | 唱歌
+clap | 👏 | 拍手
+wave | 👋 | 挥手
+read | 📖 | 读
+write | ✍️ | 写
+draw | 🖍️ | 画画
+paint | 🎨 | 涂色
+eat | 🍽️ | 吃
+drink | 🥤 | 喝
+sleep | 😴 | 睡觉
+laugh | 😂 | 笑
+cry | 😢 | 哭
+hug | 🤗 | 拥抱
+kick |  | 踢
+throw |  | 扔
+catch |  | 接
+push |  | 推
+pull |  | 拉
+build | 🏗️ | 搭建
+cook | 🍳 | 做饭
+play |  | 玩
 
-Category: Opposites | ↔️
-big
-small
-tall
-short
-hot | 🔥
-cold | 🧊
-fast | 🐇
-slow | 🐢
-up | ⬆️
-down | ⬇️
-in
-out
-open
-closed
-day | ☀️
-night | 🌙
-happy | 😀
-sad | 😢
-full
-empty
-loud | 🔊
-quiet | 🤫
-wet
-dry
-old
-new | 🆕
-left | ⬅️
-right | ➡️
+Category: Opposites | ↔️ | 反义词
+big |  | 大
+small |  | 小
+tall |  | 高
+short |  | 矮
+hot | 🔥 | 热
+cold | 🧊 | 冷
+fast | 🐇 | 快
+slow | 🐢 | 慢
+up | ⬆️ | 上
+down | ⬇️ | 下
+in |  | 里
+out |  | 外
+open |  | 开
+closed |  | 关
+day | ☀️ | 白天
+night | 🌙 | 晚上
+happy | 😀 | 开心
+sad | 😢 | 难过
+full |  | 满
+empty |  | 空
+loud | 🔊 | 大声
+quiet | 🤫 | 安静
+wet |  | 湿
+dry |  | 干
+old |  | 旧
+new | 🆕 | 新
+left | ⬅️ | 左
+right | ➡️ | 右
 
-Category: Around Town | 🏙️
-park | 🏞️
-school | 🏫
-hospital | 🏥
-library
-store | 🏪
-bakery
-bank | 🏦
-post office | 🏤
-fire station | 🚒
-police station | 🚓
-zoo | 🦁
-museum | 🏛️
-playground | 🛝
-pool | 🏊
-restaurant | 🍽️
-farm | 🚜
-airport | ✈️
-train station | 🚉
-hotel | 🏨
-church | ⛪
-stadium | 🏟️
-castle | 🏰
-office | 🏢
-street
-sidewalk
+Category: Around Town | 🏙️ | 城市里
+park | 🏞️ | 公园
+school | 🏫 | 学校
+hospital | 🏥 | 医院
+library |  | 图书馆
+store | 🏪 | 商店
+bakery |  | 面包店
+bank | 🏦 | 银行
+post office | 🏤 | 邮局
+fire station | 🚒 | 消防站
+police station | 🚓 | 警察局
+zoo | 🦁 | 动物园
+museum | 🏛️ | 博物馆
+playground | 🛝 | 游乐场
+pool | 🏊 | 游泳池
+restaurant | 🍽️ | 餐厅
+farm | 🚜 | 农场
+airport | ✈️ | 机场
+train station | 🚉 | 火车站
+hotel | 🏨 | 酒店
+church | ⛪ | 教堂
+stadium | 🏟️ | 体育场
+castle | 🏰 | 城堡
+office | 🏢 | 办公室
+street |  | 街道
+sidewalk |  | 人行道

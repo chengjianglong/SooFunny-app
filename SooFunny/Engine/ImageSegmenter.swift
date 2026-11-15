@@ -14,6 +14,14 @@ enum SegmentDetail: String, CaseIterable, Identifiable {
         }
     }
 
+    var chineseTitle: String {
+        switch self {
+        case .big: return "大块"
+        case .medium: return "中块"
+        case .small: return "小块"
+        }
+    }
+
     /// Number of color clusters for the subject (the background gets about half).
     var clusters: Int {
         switch self {

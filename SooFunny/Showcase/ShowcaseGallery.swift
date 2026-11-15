@@ -18,6 +18,19 @@ enum PictureKind: String, CaseIterable, Identifiable {
         }
     }
 
+    var chineseTitle: String {
+        switch self {
+        case .all: return "全部"
+        case .animals: return "动物"
+        case .portraits: return "笑脸"
+        case .people: return "人物"
+        case .outdoors: return "户外"
+        case .drawings: return "简笔画"
+        }
+    }
+
+    func title(in language: LearningLanguage) -> String { language.pick(title, chineseTitle) }
+
     var emoji: String {
         switch self {
         case .all: return "🌈"
@@ -61,6 +74,13 @@ struct ShowcasePicture: Identifiable {
     let kind: PictureKind
     private let loader: () -> UIImage?
 
+    /// The picture's name in Chinese, when there is one.
+    var chineseTitle: String? { Showcase.chineseTitles[title] }
+
+    func title(in language: LearningLanguage) -> String {
+        chineseTitle.map { language.pick(title, $0) } ?? title
+    }
+
     init(id: String, title: String, kind: PictureKind, loader: @escaping () -> UIImage?) {
         self.id = id
         self.title = title
@@ -92,6 +112,16 @@ enum Showcase {
         }
         return photos + drawings
     }()
+
+    /// Chinese names for the pictures, by their English name.
+    static let chineseTitles: [String: String] = [
+        "Bulldog": "斗牛犬", "Kitty": "小猫咪", "Giraffe": "长颈鹿", "Parrot": "鹦鹉", "Elephants": "大象",
+        "Goldfish": "金鱼", "Big Smile": "大大的笑", "Bunny Ears": "兔耳朵", "Market Grin": "集市笑脸",
+        "Champions!": "冠军！", "Kick It": "踢球", "Beach Day": "海滩日", "Picnic Fun": "快乐野餐",
+        "Flower Friends": "花朵朋友", "Hand in Hand": "手拉手", "Pinwheel": "风车", "Skate Pals": "滑板伙伴",
+        "Baby Books": "宝宝看书", "Lighthouse": "灯塔", "Tulips": "郁金香", "Red Barn": "红色谷仓",
+        "House": "房子", "Fish": "鱼", "Flower": "花", "Rocket": "火箭",
+    ]
 
     static func pictures(_ kind: PictureKind) -> [ShowcasePicture] {
         kind == .all ? all : all.filter { $0.kind == kind }

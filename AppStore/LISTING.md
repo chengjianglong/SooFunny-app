@@ -19,8 +19,10 @@ holder can do.
 | Support URL | https://www.chengjianglong.com/ |
 | Version | 0.3 (build 5): the Sports tab, and everything free with optional tips. Build 4 (Sports only) was taken out of review before release |
 
-Kids Category: optional. SooFunny already follows its rules (parental gate before purchases and
-outside links, no ads, no analytics, no data collection). Joining it puts the app in the Kids
+Kids Category: not joined. Apple requires a parental gate before purchases in Kids Category
+apps, and tips no longer have one (the App Store's Face ID or password check is the only step),
+so joining would mean adding the gate back. Outside links still have one; there are no ads, no
+analytics and no data collection. Joining it puts the app in the Kids
 section but asks you to pick an age band (5 and Under, or 6–8) and triggers stricter review.
 
 ## Promotional text (170)
@@ -62,7 +64,7 @@ MADE FOR FAMILIES
 • Works offline: perfect for car rides and flights
 • No ads, no tracking, no accounts
 • Nothing leaves your device
-• Grown-up check before tips and links
+• Grown-up check before outside links
 
 FREE FOR EVERY FAMILY
 Every picture, word, book, sport and math game is free, with no locks, no subscriptions and no
@@ -115,8 +117,9 @@ scanned book pages, voice, model conversations and progress never leave the devi
 
 ## Notes for App Review
 
-SooFunny works fully offline. The talking buddy (Words → sparkle button) runs Google's
-Gemma 3 1B model on the device with llama.cpp; nothing is sent to a server.
+SooFunny works fully offline. The talking buddy (Words → sparkle button) runs the
+Qwen 2.5 1.5B Instruct model (Apache-2.0) on the device with llama.cpp; nothing is sent to a
+server. It answers in English, Chinese or both, following the app's language setting.
 
 The Books tab reads story books aloud. "Scan a book" uses the camera (VisionKit document
 scanner), and the text on each page is recognized on the device with Apple's Vision framework;
@@ -126,9 +129,10 @@ The Sports tab (free) introduces 51 summer and winter sports in English and Chin
 a looping animation drawn in code.
 
 New in 0.3: every feature is free; nothing is locked. The three In-App Purchases are optional
-tips (consumables) that unlock nothing: Settings (gear) → Support SooFunny → Leave a tip →
-answer the grown-up check. Tips and outside links are behind a parental gate that asks a
-two-digit multiplication question (for example "What is 14 × 7?"). Former subscribers see a
+tips (consumables) that unlock nothing: Settings (gear) → Support SooFunny → Leave a tip. The
+App Store's purchase sheet confirms each tip with Face ID or the account password. Outside links
+are behind a parental gate that asks a two-digit multiplication question (for example
+"What is 14 × 7?"). Former subscribers see a
 "Manage subscription" button in Settings to cancel the old subscription.
 
 ## Screenshots needed
@@ -159,7 +163,7 @@ These need your Apple Account, identity, bank and tax details, so they can't be 
 ## Checklist: build and upload
 
 1. `./scripts/build_llama.sh` and `./scripts/fetch_model.sh` (the model is bundled; the upload is
-   about 830 MB, well under the 4 GB limit).
+   about 1.2 GB, well under the 4 GB limit).
 2. Archive with your Team ID: Product → Archive in Xcode (or `xcodebuild archive` with
    `DEVELOPMENT_TEAM=<Team ID>`), then Distribute App → App Store Connect.
 3. Test with TestFlight on a real device: leave a tip with a Sandbox account.

@@ -10,12 +10,32 @@ struct WordAssistantView: View {
     @State private var permissionAsked = false
     @FocusState private var typing: Bool
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
+    /// In Bilingual the child can talk in either language.
+    @State private var childSpeaksChinese = false
 
     init(word: WordEntry, category: WordCategory) {
         self.word = word
         self.category = category
-        _assistant = State(initialValue: WordAssistant(word: word.text, category: category.name))
+        let language = LearningLanguage(rawValue: UserDefaults.standard.string(forKey: LearningLanguage.key) ?? "") ?? .english
+        _assistant = State(initialValue: Self.makeAssistant(word: word, category: category, language: language))
     }
+
+    private static func makeAssistant(word: WordEntry, category: WordCategory, language: LearningLanguage) -> WordAssistant {
+        WordAssistant(word: word.text, category: category.name, language: language,
+                      chinese: word.chinese, chineseCategory: category.chinese)
+    }
+
+    /// Switching language starts the conversation again in the new language.
+    private func restart() {
+        assistant.end()
+        assistant = Self.makeAssistant(word: word, category: category, language: language)
+        if assistant.language == .both, childSpeaksChinese { assistant.listeningLanguage = .chinese }
+        assistant.start()
+    }
+
+    /// Text in the buddy's language.
+    private func say(_ english: String, _ chinese: String) -> String { assistant.language.pick(english, chinese) }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -41,8 +61,10 @@ struct WordAssistantView: View {
             controls
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle(word.text)
+        .navigationTitle(word.chinese.map { language.pick(word.text, $0) } ?? word.text)
         .navigationBarTitleDisplayMode(.inline)
+        .languageSwitch()
+        .onChange(of: language) { restart() }
         .task {
             Speech.shared.stop()
             if !permissionAsked {
@@ -61,7 +83,7 @@ struct WordAssistantView: View {
     private var header: some View {
         VStack(spacing: 8) {
             WordPhotoRow(category: category, word: word, size: sizeClass == .regular ? 190 : 118, tint: .orange)
-            Text(word.text)
+            WordName(english: word.text, chinese: word.chinese, language: language)
                 .font(.system(size: 40, weight: .heavy, design: .rounded))
         }
         .padding(.top, 8)
@@ -71,7 +93,7 @@ struct WordAssistantView: View {
     private func bubble(_ message: ChatMessage, live: Bool = false) -> some View {
         let isChild = message.speaker == .child
         VStack(alignment: isChild ? .trailing : .leading, spacing: 4) {
-            Text(isChild ? "You" : "Buddy")
+            Text(isChild ? say("You", "你") : say("Buddy", "小伙伴"))
                 .font(.caption.weight(.bold))
                 .foregroundStyle(isChild ? Color.blue : Color.accentColor)
             highlighted(message)
@@ -107,11 +129,11 @@ struct WordAssistantView: View {
 
     private var statusText: String {
         switch assistant.phase {
-        case .preparing: return "Getting ready… (the first time takes a few seconds)"
-        case .speaking: return "Listen…"
-        case .listening: return "Listening — your turn!"
-        case .thinking: return "Thinking about \(word.text)…"
-        case .ready: return assistant.note ?? "Tap Talk to ask a question."
+        case .preparing: return say("Getting ready… (the first time takes a few seconds)", "准备中……（第一次需要几秒钟）")
+        case .speaking: return say("Listen…", "听……")
+        case .listening: return say("Listening — your turn!", "在听呢，轮到你了！")
+        case .thinking: return say("Thinking about \(word.text)…", "正在想\(word.chinese ?? word.text)……")
+        case .ready: return assistant.note ?? say("Tap Talk to ask a question.", "点“说话”来提问吧。")
         case .failed(let message): return message
         }
     }
@@ -123,7 +145,7 @@ struct WordAssistantView: View {
                 .foregroundStyle(isFailed ? .red : .secondary)
                 .multilineTextAlignment(.center)
             if assistant.phase == .listening {
-                Text("Speak, then pause. Tap Done when you finish.")
+                Text(say("Speak, then pause. Tap Done when you finish.", "说完停一下，或者点“好了”。"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -137,12 +159,24 @@ struct WordAssistantView: View {
                 .tint(assistant.isActive || assistant.phase == .preparing ? .green : .accentColor)
                 .disabled(assistant.phase == .preparing)
                 if assistant.phase == .listening {
-                    Button("Cancel") { assistant.cancel() }
+                    Button(say("Cancel", "取消")) { assistant.cancel() }
                         .font(.headline)
                 }
             }
+            if assistant.language == .both {
+                Picker("I speak", selection: $childSpeaksChinese) {
+                    Text("I speak English").tag(false)
+                    Text("我说中文").tag(true)
+                }
+                .pickerStyle(.segmented)
+                .frame(maxWidth: 360)
+                .onChange(of: childSpeaksChinese) { _, chinese in
+                    assistant.listeningLanguage = chinese ? .chinese : .english
+                    if assistant.phase == .listening { assistant.talk() }
+                }
+            }
             HStack {
-                TextField("Type a question", text: $typed)
+                TextField(say("Type a question", "输入问题"), text: $typed)
                     .textFieldStyle(.roundedBorder)
                     .focused($typing)
                     .submitLabel(.send)
@@ -151,9 +185,10 @@ struct WordAssistantView: View {
                     Image(systemName: "paperplane.fill").font(.title3)
                 }
                 .disabled(typed.trimmingCharacters(in: .whitespaces).isEmpty || assistant.phase == .preparing)
-                .accessibilityLabel("Send")
+                .accessibilityLabel(say("Send", "发送"))
             }
-            Text("Voice and conversation stay on this device. The buddy can make mistakes.")
+            Text(say("Voice and conversation stay on this device. The buddy can make mistakes.",
+                     "声音和对话只留在这台设备上。小伙伴也可能说错。"))
                 .font(.caption2)
                 .foregroundStyle(.secondary)
         }
@@ -170,11 +205,11 @@ struct WordAssistantView: View {
 
     private var mainTitle: String {
         switch assistant.phase {
-        case .listening: return "Done"
-        case .thinking: return "Cancel"
-        case .speaking: return "Stop speaking"
-        case .preparing: return "Getting ready"
-        case .ready, .failed: return "Talk"
+        case .listening: return say("Done", "好了")
+        case .thinking: return say("Cancel", "取消")
+        case .speaking: return say("Stop speaking", "停止")
+        case .preparing: return say("Getting ready", "准备中")
+        case .ready, .failed: return say("Talk", "说话")
         }
     }
 

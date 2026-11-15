@@ -26,6 +26,16 @@ enum MathOperation: String, Codable, CaseIterable, Identifiable, Comparable {
         }
     }
 
+    /// How the sign is read aloud in Chinese.
+    var spokenChinese: String {
+        switch self {
+        case .add: return "加"
+        case .subtract: return "减"
+        case .multiply: return "乘"
+        case .divide: return "除以"
+        }
+    }
+
     var name: String {
         switch self {
         case .add: return "Adding"
@@ -34,6 +44,17 @@ enum MathOperation: String, Codable, CaseIterable, Identifiable, Comparable {
         case .divide: return "Sharing"
         }
     }
+
+    var chineseName: String {
+        switch self {
+        case .add: return "加法"
+        case .subtract: return "减法"
+        case .multiply: return "乘法"
+        case .divide: return "除法"
+        }
+    }
+
+    func name(in language: LearningLanguage) -> String { language.pick(name, chineseName) }
 
     var color: Color {
         switch self {
@@ -66,6 +87,43 @@ struct MathQuestion: Codable, Hashable {
 
     var text: String { "\(left) \(operation.symbol) \(right)" }
     var spokenText: String { "\(left) \(operation.spoken) \(right)" }
+    /// "3加4", with the numbers in words so a Chinese voice never reads them in English.
+    var spokenChinese: String { ChineseNumber.words(left) + operation.spokenChinese + ChineseNumber.words(right) }
+
+    /// The question read aloud: "3 plus 4 equals?", "三加四等于几？" or both.
+    func spokenQuestion(in language: LearningLanguage) -> String {
+        language.spoken("\(spokenText) equals?", spokenChinese + "等于几？")
+    }
+
+    /// The answer read aloud: "3 plus 4 is 7", "三加四等于七" or both.
+    func spokenAnswer(in language: LearningLanguage) -> String {
+        language.spoken("\(spokenText) is \(answer).", spokenChinese + "等于" + ChineseNumber.words(answer) + "。")
+    }
+}
+
+/// Numbers written in Chinese words: 12 → 十二, 105 → 一百零五, 144 → 一百四十四.
+enum ChineseNumber {
+    private static let digits = Array("零一二三四五六七八九")
+
+    static func words(_ number: Int) -> String {
+        if number < 0 { return "负" + words(-number) }
+        if number < 10 { return String(digits[number]) }
+        if number < 20 { return "十" + (number % 10 == 0 ? "" : String(digits[number % 10])) }
+        guard number < 10_000 else { return String(number) }
+        var text = ""
+        var zero = false
+        for (unit, name) in [(1000, "千"), (100, "百"), (10, "十"), (1, "")] {
+            let digit = number / unit % 10
+            if digit == 0 {
+                zero = !text.isEmpty
+            } else {
+                if zero { text += "零" }
+                text += String(digits[digit]) + name
+                zero = false
+            }
+        }
+        return text
+    }
 }
 
 /// What to practice. Saved between launches.
@@ -152,6 +210,10 @@ enum MathMode: String, Codable {
     case flashcards, quiz
 
     var title: String { self == .flashcards ? "Flashcards" : "Quiz" }
+
+    func title(in language: LearningLanguage) -> String {
+        language.pick(title, self == .flashcards ? "闪卡" : "测验")
+    }
 }
 
 /// How one question went.
@@ -220,7 +282,12 @@ final class MathSession {
 
     var current: MathQuestion { questions[min(index, questions.count - 1)] }
     var isFinished: Bool { finishedResult != nil }
-    var progressText: String { "Question \(min(index + 1, questions.count)) of \(questions.count)" }
+    var progressText: String { progressText(in: .english) }
+
+    func progressText(in language: LearningLanguage) -> String {
+        let number = min(index + 1, questions.count)
+        return language.pick("Question \(number) of \(questions.count)", "第\(number)题，共\(questions.count)题")
+    }
 
     // MARK: Flashcards
 

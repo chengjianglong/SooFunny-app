@@ -2,8 +2,8 @@ import AVFoundation
 import Observation
 import SwiftUI
 
-/// Reads words aloud, offline: in the natural Kokoro voice by default, or a voice built
-/// into iOS chosen in Settings.
+/// Reads words aloud, offline: English in the natural Kokoro voice by default, or a voice built
+/// into iOS chosen in Settings; Chinese in Apple's Chinese voice.
 @Observable
 final class Speech: NSObject, AVSpeechSynthesizerDelegate {
     static let shared = Speech()
@@ -13,6 +13,10 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
 
     @ObservationIgnored private let synthesizer = AVSpeechSynthesizer()
     @ObservationIgnored private var natural: NaturalVoice?
+    /// What's left to say of `speaking`, in runs of one language.
+    @ObservationIgnored private var parts: [(text: String, language: BookLanguage)] = []
+    /// The Apple voice utterance being said now.
+    @ObservationIgnored private var utterance: AVSpeechUtterance?
 
     override init() {
         super.init()
@@ -44,44 +48,62 @@ final class Speech: NSObject, AVSpeechSynthesizerDelegate {
             + AVSpeechUtteranceMinimumSpeechRate
     }
 
+    /// Says `text`. English is read in the chosen voice and Chinese in Apple's Chinese voice;
+    /// text with both ("dog, 狗") switches voice where the language changes.
     func speak(_ text: String) {
-        if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
-        natural?.stop()
-        if NaturalVoiceEngine.isSelected {
-            let voice = natural ?? NaturalVoice()
-            natural = voice
-            voice.onFinished = { [weak self] in
-                if self?.speaking == text { self?.speaking = nil }
-            }
-            speaking = text
-            voice.enqueue(text)
-            return
-        }
-        let utterance = AVSpeechUtterance(string: text)
-        let settings = UserDefaults.standard
-        let identifier = settings.string(forKey: SettingsKey.voice) ?? ""
-        utterance.voice = AVSpeechSynthesisVoice(identifier: identifier)
-            ?? Self.englishVoices.first
-            ?? AVSpeechSynthesisVoice(language: "en-US")
-        let rate = settings.object(forKey: SettingsKey.speechRate) as? Double ?? SettingsKey.defaultSpeechRate
-        utterance.rate = Float(rate) * (AVSpeechUtteranceMaximumSpeechRate - AVSpeechUtteranceMinimumSpeechRate)
-            + AVSpeechUtteranceMinimumSpeechRate
+        stopVoices()
         speaking = text
-        synthesizer.speak(utterance)
+        parts = BookLanguage.runs(in: text)
+        speakNextPart(of: text)
     }
 
     func stop() {
-        synthesizer.stopSpeaking(at: .immediate)
-        natural?.stop()
+        stopVoices()
         speaking = nil
     }
 
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        DispatchQueue.main.async { if self.speaking == utterance.speechString { self.speaking = nil } }
+    private func stopVoices() {
+        parts = []
+        utterance = nil
+        if synthesizer.isSpeaking { synthesizer.stopSpeaking(at: .immediate) }
+        natural?.stop()
     }
 
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didCancel utterance: AVSpeechUtterance) {
-        DispatchQueue.main.async { if self.speaking == utterance.speechString { self.speaking = nil } }
+    private func speakNextPart(of text: String) {
+        guard speaking == text else { return }
+        guard !parts.isEmpty else {
+            speaking = nil
+            return
+        }
+        let part = parts.removeFirst()
+        if part.language == .english, NaturalVoiceEngine.isSelected {
+            let voice = natural ?? NaturalVoice()
+            natural = voice
+            voice.onFinished = { [weak self] in self?.speakNextPart(of: text) }
+            voice.enqueue(part.text)
+            return
+        }
+        let utterance = AVSpeechUtterance(string: part.text)
+        if part.language == .chinese {
+            utterance.voice = BookLanguage.chinese.systemVoice
+        } else {
+            let identifier = UserDefaults.standard.string(forKey: SettingsKey.voice) ?? ""
+            utterance.voice = AVSpeechSynthesisVoice(identifier: identifier)
+                ?? Self.englishVoices.first
+                ?? AVSpeechSynthesisVoice(language: "en-US")
+        }
+        utterance.rate = Self.appleRate
+        self.utterance = utterance
+        synthesizer.speak(utterance)
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        DispatchQueue.main.async {
+            // Only the part being said moves things on, not one that was stopped.
+            guard utterance === self.utterance, let text = self.speaking else { return }
+            self.utterance = nil
+            self.speakNextPart(of: text)
+        }
     }
 }
 

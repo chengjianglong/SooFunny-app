@@ -1,7 +1,7 @@
 import Foundation
 import llama
 
-/// Something that turns a prompt into streamed text. `GemmaEngine` in the app; fakes in tests.
+/// Something that turns a prompt into streamed text. `LlamaEngine` in the app; fakes in tests.
 protocol LanguageEngine: AnyObject {
     /// Generates a reply, calling `onText` with each new piece. Returns the full text.
     /// Throws `CancellationError` when `isCancelled` becomes true.
@@ -9,11 +9,11 @@ protocol LanguageEngine: AnyObject {
                   onText: @escaping (String) -> Void) throws -> String
 }
 
-/// Gemma 3 1B (4-bit), bundled with the app and run on the device with llama.cpp.
-/// Nothing is downloaded and nothing leaves the device.
+/// Qwen 2.5 1.5B Instruct (4-bit), bundled with the app and run on the device with llama.cpp. It
+/// talks well in both English and Chinese. Nothing is downloaded and nothing leaves the device.
 ///
 /// Not thread-safe: call it from one serial queue (`WordAssistant` does).
-final class GemmaEngine: LanguageEngine {
+final class LlamaEngine: LanguageEngine {
     enum EngineError: LocalizedError {
         case modelMissing
         case loadFailed
@@ -30,7 +30,7 @@ final class GemmaEngine: LanguageEngine {
         }
     }
 
-    static let modelName = "gemma-3-1b-it-Q4_K_M"
+    static let modelName = "qwen2.5-1.5b-instruct-q4_k_m"
     static var bundledModelURL: URL? { Bundle.main.url(forResource: modelName, withExtension: "gguf") }
 
     private let model: OpaquePointer
@@ -39,7 +39,7 @@ final class GemmaEngine: LanguageEngine {
     private let contextSize: Int32 = 2048
     private let batchSize: Int32 = 512
 
-    init(modelURL: URL? = GemmaEngine.bundledModelURL) throws {
+    init(modelURL: URL? = LlamaEngine.bundledModelURL) throws {
         guard let modelURL else { throw EngineError.modelMissing }
         Self.initializeBackend
         var modelParams = llama_model_default_params()
@@ -93,7 +93,7 @@ final class GemmaEngine: LanguageEngine {
             start += count
         }
 
-        let sampler = Self.makeSampler()
+        let sampler = makeSampler()
         defer { llama_sampler_free(sampler) }
         var text = ""
         var pending: [CChar] = [] // Bytes of a character split across tokens.
@@ -113,8 +113,10 @@ final class GemmaEngine: LanguageEngine {
         return text
     }
 
-    private static func makeSampler() -> UnsafeMutablePointer<llama_sampler> {
+    private func makeSampler() -> UnsafeMutablePointer<llama_sampler> {
         let chain = llama_sampler_chain_init(llama_sampler_chain_default_params())!
+        // A small model can get stuck saying the same sentence over and over (more so in Chinese).
+        llama_sampler_chain_add(chain, llama_sampler_init_penalties(llama_vocab_n_tokens(vocab), 64, 1.1, 0, 0))
         llama_sampler_chain_add(chain, llama_sampler_init_top_k(40))
         llama_sampler_chain_add(chain, llama_sampler_init_top_p(0.9, 1))
         llama_sampler_chain_add(chain, llama_sampler_init_temp(0.7))

@@ -31,6 +31,7 @@ struct WordsView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: { Label("Settings", systemImage: "gearshape") }
                 }
+                ToolbarItem(placement: .topBarLeading) { LanguageSwitch() }
             }
             .sheet(isPresented: $showSettings) { SettingsView() }
         }
@@ -44,13 +45,14 @@ struct WordsView: View {
 
 private struct CategoryGrid: View {
     let categories: [WordCategory]
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
                 VStack(spacing: 6) {
                     BouncyTitle()
-                    Text("Pick a group of words to explore!")
+                    Text(language.pick("Pick a group of words to explore!", "选一组词来学习吧！", separator: "\n"))
                         .font(.title3.weight(.semibold))
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.center)
@@ -71,18 +73,21 @@ private struct CategoryGrid: View {
         }
         .background(Color(.systemGroupedBackground))
         // Prepare the group names so the speaker buttons answer instantly.
-        .onAppear { NaturalVoiceEngine.shared.prefetch(categories.map(\.name)) }
+        .onAppear { if language.speaksEnglish { NaturalVoiceEngine.shared.prefetch(categories.map(\.name)) } }
     }
 
     private func row(_ category: WordCategory, index: Int) -> some View {
         HStack(spacing: 14) {
             Picture(emoji: category.emoji, word: category.name, size: 56, tint: tileColor(index))
             VStack(alignment: .leading, spacing: 2) {
-                Text(category.name).font(.title3.weight(.bold)).foregroundStyle(.primary)
-                Text("\(category.words.count) words").font(.subheadline).foregroundStyle(.secondary)
+                WordName(english: category.name, chinese: category.chinese, language: language)
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(.primary)
+                Text(language.pick("\(category.words.count) words", "\(category.words.count)个词"))
+                    .font(.subheadline).foregroundStyle(.secondary)
             }
             Spacer(minLength: 0)
-            SpeakButton(text: category.name, size: 18)
+            SpeakButton(text: language.spoken(category.name, category.chinese), size: 18)
             Image(systemName: "chevron.right").foregroundStyle(.tertiary)
         }
         .padding(12)
@@ -93,6 +98,7 @@ private struct CategoryGrid: View {
 private struct WordList: View {
     let category: WordCategory
     @Binding var path: NavigationPath
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
 
     var body: some View {
         ScrollView {
@@ -105,7 +111,7 @@ private struct WordList: View {
                                 .foregroundStyle(.tint)
                                 .frame(minWidth: 26)
                             WordPicture(category: category, word: word, size: 60, tint: tileColor(index))
-                            Text(word.text)
+                            WordName(english: word.text, chinese: word.chinese, language: language)
                                 .font(.title2.weight(.semibold))
                                 .foregroundStyle(.primary)
                                 // Shrink long words a little rather than break them ("beave / r")
@@ -113,7 +119,7 @@ private struct WordList: View {
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.6)
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                            SpeakButton(text: word.text)
+                            SpeakButton(text: language.spoken(word.text, word.chinese))
                             TalkButton {
                                 path.append(AssistantRoute(category: category, index: index))
                             }
@@ -129,8 +135,9 @@ private struct WordList: View {
             .frame(maxWidth: .infinity)
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle(category.name)
-        .onAppear { NaturalVoiceEngine.shared.prefetch(category.words.map(\.text)) }
+        .navigationTitle(category.title(in: language))
+        .languageSwitch()
+        .onAppear { if language.speaksEnglish { NaturalVoiceEngine.shared.prefetch(category.words.map(\.text)) } }
         .navigationBarTitleDisplayMode(.large)
     }
 }
@@ -168,6 +175,7 @@ private struct WordDetail: View {
     let route: WordDetailRoute
     @Binding var path: NavigationPath
     @State private var index: Int
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
 
     init(route: WordDetailRoute, path: Binding<NavigationPath>) {
         self.route = route
@@ -184,40 +192,42 @@ private struct WordDetail: View {
                 WordPicture(category: route.category, word: word, size: 240, tint: tileColor(index))
                     .id(word.id)
                     .transition(.scale(scale: 0.85).combined(with: .opacity))
-                    .onTapGesture { Speech.shared.speak(word.text) }
+                    .onTapGesture { say() }
                     .accessibilityAddTraits(.isButton)
                 HStack(spacing: 8) {
-                    Text(word.text)
+                    WordName(english: word.text, chinese: word.chinese, language: language, stacked: true)
                         .font(.system(size: 56, weight: .heavy, design: .rounded))
                         .minimumScaleFactor(0.4)
                         .lineLimit(2)
                         .multilineTextAlignment(.center)
-                    SpeakButton(text: word.text, size: 30)
+                    SpeakButton(text: spoken, size: 30)
                 }
-                // Each letter can be heard on its own.
-                FlowLetters(text: word.text)
+                // Each letter (or Chinese character) can be heard on its own.
+                if language != .chinese || word.chinese == nil { FlowLetters(text: word.text) }
+                if language != .english, let chinese = word.chinese { FlowLetters(text: chinese) }
                 Button {
                     path.append(AssistantRoute(category: route.category, index: index))
                 } label: {
-                    Label("Talk about \(word.text)", systemImage: "sparkles")
+                    Label(language.pick("Talk about \(word.text)", "聊聊\(word.chinese ?? word.text)"), systemImage: "sparkles")
                         .font(.title3.weight(.bold))
                         .frame(maxWidth: 480, minHeight: 56)
                 }
                 .buttonStyle(.borderedProminent)
                 HStack(spacing: 16) {
                     Button { move(-1) } label: {
-                        Label("Previous", systemImage: "arrow.left").frame(maxWidth: .infinity, minHeight: 44)
+                        Label(language.pick("Previous", "上一个"), systemImage: "arrow.left").frame(maxWidth: .infinity, minHeight: 44)
                     }
                     .disabled(index == 0)
                     Button { move(1) } label: {
-                        Label("Next", systemImage: "arrow.right").frame(maxWidth: .infinity, minHeight: 44)
+                        Label(language.pick("Next", "下一个"), systemImage: "arrow.right").frame(maxWidth: .infinity, minHeight: 44)
                     }
                     .disabled(index == words.count - 1)
                 }
                 .buttonStyle(.bordered)
                 .font(.headline)
                 .frame(maxWidth: 480)
-                Text("\(index + 1) of \(words.count) in \(route.category.name)")
+                Text(language.pick("\(index + 1) of \(words.count) in \(route.category.name)",
+                                   "\(route.category.chinese ?? route.category.name)：第\(index + 1)个，共\(words.count)个"))
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -225,22 +235,33 @@ private struct WordDetail: View {
             .frame(maxWidth: .infinity)
         }
         .background(Color(.systemGroupedBackground))
-        .navigationTitle(route.category.name)
+        .navigationTitle(route.category.title(in: language))
         .navigationBarTitleDisplayMode(.inline)
+        .languageSwitch()
         .onAppear {
-            Speech.shared.speak(word.text)
+            say()
+            prefetchAround()
+        }
+        // Hear the word again in the language just picked.
+        .onChange(of: language) {
+            say()
             prefetchAround()
         }
     }
 
+    private var spoken: String { language.spoken(word.text, word.chinese) }
+
+    private func say() { Speech.shared.speak(spoken) }
+
     private func move(_ step: Int) {
         withAnimation(.spring(duration: 0.35)) { index = min(max(0, index + step), words.count - 1) }
-        Speech.shared.speak(word.text)
+        say()
         prefetchAround()
     }
 
     /// Prepares this word's letters and the words next to it, so taps answer instantly.
     private func prefetchAround() {
+        guard language.speaksEnglish else { return }
         let letters = Set(word.text.filter(\.isLetter).map { String($0).lowercased() })
         let neighbors = [index + 1, index - 1].filter(words.indices.contains).map { words[$0].text }
         NaturalVoiceEngine.shared.prefetch(neighbors + letters.sorted())
@@ -269,6 +290,40 @@ private struct FlowLetters: View {
             }
         }
         .frame(maxWidth: 520)
+    }
+}
+
+/// A word or group name in the chosen language: English, Chinese, or English with the Chinese
+/// beside it (or under it, for the big word on its own page).
+struct WordName: View {
+    let english: String
+    let chinese: String?
+    let language: LearningLanguage
+    var stacked = false
+
+    var body: some View {
+        if let chinese, language == .chinese {
+            Text(chinese)
+        } else if let chinese, language == .both {
+            if stacked {
+                VStack(spacing: 4) {
+                    Text(english)
+                    Text(chinese)
+                }
+            } else {
+                Text("\(english)  \(chinese)")
+            }
+        } else {
+            Text(english)
+        }
+    }
+}
+
+extension WordCategory {
+    /// The group's name for the top bar.
+    func title(in language: LearningLanguage) -> String {
+        guard let chinese else { return name }
+        return language.pick(name, chinese)
     }
 }
 

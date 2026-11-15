@@ -22,8 +22,8 @@ targets:
       - path: SooFunny
         excludes:
           - "Store/SooFunny.storekit"
-      # The on-device Gemma model (806 MB). Not in git: run scripts/fetch_model.sh.
-      - path: Models/gemma-3-1b-it-Q4_K_M.gguf
+      # The on-device Qwen 2.5 1.5B model (1.1 GB). Not in git: run scripts/fetch_model.sh.
+      - path: Models/qwen2.5-1.5b-instruct-q4_k_m.gguf
         buildPhase: resources
         optional: true
       # The natural Kokoro voice (92 MB). Not in git: run scripts/fetch_model.sh.

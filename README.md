@@ -2,10 +2,10 @@
 
 **Color, words, books, sports and math for kids, on iPhone and iPad, completely offline.**
 
-SooFunny turns any picture into a coloring page, lets kids explore 754 English words with a
-talking buddy that answers their questions out loud, reads picture books aloud (including the
-family's own books, scanned in English, Chinese or both), makes math practice feel like a game,
-and introduces 51 summer and winter sports in English and Chinese.
+SooFunny turns any picture into a coloring page, lets kids explore 754 words with a talking
+buddy that answers their questions out loud, reads picture books aloud (including the family's
+own books, scanned in English, Chinese or both), makes math practice feel like a game, and
+introduces 51 summer and winter sports. Every tab works in **English, 中文 or Bilingual 双语**.
 Everything runs on the device: no Wi‑Fi, no accounts, no ads, and nothing a child says, draws or
 photographs ever leaves the device.
 
@@ -65,6 +65,18 @@ photographs ever leaves the device.
 
 ## Features
 
+### 🌐 English, 中文 or Bilingual
+
+- One setting for the whole app, switched with the **globe** button at the top of every tab (and
+  on word, sport, quiz, buddy and book pages) or in **Settings → Language 语言**.
+- **English** or **中文** shows and reads everything in that language. **Bilingual 双语** shows the
+  English first with the Chinese after it, and reads them aloud in that order: English in the
+  natural voice, Chinese in Apple's Chinese voice.
+- Covers the picture names on Color, all 754 words and 32 groups, every built-in book (each one
+  is in both languages), the sports, math questions and cheers (numbers read as Chinese words),
+  and the talking buddy, which answers and listens in the chosen language.
+- Sports read themselves aloud as soon as a sport opens: its name, then what it is.
+
 ### 🎨 Color
 
 - **A playful gallery**: a bouncing rainbow title, a **Surprise me!** button that opens a random
@@ -83,7 +95,7 @@ photographs ever leaves the device.
 
 ### 📚 Words
 
-- **32 word groups, 754 words**, written for SooFunny: Animals, Farm, Sea Creatures, Bugs,
+- **32 word groups, 754 words**, each with its Chinese, written for SooFunny: Animals, Farm, Sea Creatures, Bugs,
   Birds, Fruit, Vegetables, Food, Sweets, Drinks, Colors, Shapes, Numbers, My Body, Clothes,
   At Home, Kitchen, School, Toys and Games, Sports, Music, Going Places, Weather, Seasons and
   Time, Nature, Space, Jobs, People, Feelings, Action Words, Opposites and Around Town.
@@ -107,8 +119,8 @@ the [Wonder Words Agent demo](https://www.youtube.com/shorts/ZAaAPILTohk):
    listens again.
 
 The big button follows the turn: **Talk**, **Done** (while listening), **Cancel** (while
-thinking) and **Stop speaking**. The answers come from Google's **Gemma 3 1B**, running on the
-device.
+thinking) and **Stop speaking**. The answers come from **Qwen 2.5 1.5B**, running on the
+device. It talks in English, Chinese or both, following the language switch.
 
 ### 📖 Books
 
@@ -174,7 +186,8 @@ the app uses an Apple voice automatically.
 
 ### ⚙️ Settings
 
-- **Support SooFunny**: **Leave a tip**, behind the grown-up check.
+- **Support SooFunny**: **Leave a tip**. The App Store's purchase sheet asks for Face ID or the
+  password, so there's no extra grown-up check.
 - **Reading voice**: the voice, its speed (default about 1.05×) and a **Try the voice** button.
 - **Research Lab** (for grown-ups): device info and on-device benchmarks of the coloring
   pipeline, Apple's Vision subject model and Apple's on-device language model (Apple
@@ -216,7 +229,8 @@ block.
 
 ### Talking buddy (`SooFunny/Assistant/`)
 
-- **Thinking:** Gemma 3 1B (4-bit, Q4_K_M) is bundled with the app and runs with
+- **Thinking:** Qwen 2.5 1.5B Instruct (4-bit, Q4_K_M), strong in both English and Chinese, is
+  bundled with the app and runs with
   [llama.cpp](https://github.com/ggml-org/llama.cpp), built from source as an XCFramework.
 - **Prompting:** answers are kept short and child-safe, with the last eight turns of the
   conversation as context. The app adds the "What would you like to know about …?" question
@@ -265,7 +279,7 @@ block.
 
 **Every feature is free for everyone**, with no locks, limits, ads or accounts, from version 0.3.
 Grown-ups who'd like to help keep SooFunny maintained and updated can leave a tip in
-**Settings → Support SooFunny**, behind the grown-up check.
+**Settings → Support SooFunny**.
 
 | Tip | Price (US) | Product ID |
 |---|---|---|
@@ -298,8 +312,8 @@ Grown-ups who'd like to help keep SooFunny maintained and updated can leave a ti
 - **The buddy and the voice** run entirely on the device. Conversations are forgotten when you
   leave the screen.
 - **Progress and settings** are stored only on the device.
-- **Grown-up check:** purchases, the developer's website and the Research Lab sit behind a
-  grown-up check. The photo credits are shown as text, not links.
+- **Grown-up check:** the developer's website and the Research Lab sit behind a grown-up check;
+  tips rely on the App Store's own Face ID or password check. The photo credits are shown as text, not links.
 - **Permissions:** the camera, microphone, speech recognition and saving to Photos are each
   requested only when first used.
 
@@ -336,10 +350,10 @@ This builds llama.cpp (tag `b11577`) as an XCFramework for iOS devices and the S
 
 This downloads into `Models/`, checking each file's SHA-256:
 
-- Gemma 3 1B `gemma-3-1b-it-Q4_K_M.gguf` (806 MB)
+- Qwen 2.5 1.5B Instruct `qwen2.5-1.5b-instruct-q4_k_m.gguf` (1.1 GB)
 - Kokoro-82M `kokoro-82m-q8.onnx` (92 MB)
 
-Both models are bundled into the app (about 918 MB in total), so it works offline from the
+Both models are bundled into the app (about 1.2 GB in total), so it works offline from the
 first launch.
 
 ### 2. Generate the Xcode project and open it
@@ -396,15 +410,15 @@ xcodebuild test -project SooFunny.xcodeproj -scheme SooFunny -destination 'platf
 |---|---|
 | `ImageSegmenterTests` | Blocks and outlines for photos and drawings, gradients, subjects, block limits, rendering |
 | `WordDictionaryTests` | Word list format and contents, Research Lab statistics and export, bundled gallery and word photos and their credits |
-| `WordAssistantTests` | Prompts, sentence streaming and the buddy's turn flow (with fakes), plus real Gemma runs |
+| `WordAssistantTests` | Prompts, sentence streaming and the buddy's turn flow (with fakes), plus real model runs in English, Chinese and Bilingual |
 | `NaturalVoiceTests` | Pronunciations, Swift audio vs. the reference pipeline, speed, phrases, silence trimming, voice choices |
 | `BooksTests` | Story library, text recognition in English and Chinese, line joining, mixed-language splitting and pinyin, saving, reordering, and audiobooks |
 | `MathTests` | Question rules, flashcard and quiz sessions, scoring, progress and streaks |
 | `SportsTests` | Every sport has unique English and Chinese names, introductions in each language, a bundled photo where it reuses one, a working animation, and no trademarked Games names. With `TEST_RUNNER_SPORT_DEMO_SHEETS=<folder>`, it also draws frames of every animation into that folder for checking by eye |
 | `TipJarTests` | The three tips and their prices, a tip unlocks nothing, and former subscribers are shown how to cancel |
 
-Tests that need a bundled model skip when it's missing. The 3 Gemma tests take about 40 s, so
-add `-skip-testing:SooFunnyTests/GemmaEngineTests` for a quick run. The StoreKit purchase tests
+Tests that need a bundled model skip when it's missing. The 3 model tests take about a minute, so
+add `-skip-testing:SooFunnyTests/LlamaEngineTests` for a quick run. The StoreKit purchase tests
 skip where the Simulator's local App Store isn't reachable (seen on the iOS 26.4 iPad
 simulator); they pass on the iPhone simulator and from Xcode.
 
@@ -426,7 +440,7 @@ SooFunny/
   Samples/SampleArt.swift          Built-in drawings, drawn in code
   Words/                           Word list (kids_words.txt), word browser, Speech
   Words/Photos/                    Word photos (CC0 / public domain) and word_photo_credits.json
-  Assistant/                       Talking buddy: Gemma via llama.cpp, listening, prompts
+  Assistant/                       Talking buddy: Qwen via llama.cpp, listening, prompts
   Voice/                           Natural voice: phonemizer, Kokoro via ONNX Runtime, player
     Resources/                       Pronunciation dictionary, phoneme table, Heart voice
   Books/                           Story books, scanning and text recognition, the reader, audiobooks
@@ -438,7 +452,7 @@ SooFunny/
 SooFunnyTests/                     Unit tests
 scripts/
   build_llama.sh                   Builds llama.cpp for iOS
-  fetch_model.sh                   Downloads and checks Gemma and Kokoro
+  fetch_model.sh                   Downloads and checks Qwen and Kokoro
   build_voice_lexicon.py           Rebuilds the pronunciation dictionary from misaki
   make_icon.py                     Makes the app icon from design/soo-icon.png
 design/soo-icon.png                App icon artwork
@@ -511,7 +525,7 @@ Measured on an **iPhone 16** (optimized build) unless noted.
 | Voice: first phrase of a buddy answer | about 1.1 s |
 | Voice: model load at launch (in the background) | about 0.4 s |
 | Voice: generation speed | about 2× faster than real time |
-| Buddy: Gemma introduction (simulator on a Mac) | about 5 s |
+| Buddy: introduction (simulator on a Mac) | about 5 s |
 | Coloring page from a photo (iPad simulator on a Mac) | 0.06–0.3 s |
 
 Older devices, such as the iPad 10th generation, are slower, but prepared speech still plays
@@ -545,8 +559,8 @@ reserved. Bundled third-party parts keep their own licenses:
 
 | Component | Use | License |
 |---|---|---|
-| [Gemma 3 1B](https://ai.google.dev/gemma) (GGUF by [unsloth](https://huggingface.co/unsloth/gemma-3-1b-it-GGUF)) | Talking buddy | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
-| [llama.cpp](https://github.com/ggml-org/llama.cpp) | Runs Gemma | MIT |
+| [Qwen 2.5 1.5B Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) (official [GGUF](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF)) | Talking buddy | Apache-2.0 |
+| [llama.cpp](https://github.com/ggml-org/llama.cpp) | Runs Qwen | MIT |
 | [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) and the "Heart" voice (ONNX by [onnx-community](https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX)) | Natural voice | Apache-2.0 |
 | [misaki](https://github.com/hexgrad/misaki) dictionaries | Pronunciation | Apache-2.0 |
 | [ONNX Runtime](https://github.com/microsoft/onnxruntime-swift-package-manager) | Runs Kokoro | MIT |

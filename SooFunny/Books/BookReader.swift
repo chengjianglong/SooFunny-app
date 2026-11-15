@@ -123,6 +123,10 @@ struct BookReader: View {
     /// True while reading on from page to page.
     @State private var playing = false
     @State private var finished = false
+    /// Shown for the built-in books, which come in English and Chinese; scanned books are read in
+    /// the language they were scanned in.
+    var showsLanguageSwitch = false
+    @AppStorage(LearningLanguage.key) private var appLanguage: LearningLanguage = .english
 
     var body: some View {
         VStack(spacing: 0) {
@@ -158,7 +162,7 @@ struct BookReader: View {
                     .symbolRenderingMode(.hierarchical)
                     .foregroundStyle(color)
             }
-            .accessibilityLabel("Close book")
+            .accessibilityLabel(appLanguage.pick("Close book", "合上书"))
             Spacer()
             Text(title)
                 .font(.headline)
@@ -168,6 +172,7 @@ struct BookReader: View {
                 .font(.headline.monospacedDigit())
                 .foregroundStyle(.secondary)
                 .frame(minWidth: 44)
+            if showsLanguageSwitch { LanguageSwitch() }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
@@ -180,7 +185,7 @@ struct BookReader: View {
                 pageText(page.text, current: current)
                     .frame(maxWidth: 760)
                 if finished && current && index == pages.count - 1 {
-                    Text(language == .chinese ? "完 🎉" : "The End 🎉")
+                    Text(appLanguage.pick("The End", "完", separator: " · ") + " 🎉")
                         .font(.system(size: 40, weight: .heavy, design: .rounded))
                         .foregroundStyle(color)
                         .transition(.scale.combined(with: .opacity))
@@ -243,13 +248,17 @@ struct BookReader: View {
                 Image(systemName: "arrow.left").frame(width: 56, height: 56)
             }
             .disabled(index == 0)
-            .accessibilityLabel("Previous page")
+            .accessibilityLabel(appLanguage.pick("Previous page", "上一页"))
 
             Button {
                 playing ? stopReading() : startReading()
             } label: {
-                Label(playing ? (language == .chinese ? "停" : "Stop") : (language == .chinese ? "读给我听" : "Read to me"), systemImage: playing ? "stop.fill" : "play.fill")
-                    .font(.title2.weight(.heavy))
+                Label(playing ? appLanguage.pick("Stop", "停") : appLanguage.pick("Read to me", "读给我听", separator: "\n"),
+                      systemImage: playing ? "stop.fill" : "play.fill")
+                    // In Bilingual the two languages go on two lines, a little smaller.
+                    .font(appLanguage == .both ? .headline.weight(.heavy) : .title2.weight(.heavy))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
                     .frame(maxWidth: 320, minHeight: 56)
                     .symbolEffect(.pulse, isActive: playing)
             }
@@ -260,7 +269,7 @@ struct BookReader: View {
                 Image(systemName: "arrow.right").frame(width: 56, height: 56)
             }
             .disabled(index == pages.count - 1)
-            .accessibilityLabel("Next page")
+            .accessibilityLabel(appLanguage.pick("Next page", "下一页"))
         }
         .font(.title2.weight(.bold))
         .buttonStyle(.bordered)

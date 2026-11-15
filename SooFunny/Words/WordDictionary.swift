@@ -4,6 +4,8 @@ struct WordEntry: Identifiable, Hashable {
     let text: String
     /// Picture for the word; nil when no emoji fits, and a letter tile is shown instead.
     let emoji: String?
+    /// The word in Chinese, for 中文 and Both.
+    var chinese: String? = nil
 
     var id: String { text }
 }
@@ -11,6 +13,7 @@ struct WordEntry: Identifiable, Hashable {
 struct WordCategory: Identifiable, Hashable {
     let name: String
     let emoji: String?
+    var chinese: String? = nil
     let words: [WordEntry]
 
     var id: String { name }
@@ -19,7 +22,8 @@ struct WordCategory: Identifiable, Hashable {
 /// The kids' word list bundled as `kids_words.txt`.
 ///
 /// Format: blank-line-separated sections. Each starts with `Category: <name>` and has one
-/// word per line. Either may end with `| <emoji>`. Order and text are kept as written.
+/// word per line. Either may end with `| <emoji>` and then `| <Chinese>`; leave the emoji empty
+/// (`hay |  | 干草`) when there's none. Order and text are kept as written.
 enum WordDictionary {
     static let resourceName = "kids_words"
 
@@ -37,13 +41,13 @@ enum WordDictionary {
 
     static func parse(_ text: String) throws -> [WordCategory] {
         var categories: [WordCategory] = []
-        var current: (name: String, emoji: String?)?
+        var current: (name: String, emoji: String?, chinese: String?)?
         var words: [WordEntry] = []
 
         func finishCategory() throws {
             if let current {
                 guard !words.isEmpty else { throw ParseError.emptyCategory(current.name) }
-                categories.append(WordCategory(name: current.name, emoji: current.emoji, words: words))
+                categories.append(WordCategory(name: current.name, emoji: current.emoji, chinese: current.chinese, words: words))
             }
             current = nil
             words = []
@@ -56,13 +60,13 @@ enum WordDictionary {
                 try finishCategory()
             } else if line.hasPrefix("Category:") {
                 try finishCategory()
-                let (name, emoji) = split(String(line.dropFirst("Category:".count)))
+                let (name, emoji, chinese) = split(String(line.dropFirst("Category:".count)))
                 guard !name.isEmpty else { throw ParseError.emptyCategoryName(line: index + 1) }
-                current = (name, emoji)
+                current = (name, emoji, chinese)
             } else {
                 guard current != nil else { throw ParseError.wordBeforeCategory(line: index + 1) }
-                let (word, emoji) = split(line)
-                words.append(WordEntry(text: word, emoji: emoji))
+                let (word, emoji, chinese) = split(line)
+                words.append(WordEntry(text: word, emoji: emoji, chinese: chinese))
             }
         }
         try finishCategory()
@@ -70,10 +74,11 @@ enum WordDictionary {
         return categories
     }
 
-    /// "cat | 🐱" → ("cat", "🐱"); "cat" → ("cat", nil).
-    private static func split(_ text: String) -> (String, String?) {
-        let parts = text.split(separator: "|", maxSplits: 1).map { $0.trimmingCharacters(in: .whitespaces) }
-        let emoji = parts.count > 1 && !parts[1].isEmpty ? parts[1] : nil
-        return (parts.first ?? "", emoji)
+    /// "cat | 🐱 | 猫" → ("cat", "🐱", "猫"); "hay |  | 干草" → ("hay", nil, "干草"); "cat" → ("cat", nil, nil).
+    private static func split(_ text: String) -> (String, String?, String?) {
+        let parts = text.split(separator: "|", maxSplits: 2, omittingEmptySubsequences: false)
+            .map { $0.trimmingCharacters(in: .whitespaces) }
+        func part(_ index: Int) -> String? { parts.count > index && !parts[index].isEmpty ? parts[index] : nil }
+        return (parts.first ?? "", part(1), part(2))
     }
 }

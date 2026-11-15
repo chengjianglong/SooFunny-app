@@ -1,11 +1,13 @@
 import AVFoundation
 import SwiftUI
 
-/// App settings: the reading voice and its speed, plus the Research Lab for grown-ups.
+/// App settings: the language for every tab, the reading voice and its speed, plus
+/// the Research Lab for grown-ups.
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage(SettingsKey.voice) private var voiceIdentifier = ""
     @AppStorage(SettingsKey.speechRate) private var speechRate = SettingsKey.defaultSpeechRate
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     @State private var voices = Speech.englishVoices
     @State private var showSupport = false
     @State private var showManage = false
@@ -23,6 +25,19 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
+                Section {
+                    Picker("Language 语言", selection: $language) {
+                        ForEach(LearningLanguage.allCases) { Text($0.label).tag($0) }
+                    }
+                    .pickerStyle(.inline)
+                    .labelsHidden()
+                } header: {
+                    Text("Language 语言")
+                } footer: {
+                    Text("Color, Words, Books, Sports and Math are shown and read aloud in English, in Chinese, or in "
+                         + "both. You can also switch with the globe button at the top. 涂色、词语、图书、运动和数学都可以用英文、中文或双语。")
+                }
+
                 Section {
                     Button {
                         showSupport = true

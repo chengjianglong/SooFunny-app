@@ -1,6 +1,6 @@
 #!/bin/sh
 # Downloads the on-device models that ship inside the app (not stored in git):
-#   - Gemma 3 1B for the talking buddy (806 MB)
+#   - Qwen 2.5 1.5B Instruct for the talking buddy (1.1 GB, Apache-2.0), strong in English and Chinese
 #   - Kokoro-82M, the natural reading voice (92 MB, Apache-2.0)
 # The app works without them (falling back to simpler features), but ships with both.
 set -eu
@@ -20,10 +20,10 @@ fetch() {
     echo "Saved $file"
 }
 
-fetch "Models/gemma-3-1b-it-Q4_K_M.gguf" \
-    "https://huggingface.co/unsloth/gemma-3-1b-it-GGUF/resolve/main/gemma-3-1b-it-Q4_K_M.gguf" \
-    "8270790f3ab69fdfe860b7b64008d9a19986d8df7e407bb018184caa08798ebd" \
-    "Gemma 3 1B (806 MB)"
+fetch "Models/qwen2.5-1.5b-instruct-q4_k_m.gguf" \
+    "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf" \
+    "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e" \
+    "Qwen 2.5 1.5B Instruct (1.1 GB)"
 
 fetch "Models/kokoro-82m-q8.onnx" \
     "https://huggingface.co/onnx-community/Kokoro-82M-v1.0-ONNX/resolve/main/onnx/model_quantized.onnx" \

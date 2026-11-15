@@ -15,6 +15,17 @@ final class WordAssistant {
 
     let word: String
     let category: String
+    /// The language the buddy talks in. In Both it says everything in English and then Chinese.
+    let language: LearningLanguage
+    /// The word and its group in Chinese.
+    let chinese: String?
+    let chineseCategory: String?
+
+    /// The language the child speaks in; in Both they can pick either.
+    var listeningLanguage: BookLanguage {
+        get { listener.language }
+        set { listener.language = newValue }
+    }
 
     private(set) var phase: Phase = .preparing
     private(set) var messages: [ChatMessage] = []
@@ -32,7 +43,7 @@ final class WordAssistant {
     @ObservationIgnored private let makeEngine: () throws -> LanguageEngine
     @ObservationIgnored private let speaker: SentenceSpeaker
     @ObservationIgnored private let listener: ChildListener
-    @ObservationIgnored private let queue = DispatchQueue(label: "SooFunny.Gemma", qos: .userInitiated)
+    @ObservationIgnored private let queue = DispatchQueue(label: "SooFunny.Buddy", qos: .userInitiated)
     @ObservationIgnored private var engine: LanguageEngine?
     /// Bumped to cancel the current turn; work from an old turn checks it and stops.
     @ObservationIgnored private var turn = 0
@@ -47,15 +58,22 @@ final class WordAssistant {
     /// The model is loaded once and shared by every conversation.
     @ObservationIgnored private static var sharedEngine: LanguageEngine?
 
-    init(word: String, category: String,
+    init(word: String, category: String, language: LearningLanguage = .english,
+         chinese: String? = nil, chineseCategory: String? = nil,
          makeEngine: @escaping () throws -> LanguageEngine = { try WordAssistant.loadSharedEngine() },
-         speaker: SentenceSpeaker = NaturalVoice(),
-         listener: ChildListener = SystemChildListener()) {
+         speaker: SentenceSpeaker? = nil,
+         listener: ChildListener? = nil) {
+        // Without a Chinese word there's nothing to say in Chinese.
+        let language = chinese == nil ? .english : language
         self.word = word
         self.category = category
+        self.language = language
+        self.chinese = chinese
+        self.chineseCategory = chineseCategory
         self.makeEngine = makeEngine
-        self.speaker = speaker
-        self.listener = listener
+        self.speaker = speaker ?? Self.speaker(for: language)
+        self.listener = listener ?? SystemChildListener(language: language == .chinese ? .chinese : .english)
+        let speaker = self.speaker
         speaker.onWord = { [weak self] sentence, range in
             self?.spokenSentence = sentence
             self?.spokenRange = range
@@ -63,9 +81,20 @@ final class WordAssistant {
         speaker.onFinished = { [weak self] in self?.speechFinished() }
     }
 
+    private static func speaker(for language: LearningLanguage) -> SentenceSpeaker {
+        switch language {
+        case .english: return NaturalVoice()
+        case .chinese: return SystemSentenceSpeaker.chinese()
+        case .both: return BilingualSentenceSpeaker()
+        }
+    }
+
+    /// The group name the model is told about: in Chinese for a Chinese conversation.
+    private var topicCategory: String { language == .chinese ? (chineseCategory ?? category) : category }
+
     static func loadSharedEngine() throws -> LanguageEngine {
         if let sharedEngine { return sharedEngine }
-        let engine = try GemmaEngine()
+        let engine = try LlamaEngine()
         sharedEngine = engine
         return engine
     }
@@ -75,8 +104,8 @@ final class WordAssistant {
     /// Starts the conversation with an introduction.
     func start() {
         guard phase == .preparing, messages.isEmpty else { return }
-        generate(prompt: AssistantPrompts.introduction(word: word, category: category))
-        followUp = AssistantPrompts.introductionQuestion(word: word)
+        generate(prompt: AssistantPrompts.introduction(word: word, category: topicCategory, language: language, chinese: chinese))
+        followUp = AssistantPrompts.introductionQuestion(word: word, language: language, chinese: chinese)
     }
 
     /// The child wants to say something.
@@ -140,10 +169,14 @@ final class WordAssistant {
                 } else {
                     self.heard = ""
                     self.phase = .ready
-                    self.note = "I didn't hear anything. Tap Talk when you're ready!"
+                    self.note = self.language.pick("I didn't hear anything. Tap Talk when you're ready!",
+                                                   "我没有听到。准备好了就点“说话”！")
                 }
             })
             phase = .listening
+        } catch let error as SystemChildListener.ListenError {
+            phase = .ready
+            note = error.message(in: listener.language == .chinese ? .chinese : language == .both ? .both : .english)
         } catch {
             phase = .ready
             note = error.localizedDescription
@@ -154,7 +187,8 @@ final class WordAssistant {
         let history = messages
         messages.append(ChatMessage(speaker: .child, text: question))
         heard = ""
-        generate(prompt: AssistantPrompts.reply(word: word, category: category, history: history, question: question))
+        generate(prompt: AssistantPrompts.reply(word: word, category: topicCategory, history: history, question: question,
+                                                language: language, chinese: chinese))
     }
 
     private func generate(prompt: String) {
@@ -166,9 +200,10 @@ final class WordAssistant {
         acceptedSentences = []
         queue.async { [weak self] in
             guard let self else { return }
+            // Also stops once the reply has every sentence it will use, so no time is spent on the rest.
             let isCancelled = { [weak self] in
                 guard let self else { return true }
-                return DispatchQueue.main.sync { self.turn != current }
+                return DispatchQueue.main.sync { self.turn != current || self.replyIsFull }
             }
             do {
                 let engine = try self.engine ?? self.makeEngine()
@@ -177,7 +212,7 @@ final class WordAssistant {
                     if self.turn == current { self.phase = .thinking }
                 }
                 var stream = SentenceStream()
-                _ = try engine.generate(prompt: prompt, maxTokens: AssistantPrompts.replyTokenLimit,
+                _ = try engine.generate(prompt: prompt, maxTokens: AssistantPrompts.tokenLimit(for: self.language),
                                         isCancelled: isCancelled) { piece in
                     let sentences = stream.append(piece)
                     guard !sentences.isEmpty else { return }
@@ -186,7 +221,10 @@ final class WordAssistant {
                 let rest = stream.finish()
                 DispatchQueue.main.async { self.finishReply(rest, turn: current) }
             } catch is CancellationError {
-                // A newer turn took over.
+                // A newer turn took over, or the reply is already long enough.
+                DispatchQueue.main.async {
+                    if self.turn == current, self.replyIsFull { self.finishReply([], turn: current) }
+                }
             } catch {
                 DispatchQueue.main.async {
                     guard self.turn == current else { return }
@@ -211,7 +249,8 @@ final class WordAssistant {
         var final = rest.filter(accept)
         guard !acceptedSentences.isEmpty else {
             phase = .ready
-            note = "Hmm, I'm not sure what to say. Try asking another way!"
+            note = language.pick("Hmm, I'm not sure what to say. Try asking another way!",
+                                 "嗯，我不知道该怎么说。换个问法试试吧！")
             return
         }
         if let followUp {
@@ -230,13 +269,19 @@ final class WordAssistant {
     }
 
     /// Keeps replies short. The introduction keeps at most two statements, because the
-    /// app asks its own question after it.
+    /// app asks its own question after it. In Both every sentence comes twice, so twice as many.
     private func accept(_ sentence: String) -> Bool {
-        let limit = followUp == nil ? 4 : 2
-        guard acceptedSentences.count < limit, followUp == nil || !sentence.contains("?") else { return false }
+        let isQuestion = sentence.contains("?") || sentence.contains("？")
+        guard !replyIsFull, followUp == nil || !isQuestion else { return false }
+        // In 中文 the buddy sometimes adds an English translation; only the Chinese is said.
+        if language == .chinese, !sentence.unicodeScalars.contains(where: \.isHan) { return false }
         acceptedSentences.append(sentence)
         return true
     }
+
+    private var sentenceLimit: Int { (followUp == nil ? 4 : 2) * (language == .both ? 2 : 1) }
+
+    private var replyIsFull: Bool { acceptedSentences.count >= sentenceLimit }
 
     private func updateBuddyMessage(_ reply: String) {
         let text = AssistantCleanup.clean(reply)

@@ -54,23 +54,17 @@ final class TipJar {
 
 // MARK: - Support screen
 
-/// A grown-up check, then the tips. Children can't tip on their own.
+/// The tips, straight away. The App Store's own purchase sheet asks for Face ID or the account
+/// password before anything is paid, so there's no extra grown-up check.
 struct SupportView: View {
     @Environment(\.dismiss) private var dismiss
-    @State private var gatePassed = false
     @State private var thanked = false
     /// True when the App Store couldn't be reached (SooFunny is often used offline).
     @State private var offline = false
 
     var body: some View {
         NavigationStack {
-            Group {
-                if gatePassed {
-                    tips
-                } else {
-                    ParentalGate(reason: "Tips are for grown-ups.") { gatePassed = true }
-                }
-            }
+            tips
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
@@ -131,7 +125,7 @@ struct SupportView: View {
 }
 
 /// "Ask a grown-up": a multiplication question young children can't answer, shown before
-/// purchases and links that leave the app.
+/// links that leave the app and the Research Lab.
 struct ParentalGate: View {
     let reason: String
     let onPass: () -> Void

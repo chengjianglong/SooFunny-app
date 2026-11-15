@@ -6,6 +6,7 @@ import VisionKit
 /// The Books tab: picture books that read themselves aloud, and the family's own books,
 /// scanned with the camera and turned into read-along books and audiobooks on the device.
 struct BooksView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     @Environment(\.horizontalSizeClass) private var sizeClass
     @State private var showSettings = false
     @State private var openStory: StoryBook?
@@ -23,7 +24,7 @@ struct BooksView: View {
                 VStack(alignment: .leading, spacing: 20) {
                     VStack(spacing: 6) {
                         BouncyTitle()
-                        Text("Pick a book and listen along!")
+                        Text(language.pick("Pick a book and listen along!", "选一本书，一起听吧！", separator: "\n"))
                             .font(.title3.weight(.semibold))
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
@@ -31,21 +32,22 @@ struct BooksView: View {
                     .frame(maxWidth: .infinity)
                     .padding(.top, 8)
 
-                    sectionTitle("📚", "Story time")
+                    sectionTitle("📚", language.pick("Story time", "故事时间"))
                     LazyVGrid(columns: columns, spacing: 18) {
-                        ForEach(Array(StoryLibrary.books.enumerated()), id: \.element.id) { index, book in
+                        ForEach(Array(StoryBook.shelf(in: language).enumerated()), id: \.element.id) { index, book in
                             Button {
                                 openStory = book
                             } label: {
-                                StoryCover(book: book, tilt: index.isMultiple(of: 2) ? -2 : 2)
+                                StoryCover(book: book, title: book.title(in: language), tilt: index.isMultiple(of: 2) ? -2 : 2)
                             }
                             .buttonStyle(.plain)
-                            .accessibilityLabel("Read \(book.title)")
+                            .accessibilityLabel(book.title(in: language))
                         }
                     }
 
-                    sectionTitle("📷", "My books")
-                    Text("Scan the pages of a book you own, in English, Chinese or both, as many pages as it has. SooFunny reads the words on your device and turns them into a read-along book and an audiobook.")
+                    sectionTitle("📷", language.pick("My books", "我的书"))
+                    Text(language.pick("Scan the pages of a book you own, in English, Chinese or both, as many pages as it has. SooFunny reads the words on your device and turns them into a read-along book and an audiobook.",
+                                       "扫描你自己的书，英文、中文或双语都可以，想扫多少页都行。SooFunny 在设备上识别文字，把它变成能跟读的书和有声书。", separator: "\n"))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     scanButtons
@@ -66,6 +68,7 @@ struct BooksView: View {
                 ScannedBookView(bookID: book.id) { path = NavigationPath() }
             }
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) { LanguageSwitch() }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button { showSettings = true } label: { Label("Settings", systemImage: "gearshape") }
                 }
@@ -76,10 +79,7 @@ struct BooksView: View {
                     path.append(book)
                 }
             }
-            .fullScreenCover(item: $openStory) { book in
-                BookReader(title: book.title, color: book.color,
-                           pages: book.pages.map { ReaderPage(text: $0.text, scene: $0.scene) }, language: book.language)
-            }
+            .fullScreenCover(item: $openStory) { StoryReader(book: $0) }
             .pageSources(scanning: $scanning, choosingPhotos: $choosingPhotos) {
                 scannedPages = ScannedPages(pages: $0)
             }
@@ -103,11 +103,11 @@ struct BooksView: View {
         HStack(spacing: 12) {
             if scannerAvailable {
                 Button { scanning = true } label: {
-                    ScanButtonLabel(title: "Scan a book", systemImage: "doc.viewfinder", color: .orange)
+                    ScanButtonLabel(title: language.pick("Scan a book", "扫描书本"), systemImage: "doc.viewfinder", color: .orange)
                 }
             }
             Button { choosingPhotos = true } label: {
-                ScanButtonLabel(title: "From Photos", systemImage: "photo.on.rectangle.angled", color: .pink)
+                ScanButtonLabel(title: language.pick("From Photos", "从照片添加"), systemImage: "photo.on.rectangle.angled", color: .pink)
             }
         }
         .frame(maxWidth: 560)
@@ -124,6 +124,7 @@ struct ScannedPages: Identifiable {
 
 private struct StoryCover: View {
     let book: StoryBook
+    let title: String
     let tilt: Double
 
     var body: some View {
@@ -133,11 +134,11 @@ private struct StoryCover: View {
                 .frame(maxWidth: .infinity, minHeight: 140)
                 .background(LinearGradient(colors: [book.color.opacity(0.45), book.color.opacity(0.15)],
                                            startPoint: .top, endPoint: .bottom))
-            Text(book.title)
+            Text(title)
                 .font(.headline)
                 .foregroundStyle(.white)
                 .multilineTextAlignment(.center)
-                .lineLimit(2)
+                .lineLimit(3)
                 .minimumScaleFactor(0.75)
                 .padding(.horizontal, 8)
                 .frame(maxWidth: .infinity, minHeight: 56)
@@ -151,6 +152,7 @@ private struct StoryCover: View {
 }
 
 private struct ScannedCover: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     let book: ScannedBook
     private let store = ScannedBookStore.shared
 
@@ -178,7 +180,7 @@ private struct ScannedCover: View {
                         .padding(7)
                         .background(Color.black.opacity(0.55), in: Circle())
                         .padding(8)
-                        .accessibilityLabel("Has audiobook")
+                        .accessibilityLabel(language.pick("Has audiobook", "有有声书"))
                 }
             }
             Text(book.title)
@@ -251,6 +253,7 @@ struct DocumentScanner: UIViewControllerRepresentable {
 /// Reads the words on each page, then lets a grown-up fix the text and name the book. More
 /// pages can be scanned or chosen at any time, so a book can have any number of pages.
 struct ScanReviewView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     /// When set, the pages are added to the end of this book instead of making a new one.
     var addingTo: ScannedBook?
     let onSaved: (ScannedBook) -> Void
@@ -288,15 +291,16 @@ struct ScanReviewView: View {
                     Section {
                         VStack(alignment: .leading, spacing: 8) {
                             ProgressView(value: Double(readCount), total: Double(max(1, pages.count)))
-                            Text("Reading page \(min(readCount + 1, pages.count)) of \(pages.count)… The words are read on this device.")
+                            Text(language.pick("Reading page \(min(readCount + 1, pages.count)) of \(pages.count)… The words are read on this device.",
+                                               "正在识别第\(min(readCount + 1, pages.count))页，共\(pages.count)页……文字在这台设备上识别。"))
                                 .font(.subheadline)
                                 .foregroundStyle(.secondary)
                         }
                     }
                 }
                 if addingTo == nil {
-                    Section("Book name") {
-                        TextField("Book name", text: $title)
+                    Section(language.pick("Book name", "书名")) {
+                        TextField(language.pick("Book name", "书名"), text: $title)
                             .font(.title3.weight(.semibold))
                     }
                 }
@@ -314,7 +318,7 @@ struct ScanReviewView: View {
                                     .frame(minHeight: 120)
                                     .overlay(alignment: .topLeading) {
                                         if page.text.isEmpty {
-                                            Text("No words found. Type them here, or leave it as a picture page.")
+                                            Text(language.pick("No words found. Type them here, or leave it as a picture page.", "没有找到文字。可以在这里输入，或者当作图画页。"))
                                                 .foregroundStyle(.tertiary)
                                                 .padding(8)
                                                 .allowsHitTesting(false)
@@ -324,33 +328,34 @@ struct ScanReviewView: View {
                                 ProgressView().frame(maxWidth: .infinity, minHeight: 120)
                             }
                         }
-                        Button("Remove page", role: .destructive) {
+                        Button(language.pick("Remove page", "删除这一页"), role: .destructive) {
                             pages.removeAll { $0.id == page.id }
                         }
                     } header: {
-                        Text("Page \(number)")
+                        Text(language.pick("Page \(number)", "第\(number)页"))
                     }
                 }
                 Section {
                     if scannerAvailable {
-                        Button { scanning = true } label: { Label("Scan more pages", systemImage: "doc.viewfinder") }
+                        Button { scanning = true } label: { Label(language.pick("Scan more pages", "继续扫描"), systemImage: "doc.viewfinder") }
                     }
-                    Button { choosingPhotos = true } label: { Label("Add pages from Photos", systemImage: "photo.on.rectangle.angled") }
+                    Button { choosingPhotos = true } label: { Label(language.pick("Add pages from Photos", "从照片添加页面"), systemImage: "photo.on.rectangle.angled") }
                     if pages.count > 1 {
-                        Button { reordering = true } label: { Label("Change page order", systemImage: "arrow.up.arrow.down") }
+                        Button { reordering = true } label: { Label(language.pick("Change page order", "调整页面顺序"), systemImage: "arrow.up.arrow.down") }
                     }
                 } footer: {
-                    Text("Add as many pages as the book has. New pages go at the end; drag them into place with Change page order.")
+                    Text(language.pick("Add as many pages as the book has. New pages go at the end; drag them into place with Change page order.",
+                                       "书有多少页就加多少页。新页面加在最后，可以用“调整页面顺序”拖到合适的位置。"))
                 }
             }
-            .navigationTitle(addingTo == nil ? "New book" : "Add pages")
+            .navigationTitle(addingTo == nil ? language.pick("New book", "新书") : language.pick("Add pages", "添加页面"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button(language.pick("Cancel", "取消")) { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save", action: save)
+                    Button(language.pick("Save", "保存"), action: save)
                         .disabled(reading || pages.isEmpty)
                 }
             }
@@ -364,10 +369,10 @@ struct ScanReviewView: View {
                     pages.sort { (order.firstIndex(of: $0.id.uuidString) ?? 0) < (order.firstIndex(of: $1.id.uuidString) ?? 0) }
                 }
             }
-            .alert("Couldn't save the book", isPresented: $saveFailed) {
-                Button("OK", role: .cancel) {}
+            .alert(language.pick("Couldn't save the book", "保存不了这本书"), isPresented: $saveFailed) {
+                Button(language.pick("OK", "好"), role: .cancel) {}
             } message: {
-                Text("Please check there's space on this device and try again.")
+                Text(language.pick("Please check there's space on this device and try again.", "请检查设备空间，然后再试一次。"))
             }
         }
         .interactiveDismissDisabled()
@@ -472,6 +477,7 @@ extension View {
 
 /// A scanned book: read along, make and play its audiobook, fix its words, share or delete it.
 struct ScannedBookView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     let bookID: UUID
     let onDeleted: () -> Void
 
@@ -514,11 +520,11 @@ struct ScannedBookView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(color: .black.opacity(0.15), radius: 8, y: 4)
                 }
-                Text("\(book.pages.count) \(book.pages.count == 1 ? "page" : "pages")")
+                Text(language.pick("\(book.pages.count) \(book.pages.count == 1 ? "page" : "pages")", "\(book.pages.count)页"))
                     .foregroundStyle(.secondary)
 
                 Button { reading = true } label: {
-                    Label("Read along", systemImage: "book.fill")
+                    Label(language.pick("Read along", "跟读"), systemImage: "book.fill")
                         .font(.title3.weight(.bold))
                         .frame(maxWidth: 480, minHeight: 56)
                 }
@@ -537,16 +543,16 @@ struct ScannedBookView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
                     if scannerAvailable {
-                        Button { scanning = true } label: { Label("Scan more pages", systemImage: "doc.viewfinder") }
+                        Button { scanning = true } label: { Label(language.pick("Scan more pages", "继续扫描"), systemImage: "doc.viewfinder") }
                     }
-                    Button { choosingPhotos = true } label: { Label("Add pages from Photos", systemImage: "photo.on.rectangle.angled") }
+                    Button { choosingPhotos = true } label: { Label(language.pick("Add pages from Photos", "从照片添加页面"), systemImage: "photo.on.rectangle.angled") }
                     if book.pages.count > 1 {
-                        Button { reordering = true } label: { Label("Change page order", systemImage: "arrow.up.arrow.down") }
+                        Button { reordering = true } label: { Label(language.pick("Change page order", "调整页面顺序"), systemImage: "arrow.up.arrow.down") }
                     }
-                    Button { editing = true } label: { Label("Fix the words", systemImage: "pencil") }
-                    Button(role: .destructive) { confirmDelete = true } label: { Label("Delete book", systemImage: "trash") }
+                    Button { editing = true } label: { Label(language.pick("Fix the words", "修改文字"), systemImage: "pencil") }
+                    Button(role: .destructive) { confirmDelete = true } label: { Label(language.pick("Delete book", "删除这本书"), systemImage: "trash") }
                 } label: {
-                    Label("More", systemImage: "ellipsis.circle")
+                    Label(language.pick("More", "更多"), systemImage: "ellipsis.circle")
                 }
             }
         }
@@ -571,19 +577,19 @@ struct ScannedBookView: View {
         .sheet(isPresented: $sharing) {
             ShareAudiobookView(url: store.audioURL(for: book), title: book.title)
         }
-        .confirmationDialog("Delete \(book.title)?", isPresented: $confirmDelete, titleVisibility: .visible) {
-            Button("Delete", role: .destructive) {
+        .confirmationDialog(language.pick("Delete \(book.title)?", "删除《\(book.title)》？"), isPresented: $confirmDelete, titleVisibility: .visible) {
+            Button(language.pick("Delete", "删除"), role: .destructive) {
                 stopAudio()
                 store.delete(book)
                 onDeleted()
             }
         } message: {
-            Text("Its pages and audiobook will be removed from this device.")
+            Text(language.pick("Its pages and audiobook will be removed from this device.", "它的页面和有声书会从这台设备上删除。"))
         }
-        .alert("Couldn't make the audiobook", isPresented: $makeFailed) {
-            Button("OK", role: .cancel) {}
+        .alert(language.pick("Couldn't make the audiobook", "做不了有声书"), isPresented: $makeFailed) {
+            Button(language.pick("OK", "好"), role: .cancel) {}
         } message: {
-            Text("There were no words to read aloud. Check them with Fix the words in the ⋯ menu, then try again.")
+            Text(language.pick("There were no words to read aloud. Check them with Fix the words in the ⋯ menu, then try again.", "没有可以朗读的文字。请在 ⋯ 菜单里用“修改文字”检查，然后再试。"))
         }
         .onDisappear {
             making?.cancel()
@@ -594,34 +600,34 @@ struct ScannedBookView: View {
     @ViewBuilder
     private func audiobookSection(_ book: ScannedBook) -> some View {
         VStack(spacing: 12) {
-            Label("Audiobook", systemImage: "headphones")
+            Label(language.pick("Audiobook", "有声书"), systemImage: "headphones")
                 .font(.title3.weight(.heavy))
             if making != nil {
                 ProgressView(value: progress)
-                Text("Making the audiobook… \(Int(progress * 100))%")
+                Text(language.pick("Making the audiobook… \(Int(progress * 100))%", "正在做有声书……\(Int(progress * 100))%"))
                     .foregroundStyle(.secondary)
-                Button("Cancel", role: .cancel) { making?.cancel() }
+                Button(language.pick("Cancel", "取消"), role: .cancel) { making?.cancel() }
             } else if book.hasAudio {
                 HStack(spacing: 12) {
                     Button { playing ? stopAudio() : play(book) } label: {
-                        Label(playing ? "Stop" : "Listen", systemImage: playing ? "stop.fill" : "play.fill")
+                        Label(playing ? language.pick("Stop", "停") : language.pick("Listen", "听"), systemImage: playing ? "stop.fill" : "play.fill")
                             .frame(maxWidth: .infinity, minHeight: 44)
                     }
                     .buttonStyle(.borderedProminent)
                     Button { sharing = true } label: {
-                        Label("Share", systemImage: "square.and.arrow.up")
+                        Label(language.pick("Share", "分享"), systemImage: "square.and.arrow.up")
                             .frame(maxWidth: .infinity, minHeight: 44)
                     }
                     .buttonStyle(.bordered)
                 }
                 .font(.headline)
             } else {
-                Text("Turn this book into an audio file in the natural voice, to listen to anytime.")
+                Text(language.pick("Turn this book into an audio file in the natural voice, to listen to anytime.", "把这本书做成有声书，随时都能听。"))
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
                 Button { make(book) } label: {
-                    Label("Make audiobook", systemImage: "waveform")
+                    Label(language.pick("Make audiobook", "做成有声书"), systemImage: "waveform")
                         .frame(maxWidth: .infinity, minHeight: 44)
                 }
                 .buttonStyle(.borderedProminent)
@@ -673,6 +679,7 @@ struct ScannedBookView: View {
 
 /// Drag pages into the right order, for photos picked or scanned out of order.
 struct PageOrderView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     struct Item: Identifiable {
         let id: String
         var thumbnail: UIImage?
@@ -696,8 +703,8 @@ struct PageOrderView: View {
                                 .frame(width: 60, height: 80)
                                 .clipShape(RoundedRectangle(cornerRadius: 6))
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("Page \(firstNumber + index)").font(.headline)
-                                Text(item.text.isEmpty ? "Picture page" : item.text)
+                                Text(language.pick("Page \(firstNumber + index)", "第\(firstNumber + index)页")).font(.headline)
+                                Text(item.text.isEmpty ? language.pick("Picture page", "图画页") : item.text)
                                     .font(.subheadline)
                                     .foregroundStyle(.secondary)
                                     .lineLimit(2)
@@ -707,18 +714,18 @@ struct PageOrderView: View {
                     }
                     .onMove { items.move(fromOffsets: $0, toOffset: $1) }
                 } footer: {
-                    Text("Drag the handles to move a page.")
+                    Text(language.pick("Drag the handles to move a page.", "拖动右边的把手来移动页面。"))
                 }
             }
             .environment(\.editMode, .constant(.active))
-            .navigationTitle("Page order")
+            .navigationTitle(language.pick("Page order", "页面顺序"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button(language.pick("Cancel", "取消")) { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Done") {
+                    Button(language.pick("Done", "完成")) {
                         onDone(items.map(\.id))
                         dismiss()
                     }
@@ -745,6 +752,7 @@ struct PageOrderView: View {
 
 /// Fix the words the camera read wrong.
 private struct EditBookView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     @State var book: ScannedBook
     @Environment(\.dismiss) private var dismiss
     private let store = ScannedBookStore.shared
@@ -752,11 +760,11 @@ private struct EditBookView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Book name") {
-                    TextField("Book name", text: $book.title)
+                Section(language.pick("Book name", "书名")) {
+                    TextField(language.pick("Book name", "书名"), text: $book.title)
                 }
                 ForEach(book.pages.indices, id: \.self) { index in
-                    Section("Page \(index + 1)") {
+                    Section(language.pick("Page \(index + 1)", "第\(index + 1)页")) {
                         HStack(alignment: .top, spacing: 12) {
                             AsyncImage(url: store.imageURL(book.pages[index], in: book)) { image in
                                 image.resizable().scaledToFit()
@@ -771,14 +779,14 @@ private struct EditBookView: View {
                     }
                 }
             }
-            .navigationTitle("Fix the words")
+            .navigationTitle(language.pick("Fix the words", "修改文字"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button(language.pick("Cancel", "取消")) { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button(language.pick("Save", "保存")) {
                         if book.title.trimmingCharacters(in: .whitespaces).isEmpty { book.title = "My Book" }
                         try? store.update(book)
                         dismiss()
@@ -791,6 +799,7 @@ private struct EditBookView: View {
 
 /// Sharing sends the file out of the app, so a grown-up says yes first.
 private struct ShareAudiobookView: View {
+    @AppStorage(LearningLanguage.key) private var language: LearningLanguage = .english
     let url: URL
     let title: String
     @State private var gatePassed = false
@@ -806,13 +815,13 @@ private struct ShareAudiobookView: View {
                             .foregroundStyle(.orange)
                         Text(title).font(.title2.weight(.bold))
                         ShareLink(item: url, preview: SharePreview(title)) {
-                            Label("Share audiobook", systemImage: "square.and.arrow.up")
+                            Label(language.pick("Share audiobook", "分享有声书"), systemImage: "square.and.arrow.up")
                                 .font(.title3.weight(.bold))
                                 .frame(maxWidth: 320, minHeight: 50)
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(.orange)
-                        Text("Only share books you're allowed to copy.")
+                        Text(language.pick("Only share books you're allowed to copy.", "只分享你有权复制的书。"))
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
@@ -823,7 +832,7 @@ private struct ShareAudiobookView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { dismiss() }
+                    Button(language.pick("Close", "关闭")) { dismiss() }
                 }
             }
         }

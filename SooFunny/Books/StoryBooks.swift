@@ -95,14 +95,14 @@ enum StoryLibrary {
             StoryPage(scene: "🐐💪👹", text: "TRIP, TRAP, TRIP, TRAP! The biggest billy goat Gruff came along. He lowered his horns and bumped the troll right off the bridge. Splash!"),
             StoryPage(scene: "🐐🐐🐐🌿😋", text: "The three billy goats ate sweet green grass on the hill all summer long."),
         ]),
-        StoryBook(id: "tang-poems", title: "唐诗五首 Tang Poems", cover: "🏮", color: .red, pages: [
+        StoryBook(id: "tang-poems", title: "唐诗五首", cover: "🏮", color: .red, pages: [
             StoryPage(scene: "🦢🌊", text: "《咏鹅》骆宾王。鹅，鹅，鹅，曲项向天歌。白毛浮绿水，红掌拨清波。"),
             StoryPage(scene: "🌙🛏️🏠", text: "《静夜思》李白。床前明月光，疑是地上霜。举头望明月，低头思故乡。"),
             StoryPage(scene: "🌸🐦🌧️", text: "《春晓》孟浩然。春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。"),
             StoryPage(scene: "🌾☀️🍚", text: "《悯农》李绅。锄禾日当午，汗滴禾下土。谁知盘中餐，粒粒皆辛苦。"),
             StoryPage(scene: "🌄🏯🌊", text: "《登鹳雀楼》王之涣。白日依山尽，黄河入海流。欲穷千里目，更上一层楼。"),
         ], language: .chinese),
-        StoryBook(id: "tortoise-and-hare-zh", title: "龟兔赛跑 The Tortoise and the Hare", cover: "🐢", color: .mint, pages: [
+        StoryBook(id: "tortoise-and-hare-zh", title: "龟兔赛跑", cover: "🐢", color: .mint, pages: [
             StoryPage(scene: "🐇🗣️", text: "小兔子跑得很快。它总是说：“我是森林里跑得最快的！谁也比不过我！”"),
             StoryPage(scene: "🐢🙂", text: "小乌龟慢慢地说：“我们来比一比吧。”小动物们都笑了。"),
             StoryPage(scene: "🏁🐇💨🐢", text: "预备，开始！小兔子一下子就跑远了。小乌龟一步一步地往前爬。"),

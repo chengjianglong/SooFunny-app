@@ -14,6 +14,8 @@ protocol SentenceSpeaker: AnyObject {
 
 /// Hears the child and turns their speech into text.
 protocol ChildListener: AnyObject {
+    /// The language the child speaks in, English or Chinese.
+    var language: BookLanguage { get set }
     /// Starts listening. `onPartial` gets the words so far; `onFinish` gets the final text,
     /// or nil when nothing was said. Both are called on the main thread.
     func start(onPartial: @escaping (String) -> Void, onFinish: @escaping (String?) -> Void) throws
@@ -34,6 +36,13 @@ final class SystemSentenceSpeaker: NSObject, SentenceSpeaker, AVSpeechSynthesize
     override init() {
         super.init()
         synthesizer.delegate = self
+    }
+
+    /// A speaker in Apple's Chinese voice.
+    static func chinese() -> SystemSentenceSpeaker {
+        let speaker = SystemSentenceSpeaker()
+        speaker.voice = BookLanguage.chinese.systemVoice
+        return speaker
     }
 
     var isSpeaking: Bool { queued > 0 }
@@ -73,6 +82,70 @@ final class SystemSentenceSpeaker: NSObject, SentenceSpeaker, AVSpeechSynthesize
     }
 }
 
+/// Says sentences that mix English and Chinese: English in the natural voice and Chinese in
+/// Apple's Chinese voice, switching wherever the language changes within a sentence.
+final class BilingualSentenceSpeaker: SentenceSpeaker {
+    var onWord: ((String, NSRange) -> Void)?
+    var onFinished: (() -> Void)?
+    private let english: SentenceSpeaker
+    private let chinese: SentenceSpeaker
+    /// Stretches still to say, each with the sentence it came from.
+    private var parts: [(sentence: String, text: String, language: BookLanguage)] = []
+    /// The sentence being said, and where to look for the next spoken word in it.
+    private var current: (sentence: String, cursor: Int)?
+
+    init(english: SentenceSpeaker = NaturalVoice(), chinese: SentenceSpeaker = SystemSentenceSpeaker.chinese()) {
+        self.english = english
+        self.chinese = chinese
+        for speaker in [english, chinese] {
+            speaker.onWord = { [weak self] phrase, range in
+                self?.follow((phrase as NSString).substring(with: range))
+            }
+            speaker.onFinished = { [weak self] in self?.speakNext() }
+        }
+    }
+
+    var isSpeaking: Bool { current != nil }
+
+    func enqueue(_ sentence: String) {
+        for run in BookLanguage.runs(in: sentence) {
+            parts.append((sentence, run.text, run.language))
+        }
+        if current == nil { speakNext() }
+    }
+
+    func stop() {
+        parts = []
+        current = nil
+        english.stop()
+        chinese.stop()
+    }
+
+    private func speakNext() {
+        guard !parts.isEmpty else {
+            guard current != nil else { return }
+            current = nil
+            onFinished?()
+            return
+        }
+        let part = parts.removeFirst()
+        if current?.sentence != part.sentence { current = (part.sentence, 0) }
+        (part.language == .chinese ? chinese : english).enqueue(part.text)
+    }
+
+    /// Reports the spoken word's place in the whole sentence, so it lights up there.
+    private func follow(_ word: String) {
+        guard let current else { return }
+        let sentence = current.sentence as NSString
+        guard current.cursor < sentence.length else { return }
+        let found = sentence.range(of: word, options: .caseInsensitive,
+                                   range: NSRange(location: current.cursor, length: sentence.length - current.cursor))
+        guard found.location != NSNotFound else { return }
+        self.current?.cursor = found.location + found.length
+        onWord?(current.sentence, found)
+    }
+}
+
 /// On-device speech recognition (no audio leaves the device; nothing is saved).
 /// A turn ends after a short pause, after a long silence, or after twenty seconds.
 final class SystemChildListener: ChildListener {
@@ -80,7 +153,10 @@ final class SystemChildListener: ChildListener {
     static let silenceToGiveUp: TimeInterval = 8
     static let longestTurn: TimeInterval = 20
 
-    private let recognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+    var language: BookLanguage
+    private var recognizer: SFSpeechRecognizer? {
+        SFSpeechRecognizer(locale: Locale(identifier: language == .chinese ? "zh-CN" : "en-US"))
+    }
     private let audioEngine = AVAudioEngine()
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
@@ -90,6 +166,10 @@ final class SystemChildListener: ChildListener {
     private var started = Date()
     private var onFinish: ((String?) -> Void)?
 
+    init(language: BookLanguage = .english) {
+        self.language = language
+    }
+
     enum ListenError: LocalizedError {
         case microphoneNotAllowed, speechNotAllowed, unavailable
         var errorDescription: String? {
@@ -98,6 +178,17 @@ final class SystemChildListener: ChildListener {
             case .speechNotAllowed: return "To talk, allow speech recognition for SooFunny in Settings → Privacy & Security."
             case .unavailable: return "Listening isn't available on this device right now. You can type a question instead."
             }
+        }
+
+        /// The message in the conversation's language.
+        func message(in language: LearningLanguage) -> String {
+            let chinese: String
+            switch self {
+            case .microphoneNotAllowed: chinese = "要说话，请在“设置”→“隐私与安全性”里允许 SooFunny 使用麦克风。"
+            case .speechNotAllowed: chinese = "要说话，请在“设置”→“隐私与安全性”里允许 SooFunny 使用语音识别。"
+            case .unavailable: chinese = "这台设备现在听不了中文。可以在“设置”→“通用”→“键盘”里打开中文听写，或者直接输入问题。"
+            }
+            return language.pick(errorDescription ?? "", chinese, separator: "\n")
         }
     }
 

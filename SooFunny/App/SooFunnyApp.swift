@@ -31,6 +31,7 @@ struct ContentView: View {
                     session = ColoringSession(image: image)
                 }
                 .toolbar {
+                    ToolbarItem(placement: .topBarLeading) { LanguageSwitch() }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button { showSettings = true } label: { Label("Settings", systemImage: "gearshape") }
                     }

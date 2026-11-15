@@ -17,7 +17,7 @@ There are no accounts, no ads, no analytics, no tracking, and no servers that re
   save it with the system Share button.
 - **Voice.** When you tap Talk, the microphone is used to hear your question. Speech is turned
   into text with Apple's on-device speech recognition and is never recorded or saved.
-- **The talking buddy.** Answers come from an AI model (Google's Gemma) that runs entirely on
+- **The talking buddy.** Answers come from an AI model (Qwen 2.5) that runs entirely on
   the device. Questions and answers are not sent anywhere and are forgotten when you leave the
   conversation.
 - **Settings and progress.** Your voice settings and math progress are stored only on the
@@ -35,8 +35,9 @@ Apple's privacy policy at https://www.apple.com/legal/privacy/.
 ## Children
 
 SooFunny is designed for children and complies with the App Store's rules for kids' apps. It
-does not collect personal information from anyone, including children. Purchases and links that
-leave the app, including tips, are behind a grown-up check.
+does not collect personal information from anyone, including children. Links that leave the app
+are behind a grown-up check, and tips go through the App Store's own purchase sheet, which asks
+for Face ID or the account password.
 
 ## Permissions
 

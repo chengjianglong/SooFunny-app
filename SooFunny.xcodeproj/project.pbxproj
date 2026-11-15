@@ -163,6 +163,7 @@
 		1815F12B035853E5D42BA0E8 /* word-drinks-water-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 442D4C17D901F3C1BFD86E64 /* word-drinks-water-2.jpg */; };
 		183275653D7CA95300D6659F /* word-animals-koala-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88989193E9522CCF260FC1B6 /* word-animals-koala-3.jpg */; };
 		187EED41910A2F6620E6DF07 /* word-around-town-street.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9B44F6D7BC873F81CD57AE64 /* word-around-town-street.jpg */; };
+		18983330C4DFBF195118F2FE /* LlamaEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C242B1D9AF670A7279EC8727 /* LlamaEngine.swift */; };
 		18B08508BA62463E54122F15 /* LabBenchmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F470044E7A9E244F3ECD27B /* LabBenchmarks.swift */; };
 		18C974BE1A2CCA3753E703E8 /* word-school-books.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8915C65D98A4D3F72EDB242 /* word-school-books.jpg */; };
 		18D61446A47F74D37A19CD5F /* word-food-sandwich-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7BF58D9D1C67718E5053C877 /* word-food-sandwich-3.jpg */; };
@@ -437,6 +438,7 @@
 		4774F0F2F6219CAD930DE4E6 /* word-school-pencil-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3D33EF5C2D5FD8EB5A66605A /* word-school-pencil-2.jpg */; };
 		478ABEEE0F80BD566890D6A5 /* word-food-soup-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 06EF5C32A78B10E29B0CCE34 /* word-food-soup-3.jpg */; };
 		47A9C7923E989793C3B6C13A /* word-weather-storm-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4F10D50F20A34EBA05739FAB /* word-weather-storm-2.jpg */; };
+		47DF401A1CB75C3C4588832E /* qwen2.5-1.5b-instruct-q4_k_m.gguf in Resources */ = {isa = PBXBuildFile; fileRef = 41F60D8EB771A3EECA54E010 /* qwen2.5-1.5b-instruct-q4_k_m.gguf */; };
 		48D7A6809D79354999CE901E /* word-animals-dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7EEB6AA0B922AE9FDBFF97D9 /* word-animals-dog.jpg */; };
 		493E44B8C795D860F5FC70B7 /* word-around-town-museum-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FD1F00FF9BAFE51534F714E5 /* word-around-town-museum-3.jpg */; };
 		499DEFD896461D8734EFE247 /* word-vegetables-cauliflower-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0DDB793E8940764F7ACC0832 /* word-vegetables-cauliflower-3.jpg */; };
@@ -693,6 +695,7 @@
 		7808906069FA4F66443D5371 /* word-sports-surfing-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C1218527DC228E4D6CA012F /* word-sports-surfing-2.jpg */; };
 		780A4952E062E150FD95EFA2 /* word-kitchen-cutting-board.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8BBA87BA8A072EA66859C5F /* word-kitchen-cutting-board.jpg */; };
 		781B41D4A3E57557E3757739 /* word-sweets-cotton-candy-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ACCA5993C5C35A2A1F815F4C /* word-sweets-cotton-candy-3.jpg */; };
+		788AF4A654BBB2D5FBD281D4 /* LearningLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3317412B8F05DBCD5FAA4D /* LearningLanguage.swift */; };
 		78C6EB82AE6DF33EAD309564 /* word-at-home-toothbrush.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDD6D3FCD16821CAB7CE06F0 /* word-at-home-toothbrush.jpg */; };
 		78CA1DA2A634C59A3ADB39B4 /* word-vegetables-onion-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA830BB409A7DC4835A850B8 /* word-vegetables-onion-2.jpg */; };
 		78D57392523C117F6D8D7589 /* word-farm-pig-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 05291B3D1898DEC98C043D70 /* word-farm-pig-2.jpg */; };
@@ -747,6 +750,7 @@
 		81CDDDDEDD6F7CC92DC1BF0E /* word-school-crayon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8257B02002CB965607D18081 /* word-school-crayon.jpg */; };
 		8232A10BF8E7A8E9D3724B92 /* word-going-places-truck-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F71BF333C381DD367860C703 /* word-going-places-truck-3.jpg */; };
 		82334C3373047E205664F08A /* word-going-places-ship.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C5D4088EAD817A16FBDF18 /* word-going-places-ship.jpg */; };
+		825733D762D036B586386234 /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2B62C544AC2D602BFFD97B /* LanguageTests.swift */; };
 		8280C5148E7A62D22303AF28 /* word-going-places-map-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B446BA18654A82DE3D05F6A2 /* word-going-places-map-3.jpg */; };
 		82B457458D17637C5DF32654 /* word-opposites-night-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EECD14B774D8479FFE06998A /* word-opposites-night-3.jpg */; };
 		82BA862EC19F74D50CF4EB9C /* word-colors-purple-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7F06109A2D5E19D9D464BF76 /* word-colors-purple-3.jpg */; };
@@ -839,7 +843,6 @@
 		947F07F8E88AF7B86B2C5672 /* word-farm-goat-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3FD1B6355FA696B583EF3 /* word-farm-goat-3.jpg */; };
 		94AA9D0EC19EABCFD4FDD0C8 /* word-food-dumpling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AB4F8B5546B1AFF5A4516B1 /* word-food-dumpling.jpg */; };
 		94DFC0E244B68AE1F3BFB46F /* word-animals-tiger-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EA4F703ECFFA9E36C0B8F12D /* word-animals-tiger-3.jpg */; };
-		94E0E51669AAA84A033A2002 /* gemma-3-1b-it-Q4_K_M.gguf in Resources */ = {isa = PBXBuildFile; fileRef = 25C32DACB2EE7BA847B666DE /* gemma-3-1b-it-Q4_K_M.gguf */; };
 		9507412AE077B5D340A25148 /* word-at-home-clock-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6FF8F9FB025E32EF377CCF35 /* word-at-home-clock-3.jpg */; };
 		95CB0DA5AC0BAC50D7137A7B /* word-at-home-toothbrush-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 337D6F97C0B6F45F2471ED44 /* word-at-home-toothbrush-2.jpg */; };
 		95FD41F15056FC35222B1AF8 /* word-farm-tractor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 579B75F1739B8CC5D06045DD /* word-farm-tractor.jpg */; };
@@ -1193,6 +1196,7 @@
 		CF3793CFBDA2718AF19E93B9 /* word-sea-creatures-stingray-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01D3273363934246E435E745 /* word-sea-creatures-stingray-2.jpg */; };
 		CF5F834A5FB16D8086F8CA7F /* word-nature-island-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 853DDDC040DBEC398C91F210 /* word-nature-island-2.jpg */; };
 		CF6BCE44EB4F28FD9F9E25EC /* word-opposites-full.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2840138D5030F7A568D0FF03 /* word-opposites-full.jpg */; };
+		CFF70C74FB6526A2CC9BD1EB /* StoryTranslations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024BE2965BAC0CBF82310C5B /* StoryTranslations.swift */; };
 		D00F5C05F503D21195D5568D /* word-nature-sunflower-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B8EAFC4F999D67B661CC305 /* word-nature-sunflower-2.jpg */; };
 		D0867E33C141F49E78046C42 /* word-bugs-firefly.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17C832BF353F2D777F525F94 /* word-bugs-firefly.jpg */; };
 		D089C2954A085BD345838F2F /* outdoors-barn.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 504270FC86902FDA6EAF63F3 /* outdoors-barn.jpg */; };
@@ -1410,7 +1414,6 @@
 		FF768F524890E05CC5E96C7F /* word-sweets-ice-pop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2C3E8EB492074B0D906093B6 /* word-sweets-ice-pop.jpg */; };
 		FFB45DEB14D2F8D6DA0AAECC /* word-animals-gorilla-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D3AC33CCDA57F4614EED97C1 /* word-animals-gorilla-2.jpg */; };
 		FFDBA4BCBD07BC88E7BFDBAD /* word-farm-pumpkin-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA3DD3F9AF169922B12CB3CC /* word-farm-pumpkin-3.jpg */; };
-		FFF55365C35D6B54C505CF5F /* GemmaEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7218249F1EABE63758F058A3 /* GemmaEngine.swift */; };
 		FFFA7B6EEA0882249D1A76F6 /* word-birds-chick-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B73E24133A3E12A9C3FE185 /* word-birds-chick-2.jpg */; };
 /* End PBXBuildFile section */
 
@@ -1455,6 +1458,7 @@
 		0220509E591B1358ADF0BC2A /* word-vegetables-peas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-vegetables-peas.jpg"; sourceTree = "<group>"; };
 		0230EAA8BBF347ABB7CC72AC /* word-toys-and-games-jump-rope-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-toys-and-games-jump-rope-2.jpg"; sourceTree = "<group>"; };
 		02484819CFF0E73A5C1EA088 /* word-going-places-taxi-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-taxi-2.jpg"; sourceTree = "<group>"; };
+		024BE2965BAC0CBF82310C5B /* StoryTranslations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTranslations.swift; sourceTree = "<group>"; };
 		028EA53AAA1A2DCEF26A39F5 /* word-birds-goose.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-birds-goose.jpg"; sourceTree = "<group>"; };
 		02A90FF81041C20BD4501B3A /* word-vegetables-zucchini-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-vegetables-zucchini-2.jpg"; sourceTree = "<group>"; };
 		02EA8DE880304B7216A8CDB4 /* word-food-egg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-food-egg.jpg"; sourceTree = "<group>"; };
@@ -1646,7 +1650,6 @@
 		252FC1CF88554365CA0C6D94 /* word-nature-lake-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-lake-3.jpg"; sourceTree = "<group>"; };
 		259699BA7EC17D3DD7F3F81C /* word-going-places-train.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-train.jpg"; sourceTree = "<group>"; };
 		25A1F0FA4AE95EC66A816F88 /* word-going-places-tractor-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-tractor-2.jpg"; sourceTree = "<group>"; };
-		25C32DACB2EE7BA847B666DE /* gemma-3-1b-it-Q4_K_M.gguf */ = {isa = PBXFileReference; path = "gemma-3-1b-it-Q4_K_M.gguf"; sourceTree = "<group>"; };
 		25D32C99E1370DCEB8A1BF8D /* word-farm-barn-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-barn-3.jpg"; sourceTree = "<group>"; };
 		25FC930634C3138E0D8319DB /* word-sweets-brownie-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sweets-brownie-3.jpg"; sourceTree = "<group>"; };
 		263944B50ACDB152930D29DE /* word-around-town-sidewalk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-sidewalk.jpg"; sourceTree = "<group>"; };
@@ -1806,6 +1809,7 @@
 		41A7AF1E068AD2D8F0177276 /* word-farm-scarecrow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-scarecrow-2.jpg"; sourceTree = "<group>"; };
 		41D7DFA27E3E19428FBB179C /* word-sports-trophy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sports-trophy.jpg"; sourceTree = "<group>"; };
 		41E057F65B9391B224B8CB8B /* word-seasons-and-time-summer-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-seasons-and-time-summer-3.jpg"; sourceTree = "<group>"; };
+		41F60D8EB771A3EECA54E010 /* qwen2.5-1.5b-instruct-q4_k_m.gguf */ = {isa = PBXFileReference; path = "qwen2.5-1.5b-instruct-q4_k_m.gguf"; sourceTree = "<group>"; };
 		420BAC8287C9FC0A8812DA63 /* word-at-home-door-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-at-home-door-3.jpg"; sourceTree = "<group>"; };
 		4309832D0213BF520A21E7FD /* word-around-town-park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-park.jpg"; sourceTree = "<group>"; };
 		4313734F519E1C3A5ECDCAE7 /* word-school-books-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-school-books-3.jpg"; sourceTree = "<group>"; };
@@ -2044,7 +2048,6 @@
 		71C59114EC1063A656CEA5D8 /* word-kitchen-whisk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-kitchen-whisk.jpg"; sourceTree = "<group>"; };
 		71D72410DE0B3495703ADB24 /* word-animals-monkey-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-monkey-2.jpg"; sourceTree = "<group>"; };
 		71FD212B96148C36DFD40BB6 /* word-farm-chick.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-chick.jpg"; sourceTree = "<group>"; };
-		7218249F1EABE63758F058A3 /* GemmaEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GemmaEngine.swift; sourceTree = "<group>"; };
 		723FEFCF6AB522EBE50EF6FB /* word-around-town-playground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-playground.jpg"; sourceTree = "<group>"; };
 		727EE69E437092C0D601AB16 /* kids_words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = kids_words.txt; sourceTree = "<group>"; };
 		72B5246C170297211D152428 /* word-music-trumpet-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-music-trumpet-2.jpg"; sourceTree = "<group>"; };
@@ -2117,6 +2120,7 @@
 		7C8691B872CC2FCDED2E7C55 /* word-sweets-cupcake-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sweets-cupcake-2.jpg"; sourceTree = "<group>"; };
 		7CCDA4504FE3511A0241A788 /* word-going-places-scooter-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-scooter-3.jpg"; sourceTree = "<group>"; };
 		7D21B63702528FC2B97FF640 /* word-going-places-bike-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-bike-2.jpg"; sourceTree = "<group>"; };
+		7D2B62C544AC2D602BFFD97B /* LanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTests.swift; sourceTree = "<group>"; };
 		7D5BF75BCC2825F8B93B6C90 /* word-vegetables-celery-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-vegetables-celery-3.jpg"; sourceTree = "<group>"; };
 		7D64B834690739600B3DF3CE /* word-school-crayon-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-school-crayon-2.jpg"; sourceTree = "<group>"; };
 		7E04AF5319D5B77FEA5BFED5 /* word-farm-cow-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-cow-2.jpg"; sourceTree = "<group>"; };
@@ -2505,6 +2509,7 @@
 		C1D2C40D9DC5562DB526627C /* word-going-places-hot-air-balloon-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-hot-air-balloon-2.jpg"; sourceTree = "<group>"; };
 		C21BF79D965D6CAD12373AC6 /* word-food-pasta-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-food-pasta-3.jpg"; sourceTree = "<group>"; };
 		C21E8852E6E7244070FA96EA /* word-colors-orange.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-colors-orange.jpg"; sourceTree = "<group>"; };
+		C242B1D9AF670A7279EC8727 /* LlamaEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LlamaEngine.swift; sourceTree = "<group>"; };
 		C24AA948CEB313D0A3F917AA /* word-sea-creatures-whale-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sea-creatures-whale-2.jpg"; sourceTree = "<group>"; };
 		C25491C5990DEEB92D7E4ECD /* word-sweets-cupcake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-sweets-cupcake.jpg"; sourceTree = "<group>"; };
 		C2589749D054EB71E364DE63 /* word-around-town-park-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-park-2.jpg"; sourceTree = "<group>"; };
@@ -2569,6 +2574,7 @@
 		CED3B786AA2B7270CC760965 /* word-going-places-rocket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-rocket.jpg"; sourceTree = "<group>"; };
 		CF13AB18681BA741E196325B /* word-kitchen-sink.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-kitchen-sink.jpg"; sourceTree = "<group>"; };
 		CF147DF3BDECA04209221832 /* word-seasons-and-time-evening.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-seasons-and-time-evening.jpg"; sourceTree = "<group>"; };
+		CF3317412B8F05DBCD5FAA4D /* LearningLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningLanguage.swift; sourceTree = "<group>"; };
 		CF76C50B36C3E1F2A005D155 /* word-school-paper-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-school-paper-2.jpg"; sourceTree = "<group>"; };
 		CFE3E20DD3BFA4509670E795 /* word-around-town-train-station-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-train-station-3.jpg"; sourceTree = "<group>"; };
 		CFF247277607C066F538EDB9 /* word-animals-camel-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-camel-3.jpg"; sourceTree = "<group>"; };
@@ -2878,6 +2884,7 @@
 				B1E04C1ED5308F4539EB32DC /* BouncyTitle.swift */,
 				216FE6F3202A726D2DC1A594 /* ColoringView.swift */,
 				782398F3A9B62A005EF9C4BA /* HomeView.swift */,
+				CF3317412B8F05DBCD5FAA4D /* LearningLanguage.swift */,
 				47AFD63ED38CCBB814C236F0 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -2899,6 +2906,7 @@
 			children = (
 				41A75BBFF06E5BB5477DAFCE /* BooksTests.swift */,
 				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
+				7D2B62C544AC2D602BFFD97B /* LanguageTests.swift */,
 				1D2CC50E46E9436EE783856B /* MathTests.swift */,
 				2945ED3D69153689914B5C22 /* NaturalVoiceTests.swift */,
 				53C0AEA43D4CB16DB816BA77 /* SportsTests.swift */,
@@ -2912,8 +2920,8 @@
 		3EA46CA886CA5A1BF92F9861 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				25C32DACB2EE7BA847B666DE /* gemma-3-1b-it-Q4_K_M.gguf */,
 				134305777465150E533C1CED /* kokoro-82m-q8.onnx */,
+				41F60D8EB771A3EECA54E010 /* qwen2.5-1.5b-instruct-q4_k_m.gguf */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2980,6 +2988,7 @@
 				800563E62107C7A6115EF57F /* BooksView.swift */,
 				7EDEB509E4984C4EA9165A0F /* ScannedBooks.swift */,
 				4901201650B8F3F664CB5F8F /* StoryBooks.swift */,
+				024BE2965BAC0CBF82310C5B /* StoryTranslations.swift */,
 			);
 			path = Books;
 			sourceTree = "<group>";
@@ -2989,7 +2998,7 @@
 			children = (
 				FFBDB7E82BC4A2343CB22F5B /* AssistantAudio.swift */,
 				7E117DC6C648EFE875B3826B /* AssistantText.swift */,
-				7218249F1EABE63758F058A3 /* GemmaEngine.swift */,
+				C242B1D9AF670A7279EC8727 /* LlamaEngine.swift */,
 				DBB2506ADDDC774ECA854899 /* WordAssistant.swift */,
 				55A97F05D44D0369134E2CE7 /* WordAssistantView.swift */,
 			);
@@ -4533,7 +4542,6 @@
 				4DCDBBA98D16C3CFE8C84FF2 /* animals-goldfish.jpg in Resources */,
 				7198FA6D7FB02BC5695AE5C6 /* animals-macaw.jpg in Resources */,
 				38C1B619F18EF982EB058C64 /* credits.json in Resources */,
-				94E0E51669AAA84A033A2002 /* gemma-3-1b-it-Q4_K_M.gguf in Resources */,
 				F5653C9DD2741E7ABC8827B2 /* kids_words.txt in Resources */,
 				FA0199CF2713738A904495C8 /* kokoro-82m-q8.onnx in Resources */,
 				5B4452728A3E3DCC6CEE0463 /* kokoro_af_heart.bin in Resources */,
@@ -4554,6 +4562,7 @@
 				E7162886E96ACCBD644F6F4E /* portraits-bunny-girl.jpg in Resources */,
 				393511E4699F486F6FE1F939 /* portraits-fishmonger.jpg in Resources */,
 				2FF0710A48FF90CFE0B8F3B7 /* portraits-smiling-girl.jpg in Resources */,
+				47DF401A1CB75C3C4588832E /* qwen2.5-1.5b-instruct-q4_k_m.gguf in Resources */,
 				964B8D14F0BEF2BA1FA4EBA3 /* word-action-words-paint-2.jpg in Resources */,
 				2C1BE9FF95926369A09FE10C /* word-action-words-paint.jpg in Resources */,
 				F18218DCD4895A0EC2C3916A /* word-action-words-sleep-2.jpg in Resources */,
@@ -5919,13 +5928,14 @@
 				58F0468F9A160A9D46D3C6FB /* ColoringSession.swift in Sources */,
 				C09877B5299329138FE8633A /* ColoringView.swift in Sources */,
 				8901EE6C8D9B029A33B5A9AE /* DemoScenes.swift in Sources */,
-				FFF55365C35D6B54C505CF5F /* GemmaEngine.swift in Sources */,
 				BF10AE69D0AB0BA1681E1054 /* HomeView.swift in Sources */,
 				5149BF198CE3A2CA08EC2E4C /* ImageSegmenter.swift in Sources */,
 				7342C1B5A1F1B1F0843AC41B /* KokoroPhonemizer.swift in Sources */,
 				7006A6C63EFF2B8EE1350C87 /* KokoroTTS.swift in Sources */,
 				18B08508BA62463E54122F15 /* LabBenchmarks.swift in Sources */,
 				6868463DF6452ECEC73EAAC3 /* LabImage.swift in Sources */,
+				788AF4A654BBB2D5FBD281D4 /* LearningLanguage.swift in Sources */,
+				18983330C4DFBF195118F2FE /* LlamaEngine.swift in Sources */,
 				A90745F1EDB5F1C152EF374C /* MathModel.swift in Sources */,
 				EA86E58DA135911526ABBC04 /* MathViews.swift in Sources */,
 				A3542DE7668F0A1836D36792 /* NaturalVoice.swift in Sources */,
@@ -5942,6 +5952,7 @@
 				3CD3B64D60D1EED939ED39DC /* SportDemos.swift in Sources */,
 				B39012743939C3D0B693141D /* SportsView.swift in Sources */,
 				6E7678E935A2266B5F394652 /* StoryBooks.swift in Sources */,
+				CFF70C74FB6526A2CC9BD1EB /* StoryTranslations.swift in Sources */,
 				769F13091CED154B63E7CD50 /* SubjectMask.swift in Sources */,
 				3221A1FA2FE7AC1B6A9A89F6 /* TipJar.swift in Sources */,
 				D7EFD44C84233B158BFB6763 /* WordAssistant.swift in Sources */,
@@ -5958,6 +5969,7 @@
 			files = (
 				BC157EB01393E3324F781BB7 /* BooksTests.swift in Sources */,
 				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
+				825733D762D036B586386234 /* LanguageTests.swift in Sources */,
 				3075E1CC8136FB91D1697EA7 /* MathTests.swift in Sources */,
 				80E4D96F39035FF53CFA6674 /* NaturalVoiceTests.swift in Sources */,
 				BD9E02CD0CDE8CCAF23DE924 /* SportsTests.swift in Sources */,
