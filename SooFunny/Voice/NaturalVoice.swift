@@ -66,13 +66,14 @@ final class NaturalVoiceEngine {
 
     /// Loads the model in the background, warms it up, and prepares common phrases.
     func preload() {
-        guard KokoroTTS.isBundled else { return }
-        prefetch(Self.commonPhrases)
+        guard isAvailable else { return }
+        prefetch(language == .english ? Self.commonPhrases : Self.commonChinesePhrases)
     }
 
     /// Phrases the app says often.
     static let commonPhrases = ["Great job!", "You got it!", "Super!", "Awesome!", "Yes!", "Amazing! 🎉",
                                 "Great work! 🌟", "Good try! 💪", "Keep practicing! 🌱"]
+    static let commonChinesePhrases = ["真棒！", "答对了！", "太厉害了！", "好极了！", "对啦！", "太棒了！", "做得好！"]
 
     /// Speech for `text` (trimmed of silence), from the cache or made now.
     /// `completion` runs on the main thread; nil means the natural voice can't say it.

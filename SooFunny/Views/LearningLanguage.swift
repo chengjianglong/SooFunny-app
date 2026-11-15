@@ -64,7 +64,11 @@ struct LanguageSwitch: View {
             .font(.subheadline.weight(.bold))
             .fixedSize()
         }
-        .onChange(of: language) { Speech.shared.stop() }
+        .onChange(of: language) {
+            Speech.shared.stop()
+            // Get the Chinese voice ready as soon as Chinese is picked.
+            if language != .english { NaturalVoiceEngine.chinese.preload() }
+        }
         .accessibilityLabel("Language: \(language.label)")
     }
 

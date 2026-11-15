@@ -12,7 +12,7 @@ final class KokoroTTS {
     static let sampleRate = 24_000.0
     static let modelName = "kokoro-82m-q8"
     static let voiceName = "kokoro_af_heart"
-    static let chineseModelName = "kokoro-v1.1-zh-q8"
+    static let chineseModelName = "kokoro-v1.1-zh-fp16"
     /// The Chinese voices offered in Settings, the first being the default.
     static let chineseVoices = ["zf_001", "zf_017", "zf_032", "zf_049", "zf_094"]
     /// Kokoro reads at most 510 phoneme tokens at a time.

@@ -7,6 +7,10 @@ struct SooFunnyApp: App {
         Speech.resetUnsuitableVoice()
         // Load the natural voice in the background so the first word plays quickly.
         NaturalVoiceEngine.shared.preload()
+        // The Chinese voice too, when the app is set to Chinese or Bilingual.
+        if (UserDefaults.standard.string(forKey: LearningLanguage.key) ?? "english") != LearningLanguage.english.rawValue {
+            NaturalVoiceEngine.chinese.preload()
+        }
         // Finish tips that complete while the app is closed or on another device.
         _ = TipJar.shared
     }

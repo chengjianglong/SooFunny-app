@@ -182,6 +182,7 @@
 		1B0CDDDD649E3F18AF36D09E /* word-sea-creatures-crab-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF329838B5F0582202776A55 /* word-sea-creatures-crab-3.jpg */; };
 		1B497893DFF055B9F3723F0F /* word-shapes-ball-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 785B81932FE86A5B95FA8666 /* word-shapes-ball-2.jpg */; };
 		1B51B47C197EF4177D4AE4B5 /* word-toys-and-games-crayons-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8443E7AC0E7EF609B02B2094 /* word-toys-and-games-crayons-2.jpg */; };
+		1B6B9FBAC5E214C55FD1831D /* kokoro-v1.1-zh-fp16.onnx in Resources */ = {isa = PBXBuildFile; fileRef = 5E56D6EDB2C16D9D63E7523F /* kokoro-v1.1-zh-fp16.onnx */; };
 		1B83D75811CED3250488C1D5 /* SooFunnyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */; };
 		1BA35F0673458BEB41750B0B /* word-going-places-bridge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 987FAF243CD0F7DC0E20FE5D /* word-going-places-bridge.jpg */; };
 		1BD44B006B515C02A98AD3D8 /* word-around-town-playground-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 288DBB4CE17CDD1140C66288 /* word-around-town-playground-2.jpg */; };
@@ -1282,7 +1283,6 @@
 		E16D3D86632430A791C5BEE1 /* word-sweets-pie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 523D16FDFB519959530455F3 /* word-sweets-pie.jpg */; };
 		E1AC912A9A84E69AB8573CB6 /* word-clothes-belt-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3452AEE4D2DE7FD7CDC978CB /* word-clothes-belt-2.jpg */; };
 		E21365248C29A9D55523495C /* word-sea-creatures-lobster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0F52DE7777376A0B08EC0B80 /* word-sea-creatures-lobster.jpg */; };
-		E24E68F10C61C9DFBF285B84 /* kokoro-v1.1-zh-q8.onnx in Resources */ = {isa = PBXBuildFile; fileRef = E2D35C7D272E02BC3A04E42E /* kokoro-v1.1-zh-q8.onnx */; };
 		E26D3872F1BBE036A794FF54 /* word-colors-rainbow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0457C1D4C846CE29DAC21310 /* word-colors-rainbow.jpg */; };
 		E27BF77AB1A6D0DE33072991 /* word-colors-light-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9AE4D9F5905C4F20E538CE12 /* word-colors-light-2.jpg */; };
 		E28865B6EB5656FC0685D46D /* word-food-rice-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FA0B7BA4A556CD32100A11 /* word-food-rice-3.jpg */; };
@@ -1964,6 +1964,7 @@
 		5E0717D3143512F14844EB12 /* SubjectMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectMask.swift; sourceTree = "<group>"; };
 		5E2B97B0F5259CBB446D0F70 /* word-at-home-basket-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-at-home-basket-2.jpg"; sourceTree = "<group>"; };
 		5E3733EFBA5C1B4B3D7F6C03 /* word-going-places-scooter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-scooter.jpg"; sourceTree = "<group>"; };
+		5E56D6EDB2C16D9D63E7523F /* kokoro-v1.1-zh-fp16.onnx */ = {isa = PBXFileReference; path = "kokoro-v1.1-zh-fp16.onnx"; sourceTree = "<group>"; };
 		5F3CDCCEAC7A1DC39B42EFF0 /* word-farm-chick-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-chick-2.jpg"; sourceTree = "<group>"; };
 		5F470044E7A9E244F3ECD27B /* LabBenchmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabBenchmarks.swift; sourceTree = "<group>"; };
 		5F6F2F312B21AC68E51FFE94 /* word-going-places-ambulance.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-going-places-ambulance.jpg"; sourceTree = "<group>"; };
@@ -2708,7 +2709,6 @@
 		E1E31322B01F464A6C526A23 /* word-animals-lion-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-lion-2.jpg"; sourceTree = "<group>"; };
 		E27E065AAF72CAE45157B647 /* word-fruit-mango-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-fruit-mango-2.jpg"; sourceTree = "<group>"; };
 		E2ADD98BC06C814BD7933E7B /* word-birds-peacock-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-birds-peacock-2.jpg"; sourceTree = "<group>"; };
-		E2D35C7D272E02BC3A04E42E /* kokoro-v1.1-zh-q8.onnx */ = {isa = PBXFileReference; path = "kokoro-v1.1-zh-q8.onnx"; sourceTree = "<group>"; };
 		E33B8C67228C253F1E165785 /* word-nature-ocean.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-ocean.jpg"; sourceTree = "<group>"; };
 		E34D8D4C9B1EB88D3DA6CAA0 /* word-clothes-sweater.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-clothes-sweater.jpg"; sourceTree = "<group>"; };
 		E37F6BED4990E1FA0452A332 /* word-my-body-hand-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-my-body-hand-2.jpg"; sourceTree = "<group>"; };
@@ -2956,7 +2956,7 @@
 			isa = PBXGroup;
 			children = (
 				134305777465150E533C1CED /* kokoro-82m-q8.onnx */,
-				E2D35C7D272E02BC3A04E42E /* kokoro-v1.1-zh-q8.onnx */,
+				5E56D6EDB2C16D9D63E7523F /* kokoro-v1.1-zh-fp16.onnx */,
 				41F60D8EB771A3EECA54E010 /* qwen2.5-1.5b-instruct-q4_k_m.gguf */,
 			);
 			path = Models;
@@ -4593,7 +4593,7 @@
 				38C1B619F18EF982EB058C64 /* credits.json in Resources */,
 				F5653C9DD2741E7ABC8827B2 /* kids_words.txt in Resources */,
 				FA0199CF2713738A904495C8 /* kokoro-82m-q8.onnx in Resources */,
-				E24E68F10C61C9DFBF285B84 /* kokoro-v1.1-zh-q8.onnx in Resources */,
+				1B6B9FBAC5E214C55FD1831D /* kokoro-v1.1-zh-fp16.onnx in Resources */,
 				5B4452728A3E3DCC6CEE0463 /* kokoro_af_heart.bin in Resources */,
 				843356B837E9E65362700314 /* kokoro_lexicon.tsv in Resources */,
 				7A35CEB0B2A04539CD6554D0 /* kokoro_vocab.tsv in Resources */,

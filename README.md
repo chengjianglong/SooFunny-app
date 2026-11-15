@@ -285,7 +285,7 @@ block.
   183,561-word US dictionary, rules for small words ("a", "the", "to"…) and for -s, -ed and -ing
   endings, and spells out numbers. Unknown words are spelled letter by letter. The GPL
   espeak-ng phonemizer is deliberately not used.
-- **Chinese:** [Kokoro-82M v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh) (8-bit, 114 MB)
+- **Chinese:** [Kokoro-82M v1.1-zh](https://huggingface.co/hexgrad/Kokoro-82M-v1.1-zh) (16-bit, 163 MB; the 8-bit file runs three times slower with ONNX Runtime 1.24)
   with voices zf_001, zf_017, zf_032, zf_049 and zf_094. Chinese text becomes Kokoro's zhuyin-style
   phonemes with `ChineseG2P`, a Swift port of misaki's Chinese front end (from PaddleSpeech): jieba's
   dictionary segmentation and part-of-speech HMM, pypinyin's readings (36,000 phrases that read
@@ -380,9 +380,9 @@ This downloads into `Models/`, checking each file's SHA-256:
 
 - Qwen 2.5 1.5B Instruct `qwen2.5-1.5b-instruct-q4_k_m.gguf` (1.1 GB)
 - Kokoro-82M `kokoro-82m-q8.onnx` (92 MB)
-- Kokoro-82M v1.1-zh `kokoro-v1.1-zh-q8.onnx` (114 MB)
+- Kokoro-82M v1.1-zh `kokoro-v1.1-zh-fp16.onnx` (163 MB)
 
-All three models are bundled into the app (about 1.3 GB in total), so it works offline from the
+All three models are bundled into the app (about 1.4 GB in total), so it works offline from the
 first launch.
 
 ### 2. Generate the Xcode project and open it
