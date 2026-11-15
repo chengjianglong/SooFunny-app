@@ -476,7 +476,7 @@ scripts/
   make_icon.py                     Makes the app icon from design/soo-icon.png
 design/soo-icon.png                App icon artwork
 docs/images/                       README screenshots and the Sports animation GIF
-marketing/                         The 2-minute demo and presentation, the Sports animations clip, the introduction slides (PDF) and older vertical demos
+marketing/                         The bilingual demo for parents, the 2-minute demo and presentation, the Sports animations clip, the introduction slides (PDF) and older vertical demos
 AppStore/LISTING.md                App Store listing, review notes, submission checklist
 PRIVACY.md                         Privacy policy
 project.yml                        XcodeGen project definition
