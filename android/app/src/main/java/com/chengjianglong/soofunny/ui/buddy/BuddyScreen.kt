@@ -2,6 +2,8 @@ package com.chengjianglong.soofunny.ui.buddy
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.content.pm.PackageManager
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -70,6 +72,7 @@ import com.chengjianglong.soofunny.ui.KidButton
 import com.chengjianglong.soofunny.ui.KidColors
 import com.chengjianglong.soofunny.ui.ReadAlongText
 import com.chengjianglong.soofunny.ui.SooTopBar
+import com.chengjianglong.soofunny.ui.books.ParentalGate
 import com.chengjianglong.soofunny.ui.language
 import com.chengjianglong.soofunny.ui.squishClickable
 import com.chengjianglong.soofunny.ui.words.PhotoWithSticker
@@ -147,6 +150,16 @@ private fun DownloadCard() {
     val state = BuddyModel.state
     val needed = BuddyModel.SIZE + (200L shl 20)
     val lowSpace = remember(state) { context.filesDir.usableSpace < needed && state !is BuddyModel.State.Downloading }
+    var gate by remember { mutableStateOf(false) }
+    if (gate) {
+        ParentalGate(
+            reason = lang.pick("This downloads 1.1 GB from the internet.", "这会从网上下载 1.1 GB。", "\n"),
+            onDismiss = { gate = false },
+        ) {
+            gate = false
+            BuddyDownload.start(context)
+        }
+    }
     Column(
         Modifier.widthIn(max = 520.dp).fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Color.White).padding(20.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp),
@@ -181,7 +194,7 @@ private fun DownloadCard() {
                         "下载没有完成（${state.message}）。请检查网络后再试。", "\n"),
                     fontSize = 15.sp, color = KidColors.Red, textAlign = TextAlign.Center,
                 )
-                KidButton(lang.pick("Try again", "重试"), KidColors.Blue, emoji = "🔄") { BuddyDownload.start(context) }
+                KidButton(lang.pick("Try again", "重试"), KidColors.Blue, emoji = "🔄") { gate = true }
             }
             else -> {
                 if (lowSpace) {
@@ -191,7 +204,7 @@ private fun DownloadCard() {
                         fontSize = 15.sp, color = KidColors.Red, textAlign = TextAlign.Center,
                     )
                 }
-                KidButton(lang.pick("Download", "下载"), KidColors.Blue, emoji = "⬇️") { BuddyDownload.start(context) }
+                KidButton(lang.pick("Download", "下载"), KidColors.Blue, emoji = "⬇️") { gate = true }
             }
         }
         Text(
@@ -322,8 +335,45 @@ private fun Bubble(buddy: WordBuddy, message: ChatMessage, live: Boolean = false
                 message.sentences.forEach { ReadAlongText(it, fontSize = 20) }
             }
         }
+        if (!isChild && !live) ReportAnswer(message.text)
     }
 }
+
+/**
+ * Lets a grown-up report an answer that's wrong or not right for children (Google Play's rule
+ * for AI-made content): after the grown-up check, opens an email to us with the answer in it.
+ * Nothing is sent unless the grown-up sends that email.
+ */
+@Composable
+private fun ReportAnswer(answer: String) {
+    val context = LocalContext.current
+    val lang = language
+    var gate by remember { mutableStateOf(false) }
+    Text(
+        "⚑ " + lang.pick("Report", "举报"),
+        fontSize = 13.sp, color = KidColors.Gray,
+        modifier = Modifier.clip(RoundedCornerShape(8.dp)).squishClickable { gate = true }.padding(horizontal = 6.dp, vertical = 2.dp),
+    )
+    if (gate) {
+        ParentalGate(
+            reason = lang.pick("Tell us about an answer that's wrong or not right for children. This opens an email to SooFunny with the answer in it.",
+                "如果回答有错或不适合孩子，请告诉我们。这会打开一封发给 SooFunny 的邮件，里面附有这条回答。", "\n"),
+            onDismiss = { gate = false },
+        ) {
+            gate = false
+            val body = "This talking buddy answer was wrong or not right for children:\n\n$answer\n\n" +
+                "(SooFunny ${com.chengjianglong.soofunny.BuildConfigInfo.versionName(context)}, Android)\n"
+            val mail = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))
+                .putExtra(Intent.EXTRA_EMAIL, arrayOf(REPORT_EMAIL))
+                .putExtra(Intent.EXTRA_SUBJECT, "SooFunny: talking buddy answer")
+                .putExtra(Intent.EXTRA_TEXT, body)
+            runCatching { context.startActivity(Intent.createChooser(mail, lang.pick("Report", "举报"))) }
+        }
+    }
+}
+
+/** The contact address shown in Settings → About. */
+private const val REPORT_EMAIL = "chengjiang.long@gmail.com"
 
 @Composable
 private fun Controls(buddy: WordBuddy, childSpeaksChinese: Boolean, onChildSpeaksChinese: (Boolean) -> Unit) {

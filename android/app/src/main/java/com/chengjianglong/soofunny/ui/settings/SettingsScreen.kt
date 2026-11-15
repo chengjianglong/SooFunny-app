@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.chengjianglong.soofunny.BuildConfigInfo
 import com.chengjianglong.soofunny.core.AppSettings
+import com.chengjianglong.soofunny.core.BuddyModel
 import com.chengjianglong.soofunny.core.LearningLanguage
 import com.chengjianglong.soofunny.core.Speech
 import com.chengjianglong.soofunny.core.voice.Kokoro
@@ -141,6 +142,8 @@ fun SettingsScreen(onClose: () -> Unit) {
                 }
             }
 
+            BuddySection()
+
             Section("", footer = null) {
                 TextButton(onClick = { AppSettings.resetDefaults(); NaturalVoices.resetDefaults() }) {
                     Text(lang.pick("Reset defaults", "恢复默认设置"), color = KidColors.Red, fontSize = 17.sp)
@@ -151,11 +154,47 @@ fun SettingsScreen(onClose: () -> Unit) {
                 Pair(lang.pick("Version", "版本"), BuildConfigInfo.versionName(context)).let { (k, v) -> InfoRow(k, v) }
                 InfoRow(lang.pick("Developers", "开发者"), "Chengjiang Long and Yao Xu")
                 InfoRow(lang.pick("Contact", "联系我们"), "chengjiang.long@gmail.com")
-                Text(lang.pick("SooFunny works offline: no accounts, no ads, and nothing leaves this device.",
-                    "SooFunny 离线使用：没有账号，没有广告，任何内容都不会离开这台设备。", "\n"),
+                Text(lang.pick("SooFunny works offline: no accounts, no ads, and nothing you make or say leaves this device. The internet is used only to download the talking buddy.",
+                    "SooFunny 离线使用：没有账号，没有广告，你做的和说的都不会离开这台设备。只有下载小伙伴时才会联网。", "\n"),
                     fontSize = 14.sp, color = Color.Gray, modifier = Modifier.padding(top = 6.dp))
             }
         }
+    }
+}
+
+/** The talking buddy's downloaded model: its size, and a button to delete it. */
+@Composable
+private fun BuddySection() {
+    val context = LocalContext.current
+    val lang = language
+    androidx.compose.runtime.LaunchedEffect(Unit) { BuddyModel.refresh(context) }
+    val ready = BuddyModel.state is BuddyModel.State.Ready
+    var confirm by remember { mutableStateOf(false) }
+    Section(lang.pick("Talking buddy", "说话小伙伴"), footer = lang.pick(
+        if (ready) "The buddy's AI model (Qwen 2.5) is on this device. Deleting it frees 1.1 GB; it can be downloaded again from the buddy screen."
+        else "The buddy's AI model isn't downloaded. A grown-up can download it (1.1 GB) from the buddy screen in Words or Sports.",
+        if (ready) "小伙伴的 AI 模型（Qwen 2.5）已在这台设备上。删除可腾出 1.1 GB，之后可以在小伙伴页面重新下载。"
+        else "还没有下载小伙伴的 AI 模型。家长可以在“单词”或“运动”的小伙伴页面下载（1.1 GB）。", "\n")) {
+        if (ready) {
+            TextButton(onClick = { confirm = true }) {
+                Text(lang.pick("Delete the buddy's model", "删除小伙伴的模型"), color = KidColors.Red, fontSize = 17.sp)
+            }
+        } else {
+            InfoRow(lang.pick("Model", "模型"), lang.pick("Not downloaded", "未下载"))
+        }
+    }
+    if (confirm) {
+        androidx.compose.material3.AlertDialog(
+            onDismissRequest = { confirm = false },
+            title = { Text(lang.pick("Delete the buddy's model?", "删除小伙伴的模型？")) },
+            text = { Text(lang.pick("The talking buddy won't work until it's downloaded again (1.1 GB).", "删除后，需要重新下载（1.1 GB）小伙伴才能说话。")) },
+            confirmButton = {
+                TextButton(onClick = { confirm = false; BuddyModel.delete(context); BuddyModel.refresh(context) }) {
+                    Text(lang.pick("Delete", "删除"), color = KidColors.Red)
+                }
+            },
+            dismissButton = { TextButton(onClick = { confirm = false }) { Text(lang.pick("Cancel", "取消")) } },
+        )
     }
 }
 

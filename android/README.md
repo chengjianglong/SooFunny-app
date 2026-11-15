@@ -38,7 +38,8 @@ subject of a photo gets more detail than the background (as Apple Vision does on
 | 3 ✅ | **Natural voices**: Kokoro-82M English and Chinese through ONNX Runtime | Done in 0.4; the models ship in the `voices` Play Asset Delivery pack (install-time) |
 | 3 ✅ | **Talking buddy**: Qwen 2.5 1.5B with llama.cpp (NDK), on-device speech recognition | Done in 0.4; the model is downloaded on first use. Still to test on low-memory phones |
 | 3 ✅ | **Make audiobook**, subject detection for coloring pages | Done in 0.4 |
-| 4 | Google Play: signing, store listing, Data safety form, tips with Play Billing | Ask before publishing |
+| 4 | Google Play: signing, store listing, Data safety form | In progress: see [PLAY_LISTING.md](PLAY_LISTING.md). Release signing is set up, the release bundle builds, a grown-up check guards the model download and each buddy answer has a Report button |
+| 5 | Tips with Play Billing | Not in the first Play release |
 
 ## ML Kit
 
@@ -95,6 +96,17 @@ echo "sdk.dir=$HOME/Library/Android/sdk" > local.properties   # once, if Android
 
 The buddy's model is downloaded by the app itself on first use (1.1 GB). On an emulator the
 buddy runs on the x86_64 or arm64 CPU build; expect it to be slow there.
+
+### Release bundle for Google Play
+
+```bash
+./tools/make_upload_key.sh       # once: makes upload-key.jks and keystore.properties (never committed; back them up)
+./gradlew :app:bundleRelease     # app/build/outputs/bundle/release/app-release.aab, signed with the upload key
+```
+
+The release build is minified with R8 (keep rules in `app/proguard-rules.pro`) and ships only
+64-bit code (arm64-v8a, x86_64). Without `keystore.properties` the bundle is built unsigned.
+The store listing, Data safety answers and submission steps are in [PLAY_LISTING.md](PLAY_LISTING.md).
 
 If `java` isn't on the PATH, point `JAVA_HOME` at a JDK, for example
 `export JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home`.

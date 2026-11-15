@@ -1,4 +1,5 @@
 import org.gradle.api.file.FileSystemOperations
+import java.util.Properties
 import javax.inject.Inject
 
 plugins {
@@ -16,6 +17,10 @@ android {
         targetSdk = 37
         versionCode = 4
         versionName = "0.4"
+
+        // 64-bit phones and emulators only: the talking buddy's llama.cpp library is built for
+        // these, and the other libraries' 32-bit copies would only make the app bigger.
+        ndk { abiFilters += listOf("arm64-v8a", "x86_64") }
 
         // The talking buddy's llama.cpp library (src/main/cpp), for phones and emulators.
         externalNativeBuild {
@@ -51,9 +56,29 @@ android {
         noCompress += listOf("onnx")
     }
 
+    // Release signing with the Play upload key, if android/keystore.properties exists (it and the
+    // key are made by tools/make_upload_key.sh and never committed). Without it the release
+    // bundle is built unsigned.
+    val keystoreFile = rootProject.file("keystore.properties")
+    if (keystoreFile.exists()) {
+        val keystore = Properties().apply { keystoreFile.inputStream().use(::load) }
+        signingConfigs {
+            create("upload") {
+                storeFile = rootProject.file(keystore.getProperty("storeFile"))
+                storePassword = keystore.getProperty("storePassword")
+                keyAlias = keystore.getProperty("keyAlias")
+                keyPassword = keystore.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (keystoreFile.exists()) signingConfig = signingConfigs.getByName("upload")
             isMinifyEnabled = true
+            isShrinkResources = true
+            // Symbols for the native library, so Play Console can read crash reports.
+            ndk { debugSymbolLevel = "SYMBOL_TABLE" }
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }

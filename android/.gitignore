@@ -10,3 +10,7 @@ voices/src/main/assets/
 tools/bundletool-*.jar
 # CMake working files for the native build (llama.cpp)
 .cxx/
+# Play upload key and its passwords (tools/make_upload_key.sh): keep them out of git, back them up
+keystore.properties
+*.jks
+*.keystore
