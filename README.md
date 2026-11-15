@@ -12,12 +12,14 @@ photographs ever leaves the device.
 <p align="center"><img src="SooFunny/Assets.xcassets/AppIcon.appiconset/AppIcon.png" width="140" alt="SooFunny app icon"></p>
 
 <p align="center">
-  <a href="marketing/SooFunny-demo.mp4"><img src="docs/images/demo-poster.jpg" width="640" alt="Play the 2-minute SooFunny demo video"></a><br>
-  <b>▶️ <a href="marketing/SooFunny-demo.mp4">Watch the 2-minute demo</a></b>: the app in action, narrated in its own voice<br>
-  Coloring, words with real photos, the talking buddy, books read aloud, sports, math, and free for everyone
+  <a href="marketing/SooFunny-bilingual-demo.mp4"><img src="docs/images/bilingual-demo-poster.jpg" width="640" alt="Play the bilingual SooFunny demo video for parents"></a><br>
+  <b>▶️ <a href="marketing/SooFunny-bilingual-demo.mp4">Watch the bilingual demo for parents</a></b> (3½ minutes, English then Chinese, with captions)<br>
+  Photos to coloring pages, the talking buddy in English and Chinese, books read aloud (even your own), sports, math,<br>
+  and the language switch · 照片变涂色画、会说话的小伙伴、绘本朗读、运动和数学，中英双语
 </p>
 
 <p align="center">
+  🎞️ <a href="marketing/SooFunny-demo.mp4">2-minute English demo</a> ·
   🎬 <a href="marketing/SooFunny-presentation.mp4">2-minute presentation</a> (the slides, narrated) ·
   🏅 <a href="marketing/SooFunny-sports.mp4">Sports animations</a> (36 s, 12 sports) ·
   📑 <a href="marketing/SooFunny-slides.pdf">Introduction slides</a> (PDF)
