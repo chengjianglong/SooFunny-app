@@ -13,7 +13,7 @@ photographs ever leaves the device.
 
 <p align="center">
   <a href="marketing/SooFunny-bilingual-demo.mp4"><img src="docs/images/bilingual-demo-poster.jpg" width="640" alt="Play the bilingual SooFunny demo video for parents"></a><br>
-  <b>▶️ <a href="marketing/SooFunny-bilingual-demo.mp4">Watch the bilingual demo for parents</a></b> (3½ minutes, English then Chinese, with captions)<br>
+  <b>▶️ <a href="marketing/SooFunny-bilingual-demo.mp4">Watch the bilingual demo for parents</a></b> (3 minutes, English then Chinese, with captions)<br>
   Photos to coloring pages, the talking buddy in English and Chinese, books read aloud (even your own), sports, math,<br>
   and the language switch · 照片变涂色画、会说话的小伙伴、绘本朗读、运动和数学，中英双语
 </p>
