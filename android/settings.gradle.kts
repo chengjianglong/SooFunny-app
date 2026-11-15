@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "SooFunny"
 include(":app")
+// Play Asset Delivery pack for the natural voices (the buddy's model is downloaded on first use).
+include(":voices")

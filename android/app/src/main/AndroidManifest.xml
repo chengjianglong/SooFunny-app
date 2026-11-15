@@ -2,10 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- No INTERNET permission: SooFunny works fully offline and nothing leaves the device.
-         ML Kit's libraries ask for network access (for usage logging); remove it so they can't send anything. -->
-    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+    <!-- The internet is used for one thing only: downloading the talking buddy's model (Qwen 2.5,
+         about 1.1 GB) the first time it's needed. Everything else works offline, and nothing a child
+         says, draws, scans or photographs leaves the device. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Asked for by ML Kit's usage logging, which is switched off below. -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
+    <!-- The talking buddy listens to the child's questions (speech recognition, on the device
+         where available). Asked for when the buddy first opens. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <queries>
         <!-- To read words aloud with the device's text-to-speech engine. -->
@@ -15,6 +20,10 @@
         <!-- To take a photo with the camera app (no camera permission needed). -->
         <intent>
             <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <!-- The talking buddy hears questions with the device's speech recognizer. -->
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
         </intent>
     </queries>
 
@@ -34,6 +43,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- ML Kit sends usage logs through Google's data transport library. Remove its upload
+             backend and schedulers, so with the internet allowed for the model download, ML Kit
+             still can't send anything. -->
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            tools:node="remove" />
+        <service
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+            tools:node="remove" />
+        <receiver
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+            tools:node="remove" />
+
+        <!-- Ask Google Play services to install the subject segmentation model with the app. -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="subject_segment" />
+
+        <!-- ONNX Runtime (the natural voices) adds a provider that starts its usage telemetry at
+             launch; remove it so the voices can't send anything. Telemetry is also switched off in code. -->
+        <provider
+            android:name="ai.onnxruntime.TelemetryInitializer"
+            android:authorities="${applicationId}.onnxruntime_telemetry_initializer"
+            tools:node="remove" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

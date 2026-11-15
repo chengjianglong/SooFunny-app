@@ -14,11 +14,30 @@ android {
         applicationId = "com.chengjianglong.soofunny"
         minSdk = 26
         targetSdk = 37
-        versionCode = 3
-        versionName = "0.3"
+        versionCode = 4
+        versionName = "0.4"
+
+        // The talking buddy's llama.cpp library (src/main/cpp), for phones and emulators.
+        externalNativeBuild {
+            cmake {
+                abiFilters += listOf("arm64-v8a", "x86_64")
+                arguments += listOf("-DANDROID_STL=c++_static")
+            }
+        }
+    }
+
+    ndkVersion = "28.2.13676358"
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
     }
 
     buildFeatures { compose = true }
+
+    // The natural voices ship as a Play Asset Delivery pack, installed with the app.
+    assetPacks += listOf(":voices")
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -28,6 +47,8 @@ android {
     androidResources {
         // Photos are already JPEG; storing them uncompressed lets them be read straight from the APK.
         noCompress += listOf("jpg")
+        // Voice models are memory-mapped straight from the APK / asset pack.
+        noCompress += listOf("onnx")
     }
 
     buildTypes {
@@ -70,8 +91,17 @@ abstract class CopyIosAssets : DefaultTask() {
                 include("*.jpg", "*.json")
                 into("showcase")
             }
+            // Natural voices: pronunciation dictionaries, Chinese G2P data and voice styles.
+            from(ios.resolve("Voice/Resources")) {
+                into("voice")
+            }
         }
     }
+}
+
+// Fill the voices asset pack from ../Models before building.
+tasks.named("preBuild") {
+    dependsOn(":voices:copyModels")
 }
 
 val copyIosAssets = tasks.register<CopyIosAssets>("copyIosAssets") {
@@ -82,6 +112,13 @@ val copyIosAssets = tasks.register<CopyIosAssets>("copyIosAssets") {
 androidComponents {
     onVariants { variant ->
         variant.sources.assets?.addGeneratedSourceDirectory(copyIosAssets, CopyIosAssets::outputDir)
+    }
+    // For testing without bundletool: `./gradlew installDebug -PwithModels=true` puts the voices
+    // straight into the debug APK (about 250 MB more), where the app finds them as plain assets.
+    if (providers.gradleProperty("withModels").orNull == "true") {
+        onVariants(selector().withBuildType("debug")) { variant ->
+            variant.sources.assets?.addStaticSourceDirectory(rootProject.file("voices/src/main/assets").path)
+        }
     }
 }
 
@@ -95,6 +132,10 @@ dependencies {
     // My books: on-device text recognition (bundled model, Chinese and Latin) and the system document scanner.
     implementation(libs.mlkit.text.chinese)
     implementation(libs.mlkit.document.scanner)
+    // Color: finds the subject of a photo, so it gets more detail than the background.
+    implementation(libs.mlkit.subject.segmentation)
+    // Natural voices: Kokoro-82M run with ONNX Runtime.
+    implementation(libs.onnxruntime.android)
     debugImplementation(libs.compose.ui.tooling)
     testImplementation(libs.junit)
 }

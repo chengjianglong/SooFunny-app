@@ -42,14 +42,14 @@ object BitmapPixels {
      * Splits a picture into blocks: drawings at up to [ImageSegmenter.lineArtMaxDimension],
      * photos at [ImageSegmenter.photoMaxDimension]. Slow; call off the main thread.
      *
-     * There is no subject mask on Android (iOS uses Apple Vision for it), so photos are
-     * grouped as one picture.
+     * Photos get more detail on their subject and a simpler background when ML Kit finds a
+     * subject ([SubjectMask]); otherwise they're grouped as one picture.
      */
     fun segment(segmenter: ImageSegmenter, bitmap: Bitmap, detail: SegmentDetail): Segmentation? {
         val pixels = pixelImage(bitmap, segmenter.lineArtMaxDimension) ?: return null
         if (ImageSegmenter.looksLikeLineArt(pixels)) return segmenter.segment(pixels, detail)
         val photo = if (max(pixels.width, pixels.height) <= segmenter.photoMaxDimension) pixels
         else pixelImage(bitmap, segmenter.photoMaxDimension) ?: return null
-        return segmenter.segment(photo, detail, subject = null)
+        return segmenter.segment(photo, detail, subject = SubjectMask.compute(bitmap, photo))
     }
 }

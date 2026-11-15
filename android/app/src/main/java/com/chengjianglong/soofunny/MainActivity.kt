@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.sp
 import com.chengjianglong.soofunny.core.AppSettings
 import com.chengjianglong.soofunny.core.ScannedBookStore
 import com.chengjianglong.soofunny.core.Speech
+import com.chengjianglong.soofunny.engine.SubjectMask
 import com.chengjianglong.soofunny.ui.KidColors
 import com.chengjianglong.soofunny.ui.books.BooksTab
 import com.chengjianglong.soofunny.ui.color.ColorTab
@@ -44,6 +45,7 @@ class MainActivity : ComponentActivity() {
         AppSettings.init(this)
         Speech.init(this)
         ScannedBookStore.init(this)
+        SubjectMask.init(this)
         enableEdgeToEdge()
         setContent {
             MaterialTheme(colorScheme = lightColorScheme(primary = KidColors.Blue, secondary = KidColors.Pink)) {

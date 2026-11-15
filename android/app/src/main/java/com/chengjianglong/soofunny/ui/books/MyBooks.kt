@@ -239,6 +239,7 @@ fun MyBookScreen(book: ScannedBook, onClose: () -> Unit) {
                 KidButton(lang.pick("Read along", "跟读"), KidColors.Orange, Modifier.widthIn(max = 480.dp).fillMaxWidth().heightIn(min = 56.dp),
                     emoji = "📖", enabled = book.pages.isNotEmpty()) { reading = true }
             }
+            item { AudiobookSection(book) }
             item {
                 Column(Modifier.widthIn(max = 480.dp).fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedButton(onClick = sources.scan, modifier = Modifier.fillMaxWidth()) { Text("📄 " + lang.pick("Scan more pages", "继续扫描")) }
@@ -257,7 +258,7 @@ fun MyBookScreen(book: ScannedBook, onClose: () -> Unit) {
         AlertDialog(
             onDismissRequest = { confirmDelete = false },
             title = { Text(lang.pick("Delete ${book.title}?", "删除《${book.title}》？")) },
-            text = { Text(lang.pick("Its pages will be removed from this device.", "它的页面会从这台设备上删除。")) },
+            text = { Text(lang.pick("Its pages and audiobook will be removed from this device.", "它的页面和有声书会从这台设备上删除。")) },
             confirmButton = {
                 TextButton(onClick = { confirmDelete = false; ScannedBookStore.delete(book); onClose() }) {
                     Text(lang.pick("Delete", "删除"), color = KidColors.Red)

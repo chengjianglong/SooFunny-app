@@ -39,6 +39,8 @@ import com.chengjianglong.soofunny.BuildConfigInfo
 import com.chengjianglong.soofunny.core.AppSettings
 import com.chengjianglong.soofunny.core.LearningLanguage
 import com.chengjianglong.soofunny.core.Speech
+import com.chengjianglong.soofunny.core.voice.Kokoro
+import com.chengjianglong.soofunny.core.voice.NaturalVoices
 import com.chengjianglong.soofunny.ui.KidColors
 import com.chengjianglong.soofunny.ui.SooTopBar
 import com.chengjianglong.soofunny.ui.language
@@ -76,10 +78,26 @@ fun SettingsScreen(onClose: () -> Unit) {
                 }
             }
 
-            Section(lang.pick("Reading voice", "朗读声音"), footer = lang.pick(
-                "Words are read by this device's text-to-speech voices and work offline once the voices are installed. Add or change voices in Android Settings → Text-to-speech.",
-                "朗读使用本设备的文字转语音声音，安装后可以离线使用。可以在安卓“设置 → 文字转语音”里添加或更换声音。", "\n")) {
-                Text(lang.pick("Speed", "语速"), fontSize = 17.sp)
+            val natural = NaturalVoices.englishInstalled
+            Section(lang.pick("English voice", "英文声音"), footer = lang.pick(
+                if (natural) "The natural voice runs on this device and works offline. The device voice is this device's text-to-speech; add or change voices in Android Settings → Text-to-speech."
+                else "Words are read by this device's text-to-speech voices and work offline once the voices are installed. Add or change voices in Android Settings → Text-to-speech.",
+                if (natural) "自然的声音在设备上运行，离线可用。设备声音来自本设备的文字转语音，可以在安卓“设置 → 文字转语音”里添加或更换。"
+                else "朗读使用本设备的文字转语音声音，安装后可以离线使用。可以在安卓“设置 → 文字转语音”里添加或更换声音。", "\n")) {
+                if (natural) {
+                    val naturalName = when (lang) {
+                        LearningLanguage.ENGLISH -> "Natural · Heart (recommended)"
+                        LearningLanguage.CHINESE -> "自然 · Heart（推荐）"
+                        LearningLanguage.BOTH -> "Natural · Heart（推荐）"
+                    }
+                    ChoiceRow(naturalName, NaturalVoices.englishChoice == NaturalVoices.EnglishVoice.NATURAL) {
+                        NaturalVoices.englishChoice = NaturalVoices.EnglishVoice.NATURAL
+                    }
+                    ChoiceRow(lang.pick("Device voice", "设备声音"), NaturalVoices.englishChoice == NaturalVoices.EnglishVoice.DEVICE) {
+                        NaturalVoices.englishChoice = NaturalVoices.EnglishVoice.DEVICE
+                    }
+                }
+                Text(lang.pick("Speed", "语速"), fontSize = 17.sp, modifier = Modifier.padding(top = 4.dp))
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("🐢", fontSize = 20.sp)
                     Slider(value = AppSettings.speechRate, onValueChange = { AppSettings.speechRate = it },
@@ -87,14 +105,33 @@ fun SettingsScreen(onClose: () -> Unit) {
                     Text("🐇", fontSize = 20.sp)
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    TextButton(onClick = { Speech.speak("Hello! Let's learn some words.") }) { Text("🔈 " + lang.pick("Try English", "试听英文")) }
-                    TextButton(onClick = { Speech.speak("你好！我们一起来学习吧。") }) { Text("🔈 " + lang.pick("Try Chinese", "试听中文")) }
+                    TextButton(onClick = { Speech.speak(TRY_ENGLISH) }) { Text("🔈 " + lang.pick("Try the voice", "试听")) }
+                    if (!NaturalVoices.chineseInstalled) {
+                        TextButton(onClick = { Speech.speak(TRY_CHINESE) }) { Text("🔈 " + lang.pick("Try Chinese", "试听中文")) }
+                    }
                 }
                 if (!Speech.chineseAvailable) {
                     Text(lang.pick("No Chinese voice is installed yet, so Chinese can't be read aloud.", "还没有安装中文声音，所以中文暂时不能朗读。"),
                         color = KidColors.Red, fontSize = 15.sp)
                 }
                 TextButton(onClick = { openTtsSettings(context) }) { Text(lang.pick("Text-to-speech settings", "文字转语音设置")) }
+            }
+
+            if (NaturalVoices.chineseInstalled) {
+                Section(lang.pick("Chinese voice", "中文声音"), footer = lang.pick(
+                    "Chinese is read in a natural voice that runs on this device and works offline.",
+                    "中文用自然的声音朗读，在设备上运行，离线可用。", "\n")) {
+                    Kokoro.chineseVoices.forEachIndexed { i, voice ->
+                        val name = lang.pick("Voice ${i + 1}" + (if (i == 0) " (recommended)" else ""), "声音${i + 1}" + (if (i == 0) "（推荐）" else ""))
+                        ChoiceRow(name, NaturalVoices.chineseVoice == voice) {
+                            if (NaturalVoices.chineseVoice != voice) {
+                                NaturalVoices.chineseVoice = voice
+                                Speech.speak(TRY_CHINESE)
+                            }
+                        }
+                    }
+                    TextButton(onClick = { Speech.speak(TRY_CHINESE) }) { Text("🔈 " + lang.pick("Try the voice", "试听")) }
+                }
             }
 
             Section("", footer = null) {
@@ -105,7 +142,7 @@ fun SettingsScreen(onClose: () -> Unit) {
             }
 
             Section("", footer = null) {
-                TextButton(onClick = { AppSettings.resetDefaults() }) {
+                TextButton(onClick = { AppSettings.resetDefaults(); NaturalVoices.resetDefaults() }) {
                     Text(lang.pick("Reset defaults", "恢复默认设置"), color = KidColors.Red, fontSize = 17.sp)
                 }
             }
@@ -119,6 +156,18 @@ fun SettingsScreen(onClose: () -> Unit) {
                     fontSize = 14.sp, color = Color.Gray, modifier = Modifier.padding(top = 6.dp))
             }
         }
+    }
+}
+
+private const val TRY_ENGLISH = "Hello! Let's learn some words."
+private const val TRY_CHINESE = "你好！我们一起来学习吧。"
+
+/** One choice of several, with a radio button. */
+@Composable
+private fun ChoiceRow(label: String, selected: Boolean, onClick: () -> Unit) {
+    Row(Modifier.fillMaxWidth().clickable(onClick = onClick).padding(vertical = 2.dp), verticalAlignment = Alignment.CenterVertically) {
+        RadioButton(selected = selected, onClick = onClick)
+        Text(label, fontSize = 17.sp)
     }
 }
 

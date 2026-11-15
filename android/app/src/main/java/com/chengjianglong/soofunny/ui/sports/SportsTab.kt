@@ -53,6 +53,10 @@ import com.chengjianglong.soofunny.core.SportSeason
 import com.chengjianglong.soofunny.core.Sports
 import com.chengjianglong.soofunny.core.rememberAssetImage
 import com.chengjianglong.soofunny.ui.BouncyTitle
+import com.chengjianglong.soofunny.ui.KidButton
+import com.chengjianglong.soofunny.ui.buddy.BuddyScreen
+import com.chengjianglong.soofunny.core.WordCategory
+import com.chengjianglong.soofunny.core.WordEntry
 import com.chengjianglong.soofunny.ui.KidColors
 import com.chengjianglong.soofunny.ui.ReadAlongText
 import com.chengjianglong.soofunny.ui.SooTopBar
@@ -73,12 +77,25 @@ fun SportsTab() {
     val all = remember { Sports.all(context) }
     var season by rememberSaveable { mutableStateOf(SportSeason.SUMMER) }
     var open by rememberSaveable { mutableStateOf<Int?>(null) }
+    // Talking with the buddy about the open sport.
+    var talking by rememberSaveable { mutableStateOf(false) }
     val sports = all.filter { it.season == season }
 
     val index = open
+    if (index != null && talking) {
+        val sport = sports[index]
+        BuddyScreen(
+            WordEntry(sport.english, sport.emoji, sport.chinese),
+            WordCategory("${sport.season.english} sports", sport.season.emoji, "${sport.season.chinese}运动", emptyList()),
+            facts = sport.aboutEnglish + " " + sport.aboutChinese,
+            photoPaths = listOfNotNull(sport.photoPath),
+            onClose = { talking = false; Speech.stop() },
+        )
+        return
+    }
     if (index != null) {
         BackHandler { open = null; Speech.stop() }
-        SportDetail(sports, season, index, onIndex = { open = it }, onBack = { open = null; Speech.stop() })
+        SportDetail(sports, season, index, onIndex = { open = it }, onTalk = { talking = true }, onBack = { open = null; Speech.stop() })
         return
     }
 
@@ -168,7 +185,7 @@ private fun SportPicture(sport: Sport, size: Dp, tint: Color) {
  * aloud as soon as the page opens, with the words lighting up. Previous / Next move through the season.
  */
 @Composable
-private fun SportDetail(sports: List<Sport>, season: SportSeason, index: Int, onIndex: (Int) -> Unit, onBack: () -> Unit) {
+private fun SportDetail(sports: List<Sport>, season: SportSeason, index: Int, onIndex: (Int) -> Unit, onTalk: () -> Unit, onBack: () -> Unit) {
     val lang = language
     val sport = sports[index]
     val about = when (lang) {
@@ -196,6 +213,7 @@ private fun SportDetail(sports: List<Sport>, season: SportSeason, index: Int, on
                     Text(if (reading) "🔊" else "🔈", fontSize = 26.sp)
                 }
             }
+            KidButton(lang.pick("Talk about ${sport.english}", "聊聊${sport.chinese}"), KidColors.Purple, emoji = "✨", onClick = onTalk)
             SportDemos.demo(sport.id)?.let { demo ->
                 Column(
                     Modifier.widthIn(max = 700.dp).fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(Color.White).padding(16.dp),

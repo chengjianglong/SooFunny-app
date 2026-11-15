@@ -6,6 +6,8 @@ activityCompose = "1.13.0"
 junit = "4.13.2"
 mlkitText = "16.0.1"
 mlkitScanner = "16.0.0"
+mlkitSubject = "16.0.0-beta1"
+onnxruntime = "1.31.1"
 
 [libraries]
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
@@ -17,8 +19,11 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
 mlkit-text-chinese = { module = "com.google.mlkit:text-recognition-chinese", version.ref = "mlkitText" }
 mlkit-document-scanner = { module = "com.google.android.gms:play-services-mlkit-document-scanner", version.ref = "mlkitScanner" }
+mlkit-subject-segmentation = { module = "com.google.android.gms:play-services-mlkit-subject-segmentation", version.ref = "mlkitSubject" }
 junit = { module = "junit:junit", version.ref = "junit" }
+onnxruntime-android = { module = "com.microsoft.onnxruntime:onnxruntime-android", version.ref = "onnxruntime" }
 
 [plugins]
+android-asset-pack = { id = "com.android.asset-pack", version.ref = "agp" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

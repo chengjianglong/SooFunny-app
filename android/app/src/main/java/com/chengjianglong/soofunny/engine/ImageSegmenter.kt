@@ -50,8 +50,7 @@ class Segmentation(
  * Black-and-white drawings are split along their own lines. Photos go through a sketch pipeline:
  * edge-preserving smoothing, color grouping in a perceptual color space, merging of look-alike
  * neighbors, contour smoothing at a higher resolution, and even anti-aliased outlines.
- * (iOS also separates subject and background with Apple Vision; on Android there is no subject
- * mask, so [segment] is called with `subject = null` for photos.)
+ * (The subject mask comes from ML Kit on Android, see [SubjectMask], and Apple Vision on iOS.)
  */
 class ImageSegmenter(
     /** Drawings keep their own lines at a high resolution. */

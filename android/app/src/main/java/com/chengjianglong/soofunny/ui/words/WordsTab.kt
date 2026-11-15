@@ -60,6 +60,9 @@ import com.chengjianglong.soofunny.core.WordEntry
 import com.chengjianglong.soofunny.core.WordPhotos
 import com.chengjianglong.soofunny.core.rememberAssetImage
 import com.chengjianglong.soofunny.ui.BouncyTitle
+import com.chengjianglong.soofunny.ui.KidButton
+import com.chengjianglong.soofunny.ui.buddy.BuddyScreen
+import com.chengjianglong.soofunny.ui.buddy.TalkSparkle
 import com.chengjianglong.soofunny.ui.KidColors
 import com.chengjianglong.soofunny.ui.SooTopBar
 import com.chengjianglong.soofunny.ui.SpeakButton
@@ -77,6 +80,8 @@ fun WordsTab() {
     val categories = remember { runCatching { WordDictionary.load(context) }.getOrNull() }
     var categoryIndex by rememberSaveable { mutableStateOf<Int?>(null) }
     var wordIndex by rememberSaveable { mutableStateOf<Int?>(null) }
+    // The word being talked about with the buddy (✨), in the open group.
+    var talkIndex by rememberSaveable { mutableStateOf<Int?>(null) }
 
     if (categories == null) {
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -86,13 +91,16 @@ fun WordsTab() {
     }
     val category = categoryIndex?.let { categories.getOrNull(it) }
     when {
+        category != null && talkIndex != null -> {
+            BuddyScreen(category.words[talkIndex!!], category, onClose = { talkIndex = null; Speech.stop() })
+        }
         category != null && wordIndex != null -> {
             BackHandler { wordIndex = null; Speech.stop() }
-            WordDetail(category, wordIndex!!, onIndex = { wordIndex = it }, onBack = { wordIndex = null; Speech.stop() })
+            WordDetail(category, wordIndex!!, onIndex = { wordIndex = it }, onTalk = { talkIndex = wordIndex }, onBack = { wordIndex = null; Speech.stop() })
         }
         category != null -> {
             BackHandler { categoryIndex = null; Speech.stop() }
-            WordList(category, onOpen = { wordIndex = it }, onBack = { categoryIndex = null; Speech.stop() })
+            WordList(category, onOpen = { wordIndex = it }, onTalk = { talkIndex = it }, onBack = { categoryIndex = null; Speech.stop() })
         }
         else -> CategoryGrid(categories, onOpen = { categoryIndex = it })
     }
@@ -139,7 +147,7 @@ private fun CategoryGrid(categories: List<WordCategory>, onOpen: (Int) -> Unit) 
 }
 
 @Composable
-private fun WordList(category: WordCategory, onOpen: (Int) -> Unit, onBack: () -> Unit) {
+private fun WordList(category: WordCategory, onOpen: (Int) -> Unit, onTalk: (Int) -> Unit, onBack: () -> Unit) {
     val lang = language
     Column(Modifier.fillMaxSize().background(GroupedBackground)) {
         SooTopBar(title = category.title(lang), onBack = onBack)
@@ -161,6 +169,7 @@ private fun WordList(category: WordCategory, onOpen: (Int) -> Unit, onBack: () -
                     WordName(word.text, word.chinese, lang, fontSize = 22, fontWeight = FontWeight.SemiBold,
                         modifier = Modifier.weight(1f).padding(start = 12.dp), singleLine = true)
                     SpeakButton(lang.spoken(word.text, word.chinese))
+                    TalkSparkle(lang.pick("Talk about ${word.text}", "聊聊${word.chinese ?: word.text}")) { onTalk(index) }
                 }
             }
         }
@@ -170,7 +179,7 @@ private fun WordList(category: WordCategory, onOpen: (Int) -> Unit, onBack: () -
 /** One word, big: its picture, the word to hear, and its letters to tap one by one. */
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun WordDetail(category: WordCategory, index: Int, onIndex: (Int) -> Unit, onBack: () -> Unit) {
+private fun WordDetail(category: WordCategory, index: Int, onIndex: (Int) -> Unit, onTalk: () -> Unit, onBack: () -> Unit) {
     val lang = language
     val words = category.words
     val word = words[index]
@@ -195,6 +204,7 @@ private fun WordDetail(category: WordCategory, index: Int, onIndex: (Int) -> Uni
                     modifier = Modifier.weight(1f, fill = false))
                 SpeakButton(spoken, size = 30)
             }
+            KidButton(lang.pick("Talk about ${word.text}", "聊聊${word.chinese ?: word.text}"), KidColors.Purple, emoji = "✨", onClick = onTalk)
             if (lang != LearningLanguage.CHINESE || word.chinese == null) FlowLetters(word.text)
             if (lang != LearningLanguage.ENGLISH && word.chinese != null) FlowLetters(word.chinese)
             Row(Modifier.widthIn(max = 480.dp).fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(16.dp)) {

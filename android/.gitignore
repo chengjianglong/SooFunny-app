@@ -5,3 +5,8 @@
 local.properties
 build/
 captures/
+# Voice models copied into the asset pack at build time (from ../Models, not stored in git)
+voices/src/main/assets/
+tools/bundletool-*.jar
+# CMake working files for the native build (llama.cpp)
+.cxx/

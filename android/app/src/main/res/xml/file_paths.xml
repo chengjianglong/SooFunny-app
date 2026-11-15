@@ -3,4 +3,6 @@
     <!-- Camera photos and pictures being shared live in the app's own cache, never in shared storage. -->
     <cache-path name="camera" path="camera/" />
     <cache-path name="shared" path="shared/" />
+    <!-- Audiobooks of scanned books, shared only after the grown-up check. -->
+    <files-path name="books" path="books/" />
 </paths>

@@ -2,25 +2,32 @@
 
 The Android version of SooFunny, in Kotlin and Jetpack Compose. It shares its content with the
 iOS app in `../SooFunny/` (the word list, word photos, gallery photos, sports and books), so
-there is one copy of everything a child sees. Like the iOS app it works fully offline: the app
-has no `INTERNET` permission, no accounts and no ads, and nothing leaves the device.
+there is one copy of everything a child sees. Like the iOS app it has no accounts and no ads,
+and nothing a child says, draws, scans or photographs leaves the device. The internet is used for
+one thing only: downloading the talking buddy's model the first time it's needed (see
+[Privacy](#privacy-and-the-internet)).
 
-## What's in this version (0.3)
+## What's in this version (0.4)
 
 The five tabs, in the iOS order, with the **English / 中文 / Bilingual 双语** switch (🌐 in the
 top bar of every tab and in Settings → Language 语言). The choice is saved and applies to every tab.
 
-| Tab | In 0.1 |
+| Tab | What's there |
 |---|---|
 | 🎨 **Color** | The gallery (21 photos and 4 drawings in five groups, Surprise me!), your own picture from **Photos** or the **Camera**, and coloring pages made on the device: Big / Medium / Small blocks, tap or drag to fill, Undo, Magic, Real, Peek, Clear, Eraser, 18 crayons plus **More colors**; **Share** or **Save** (to Pictures › SooFunny) the finished picture |
-| 🔤 **Words** | 32 groups, 754 words with their Chinese, emoji and the 516 real photos; a word page that reads the word, lets kids tap each letter or character, and Previous / Next |
-| 🏃 **Sports** | 51 summer and winter sports with photos, names and introductions in both languages, read aloud on opening with the words lighting up, and a looping **Watch it! 看一看！** animation for each (paused when animations are turned off) |
-| 📚 **Books** | The 10 built-in story books, page by page in English, Chinese or both, with **Read to me** turning pages by itself and highlighting each word. **My books**: **Scan a book** with the camera or add pages **From Photos**; the words are read on the device (English, Chinese or both), and grown-ups can name the book, fix the words, remove pages and change their order before saving. Then **Read along** with each page's photo, the English in the English voice and the Chinese in the Chinese voice; pinyin is skipped. Books are kept in the app's own storage |
+| 🔤 **Words** | 32 groups, 754 words with their Chinese, emoji and the 516 real photos; a word page that reads the word, lets kids tap each letter or character, and Previous / Next; ✨ **Talk about …** opens the talking buddy |
+| 🏃 **Sports** | 51 summer and winter sports with photos, names and introductions in both languages, read aloud on opening with the words lighting up, a looping **Watch it! 看一看！** animation for each (paused when animations are turned off), and **Talk about …** with the buddy, who knows the sport's introduction |
+| 📚 **Books** | The 10 built-in story books, page by page in English, Chinese or both, with **Read to me** turning pages by itself and highlighting each word. **My books**: **Scan a book** with the camera or add pages **From Photos**; the words are read on the device (English, Chinese or both), and grown-ups can name the book, fix the words, remove pages and change their order before saving. Then **Read along** with each page's photo, the English in the English voice and the Chinese in the Chinese voice; pinyin is skipped. **Make audiobook** records the whole book to an `.m4a` to listen to anytime; sharing it needs the "Ask a grown-up" check. Books are kept in the app's own storage |
 | ➕ **Math** | Flashcard Game, Quiz, results with stars, Progress Reports and math settings, following the same rules as iOS |
-| ⚙️ **Settings** | Language, reading speed, try the English and Chinese voices, photo credits, reset, About |
+| ⚙️ **Settings** | Language, English voice (Natural · Heart or the device voice), Chinese voice (five natural voices), reading speed, Try the voice, photo credits, reset, About |
+| ✨ **Talking buddy** | Qwen 2.5 1.5B running on the device with llama.cpp: explains the word or sport, asks "What would you like to know about …?", listens (on-device speech recognition only) or takes a typed question, and answers in a few short sentences, read aloud as they're written with each word lit up. English, Chinese or Bilingual, with **I speak English / 我说中文**. Needs a one-time 1.1 GB download, started by a grown-up on the buddy screen |
 
-Reading aloud uses the device's own text-to-speech voices (Google's on most phones), English
-and Chinese each in its own voice. Settings warns when no Chinese voice is installed.
+Reading aloud uses the natural **Kokoro-82M** voices, run on the device with ONNX Runtime: English
+("Heart", 8-bit) and Chinese (v1.1-zh, 16-bit, five voices), with Kotlin ports of the iOS app's
+English phonemizer and `ChineseG2P` (it matches misaki on all 1,133 Chinese strings in the app).
+Without the voice models (a plain `installDebug`), the device's text-to-speech voices are used.
+Coloring pages use ML Kit subject segmentation, when Google Play services has its model, so the
+subject of a photo gets more detail than the background (as Apple Vision does on iOS).
 
 ## Plan for later versions
 
@@ -28,12 +35,12 @@ and Chinese each in its own voice. Settings warns when no Chinese voice is insta
 |---|---|---|
 | 2 ✅ | Sports animations (**Watch it!**), Camera on Color, Share/save the colored picture, More colors | Done in 0.2, with no new dependencies |
 | 2 ✅ | **My books**: scan or pick pages and read them aloud | Done in 0.3 with ML Kit (below). Still to do: **Make audiobook** (an `.m4a` of the whole book) |
-| 3 | **Natural voices**: Kokoro-82M English and Chinese through ONNX Runtime for Android, with a Kotlin port of the English phonemizer and `ChineseG2P` | Adds ~250 MB of models, so it needs a download-on-first-use or Play Asset Delivery decision |
-| 3 | **Talking buddy**: Qwen 2.5 1.5B with llama.cpp (NDK), on-device speech recognition | About 1 GB model; needs the same delivery decision and testing on low-memory phones |
-| 3 | Subject detection for coloring pages (Apple Vision on iOS) | ML Kit subject segmentation needs Google Play services; to decide |
+| 3 ✅ | **Natural voices**: Kokoro-82M English and Chinese through ONNX Runtime | Done in 0.4; the models ship in the `voices` Play Asset Delivery pack (install-time) |
+| 3 ✅ | **Talking buddy**: Qwen 2.5 1.5B with llama.cpp (NDK), on-device speech recognition | Done in 0.4; the model is downloaded on first use. Still to test on low-memory phones |
+| 3 ✅ | **Make audiobook**, subject detection for coloring pages | Done in 0.4 |
 | 4 | Google Play: signing, store listing, Data safety form, tips with Play Billing | Ask before publishing |
 
-## ML Kit and privacy
+## ML Kit
 
 My books uses two Google ML Kit libraries, added in 0.3:
 
@@ -46,9 +53,25 @@ My books uses two Google ML Kit libraries, added in 0.3:
   time it's used, so it needs a phone with the Play Store. The emulator images without the
   Play Store can't install it and show "Something went wrong"; use **From Photos** there.
 
-ML Kit's libraries ask for network access to log usage. The manifest removes `INTERNET` and
-`ACCESS_NETWORK_STATE` (`tools:node="remove"`), so the app still can't send anything; check
-with `app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml`.
+- **Subject segmentation** (`play-services-mlkit-subject-segmentation`, beta), added in 0.4:
+  finds the subject of a photo for coloring pages. Play services installs its model once; until
+  then (or without Play services) photos are segmented as one picture, as before.
+
+## Privacy and the internet
+
+- The app has the `INTERNET` permission for **one download**: the buddy's model (Qwen 2.5 1.5B
+  Instruct, 1.1 GB, from Hugging Face, checked against its SHA-256 and resumable;
+  `core/ModelFiles.kt`). A grown-up starts it on the buddy screen. Nothing about the child is sent.
+- Libraries that would otherwise send usage data are switched off in the manifest
+  (`tools:node="remove"`): ML Kit's data-transport upload service, scheduler and backend, ONNX
+  Runtime's `TelemetryInitializer` (telemetry is also turned off in code), and the
+  `ACCESS_NETWORK_STATE` permission they ask for. Check the result in
+  `app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml`.
+- The buddy listens **only with the on-device speech recognizer** (Android 12 and later). If the
+  phone has none for the chosen language, the buddy asks the system to add it and the child types
+  instead; the server recognizer is never used, so what a child says stays on the device.
+- Play services' own document scanner and the ML Kit model installs are done by Google Play
+  services, not by the app.
 
 ## Building and running
 
@@ -56,13 +79,22 @@ Requirements: JDK 17 or later (21 tested), the Android SDK with platform 37 and 
 and an emulator or phone on Android 8.0 (API 26) or later. Android Studio works too: open the
 `android/` folder.
 
+Get the voice models first (they aren't in git), from the repository root: `scripts/fetch_model.sh`
+puts them in `Models/`, and the build copies them into the `voices` asset pack. The NDK
+(28.2.13676358) and CMake (3.22.1) build llama.cpp for the buddy; the build uses
+`Vendor/llama.cpp-src` if it's there, else fetches tag b11577 from GitHub.
+
 ```bash
 cd android
 echo "sdk.dir=$HOME/Library/Android/sdk" > local.properties   # once, if Android Studio hasn't made it
-./gradlew :app:assembleDebug                                   # builds app/build/outputs/apk/debug/app-debug.apk
-./gradlew :app:installDebug                                    # installs on the running emulator or phone
-./gradlew :app:testDebugUnitTest                               # JVM tests (word list, coloring engine, math rules)
+./gradlew :app:installDebug                                    # quick install, without the voice models (device voices)
+./gradlew :app:installDebug -PwithModels=true                  # debug APK with the voice models inside (about 250 MB more)
+./tools/install_bundle.sh                                      # the App Bundle with its asset pack, installed the way Google Play would (bundletool)
+./gradlew :app:testDebugUnitTest                               # JVM tests (word list, coloring engine, math, voices, buddy, books)
 ```
+
+The buddy's model is downloaded by the app itself on first use (1.1 GB). On an emulator the
+buddy runs on the x86_64 or arm64 CPU build; expect it to be slow there.
 
 If `java` isn't on the PATH, point `JAVA_HOME` at a JDK, for example
 `export JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home`.

@@ -37,6 +37,7 @@ object AppSettings {
             languageState = value
             prefs?.edit()?.putString(LANGUAGE, value.key)?.apply()
             Speech.stop()
+            com.chengjianglong.soofunny.core.voice.NaturalVoices.languageChanged(value)
         }
 
     /** Speech speed: 1.0 is normal. */

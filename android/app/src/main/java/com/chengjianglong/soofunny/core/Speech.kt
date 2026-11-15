@@ -9,47 +9,66 @@ import android.speech.tts.UtteranceProgressListener
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import com.chengjianglong.soofunny.core.voice.Kokoro
+import com.chengjianglong.soofunny.core.voice.NaturalPlayback
+import com.chengjianglong.soofunny.core.voice.NaturalVoices
+import kotlinx.coroutines.CompletableDeferred
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import java.util.Locale
 
 /**
- * Reads text aloud with the device's own text-to-speech engine, offline when the engine's voices
- * are installed. Text with both languages ("dog, 狗") is split into runs and each run is read in
- * its own language, one after another.
- *
- * (The iOS app uses the Kokoro neural voices; on Android that's a later phase. See the README.)
+ * Reads text aloud, offline. Text with both languages ("dog, 狗") is split into runs and each run is
+ * read in its own language, one after another:
+ *  - English in the natural Kokoro voice ("Heart") when it's installed and chosen in Settings,
+ *    Chinese in the natural Chinese voice chosen in Settings when it's installed ([NaturalVoices]);
+ *  - otherwise in the device's own text-to-speech voices.
  */
 object Speech {
     private var tts: TextToSpeech? = null
     private var ready = false
+    /** Whether the device's text-to-speech has finished starting (working or not). */
+    private var started = false
     private val main = Handler(Looper.getMainLooper())
+    private val scope = MainScope()
 
     /** The text being spoken right now, to animate its speaker button. */
     var speaking by mutableStateOf<String?>(null)
         private set
 
-    /** The character range of [speaking] being read now, for word highlighting (when the engine reports it). */
+    /** The character range of [speaking] being read now, for word highlighting. */
     var range by mutableStateOf<IntRange?>(null)
         private set
 
-    /** Whether a Chinese voice is installed. */
-    var chineseAvailable by mutableStateOf(true)
-        private set
+    private var deviceChinese by mutableStateOf(true)
+
+    /** Whether Chinese can be read aloud (by the natural Chinese voice or an installed device voice). */
+    val chineseAvailable: Boolean get() = NaturalVoices.chineseInstalled || deviceChinese
 
     private var session = 0
-    private var parts: List<BookLanguage.Run> = emptyList()
+    private var job: Job? = null
     private var onFinished: (() -> Unit)? = null
     private var pending: Pair<String, (() -> Unit)?>? = null
 
+    /** Device-voice utterances being said, by id: where their text starts, and their end. */
+    private class Utterance(val text: String, val offset: Int, val done: CompletableDeferred<Unit>)
+    private val utterances = HashMap<String, Utterance>()
+    private var nextUtterance = 0
+
     fun init(context: Context) {
         if (tts != null) return
+        NaturalVoices.init(context)
         tts = TextToSpeech(context.applicationContext) { status ->
             main.post {
+                started = true
                 ready = status == TextToSpeech.SUCCESS
                 if (ready) {
                     val zh = tts?.isLanguageAvailable(Locale.SIMPLIFIED_CHINESE) ?: TextToSpeech.LANG_NOT_SUPPORTED
-                    chineseAvailable = zh >= TextToSpeech.LANG_AVAILABLE
-                    pending?.let { (text, done) -> speak(text, done) }
+                    deviceChinese = zh >= TextToSpeech.LANG_AVAILABLE
                 }
+                pending?.let { (text, done) -> speak(text, done) }
                 pending = null
             }
         }.also { it.setOnUtteranceProgressListener(listener) }
@@ -58,28 +77,49 @@ object Speech {
     /** Says [text]. [onFinished] runs when it has all been said (not when it's stopped). */
     fun speak(text: String, onFinished: (() -> Unit)? = null) {
         stopVoice()
-        val engine = tts
-        if (engine == null || !ready) {
+        // Pinyin printed with the characters isn't read, nor stretches of only marks.
+        val parts = BookLanguage.runs(text).map { run ->
+            if (run.language == BookLanguage.ENGLISH) run.copy(text = BookLanguage.withoutPinyin(run.text)) else run
+        }.filter { run -> run.text.any { it.isLetterOrDigit() } }
+        val needsDevice = parts.any { !NaturalVoices.isAvailable(it.language) }
+        if (needsDevice && tts != null && !started) {
+            // The device voice is still starting: say it once it's ready.
             pending = text to onFinished
             speaking = text
             return
         }
         session += 1
+        val mine = session
         speaking = text
         range = null
         this.onFinished = onFinished
-        // Pinyin printed with the characters isn't read, nor stretches of only marks.
-        parts = BookLanguage.runs(text).map { run ->
-            if (run.language == BookLanguage.ENGLISH) run.copy(text = BookLanguage.withoutPinyin(run.text)) else run
-        }.filter { run -> run.text.any { it.isLetterOrDigit() } }
         if (parts.isEmpty()) {
-            finish(session)
+            finish(mine)
             return
         }
-        engine.setSpeechRate(AppSettings.speechRate)
-        parts.forEachIndexed { index, part ->
-            engine.language = if (part.language == BookLanguage.CHINESE) Locale.SIMPLIFIED_CHINESE else Locale.US
-            engine.speak(part.text, TextToSpeech.QUEUE_ADD, Bundle(), "$session:$index")
+        job = scope.launch {
+            // All the natural voice's phrases are asked for up front, so later ones are made while
+            // earlier ones play.
+            val plans = parts.map { part ->
+                if (!NaturalVoices.isAvailable(part.language)) return@map null
+                val engine = if (part.language == BookLanguage.ENGLISH) NaturalVoices.english else NaturalVoices.chinese
+                val pieces = Kokoro.pieces(part.text).map { it.copy(offset = it.offset + part.offset) }
+                pieces to pieces.map { engine.audio(it.text) }
+            }
+            try {
+                for ((part, plan) in parts.zip(plans)) {
+                    if (plan == null) {
+                        deviceSay(part.text, part.language, part.offset)
+                    } else {
+                        NaturalPlayback.play(plan.first, plan.second,
+                            onWord = { if (mine == session) range = it },
+                            fallback = { piece -> deviceSay(piece.text, part.language, piece.offset) })
+                    }
+                }
+                finish(mine)
+            } finally {
+                plans.forEach { plan -> plan?.second?.forEach(Deferred<FloatArray?>::cancel) }
+            }
         }
     }
 
@@ -93,7 +133,11 @@ object Speech {
         pending = null
         onFinished = null
         session += 1
+        job?.cancel()
+        job = null
         tts?.stop()
+        utterances.values.forEach { it.done.complete(Unit) }
+        utterances.clear()
     }
 
     private fun finish(forSession: Int) {
@@ -105,32 +149,40 @@ object Speech {
         done?.invoke()
     }
 
-    private fun parse(id: String?): Pair<Int, Int>? {
-        val (s, i) = id?.split(":")?.takeIf { it.size == 2 } ?: return null
-        return (s.toIntOrNull() ?: return null) to (i.toIntOrNull() ?: return null)
+    /** Says [text] in the device's voice and waits until it's been said. */
+    private suspend fun deviceSay(text: String, language: BookLanguage, offset: Int) {
+        val engine = tts?.takeIf { ready } ?: return
+        if (text.none { it.isLetterOrDigit() }) return
+        val id = "u${nextUtterance++}"
+        val utterance = Utterance(text, offset, CompletableDeferred())
+        utterances[id] = utterance
+        try {
+            engine.setSpeechRate(AppSettings.speechRate)
+            engine.language = if (language == BookLanguage.CHINESE) Locale.SIMPLIFIED_CHINESE else Locale.US
+            if (engine.speak(text, TextToSpeech.QUEUE_ADD, Bundle(), id) != TextToSpeech.SUCCESS) return
+            utterance.done.await()
+        } finally {
+            utterances.remove(id)
+        }
     }
 
     private val listener = object : UtteranceProgressListener() {
         override fun onStart(utteranceId: String?) {
             main.post {
-                val (s, i) = parse(utteranceId) ?: return@post
-                if (s == session) parts.getOrNull(i)?.let { range = it.offset until it.offset + it.text.length }
+                val u = utterances[utteranceId] ?: return@post
+                range = u.offset until u.offset + u.text.length
             }
         }
 
         override fun onRangeStart(utteranceId: String?, start: Int, end: Int, frame: Int) {
             main.post {
-                val (s, i) = parse(utteranceId) ?: return@post
-                val part = parts.getOrNull(i) ?: return@post
-                if (s == session) range = (part.offset + start) until (part.offset + end)
+                val u = utterances[utteranceId] ?: return@post
+                range = (u.offset + start) until (u.offset + end)
             }
         }
 
         override fun onDone(utteranceId: String?) {
-            main.post {
-                val (s, i) = parse(utteranceId) ?: return@post
-                if (s == session && i == parts.lastIndex) finish(s)
-            }
+            main.post { utterances[utteranceId]?.done?.complete(Unit) }
         }
 
         @Deprecated("Deprecated in Java")

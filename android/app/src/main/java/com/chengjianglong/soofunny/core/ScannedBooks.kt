@@ -62,6 +62,8 @@ object ScannedBookStore {
     fun folder(book: ScannedBook) = File(dir(), book.id)
     fun imageFile(book: ScannedBook, page: ScannedBook.Page) = File(folder(book), page.image)
     fun book(id: String) = books.firstOrNull { it.id == id }
+    /** The book's audiobook, once made; changing the book's words or pages removes it. */
+    fun audioFile(book: ScannedBook) = File(folder(book), "audiobook.m4a")
 
     /** Saves a new book from page scans (photos are moved into the book's folder). */
     fun add(title: String, pages: List<PageScan>): ScannedBook {
@@ -87,6 +89,7 @@ object ScannedBookStore {
         val keptImages = kept.map { it.image }.toSet()
         book.pages.filter { it.image !in keptImages }.forEach { File(folder, it.image).delete() }
         val updated = book.copy(title = title.ifBlank { book.title }, pages = kept, language = languageOf(kept))
+        if (updated.pages != book.pages) audioFile(book).delete()
         save(updated)
         val i = books.indexOfFirst { it.id == book.id }
         if (i >= 0) books[i] = updated
