@@ -28,7 +28,8 @@ import kotlin.math.min
  */
 class KokoroTTS private constructor(
     val language: BookLanguage,
-    private val context: Context,
+    /** Reads a voice's styles by name (from the app's assets, or files when rendering on a computer). */
+    private val styleLoader: (String) -> FloatArray,
     private val english: KokoroPhonemizer,
     private val chinese: ChineseG2P?,
     private val chineseVocab: Map<Char, Long>,
@@ -38,12 +39,12 @@ class KokoroTTS private constructor(
     /** The voice in use, and its style: one 256-number style per possible input length (510 × 256). */
     var voice: String = voice
         private set
-    private var styles: FloatArray = loadStyles(context, voice)
+    private var styles: FloatArray = styleLoader(voice)
 
     /** Switches to another voice for the same language (the Chinese voice picker). */
     fun setVoice(name: String) {
         if (name == voice) return
-        styles = loadStyles(context, name)
+        styles = styleLoader(name)
         voice = name
     }
 
@@ -116,7 +117,7 @@ class KokoroTTS private constructor(
             }
             val session = options.use { openSession(app, modelPath(language), it) }
             return try {
-                KokoroTTS(language, app, english, chinese, zhVocab, session, v)
+                KokoroTTS(language, { loadStyles(app, it) }, english, chinese, zhVocab, session, v)
             } catch (e: Exception) {
                 session.close()
                 throw e
@@ -159,8 +160,32 @@ class KokoroTTS private constructor(
             return file
         }
 
-        private fun loadStyles(context: Context, voice: String): FloatArray {
-            val bytes = context.assets.open(DATA + "kokoro_$voice.bin").use { it.readBytes() }
+        /**
+         * Loads a voice on a computer, from the voice data folder (`SooFunny/Voice/Resources`) and
+         * a model file: for making the pre-made clips ([PremadeVoices]) at build time.
+         */
+        fun createFromFiles(data: File, model: File, language: BookLanguage, voice: String, threads: Int = 2): KokoroTTS {
+            fun open(name: String) = File(data, name).inputStream()
+            val english = KokoroPhonemizer(open("kokoro_lexicon.tsv"), open("kokoro_vocab.tsv"))
+            var chinese: ChineseG2P? = null
+            var zhVocab: Map<Char, Long> = emptyMap()
+            if (language == BookLanguage.CHINESE) {
+                zhVocab = open("kokoro_vocab_zh.tsv").use { KokoroPhonemizer.loadVocab(it) }
+                chinese = ChineseG2P({ open(it) }) { english.phonemize(it) }
+            }
+            val options = OrtSession.SessionOptions().apply {
+                setIntraOpNumThreads(threads)
+                setInterOpNumThreads(1)
+                setOptimizationLevel(OrtSession.SessionOptions.OptLevel.ALL_OPT)
+            }
+            val session = options.use { OrtEnvironment.getEnvironment().createSession(model.path, it) }
+            return KokoroTTS(language, { styles(File(data, "kokoro_$it.bin").readBytes()) }, english, chinese, zhVocab, session, voice)
+        }
+
+        private fun loadStyles(context: Context, voice: String): FloatArray =
+            styles(context.assets.open(DATA + "kokoro_$voice.bin").use { it.readBytes() })
+
+        private fun styles(bytes: ByteArray): FloatArray {
             val floats = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).asFloatBuffer()
             return FloatArray(floats.remaining()).also { floats.get(it) }
         }

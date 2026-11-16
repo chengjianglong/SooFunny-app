@@ -12,6 +12,9 @@ interface LanguageEngine {
      * Throws [CancellationException] once [isCancelled] returns true. Blocks: call it off the main thread.
      */
     fun generate(prompt: String, maxTokens: Int, isCancelled: () -> Boolean, onText: (String) -> Unit): String
+
+    /** Reads [prompt] ahead of time, so a later prompt that starts with it starts sooner. */
+    fun prepare(prompt: String) {}
 }
 
 /** Why the buddy's brain couldn't answer. The screen shows [message] in the conversation's language. */
@@ -72,11 +75,18 @@ class LlamaEngine private constructor(private var handle: Long) : LanguageEngine
         fun load(model: File): LlamaEngine {
             if (!model.isFile) throw EngineException(EngineException.Kind.MODEL_MISSING)
             loadLibrary()
-            val threads = (Runtime.getRuntime().availableProcessors() - 2).coerceIn(1, 4)
+            val threads = threadCount()
             val handle = LlamaNative.load(model.absolutePath, CONTEXT_SIZE, BATCH_SIZE, threads)
             if (handle == 0L) throw EngineException(EngineException.Kind.LOAD_FAILED)
             return LlamaEngine(handle)
         }
+
+        /**
+         * All cores but two (left for the UI and speech), at most six. On an eight-core phone with
+         * two fast and six slow cores (Unisoc T606) six threads read a prompt 2.5× as fast as four;
+         * eight are slower again.
+         */
+        private fun threadCount() = (Runtime.getRuntime().availableProcessors() - 2).coerceIn(1, 6)
 
         @Synchronized
         private fun loadLibrary() {
@@ -130,6 +140,10 @@ class LlamaEngine private constructor(private var handle: Long) : LanguageEngine
             LlamaNative.TOKENIZE_FAILED -> throw EngineException(EngineException.Kind.DECODE_FAILED, -2)
             else -> throw EngineException(EngineException.Kind.DECODE_FAILED, error[0])
         }
+    }
+
+    override fun prepare(prompt: String) {
+        runCatching { generate(prompt, 0, { false }) {} }
     }
 
     @Synchronized

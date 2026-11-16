@@ -59,6 +59,7 @@ object Speech {
 
     fun init(context: Context) {
         if (tts != null) return
+        NaturalVoices.deviceHasChinese = { deviceChinese }
         NaturalVoices.init(context)
         tts = TextToSpeech(context.applicationContext) { status ->
             main.post {
@@ -78,10 +79,8 @@ object Speech {
     fun speak(text: String, onFinished: (() -> Unit)? = null) {
         stopVoice()
         // Pinyin printed with the characters isn't read, nor stretches of only marks.
-        val parts = BookLanguage.runs(text).map { run ->
-            if (run.language == BookLanguage.ENGLISH) run.copy(text = BookLanguage.withoutPinyin(run.text)) else run
-        }.filter { run -> run.text.any { it.isLetterOrDigit() } }
-        val needsDevice = parts.any { !NaturalVoices.isAvailable(it.language) }
+        val parts = BookLanguage.spokenRuns(text)
+        val needsDevice = parts.any { !NaturalVoices.canSay(it.text, it.language) }
         if (needsDevice && tts != null && !started) {
             // The device voice is still starting: say it once it's ready.
             pending = text to onFinished
@@ -101,7 +100,7 @@ object Speech {
             // All the natural voice's phrases are asked for up front, so later ones are made while
             // earlier ones play.
             val plans = parts.map { part ->
-                if (!NaturalVoices.isAvailable(part.language)) return@map null
+                if (!NaturalVoices.canSay(part.text, part.language)) return@map null
                 val engine = if (part.language == BookLanguage.ENGLISH) NaturalVoices.english else NaturalVoices.chinese
                 val pieces = Kokoro.pieces(part.text).map { it.copy(offset = it.offset + part.offset) }
                 pieces to pieces.map { engine.audio(it.text) }

@@ -80,6 +80,15 @@ enum class BookLanguage { ENGLISH, CHINESE;
         }
 
         /**
+         * What [Speech] says for [text], run by run: pinyin printed with the characters is left
+         * out, and runs of only marks are skipped. Shared with the pre-made voice renderer, so its
+         * clips match what's said.
+         */
+        fun spokenRuns(text: String): List<Run> = runs(text).map { run ->
+            if (run.language == ENGLISH) run.copy(text = withoutPinyin(run.text)) else run
+        }.filter { run -> run.text.any { it.isLetterOrDigit() } }
+
+        /**
          * Leaves out pinyin, as printed under the characters in bilingual books: words with tone
          * marks and the toneless little words (de, le, ma) between them. Only text with a tone mark
          * French doesn't use (ā, ǎ) counts as pinyin, so "café" is still read. As on iOS.

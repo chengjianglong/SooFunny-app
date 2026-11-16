@@ -91,9 +91,12 @@ data class Sport(
 object Sports {
     @Volatile private var cached: List<Sport>? = null
 
-    fun all(context: Context): List<Sport> = cached ?: run {
-        val array = JSONArray(context.assets.open("data/sports.json").bufferedReader().use { it.readText() })
-        (0 until array.length()).map { i ->
+    fun all(context: Context): List<Sport> =
+        cached ?: parse(context.assets.open("data/sports.json").bufferedReader().use { it.readText() }).also { cached = it }
+
+    fun parse(json: String): List<Sport> {
+        val array = JSONArray(json)
+        return (0 until array.length()).map { i ->
             val o = array.getJSONObject(i)
             Sport(
                 o.getString("id"), if (o.getString("season") == "winter") SportSeason.WINTER else SportSeason.SUMMER,
@@ -101,7 +104,7 @@ object Sports {
                 o.getString("aboutEnglish"), o.getString("aboutChinese"),
                 o.optJSONObject("photo")?.getString("word"),
             )
-        }.also { cached = it }
+        }
     }
 }
 
@@ -136,7 +139,9 @@ object StoryLibrary {
     private val retellings = mapOf("tortoise-and-hare-zh" to "tortoise-and-hare")
 
     /** The books on the shelf for this language: the Chinese retelling in 中文, the English one otherwise. */
-    fun shelf(context: Context, lang: LearningLanguage): List<StoryBook> = books(context).filter { book ->
+    fun shelf(context: Context, lang: LearningLanguage): List<StoryBook> = shelf(books(context), lang)
+
+    fun shelf(books: List<StoryBook>, lang: LearningLanguage): List<StoryBook> = books.filter { book ->
         when {
             book.id in retellings -> lang == LearningLanguage.CHINESE
             book.id in retellings.values -> lang != LearningLanguage.CHINESE
@@ -146,9 +151,12 @@ object StoryLibrary {
 
     @Volatile private var cached: List<StoryBook>? = null
 
-    fun books(context: Context): List<StoryBook> = cached ?: run {
-        val array = JSONArray(context.assets.open("data/books.json").bufferedReader().use { it.readText() })
-        (0 until array.length()).map { i ->
+    fun books(context: Context): List<StoryBook> =
+        cached ?: parse(context.assets.open("data/books.json").bufferedReader().use { it.readText() }).also { cached = it }
+
+    fun parse(json: String): List<StoryBook> {
+        val array = JSONArray(json)
+        return (0 until array.length()).map { i ->
             val o = array.getJSONObject(i)
             val pages = o.getJSONArray("pages").let { p -> (0 until p.length()).map { p.getJSONObject(it) } }
                 .map { StoryPage(it.getString("scene"), it.getString("text")) }
@@ -159,6 +167,6 @@ object StoryLibrary {
                 if (o.getString("language") == "chinese") BookLanguage.CHINESE else BookLanguage.ENGLISH,
                 pages, t.getString("title"), tPages,
             )
-        }.also { cached = it }
+        }
     }
 }

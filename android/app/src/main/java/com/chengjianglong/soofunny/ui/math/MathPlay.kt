@@ -216,7 +216,18 @@ private fun VerticalProblem(question: MathQuestion, showAnswer: Boolean, maxFont
 
 // MARK: Quiz
 
-private val cheers = listOf(
+/** What's said at the end of a round, by the stars earned. */
+internal fun praise(stars: Int): Pair<String, String> = when (stars) {
+    3 -> "Amazing!" to "太棒了！"
+    2 -> "Great work!" to "做得好！"
+    1 -> "Good try!" to "不错的尝试！"
+    else -> "Keep practicing!" to "继续练习！"
+}
+
+/** Said after a wrong answer, before the right one. */
+internal val NICE_TRY = "Nice try." to "差一点。"
+
+internal val cheers = listOf(
     "Great job!" to "真棒！", "You got it!" to "答对了！", "Super!" to "太厉害了！",
     "Awesome!" to "好极了！", "Yes!" to "对啦！",
 )
@@ -232,7 +243,7 @@ private fun Quiz(session: MathSession, lang: LearningLanguage, settings: MathSet
         if (settings.readAloud) {
             Speech.speak(
                 if (right) lang.spoken(cheer.first, cheer.second)
-                else lang.spoken("Nice try.", "差一点。") + " " + q.spokenAnswer(lang),
+                else lang.spoken(NICE_TRY.first, NICE_TRY.second) + " " + q.spokenAnswer(lang),
             )
         }
     }
@@ -330,12 +341,7 @@ internal fun BigButton(title: String, emoji: String, color: Color, modifier: Mod
 @Composable
 private fun MathResultView(result: MathResult, onAgain: () -> Unit, onDone: () -> Unit) {
     val lang = language
-    val praise = when (result.stars) {
-        3 -> "Amazing!" to "太棒了！"
-        2 -> "Great work!" to "做得好！"
-        1 -> "Good try!" to "不错的尝试！"
-        else -> "Keep practicing!" to "继续练习！"
-    }
+    val praise = praise(result.stars)
     val emoji = listOf("🌱", "💪", "🌟", "🎉")[result.stars.coerceIn(0, 3)]
     var shown by remember { mutableStateOf(false) }
     LaunchedEffect(result.id) {

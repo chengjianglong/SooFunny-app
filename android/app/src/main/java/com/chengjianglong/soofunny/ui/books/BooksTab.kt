@@ -103,7 +103,9 @@ fun BooksTab() {
     Column(Modifier.fillMaxSize().background(Color.White)) {
         SooTopBar()
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(160.dp),
+            // As on iOS: covers at least 150 wide on phones and 200 on tablets, at least two per row.
+            columns = com.chengjianglong.soofunny.ui.AtLeastColumns(
+                if (androidx.compose.ui.platform.LocalConfiguration.current.screenWidthDp >= 600) 200.dp else 150.dp),
             contentPadding = PaddingValues(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             verticalArrangement = Arrangement.spacedBy(18.dp),

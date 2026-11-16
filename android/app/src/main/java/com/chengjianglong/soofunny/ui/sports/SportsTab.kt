@@ -103,7 +103,8 @@ fun SportsTab() {
     Column(Modifier.fillMaxSize().background(GroupedBackground)) {
         SooTopBar()
         LazyVerticalGrid(
-            columns = GridCells.Adaptive(160.dp),
+            // As on iOS: cards at least 160 wide, and always at least two per row.
+            columns = com.chengjianglong.soofunny.ui.AtLeastColumns(160.dp),
             contentPadding = PaddingValues(16.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -187,6 +188,11 @@ private fun SportPicture(sport: Sport, size: Dp, tint: Color) {
 @Composable
 private fun SportDetail(sports: List<Sport>, season: SportSeason, index: Int, onIndex: (Int) -> Unit, onTalk: () -> Unit, onBack: () -> Unit) {
     val lang = language
+    // Get the talking buddy ready while the child looks around, so it answers sooner.
+    val buddyContext = androidx.compose.ui.platform.LocalContext.current
+    androidx.compose.runtime.LaunchedEffect(lang) {
+        com.chengjianglong.soofunny.core.buddy.WordBuddy.warmUp(com.chengjianglong.soofunny.core.BuddyModel.file(buddyContext), lang)
+    }
     val sport = sports[index]
     val about = when (lang) {
         LearningLanguage.ENGLISH -> sport.aboutEnglish

@@ -149,6 +149,11 @@ private fun CategoryGrid(categories: List<WordCategory>, onOpen: (Int) -> Unit) 
 @Composable
 private fun WordList(category: WordCategory, onOpen: (Int) -> Unit, onTalk: (Int) -> Unit, onBack: () -> Unit) {
     val lang = language
+    // Get the talking buddy ready while the child looks around, so it answers sooner.
+    val buddyContext = androidx.compose.ui.platform.LocalContext.current
+    androidx.compose.runtime.LaunchedEffect(lang) {
+        com.chengjianglong.soofunny.core.buddy.WordBuddy.warmUp(com.chengjianglong.soofunny.core.BuddyModel.file(buddyContext), lang)
+    }
     Column(Modifier.fillMaxSize().background(GroupedBackground)) {
         SooTopBar(title = category.title(lang), onBack = onBack)
         LazyVerticalGrid(

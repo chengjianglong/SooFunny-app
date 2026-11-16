@@ -243,3 +243,19 @@ fun KidButton(text: String, color: Color, modifier: Modifier = Modifier, emoji: 
         )
     }
 }
+
+/**
+ * Grid columns as on iOS (`GridItem(.adaptive(minimum:))`): as many as fit at [minSize] each, but
+ * never fewer than [minCount], so a narrow phone still shows two cards per row.
+ */
+class AtLeastColumns(private val minSize: androidx.compose.ui.unit.Dp, private val minCount: Int = 2) :
+    androidx.compose.foundation.lazy.grid.GridCells {
+    override fun androidx.compose.ui.unit.Density.calculateCrossAxisCellSizes(availableSize: Int, spacing: Int): List<Int> {
+        val count = maxOf(minCount, (availableSize + spacing) / (minSize.roundToPx() + spacing))
+        val total = availableSize - spacing * (count - 1)
+        return List(count) { total / count + if (it < total % count) 1 else 0 }
+    }
+
+    override fun equals(other: Any?) = other is AtLeastColumns && other.minSize == minSize && other.minCount == minCount
+    override fun hashCode() = minSize.hashCode() * 31 + minCount
+}

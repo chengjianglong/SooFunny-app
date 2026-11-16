@@ -26,6 +26,21 @@ Reading aloud uses the natural **Kokoro-82M** voices, run on the device with ONN
 ("Heart", 8-bit) and Chinese (v1.1-zh, 16-bit, five voices), with Kotlin ports of the iOS app's
 English phonemizer and `ChineseG2P` (it matches misaki on all 1,133 Chinese strings in the app).
 Without the voice models (a plain `installDebug`), the device's text-to-speech voices are used.
+
+**Slow phones.** Kokoro needs a fast CPU: on a Unisoc T606 (BLU G45) it takes about 3.5 s to make
+one second of speech. The app times its first phrases, and where making speech is slower than
+0.8× real time it stops making speech on the phone and remembers that (Settings explains it and
+offers "Use the natural voices anyway"). Everything that's always read the same way (words and
+groups, letters, sports, the story books, math questions and cheers, the buddy's opening
+question) still plays at once in the natural voice, from **pre-made clips** made on a computer with
+the same model and the same phrase splitting, at normal speed in the default voices, in the
+`voices` pack. Anything else (the buddy's answers, scanned books, other speeds or Chinese voices)
+uses the device's voice there.
+
+The talking buddy on the same phone: the model is loaded and its shared instructions are read in
+the background as soon as a word list or a sport opens, prompts reuse what the model has already
+read, and it uses up to six threads (2.5× faster prompt reading than four on that chip). The first
+answer starts about 4 s after ✨ instead of about 40 s.
 Coloring pages use ML Kit subject segmentation, when Google Play services has its model, so the
 subject of a photo gets more detail than the background (as Apple Vision does on iOS).
 
@@ -81,7 +96,10 @@ and an emulator or phone on Android 8.0 (API 26) or later. Android Studio works 
 `android/` folder.
 
 Get the voice models first (they aren't in git), from the repository root: `scripts/fetch_model.sh`
-puts them in `Models/`, and the build copies them into the `voices` asset pack. The NDK
+puts them in `Models/`, and the build copies them into the `voices` asset pack. Then make the
+pre-made clips (macOS, about 30 MB, also not in git; run it again after changing words, sports,
+books or math, and it only makes what's new):
+`./gradlew :app:testDebugUnitTest --tests '*PremadeVoiceRenderer*' -PpremadeOut=voices/src/main/assets/premade`. The NDK
 (28.2.13676358) and CMake (3.22.1) build llama.cpp for the buddy; the build uses
 `Vendor/llama.cpp-src` if it's there, else fetches tag b11577 from GitHub.
 

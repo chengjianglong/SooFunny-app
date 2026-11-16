@@ -21,6 +21,22 @@ import java.util.concurrent.Executors
 object NaturalVoices {
     private const val ENGLISH_VOICE_KEY = "englishVoice"
     private const val CHINESE_VOICE_KEY = "chineseVoice"
+    private const val TOO_SLOW_KEY = "naturalVoicesTooSlow"
+    private const val FORCED_KEY = "naturalVoicesForced"
+
+    /**
+     * The natural voices take longer to make speech than it takes to play on this phone (as on
+     * low-cost phones), so every word would wait: the device's voices are used instead. Measured
+     * on the first phrases the app makes, and remembered.
+     */
+    var tooSlow by mutableStateOf(false)
+        private set
+
+    /** A grown-up chose the natural voices in Settings even though they're slow here. */
+    private var forced = false
+
+    /** Whether the device has a Chinese text-to-speech voice (set by [Speech]). */
+    var deviceHasChinese: () -> Boolean = { true }
 
     /** The English voice choice in Settings. */
     enum class EnglishVoice(val key: String) { NATURAL("natural"), DEVICE("device") }
@@ -73,6 +89,11 @@ object NaturalVoices {
             englishChoiceState = EnglishVoice.entries.firstOrNull { it.key == p.getString(ENGLISH_VOICE_KEY, null) } ?: EnglishVoice.NATURAL
             chineseVoiceState = p.getString(CHINESE_VOICE_KEY, null)?.takeIf { it in Kokoro.chineseVoices } ?: Kokoro.chineseVoices[0]
         }
+        runCatching {
+            tooSlow = AppSettings.prefs().getBoolean(TOO_SLOW_KEY, false)
+            forced = AppSettings.prefs().getBoolean(FORCED_KEY, false)
+        }
+        PremadeVoices.init(app)
         englishInstalled = hasModel(app, ModelFiles.ENGLISH_VOICE)
         chineseInstalled = hasModel(app, ModelFiles.CHINESE_VOICE)
         preload(BookLanguage.ENGLISH)
@@ -96,8 +117,49 @@ object NaturalVoices {
 
     /** Whether [language] is read in a natural voice now (installed, chosen, and it loaded). */
     fun isAvailable(language: BookLanguage): Boolean = when (language) {
-        BookLanguage.ENGLISH -> englishInstalled && englishChoice == EnglishVoice.NATURAL && !english.failed
-        BookLanguage.CHINESE -> chineseInstalled && !chinese.failed
+        BookLanguage.ENGLISH -> englishInstalled && englishChoice == EnglishVoice.NATURAL && !english.failed && !tooSlow
+        // Slow is still better than silent when the device has no Chinese voice.
+        BookLanguage.CHINESE -> chineseInstalled && !chinese.failed && !(tooSlow && deviceHasChinese())
+    }
+
+    /**
+     * Whether [text] (all in [language]) is said in the natural voice: when the voice can make it
+     * now, or when every phrase of it was made ahead of time ([PremadeVoices]), as on a slow phone.
+     */
+    fun canSay(text: String, language: BookLanguage): Boolean {
+        if (isAvailable(language)) return true
+        if (language == BookLanguage.ENGLISH && englishChoice == EnglishVoice.DEVICE) return false
+        val voice = voice(language)
+        val speed = speed
+        return Kokoro.pieces(text).all { piece ->
+            piece.text.none { it.isLetterOrDigit() } || PremadeVoices.has(language, voice, speed, piece.text)
+        }
+    }
+
+    /** How long making speech takes compared with playing it, above which the voice is too slow. */
+    internal const val SLOW_RATIO = 0.8
+
+    /** Called by an engine once it has timed a few phrases: [ratio] is making time ÷ audio time. */
+    internal fun measured(language: BookLanguage, ratio: Double) {
+        Log.d("NaturalVoice", "${language.name.lowercase()} makes speech at ${"%.2f".format(ratio)}× its length")
+        if (ratio <= SLOW_RATIO || forced || tooSlow) return
+        android.os.Handler(android.os.Looper.getMainLooper()).post {
+            if (forced || tooSlow) return@post
+            tooSlow = true
+            runCatching { AppSettings.prefs().edit().putBoolean(TOO_SLOW_KEY, true).apply() }
+            // Free the CPU and memory: drop what was being prepared and unload the voices not used now.
+            english.slowDown(unload = true)
+            chinese.slowDown(unload = !isAvailable(BookLanguage.CHINESE))
+        }
+    }
+
+    /** Settings: use the natural voices even though they're slow on this phone (or measure again). */
+    fun useNaturalAnyway() {
+        forced = true
+        tooSlow = false
+        runCatching { AppSettings.prefs().edit().putBoolean(TOO_SLOW_KEY, false).putBoolean(FORCED_KEY, true).apply() }
+        preload(BookLanguage.ENGLISH)
+        languageChanged(AppSettings.language)
     }
 
     /** Kokoro speed for the Settings speed slider. */
@@ -108,12 +170,14 @@ object NaturalVoices {
     /** Loads the voice in the background, warms it up and prepares phrases the app says often. */
     fun preload(language: BookLanguage) {
         if (!isAvailable(language)) return
+        // On a slow phone, don't spend the CPU on phrases that may never be said.
+        if (forced) return
         prefetch(if (language == BookLanguage.ENGLISH) COMMON_PHRASES else COMMON_CHINESE_PHRASES, language)
     }
 
     /** Prepares speech for texts that will probably be said soon, so they play at once. */
     fun prefetch(texts: List<String>, language: BookLanguage) {
-        if (!isAvailable(language)) return
+        if (!isAvailable(language) || forced) return
         engine(language).prefetch(texts.flatMap { t -> Kokoro.pieces(t).map { it.text } })
     }
 
@@ -183,7 +247,24 @@ class NaturalVoiceEngine internal constructor(val language: BookLanguage) {
     fun audio(text: String, speed: Float = NaturalVoices.speed, priority: Priority = Priority.NOW): Deferred<FloatArray?> {
         val voice = NaturalVoices.voice(language)
         val result = CompletableDeferred<FloatArray?>()
-        enqueue(Job(key(text, speed, voice), text, speed, voice, result), priority)
+        val key = key(text, speed, voice)
+        synchronized(lock) { cache[key] }?.let { result.complete(it); return result }
+        when {
+            // Made ahead of time: decoded, not made by the model.
+            PremadeVoices.has(language, voice, speed, text) -> PremadeVoices.load(language, voice, speed, text) { samples ->
+                if (samples != null && samples.isNotEmpty()) {
+                    remember(key, samples)
+                    result.complete(samples)
+                } else if (NaturalVoices.isAvailable(language)) {
+                    enqueue(Job(key, text, speed, voice, result), priority)
+                } else {
+                    result.complete(null)
+                }
+            }
+            // Too slow (or not chosen) here: the device voice says it.
+            !NaturalVoices.isAvailable(language) -> result.complete(null)
+            else -> enqueue(Job(key, text, speed, voice, result), priority)
+        }
         return result
     }
 
@@ -227,7 +308,10 @@ class NaturalVoiceEngine internal constructor(val language: BookLanguage) {
             if (tts != null) {
                 samples = try {
                     tts.setVoice(job.voice)
-                    Kokoro.trimmingSilence(tts.synthesize(job.text, job.speed))
+                    val t0 = System.nanoTime()
+                    val raw = tts.synthesize(job.text, job.speed)
+                    time(System.nanoTime() - t0, raw.size)
+                    Kokoro.trimmingSilence(raw)
                 } catch (e: Throwable) {
                     Log.w("NaturalVoice", "Couldn't say \"${job.text}\"", e)
                     null
@@ -236,6 +320,42 @@ class NaturalVoiceEngine internal constructor(val language: BookLanguage) {
             }
         }
         job.result?.complete(samples)
+    }
+
+    private var timedNanos = 0L
+    private var timedSamples = 0L
+    private var timedCount = 0
+
+    /**
+     * Times the first phrases (on the executor). The first one includes warming up, so it's left
+     * out; after [TIMED] more, tells [NaturalVoices] how fast this phone makes speech.
+     */
+    private fun time(nanos: Long, samples: Int) {
+        if (samples == 0 || timedCount > TIMED) return
+        timedCount++
+        if (timedCount == 1) return
+        timedNanos += nanos
+        timedSamples += samples
+        if (timedCount == TIMED + 1) {
+            NaturalVoices.measured(language, timedNanos / 1e9 / (timedSamples.toDouble() / Kokoro.SAMPLE_RATE))
+        }
+    }
+
+    /**
+     * The voice is too slow on this phone: speech still waited for is answered with null (so the
+     * device voice says it), prepared speech is dropped, and with [unload] the model is closed.
+     */
+    fun slowDown(unload: Boolean) {
+        val waiting = synchronized(lock) {
+            val all = nowJobs + laterJobs + prefetchJobs
+            nowJobs.clear(); laterJobs.clear(); prefetchJobs.clear()
+            all
+        }
+        waiting.forEach { it.result?.complete(null) }
+        if (unload) executor.execute {
+            runCatching { tts?.close() }
+            tts = null
+        }
     }
 
     private fun remember(key: String, samples: FloatArray) = synchronized(lock) {
@@ -250,7 +370,11 @@ class NaturalVoiceEngine internal constructor(val language: BookLanguage) {
         if (failed) return null
         val context = NaturalVoices.appContext() ?: return null
         return try {
-            KokoroTTS.create(context, language, NaturalVoices.voice(language)).also { tts = it }
+            val t0 = System.nanoTime()
+            KokoroTTS.create(context, language, NaturalVoices.voice(language)).also {
+                tts = it
+                Log.d("NaturalVoice", "${language.name.lowercase()} voice loaded in ${(System.nanoTime() - t0) / 1_000_000} ms")
+            }
         } catch (e: Throwable) {
             Log.w("NaturalVoice", "Couldn't load the ${language.name.lowercase()} natural voice", e)
             failed = true
@@ -261,5 +385,7 @@ class NaturalVoiceEngine internal constructor(val language: BookLanguage) {
     private companion object {
         const val CACHE_LIMIT = 400
         const val PREFETCH_LIMIT = 60
+        /** Phrases timed after the first, to tell whether this phone is fast enough. */
+        const val TIMED = 2
     }
 }

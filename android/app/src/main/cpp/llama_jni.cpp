@@ -10,6 +10,7 @@
 #endif
 
 #include <algorithm>
+#include <chrono>
 #include <cstdint>
 #include <random>
 #include <string>
@@ -34,7 +35,23 @@ struct Engine {
     const llama_vocab *vocab = nullptr;
     int32_t contextSize = 2048;
     int32_t batchSize = 512;
+    // The tokens now in the context's memory, so a prompt that starts the same way (the same
+    // instructions, the conversation so far) only needs its new end read.
+    std::vector<llama_token> cached;
 };
+
+double millisSince(std::chrono::steady_clock::time_point start) {
+    return std::chrono::duration<double, std::milli>(std::chrono::steady_clock::now() - start).count();
+}
+
+void infoLog(const char *format, double a, double b, double c, double d) {
+#ifdef __ANDROID__
+    __android_log_print(ANDROID_LOG_INFO, TAG, format, a, b, c, d);
+#else
+    fprintf(stderr, format, a, b, c, d);
+    fprintf(stderr, "\n");
+#endif
+}
 
 void quietLog(ggml_log_level level, const char *text, void *) {
     if (level != GGML_LOG_LEVEL_ERROR) return; // (CONT lines are progress dots)
@@ -184,19 +201,39 @@ Java_com_chengjianglong_soofunny_core_buddy_LlamaNative_generate(JNIEnv *env, jo
         env->DeleteLocalRef(stringClass);
     }
 
-    llama_memory_clear(llama_get_memory(engine->context), true);
     std::vector<llama_token> tokens = tokenize(engine->vocab, prompt);
     if (tokens.empty()) return TOKENIZE_FAILED;
     if ((int32_t) tokens.size() + maxTokens >= engine->contextSize) return PROMPT_TOO_LONG;
 
+    // Keep what's already read of the same beginning; read only the rest. At least the last
+    // token is always read again, for its next-token predictions.
+    size_t keep = 0;
+    while (keep < engine->cached.size() && keep < tokens.size() && engine->cached[keep] == tokens[keep]) keep++;
+    keep = std::min(keep, tokens.size() - 1);
+    llama_memory_t memory = llama_get_memory(engine->context);
+    if (keep == 0 || !llama_memory_seq_rm(memory, 0, (llama_pos) keep, -1)) {
+        llama_memory_clear(memory, true);
+        keep = 0;
+    }
+    engine->cached.assign(tokens.begin(), tokens.begin() + (long) keep);
+
+    auto started = std::chrono::steady_clock::now();
     // Read the prompt in batches.
-    for (size_t start = 0; start < tokens.size();) {
+    for (size_t start = keep; start < tokens.size();) {
         if (cancelled()) return CANCELLED;
         auto count = (int32_t) std::min<size_t>(engine->batchSize, tokens.size() - start);
         int32_t status = llama_decode(engine->context, llama_batch_get_one(tokens.data() + start, count));
-        if (status != 0) return fail(status);
+        if (status != 0) {
+            llama_memory_clear(memory, true);
+            engine->cached.clear();
+            return fail(status);
+        }
+        engine->cached.insert(engine->cached.end(), tokens.begin() + (long) start, tokens.begin() + (long) (start + count));
         start += count;
     }
+    double readMillis = millisSince(started);
+    auto generating = std::chrono::steady_clock::now();
+    int generated = 0;
 
     llama_sampler *sampler = makeSampler(engine->vocab);
     std::string pending;  // bytes of a character split across tokens
@@ -224,10 +261,17 @@ Java_com_chengjianglong_soofunny_core_buddy_LlamaNative_generate(JNIEnv *env, jo
         }
         int32_t status = llama_decode(engine->context, llama_batch_get_one(&token, 1));
         if (status != 0) {
+            llama_memory_clear(memory, true);
+            engine->cached.clear();
             result = fail(status);
             break;
         }
+        engine->cached.push_back(token);
+        generated++;
     }
     llama_sampler_free(sampler);
+    infoLog("read %.0f new of %.0f prompt tokens in %.0f ms; %.1f tokens/s writing",
+            (double) (tokens.size() - keep), (double) tokens.size(), readMillis,
+            generated * 1000.0 / std::max(1.0, millisSince(generating)));
     return result;
 }

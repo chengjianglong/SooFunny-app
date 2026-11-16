@@ -38,34 +38,48 @@ object AssistantPrompts {
         }
     }
 
-    private fun rules(word: String, category: String, language: LearningLanguage, chinese: String?, facts: String?): String {
-        val about = topic(word, chinese, language)
-        // What the child has just read about it (a sport's introduction), so answers match it.
-        val background = facts?.let { "\nWhat the child just read about it: $it" } ?: ""
+    /**
+     * The instructions every conversation in [language] starts with, before anything about the
+     * word. Kept first and the same for every word, so the model can read them once ahead of time
+     * ([WordBuddy.warmUp]) and only the word's own part is read when a conversation starts.
+     */
+    fun preamble(language: LearningLanguage): String {
         val languageRules = when (language) {
             LearningLanguage.ENGLISH ->
-                "about the English word $about from the group \"$category\". Your words are read aloud.\n" +
+                "You talk about one English word. Your words are read aloud.\n" +
                     "Rules: Use short, simple sentences and easy words. Say at most three sentences and no more " +
                     "than forty words."
             LearningLanguage.CHINESE ->
-                "about the Chinese word $about from the group \"$category\". Your words are read aloud.\n" +
+                "You talk about one Chinese word. Your words are read aloud.\n" +
                     "Rules: Always answer only in simple Mandarin Chinese with simplified characters (简体中文), " +
                     "even if the child speaks English. Never add an English translation. Use short, simple sentences and easy words. Say at most three " +
                     "sentences and no more than sixty Chinese characters. For example: 猫是一种小宠物。猫喜欢睡觉。"
             LearningLanguage.BOTH ->
-                "about the word $about from the group \"$category\". The child is learning English and " +
-                    "Chinese. Your words are read aloud.\n" +
+                "You talk about one word. The child is learning English and Chinese. Your words are read aloud.\n" +
                     "Rules: Say each sentence in simple English first, then the same sentence in simple Mandarin " +
                     "Chinese with simplified characters (简体中文). Use short, simple sentences and easy words. Say " +
                     "at most two sentences, each in both languages. For example: A cat is a small pet. 猫是一种小宠物。 " +
                     "Cats like to sleep. 猫喜欢睡觉。"
         }
-        return "You are a cheerful learning buddy talking with a young child (about 4 to 8 years old) " +
+        return "<|im_start|>system\nYou are a cheerful learning buddy talking with a young child (about 4 to 8 years old). " +
             "$languageRules Write plain spoken text only: no lists, no markdown, no emojis, no labels, " +
             "no pinyin. Write numbers as words. Be kind, curious and encouraging. Stay on topic and keep everything " +
             "safe for children. If you are not sure about something, say so simply. End by asking one " +
             "short question the child might enjoy answering, unless the child wants to stop; then say a " +
-            "short friendly goodbye. Never start with \"Okay\" or a greeting." + background
+            "short friendly goodbye. Never start with \"Okay\" or a greeting.\n"
+    }
+
+    /** The word-specific end of the instructions, after [preamble]. */
+    private fun topicRules(word: String, category: String, language: LearningLanguage, chinese: String?, facts: String?): String {
+        val about = topic(word, chinese, language)
+        // What the child has just read about it (a sport's introduction), so answers match it.
+        val background = facts?.let { "\nWhat the child just read about it: $it" } ?: ""
+        val kind = when (language) {
+            LearningLanguage.ENGLISH -> "The English word"
+            LearningLanguage.CHINESE -> "The Chinese word"
+            LearningLanguage.BOTH -> "The word"
+        }
+        return "$kind is $about, from the group \"$category\"." + background
     }
 
     /**
@@ -88,7 +102,7 @@ object AssistantPrompts {
                     "sentence in Chinese. Start directly with the word \"$word\"."
         }
         return chat(
-            rules(word, category, language, chinese, facts),
+            language, topicRules(word, category, language, chinese, facts),
             listOf(ChatMessage.Speaker.CHILD to "$ask Do not greet and do not ask a question."),
         )
     }
@@ -111,12 +125,12 @@ object AssistantPrompts {
     ): String {
         val turns = history.takeLast(8).map { it.speaker to it.text.prefixChars(600) } +
             (ChatMessage.Speaker.CHILD to question.prefixChars(400))
-        return chat(rules(word, category, language, chinese, facts), turns)
+        return chat(language, topicRules(word, category, language, chinese, facts), turns)
     }
 
     /** The child speaks as the user and the buddy as the assistant; the prompt ends where the buddy's next reply begins. */
-    private fun chat(system: String, turns: List<Pair<ChatMessage.Speaker, String>>): String {
-        val prompt = StringBuilder("<|im_start|>system\n$system<|im_end|>\n")
+    private fun chat(language: LearningLanguage, topic: String, turns: List<Pair<ChatMessage.Speaker, String>>): String {
+        val prompt = StringBuilder(preamble(language)).append("$topic<|im_end|>\n")
         for ((speaker, text) in turns) {
             // Keep the child's words from closing the turn early.
             val clean = text.replace("<|", "<")

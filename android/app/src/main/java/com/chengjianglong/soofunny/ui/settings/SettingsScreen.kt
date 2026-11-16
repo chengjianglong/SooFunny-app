@@ -85,7 +85,15 @@ fun SettingsScreen(onClose: () -> Unit) {
                 else "Words are read by this device's text-to-speech voices and work offline once the voices are installed. Add or change voices in Android Settings → Text-to-speech.",
                 if (natural) "自然的声音在设备上运行，离线可用。设备声音来自本设备的文字转语音，可以在安卓“设置 → 文字转语音”里添加或更换。"
                 else "朗读使用本设备的文字转语音声音，安装后可以离线使用。可以在安卓“设置 → 文字转语音”里添加或更换声音。", "\n")) {
-                if (natural) {
+                if (natural && NaturalVoices.tooSlow) {
+                    Text(lang.pick(
+                        "This phone is too slow to make the natural voices as they're needed (each word would take seconds). Words, sports, books and math still use the natural voices, made ahead of time; anything else, like the buddy's answers, uses the device's voice.",
+                        "这部手机实时生成自然声音太慢（每个词都要等几秒）。单词、运动、绘本和数学仍然使用预先做好的自然声音；其他内容（比如小伙伴的回答）使用设备自带的声音。", "\n"),
+                        fontSize = 15.sp, color = Color.Gray)
+                    TextButton(onClick = { NaturalVoices.useNaturalAnyway() }) {
+                        Text(lang.pick("Use the natural voices anyway", "仍然使用自然的声音"))
+                    }
+                } else if (natural) {
                     val naturalName = when (lang) {
                         LearningLanguage.ENGLISH -> "Natural · Heart (recommended)"
                         LearningLanguage.CHINESE -> "自然 · Heart（推荐）"
@@ -198,8 +206,8 @@ private fun BuddySection() {
     }
 }
 
-private const val TRY_ENGLISH = "Hello! Let's learn some words."
-private const val TRY_CHINESE = "你好！我们一起来学习吧。"
+internal const val TRY_ENGLISH = "Hello! Let's learn some words."
+internal const val TRY_CHINESE = "你好！我们一起来学习吧。"
 
 /** One choice of several, with a radio button. */
 @Composable

@@ -134,6 +134,20 @@ val copyIosAssets = tasks.register<CopyIosAssets>("copyIosAssets") {
     outputDir.set(layout.buildDirectory.dir("generated/iosAssets"))
 }
 
+configurations.matching { it.name.endsWith("UnitTestRuntimeClasspath") }.configureEach {
+    exclude(group = "com.microsoft.onnxruntime", module = "onnxruntime-android")
+}
+
+// `-PpremadeOut=<folder>` runs PremadeVoiceRenderer (see the README); other tests skip it.
+tasks.withType<Test>().configureEach {
+    val premadeOut = providers.gradleProperty("premadeOut").orNull
+    if (premadeOut != null) {
+        systemProperty("soofunny.premadeOut", premadeOut)
+        maxHeapSize = "6g"
+        outputs.upToDateWhen { false }
+    }
+}
+
 androidComponents {
     onVariants { variant ->
         variant.sources.assets?.addGeneratedSourceDirectory(copyIosAssets, CopyIosAssets::outputDir)
@@ -163,4 +177,8 @@ dependencies {
     implementation(libs.onnxruntime.android)
     debugImplementation(libs.compose.ui.tooling)
     testImplementation(libs.junit)
+    // JVM tests run on a computer: the real org.json, and ONNX Runtime for the computer (used by
+    // PremadeVoiceRenderer to make the pre-made voice clips) instead of the Android one.
+    testImplementation(libs.json)
+    testImplementation(libs.onnxruntime.jvm)
 }

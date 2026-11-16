@@ -94,6 +94,22 @@ class WordBuddy(
 
         @Volatile private var sharedEngine: LlamaEngine? = null
 
+        @Volatile private var warmed: LearningLanguage? = null
+
+        /**
+         * Loads the model and reads the instructions for [language] in the background, so the
+         * buddy answers sooner when a child opens it (on a slow phone this saves half a minute).
+         * Call when a screen with buddy buttons opens; does nothing if the model isn't downloaded.
+         */
+        fun warmUp(model: File, language: LearningLanguage) {
+            if (!model.isFile || warmed == language) return
+            warmed = language
+            sharedWorker.execute {
+                runCatching { loadSharedEngine(model).prepare(AssistantPrompts.preamble(language)) }
+                    .onFailure { warmed = null }
+            }
+        }
+
         /** The model is loaded once and shared by every conversation. Call on the worker thread. */
         fun loadSharedEngine(model: File): LanguageEngine =
             sharedEngine ?: synchronized(this) { sharedEngine ?: LlamaEngine.load(model).also { sharedEngine = it } }
