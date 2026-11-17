@@ -11,7 +11,9 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -53,14 +55,20 @@ private val GroupedBackground = Color(0xFFF2F2F7)
 @Composable
 fun SettingsScreen(onClose: () -> Unit) {
     var showCredits by remember { mutableStateOf(false) }
+    var showSupport by remember { mutableStateOf(false) }
     if (showCredits) {
         BackHandler { showCredits = false }
         PhotoCredits(onBack = { showCredits = false })
         return
     }
+    if (showSupport) {
+        BackHandler { showSupport = false }
+        SupportScreen(onClose = { showSupport = false })
+        return
+    }
     val lang = language
     val context = LocalContext.current
-    Column(Modifier.fillMaxSize().background(GroupedBackground)) {
+    Column(Modifier.fillMaxSize().background(GroupedBackground).statusBarsPadding().navigationBarsPadding()) {
         SooTopBar(title = lang.pick("Settings", "设置"), onBack = onClose, backLabel = lang.pick("Done", "完成"))
         Column(
             Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
@@ -76,6 +84,15 @@ fun SettingsScreen(onClose: () -> Unit) {
                         RadioButton(selected = lang == option, onClick = { AppSettings.language = option })
                         Text(option.label, fontSize = 17.sp)
                     }
+                }
+            }
+
+            Section(lang.pick("Support SooFunny", "支持 SooFunny"), footer = lang.pick(
+                "SooFunny is free, with every feature for everyone. Tips are optional and help keep it maintained and updated.",
+                "SooFunny 免费提供所有功能。打赏是自愿的，可以帮助我们维护和更新。", "\n")) {
+                Row(Modifier.fillMaxWidth().clickable { showSupport = true }.padding(vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
+                    Text("💖  " + lang.pick("Leave a tip", "打赏支持"), fontSize = 17.sp, color = Color(0xFF007AFF), modifier = Modifier.weight(1f))
+                    Text("›", fontSize = 22.sp, color = Color.LightGray)
                 }
             }
 
@@ -162,8 +179,8 @@ fun SettingsScreen(onClose: () -> Unit) {
                 Pair(lang.pick("Version", "版本"), BuildConfigInfo.versionName(context)).let { (k, v) -> InfoRow(k, v) }
                 InfoRow(lang.pick("Developers", "开发者"), "Chengjiang Long and Yao Xu")
                 InfoRow(lang.pick("Contact", "联系我们"), "chengjiang.long@gmail.com")
-                Text(lang.pick("SooFunny works offline: no accounts, no ads, and nothing you make or say leaves this device. The internet is used only to download the talking buddy.",
-                    "SooFunny 离线使用：没有账号，没有广告，你做的和说的都不会离开这台设备。只有下载小伙伴时才会联网。", "\n"),
+                Text(lang.pick("SooFunny works offline: no accounts, no ads, and nothing you make or say leaves this device. The internet is used only to download the talking buddy and for optional tips.",
+                    "SooFunny 离线使用：没有账号，没有广告，你做的和说的都不会离开这台设备。只有下载小伙伴和自愿打赏时才会联网。", "\n"),
                     fontSize = 14.sp, color = Color.Gray, modifier = Modifier.padding(top = 6.dp))
             }
         }
@@ -261,7 +278,7 @@ private fun PhotoCredits(onBack: () -> Unit) {
             "Word photos" to loadCredits(context, "words/photos/word_photo_credits.json"),
         )
     }
-    Column(Modifier.fillMaxSize().background(GroupedBackground)) {
+    Column(Modifier.fillMaxSize().background(GroupedBackground).statusBarsPadding().navigationBarsPadding()) {
         SooTopBar(title = lang.pick("Photo credits", "照片来源"), onBack = onBack)
         LazyColumn(Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
             item {

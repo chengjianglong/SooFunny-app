@@ -82,6 +82,12 @@ Terms of Use: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 kids,coloring,learn english,vocabulary,read aloud,story books,chinese,math facts,flashcards,offline
 
+## What's New (0.5)
+
+• SooFunny now tells you when a new version is ready, so you never miss new fun. Updating opens
+  the App Store after a quick grown-up check.
+• The grown-up check fits better on the screen in Bilingual.
+
 ## What's New (0.4)
 
 Learn in English, Chinese or both! Tap the new globe button (or go to Settings) to use every

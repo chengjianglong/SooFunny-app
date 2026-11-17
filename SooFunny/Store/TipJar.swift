@@ -145,6 +145,7 @@ struct ParentalGate: View {
     static func makeQuestion() -> (Int, Int) { (Int.random(in: 12...19), Int.random(in: 6...9)) }
 
     var body: some View {
+        ScrollView {
         VStack(spacing: 18) {
             Text("👨‍👩‍👧").font(.system(size: 64))
             Text(language.pick("Ask a grown-up", "请家长来", separator: "\n")).font(.largeTitle.weight(.heavy)).multilineTextAlignment(.center)
@@ -170,6 +171,10 @@ struct ParentalGate: View {
         }
         .padding(32)
         .frame(maxWidth: 520)
+        .frame(maxWidth: .infinity)
+        .fixedSize(horizontal: false, vertical: true)
+        }
+        .scrollDismissesKeyboard(.never)
         .onAppear { focused = true }
     }
 

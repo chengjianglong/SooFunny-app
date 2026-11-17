@@ -1058,6 +1058,7 @@
 		B547EA2202FEF9D0C61071AB /* word-nature-cactus-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2442B0F701CF00E13EF58A31 /* word-nature-cactus-2.jpg */; };
 		B631AA315517C60196B722C5 /* word-clothes-sunglasses-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 62CFA5FF95C74004CD98DF99 /* word-clothes-sunglasses-2.jpg */; };
 		B663DE903778370610CAC67D /* word-farm-puppy-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 485EEC96E23CE51C507961E2 /* word-farm-puppy-3.jpg */; };
+		B6658BAE3450DCCAC5DA3380 /* AppUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A6EC9AAA8669766E7E41B32 /* AppUpdate.swift */; };
 		B713B6EF965D5F0D49D9B443 /* word-opposites-slow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA2539F5F8C320453A5AC878 /* word-opposites-slow.jpg */; };
 		B72886939AAA057E71314CC2 /* word-animals-rabbit-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D9DEED1A71ED7F8D9E3E112 /* word-animals-rabbit-3.jpg */; };
 		B74CFE29F201AE7D085AEB62 /* word-food-noodles-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A99C1C3EF66AEA2F92337F52 /* word-food-noodles-3.jpg */; };
@@ -1405,6 +1406,7 @@
 		FA0B763C2F4BB1A78FA1A789 /* word-food-egg-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C00042F42041AE04E4FE8EA /* word-food-egg-2.jpg */; };
 		FA11714A73188085D6F32785 /* word-school-school.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F159DAF9CE4117D3AA0DCA03 /* word-school-school.jpg */; };
 		FA83D7597CAC9E2075C48EC1 /* word-seasons-and-time-spring-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EB72795AC3CF482869B27CD /* word-seasons-and-time-spring-2.jpg */; };
+		FB056BC10915930D283148CD /* AppUpdateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C1AF70EC998EE1AADDCDB0 /* AppUpdateTests.swift */; };
 		FB1A12239212BB7581653C9B /* word-jobs-builder-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B16A38364C5C2F83A87683D5 /* word-jobs-builder-2.jpg */; };
 		FB63F76E0281790B04F5A3FF /* word-school-map-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FDF1E2AF8807666F951B260 /* word-school-map-3.jpg */; };
 		FB8BF3535F144CAF5A04379B /* word-at-home-stairs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BC6AB00A1564F4CFC128F05 /* word-at-home-stairs.jpg */; };
@@ -1999,6 +2001,7 @@
 		655452E1BB7CD89D5A990C0C /* word-around-town-bakery-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-around-town-bakery-2.jpg"; sourceTree = "<group>"; };
 		655E1380E0504EA33D8828FB /* word-drinks-bottle-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-drinks-bottle-2.jpg"; sourceTree = "<group>"; };
 		65B313EA6E7E9461A967C301 /* word-animals-bear-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-animals-bear-2.jpg"; sourceTree = "<group>"; };
+		65C1AF70EC998EE1AADDCDB0 /* AppUpdateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdateTests.swift; sourceTree = "<group>"; };
 		65DD099E2F5FF67B8B32588A /* word-nature-sand-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-sand-3.jpg"; sourceTree = "<group>"; };
 		65E41CCB914DDFC63C76BA01 /* word-drinks-cup.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-drinks-cup.jpg"; sourceTree = "<group>"; };
 		65EA44144BD3E5C157C0B85B /* word-farm-horse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-farm-horse.jpg"; sourceTree = "<group>"; };
@@ -2303,6 +2306,7 @@
 		99AB914F627F9474F1E674CB /* word-people-baby-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-people-baby-2.jpg"; sourceTree = "<group>"; };
 		9A0BE503B4902D1932C81B82 /* word-school-bus-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-school-bus-2.jpg"; sourceTree = "<group>"; };
 		9A2C9074EC01E0FFBB6CF539 /* word-clothes-socks.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-clothes-socks.jpg"; sourceTree = "<group>"; };
+		9A6EC9AAA8669766E7E41B32 /* AppUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdate.swift; sourceTree = "<group>"; };
 		9A9436B03A515A1503EE7614 /* word-nature-grass-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-nature-grass-2.jpg"; sourceTree = "<group>"; };
 		9A9DFECC3F323F8C92307A61 /* kokoro_zf_094.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = kokoro_zf_094.bin; sourceTree = "<group>"; };
 		9A9F43FA2AE5B0433BE14401 /* word-space-mars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "word-space-mars.jpg"; sourceTree = "<group>"; };
@@ -2937,6 +2941,7 @@
 		32DD38256FDB4B124AB931F7 /* SooFunnyTests */ = {
 			isa = PBXGroup;
 			children = (
+				65C1AF70EC998EE1AADDCDB0 /* AppUpdateTests.swift */,
 				41A75BBFF06E5BB5477DAFCE /* BooksTests.swift */,
 				8294450B1020C1DBBA8BBA26 /* ChineseG2PTests.swift */,
 				6FDC65519BB4D10545BF5FE0 /* ImageSegmenterTests.swift */,
@@ -4448,6 +4453,7 @@
 		EFC91BEFD7EB0A0C8FE284E0 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9A6EC9AAA8669766E7E41B32 /* AppUpdate.swift */,
 				2B4CA24765C2E3031F6914C8 /* SooFunnyApp.swift */,
 			);
 			path = App;
@@ -5981,6 +5987,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6658BAE3450DCCAC5DA3380 /* AppUpdate.swift in Sources */,
 				41C54196309E402EBCE7BE29 /* AssistantAudio.swift in Sources */,
 				40B1357F82AA79A66FFDD490 /* AssistantText.swift in Sources */,
 				3373FA98EE207421AFADF3B3 /* BookReader.swift in Sources */,
@@ -6030,6 +6037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB056BC10915930D283148CD /* AppUpdateTests.swift in Sources */,
 				BC157EB01393E3324F781BB7 /* BooksTests.swift in Sources */,
 				8408896D728947A785EFC538 /* ChineseG2PTests.swift in Sources */,
 				E53E3F5907CDCFE2A34F5827 /* ImageSegmenterTests.swift in Sources */,
@@ -6123,7 +6131,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -6142,7 +6150,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -6224,7 +6232,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -6237,7 +6245,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

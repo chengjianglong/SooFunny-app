@@ -9,6 +9,8 @@ mlkitScanner = "16.0.0"
 mlkitSubject = "16.0.0-beta1"
 onnxruntime = "1.31.1"
 json = "20240303"
+billing = "8.3.0"
+appUpdate = "2.1.0"
 
 [libraries]
 compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
@@ -25,6 +27,8 @@ junit = { module = "junit:junit", version.ref = "junit" }
 onnxruntime-android = { module = "com.microsoft.onnxruntime:onnxruntime-android", version.ref = "onnxruntime" }
 onnxruntime-jvm = { module = "com.microsoft.onnxruntime:onnxruntime", version.ref = "onnxruntime" }
 json = { module = "org.json:json", version.ref = "json" }
+billing = { module = "com.android.billingclient:billing", version.ref = "billing" }
+app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdate" }
 
 [plugins]
 android-asset-pack = { id = "com.android.asset-pack", version.ref = "agp" }

@@ -59,5 +59,22 @@ struct ContentView: View {
         .fullScreenCover(item: $session) { session in
             ColoringView(session: session)
         }
+        .sheet(item: Binding(
+            get: { updates.available.map(AvailableUpdate.init) },
+            set: { if $0 == nil, updates.available != nil { updates.snooze() } }
+        )) { update in
+            UpdateReminder(version: update.version) { updates.snooze() }
+        }
+        .task(id: scenePhase) {
+            if scenePhase == .active { await updates.checkIfDue() }
+        }
     }
+
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var updates = AppUpdateChecker.shared
+}
+
+private struct AvailableUpdate: Identifiable {
+    let version: String
+    var id: String { version }
 }

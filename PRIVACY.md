@@ -1,6 +1,6 @@
 # SooFunny Privacy Policy
 
-_Last updated: November 15, 2026_
+_Last updated: November 16, 2026_
 
 SooFunny is a learning and coloring app for children, made by Chengjiang Long
 (https://www.chengjianglong.com/). © 2026 Soo X Intelligence LLC. All rights reserved.
@@ -25,6 +25,13 @@ There are no accounts, no ads, no analytics, no tracking, and no servers that re
 - **Settings and progress.** Your voice settings and math progress are stored only on the
   device and are deleted when you delete the app. Math progress can be erased in
   Math → Math Settings.
+
+## Checking for updates
+
+When the app opens, it may ask Apple's App Store for the latest version number of SooFunny, at
+most every few hours. Only the app's App Store ID and the country or region of the store are
+sent; nothing about you, your child or the device. If a newer version exists, the app offers it,
+and opening the App Store is behind the grown-up check.
 
 ## Purchases
 
@@ -54,7 +61,8 @@ no tracking, and nothing you make or say leaves the device. The differences are:
 
 - **The talking buddy's model is downloaded once.** The buddy's AI model (Qwen 2.5, about
   1.1 GB) is too big to come with the app, so a grown-up downloads it from Hugging Face
-  (huggingface.co) on the buddy screen. This is the only time the Android app uses the internet.
+  (huggingface.co) on the buddy screen. Apart from tips and update checks (below), this is the
+  only time the Android app uses the internet.
   Only the model is downloaded: nothing about you or your child is sent, and Hugging Face sees
   only an ordinary download request from the device. The model can be deleted in Settings.
 - **Voice.** When you tap Talk, speech is turned into text with the phone's own on-device speech
@@ -66,7 +74,15 @@ no tracking, and nothing you make or say leaves the device. The differences are:
   pictures and words stay on the device. Google Play services may download ML Kit's models.
 - **Books you scan** and their audiobooks are kept in the app's own storage and are deleted when
   you delete the app. An audiobook leaves the device only if a grown-up shares it.
-- **Purchases.** The Android app has no purchases or tips.
+- **Purchases.** As on iOS, grown-ups can leave the same optional, one-time tips, sold by Google
+  through Google Play. Payment and billing are handled entirely by Google; we never see your
+  payment details. Tips unlock nothing, and the app keeps no record of them. Google Play's own
+  purchase sheet confirms each payment. See Google's privacy policy at
+  https://policies.google.com/privacy.
+- **Checking for updates.** When the app opens, at most every few hours, it asks Google Play,
+  through the Play Store app on the phone, whether a newer version of SooFunny is out. Nothing
+  about you, your child or the device is sent by SooFunny. If there is one, the app offers it,
+  and updating is behind the grown-up check.
 - **Permissions.** Android asks for the microphone when you first tap Talk. Photos are picked with
   the system photo picker and the camera app, so SooFunny sees only the pictures you choose.
   Saved pictures go to Pictures/SooFunny.

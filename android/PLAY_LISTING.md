@@ -2,7 +2,7 @@
 
 What to enter in Play Console for the first Android release (0.4, version code 4), plus the
 steps only the account holder can do. Settled choices: app ID `com.chengjianglong.soofunny`
-(it can never change after the first upload), no purchases or tips in the first release, and
+(it can never change after the first upload), the same optional tips as iOS (below), and
 target ages 5 and under, 6–8 and 9–12.
 
 ## Create the app (Play Console → Create app)
@@ -56,7 +56,7 @@ and Chinese name, a short introduction read aloud in both languages, and a playf
 
 MADE FOR FAMILIES
 • Works offline: perfect for car rides and flights
-• No ads, no purchases, no tracking, no accounts
+• No ads, no tracking, no accounts; every feature is free (tips optional)
 • Nothing your child makes or says leaves the device
 • Grown-up check before downloads, sharing and reports
 
@@ -86,7 +86,7 @@ chengjiang.long@gmail.com. **Website:** https://www.chengjianglong.com/
 - **Content rating (IARC questionnaire):** Category "Reference, News, or Educational". Answer
   No to violence, fear, sexuality, language, controlled substances, gambling and crude humor.
   Users interact or share content with other users: **No**. Shares the user's location: **No**.
-  Allows purchases of digital goods: **No**. If asked about AI-generated content: **Yes**, an
+  Allows purchases of digital goods: **Yes** (optional tips that unlock nothing). If asked about AI-generated content: **Yes**, an
   on-device chatbot that answers questions about words and sports for children, with a Report
   button on each answer. Expected rating: Everyone / PEGI 3 / USK 0.
 - **Target audience and content:** Ages **5 and under, 6–8, 9–12**. This puts the app under the
@@ -118,6 +118,22 @@ Why it's true, for your own check:
   check. No user data is sent with it.
 - "Report" on a buddy answer opens the user's own email app with the answer filled in; nothing is
   sent unless the user sends that email. Email you receive is not data the app collects.
+
+## Tips (Monetize → Products → In-app products)
+
+The same three consumable tips as the iOS app (`SooFunny/Store/TipJar.swift`), with the same
+product IDs. Play lets you create them only after a bundle with the billing permission has been
+uploaded, and once a payments profile is set up (Setup → Payments profile).
+
+| Product ID | Name | Description | US price |
+|---|---|---|---|
+| com.chengjianglong.soofunny.tip.small | Small tip | A small thank-you that helps keep SooFunny going. | $1.99 |
+| com.chengjianglong.soofunny.tip.medium | Medium tip | A thank-you that helps add new things to learn. | $4.99 |
+| com.chengjianglong.soofunny.tip.large | Large tip | A big thank-you that keeps SooFunny free for all. | $9.99 |
+
+As on iOS there's no grown-up check before a tip: Google Play's purchase sheet confirms it.
+Grown-ups can make Play ask for authentication on every purchase (Play Store → Settings →
+Authentication), and Family Link accounts need a parent's approval.
 
 ## Families policy check
 

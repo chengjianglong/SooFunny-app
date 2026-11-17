@@ -4,7 +4,8 @@ The Android version of SooFunny, in Kotlin and Jetpack Compose. It shares its co
 iOS app in `../SooFunny/` (the word list, word photos, gallery photos, sports and books), so
 there is one copy of everything a child sees. Like the iOS app it has no accounts and no ads,
 and nothing a child says, draws, scans or photographs leaves the device. The internet is used for
-one thing only: downloading the talking buddy's model the first time it's needed (see
+one thing only: downloading the talking buddy's model the first time it's needed (plus
+optional tips and asking Google Play whether there's a newer version; see
 [Privacy](#privacy-and-the-internet)).
 
 ## What's in this version (0.4)
@@ -54,7 +55,8 @@ subject of a photo gets more detail than the background (as Apple Vision does on
 | 3 ✅ | **Talking buddy**: Qwen 2.5 1.5B with llama.cpp (NDK), on-device speech recognition | Done in 0.4; the model is downloaded on first use. Still to test on low-memory phones |
 | 3 ✅ | **Make audiobook**, subject detection for coloring pages | Done in 0.4 |
 | 4 | Google Play: signing, store listing, Data safety form | In progress: see [PLAY_LISTING.md](PLAY_LISTING.md). Release signing is set up, the release bundle builds, a grown-up check guards the model download and each buddy answer has a Report button |
-| 5 | Tips with Play Billing | Not in the first Play release |
+| 5 ✅ | Tips with Play Billing | The same three one-time tips as iOS (Settings → Support SooFunny → Leave a tip), `core/TipJar.kt`; the products are set up in Play Console (see PLAY_LISTING.md) |
+| 5 ✅ | Update reminder | "A new SooFunny is ready!" when Play has a newer version (checked at most every 6 hours; Not now hides it for 3 days), then Play's in-app update after the grown-up check, as on iOS (`core/AppUpdate.kt`, `core/UpdatePolicy.kt`) |
 
 ## ML Kit
 
@@ -97,7 +99,7 @@ and an emulator or phone on Android 8.0 (API 26) or later. Android Studio works 
 
 Get the voice models first (they aren't in git), from the repository root: `scripts/fetch_model.sh`
 puts them in `Models/`, and the build copies them into the `voices` asset pack. Then make the
-pre-made clips (macOS, about 30 MB, also not in git; run it again after changing words, sports,
+pre-made clips (macOS, about 8,000 phrases and 100 MB, also not in git; run it again after changing words, sports,
 books or math, and it only makes what's new):
 `./gradlew :app:testDebugUnitTest --tests '*PremadeVoiceRenderer*' -PpremadeOut=voices/src/main/assets/premade`. The NDK
 (28.2.13676358) and CMake (3.22.1) build llama.cpp for the buddy; the build uses

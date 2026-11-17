@@ -175,6 +175,10 @@ dependencies {
     implementation(libs.mlkit.subject.segmentation)
     // Natural voices: Kokoro-82M run with ONNX Runtime.
     implementation(libs.onnxruntime.android)
+    // Tips (one-time, consumable), the same three as the iOS app's TipJar.
+    implementation(libs.billing)
+    // "A new SooFunny is ready!": Google Play's in-app updates, like the iOS app's AppUpdate.
+    implementation(libs.app.update.ktx)
     debugImplementation(libs.compose.ui.tooling)
     testImplementation(libs.junit)
     // JVM tests run on a computer: the real org.json, and ONNX Runtime for the computer (used by

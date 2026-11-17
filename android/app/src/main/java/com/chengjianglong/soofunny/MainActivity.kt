@@ -6,6 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -25,10 +28,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.sp
 import com.chengjianglong.soofunny.core.AppSettings
+import com.chengjianglong.soofunny.core.AppUpdate
 import com.chengjianglong.soofunny.core.ScannedBookStore
 import com.chengjianglong.soofunny.core.Speech
 import com.chengjianglong.soofunny.engine.SubjectMask
 import com.chengjianglong.soofunny.ui.KidColors
+import com.chengjianglong.soofunny.ui.UpdateReminder
 import com.chengjianglong.soofunny.ui.books.BooksTab
 import com.chengjianglong.soofunny.ui.color.ColorTab
 import com.chengjianglong.soofunny.ui.color.ColoringScreen
@@ -40,6 +45,9 @@ import com.chengjianglong.soofunny.ui.sports.SportsTab
 import com.chengjianglong.soofunny.ui.words.WordsTab
 
 class MainActivity : ComponentActivity() {
+    /** Google Play's full-screen update; nothing to do with its result (Play shows its own messages). */
+    private val updateLauncher = registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) {}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppSettings.init(this)
@@ -50,8 +58,14 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme(colorScheme = lightColorScheme(primary = KidColors.Blue, secondary = KidColors.Pink)) {
                 SooFunnyApp()
+                UpdateReminder(updateLauncher)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        lifecycleScope.launch { AppUpdate.onResume(this@MainActivity, updateLauncher) }
     }
 
     override fun onStop() {
